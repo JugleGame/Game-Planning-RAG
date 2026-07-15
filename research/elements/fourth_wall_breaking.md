@@ -1,12 +1,12 @@
----
-card_id: ELEM-003
-type: narrative-device        # 허용값: mechanic | narrative-device | tone | tech
-title: 제 4의 벽 붕괴 (Fourth Wall Breaking)
-summary: 게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치
-tags: [meta, narrative, viral-hook, overuse-risk]
-updated: 2026-07-15
-confidence: high              # 기준: 출처 있는 수치 + GAME 근거 3건 이상
----
++++
+card_id = "ELEM-003"
+type = "narrative-device"        # 허용값: mechanic | narrative-device | tone | tech
+title = "제 4의 벽 붕괴 (Fourth Wall Breaking)"
+summary = "게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치"
+tags = ["meta", "narrative", "viral-hook", "overuse-risk"]
+updated = 2026-07-15
+confidence = "high"              # 기준: 출처 있는 수치 + GAME 근거 3건 이상
++++
 ## 정의
 게임 캐릭터는 보통 게임 세계 안의 일만 압니다. 그런데 어떤 캐릭터가 갑자기
 "너, 지금 화면 앞에 앉아 있는 사람 맞지?"라고 말을 겁니다. 게임과 현실

@@ -1,12 +1,12 @@
---- 
-card_id : ELEM-001
-type : narrative-device
-title : 티저 기반 공개 (Teaser-based reveals) 
-summary : 다음 단계가 있음을 간접적인 요소들로 나타냄
-tags : [narrative, viral-hook, fragile ]
-updated : 2026-07-15
-confidence : medium
---- 
++++ 
+card_id = "ELEM-001"
+type = "narrative-device"
+title = "티저 기반 공개 (Teaser-based reveals) "
+summary = "다음 단계가 있음을 간접적인 요소들로 나타냄"
+tags = ["narrative", "viral-hook", "fragile" ]
+updated = 2026-07-15
+confidence = "medium"
++++ 
 ## 정의
 전체의 단계 및 흐름을 직접적으로 공개하지 않고, 다음 단계의 핵심 정보 일부(떡밥)만 
 단편적으로 노출하여 청중의 호기심을 극대화하는 기법입니다.

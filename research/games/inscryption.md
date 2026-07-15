@@ -1,14 +1,14 @@
----
-card_id: GAME-001
-type: success                 # 허용값: success | failure | mixed
-title: Inscryption (2021, Daniel Mullins Games / Devolver Digital)
-summary: 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작
-genres: [GENRE-001]
-elements: [ELEM-001, ELEM-003]   # ← frontmatter에도 명시 (필터링용)
-tags: [deckbuilder, horror, meta, indie]
-updated: 2026-07-14
-confidence: 
----
++++
+card_id = "GAME-001"
+type = "success"                 # 허용값 = success | failure | mixed
+title = "Inscryption (2021, Daniel Mullins Games / Devolver Digital)"
+summary = "카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작"
+genres = ["GENRE-001"]
+elements = ["ELEM-001", "ELEM-003"]   # ← frontmatter에도 명시 (필터링용)
+tags = ["deckbuilder", "horror", "meta", "indie"]
+updated = 2026-07-14
+confidence = "high"
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 덱빌딩 + 방탈출 + 심리 호러 혼합작. 출시 한 달 내 100만 장 [출처: Devolver 발표, 2022-01 기준],
 누적 146만 장 [출처: Devolver 실적 발표, 2022-09 기준].

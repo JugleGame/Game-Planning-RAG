@@ -1,14 +1,14 @@
----
-card_id: GAME-004
-type: failure
-title: ANTHEM (2019, BioWare / EA)
-summary: 티저와 약속의 크기를 결과물이 못 따라간 과대약속 실패의 대표 사례
-genres: []                    # 루터슈터 장르 카드는 미작성 - 우리 설계 공간 밖, 요소 증거 전용 카드
-elements: [ELEM-001]
-tags: [looter-shooter, live-service, aaa, cautionary]
-updated: 2026-07-15
-confidence: high              # 수치는 공식 발표·집계 기반
----
++++
+card_id = "GAME-004"
+type = "failure"
+title = "ANTHEM (2019, BioWare / EA)"
+summary = "티저와 약속의 크기를 결과물이 못 따라간 과대약속 실패의 대표 사례"
+genres = []                    # 루터슈터 장르 카드는 미작성 - 우리 설계 공간 밖, 요소 증거 전용 카드
+elements = ["ELEM-001"]
+tags = ["looter-shooter", "live-service", "aaa", "cautionary"]
+updated = 2026-07-15
+confidence = "high"              # 수치는 공식 발표·집계 기반
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 BioWare의 라이브서비스 루터슈터. 누적 500만 장을 팔고도 기대 미달로 판정,
 Metacritic 54~59점 - 스튜디오 역사상 최저 평점 [출처: Wikipedia/GamesRadar

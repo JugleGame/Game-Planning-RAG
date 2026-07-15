@@ -1,14 +1,14 @@
----
-card_id: GAME-006
-type: success
-title: Overwatch - 솜브라 ARG (2016, Blizzard)
-summary: 커뮤니티 전체를 수사대로 만든 티저 마케팅의 대표 사례 (후반 피로 교훈 포함)
-genres: []                    # 히어로슈터 장르 카드는 미작성 - 우리 설계 공간 밖, 요소 증거 전용 카드
-elements: [ELEM-001]
-tags: [arg, marketing, community, live-service]
-updated: 2026-07-15
-confidence: high
----
++++
+card_id = "GAME-006"
+type = "success"
+title = "Overwatch - 솜브라 ARG (2016, Blizzard)"
+summary = "커뮤니티 전체를 수사대로 만든 티저 마케팅의 대표 사례 (후반 피로 교훈 포함)"
+genres = []                    # 히어로슈터 장르 카드는 미작성 - 우리 설계 공간 밖, 요소 증거 전용 카드
+elements = ["ELEM-001"]
+tags = ["arg", "marketing", "community", "live-service"]
+updated = 2026-07-15
+confidence = "high"
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 신규 영웅 '솜브라' 공개 전 약 4개월(2016-07~11)간 게임 안팎에 암호·퍼즐을
 숨긴 ARG. 트레일러 속 16진수 코드, 웹사이트 소스, 위장 포럼 계정까지 동원돼

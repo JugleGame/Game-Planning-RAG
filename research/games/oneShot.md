@@ -1,14 +1,14 @@
----
-card_id: GAME-003
-type: success
-title: OneShot (2016, Future Cat / Degica)
-summary: 게임이 플레이어의 OS까지 개입하는 포스 월 브레이킹의 극단 사례
-genres: [GENRE-001]
-elements: [ELEM-003, ELEM-001]
-tags: [puzzle, adventure, meta, indie, niche-appeal]
-updated: 2026-07-15
-confidence: high              # 리뷰 수치는 Steam 공식 표기
----
++++
+card_id = "GAME-003"
+type = "success"
+title = "OneShot (2016, Future Cat / Degica)"
+summary = "게임이 플레이어의 OS까지 개입하는 포스 월 브레이킹의 극단 사례"
+genres = ["GENRE-001"]
+elements = ["ELEM-003", "ELEM-001"]
+tags = ["puzzle", "adventure", "meta", "indie", "niche-appeal"]
+updated = 2026-07-15
+confidence = "high"              # 리뷰 수치는 Steam 공식 표기
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 플레이어 자신이 "이 세계의 신"으로 등장하는 퍼즐 어드벤처. Steam 리뷰
 6만 건 이상 중 98% 긍정 "압도적으로 긍정적" - Steam 최상위권 유저 평점

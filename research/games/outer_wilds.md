@@ -1,14 +1,14 @@
----
-card_id: GAME-008
-type: success
-title: Outer Wilds (2019, Mobius Digital / Annapurna Interactive)
-summary: "지식이 유일한 진행도"인 타임루프 탐험 - 루프+티저 결합의 정점
-genres: [GENRE-002]
-elements: [ELEM-001, ELEM-004]
-tags: [time-loop, exploration, mystery, divisive, retention]
-updated: 2026-07-15
-confidence: high              # 리뷰·수상은 공식 표기 기반
----
++++
+card_id = "GAME-008"
+type = "success"
+title = "Outer Wilds (2019, Mobius Digital / Annapurna Interactive)"
+summary = "\"지식이 유일한 진행도\"인 타임루프 탐험 - 루프+티저 결합의 정점"
+genres = ["GENRE-002"]
+elements = ["ELEM-001", "ELEM-004"]
+tags = ["time-loop", "exploration", "mystery", "divisive", "retention"]
+updated = 2026-07-15
+confidence = "high"             # 리뷰·수상은 공식 표기 기반
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 22분마다 초신성으로 리셋되는 태양계에서 지식만으로 진실에 다가가는 탐험 게임.
 Steam 리뷰 10만 건 이상 중 96% 긍정 "압도적으로 긍정적" [출처: Steam/Steambase,

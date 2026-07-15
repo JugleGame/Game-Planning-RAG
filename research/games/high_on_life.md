@@ -1,14 +1,14 @@
----
-card_id: GAME-007
-type: mixed
-title: High on Life (2022, Squanch Games)
-summary: 쉼 없는 농담 폭격이 평단 혹평과 유저 팬덤으로 극단 분열된 캠피 사례
-genres: [GENRE-004]
-elements: [ELEM-002]
-tags: [fps, comedy, divisive, cautionary]
-updated: 2026-07-15
-confidence: high
----
++++
+card_id = "GAME-007"
+type = "mixed"
+title = "High on Life (2022, Squanch Games)"
+summary = "쉼 없는 농담 폭격이 평단 혹평과 유저 팬덤으로 극단 분열된 캠피 사례"
+genres = ["GENRE-004"]
+elements = ["ELEM-002"]
+tags = ["fps", "comedy", "divisive", "cautionary"]
+updated = 2026-07-15
+confidence = "high"
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 말하는 총과 함께하는 코미디 FPS. 평단 Metacritic 65점(XSX 기준) vs 유저
 점수 8.2 - 같은 게임에 대한 평가가 극단적으로 갈림 [출처: Metacritic 집계

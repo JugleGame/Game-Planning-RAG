@@ -1,14 +1,14 @@
----
-card_id: GAME-005
-type: mixed
-title: Twelve Minutes (2021, Luis Antonio / Annapurna Interactive)
-summary: 화제성 높은 타임루프 콘셉트가 반복 노동으로 전락한 반면교사
-genres: [GENRE-002]
-elements: [ELEM-004]
-tags: [time-loop, narrative, point-and-click, divisive, cautionary]
-updated: 2026-07-15
-confidence: high              # 리뷰 수치는 Steam 공식 표기
----
++++
+card_id = "GAME-005"
+type = "mixed"
+title = "Twelve Minutes (2021, Luis Antonio / Annapurna Interactive)"
+summary = "화제성 높은 타임루프 콘셉트가 반복 노동으로 전락한 반면교사"
+genres = ["GENRE-002"]
+elements = ["ELEM-004"]
+tags = ["time-loop", "narrative", "point-and-click", "divisive", "cautionary"]
+updated = 2026-07-15
+confidence = "high"              # 리뷰 수치는 Steam 공식 표기
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 12분 루프에 갇힌 남자의 인터랙티브 스릴러(유명 배우 성우진). Steam 종합
 "복합적(Mixed)" - 영어 리뷰 약 3,500건 중 68% 긍정, 전체 8,000여 건

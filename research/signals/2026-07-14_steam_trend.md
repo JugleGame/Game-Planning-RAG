@@ -1,9 +1,10 @@
----
-type: digest                  # 다른 카드와 파싱 일관성 유지용 최소 frontmatter
-period: 2026-07-07 ~ 2026-07-14
-sources: [Steam 신작 태그 검색, r/Games 주간 스레드]
-status: 미반영                 # ← 카드 반영 완료 시 "반영(YYYY-MM-DD)"로 변경
----
++++
+type = "digest"                  # 다른 카드와 파싱 일관성 유지용 최소 frontmatter
+period_at = 2026-07-07
+period_end = 2026-07-14
+source = ["Steam 신작 태그 검색", "r/Games 주간 스레드"]
+status = "미반영"                 # ← 카드 반영 완료 시 "반영(YYYY-MM-DD)"로 변경
++++
 ## 기간 / 수집원
 2026-07-07 ~ 2026-07-14 / Steam 태그 검색, r/Games 주간 스레드
 (아래 수치는 포맷 시연용 예시값 - 실제 수집 시 교체)

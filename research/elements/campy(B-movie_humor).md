@@ -1,12 +1,12 @@
----
-card_id: ELEM-002
-type: tone
-title: 캠피 (B급/B-movie 유머, Campy)
-summary: 일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤
-tags: [comedy, divisive, viral-hook, scriptable]
-updated: 2026-07-15
-confidence: high              # 기준 충족: 출처 있는 수치 + GAME 근거 3건
----
++++
+card_id = "ELEM-002"
+type = "tone"
+title = "캠피 (B급/B-movie 유머, Campy)"
+summary = "일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤"
+tags = ["comedy", "divisive", "viral-hook", "scriptable"]
+updated = 2026-07-15
+confidence = "high"              # 기준 충족: 출처 있는 수치 + GAME 근거 3건
++++
 ## 정의
 일부러 과장되고, 유치하고, 싼티 나게 만들어서 웃기는 스타일입니다.
 중요한 것은 "알고 그런다"는 점입니다 - 실력이 없어서 어설픈 게 아니라,

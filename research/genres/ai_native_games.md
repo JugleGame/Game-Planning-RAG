@@ -1,14 +1,14 @@
----
-card_id: GENRE-003
-type: genre
-title: AI 네이티브 게임 (AI-native Games)
-summary: 실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 군집
-elements: [ELEM-005]
-example_games: [GAME-010, GAME-011]
-tags: [ai-native, emerging, fragile, high-cost]
-updated: 2026-07-15
-confidence: medium            # 군집 자체가 형성 초기 - 신호 변동 큼, 주간 추적 필수
----
++++
+card_id = "GENRE-003"
+type = "genre"
+title = "AI 네이티브 게임 (AI-native Games)"
+summary = "실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 군집"
+elements = ["ELEM-005"]
+example_games = ["GAME-010", "GAME-011"]
+tags = ["ai-native", "emerging", "fragile", "high-cost"]
+updated = 2026-07-15
+confidence = "medium"            # 군집 자체가 형성 초기 - 신호 변동 큼, 주간 추적 필수
++++
 ## 구성 요소
 - ELEM-005 (AI 통합) - 군집의 정의 그 자체. AI를 빼면 게임이 성립하지 않는 작품들.
 

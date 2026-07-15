@@ -1,14 +1,14 @@
----
-card_id: GAME-011
-type: mixed
-title: inZOI (2025 얼리액세스, inZOI Studio / KRAFTON)
-summary: AI NPC를 탑재한 첫 대형 타이틀 - 판매 성공, 유지·성능·여론 3중 과제
-genres: [GENRE-003]
-elements: [ELEM-005]
-tags: [life-sim, ai-native, aaa, high-cost, divisive]
-updated: 2026-07-15
-confidence: high              # 판매·지표는 공식 발표 및 보도 집계
----
++++
+card_id = "GAME-011"
+type = "mixed"
+title = "inZOI (2025 얼리액세스, inZOI Studio / KRAFTON)"
+summary = "AI NPC를 탑재한 첫 대형 타이틀 - 판매 성공, 유지·성능·여론 3중 과제"
+genres = ["GENRE-003"]
+elements = ["ELEM-005"]
+tags = ["life-sim", "ai-native", "aaa", "high-cost", "divisive"]
+updated = 2026-07-15
+confidence = "high"              # 판매·지표는 공식 발표 및 보도 집계
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 심즈 대항마로 주목받은 인생 시뮬레이션. 얼리액세스 출시(2025-03) 직후 100만 장
 이상 판매 [출처: KRAFTON 발표 집계, 2025-03 기준]. 그러나 3개월 내 동시접속

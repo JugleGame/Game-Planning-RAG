@@ -1,14 +1,14 @@
----
-card_id: GAME-002
-type: success
-title: Undertale (2015, Toby Fox)
-summary: 플레이어의 모든 선택을 게임이 기억하는 메타 내러티브 RPG의 원형
-genres: [GENRE-001]
-elements: [ELEM-002, ELEM-003]
-tags: [rpg, indie, meta, comedy, pixel]
-updated: 2026-07-15
-confidence: medium            # 판매량이 서드파티 추정치
----
++++
+card_id = "GAME-002"
+type = "success"
+title = "Undertale (2015, Toby Fox)"
+summary = "플레이어의 모든 선택을 게임이 기억하는 메타 내러티브 RPG의 원형"
+genres = ["GENRE-001"]
+elements = ["ELEM-002", "ELEM-003"]
+tags = ["rpg", "indie", "meta", "comedy", "pixel"]
+updated = 2026-07-15
+confidence = "medium"            # 판매량이 서드파티 추정치
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 "아무도 죽이지 않아도 되는 RPG". 1인 개발작으로 Steam 리뷰 31만 건 이상 중
 약 96% 긍정 [출처: SteamDB, 2026-07 확인], Metacritic 92점. Steam 판매량

@@ -1,14 +1,14 @@
----
-card_id: GAME-010
-type: mixed
-title: Suck Up! (2023, Proxima Enterprises)
-summary: AI 설득이 코어 루프인 첫 바이럴 사례 - 화제성 입증, 유지 실패
-genres: [GENRE-003]
-elements: [ELEM-005, ELEM-002]
-tags: [ai-native, comedy, voice, viral-hook, fragile]
-updated: 2026-07-15
-confidence: medium            # 판매량 비공개, 평가 표본 작음(리뷰 189건)
----
++++
+card_id = "GAME-010"
+type = "mixed"
+title = "Suck Up! (2023, Proxima Enterprises)"
+summary = "AI 설득이 코어 루프인 첫 바이럴 사례 - 화제성 입증, 유지 실패"
+genres = ["GENRE-003"]
+elements = ["ELEM-005", "ELEM-002"]
+tags = ["ai-native", "comedy", "voice", "viral-hook", "fragile"]
+updated = 2026-07-15
+confidence = "medium"            # 판매량 비공개, 평가 표본 작음(리뷰 189건)
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 뱀파이어가 되어 AI 주민을 "말로" 속여 집에 초대받는 코미디 게임. 2023~24년
 스트리머·유튜브 플레이 영상으로 바이럴 [출처: 공식 사이트 크리에이터 인용

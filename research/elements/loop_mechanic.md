@@ -1,12 +1,12 @@
----
-card_id: ELEM-004
-type: mechanic
-title: 반복 메커닉 (Loop Mechanic)
-summary: 같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조
-tags: [retention, high-cost, puzzle, roguelike, divisive]   # rougelike 오타 수정, divisive 추가(근거: GAME-005 Mixed 평가)
-updated: 2026-07-15
-confidence: high              # 기준 충족: 출처 있는 수치 + GAME 근거 3건
----
++++
+card_id = "ELEM-004"
+type = "mechanic"
+title = "반복 메커닉 (Loop Mechanic)"
+summary = "같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조"
+tags = ["retention", "high-cost", "puzzle", "roguelike", "divisive"]   # rougelike 오타 수정, divisive 추가(근거 =GAME-005 Mixed 평가)
+updated = 2026-07-15
+confidence = "high"              # 기준 충족: 출처 있는 수치 + GAME 근거 3건
++++
 ## 정의
 같은 시간이나 상황을 여러 번 반복하는 구조입니다. 단, 매번 똑같이 반복되는
 것이 아니라 플레이어가 "아는 것, 가진 것, 하는 것" 중 무엇인가가 달라져서

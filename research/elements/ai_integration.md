@@ -1,12 +1,12 @@
----
-card_id: ELEM-005
-type: tech
-title: AI 통합 (AI Integration)        # 오타 수정: intergration → Integration
-summary: AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술
-tags: [requires-ai, high-cost, viral-hook, fragile, divisive]
-updated: 2026-07-15
-confidence: medium            # 사유: 시장 초기 단계 - 순수 성공 사례 부재, 신호 변동 큼. 분기별 재평가.
----
++++
+card_id = "ELEM-005"
+type = "tech"
+title = "AI 통합 (AI Integration)"        # 오타 수정: intergration → Integration
+summary = "AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술"
+tags = ["requires-ai", "high-cost", "viral-hook", "fragile", "divisive"]
+updated = 2026-07-15
+confidence = "medium"            # 사유: 시장 초기 단계 - 순수 성공 사례 부재, 신호 변동 큼. 분기별 재평가.
++++
 ## 정의
 게임 캐릭터의 대사는 보통 미리 써둔 대본입니다. 그런데 이 기술을 쓰면
 캐릭터가 대본 없이, 플레이어가 방금 한 말과 행동을 보고 그 자리에서

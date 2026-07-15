@@ -1,14 +1,14 @@
----
-card_id: GAME-009
-type: success
-title: Hades (2020, Supergiant Games)
-summary: "죽음 = 서사 진행"으로 반복을 보상으로 바꾼 내러티브 로그라이크의 정점
-genres: [GENRE-002]
-elements: [ELEM-004]
-tags: [roguelike, narrative, retention, broad-appeal]
-updated: 2026-07-15
-confidence: high              # 판매는 개발사 공식 발표
----
++++
+card_id = "GAME-009"
+type = "success"
+title = "Hades (2020, Supergiant Games)"
+summary = "\"죽음 = 서사 진행\"으로 반복을 보상으로 바꾼 내러티브 로그라이크의 정점"
+genres = ["GENRE-002"]
+elements = ["ELEM-004"]
+tags = ["roguelike", "narrative", "retention", "broad-appeal"]
+updated = 2026-07-15
+confidence = "high"              # 판매는 개발사 공식 발표
++++
 ## 한 줄 요약 + 판매·리뷰 수치
 지하세계 탈출 로그라이크. 정식 출시 며칠 만에 누적 100만 장(얼리액세스 70만
 + 정식 30만) [출처: Supergiant 발표/GameSpot, 2020-09]. Steam 리뷰 14만 건

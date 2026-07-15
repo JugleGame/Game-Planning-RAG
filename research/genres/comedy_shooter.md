@@ -1,14 +1,14 @@
----
-card_id: GENRE-004
-type: genre
-title: 코미디 슈터 (Comedy Shooter)
-summary: 견고한 슈팅 루프 위에 캠피 유머를 얹은 군집
-elements: [ELEM-002]
-example_games: [GAME-012, GAME-007]
-tags: [fps, comedy, divisive]
-updated: 2026-07-15
-confidence: high
----
++++
+card_id = "GENRE-004"
+type = "genre"
+title = "코미디 슈터 (Comedy Shooter)"
+summary = "견고한 슈팅 루프 위에 캠피 유머를 얹은 군집"
+elements = ["ELEM-002"]
+example_games = ["GAME-012", "GAME-007"]
+tags = ["fps", "comedy", "divisive"]
+updated = 2026-07-15
+confidence = "high"
++++
 ## 구성 요소
 - ELEM-002 (캠피) - 군집의 정체성. 단, 유머는 양념이고 본체는 슈팅 루프.
 

@@ -1,14 +1,14 @@
----
-card_id: GENRE-001
-type: genre
-title: 메타 내러티브 인디 (Meta-narrative Indie)
-summary: 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집
-elements: [ELEM-001, ELEM-003, ELEM-004]
-example_games: [GAME-001, GAME-002, GAME-003]
-tags: [indie, story-rich, meta]
-updated: 2026-07-14
-confidence: medium            # 포화도 수치에 추정 포함 → 다이제스트로 보강 예정
----
++++
+card_id = "GENRE-001"
+type = "genre"
+title = "메타 내러티브 인디 (Meta-narrative Indie)"
+summary = "게임이 스스로 \"게임임\"을 인식하고 그것을 이야기 재료로 쓰는 군집"
+elements = ["ELEM-001", "ELEM-003", "ELEM-004"]
+example_games = ["GAME-001", "GAME-002", "GAME-003"]
+tags = ["indie", "story-rich", 'meta']
+updated = 2026-07-14
+confidence = "medium"            # 포화도 수치에 추정 포함 → 다이제스트로 보강 예정
++++
 ## 구성 요소
 - ELEM-003 (포스 월 브레이킹) - 군집의 정체성이자 입소문 엔진
 - ELEM-001 (티저 기반) - 반전 지점까지 플레이어를 끌고 가는 견인줄
