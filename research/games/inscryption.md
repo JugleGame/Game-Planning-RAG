@@ -7,7 +7,7 @@ genres: [GENRE-001]
 elements: [ELEM-001, ELEM-003]   # ← frontmatter에도 명시 (필터링용)
 tags: [deckbuilder, horror, meta, indie]
 updated: 2026-07-14
-confidence: high              # 판매 수치는 퍼블리셔 공식 발표 기반
+confidence: 
 ---
 ## 한 줄 요약 + 판매·리뷰 수치
 덱빌딩 + 방탈출 + 심리 호러 혼합작. 출시 한 달 내 100만 장 [출처: Devolver 발표, 2022-01 기준],

@@ -3,8 +3,8 @@ card_id: ELEM-003
 type: narrative-device        # 허용값: mechanic | narrative-device | tone | tech
 title: 제 4의 벽 붕괴 (Fourth Wall Breaking)
 summary: 게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치
-tags: [meta, narrative, viral-hook]
-updated: 2026-07-14
+tags: [meta, narrative, viral-hook, overuse-risk]
+updated: 2026-07-15
 confidence: high              # 기준: 출처 있는 수치 + GAME 근거 3건 이상
 ---
 ## 정의
@@ -27,7 +27,7 @@ confidence: high              # 기준: 출처 있는 수치 + GAME 근거 3건 
 ## 조합 궁합
 - 좋음: ELEM-002 (캠피) - 벽을 깨는 캐릭터가 능청스러우면 공포가 아닌 유쾌함으로 착지함
 - 좋음: ELEM-005 (AI 통합) - 실시간 반응이 "정말 나를 본다"는 감각을 대본 없이 재현 가능하게 함
-- 충돌: ELEM-001 (티저 기반 공개) - 정보를 숨기는 장치와 직접 말 거는 장치를 같은 장면에 쓰면 긴장이 서로 상쇄됨 [해석]
+- 충돌[해석]: ELEM-001 (티저 기반 공개) - 정보를 숨기는 장치와 직접 말 거는 장치를 같은 장면에 쓰면 긴장이 서로 상쇄됨 
 
 ## 리스크
 - [해석] 본질적으로 1회성 장치 - 화제성(확산)에는 강하나 리텐션(유지)에는 기여 낮음. 반복 가능한 형태(AI 실시간 반응)로 변형 필요.
