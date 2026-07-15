@@ -1,8 +1,8 @@
 ---
-card_id: GAME-001
-type: success                 # 허용값: success | failure | mixed
-title: Inscryption (2021, Daniel Mullins Games / Devolver Digital)
-summary: 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작
+card_id: GAME-007
+type: failure             # 허용값: success | failure | mixed
+title: 
+summary: 
 genres: [GENRE-001]
 elements: [ELEM-001, ELEM-003]   # ← frontmatter에도 명시 (필터링용)
 tags: [deckbuilder, horror, meta, indie]

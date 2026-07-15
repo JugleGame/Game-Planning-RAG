@@ -10,7 +10,7 @@ for path in glob.glob("research/**/*.md", recursive=True):
     cards.append(meta)
 
 order = {"element": "① 요소", "genre": "② 장르", "game": "③ 게임", "signal": "④ 신호"}
-out = [f"# RESEARCH INDEX (자동 생성 — 직접 수정 금지)",
+out = [f"# RESEARCH INDEX (자동 생성 - 직접 수정 금지)",
        f"생성: {datetime.date.today()} | 카드 {len(cards)}장\n"]
 
 recent = [c for c in cards if (datetime.date.today() - c["updated"]).days <= 7]
