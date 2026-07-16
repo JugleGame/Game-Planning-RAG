@@ -1,0 +1,32 @@
++++
+card_id = "ELEM-009"
+type = "narrative-device"
+title = "철학적 내러티브 로그라이트/로그라이크 (Philosophical narrative roguelite/roguelike)"
+summary = "죽거나 다시 시작해도 이야기가 이어지는 구조에 삶과 죽음, 의미 같은 철학적 질문을 담는 방식"
+tags = ["philosophy", "roguelike", "metafiction", "conflicting-data"]
+updated = 2026-07-16
+confidence = "medium-low"   # 조합 궁합 근거 없음 + 구체적 실패 사례 근거 없음 + 수치 출처 간 불일치
++++
+## 정의
+죽거나 다시 시작해도 이야기가 계속 이어지는 게임 구조에, 삶과 죽음, 의미 같은 철학적인 질문을 담아내는 방식입니다. 이 카드는 카드 기반 로그라이크·로그라이트 게임인 Inscryption(GAME-001)을 대표 사례로 삼아 작성되었습니다 [출처: Steam].
+
+## 성공 사례
+- Inscryption (GAME-001) - Steam 스토어 페이지 기준 리뷰 75,974건 중 96% 긍정으로 '압도적으로 긍정적' 상태이며, 최근 리뷰 1,437건 중에서도 94% 긍정으로 '매우 긍정적'을 기록함 [출처: Steam].
+- Inscryption (GAME-001) - 제3자 트래커 SteamDB는 약 142,000건 리뷰 중 95.55% 긍정을, 또 다른 트래커 Raijin은 2026년 7월 15일 기준 146,833건 중 97% 긍정을 각각 보고하여, Steam 자체 스토어 페이지보다 더 많은 리뷰 수를 제시함 [출처: SteamDB].
+- Inscryption (GAME-001) - 비평가 평은 약 85/100의 메타크리틱 점수로 보도됨 [출처: GameSensor].
+- 철학·게임 비평 글들은 실존주의·부조리주의 주제(까뮈의 시지프 신화, 죽음과 재탄생의 순환, 무의미함)를 내러티브 중심 게임의 핵심 요소로 분류하며, Inscryption과 인접한 장르로 흔히 언급되는 사례로 Dark Souls, NieR: Automata, The Stanley Parable을 꼽음 [출처: PCGamesN].
+
+## 실패 사례
+<!-- No evidence: JSON 근거 자료에 Inscryption에 대한 부정적 유저 반응이나 게임플레이 실패 사례가 없음. 단, 아래 리스크 항목에 수치 출처 간 불일치 문제를 별도로 기록함 -->
+
+## 유저 반응 요약
+- 선호: 심리적 깊이·메타픽션 (Inscryption) [출처: 조사 자료 유저 반응 요약]
+- 불호: <!-- No evidence: Inscryption에 대한 구체적인 불호 키워드가 JSON에 없음 -->
+
+## 조합 궁합
+<!-- No evidence: JSON 근거 자료에 ELEM-009와 다른 요소 간의 조합 관련 서술이 없음 -->
+
+## 리스크
+- Inscryption(GAME-001)의 판매량·매출 추정치는 출처마다 크게 다름: 데볼버 디지털이 2022년 9월 보고 기준 146만 장(1.46 million units) 판매를 밝혔다는 보조 집계가 있는가 하면, 별도 커뮤니티 추정치는 2021년 출시 첫 달 기준 약 100만 장·매출 약 1,200만 달러로 추산하고, 2026년 제3자 추정 기관 Raijin은 2026년 7월 15일 기준 약 280만 장·매출 약 3,320만 달러로 추정하며, 또 다른 계산기는 평생 누적 매출을 약 1억 1,860만 달러로 추정함. 이 수치들은 공식 재무 공시가 아니라 추정치이므로 인용 시 반드시 출처를 함께 밝혀야 함 [출처: LEVVVEL (secondary aggregator, citing Game World Observer's 2022 report on Devolver Digital figures)].
+- 리뷰 수·긍정률 역시 Steam 자체 페이지, SteamDB, Raijin 세 출처 간에 서로 다르게 집계되어 있어, 동일 시점 기준으로도 정확한 값을 하나로 확정하기 어려움 [출처: SteamDB].
+- [해석] 철학적 주제(실존주의 등)를 다루는 게임은 대중적 이해도에 따라 몰입도가 크게 갈릴 수 있음.

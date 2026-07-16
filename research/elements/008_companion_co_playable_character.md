@@ -1,0 +1,36 @@
++++
+card_id = "ELEM-008"
+type = "mechanic"
+title = "동반자 / 함께 플레이 가능한 캐릭터 (Companion / co-playable character)"
+summary = "플레이어와 함께 게임을 하거나 곁에서 반응해주는 또 다른 캐릭터를 두는 방식"
+tags = ["co-op", "companion", "AI-controversy", "divisive"]
+updated = 2026-07-16
+confidence = "medium-low"   # 조합 궁합 근거 없음
++++
+## 정의
+플레이어와 함께 게임을 하거나, 플레이어 곁에서 반응해주는 또 다른 캐릭터를 두는 방식입니다. 혼자가 아니라 누군가와 함께하는 느낌을 줍니다. 이 카드는 서로 다른 두 게임, Party Animals와 CielChan: Anime Desktop AI Companion을 대표 사례로 삼아 작성되었습니다 [출처: Steam].
+
+## 성공 사례
+- Party Animals - 영어 리뷰 기준 17,016건 중 89% 긍정으로 '매우 긍정적' 상태를 기록했고, 최근 리뷰 560건 중에서도 86% 긍정으로 '매우 긍정적'을 유지함(다만 특정 기간의 비정상 리뷰 활동은 점수 산정에서 제외됨). 전체 언어 합산 리뷰 수는 80,663건임 [출처: Steam].
+- CielChan: Anime Desktop AI Companion - 로컬 우선 설계로 핵심 기능은 완전히 오프라인으로 실행 가능하며, 기본으로 내장된 로컬 모델과 음성합성 엔진을 사용하고, 필요할 경우 OpenAI, OpenRouter, Anthropic, ElevenLabs 같은 외부 클라우드 AI·음성 제공자도 고급 설정으로 선택할 수 있음 [출처: Steam (developer description)].
+
+## 실패 사례
+- Party Animals - 2026년 5월, 개발사 Recreate Games가 AI로 생성한 영상·콘텐츠를 '핵심 창작 도구'로 요구하는 상금 75,000달러 규모의 공모전을 진행하면서 리뷰 폭탄이 발생했고, 최근 리뷰 1,200건이 '대체로 부정적(73% 부정)'으로 바뀌었으며 이후 스튜디오가 사과함 [출처: GamesRadar+].
+- Party Animals - 2023년 9월 콘솔·글로벌 출시 당시 비평가 평은 '대체로 호의적'(PC 메타스코어 77)이었지만, 공격적인 코스메틱 수익화, 10분 넘는 서버 대기열, 실제로는 없는 오프라인 모드를 암시한 번역 오류로 인해 Steam 유저 평가는 '대체로 부정적'으로 출시됨. 이후 평가는 전체 57% 긍정의 '복합적(Mixed)'으로 회복되었으며, 중국 간체 리뷰 약 4,000건 중 29%만 긍정인 반면 영어 리뷰는 86% 긍정으로 지역별 격차가 컸음 [출처: Game World Observer].
+- CielChan: Anime Desktop AI Companion - 유저 리뷰 12건 중 66% 긍정으로 '복합적(Mixed)' 평가를 받음 [출처: Steam].
+
+※ Party Animals와 CielChan 모두 성공·실패 근거가 함께 확인되므로 복합적(Mixed) 사례로 분류함 [해석].
+
+## 유저 반응 요약
+- 선호: 혼돈스럽지만 재미있는 협동 물리 게임플레이(컨트로버시 이전의 Party Animals) [출처: 조사 자료 유저 반응 요약]
+- 불호: 'AI 슬롭(AI slop)'·'변절' 비난과 AI 콘텐츠 사용에 결부된 리뷰 폭탄 (Party Animals) [출처: 조사 자료 유저 반응 요약]
+- 불호: 공격적인 코스메틱 수익화, 서버 대기열, 오프라인 모드 관련 오해를 부른 설명 (2023년 Party Animals 출시 당시) [출처: Game World Observer]
+- 참고: 한 데이터 분석 결과는 Steam에서의 'AI 낙인'이 게임이 받는 리뷰 수를 약 53% 줄일 수 있고, 받는 리뷰조차 더 부정적인 경향을 보이며, 상업적 잠재력이 높았을 게임일수록 타격이 크다고 보고함 [출처: PC Gamer]
+
+## 조합 궁합
+<!-- No evidence: JSON 근거 자료에 ELEM-008과 다른 요소 간의 조합 관련 서술이 없음 -->
+
+## 리스크
+- Party Animals 사례처럼, AI 관련 마케팅·공모전이 오히려 커뮤니티 리뷰 폭탄으로 이어질 수 있음 [출처: GamesRadar+].
+- [해석] 동반자 캐릭터를 갖춘 게임은 언어권·지역별 반응 격차가 클 수 있어, 특정 지역에서 평판 위험이 커질 수 있음 (Party Animals 중국어권 vs 영어권 리뷰 격차 근거).
+- 'AI 낙인' 자체가 리뷰 수와 긍정률에 부정적 영향을 미칠 수 있음 [출처: PC Gamer].
