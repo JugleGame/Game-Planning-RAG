@@ -4,9 +4,9 @@ type = "genre"
 title = "메타 내러티브 인디 (Meta-narrative Indie)"
 summary = "게임이 스스로 \"게임임\"을 인식하고 그것을 이야기 재료로 쓰는 군집"
 elements = ["ELEM-001", "ELEM-003", "ELEM-004"]
-example_games = ["GAME-001", "GAME-002", "GAME-003"]
+example_games = ["GAME-001", "GAME-002", "GAME-003", "GAME-013"]
 tags = ["indie", "story-rich", 'meta']
-updated = "2026-07-14"
+updated = "2026-07-20"
 confidence = "medium"            # 포화도 수치에 추정 포함 → 다이제스트로 보강 예정
 +++
 ## 구성 요소
@@ -15,7 +15,7 @@ confidence = "medium"            # 포화도 수치에 추정 포함 → 다이�
 - ELEM-004 (루프 메커닉) - 반복 플레이에 서사적 의미를 부여하는 뼈대
 
 ## 시장 포화도
-검증된 대표작 5~7종 (Undertale, OneShot, Inscryption, The Stanley Parable, DDLC 등).
+검증된 대표작 5~7종 (Undertale, OneShot, Inscryption, The Stanley Parable(GAME-013), DDLC 등).
 최근 12개월 신작 중 유의미 리뷰(1,000건+) 도달작은 소수 [출처: Steam 태그 검색, 2026-07-14 확인 - 정확 수치는 주간 다이제스트에서 갱신]
 
 ## 관례와 기대치
