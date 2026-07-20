@@ -1,7 +1,8 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-15 | 카드 22장
+생성: 2026-07-15 | 카드 23장
 
 ## 최근 7일 변경
+- GAME-013 | The Stanley Parable (2013, Galactic Cafe) / Ultra Deluxe (2022, Crows Crows Crows) | 실시간으로 플레이어의 선택에 말을 거는 내레이터로 '선택의 환상'을 다룬 메타 내러티브의 원형 | 07-20
 - ELEM-005 | AI 통합 (AI Integration) | AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술 | 07-15
 - ELEM-002 | 캠피 (B급/B-movie 유머, Campy) | 일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤 | 07-15
 - ELEM-003 | 제 4의 벽 붕괴 (Fourth Wall Breaking) | 게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치 | 07-15
@@ -39,6 +40,7 @@
 - GENRE-004 | 코미디 슈터 (Comedy Shooter) | 견고한 슈팅 루프 위에 캠피 유머를 얹은 군집 | #fps #comedy #divisive | 07-15
 
 ## ③ 게임
+- GAME-013 | The Stanley Parable (2013, Galactic Cafe) / Ultra Deluxe (2022, Crows Crows Crows) | 실시간으로 플레이어의 선택에 말을 거는 내레이터로 '선택의 환상'을 다룬 메타 내러티브의 원형 | #walking-sim #narrative #meta #indie #comedy #broad-appeal | 07-20
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-14
 - GAME-002 | Undertale (2015, Toby Fox) | 플레이어의 모든 선택을 게임이 기억하는 메타 내러티브 RPG의 원형 | #rpg #indie #meta #comedy #pixel | 07-15
 - GAME-003 | OneShot (2016, Future Cat / Degica) | 게임이 플레이어의 OS까지 개입하는 포스 월 브레이킹의 극단 사례 | #puzzle #adventure #meta #indie #niche-appeal | 07-15
@@ -53,4 +55,5 @@
 - GAME-012 | Borderlands 2 (2012, Gearbox / 2K) | 유머를 캐릭터(악당)에 집중시켜 3,000만 장을 판 캠피 톤의 상업적 정점 | #fps #looter-shooter #comedy #broad-appeal | 07-15
 
 ## ④ 신호
+- SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)] inZOI 리뷰 반등, Fundamentals First 로드맵, AI 태그 게임 급증, AI NPC 실패 요인 | 07-20
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [미반영] Steam 신작 태그 검색, r/Games 주간 스레드 |  | 07-14
