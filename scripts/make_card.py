@@ -2,7 +2,7 @@
 """make_card.py - 카드 자동 생성 파이프라인 (반자동: 결과는 draft/, 커밋은 사람이)
 사용법:
   export ANTHROPIC_API_KEY=...      # 키는 코드에 넣지 말 것
-  python tools/make_card.py "GAME-013 The Stanley Parable" --template templates/game.md
+  python scripts/make_card.py "GAME-013 The Stanley Parable" --template templates/game.md
 흐름: R(조사+웹검색) -> W(집필) -> V(AI검수) -> lint(기계검사) -> 실패 시 사유 되먹여 1회 재시도
 SDK/모델 최신 사양: https://docs.claude.com/en/api/overview
 """
