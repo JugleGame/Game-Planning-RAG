@@ -4,7 +4,7 @@ type = "tone"
 title = "캠피 (B급/B-movie 유머, Campy)"
 summary = "일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤"
 tags = ["comedy", "divisive", "viral-hook", "scriptable"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 기준 충족: 출처 있는 수치 + GAME 근거 3건
 +++
 ## 정의

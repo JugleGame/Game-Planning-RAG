@@ -6,7 +6,7 @@ summary = "AI 설득이 코어 루프인 첫 바이럴 사례 - 화제성 입증
 genres = ["GENRE-003"]
 elements = ["ELEM-005", "ELEM-002"]
 tags = ["ai-native", "comedy", "voice", "viral-hook", "fragile"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "medium"            # 판매량 비공개, 평가 표본 작음(리뷰 189건)
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

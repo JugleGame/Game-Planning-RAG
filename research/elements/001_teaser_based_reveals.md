@@ -4,7 +4,7 @@ type = "narrative-device"
 title = "티저 기반 공개 (Teaser-based reveals) "
 summary = "다음 단계가 있음을 간접적인 요소들로 나타냄"
 tags = ["narrative", "viral-hook", "fragile" ]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "medium"
 +++ 
 ## 정의

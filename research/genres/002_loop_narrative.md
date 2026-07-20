@@ -6,7 +6,7 @@ summary = "반복 구조 자체가 이야기를 전달하는 수단이 되는 �
 elements = ["ELEM-004", "ELEM-001"]
 example_games = ["GAME-008", "GAME-009", "GAME-005"]
 tags = ["time-loop", "roguelike", "story-rich", "retention"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 대표작 수치·설계 근거가 출처로 확보됨
 +++
 ## 구성 요소

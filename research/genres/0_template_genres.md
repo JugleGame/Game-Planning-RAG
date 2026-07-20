@@ -6,7 +6,7 @@ summary = ""
 elements = ["ELEM-000"]
 example_games = ["GAME-000"]
 tags = []
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "medium"            # low / medium / high
 +++
 ## 구성 요소

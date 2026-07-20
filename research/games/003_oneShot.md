@@ -6,7 +6,7 @@ summary = "게임이 플레이어의 OS까지 개입하는 포스 월 브레이�
 genres = ["GENRE-001"]
 elements = ["ELEM-003", "ELEM-001"]
 tags = ["puzzle", "adventure", "meta", "indie", "niche-appeal"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 리뷰 수치는 Steam 공식 표기
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

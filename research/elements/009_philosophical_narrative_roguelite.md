@@ -4,7 +4,7 @@ type = "narrative-device"
 title = "철학적 내러티브 로그라이트/로그라이크 (Philosophical narrative roguelite/roguelike)"
 summary = "죽거나 다시 시작해도 이야기가 이어지는 구조에 삶과 죽음, 의미 같은 철학적 질문을 담는 방식"
 tags = ["philosophy", "roguelike", "metafiction", "conflicting-data"]
-updated = 2026-07-16
+updated = "2026-07-16"
 confidence = "medium-low"   # 조합 궁합 근거 없음 + 구체적 실패 사례 근거 없음 + 수치 출처 간 불일치
 +++
 ## 정의

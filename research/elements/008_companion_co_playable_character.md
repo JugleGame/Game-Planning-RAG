@@ -4,7 +4,7 @@ type = "mechanic"
 title = "동반자 / 함께 플레이 가능한 캐릭터 (Companion / co-playable character)"
 summary = "플레이어와 함께 게임을 하거나 곁에서 반응해주는 또 다른 캐릭터를 두는 방식"
 tags = ["co-op", "companion", "AI-controversy", "divisive"]
-updated = 2026-07-16
+updated = "2026-07-16"
 confidence = "medium-low"   # 조합 궁합 근거 없음
 +++
 ## 정의

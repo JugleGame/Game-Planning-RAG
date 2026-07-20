@@ -4,7 +4,7 @@ type = "mechanic"
 title = "클립 기반 바이럴리티 (Clip-driven virality)"
 summary = "짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식"
 tags = ["virality", "clip", "spectacle", "expectation-mismatch"]
-updated = 2026-07-16
+updated = "2026-07-16"
 confidence = "medium-low"   # 조합 궁합 근거 없음 + 판매량 근거가 단일 출처에만 의존
 +++
 ## 정의

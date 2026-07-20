@@ -6,7 +6,7 @@ summary = "유머를 캐릭터(악당)에 집중시켜 3,000만 장을 판 캠�
 genres = ["GENRE-004"]
 elements = ["ELEM-002"]
 tags = ["fps", "looter-shooter", "comedy", "broad-appeal"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 판매는 퍼블리셔 투자자 자료
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

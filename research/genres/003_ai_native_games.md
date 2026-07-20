@@ -6,7 +6,7 @@ summary = "실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 �
 elements = ["ELEM-005"]
 example_games = ["GAME-010", "GAME-011"]
 tags = ["ai-native", "emerging", "fragile", "high-cost"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "medium"            # 군집 자체가 형성 초기 - 신호 변동 큼, 주간 추적 필수
 +++
 ## 구성 요소

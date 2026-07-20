@@ -6,7 +6,7 @@ summary = ""
 genres = ["GENRE-000"]
 elements = ["ELEM-000"]
 tags = []
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "medium"     # low / medium / high
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

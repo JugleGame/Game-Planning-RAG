@@ -6,7 +6,7 @@ summary = "화제성 높은 타임루프 콘셉트가 반복 노동으로 전락
 genres = ["GENRE-002"]
 elements = ["ELEM-004"]
 tags = ["time-loop", "narrative", "point-and-click", "divisive", "cautionary"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 리뷰 수치는 Steam 공식 표기
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

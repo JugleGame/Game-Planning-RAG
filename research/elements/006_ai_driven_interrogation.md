@@ -4,7 +4,7 @@ type = "tech"
 title = "AI 기반 심문 (AI-driven interrogation)"
 summary = "미리 쓴 대사가 아니라 실시간 생성 AI가 등장인물을 움직여 플레이어의 질문에 즉석으로 답하게 하는 방식"
 tags = ["AI", "dialogue", "local-llm", "divisive"]
-updated = 2026-07-16
+updated = "2026-07-16"
 confidence = "medium-low"   # 조합 궁합 근거 없음 + AI Interrogation Simulator는 미출시로 유저 반응 근거 없음
 +++
 ## 정의

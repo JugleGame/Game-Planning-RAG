@@ -4,7 +4,7 @@ type = "narrative-device"
 title = "선택 반응형 비-LLM 내러티브 (Choice-reactive, non-LLM narration)"
 summary = "AI가 아니라 개발자가 미리 써놓은 여러 갈래의 이야기 중 하나를 플레이어의 선택에 따라 보여주는 방식"
 tags = ["narrative", "branching", "no-ai", "illusion-of-choice"]
-updated = 2026-07-16
+updated = "2026-07-16"
 confidence = "medium-low"   # 조합 궁합 근거 없음 + 구체적 유저 리뷰 원문 근거 부족
 +++
 ## 정의

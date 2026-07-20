@@ -6,7 +6,7 @@ summary = "\"지식이 유일한 진행도\"인 타임루프 탐험 - 루프+티
 genres = ["GENRE-002"]
 elements = ["ELEM-001", "ELEM-004"]
 tags = ["time-loop", "exploration", "mystery", "divisive", "retention"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"             # 리뷰·수상은 공식 표기 기반
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

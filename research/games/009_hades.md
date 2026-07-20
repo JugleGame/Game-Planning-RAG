@@ -6,7 +6,7 @@ summary = "\"죽음 = 서사 진행\"으로 반복을 보상으로 바꾼 내러
 genres = ["GENRE-002"]
 elements = ["ELEM-004"]
 tags = ["roguelike", "narrative", "retention", "broad-appeal"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 판매는 개발사 공식 발표
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

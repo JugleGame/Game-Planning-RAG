@@ -6,7 +6,7 @@ summary = "AI NPC를 탑재한 첫 대형 타이틀 - 판매 성공, 유지·성
 genres = ["GENRE-003"]
 elements = ["ELEM-005"]
 tags = ["life-sim", "ai-native", "aaa", "high-cost", "divisive"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 판매·지표는 공식 발표 및 보도 집계
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

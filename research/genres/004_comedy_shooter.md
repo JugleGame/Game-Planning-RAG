@@ -6,7 +6,7 @@ summary = "견고한 슈팅 루프 위에 캠피 유머를 얹은 군집"
 elements = ["ELEM-002"]
 example_games = ["GAME-012", "GAME-007"]
 tags = ["fps", "comedy", "divisive"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"
 +++
 ## 구성 요소

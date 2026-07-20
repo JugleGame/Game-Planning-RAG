@@ -6,7 +6,7 @@ summary = "플레이어의 모든 선택을 게임이 기억하는 메타 내러
 genres = ["GENRE-001"]
 elements = ["ELEM-002", "ELEM-003"]
 tags = ["rpg", "indie", "meta", "comedy", "pixel"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "medium"            # 판매량이 서드파티 추정치
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

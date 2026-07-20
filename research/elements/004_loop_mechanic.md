@@ -4,7 +4,7 @@ type = "mechanic"
 title = "반복 메커닉 (Loop Mechanic)"
 summary = "같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조"
 tags = ["retention", "high-cost", "puzzle", "roguelike", "divisive"]   # rougelike 오타 수정, divisive 추가(근거 =GAME-005 Mixed 평가)
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 기준 충족: 출처 있는 수치 + GAME 근거 3건
 +++
 ## 정의

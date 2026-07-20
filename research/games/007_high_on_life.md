@@ -6,7 +6,7 @@ summary = "쉼 없는 농담 폭격이 평단 혹평과 유저 팬덤으로 극�
 genres = ["GENRE-004"]
 elements = ["ELEM-002"]
 tags = ["fps", "comedy", "divisive", "cautionary"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

@@ -4,7 +4,7 @@ type = "narrative-device"        # 허용값: mechanic | narrative-device | tone
 title = "제 4의 벽 붕괴 (Fourth Wall Breaking)"
 summary = "게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치"
 tags = ["meta", "narrative", "viral-hook", "overuse-risk"]
-updated = 2026-07-15
+updated = "2026-07-15"
 confidence = "high"              # 기준: 출처 있는 수치 + GAME 근거 3건 이상
 +++
 ## 정의
