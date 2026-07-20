@@ -5,7 +5,7 @@
 tomllib는 Python 3.11+ 표준 내장(읽기 전용)이라 별도 설치 불필요.
 
 사용법:
-  python lint.py <카드.md> [<카드2.md> ...] [--index _index.md] [--evidence evidence.json]
+  python tools/lint.py <카드.md> [<카드2.md> ...] [--index _index.md] [--evidence evidence.json]
 종료코드: 0=통과, 1=오류
 """
 import sys, re, argparse, pathlib, datetime
