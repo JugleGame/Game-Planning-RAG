@@ -36,7 +36,7 @@ def classify(meta):
 
 cards, errors = [], []
 for path in glob.glob(os.path.join(RESEARCH, "**", "*.md"), recursive=True):
-    if path.endswith("INDEX.md"): continue
+    if path.endswith("_index.md"): continue
     try:
         with open(path, encoding="utf-8") as f:
             raw = f.read()
@@ -85,10 +85,10 @@ for t, label in order.items():
         tags = " ".join(f"#{x}" for x in c.get("tags", []))
         out.append(f"- {c['card_id']} | {c['title']} | {c['summary']} | {tags} | {c['updated']:%m-%d}")
 
-with open(os.path.join(RESEARCH, "INDEX.md"), "w", encoding="utf-8") as f:
+with open(os.path.join(RESEARCH, "_index.md"), "w", encoding="utf-8") as f:
     f.write("\n".join(out) + "\n")
 
-print(f"INDEX.md 갱신 완료: {len(cards)}장")
+print(f"_index.md 갱신 완료: {len(cards)}장")
 if errors:
     print(f"\n⚠ 스킵된 파일 {len(errors)}건:", file=sys.stderr)
     for p, msg in errors:
