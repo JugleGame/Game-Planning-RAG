@@ -1,7 +1,14 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-15 | 카드 23장
+생성: 2026-07-15 | 카드 30장
 
 ## 최근 7일 변경
+- GENRE-005 | 오픈월드 (Open World) | 정해진 경로 대신 넓게 이어진 하나의 세계를 자유롭게 돌아다니며 플레이어가 스스로 순서를 정하는 군집 | 07-21
+- ELEM-011 | 창발적 시스템 상호작용 (Emergent Systemic Interaction, "화학 엔진") | 불/물/바람 같은 기본 규칙 몇 개만으로 개발자도 예상 못한 해법이 나오게 하는 설계 | 07-21
+- ELEM-012 | 랜드마크 기반 탐험 (Landmark-based / Minimal-marker Exploration) | 지도 아이콘 대신 눈에 보이는 지형지물로 '가보고 싶다'는 마음을 이끌어내는 레벨 디자인 | 07-21
+- GAME-014 | The Legend of Zelda: Breath of the Wild (2017, Nintendo EPD) | "화학 엔진"으로 세계의 모든 요소가 서로 반응하게 만들어 오픈월드 탐험의 기준을 새로 쓴 작품 | 07-21
+- GAME-015 | The Legend of Zelda: Tears of the Kingdom (2023, Nintendo EPD) | 울트라핸드로 오브젝트 결합 자체를 탐험 도구로 만들어 창발적 상호작용을 한 단계 더 밀어붙인 후속작 | 07-21
+- GAME-016 | Elden Ring (2022, FromSoftware / Bandai Namco) | 퀘스트 마커 없이 지형지물만으로 플레이어가 스스로 경로를 찾게 만든 오픈월드 탐험 설계의 기준작 | 07-21
+- GAME-017 | Assassin's Creed Valhalla (2020, Ubisoft) | 흥행·평단은 좋았지만 지도 아이콘·플레이 시간 과잉으로 '체크리스트형 오픈월드 피로'의 대표 사례로 인용됨 | 07-21
 - GAME-013 | The Stanley Parable (2013, Galactic Cafe) / Ultra Deluxe (2022, Crows Crows Crows) | 실시간으로 플레이어의 선택에 말을 거는 내레이터로 '선택의 환상'을 다룬 메타 내러티브의 원형 | 07-20
 - ELEM-005 | AI 통합 (AI Integration) | AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술 | 07-15
 - ELEM-002 | 캠피 (B급/B-movie 유머, Campy) | 일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤 | 07-15
@@ -27,6 +34,8 @@
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [미반영] Steam 신작 태그 검색, r/Games 주간 스레드 | 07-14
 
 ## ① 요소
+- ELEM-011 | 창발적 시스템 상호작용 (Emergent Systemic Interaction, "화학 엔진") | 불/물/바람 같은 기본 규칙 몇 개만으로 개발자도 예상 못한 해법이 나오게 하는 설계 | #exploration #physics #sandbox #open-world #high-cost | 07-21
+- ELEM-012 | 랜드마크 기반 탐험 (Landmark-based / Minimal-marker Exploration) | 지도 아이콘 대신 눈에 보이는 지형지물로 '가보고 싶다'는 마음을 이끌어내는 레벨 디자인 | #exploration #open-world #no-markers #level-design #divisive | 07-21
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-15
 - ELEM-002 | 캠피 (B급/B-movie 유머, Campy) | 일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤 | #comedy #divisive #viral-hook #scriptable | 07-15
 - ELEM-003 | 제 4의 벽 붕괴 (Fourth Wall Breaking) | 게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치 | #meta #narrative #viral-hook #overuse-risk | 07-15
@@ -34,12 +43,17 @@
 - ELEM-005 | AI 통합 (AI Integration) | AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술 | #requires-ai #high-cost #viral-hook #fragile #divisive | 07-15
 
 ## ② 장르
+- GENRE-005 | 오픈월드 (Open World) | 정해진 경로 대신 넓게 이어진 하나의 세계를 자유롭게 돌아다니며 플레이어가 스스로 순서를 정하는 군집 | #open-world #exploration #sandbox #aaa #broad-appeal | 07-21
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-14
 - GENRE-002 | 루프 내러티브 (Loop Narrative) | 반복 구조 자체가 이야기를 전달하는 수단이 되는 군집 | #time-loop #roguelike #story-rich #retention | 07-15
 - GENRE-003 | AI 네이티브 게임 (AI-native Games) | 실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 군집 | #ai-native #emerging #fragile #high-cost | 07-15
 - GENRE-004 | 코미디 슈터 (Comedy Shooter) | 견고한 슈팅 루프 위에 캠피 유머를 얹은 군집 | #fps #comedy #divisive | 07-15
 
 ## ③ 게임
+- GAME-014 | The Legend of Zelda: Breath of the Wild (2017, Nintendo EPD) | "화학 엔진"으로 세계의 모든 요소가 서로 반응하게 만들어 오픈월드 탐험의 기준을 새로 쓴 작품 | #action-adventure #open-world #physics #exploration #broad-appeal | 07-21
+- GAME-015 | The Legend of Zelda: Tears of the Kingdom (2023, Nintendo EPD) | 울트라핸드로 오브젝트 결합 자체를 탐험 도구로 만들어 창발적 상호작용을 한 단계 더 밀어붙인 후속작 | #action-adventure #open-world #physics #building #sequel #broad-appeal | 07-21
+- GAME-016 | Elden Ring (2022, FromSoftware / Bandai Namco) | 퀘스트 마커 없이 지형지물만으로 플레이어가 스스로 경로를 찾게 만든 오픈월드 탐험 설계의 기준작 | #action-rpg #open-world #exploration #no-markers #broad-appeal | 07-21
+- GAME-017 | Assassin's Creed Valhalla (2020, Ubisoft) | 흥행·평단은 좋았지만 지도 아이콘·플레이 시간 과잉으로 '체크리스트형 오픈월드 피로'의 대표 사례로 인용됨 | #action-rpg #open-world #ubisoft #map-icons #divisive #cautionary | 07-21
 - GAME-013 | The Stanley Parable (2013, Galactic Cafe) / Ultra Deluxe (2022, Crows Crows Crows) | 실시간으로 플레이어의 선택에 말을 거는 내레이터로 '선택의 환상'을 다룬 메타 내러티브의 원형 | #walking-sim #narrative #meta #indie #comedy #broad-appeal | 07-20
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-14
 - GAME-002 | Undertale (2015, Toby Fox) | 플레이어의 모든 선택을 게임이 기억하는 메타 내러티브 RPG의 원형 | #rpg #indie #meta #comedy #pixel | 07-15
