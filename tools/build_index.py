@@ -76,7 +76,7 @@ out = ["# RESEARCH INDEX (자동 생성 - 직접 수정 금지)",
 recent = [c for c in cards if (today - c["updated"]).days <= 7]
 if recent:
     out.append("## 최근 7일 변경")
-    out += [f"- {c['card_id']} | {c['title']} | {c['summary']} | {c['updated']:%m-%d}"
+    out += [f"- {c['card_id']} | {c['updated']:%m-%d}"
             for c in sorted(recent, key=lambda c: c["updated"], reverse=True)]
 
 for t, label in order.items():

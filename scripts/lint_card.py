@@ -12,6 +12,11 @@ import sys, re, argparse, pathlib, datetime
 import tomllib   # Python 3.11+ 표준 내장. 3.10 이하면: pip install tomli 후 'import tomli as tomllib'
 
 REQUIRED = ["card_id", "type", "title", "summary", "tags", "updated", "confidence"]
+REQUIRED_SECTIONS = {
+    "ELEM":  ["정의", "성공 사례", "실패 사례", "유저 반응 요약", "조합 궁합", "리스크"],
+    "GAME":  ["한 줄 요약 + 판매·리뷰 수치", "사용한 요소", "성공/실패 원인", "우리 프로젝트 시사점"],
+    "GENRE": ["구성 요소", "시장 포화도", "관례와 기대치", "빈칸"],
+}
 TYPE_VOCAB = {
     "ELEM":  {"mechanic", "narrative-device", "tone", "tech"},
     "GAME":  {"success", "failure", "mixed"},
@@ -112,6 +117,16 @@ def load_index_ids(index_path):
     text = pathlib.Path(index_path).read_text(encoding="utf-8")
     return {m.group(0) for m in ID_PAT.finditer(text)}
 
+def check_sections(card_id, body):
+    found = [l[3:].rstrip() for l in body.splitlines() if l.startswith("## ")]
+    need = REQUIRED_SECTIONS.get(card_id.split("-")[0], [])
+    errs  = [f"필수 절 누락: ## {s}" for s in need if s not in found]
+    errs += [f"사전에 없는 절 제목: ## {f}" for f in found if f not in need]  # 오타·변형 탐지
+    # 뒤 공백 탐지 (정확 일치를 깨뜨리는 주범)
+    errs += [f"절 제목 뒤 공백: '## {l[3:]}'" for l in body.splitlines()
+             if l.startswith("## ") and l != l.rstrip()]
+    return errs
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("cards", nargs="+")
@@ -123,7 +138,7 @@ def main():
     for card in a.cards:
         fm, body, errs = load_card(card)
         if fm is not None:
-            errs += check_frontmatter(fm) + check_numbers(body)
+            errs += check_frontmatter(fm) + check_numbers(body) + check_sections(fm.get("card_id", ""), body)
             if index_ids:
                 errs += check_refs(fm, body, index_ids)
             if a.evidence:
