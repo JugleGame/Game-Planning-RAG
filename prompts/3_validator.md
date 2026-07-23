@@ -20,4 +20,3 @@ You are not the author of this card. You are an **adversarial reviewer** tasked 
     {"rule": 1, "location": "## Success Case, 2nd item", "detail": "Sales figure of 5 million is not in the evidence"}
   ]
 }
-If there is even a single issue, the verdict must be "fail." Do not be lenient.

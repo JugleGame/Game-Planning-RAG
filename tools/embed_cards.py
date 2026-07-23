@@ -8,11 +8,15 @@
 3) API 키 불필요 - 로컬 sentence-transformers 사용. 한국어 모델 기본값.
 
 사용법:
-  python db/embed_cards.py [--dsn dbname=research] [--model jhgan/ko-sroberta-multitask]
+  python tools/embed_cards.py [--dsn postgresql://...] [--model jhgan/ko-sroberta-multitask]
+  (--dsn 생략 시 DATABASE_URL 환경변수 또는 .env 파일 사용)
 """
-import hashlib, argparse
+import hashlib, argparse, pathlib, sys
 import psycopg2
 from sentence_transformers import SentenceTransformer
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from _db import resolve_dsn
 
 def body_hash(model_name: str, body: str) -> str:
     # 모델명을 지문에 섞음: 모델 바꾸면 모든 카드가 '변경'으로 잡혀 재계산됨
@@ -20,12 +24,13 @@ def body_hash(model_name: str, body: str) -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dsn", default="dbname=research")
+    ap.add_argument("--dsn", default=None, help="생략 시 DATABASE_URL 환경변수 또는 .env 사용")
     ap.add_argument("--model", default="jhgan/ko-sroberta-multitask")  # 한국어 특화, 768차원
     a = ap.parse_args()
+    dsn = resolve_dsn(a.dsn)
 
     model = SentenceTransformer(a.model)
-    conn = psycopg2.connect(a.dsn); cur = conn.cursor()
+    conn = psycopg2.connect(dsn); cur = conn.cursor()
     cur.execute("SELECT card_id, title, summary, body, body_hash FROM cards")
     rows = cur.fetchall()
 
