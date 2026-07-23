@@ -17,7 +17,7 @@ CREATE TABLE cards (
   elements   TEXT[] NOT NULL DEFAULT '{}',
   genres     TEXT[] NOT NULL DEFAULT '{}',
   updated    DATE NOT NULL,
-  confidence TEXT NOT NULL CHECK (confidence IN ('high','medium','low')),
+  confidence TEXT NOT NULL CHECK (confidence IN ('high','medium','medium-low','low')),
   body       TEXT NOT NULL,
   file_path  TEXT NOT NULL,
   CONSTRAINT type_vocab CHECK (
@@ -76,7 +76,9 @@ DO $$ BEGIN
     CREATE ROLE strategy_ai LOGIN PASSWORD '반드시_교체할_것';
   END IF;
 END $$;
-GRANT CONNECT ON DATABASE research TO strategy_ai;
+DO $$ BEGIN
+  EXECUTE format('GRANT CONNECT ON DATABASE %I TO strategy_ai', current_database());
+END $$;
 GRANT USAGE ON SCHEMA public TO strategy_ai;
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO strategy_ai;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO strategy_ai;
