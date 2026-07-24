@@ -9,7 +9,7 @@
 """
 import sys, re, tomllib, pathlib
 
-INDEX = pathlib.Path(__file__).parent / "research" / "_index.md"
+INDEX = pathlib.Path(__file__).resolve().parent.parent / "research" / "_index.md"
 REQUIRED_KEYS = ["spec_id", "version", "blueprint_version", "refs"]
 REQUIRED_SECTIONS = ["목표", "구현 범위", "제외 범위", "합격 기준"]
 BANNED = ["재미", "좋은", "좋아", "멋진", "자연스러", "적절", "재치"]

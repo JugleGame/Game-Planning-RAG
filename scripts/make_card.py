@@ -28,8 +28,8 @@ def extract_json(text):
     return json.loads(m.group(0)) if m else None
 
 def run_lint(card_path, evidence_path):
-    r = subprocess.run([sys.executable, ROOT/"scripts/lint.py", str(card_path),
-                        "--index", str(ROOT/"_index.md"), "--evidence", str(evidence_path)],
+    r = subprocess.run([sys.executable, ROOT/"scripts/lint_card.py", str(card_path),
+                        "--index", str(ROOT/"research/_index.md"), "--evidence", str(evidence_path)],
                        capture_output=True, text=True)
     return r.returncode == 0, r.stdout
 
@@ -38,7 +38,7 @@ def main():
     ap.add_argument("subject")                       # 예: "GAME-013 The Stanley Parable"
     ap.add_argument("--template", required=True)     # 카드 템플릿 경로
     ap.add_argument("--examples", nargs=2,           # 스타일 앵커 카드 2장
-                    default=[ROOT/"hades.md", ROOT/"twelve_minutes.md"])
+                    default=[ROOT/"research/games/009_hades.md", ROOT/"research/games/005_twelve_minutes.md"])
     a = ap.parse_args()
     today = datetime.date.today().isoformat()
     cid = a.subject.split()[0]
@@ -49,15 +49,16 @@ def main():
 
     # 1) R: 조사 (웹 검색 사용, 산출물은 증거 JSON)
     print("[R] 조사 중...")
-    ev = extract_json(ask(prompt("R_researcher.md").replace("{SUBJECT}", a.subject),
+    ev = extract_json(ask(prompt("1_researcher.md").replace("{SUBJECT}", a.subject),
                           f"조사 대상: {a.subject}. 오늘 날짜: {today}", use_search=True))
     if not ev: sys.exit("[중단] R이 유효한 JSON을 내지 못함")
     ev_path = ROOT/"evidence"/f"{cid}.json"
+    ev_path.parent.mkdir(exist_ok=True)
     ev_path.write_text(json.dumps(ev, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"    증거 {len(ev.get('facts',[]))}건, gaps {len(ev.get('gaps',[]))}건 -> {ev_path.name}")
 
     # 2) W -> 3) V -> 4) lint (실패 시 사유를 되먹여 1회 재시도)
-    w_sys = (prompt("W_writer.md")
+    w_sys = (prompt("2_writer.md")
              .replace("{EVIDENCE_JSON}", json.dumps(ev, ensure_ascii=False))
              .replace("{TEMPLATE}", pathlib.Path(a.template).read_text(encoding="utf-8"))
              .replace("{EXAMPLE_CARDS}", "\n\n---\n\n".join(
@@ -71,7 +72,7 @@ def main():
         draft.write_text(card.strip() + "\n", encoding="utf-8")
 
         print("[V] AI 검수...")
-        v = extract_json(ask(prompt("V_validator.md")
+        v = extract_json(ask(prompt("3_validator.md")
                              .replace("{CARD}", card)
                              .replace("{EVIDENCE_JSON}", json.dumps(ev, ensure_ascii=False)),
                              "검수하라.")) or {"verdict": "fail", "issues": [{"detail": "V 출력 파싱 실패"}]}

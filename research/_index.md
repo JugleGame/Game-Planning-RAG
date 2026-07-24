@@ -1,43 +1,20 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-21 | 카드 36장
+생성: 2026-07-24 | 카드 36장
 
 ## 최근 7일 변경
-- ELEM-011 | 창발적 시스템 상호작용 (Emergent Systemic Interaction, "화학 엔진") | 불/물/바람 같은 기본 규칙 몇 개만 만들어두고, 그 규칙들이 서로 부딪히며 개발자도 예상 못한 해법이 나오게 하는 설계 | 07-21
-- ELEM-012 | 랜드마크 기반 탐험 (Landmark-based / Minimal-marker Exploration) | 지도 아이콘이나 화살표 대신, 멀리서도 보이는 지형지물로 '저기 가보고 싶다'는 마음을 이끌어내는 레벨 디자인 | 07-21
-- GAME-014 | The Legend of Zelda: Breath of the Wild (2017, Nintendo EPD) | "화학 엔진"으로 세계의 모든 요소가 서로 반응하게 만들어 오픈월드 탐험의 기준을 새로 쓴 작품 | 07-21
-- GAME-015 | The Legend of Zelda: Tears of the Kingdom (2023, Nintendo EPD) | 울트라핸드로 오브젝트 결합 자체를 탐험 도구로 만들어 창발적 시스템 상호작용을 한 단계 더 밀어붙인 후속작 | 07-21
-- GAME-016 | Elden Ring (2022, FromSoftware / Bandai Namco) | 퀘스트 마커 없이 지형지물만으로 플레이어가 스스로 경로를 찾게 만들어 오픈월드 탐험 설계의 기준을 다시 세운 작품 | 07-21
-- GAME-017 | Assassin's Creed Valhalla (2020, Ubisoft) | 출시 직후 흥행·평단 모두 좋은 성적을 냈지만, 지도 아이콘과 플레이 시간 과잉으로 '체크리스트형 오픈월드 피로'의 대표 사례로 자주 인용되는 작품 | 07-21
-- GENRE-005 | 오픈월드 (Open World) | 정해진 경로 대신 넓게 이어진 하나의 세계를 자유롭게 돌아다니며 플레이어가 스스로 순서를 정하는 군집 | 07-21
-- ELEM-005 | AI 통합 (AI Integration) | AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술 | 07-20
-- GAME-011 | inZOI (2025 얼리액세스, inZOI Studio / KRAFTON) | AI NPC를 탑재한 첫 대형 타이틀 - 판매 성공, 유지·성능·여론 3중 과제 | 07-20
-- GAME-013 | The Stanley Parable (2013, Galactic Cafe) / Ultra Deluxe (2022, Crows Crows Crows) | 실시간으로 플레이어의 선택에 말을 거는 내레이터로 '선택의 환상'을 다룬 메타 내러티브의 원형 | 07-20
-- GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | 07-20
-- GENRE-003 | AI 네이티브 게임 (AI-native Games) | 실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 군집 | 07-20
-- SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)]  | 07-20
-- ELEM-006 | AI 기반 심문 (AI-driven interrogation) | 미리 쓴 대사가 아니라 실시간 생성 AI가 등장인물을 움직여 플레이어의 질문에 즉석으로 답하게 하는 방식 | 07-16
-- ELEM-007 | 선택 반응형 비-LLM 내러티브 (Choice-reactive, non-LLM narration) | AI가 아니라 개발자가 미리 써놓은 여러 갈래의 이야기 중 하나를 플레이어의 선택에 따라 보여주는 방식 | 07-16
-- ELEM-008 | 동반자 / 함께 플레이 가능한 캐릭터 (Companion / co-playable character) | 플레이어와 함께 게임을 하거나 곁에서 반응해주는 또 다른 캐릭터를 두는 방식 | 07-16
-- ELEM-009 | 철학적 내러티브 로그라이트/로그라이크 (Philosophical narrative roguelite/roguelike) | 죽거나 다시 시작해도 이야기가 이어지는 구조에 삶과 죽음, 의미 같은 철학적 질문을 담는 방식 | 07-16
-- ELEM-010 | 클립 기반 바이럴리티 (Clip-driven virality) | 짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식 | 07-16
-- ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | 07-15
-- ELEM-002 | 캠피 (B급/B-movie 유머, Campy) | 일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤 | 07-15
-- ELEM-003 | 제 4의 벽 붕괴 (Fourth Wall Breaking) | 게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치 | 07-15
-- ELEM-004 | 반복 메커닉 (Loop Mechanic) | 같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조 | 07-15
-- GAME-002 | Undertale (2015, Toby Fox) | 플레이어의 모든 선택을 게임이 기억하는 메타 내러티브 RPG의 원형 | 07-15
-- GAME-003 | OneShot (2016, Future Cat / Degica) | 게임이 플레이어의 OS까지 개입하는 포스 월 브레이킹의 극단 사례 | 07-15
-- GAME-004 | ANTHEM (2019, BioWare / EA) | 티저와 약속의 크기를 결과물이 못 따라간 과대약속 실패의 대표 사례 | 07-15
-- GAME-005 | Twelve Minutes (2021, Luis Antonio / Annapurna Interactive) | 화제성 높은 타임루프 콘셉트가 반복 노동으로 전락한 반면교사 | 07-15
-- GAME-006 | Overwatch - 솜브라 ARG (2016, Blizzard) | 커뮤니티 전체를 수사대로 만든 티저 마케팅의 대표 사례 (후반 피로 교훈 포함) | 07-15
-- GAME-007 | High on Life (2022, Squanch Games) | 쉼 없는 농담 폭격이 평단 혹평과 유저 팬덤으로 극단 분열된 캠피 사례 | 07-15
-- GAME-008 | Outer Wilds (2019, Mobius Digital / Annapurna Interactive) | "지식이 유일한 진행도"인 타임루프 탐험 - 루프+티저 결합의 정점 | 07-15
-- GAME-009 | Hades (2020, Supergiant Games) | "죽음 = 서사 진행"으로 반복을 보상으로 바꾼 내러티브 로그라이크의 정점 | 07-15
-- GAME-010 | Suck Up! (2023, Proxima Enterprises) | AI 설득이 코어 루프인 첫 바이럴 사례 - 화제성 입증, 유지 실패 | 07-15
-- GAME-012 | Borderlands 2 (2012, Gearbox / 2K) | 유머를 캐릭터(악당)에 집중시켜 3,000만 장을 판 캠피 톤의 상업적 정점 | 07-15
-- GENRE-002 | 루프 내러티브 (Loop Narrative) | 반복 구조 자체가 이야기를 전달하는 수단이 되는 군집 | 07-15
-- GENRE-004 | 코미디 슈터 (Comedy Shooter) | 견고한 슈팅 루프 위에 캠피 유머를 얹은 군집 | 07-15
-- GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | 07-14
-- SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [미반영]  | 07-14
+- ELEM-011 | 07-21
+- ELEM-012 | 07-21
+- GAME-014 | 07-21
+- GAME-015 | 07-21
+- GAME-016 | 07-21
+- GAME-017 | 07-21
+- GENRE-005 | 07-21
+- ELEM-005 | 07-20
+- GAME-011 | 07-20
+- GAME-013 | 07-20
+- GENRE-001 | 07-20
+- GENRE-003 | 07-20
+- SIGNAL-2026-07-20_ai_native_signals | 07-20
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-15
@@ -80,5 +57,5 @@
 - GAME-017 | Assassin's Creed Valhalla (2020, Ubisoft) | 출시 직후 흥행·평단 모두 좋은 성적을 냈지만, 지도 아이콘과 플레이 시간 과잉으로 '체크리스트형 오픈월드 피로'의 대표 사례로 자주 인용되는 작품 | #action-rpg #open-world #ubisoft #map-icons #divisive #cautionary | 07-21
 
 ## ④ 신호
-- SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [미반영]  |  | 07-14
-- SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)]  |  | 07-20
+- SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [미반영] Steam 신작 태그 검색, r/Games 주간 스레드 |  | 07-14
+- SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)] Steam 리뷰 집계(games-stats.com 경유), inZOI 공식 Steam 뉴스 'Fundamentals First & 2026 Roadmap', SteamDB 패치노트, 팬사이트 simscommunity.info, SteamDB/Tom's Hardware AI 태그 집계 보도, Frisson Labs 블로그 |  | 07-20

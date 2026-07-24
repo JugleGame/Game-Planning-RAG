@@ -24,18 +24,17 @@ import tomllib
 import psycopg2
 import psycopg2.extras
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from _db import resolve_dsn
-
 BASE = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+sys.path.insert(0, str(BASE))
+from _db import resolve_dsn
+from card_schema import CARD_REQUIRED, DIGEST_REQUIRED
+
 RESEARCH = BASE / "research"
 
 FM_PAT = re.compile(r"^\+\+\+\s*\n(.*?)\n\+\+\+\s*\n(.*)$", re.S)
 ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE)-\d{3}\b")
 DATE_PREFIX = re.compile(r"^(\d{4}-\d{2}-\d{2})_")
-
-CARD_REQUIRED = ("card_id", "type", "title", "summary", "updated", "confidence")
-DIGEST_REQUIRED = ("period", "sources", "status")
 
 
 def parse_date(v):

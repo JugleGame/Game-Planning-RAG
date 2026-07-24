@@ -11,18 +11,14 @@ tomllib는 Python 3.11+ 표준 내장(읽기 전용)이라 별도 설치 불필�
 import sys, re, argparse, pathlib, datetime
 import tomllib   # Python 3.11+ 표준 내장. 3.10 이하면: pip install tomli 후 'import tomli as tomllib'
 
-REQUIRED = ["card_id", "type", "title", "summary", "tags", "updated", "confidence"]
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+from card_schema import CARD_REQUIRED as REQUIRED, DIGEST_REQUIRED, TYPE_VOCAB
+
 REQUIRED_SECTIONS = {
     "ELEM":  ["정의", "성공 사례", "실패 사례", "유저 반응 요약", "조합 궁합", "리스크"],
     "GAME":  ["한 줄 요약 + 판매·리뷰 수치", "사용한 요소", "성공/실패 원인", "우리 프로젝트 시사점"],
     "GENRE": ["구성 요소", "시장 포화도", "관례와 기대치", "빈칸"],
 }
-TYPE_VOCAB = {
-    "ELEM":  {"mechanic", "narrative-device", "tone", "tech"},
-    "GAME":  {"success", "failure", "mixed"},
-    "GENRE": {"genre"},
-}
-DIGEST_REQUIRED = ["type", "period", "sources", "status"]
 
 ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE)-\d{3}\b")
 METRIC = re.compile(r"\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?%|\d+(?:만|천억|억|천)\b|\d{4,}|\d{2,}(?:점|장|건|fps)")
@@ -138,7 +134,9 @@ def main():
     for card in a.cards:
         fm, body, errs = load_card(card)
         if fm is not None:
-            errs += check_frontmatter(fm) + check_numbers(body) + check_sections(fm.get("card_id", ""), body)
+            errs += check_frontmatter(fm) + check_numbers(body)
+        if str(fm.get("type", "")).strip() != "digest":
+            errs += check_sections(fm.get("card_id", ""), body)
             if index_ids:
                 errs += check_refs(fm, body, index_ids)
             if a.evidence:

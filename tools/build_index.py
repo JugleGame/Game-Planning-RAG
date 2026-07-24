@@ -4,6 +4,9 @@ import glob, os, sys, tomllib, datetime
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESEARCH = os.path.join(BASE, "research")
 
+sys.path.insert(0, BASE)
+from card_schema import CARD_REQUIRED, DIGEST_REQUIRED
+
 order = {"element": "① 요소", "genre": "② 장르", "game": "③ 게임", "signal": "④ 신호"}
 
 # card_id 접두어 → 카테고리. 접두어 길이가 제각각이므로 '-' 기준 분리로 매칭
@@ -13,10 +16,6 @@ PREFIX_MAP = {
     "GAME": "game",
     "SIGNAL": "signal",
 }
-
-# 카테고리별로 스키마가 다름: 카드(element/genre/game)와 signal(digest)은 필수 키가 다름
-CARD_REQUIRED = ("card_id", "title", "summary", "updated")
-DIGEST_REQUIRED = ("period_end", "status")
 
 def parse_date(v):
     if isinstance(v, datetime.date): return v
@@ -52,11 +51,13 @@ for path in glob.glob(os.path.join(RESEARCH, "**", "*.md"), recursive=True):
         if cat == "signal":
             for key in DIGEST_REQUIRED:
                 if key not in meta: raise KeyError(f"signal 필수 키 누락: {key}")
+            if "period_end" not in meta:  # 갱신일 계산에 쓰이지만 다른 스크립트는 요구하지 않는 build_index 전용 필드
+                raise KeyError("signal 필수 키 누락: period_end")
             # signal은 card_id/title/summary가 없으므로 인덱스 표시용으로 합성
             fname = os.path.splitext(os.path.basename(path))[0]  # 예: 2026-07-14_steam_trend
             meta["card_id"] = meta.get("card_id") or f"SIGNAL-{fname}"
-            meta["title"] = meta.get("title") or f"주간 관측 ({meta['period_at']} ~ {meta['period_end']})"
-            src = ", ".join(meta.get("source", []))
+            meta["title"] = meta.get("title") or f"주간 관측 ({meta.get('period_at', meta['period_end'])} ~ {meta['period_end']})"
+            src = ", ".join(meta.get("sources", []))
             meta["summary"] = meta.get("summary") or f"[{meta['status']}] {src}"
             meta["updated"] = parse_date(meta["period_end"])
         else:
