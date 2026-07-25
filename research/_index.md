@@ -1,5 +1,5 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-25 | 카드 43장
+생성: 2026-07-25 | 카드 44장
 
 ## 최근 7일 변경
 - ELEM-013 | 07-25
@@ -9,6 +9,7 @@
 - GENRE-006 | 07-25
 - GENRE-007 | 07-25
 - GENRE-008 | 07-25
+- SIGNAL-2026-07-25_genre_element_weekly | 07-25
 - ELEM-011 | 07-21
 - ELEM-012 | 07-21
 - GAME-014 | 07-21
@@ -73,3 +74,4 @@
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [미반영] Steam 신작 태그 검색, r/Games 주간 스레드 |  | 07-14
 - SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)] Steam 리뷰 집계(games-stats.com 경유), inZOI 공식 Steam 뉴스 'Fundamentals First & 2026 Roadmap', SteamDB 패치노트, 팬사이트 simscommunity.info, SteamDB/Tom's Hardware AI 태그 집계 보도, Frisson Labs 블로그 |  | 07-20
+- SIGNAL-2026-07-25_genre_element_weekly | 주간 관측 (2026-07-20 ~ 2026-07-25) | [미반영] GAMES.GG 7월 코지 출시 정리, Cozy Game Reviews 2026 Steam 코지 신작 집계, Outrun Gaming Wholesome Direct 2026 정리, simscommunity.info inZOI 개발일지 보도(07-04/07-17/07-24), Gaming.net·wasdland.com Steam 샌드박스/오픈월드 리스트 |  | 07-25
