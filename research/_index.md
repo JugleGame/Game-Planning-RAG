@@ -1,7 +1,12 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-24 | 카드 36장
+생성: 2026-07-25 | 카드 41장
 
 ## 최근 7일 변경
+- ELEM-013 | 07-25
+- GAME-018 | 07-25
+- GAME-019 | 07-25
+- GAME-020 | 07-25
+- GENRE-006 | 07-25
 - ELEM-011 | 07-21
 - ELEM-012 | 07-21
 - GAME-014 | 07-21
@@ -29,6 +34,7 @@
 - ELEM-010 | 클립 기반 바이럴리티 (Clip-driven virality) | 짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식 | #virality #clip #spectacle #expectation-mismatch | 07-16
 - ELEM-011 | 창발적 시스템 상호작용 (Emergent Systemic Interaction, "화학 엔진") | 불/물/바람 같은 기본 규칙 몇 개만 만들어두고, 그 규칙들이 서로 부딪히며 개발자도 예상 못한 해법이 나오게 하는 설계 | #exploration #physics #sandbox #open-world #high-cost | 07-21
 - ELEM-012 | 랜드마크 기반 탐험 (Landmark-based / Minimal-marker Exploration) | 지도 아이콘이나 화살표 대신, 멀리서도 보이는 지형지물로 '저기 가보고 싶다'는 마음을 이끌어내는 레벨 디자인 | #exploration #open-world #no-markers #level-design #divisive | 07-21
+- ELEM-013 | 도트 그래픽 아트 스타일 (Pixel Art Style) | 3D 모델링 없이 저해상도 픽셀 단위로 그래픽을 표현해 개발 비용과 파이프라인을 줄이는 시각 제작 방식 | #pixel-art #art-style #low-cost #indie #2d #nostalgia | 07-25
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -36,6 +42,7 @@
 - GENRE-003 | AI 네이티브 게임 (AI-native Games) | 실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 군집 | #ai-native #emerging #fragile #high-cost | 07-20
 - GENRE-004 | 코미디 슈터 (Comedy Shooter) | 견고한 슈팅 루프 위에 캠피 유머를 얹은 군집 | #fps #comedy #divisive | 07-15
 - GENRE-005 | 오픈월드 (Open World) | 정해진 경로 대신 넓게 이어진 하나의 세계를 자유롭게 돌아다니며 플레이어가 스스로 순서를 정하는 군집 | #open-world #exploration #sandbox #aaa #broad-appeal | 07-21
+- GENRE-006 | 도트 그래픽 2D 오픈월드/샌드박스 (Pixel-art 2D Open World / Sandbox) | 픽셀 아트로 표현된 2D 세계를 채굴·건설·경작 등 자유도 높은 방식으로 탐험하게 하는 군집 | #pixel #open-world #sandbox #2d #indie #exploration | 07-25
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-14
@@ -55,6 +62,9 @@
 - GAME-015 | The Legend of Zelda: Tears of the Kingdom (2023, Nintendo EPD) | 울트라핸드로 오브젝트 결합 자체를 탐험 도구로 만들어 창발적 시스템 상호작용을 한 단계 더 밀어붙인 후속작 | #action-adventure #open-world #physics #building #sequel #broad-appeal | 07-21
 - GAME-016 | Elden Ring (2022, FromSoftware / Bandai Namco) | 퀘스트 마커 없이 지형지물만으로 플레이어가 스스로 경로를 찾게 만들어 오픈월드 탐험 설계의 기준을 다시 세운 작품 | #action-rpg #open-world #exploration #no-markers #broad-appeal | 07-21
 - GAME-017 | Assassin's Creed Valhalla (2020, Ubisoft) | 출시 직후 흥행·평단 모두 좋은 성적을 냈지만, 지도 아이콘과 플레이 시간 과잉으로 '체크리스트형 오픈월드 피로'의 대표 사례로 자주 인용되는 작품 | #action-rpg #open-world #ubisoft #map-icons #divisive #cautionary | 07-21
+- GAME-018 | Terraria (2011, Re-Logic) | 도트 그래픽 채굴·건설 샌드박스로 2D 오픈월드의 상업적 정점을 찍은 원조격 작품 | #sandbox #open-world #pixel #crafting #solo-dev-origin #broad-appeal | 07-25
+- GAME-019 | Stardew Valley (2016, ConcernedApe / Chucklefish) | 1인 개발 도트 그래픽 농장 시뮬레이션으로 Steam 최고 평점 게임 자리까지 오른 오픈월드형 생활 시뮬레이터 | #farming-sim #open-world #pixel #solo-dev #broad-appeal | 07-25
+- GAME-020 | Core Keeper (2022 얼리액세스 / 2024 정식출시, Pugstorm / Fireshine Games) | 탑다운 도트 그래픽으로 Terraria식 샌드박스를 지하 채굴 중심으로 재구성한 최근 세대 사례 | #sandbox #survival #pixel #mining #early-access #co-op | 07-25
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [미반영] Steam 신작 태그 검색, r/Games 주간 스레드 |  | 07-14
