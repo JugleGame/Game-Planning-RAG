@@ -39,25 +39,28 @@ def _resolve_dsn() -> str:
     raise RuntimeError(".env 또는 환경변수에 DATABASE_URL이 없음")
 
 
-def query(sql: str) -> list[dict]:
-    """SQL을 443/HTTPS로 실행해 결과 행(dict 리스트)을 반환. 실패 시 RuntimeError."""
+def _run_bridge(args: list[str], stdin_text: str | None = None, timeout: int = 120) -> dict:
+    """브리지를 실행하고 JSON 응답(dict)을 돌려준다. 실패는 반드시 RuntimeError로 알린다."""
     dsn = _resolve_dsn()
     if not BRIDGE.exists():
         raise RuntimeError(f"브리지 스크립트를 찾을 수 없음: {BRIDGE} "
                            "(bridge 폴더에서 `npm install @neondatabase/serverless` 했는지 확인)")
     try:
         result = subprocess.run(
-            ["node", str(BRIDGE), sql],
-            capture_output=True, text=True, env={**os.environ, "DATABASE_URL": dsn},
-            timeout=30,
+            ["node", str(BRIDGE), *args],
+            input=stdin_text, capture_output=True, text=True,
+            # Windows 기본 코덱(cp949)으로는 한글 카드 본문을 디코딩하지 못한다.
+            # 브리지 입출력은 항상 UTF-8로 고정한다.
+            encoding="utf-8", errors="replace",
+            env={**os.environ, "DATABASE_URL": dsn}, timeout=timeout,
         )
     except FileNotFoundError:
         raise RuntimeError("node 실행 파일을 찾을 수 없음 - Node.js 설치 필요")
     except subprocess.TimeoutExpired:
-        raise RuntimeError("브리지 응답 시간 초과(30초)")
+        raise RuntimeError(f"브리지 응답 시간 초과({timeout}초)")
 
     out = result.stdout.strip()
-    # 실패를 '빈 결과'로 위장하지 않는다: stdout이 비었는데 exit≠0이면 즉시 알린다
+    # 실패를 '빈 결과'로 위장하지 않는다: stdout이 비었으면 즉시 알린다
     if not out:
         raise RuntimeError(
             f"브리지가 출력을 내지 않음 (exit {result.returncode}): "
@@ -68,10 +71,40 @@ def query(sql: str) -> list[dict]:
     except json.JSONDecodeError:
         raise RuntimeError(f"브리지 출력 파싱 실패: {out[:300]!r} / stderr: {result.stderr.strip()[:300]!r}")
     if "error" in payload:
-        raise RuntimeError(f"Neon HTTPS 질의 실패: {payload['error']}")
+        raise RuntimeError(f"Neon HTTPS 실패: {payload['error']}")
+    return payload
+
+
+def query(sql: str, params: list | None = None) -> list[dict]:
+    """SQL 한 건을 443/HTTPS로 실행해 결과 행(dict 리스트)을 반환.
+
+    파라미터는 psycopg2의 %s가 아니라 Postgres 네이티브 $1,$2… 자리표시자를 쓴다.
+    """
+    args = [sql]
+    if params:
+        args.append(json.dumps(params, default=str))
+    payload = _run_bridge(args, timeout=30)
     if "rows" not in payload:
         raise RuntimeError(f"브리지 응답에 rows 키가 없음: {str(payload)[:300]}")
     return payload["rows"]
+
+
+def transaction(statements: list[tuple[str, list]]) -> list[dict]:
+    """(sql, params) 목록을 **하나의 트랜잭션**으로 실행한다.
+
+    한 건이라도 실패하면 전체가 롤백되고 RuntimeError가 난다.
+    반환값은 문 하나당 {"rowCount": n, "rows": [...]} 리스트.
+    """
+    payload = _run_bridge(
+        ["--batch"],
+        stdin_text=json.dumps(
+            {"statements": [{"sql": s, "params": p or []} for s, p in statements]},
+            default=str,
+        ),
+    )
+    if "results" not in payload:
+        raise RuntimeError(f"브리지 응답에 results 키가 없음: {str(payload)[:300]}")
+    return payload["results"]
 
 
 if __name__ == "__main__":

@@ -15,25 +15,79 @@ import hashlib, argparse, pathlib, sys
 import psycopg2
 from sentence_transformers import SentenceTransformer
 
+BASE = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from _db import resolve_dsn
+
+SELECT_SQL = "SELECT card_id, title, summary, body, body_hash FROM cards"
+UPDATE_SQL = "UPDATE cards SET embedding=$1::vector, body_hash=$2 WHERE card_id=$3"
+
 
 def body_hash(model_name: str, body: str) -> str:
     # 모델명을 지문에 섞음: 모델 바꾸면 모든 카드가 '변경'으로 잡혀 재계산됨
     return hashlib.sha256((model_name + "\n" + body).encode("utf-8")).hexdigest()
 
+
+def _https():
+    sys.path.insert(0, str(BASE / "db"))
+    import neon_https
+    return neon_https
+
+
+def fetch_pg(dsn):
+    conn = psycopg2.connect(dsn)
+    try:
+        cur = conn.cursor()
+        cur.execute(SELECT_SQL)
+        return cur.fetchall()
+    finally:
+        conn.close()
+
+
+def write_pg(dsn, updates):
+    conn = psycopg2.connect(dsn)
+    try:
+        cur = conn.cursor()
+        for vec, h, card_id in updates:
+            # psycopg2 경로는 $n을 못 쓰므로 %s로 바꿔 실행한다
+            cur.execute("UPDATE cards SET embedding=%s, body_hash=%s WHERE card_id=%s",
+                        (vec, h, card_id))
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dsn", default=None, help="생략 시 DATABASE_URL 환경변수 또는 .env 사용")
     ap.add_argument("--model", default="jhgan/ko-sroberta-multitask")  # 한국어 특화, 768차원
+    ap.add_argument("--transport", choices=["auto", "pg", "https"], default="auto",
+                    help="auto=5432 먼저 시도 후 실패 시 443/HTTPS 폴백 (기본값)")
     a = ap.parse_args()
     dsn = resolve_dsn(a.dsn)
 
-    model = SentenceTransformer(a.model)
-    conn = psycopg2.connect(dsn); cur = conn.cursor()
-    cur.execute("SELECT card_id, title, summary, body, body_hash FROM cards")
-    rows = cur.fetchall()
+    # 1) 현재 상태 읽기 (5432 -> 실패 시 HTTPS)
+    used = None
+    if a.transport in ("auto", "pg"):
+        try:
+            rows = fetch_pg(dsn)
+            used = "5432"
+        except psycopg2.OperationalError as e:
+            if a.transport == "pg":
+                raise
+            print(f"5432 접속 실패 -> 443/HTTPS 브리지로 폴백합니다 "
+                  f"({str(e).strip().splitlines()[0][:100]})", file=sys.stderr)
+            used = "443/HTTPS"
+    else:
+        used = "443/HTTPS"
+    if used == "443/HTTPS":
+        rows = [(r["card_id"], r["title"], r["summary"], r["body"], r["body_hash"])
+                for r in _https().query(SELECT_SQL)]
 
+    model = SentenceTransformer(a.model)
     todo = []
     for card_id, title, summary, body, old_hash in rows:
         # 임베딩 대상은 본문만이 아니라 title+summary+body의 합 - 짧은 요약도 검색에 잡히게
@@ -43,13 +97,18 @@ def main():
             todo.append((card_id, text, h))
 
     if not todo:
-        print("변경 없음 - 임베딩 갱신 생략"); return
-    print(f"임베딩 갱신 대상: {len(todo)}장")
+        print(f"[{used}] 변경 없음 - 임베딩 갱신 생략"); return
+    print(f"[{used}] 임베딩 갱신 대상: {len(todo)}장")
     vecs = model.encode([t for _, t, _ in todo], show_progress_bar=False, normalize_embeddings=True)
-    for (card_id, _, h), v in zip(todo, vecs):
-        cur.execute("UPDATE cards SET embedding=%s, body_hash=%s WHERE card_id=%s",
-                    (v.tolist(), h, card_id))
-    conn.commit()
+
+    # 2) 쓰기. pgvector는 '[0.1,0.2,…]' 문자열을 vector로 캐스팅해 받는다.
+    if used == "5432":
+        write_pg(dsn, [(v.tolist(), h, cid) for (cid, _, h), v in zip(todo, vecs)])
+    else:
+        _https().transaction([
+            (UPDATE_SQL, ["[" + ",".join(f"{x:.8f}" for x in v.tolist()) + "]", h, cid])
+            for (cid, _, h), v in zip(todo, vecs)
+        ])
     print(f"완료 - {len(todo)}장 좌표 저장")
 
 if __name__ == "__main__":

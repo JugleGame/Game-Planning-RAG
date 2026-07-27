@@ -113,74 +113,122 @@ def collect():
     return card_rows, digest_rows, errors
 
 
-def sync(conn, card_rows, digest_rows, dry_run=False):
-    cur = conn.cursor()
+CARD_UPSERT = """
+INSERT INTO cards (card_id, type, title, summary, tags, elements, genres,
+                    updated, confidence, body, file_path)
+VALUES ($1, $2, $3, $4, $5::text[], $6::text[], $7::text[], $8::date, $9, $10, $11)
+ON CONFLICT (card_id) DO UPDATE SET
+  type=EXCLUDED.type, title=EXCLUDED.title, summary=EXCLUDED.summary,
+  tags=EXCLUDED.tags, elements=EXCLUDED.elements, genres=EXCLUDED.genres,
+  updated=EXCLUDED.updated, confidence=EXCLUDED.confidence, body=EXCLUDED.body,
+  file_path=EXCLUDED.file_path
+"""
+
+DIGEST_UPSERT = """
+INSERT INTO digests (digest_date, period, sources, status, body)
+VALUES ($1::date, $2, $3::text[], $4, $5)
+ON CONFLICT (digest_date) DO UPDATE SET
+  period=EXCLUDED.period, sources=EXCLUDED.sources, status=EXCLUDED.status, body=EXCLUDED.body
+"""
+
+
+def build_plan(card_rows, digest_rows):
+    """실행 계획 [(sql, params, tag)]를 만든다 - 백엔드 중립.
+
+    자리표시자는 Postgres 네이티브 $1,$2… 를 쓴다. psycopg2로 실행할 때만 %s로 바꾼다
+    (각 $n은 문 안에서 정확히 한 번, 오름차순으로만 등장해야 한다).
+    tag가 붙은 문은 실행 후 삭제 건수를 세기 위한 것이다.
+    """
+    plan = []
+    for c in card_rows:
+        plan.append((CARD_UPSERT, [c["card_id"], c["type"], c["title"], c["summary"],
+                                   c["tags"], c["elements"], c["genres"],
+                                   c["updated"], c["confidence"], c["body"], c["file_path"]], None))
+        plan.append(("DELETE FROM card_refs WHERE from_id = $1", [c["card_id"]], None))
+        for to_id in c["refs"]:
+            plan.append(("INSERT INTO card_refs (from_id, to_id) VALUES ($1, $2) "
+                         "ON CONFLICT DO NOTHING", [c["card_id"], to_id], None))
 
     live_card_ids = [c["card_id"] for c in card_rows]
-    for c in card_rows:
-        cur.execute(
-            """
-            INSERT INTO cards (card_id, type, title, summary, tags, elements, genres,
-                                updated, confidence, body, file_path)
-            VALUES (%(card_id)s, %(type)s, %(title)s, %(summary)s, %(tags)s, %(elements)s,
-                    %(genres)s, %(updated)s, %(confidence)s, %(body)s, %(file_path)s)
-            ON CONFLICT (card_id) DO UPDATE SET
-              type=EXCLUDED.type, title=EXCLUDED.title, summary=EXCLUDED.summary,
-              tags=EXCLUDED.tags, elements=EXCLUDED.elements, genres=EXCLUDED.genres,
-              updated=EXCLUDED.updated, confidence=EXCLUDED.confidence, body=EXCLUDED.body,
-              file_path=EXCLUDED.file_path
-            """,
-            c,
-        )
-        cur.execute("DELETE FROM card_refs WHERE from_id = %s", (c["card_id"],))
-        if c["refs"]:
-            psycopg2.extras.execute_values(
-                cur,
-                "INSERT INTO card_refs (from_id, to_id) VALUES %s ON CONFLICT DO NOTHING",
-                [(c["card_id"], to_id) for to_id in c["refs"]],
-            )
-
-    deleted_cards = 0
     if live_card_ids:
-        cur.execute("DELETE FROM cards WHERE card_id != ALL(%s) RETURNING card_id", (live_card_ids,))
+        plan.append(("DELETE FROM cards WHERE card_id != ALL($1::text[]) RETURNING card_id",
+                     [live_card_ids], "deleted_cards"))
     else:
-        cur.execute("DELETE FROM cards RETURNING card_id")
-    deleted_cards = cur.rowcount
+        plan.append(("DELETE FROM cards RETURNING card_id", [], "deleted_cards"))
 
-    live_digest_dates = [d["digest_date"] for d in digest_rows]
     seen = set()
     for d in digest_rows:
         if d["digest_date"] in seen:
             raise ValueError(f"digest_date 충돌: {d['digest_date']} 이 둘 이상의 signal 파일에서 나옴")
         seen.add(d["digest_date"])
-        cur.execute(
-            """
-            INSERT INTO digests (digest_date, period, sources, status, body)
-            VALUES (%(digest_date)s, %(period)s, %(sources)s, %(status)s, %(body)s)
-            ON CONFLICT (digest_date) DO UPDATE SET
-              period=EXCLUDED.period, sources=EXCLUDED.sources, status=EXCLUDED.status, body=EXCLUDED.body
-            """,
-            d,
-        )
+        plan.append((DIGEST_UPSERT, [d["digest_date"], d["period"], d["sources"],
+                                     d["status"], d["body"]], None))
 
+    live_digest_dates = [d["digest_date"] for d in digest_rows]
     if live_digest_dates:
-        cur.execute("DELETE FROM digests WHERE digest_date != ALL(%s) RETURNING digest_date", (live_digest_dates,))
+        plan.append(("DELETE FROM digests WHERE digest_date != ALL($1::date[]) RETURNING digest_date",
+                     [live_digest_dates], "deleted_digests"))
     else:
-        cur.execute("DELETE FROM digests RETURNING digest_date")
-    deleted_digests = cur.rowcount
+        plan.append(("DELETE FROM digests RETURNING digest_date", [], "deleted_digests"))
+    return plan
+
+
+def _to_pyformat(sql: str) -> str:
+    """$1,$2… -> %s (psycopg2용). 파라미터는 이미 순서대로 들어 있다."""
+    return re.sub(r"\$\d+", "%s", sql)
+
+
+def execute_pg(dsn, plan, dry_run=False):
+    """psycopg2(5432)로 계획을 한 트랜잭션에 실행한다."""
+    counts = {}
+    conn = psycopg2.connect(dsn)
+    try:
+        cur = conn.cursor()
+        for sql, params, tag in plan:
+            cur.execute(_to_pyformat(sql), params)
+            if tag:
+                counts[tag] = cur.rowcount
+        conn.rollback() if dry_run else conn.commit()
+        cur.close()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+    return counts
+
+
+def execute_https(plan, dry_run=False):
+    """5432가 막힌 환경에서 443/HTTPS 브리지로 계획을 한 트랜잭션에 실행한다.
+
+    HTTP 경로는 대화형 트랜잭션을 열어둘 수 없어 '실행 후 롤백'이 불가능하다.
+    따라서 --dry-run은 아무것도 실행하지 않고, 삭제 예정 건수만 조회해 보고한다.
+    """
+    sys.path.insert(0, str(BASE / "db"))
+    from neon_https import query as https_query, transaction as https_transaction
 
     if dry_run:
-        conn.rollback()
-    else:
-        conn.commit()
-    cur.close()
-    return deleted_cards, deleted_digests
+        live_cards = {c for s, p, t in plan if t == "deleted_cards" for c in (p[0] if p else [])}
+        live_dates = {str(d) for s, p, t in plan if t == "deleted_digests" for d in (p[0] if p else [])}
+        db_cards = {r["card_id"] for r in https_query("SELECT card_id FROM cards")}
+        db_dates = {str(r["d"])[:10] for r in https_query("SELECT digest_date::text AS d FROM digests")}
+        return {"deleted_cards": len(db_cards - live_cards),
+                "deleted_digests": len(db_dates - live_dates)}
+
+    results = https_transaction([(sql, params) for sql, params, _ in plan])
+    counts = {}
+    for (sql, params, tag), res in zip(plan, results):
+        if tag:
+            counts[tag] = res.get("rowCount") or len(res.get("rows") or [])
+    return counts
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dsn", default=None)
     ap.add_argument("--dry-run", action="store_true", help="DB에 커밋하지 않고 계획만 확인")
+    ap.add_argument("--transport", choices=["auto", "pg", "https"], default="auto",
+                    help="auto=5432 먼저 시도 후 실패 시 443/HTTPS 폴백 (기본값)")
     a = ap.parse_args()
     dsn = resolve_dsn(a.dsn)
 
@@ -190,19 +238,40 @@ def main():
         for rel, msg in errors:
             print(f"  - {rel}: {msg}", file=sys.stderr)
 
-    conn = psycopg2.connect(dsn)
     try:
-        deleted_cards, deleted_digests = sync(conn, card_rows, digest_rows, dry_run=a.dry_run)
-    except Exception as e:
-        conn.rollback()
-        print(f"동기화 실패, 롤백함: {e}", file=sys.stderr)
+        plan = build_plan(card_rows, digest_rows)
+    except ValueError as e:
+        print(f"계획 생성 실패: {e}", file=sys.stderr)
         sys.exit(1)
-    finally:
-        conn.close()
 
-    mode = "[DRY-RUN, 롤백됨] " if a.dry_run else ""
-    print(f"{mode}cards upsert {len(card_rows)}장 (삭제 {deleted_cards}장) | "
-          f"digests upsert {len(digest_rows)}건 (삭제 {deleted_digests}건)")
+    used = None
+    try:
+        if a.transport in ("auto", "pg"):
+            try:
+                counts = execute_pg(dsn, plan, dry_run=a.dry_run)
+                used = "5432"
+            except psycopg2.OperationalError as e:
+                if a.transport == "pg":
+                    raise
+                first = str(e).strip().splitlines()[0][:120]
+                print(f"5432 접속 실패 -> 443/HTTPS 브리지로 폴백합니다 ({first})", file=sys.stderr)
+                counts = execute_https(plan, dry_run=a.dry_run)
+                used = "443/HTTPS"
+        else:
+            counts = execute_https(plan, dry_run=a.dry_run)
+            used = "443/HTTPS"
+    except Exception as e:
+        print(f"동기화 실패(롤백됨): {e}", file=sys.stderr)
+        sys.exit(1)
+
+    if a.dry_run:
+        mode = "[DRY-RUN, 롤백됨] " if used == "5432" else "[DRY-RUN, 실행 안 함] "
+    else:
+        mode = ""
+    print(f"{mode}[{used}] cards upsert {len(card_rows)}장 "
+          f"(삭제 {counts.get('deleted_cards', 0)}장) | "
+          f"digests upsert {len(digest_rows)}건 "
+          f"(삭제 {counts.get('deleted_digests', 0)}건)")
     if errors:
         sys.exit(1)
 
