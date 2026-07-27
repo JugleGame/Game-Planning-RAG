@@ -6,7 +6,7 @@ summary = "실패 상태 없이 낮은 긴장으로 일상 루틴(농사·꾸미
 elements = ["ELEM-008", "ELEM-013"]
 example_games = ["GAME-019"]
 tags = ["cozy", "life-sim", "low-stress", "no-fail", "farming", "broad-appeal"]
-updated = "2026-07-25"
+updated = "2026-07-27"
 confidence = "medium"
 +++
 ## 구성 요소
@@ -20,6 +20,9 @@ confidence = "medium"
 - 신작의 62%가 농사/집 꾸미기 중심의 유사 루프를 따른다는 분석이 있어, 수요 성장과 내용 동질화가 동시에 진행 중 [출처: Intel Market Research, 2026-07 확인].
 - "또 농사 시뮬 + X" 식 클론(Coral Island, Sun Haven 등 나열)에 대한 피로가 커뮤니티에서 반복 제기됨 [출처: Crossplay(Medium) 기고, 2026-07 확인].
 - 군집 단일 대표작 GAME-019(Stardew Valley)만으로 5,000만 장 이상 [출처: GAME-019 카드].
+- 2026년 7월이 코지 게임 출시 밀집 구간으로 보도됨 - 퍼블리셔들이 여름을 "길고 느긋한 플레이 세션" 장르의 적기로 판단했고, 특히 고양이 테마 타이틀이 이례적으로 밀집했으며 고양이 콘텐츠가 참여도·SNS 공유에서 일관되게 우위라는 분석 [출처: GAMES.GG "July 2026 Cozy Game Launches", 2026-07 확인 / 다이제스트 2026-07-25].
+- 2026년 Steam 코지 신작은 7월 시점까지 43종으로 집계됨 - 집계 사이트 기준이며 공식 통계는 아님 [출처: Cozy Game Reviews, 2026-07 확인 / 다이제스트 2026-07-25].
+- [해석] 기존의 "신작 62%가 농사/꾸미기 루프" 관측에 더해 테마 단위(고양이) 쏠림까지 확인돼, 동질화가 루프 구조뿐 아니라 소재 층위에서도 함께 진행 중인 것으로 보인다.
 
 ## 관례와 기대치
 - 유저는 게임 오버 없음, 시간 압박 없음, 자기 속도 진행을 기본값으로 기대한다 [출처: Wikipedia "Cozy game"·Game Developer 기고 "The Calming Effect of Low Stakes Games", 2026-07 확인].

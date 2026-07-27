@@ -3,13 +3,17 @@
 
 ## 최근 7일 변경
 - ELEM-005 | 07-27
+- ELEM-010 | 07-27
 - ELEM-014 | 07-27
 - ELEM-015 | 07-27
 - ELEM-016 | 07-27
+- GAME-011 | 07-27
 - GAME-021 | 07-27
 - GAME-022 | 07-27
 - GAME-023 | 07-27
 - GENRE-003 | 07-27
+- GENRE-007 | 07-27
+- GENRE-008 | 07-27
 - GENRE-009 | 07-27
 - SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 07-27
 - ELEM-013 | 07-25
@@ -17,8 +21,6 @@
 - GAME-019 | 07-25
 - GAME-020 | 07-25
 - GENRE-006 | 07-25
-- GENRE-007 | 07-25
-- GENRE-008 | 07-25
 - SIGNAL-2026-07-25_genre_element_weekly | 07-25
 - ELEM-011 | 07-21
 - ELEM-012 | 07-21
@@ -27,7 +29,6 @@
 - GAME-016 | 07-21
 - GAME-017 | 07-21
 - GENRE-005 | 07-21
-- GAME-011 | 07-20
 - GAME-013 | 07-20
 - GENRE-001 | 07-20
 - SIGNAL-2026-07-20_ai_native_signals | 07-20
@@ -42,7 +43,7 @@
 - ELEM-007 | 선택 반응형 비-LLM 내러티브 (Choice-reactive, non-LLM narration) | AI가 아니라 개발자가 미리 써놓은 여러 갈래의 이야기 중 하나를 플레이어의 선택에 따라 보여주는 방식 | #narrative #branching #no-ai #illusion-of-choice | 07-16
 - ELEM-008 | 동반자 / 함께 플레이 가능한 캐릭터 (Companion / co-playable character) | 플레이어와 함께 게임을 하거나 곁에서 반응해주는 또 다른 캐릭터를 두는 방식 | #co-op #companion #AI-controversy #divisive | 07-16
 - ELEM-009 | 철학적 내러티브 로그라이트/로그라이크 (Philosophical narrative roguelite/roguelike) | 죽거나 다시 시작해도 이야기가 이어지는 구조에 삶과 죽음, 의미 같은 철학적 질문을 담는 방식 | #philosophy #roguelike #metafiction #conflicting-data | 07-16
-- ELEM-010 | 클립 기반 바이럴리티 (Clip-driven virality) | 짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식 | #virality #clip #spectacle #expectation-mismatch | 07-16
+- ELEM-010 | 클립 기반 바이럴리티 (Clip-driven virality) | 짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식 | #virality #clip #spectacle #expectation-mismatch | 07-27
 - ELEM-011 | 창발적 시스템 상호작용 (Emergent Systemic Interaction, "화학 엔진") | 불/물/바람 같은 기본 규칙 몇 개만 만들어두고, 그 규칙들이 서로 부딪히며 개발자도 예상 못한 해법이 나오게 하는 설계 | #exploration #physics #sandbox #open-world #high-cost | 07-21
 - ELEM-012 | 랜드마크 기반 탐험 (Landmark-based / Minimal-marker Exploration) | 지도 아이콘이나 화살표 대신, 멀리서도 보이는 지형지물로 '저기 가보고 싶다'는 마음을 이끌어내는 레벨 디자인 | #exploration #open-world #no-markers #level-design #divisive | 07-21
 - ELEM-013 | 도트 그래픽 아트 스타일 (Pixel Art Style) | 3D 모델링 없이 저해상도 픽셀 단위로 그래픽을 표현해 개발 비용과 파이프라인을 줄이는 시각 제작 방식 | #pixel-art #art-style #low-cost #indie #2d #nostalgia | 07-25
@@ -57,8 +58,8 @@
 - GENRE-004 | 코미디 슈터 (Comedy Shooter) | 견고한 슈팅 루프 위에 캠피 유머를 얹은 군집 | #fps #comedy #divisive | 07-15
 - GENRE-005 | 오픈월드 (Open World) | 정해진 경로 대신 넓게 이어진 하나의 세계를 자유롭게 돌아다니며 플레이어가 스스로 순서를 정하는 군집 | #open-world #exploration #sandbox #aaa #broad-appeal | 07-21
 - GENRE-006 | 도트 그래픽 2D 오픈월드/샌드박스 (Pixel-art 2D Open World / Sandbox) | 픽셀 아트로 표현된 2D 세계를 채굴·건설·경작 등 자유도 높은 방식으로 탐험하게 하는 군집 | #pixel #open-world #sandbox #2d #indie #exploration | 07-25
-- GENRE-007 | 코지 시뮬 (Cozy Sim) | 실패 상태 없이 낮은 긴장으로 일상 루틴(농사·꾸미기·수집)을 반복하게 하는 저스트레스 생활 시뮬 군집 | #cozy #life-sim #low-stress #no-fail #farming #broad-appeal | 07-25
-- GENRE-008 | 감정 서사 어드벤처 (Wholesome / Emotional Narrative Adventure) | 상실·이별·치유 같은 감정 아크를 짧고 완결된 모험으로 전달하는 것이 코어인 군집 | #wholesome #narrative #emotional #indie #short-form #niche-appeal | 07-25
+- GENRE-007 | 코지 시뮬 (Cozy Sim) | 실패 상태 없이 낮은 긴장으로 일상 루틴(농사·꾸미기·수집)을 반복하게 하는 저스트레스 생활 시뮬 군집 | #cozy #life-sim #low-stress #no-fail #farming #broad-appeal | 07-27
+- GENRE-008 | 감정 서사 어드벤처 (Wholesome / Emotional Narrative Adventure) | 상실·이별·치유 같은 감정 아크를 짧고 완결된 모험으로 전달하는 것이 코어인 군집 | #wholesome #narrative #emotional #indie #short-form #niche-appeal | 07-27
 - GENRE-009 | 다크 판타지 (Dark Fantasy) | 절망적이고 도덕적으로 모호한 세계관 위에 처벌적인 죽음·정신력 소모 순환을 얹어, 공포와 성취감을 동시에 주는 군집 | #dark-fantasy #grimdark #difficulty #horror #soulslike #aaa #indie | 07-27
 
 ## ③ 게임
@@ -72,7 +73,7 @@
 - GAME-008 | Outer Wilds (2019, Mobius Digital / Annapurna Interactive) | "지식이 유일한 진행도"인 타임루프 탐험 - 루프+티저 결합의 정점 | #time-loop #exploration #mystery #divisive #retention | 07-15
 - GAME-009 | Hades (2020, Supergiant Games) | "죽음 = 서사 진행"으로 반복을 보상으로 바꾼 내러티브 로그라이크의 정점 | #roguelike #narrative #retention #broad-appeal | 07-15
 - GAME-010 | Suck Up! (2023, Proxima Enterprises) | AI 설득이 코어 루프인 첫 바이럴 사례 - 화제성 입증, 유지 실패 | #ai-native #comedy #voice #viral-hook #fragile | 07-15
-- GAME-011 | inZOI (2025 얼리액세스, inZOI Studio / KRAFTON) | AI NPC를 탑재한 첫 대형 타이틀 - 판매 성공, 유지·성능·여론 3중 과제 | #life-sim #ai-native #aaa #high-cost #divisive | 07-20
+- GAME-011 | inZOI (2025 얼리액세스, inZOI Studio / KRAFTON) | AI NPC를 탑재한 첫 대형 타이틀 - 판매 성공, 유지·성능·여론 3중 과제 | #life-sim #ai-native #aaa #high-cost #divisive | 07-27
 - GAME-012 | Borderlands 2 (2012, Gearbox / 2K) | 유머를 캐릭터(악당)에 집중시켜 3,000만 장을 판 캠피 톤의 상업적 정점 | #fps #looter-shooter #comedy #broad-appeal | 07-15
 - GAME-013 | The Stanley Parable (2013, Galactic Cafe) / Ultra Deluxe (2022, Crows Crows Crows) | 실시간으로 플레이어의 선택에 말을 거는 내레이터로 '선택의 환상'을 다룬 메타 내러티브의 원형 | #walking-sim #narrative #meta #indie #comedy #broad-appeal | 07-20
 - GAME-014 | The Legend of Zelda: Breath of the Wild (2017, Nintendo EPD) | "화학 엔진"으로 세계의 모든 요소가 서로 반응하게 만들어 오픈월드 탐험의 기준을 새로 쓴 작품 | #action-adventure #open-world #physics #exploration #broad-appeal | 07-21
@@ -89,5 +90,5 @@
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
 - SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)] Steam 리뷰 집계(games-stats.com 경유), inZOI 공식 Steam 뉴스 'Fundamentals First & 2026 Roadmap', SteamDB 패치노트, 팬사이트 simscommunity.info, SteamDB/Tom's Hardware AI 태그 집계 보도, Frisson Labs 블로그 |  | 07-20
-- SIGNAL-2026-07-25_genre_element_weekly | 주간 관측 (2026-07-20 ~ 2026-07-25) | [미반영] GAMES.GG 7월 코지 출시 정리, Cozy Game Reviews 2026 Steam 코지 신작 집계, Outrun Gaming Wholesome Direct 2026 정리, simscommunity.info inZOI 개발일지 보도(07-04/07-17/07-24), Gaming.net·wasdland.com Steam 샌드박스/오픈월드 리스트 |  | 07-25
+- SIGNAL-2026-07-25_genre_element_weekly | 주간 관측 (2026-07-20 ~ 2026-07-25) | [반영(2026-07-27)] GAMES.GG 7월 코지 출시 정리, Cozy Game Reviews 2026 Steam 코지 신작 집계, Outrun Gaming Wholesome Direct 2026 정리, simscommunity.info inZOI 개발일지 보도(07-04/07-17/07-24), Gaming.net·wasdland.com Steam 샌드박스/오픈월드 리스트 |  | 07-25
 - SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 주간 관측 (2026-07-20 ~ 2026-07-27) | [반영(2026-07-27)] Diablo IV 공식 패치노트(Blizzard News/Forums), Dexerto/Tech4Gamers 등 유출 보도, RPG Site/Worthplaying(Darkest Dungeon DLC 보도), TechTimes/GameGrin(다크 판타지 신작 집계), NVIDIA GeForce News/PCGamer(AI NPC 기술), 웹 검색 종합 |  | 07-27

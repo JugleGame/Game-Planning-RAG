@@ -4,7 +4,7 @@ type = "mechanic"
 title = "클립 기반 바이럴리티 (Clip-driven virality)"
 summary = "짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식"
 tags = ["virality", "clip", "spectacle", "expectation-mismatch"]
-updated = "2026-07-16"
+updated = "2026-07-27"
 confidence = "medium-low"   # 조합 궁합 근거 없음 + 판매량 근거가 단일 출처에만 의존
 +++
 ## 정의
@@ -22,6 +22,7 @@ confidence = "medium-low"   # 조합 궁합 근거 없음 + 판매량 근거가 
 ## 유저 반응 요약
 - 선호: 즉시 공유하고 싶은 컨셉, 친구와 하면 재미있다 (MECCHA CHAMELEON) [출처: 조사 자료 유저 반응 요약]
 - 불호: 클립과 실제 플레이 사이의 기대 불일치 (MECCHA CHAMELEON) [출처: 조사 자료 유저 반응 요약]
+- 소재 단위 관측: 고양이 콘텐츠가 참여도·SNS 공유에서 일관되게 우위라는 분석이 보도됨 - 단일 매체의 분석이라 교차 확인이 필요함 [출처: GAMES.GG "July 2026 Cozy Game Launches", 2026-07 확인 / 다이제스트 2026-07-25].
 
 ## 조합 궁합
 <!-- No evidence: JSON 근거 자료에 ELEM-010과 다른 요소 간의 조합 관련 서술이 없음 -->

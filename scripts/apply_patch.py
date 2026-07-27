@@ -43,7 +43,9 @@ def apply_one(path, section, action, text):
     m = pat.search(src)
     if not m: return None, f"섹션 '## {section}' 없음"
     body = m.group(2).rstrip()
-    new_body = (body + "\n" + text + "\n") if action == "append" else ("\n" + text + "\n")
+    # 뒤에 다른 절이 이어지면 빈 줄 하나를 남겨 절 사이 간격을 보존한다
+    tail = "\n\n" if m.end(2) < len(src) else "\n"
+    new_body = (body + "\n" + text + tail) if action == "append" else ("\n" + text + tail)
     src = src[:m.start(2)] + new_body + src[m.end(2):]
     src = bump_field(src, "updated", datetime.date.today().isoformat())
     path.write_text(src, encoding="utf-8")

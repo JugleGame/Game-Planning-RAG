@@ -4,7 +4,7 @@ period = "2026-07-20 ~ 2026-07-25"
 period_at = "2026-07-20"
 period_end = "2026-07-25"
 sources = ["GAMES.GG 7월 코지 출시 정리", "Cozy Game Reviews 2026 Steam 코지 신작 집계", "Outrun Gaming Wholesome Direct 2026 정리", "simscommunity.info inZOI 개발일지 보도(07-04/07-17/07-24)", "Gaming.net·wasdland.com Steam 샌드박스/오픈월드 리스트"]
-status = "미반영"
+status = "반영(2026-07-27)"
 +++
 ## 기간 / 수집원
 2026-07-20 ~ 2026-07-25 / 웹 검색으로 게임 커뮤니티·업계 보도 확인.
