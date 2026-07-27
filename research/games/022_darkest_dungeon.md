@@ -1,10 +1,10 @@
 +++
-card_id = "GAME-019"
+card_id = "GAME-022"
 type = "mixed"
 title = "Darkest Dungeon (2016, Red Hook Studios)"
 summary = "스트레스·발작(Affliction) 시스템으로 다크 판타지 로그라이크에 심리적 공포를 결합했으나, 그 처벌적 설계 자체가 호불호를 가른 사례"
-genres = ["GENRE-006"]
-elements = ["ELEM-014", "ELEM-015"]
+genres = ["GENRE-009"]
+elements = ["ELEM-015", "ELEM-016"]
 tags = ["roguelike", "dark-fantasy", "stress-system", "punishing", "divisive", "indie"]
 updated = "2026-07-27"
 confidence = "medium"
@@ -14,8 +14,8 @@ confidence = "medium"
 Red Hook Studios가 2026-07-21, 정식 출시 10주년을 맞아 2020년 이후 6년 만의 첫 대형 DLC 'The Fire's Edge'(2026-08-18 PC/Mac/PS/Switch 출시, Xbox는 추후)를 발표 - 신규 히어로 2종(듀얼리스트·러너웨이), 신규 전투 메커닉 'Burn', 발작(derangement) 관련 신규 콘텐츠 포함 [출처: RPG Site/Worthplaying 보도, 2026-07-21 기준 / 다이제스트 2026-07-27].
 
 ## 사용한 요소
-- ELEM-014 (스트레스/광기 시스템) - 던전 탐험 중 히어로별 스트레스가 100에 도달하면 판정을 거쳐 이기적·비관적·편집증적 등 부정 상태이상을 확률적으로 얻음 [출처: Game Developer 디자인 분석 기사, 2026-07 확인].
-- ELEM-015 (그림다크 톤) - 몰락한 가문의 광기와 죄악을 배경으로 한 절망적 세계관이 스트레스 시스템의 설득력을 뒷받침함.
+- ELEM-015 (스트레스/광기 시스템) - 던전 탐험 중 히어로별 스트레스가 100에 도달하면 판정을 거쳐 이기적·비관적·편집증적 등 부정 상태이상을 확률적으로 얻음 [출처: Game Developer 디자인 분석 기사, 2026-07 확인].
+- ELEM-016 (그림다크 톤) - 몰락한 가문의 광기와 죄악을 배경으로 한 절망적 세계관이 스트레스 시스템의 설득력을 뒷받침함.
 - 조명(빛) 관리와 파티 대형(포지션) 전투를 스트레스 시스템과 결합해 "인간이 압박에 무너지는 방식"을 재현하려 함.
 
 ## 성공/실패 원인

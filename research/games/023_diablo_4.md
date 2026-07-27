@@ -1,10 +1,10 @@
 +++
-card_id = "GAME-020"
+card_id = "GAME-023"
 type = "mixed"
 title = "Diablo IV (2023, Blizzard Entertainment)"
 summary = "출시 직후 블리자드 역대 최고 흥행 기록을 세웠으나, 아이템화·엔드게임 설계에 대한 커뮤니티 반발이 이어진 다크 판타지 오픈월드 ARPG"
-genres = ["GENRE-006"]
-elements = ["ELEM-015"]
+genres = ["GENRE-009"]
+elements = ["ELEM-016"]
 tags = ["arpg", "dark-fantasy", "open-world", "live-service", "itemization", "divisive", "aaa"]
 updated = "2026-07-27"
 confidence = "medium"
@@ -13,9 +13,9 @@ confidence = "medium"
 2023년 6월 6일 출시. 출시 5일 만에 매출 6억 6,600만 달러를 돌파해 블리자드 역대 최고 흥행 기록을 세움 [출처: Activision Blizzard 공식 발표, 2023-06 기준]. Metacritic PC 88점, 반면 Metacritic 유저 스코어는 10점 만점에 2.2점으로 부정적 [출처: Metacritic, 2026-07 확인].
 
 ## 사용한 요소
-- ELEM-015 (그림다크 톤) - 시리즈 전통의 절망적·부패한 세계관을 오픈월드 규모로 확장. 다른 플레이어와 필드에서 마주치는 공유 월드 구조.
+- ELEM-016 (그림다크 톤) - 시리즈 전통의 절망적·부패한 세계관을 오픈월드 규모로 확장. 다른 플레이어와 필드에서 마주치는 공유 월드 구조.
 - 조건부 발동 어픽스를 가진 전설(Legendary)/특별(Unique) 아이템 기반 빌드 시스템, 시즌제 엔드게임 콘텐츠.
-<!-- 증거 부족: 죽음 순환(ELEM-013)·스트레스 시스템(ELEM-014)에 해당하는 메커닉은 이 작품에서 확인되지 않아 연결하지 않음 -->
+<!-- 증거 부족: 죽음 순환(ELEM-014)·스트레스 시스템(ELEM-015)에 해당하는 메커닉은 이 작품에서 확인되지 않아 연결하지 않음 -->
 
 ## 성공/실패 원인
 - [해석] 시리즈 전통의 어두운 톤과 오픈월드를 결합해 초기 화제성과 매출을 동시에 잡았다.
