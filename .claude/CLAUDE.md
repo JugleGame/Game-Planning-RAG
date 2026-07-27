@@ -14,7 +14,9 @@
 | 기존 카드 확인 | research/_index.md 먼저 → 필요한 카드 최대 2장 |
 | 카드 형식 오류 | templates/해당종류 1개 (전체 templates 열람 금지). 규칙 자체는 card_schema.py가 단일 소스 |
 | 여러 카드의 특정 절만 필요 (궁합, 빈칸 등) | tools/read_section.py <카드들> "<절 제목>" — 전체 열람 금지 |
-| 반례(실패·혼재 사례)·유사 카드 탐색 | `python tools/search_cards.py "<질문>"` — DB 미러 켜져 있을 때만, 본문 대신 검색 결과로 판단 |
+| 반례(실패·혼재 사례)·유사 카드 탐색 | `python tools/search_cards.py "<질문>"` — DB 미러 켜져 있을 때만, 본문 대신 검색 결과로 판단. 미러가 낡았으면 먼저 M단계부터 |
+| 카드 생성·삭제·ID 변경·다이제스트 반영 후 (M단계) | `python tools/build_index.py` → `tools/sync_db.py` → `tools/embed_cards.py` → `tools/verify_db.py` **이 순서로**. embed는 cards 테이블을 읽으므로 반드시 sync 다음 |
+| 미러링 결과 확인 | `verify_db.py`의 `unresolved_refs`가 0이 아니면 없는 ID를 참조하는 카드가 있다는 뜻 → md 원본을 고치고 재실행 |
 | 절 제목은 표준 사전의 문자열 그대로 | 변형 제목 발견 시 lint로 잡아 수정 (임의 추측 금지) |
 
 ## 읽기 규율 (토큰 예산)
@@ -22,3 +24,5 @@
 2. 카드 확인은 반드시 _index.md부터. 본문 열람은 작업당 최대 2장.
 3. research/ 하위 폴더를 통째로 여는 것 금지 (ls는 허용, cat 전체 금지).
 4. db/, bridge/, tools/*.py 소스는 DB 미러 계층 자체를 고치는 작업이 아니면 열지 않는다 (사용은 CLI 실행만으로 충분).
+5. md가 원본, DB는 거울이다. 거울에 손으로 INSERT/UPDATE 금지 — 쓰기는 sync_db.py만 한다. `tools/init_db.py`는 테이블을 DROP하므로 미러링 목적으로 실행 금지.
+6. 카드 파일을 건드렸으면 M단계까지 끝나야 작업 완료다. DB 접속 실패는 카드 작업의 실패가 아니므로, "카드 완료 / 미러링 실패(사유)"로 보고하고 넘어간다 — 조용히 넘기지 않는다.
