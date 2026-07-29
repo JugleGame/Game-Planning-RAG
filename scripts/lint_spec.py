@@ -9,6 +9,11 @@
 """
 import sys, re, json, tomllib, pathlib
 
+# 한국어 로케일 Windows 콘솔은 cp949 라서 아래 PASS/FAIL 기호를 인코딩하지 못하고
+# 결과를 한 줄도 보여주기 전에 죽는다.
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
+
 INDEX = pathlib.Path(__file__).resolve().parent.parent / "research" / "_index.md"
 
 # 규칙은 여기 적지 않는다 — Game-Developer-AI 의 strategic/specs.py 가 같은 판정을
