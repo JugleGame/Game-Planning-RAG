@@ -1,8 +1,17 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-29 | 카드 71장
+생성: 2026-07-29 | 카드 80장
 
 ## 최근 7일 변경
 - ARCH-001 | 07-29
+- ARCH-002 | 07-29
+- ARCH-003 | 07-29
+- ARCH-004 | 07-29
+- ARCH-005 | 07-29
+- ARCH-006 | 07-29
+- ARCH-007 | 07-29
+- ARCH-008 | 07-29
+- ARCH-009 | 07-29
+- ARCH-010 | 07-29
 - ELEM-004 | 07-29
 - ELEM-017 | 07-29
 - ELEM-018 | 07-29
@@ -123,3 +132,12 @@
 
 ## ⑤ 아키텍처
 - ARCH-001 | 이벤트 버스 (EventBus / Pub-Sub) | 시스템끼리 직접 부르지 않고, 가운데 방송국(EventBus)에 사건을 방송하면 듣고 싶은 쪽만 구독해서 반응하는 느슨한 연결 구조 | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-29
+- ARCH-002 | 씬 스트리밍 (Boot / World_Base / Chunk Additive 구조) | 게임을 한 덩어리 씬으로 만들지 않고 시작·상시·조각 세 종류로 쪼갠 뒤, 필요한 조각만 덧붙여 켜고 끄는 월드 구성 방식 | #scene #streaming #additive #open-world #core #unity #2d | 07-29
+- ARCH-003 | 청크 로더 (3x3 활성 규칙) | 플레이어가 선 칸을 중심으로 주변 3x3 청크만 켜두고, 벗어난 칸은 꺼서 넓은 세계를 일정한 비용으로 유지하는 로딩 관리자 | #streaming #chunk #world #performance #open-world #unity #2d | 07-29
+- ARCH-004 | 세이브 시스템 (JSON 직렬화) | 게임 상태를 사람이 읽을 수 있는 JSON 문서로 바꿔 플랫폼별 저장 경로에 안전하게 기록하고 되살리는 구조 | #save #persistence #json #core #unity #data | 07-29
+- ARCH-005 | NPC 상태머신 (Idle / Patrol / Talk) | NPC의 행동을 여러 개의 '상태'로 나누고 한 번에 하나만 켜지게 해서, 조건에 따라 상태를 갈아타는 방식으로 행동을 만드는 구조 | #npc #fsm #state-machine #ai-behavior #unity #2d | 07-29
+- ARCH-006 | 상호작용 (IInteractable 인터페이스 + Trigger) | 말 걸기·줍기·열기처럼 서로 다른 행동을 '상호작용할 수 있다'는 하나의 약속으로 묶어, 플레이어가 대상의 정체를 몰라도 다룰 수 있게 하는 구조 | #interaction #interface #trigger #player #unity #2d | 07-29
+- ARCH-007 | 해설자 파이프라인 (구독 → 반응 생성 → 로그) | AI 해설자가 게임 사건 방송을 듣고, 반응을 만들고, 반드시 한 줄 로그를 남기는 3단 처리 흐름 | #commentator #ai #pipeline #logging #core #unity | 07-29
+- ARCH-008 | 폴더·네이밍 규약 | 새 파일을 어디에 두고 무슨 이름을 붙일지 미리 정해두어, 사람과 AI가 매번 고민하거나 서로 다르게 놓는 일을 없애는 약속 | #convention #naming #folder #project-structure #unity #workflow | 07-29
+- ARCH-009 | 2D 물리 이동 (Rigidbody2D) | 캐릭터를 좌표로 순간이동시키지 않고 물리 엔진에 '이렇게 움직여 달라'고 부탁해서, 벽과 충돌이 제대로 동작하게 만드는 이동 방식 | #physics #rigidbody2d #movement #player #unity #2d | 07-29
+- ARCH-010 | 로그 규약 (QA 판정용) | 게임이 남기는 기록의 형식과 위치를 미리 못 박아, QA AI가 사람의 감각이 아니라 관찰 가능한 증거로 합격·불합격을 판정할 수 있게 하는 약속 | #logging #convention #qa #verification #observability #unity | 07-29
