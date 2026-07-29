@@ -13,8 +13,8 @@
     "cardIdPattern 은 앵커 없는 알맹이다 — 쓰는 쪽이 필요에 따라 \\b 나 ^$ 를",
     "붙인다. 층 B(UNITY-### 등) 카드를 추가하려면 여기 한 줄만 고치면 된다."
   ],
-  "version": 1,
-  "cardIdPattern": "(?:ELEM|GENRE|GAME)-\\d{3}",
+  "version": 2,
+  "cardIdPattern": "(?:ELEM|GENRE|GAME|ARCH)-\\d{3}",
   "requiredKeys": ["spec_id", "version", "blueprint_version", "refs"],
   "requiredSections": ["목표", "구현 범위", "제외 범위", "합격 기준"],
   "bannedWords": ["재미", "좋은", "좋아", "멋진", "자연스러", "적절", "재치"],
