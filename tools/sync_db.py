@@ -33,7 +33,7 @@ from card_schema import CARD_REQUIRED, DIGEST_REQUIRED
 RESEARCH = BASE / "research"
 
 FM_PAT = re.compile(r"^\+\+\+\s*\n(.*?)\n\+\+\+\s*\n(.*)$", re.S)
-ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE)-\d{3}\b")
+ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE|ARCH)-\d{3}\b")
 DATE_PREFIX = re.compile(r"^(\d{4}-\d{2}-\d{2})_")
 
 
@@ -88,7 +88,7 @@ def collect():
                 if missing:
                     raise ValueError(f"카드 필수 필드 누락: {missing}")
                 card_id = str(fm["card_id"])
-                if not re.match(r"^(ELEM|GAME|GENRE)-\d{3}$", card_id):
+                if not re.match(r"^(ELEM|GAME|GENRE|ARCH)-\d{3}$", card_id):
                     raise ValueError(f"card_id 형식 불일치: {card_id}")
 
                 refs = {r for r in ID_PAT.findall(body) if r != card_id}

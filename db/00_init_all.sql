@@ -8,7 +8,7 @@
 DROP TABLE IF EXISTS card_refs, digests, cards CASCADE;
 
 CREATE TABLE cards (
-  card_id    TEXT PRIMARY KEY CHECK (card_id ~ '^(ELEM|GAME|GENRE)-[0-9]{3}$'),
+  card_id    TEXT PRIMARY KEY CHECK (card_id ~ '^(ELEM|GAME|GENRE|ARCH)-[0-9]{3}$'),
   kind       TEXT GENERATED ALWAYS AS (split_part(card_id, '-', 1)) STORED,
   type       TEXT NOT NULL,
   title      TEXT NOT NULL,
@@ -23,7 +23,8 @@ CREATE TABLE cards (
   CONSTRAINT type_vocab CHECK (
     (split_part(card_id,'-',1)='ELEM'  AND type IN ('mechanic','narrative-device','tone','tech')) OR
     (split_part(card_id,'-',1)='GAME'  AND type IN ('success','failure','mixed')) OR
-    (split_part(card_id,'-',1)='GENRE' AND type = 'genre'))
+    (split_part(card_id,'-',1)='GENRE' AND type = 'genre') OR
+    (split_part(card_id,'-',1)='ARCH'  AND type IN ('pattern','structure','convention')))
 );
 CREATE TABLE card_refs (
   from_id TEXT NOT NULL REFERENCES cards(card_id) ON DELETE CASCADE,

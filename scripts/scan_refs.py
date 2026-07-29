@@ -4,7 +4,7 @@
 출력: 카드 작성이 필요한 ID 목록 (cron/Actions에 걸어 주 1회 알림용)
 """
 import re, argparse, pathlib
-ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE)-\d{3}\b")
+ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE|ARCH)-\d{3}\b")
 
 def main():
     ap = argparse.ArgumentParser()

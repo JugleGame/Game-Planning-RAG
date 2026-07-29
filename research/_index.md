@@ -1,7 +1,8 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-29 | 카드 70장
+생성: 2026-07-29 | 카드 71장
 
 ## 최근 7일 변경
+- ARCH-001 | 07-29
 - ELEM-004 | 07-29
 - ELEM-017 | 07-29
 - ELEM-018 | 07-29
@@ -119,3 +120,6 @@
 - SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)] Steam 리뷰 집계(games-stats.com 경유), inZOI 공식 Steam 뉴스 'Fundamentals First & 2026 Roadmap', SteamDB 패치노트, 팬사이트 simscommunity.info, SteamDB/Tom's Hardware AI 태그 집계 보도, Frisson Labs 블로그 |  | 07-20
 - SIGNAL-2026-07-25_genre_element_weekly | 주간 관측 (2026-07-20 ~ 2026-07-25) | [반영(2026-07-27)] GAMES.GG 7월 코지 출시 정리, Cozy Game Reviews 2026 Steam 코지 신작 집계, Outrun Gaming Wholesome Direct 2026 정리, simscommunity.info inZOI 개발일지 보도(07-04/07-17/07-24), Gaming.net·wasdland.com Steam 샌드박스/오픈월드 리스트 |  | 07-25
 - SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 주간 관측 (2026-07-20 ~ 2026-07-27) | [반영(2026-07-27)] Diablo IV 공식 패치노트(Blizzard News/Forums), Dexerto/Tech4Gamers 등 유출 보도, RPG Site/Worthplaying(Darkest Dungeon DLC 보도), TechTimes/GameGrin(다크 판타지 신작 집계), NVIDIA GeForce News/PCGamer(AI NPC 기술), 웹 검색 종합 |  | 07-27
+
+## ⑤ 아키텍처
+- ARCH-001 | 이벤트 버스 (EventBus / Pub-Sub) | 시스템끼리 직접 부르지 않고, 가운데 방송국(EventBus)에 사건을 방송하면 듣고 싶은 쪽만 구독해서 반응하는 느슨한 연결 구조 | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-29

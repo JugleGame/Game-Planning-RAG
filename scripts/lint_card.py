@@ -18,9 +18,10 @@ REQUIRED_SECTIONS = {
     "ELEM":  ["정의", "성공 사례", "실패 사례", "유저 반응 요약", "조합 궁합", "리스크"],
     "GAME":  ["한 줄 요약 + 판매·리뷰 수치", "사용한 요소", "성공/실패 원인", "우리 프로젝트 시사점"],
     "GENRE": ["구성 요소", "시장 포화도", "관례와 기대치", "빈칸"],
+    "ARCH":  ["문제", "구조", "핵심 규칙", "Unity 구현 절차", "안티패턴", "검증 방법", "조합 궁합"],
 }
 
-ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE)-\d{3}\b")
+ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE|ARCH)-\d{3}\b")
 METRIC = re.compile(r"\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?%|\d+(?:만|천억|억|천)\b|\d{4,}|\d{2,}(?:점|장|건|fps)")
 DATEISH = re.compile(r"^(?:19|20)\d{2}")
 

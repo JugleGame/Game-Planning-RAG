@@ -7,7 +7,7 @@ RESEARCH = os.path.join(BASE, "research")
 sys.path.insert(0, BASE)
 from card_schema import CARD_REQUIRED, DIGEST_REQUIRED
 
-order = {"element": "① 요소", "genre": "② 장르", "game": "③ 게임", "signal": "④ 신호"}
+order = {"element": "① 요소", "genre": "② 장르", "game": "③ 게임", "signal": "④ 신호", "arch": "⑤ 아키텍처"}
 
 # card_id 접두어 → 카테고리. 접두어 길이가 제각각이므로 '-' 기준 분리로 매칭
 PREFIX_MAP = {
@@ -15,6 +15,7 @@ PREFIX_MAP = {
     "GENRE": "genre",
     "GAME": "game",
     "SIGNAL": "signal",
+    "ARCH": "arch",
 }
 
 def parse_date(v):

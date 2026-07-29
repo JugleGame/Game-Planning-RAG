@@ -16,4 +16,5 @@ TYPE_VOCAB = {
     "ELEM":  {"mechanic", "narrative-device", "tone", "tech"},
     "GAME":  {"success", "failure", "mixed"},
     "GENRE": {"genre"},
+    "ARCH":  {"pattern", "structure", "convention"},
 }
