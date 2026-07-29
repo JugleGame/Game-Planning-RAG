@@ -1,7 +1,11 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-28 | 카드 59장
+생성: 2026-07-29 | 카드 63장
 
 ## 최근 7일 변경
+- ELEM-019 | 07-29
+- GAME-028 | 07-29
+- GAME-029 | 07-29
+- GENRE-011 | 07-29
 - ELEM-017 | 07-28
 - ELEM-018 | 07-28
 - GAME-024 | 07-28
@@ -29,13 +33,6 @@
 - GAME-020 | 07-25
 - GENRE-006 | 07-25
 - SIGNAL-2026-07-25_genre_element_weekly | 07-25
-- ELEM-011 | 07-21
-- ELEM-012 | 07-21
-- GAME-014 | 07-21
-- GAME-015 | 07-21
-- GAME-016 | 07-21
-- GAME-017 | 07-21
-- GENRE-005 | 07-21
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-15
@@ -56,6 +53,7 @@
 - ELEM-016 | 그림다크 톤 (Grimdark Aesthetic) | 도덕적으로 회색지대인 인물, 부패하고 무너져가는 세계, 희망이 옅은 절망적 분위기를 시각·서사 전반에 깔아두는 톤 | #dark-fantasy #grimdark #tone #narrative #atmosphere | 07-27
 - ELEM-017 | 가챠 확률 & 천장 시스템 (Gacha Probability & Pity System) | 확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치 | #gacha #monetization #randomness #live-service #mobile #regulation #divisive | 07-28
 - ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조 | #roguelike #randomness #draft #run-based #tower-defense #divisive | 07-28
+- ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조 | #loot #randomness #looter-shooter #arpg #retention #grind #transparency #divisive | 07-29
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -68,6 +66,7 @@
 - GENRE-008 | 감정 서사 어드벤처 (Wholesome / Emotional Narrative Adventure) | 상실·이별·치유 같은 감정 아크를 짧고 완결된 모험으로 전달하는 것이 코어인 군집 | #wholesome #narrative #emotional #indie #short-form #niche-appeal | 07-27
 - GENRE-009 | 다크 판타지 (Dark Fantasy) | 절망적이고 도덕적으로 모호한 세계관 위에 처벌적인 죽음·정신력 소모 순환을 얹어, 공포와 성취감을 동시에 주는 군집 | #dark-fantasy #grimdark #difficulty #horror #soulslike #aaa #indie | 07-27
 - GENRE-010 | 타워 디펜스 (Tower Defense) | 정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집 | #tower-defense #strategy #wave-based #roguelike-subgenre | 07-28
+- GENRE-011 | 루트 슈터 (Looter Shooter) | 총격 전투 위에 무작위로 굴려진 장비 파밍을 얹어, 더 좋은 총을 얻기 위해 같은 구간을 반복하게 만드는 것이 코어인 군집 | #looter-shooter #fps #loot #live-service #grind #aaa #divisive | 07-29
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-14
@@ -97,6 +96,8 @@
 - GAME-025 | 메이플스토리 - 큐브 확률조작 사건 (2003 출시, Nexon / 2024 공정위 제재) | 확률형 강화 아이템 '큐브'의 확률을 몰래 낮추고 알리지 않아 사상 최대 과징금을 받은 확률 신뢰 붕괴 사례 | #probability-item #mmorpg #regulation #trust-failure #korea #cautionary | 07-28
 - GAME-026 | Bloons TD 6 (2018, Ninja Kiwi) | 정해진 경로와 타워 업그레이드 트리 중심의 정통 타워 디펜스로 장르의 상업적 기준을 세운 작품 | #tower-defense #mobile #pc #broad-appeal #non-random | 07-28
 - GAME-027 | Rogue Tower (2022, Die of Death Games) | 무작위 갈래 경로와 400장 이상의 카드 드래프트로 로그라이크와 타워 디펜스를 결합한 인디작 | #tower-defense #roguelike #randomness #indie #divisive | 07-28
+- GAME-028 | Destiny 2 (2017, Bungie / Activision) | 무작위 퍼크 롤을 빼고 출시했다가 Forsaken 확장에서 되살려 플레이어 수를 3배로 끌어올렸지만, 매출 기대치는 채우지 못한 루트 슈터 | #looter-shooter #fps #live-service #random-rolls #divisive #aaa | 07-29
+- GAME-029 | Warframe (2013, Digital Extremes) | 규제가 강제하기 전에 전체 드롭 테이블을 자발적으로 공개해 확률 투명성을 브랜드로 만든 부분유료 루트 슈터 | #looter-shooter #free-to-play #transparency #drop-table #live-service #long-tail | 07-29
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
