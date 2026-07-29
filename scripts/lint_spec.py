@@ -7,16 +7,25 @@
   S4 필수 섹션: 목표/구현 범위/제외 범위/합격 기준
   S5 합격 기준 각 줄: 금지어 없음 + (숫자 또는 관찰 키워드) 포함
 """
-import sys, re, tomllib, pathlib
+import sys, re, json, tomllib, pathlib
 
 INDEX = pathlib.Path(__file__).resolve().parent.parent / "research" / "_index.md"
-REQUIRED_KEYS = ["spec_id", "version", "blueprint_version", "refs"]
-REQUIRED_SECTIONS = ["목표", "구현 범위", "제외 범위", "합격 기준"]
-BANNED = ["재미", "좋은", "좋아", "멋진", "자연스러", "적절", "재치"]
-OBSERVABLE = ["로그", "콘솔", "테스트", "씬", "파일", "커밋", "초", "개", "프레임", "%"]
+
+# 규칙은 여기 적지 않는다 — Game-Developer-AI 의 strategic/specs.py 가 같은 판정을
+# 내야 하는데, 저장소가 달라 임포트로 공유할 수 없다. 그래서 데이터로 공유하고
+# 두 사본이 같은지는 저쪽의 tests/test_spec_rules_sync.py 가 본다.
+RULES_PATH = pathlib.Path(__file__).resolve().parent / "spec_rules.json"
+RULES = json.loads(RULES_PATH.read_text(encoding="utf-8"))
+
+REQUIRED_KEYS = RULES["requiredKeys"]
+REQUIRED_SECTIONS = RULES["requiredSections"]
+BANNED = RULES["bannedWords"]
+OBSERVABLE = RULES["observableWords"]
+CARD_ID_RE = re.compile(RULES["cardIdPattern"])
 
 def known_ids():
-    return set(re.findall(r"(ELEM|GENRE|GAME)-\d{3}", INDEX.read_text(encoding="utf-8")))
+    """_index.md 에 실재하는 카드 ID 집합."""
+    return set(CARD_ID_RE.findall(INDEX.read_text(encoding="utf-8")))
 
 def lint(path: pathlib.Path):
     errs = []
@@ -34,11 +43,14 @@ def lint(path: pathlib.Path):
         if k not in meta:
             errs.append(f"S2: 필수 키 누락 — {k}")
 
-    ids = {f"{t}-{n}" for t, n in re.findall(r"(ELEM|GENRE|GAME)-(\d{3})", " ".join(meta.get("refs", [])))}
-    # known_ids()는 (접두어) 튜플만 주므로 원문에서 직접 대조
-    index_text = INDEX.read_text(encoding="utf-8")
+    # specs.py::lint_spec 의 S3 와 같은 순서로 본다 — 형식이 먼저, 실재가 다음.
+    # (예전에는 _index.md 원문에 대한 부분 문자열 검사라 형식이 깨진 ref 도
+    #  우연히 통과할 수 있었고, 두 검사기의 판정이 갈렸다.)
+    index_ids = known_ids()
     for ref in meta.get("refs", []):
-        if ref not in index_text:
+        if not CARD_ID_RE.fullmatch(ref):
+            errs.append(f"S3: 카드 ID 형식이 아님 — {ref}")
+        elif ref not in index_ids:
             errs.append(f"S3: 존재하지 않는 카드 인용 — {ref}")
 
     for sec in REQUIRED_SECTIONS:
