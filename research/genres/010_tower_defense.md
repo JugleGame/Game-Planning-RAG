@@ -6,7 +6,7 @@ summary = "정해진 경로로 오는 적 웨이브를 막기 위해 길목에 �
 elements = ["ELEM-004", "ELEM-018"]
 example_games = ["GAME-026", "GAME-027"]
 tags = ["tower-defense", "strategy", "wave-based", "roguelike-subgenre"]
-updated = "2026-07-28"
+updated = "2026-07-29"
 confidence = "medium"
 +++
 ## 구성 요소
@@ -40,3 +40,12 @@ confidence = "medium"
 - 확인 방법: Steam 태그 "Tower Defense"+"Roguelike" 교차 검색 후 개별 게임 상점 페이지·패치노트에서
   "pity"/"guaranteed" 키워드 확인
 - 확인일: 2026-07-28 / 재확인 주기: 분기 1회
+
+[해석] ★ 천장 외에 이미 다른 장르에서 검증된 대안도 타워 디펜스에는 아직 적용된 사례가 없다.
+GAME-030(Slay the Spire)의 데일리 클라임은 확률을 바꾸지 않고 전 플레이어에게 같은 시드(같은 무작위
+경로·카드 보상)를 공유해 "운 탓" 논란 자체를 없앤다 [출처: Slay the Spire Wiki 'Daily Climb' 문서,
+2026-07 확인]. 로그라이크 타워 디펜스에 같은 방식의 "일일 동일 지도·동일 드래프트" 모드를 두면
+GAME-027류의 불공평 불만을 천장보다 더 간단하게 해소할 수 있을 것으로 보인다.
+- 확인 방법: Steam 태그 "Tower Defense"+"Roguelike" 상위작의 패치노트·모드 목록에서
+  daily/seed/leaderboard 키워드 확인
+- 확인일: 2026-07-29 / 재확인 주기: 분기 1회

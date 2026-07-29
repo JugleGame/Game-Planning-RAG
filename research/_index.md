@@ -1,18 +1,26 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-29 | 카드 63장
+생성: 2026-07-29 | 카드 70장
 
 ## 최근 7일 변경
+- ELEM-004 | 07-29
+- ELEM-017 | 07-29
+- ELEM-018 | 07-29
 - ELEM-019 | 07-29
+- ELEM-020 | 07-29
+- ELEM-021 | 07-29
+- ELEM-022 | 07-29
+- GAME-027 | 07-29
 - GAME-028 | 07-29
 - GAME-029 | 07-29
+- GAME-030 | 07-29
+- GAME-031 | 07-29
+- GENRE-010 | 07-29
 - GENRE-011 | 07-29
-- ELEM-017 | 07-28
-- ELEM-018 | 07-28
+- GENRE-012 | 07-29
+- GENRE-013 | 07-29
 - GAME-024 | 07-28
 - GAME-025 | 07-28
 - GAME-026 | 07-28
-- GAME-027 | 07-28
-- GENRE-010 | 07-28
 - ELEM-005 | 07-27
 - ELEM-010 | 07-27
 - ELEM-014 | 07-27
@@ -38,7 +46,7 @@
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-15
 - ELEM-002 | 캠피 (B급/B-movie 유머, Campy) | 일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤 | #comedy #divisive #viral-hook #scriptable | 07-15
 - ELEM-003 | 제 4의 벽 붕괴 (Fourth Wall Breaking) | 게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치 | #meta #narrative #viral-hook #overuse-risk | 07-15
-- ELEM-004 | 반복 메커닉 (Loop Mechanic) | 같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조 | #retention #high-cost #puzzle #roguelike #divisive | 07-15
+- ELEM-004 | 반복 메커닉 (Loop Mechanic) | 같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조 | #retention #high-cost #puzzle #roguelike #divisive | 07-29
 - ELEM-005 | AI 통합 (AI Integration) | AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술 | #requires-ai #high-cost #viral-hook #fragile #divisive | 07-27
 - ELEM-006 | AI 기반 심문 (AI-driven interrogation) | 미리 쓴 대사가 아니라 실시간 생성 AI가 등장인물을 움직여 플레이어의 질문에 즉석으로 답하게 하는 방식 | #AI #dialogue #local-llm #divisive | 07-16
 - ELEM-007 | 선택 반응형 비-LLM 내러티브 (Choice-reactive, non-LLM narration) | AI가 아니라 개발자가 미리 써놓은 여러 갈래의 이야기 중 하나를 플레이어의 선택에 따라 보여주는 방식 | #narrative #branching #no-ai #illusion-of-choice | 07-16
@@ -51,9 +59,12 @@
 - ELEM-014 | 처벌적 죽음 순환 (Punishing Death Loop) | 죽으면 모아둔 자원을 잃고 정해진 지점에서 다시 시작하되, 죽은 자리로 돌아가면 한 번 더 되찾을 기회를 주는 긴장·반복 구조 | #difficulty #dark-fantasy #soulslike #retention #divisive | 07-27
 - ELEM-015 | 스트레스/광기 시스템 (Sanity / Stress Meter) | 캐릭터에게 정신적 압박(스트레스·공포·광기) 수치를 부여해, 임계치를 넘으면 환각·행동 이상 같은 부정적 상태를 발생시키는 방식 | #horror #dark-fantasy #psychological #punishing #divisive | 07-27
 - ELEM-016 | 그림다크 톤 (Grimdark Aesthetic) | 도덕적으로 회색지대인 인물, 부패하고 무너져가는 세계, 희망이 옅은 절망적 분위기를 시각·서사 전반에 깔아두는 톤 | #dark-fantasy #grimdark #tone #narrative #atmosphere | 07-27
-- ELEM-017 | 가챠 확률 & 천장 시스템 (Gacha Probability & Pity System) | 확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치 | #gacha #monetization #randomness #live-service #mobile #regulation #divisive | 07-28
-- ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조 | #roguelike #randomness #draft #run-based #tower-defense #divisive | 07-28
+- ELEM-017 | 가챠 확률 & 천장 시스템 (Gacha Probability & Pity System) | 확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치 | #gacha #monetization #randomness #live-service #mobile #regulation #divisive | 07-29
+- ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조 | #roguelike #randomness #draft #run-based #tower-defense #divisive | 07-29
 - ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조 | #loot #randomness #looter-shooter #arpg #retention #grind #transparency #divisive | 07-29
+- ELEM-020 | 덱 구축 (Deck-building) | 약한 시작 카드 묶음에서 출발해 플레이 도중 카드를 한 장씩 더하고 빼며 자기만의 덱을 만들어가는 구조 | #deckbuilder #roguelike #randomness #replayability #indie #strategy | 07-29
+- ELEM-021 | 친숙한 규칙 차용 (Familiar Ruleset Appropriation) | 포커·블랙잭처럼 이미 대부분이 아는 규칙을 게임의 바탕으로 그대로 빌려와, 가르치는 비용 없이 그 위에 새 시스템만 얹는 방식 | #onboarding #low-cost #indie #solo-dev #card-game #regulation #broad-appeal | 07-29
+- ELEM-022 | 지수적 점수 스케일링 (Exponential Scoring) | 개별 강화 효과들이 서로 곱해지고 중첩되게 만들어, 판이 진행될수록 점수가 선형이 아니라 폭발적으로 불어나게 하는 설계 | #scoring #power-fantasy #roguelike #numbers-go-up #combo #balance-risk | 07-29
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -65,8 +76,10 @@
 - GENRE-007 | 코지 시뮬 (Cozy Sim) | 실패 상태 없이 낮은 긴장으로 일상 루틴(농사·꾸미기·수집)을 반복하게 하는 저스트레스 생활 시뮬 군집 | #cozy #life-sim #low-stress #no-fail #farming #broad-appeal | 07-27
 - GENRE-008 | 감정 서사 어드벤처 (Wholesome / Emotional Narrative Adventure) | 상실·이별·치유 같은 감정 아크를 짧고 완결된 모험으로 전달하는 것이 코어인 군집 | #wholesome #narrative #emotional #indie #short-form #niche-appeal | 07-27
 - GENRE-009 | 다크 판타지 (Dark Fantasy) | 절망적이고 도덕적으로 모호한 세계관 위에 처벌적인 죽음·정신력 소모 순환을 얹어, 공포와 성취감을 동시에 주는 군집 | #dark-fantasy #grimdark #difficulty #horror #soulslike #aaa #indie | 07-27
-- GENRE-010 | 타워 디펜스 (Tower Defense) | 정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집 | #tower-defense #strategy #wave-based #roguelike-subgenre | 07-28
+- GENRE-010 | 타워 디펜스 (Tower Defense) | 정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집 | #tower-defense #strategy #wave-based #roguelike-subgenre | 07-29
 - GENRE-011 | 루트 슈터 (Looter Shooter) | 총격 전투 위에 무작위로 굴려진 장비 파밍을 얹어, 더 좋은 총을 얻기 위해 같은 구간을 반복하게 만드는 것이 코어인 군집 | #looter-shooter #fps #loot #live-service #grind #aaa #divisive | 07-29
+- GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집 | #roguelike #deckbuilder #randomness #indie #replayability #saturated | 07-29
+- GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 07-29
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-14
@@ -95,9 +108,11 @@
 - GAME-024 | Genshin Impact (2020, miHoYo/HoYoverse) | 소프트/하드 천장과 50/50 보장을 결합한 캐릭터 가챠로 역대 최고 매출 모바일 게임 중 하나가 된 오픈월드 액션 RPG | #gacha #open-world #action-rpg #live-service #mobile #broad-appeal | 07-28
 - GAME-025 | 메이플스토리 - 큐브 확률조작 사건 (2003 출시, Nexon / 2024 공정위 제재) | 확률형 강화 아이템 '큐브'의 확률을 몰래 낮추고 알리지 않아 사상 최대 과징금을 받은 확률 신뢰 붕괴 사례 | #probability-item #mmorpg #regulation #trust-failure #korea #cautionary | 07-28
 - GAME-026 | Bloons TD 6 (2018, Ninja Kiwi) | 정해진 경로와 타워 업그레이드 트리 중심의 정통 타워 디펜스로 장르의 상업적 기준을 세운 작품 | #tower-defense #mobile #pc #broad-appeal #non-random | 07-28
-- GAME-027 | Rogue Tower (2022, Die of Death Games) | 무작위 갈래 경로와 400장 이상의 카드 드래프트로 로그라이크와 타워 디펜스를 결합한 인디작 | #tower-defense #roguelike #randomness #indie #divisive | 07-28
+- GAME-027 | Rogue Tower (2022, Die of Death Games) | 무작위 갈래 경로와 400장 이상의 카드 드래프트로 로그라이크와 타워 디펜스를 결합한 인디작 | #tower-defense #roguelike #randomness #indie #divisive | 07-29
 - GAME-028 | Destiny 2 (2017, Bungie / Activision) | 무작위 퍼크 롤을 빼고 출시했다가 Forsaken 확장에서 되살려 플레이어 수를 3배로 끌어올렸지만, 매출 기대치는 채우지 못한 루트 슈터 | #looter-shooter #fps #live-service #random-rolls #divisive #aaa | 07-29
 - GAME-029 | Warframe (2013, Digital Extremes) | 규제가 강제하기 전에 전체 드롭 테이블을 자발적으로 공개해 확률 투명성을 브랜드로 만든 부분유료 루트 슈터 | #looter-shooter #free-to-play #transparency #drop-table #live-service #long-tail | 07-29
+- GAME-030 | Slay the Spire (2019, Mega Crit) | 전투마다 제시된 카드 중 하나만 골라 덱을 키워가는 구조로 로그라이크 덱빌더라는 군집 자체를 만들어낸 원형작 | #roguelike #deckbuilder #randomness #indie #replayability #broad-appeal | 07-29
+- GAME-031 | Balatro (2024, LocalThunk / Playstack) | 누구나 아는 포커 족보를 바탕으로 쓰고 그 위에 조커 조합을 얹어, 익명 1인 개발로 500만 장을 판 로그라이트 | #roguelite #deckbuilder #poker #solo-dev #indie #rating-controversy #broad-appeal | 07-29
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14

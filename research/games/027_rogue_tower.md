@@ -6,7 +6,7 @@ summary = "무작위 갈래 경로와 400장 이상의 카드 드래프트로 �
 genres = ["GENRE-010"]
 elements = ["ELEM-018"]
 tags = ["tower-defense", "roguelike", "randomness", "indie", "divisive"]
-updated = "2026-07-28"
+updated = "2026-07-29"
 confidence = "medium"
 +++
 ## 한 줄 요약 + 판매·리뷰 수치
@@ -29,3 +29,7 @@ confidence = "medium"
 ## 우리 프로젝트 시사점
 무작위 드래프트·경로를 쓸 때는 "최소 이 정도는 보장된다"는 하한선(천장)을 명시하지 않으면 ELEM-018
 같은 불공평 논란으로 이어지기 쉽다 [해석]. ELEM-017의 천장 개념을 참고할 만하다.
+다만 확률 자체를 손보는 천장 말고도 대안이 있다 - GAME-030(Slay the Spire)은 판마다 생성되는 시드를
+전 플레이어가 공유하는 데일리 모드로 "운 탓" 논란 자체를 없앴다 [출처: Slay the Spire Wiki 'Daily
+Climb' 문서, 2026-07 확인]. [해석] 이쪽이 확률 밸런스를 새로 짜지 않아도 되는 만큼 구현 부담이 더
+가벼울 수 있다.
