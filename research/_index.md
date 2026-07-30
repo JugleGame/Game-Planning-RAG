@@ -1,64 +1,67 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-30 | 카드 88장
+생성: 2026-07-30 | 카드 91장
 
 ## 최근 7일 변경
-- ARCH-011 | 07-30
+- ELEM-024 | 07-30
+- ELEM-025 | 07-30
+- ELEM-023 | 07-30
+- ELEM-026 | 07-30
+- GENRE-014 | 07-30
+- ARCH-014 | 07-30
 - ARCH-012 | 07-30
 - ARCH-013 | 07-30
-- ARCH-014 | 07-30
-- ELEM-023 | 07-30
-- GAME-032 | 07-30
+- ARCH-011 | 07-30
 - GAME-033 | 07-30
-- GENRE-014 | 07-30
-- ARCH-001 | 07-29
-- ARCH-002 | 07-29
-- ARCH-003 | 07-29
-- ARCH-004 | 07-29
-- ARCH-005 | 07-29
-- ARCH-006 | 07-29
-- ARCH-007 | 07-29
-- ARCH-008 | 07-29
-- ARCH-009 | 07-29
-- ARCH-010 | 07-29
-- ELEM-004 | 07-29
-- ELEM-017 | 07-29
+- GAME-032 | 07-30
 - ELEM-018 | 07-29
-- ELEM-019 | 07-29
 - ELEM-020 | 07-29
+- ELEM-019 | 07-29
+- ELEM-017 | 07-29
+- ELEM-004 | 07-29
 - ELEM-021 | 07-29
 - ELEM-022 | 07-29
-- GAME-027 | 07-29
-- GAME-028 | 07-29
-- GAME-029 | 07-29
-- GAME-030 | 07-29
-- GAME-031 | 07-29
 - GENRE-010 | 07-29
 - GENRE-011 | 07-29
 - GENRE-012 | 07-29
 - GENRE-013 | 07-29
+- ARCH-007 | 07-29
+- ARCH-002 | 07-29
+- ARCH-008 | 07-29
+- ARCH-006 | 07-29
+- ARCH-003 | 07-29
+- ARCH-004 | 07-29
+- ARCH-010 | 07-29
+- ARCH-005 | 07-29
+- ARCH-009 | 07-29
+- ARCH-001 | 07-29
+- GAME-028 | 07-29
+- GAME-029 | 07-29
+- GAME-030 | 07-29
+- GAME-031 | 07-29
+- GAME-027 | 07-29
+- GAME-026 | 07-28
 - GAME-024 | 07-28
 - GAME-025 | 07-28
-- GAME-026 | 07-28
-- ELEM-005 | 07-27
-- ELEM-010 | 07-27
+- ELEM-016 | 07-27
 - ELEM-014 | 07-27
 - ELEM-015 | 07-27
-- ELEM-016 | 07-27
-- GAME-011 | 07-27
-- GAME-021 | 07-27
-- GAME-022 | 07-27
-- GAME-023 | 07-27
-- GENRE-003 | 07-27
+- ELEM-005 | 07-27
+- ELEM-010 | 07-27
+- GENRE-009 | 07-27
 - GENRE-007 | 07-27
 - GENRE-008 | 07-27
-- GENRE-009 | 07-27
+- GENRE-003 | 07-27
 - SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 07-27
+- GAME-011 | 07-27
+- GAME-023 | 07-27
+- GAME-022 | 07-27
+- GAME-021 | 07-27
 - ELEM-013 | 07-25
-- GAME-018 | 07-25
-- GAME-019 | 07-25
-- GAME-020 | 07-25
 - GENRE-006 | 07-25
 - SIGNAL-2026-07-25_genre_element_weekly | 07-25
+- GAME-020 | 07-25
+- GAME-018 | 07-25
+- GAME-019 | 07-25
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-15
@@ -84,6 +87,9 @@
 - ELEM-021 | 친숙한 규칙 차용 (Familiar Ruleset Appropriation) | 포커·블랙잭처럼 이미 대부분이 아는 규칙을 게임의 바탕으로 그대로 빌려와, 가르치는 비용 없이 그 위에 새 시스템만 얹는 방식 | #onboarding #low-cost #indie #solo-dev #card-game #regulation #broad-appeal | 07-29
 - ELEM-022 | 지수적 점수 스케일링 (Exponential Scoring) | 개별 강화 효과들이 서로 곱해지고 중첩되게 만들어, 판이 진행될수록 점수가 선형이 아니라 폭발적으로 불어나게 하는 설계 | #scoring #power-fantasy #roguelike #numbers-go-up #combo #balance-risk | 07-29
 - ELEM-023 | 광원·시야 제한 (Light Source & Vision Limit) | 플레이어가 볼 수 있는 범위를 광원으로 좁혀두고 그 빛을 닳는 자원으로 만들어, '보는 것' 자체에 대가를 매기는 방식 | #horror #light #vision #resource #tension #divisive | 07-30
+- ELEM-024 | 광기 파생 액티브 전투 메커닉 (Derangement-driven Active Combat Mechanic) | 정신력 소모(광기·발작) 상태를 무작위 페널티로만 두지 않고, 플레이어가 의도적으로 유도·활용하는 전투 자원으로 바꾸는 설계 | #horror #dark-fantasy #psychological #punishing #emerging #divisive | 07-30
+- ELEM-025 | 온디바이스 SLM 실시간 음성 대화 NPC (On-device SLM Real-time Voice NPC) | 클라우드 서버 없이 플레이어의 기기 안에서 소형 언어모델이 바로 돌아가며 NPC가 실시간 음성으로 대화하게 만드는 기술 | #ai #voice #on-device #npc #requires-ai #high-cost #emerging | 07-30
+- ELEM-026 | 테마 쏠림형 바이럴 소재 선택 (Thematic Convergence for Shareability) | 장르나 시스템이 아니라 다루는 소재(동물 등)를 무엇으로 고르느냐가 입소문 확산 정도를 가르는 현상 - 고양이 테마가 대표 사례 | #virality #theme #cozy #cat #marketing #shareability | 07-30
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
