@@ -1,11 +1,15 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-30 | 카드 84장
+생성: 2026-07-30 | 카드 88장
 
 ## 최근 7일 변경
 - ARCH-011 | 07-30
 - ARCH-012 | 07-30
 - ARCH-013 | 07-30
 - ARCH-014 | 07-30
+- ELEM-023 | 07-30
+- GAME-032 | 07-30
+- GAME-033 | 07-30
+- GENRE-014 | 07-30
 - ARCH-001 | 07-29
 - ARCH-002 | 07-29
 - ARCH-003 | 07-29
@@ -79,6 +83,7 @@
 - ELEM-020 | 덱 구축 (Deck-building) | 약한 시작 카드 묶음에서 출발해 플레이 도중 카드를 한 장씩 더하고 빼며 자기만의 덱을 만들어가는 구조 | #deckbuilder #roguelike #randomness #replayability #indie #strategy | 07-29
 - ELEM-021 | 친숙한 규칙 차용 (Familiar Ruleset Appropriation) | 포커·블랙잭처럼 이미 대부분이 아는 규칙을 게임의 바탕으로 그대로 빌려와, 가르치는 비용 없이 그 위에 새 시스템만 얹는 방식 | #onboarding #low-cost #indie #solo-dev #card-game #regulation #broad-appeal | 07-29
 - ELEM-022 | 지수적 점수 스케일링 (Exponential Scoring) | 개별 강화 효과들이 서로 곱해지고 중첩되게 만들어, 판이 진행될수록 점수가 선형이 아니라 폭발적으로 불어나게 하는 설계 | #scoring #power-fantasy #roguelike #numbers-go-up #combo #balance-risk | 07-29
+- ELEM-023 | 광원·시야 제한 (Light Source & Vision Limit) | 플레이어가 볼 수 있는 범위를 광원으로 좁혀두고 그 빛을 닳는 자원으로 만들어, '보는 것' 자체에 대가를 매기는 방식 | #horror #light #vision #resource #tension #divisive | 07-30
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -94,6 +99,7 @@
 - GENRE-011 | 루트 슈터 (Looter Shooter) | 총격 전투 위에 무작위로 굴려진 장비 파밍을 얹어, 더 좋은 총을 얻기 위해 같은 구간을 반복하게 만드는 것이 코어인 군집 | #looter-shooter #fps #loot #live-service #grind #aaa #divisive | 07-29
 - GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집 | #roguelike #deckbuilder #randomness #indie #replayability #saturated | 07-29
 - GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 07-29
+- GENRE-014 | 횡스크롤 공포 (Side-scrolling Horror) | 카메라를 옆에서 따라가게 두고 화면 밖과 어둠을 공포의 재료로 삼는, 전투보다 회피와 숨기가 기본 동사인 군집 | #horror #side-scroller #puzzle-platformer #atmosphere #indie #narrow | 07-30
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-14
@@ -127,6 +133,8 @@
 - GAME-029 | Warframe (2013, Digital Extremes) | 규제가 강제하기 전에 전체 드롭 테이블을 자발적으로 공개해 확률 투명성을 브랜드로 만든 부분유료 루트 슈터 | #looter-shooter #free-to-play #transparency #drop-table #live-service #long-tail | 07-29
 - GAME-030 | Slay the Spire (2019, Mega Crit) | 전투마다 제시된 카드 중 하나만 골라 덱을 키워가는 구조로 로그라이크 덱빌더라는 군집 자체를 만들어낸 원형작 | #roguelike #deckbuilder #randomness #indie #replayability #broad-appeal | 07-29
 - GAME-031 | Balatro (2024, LocalThunk / Playstack) | 누구나 아는 포커 족보를 바탕으로 쓰고 그 위에 조커 조합을 얹어, 익명 1인 개발로 500만 장을 판 로그라이트 | #roguelite #deckbuilder #poker #solo-dev #indie #rating-controversy #broad-appeal | 07-29
+- GAME-032 | LIMBO (2010, Playdead) | 흑백 실루엣과 침묵만으로 공포를 만든 횡스크롤 퍼즐 플랫포머의 원형작 | #horror #side-scroller #puzzle-platformer #indie #atmosphere #monochrome | 07-30
+- GAME-033 | Little Nightmares III (2025, Supermassive Games / Bandai Namco) | 분위기는 그대로였지만 반복된 공식과 겉도는 신규 메커닉으로 시리즈 최저 평가를 받은 후속작 | #horror #side-scroller #sequel #divisive #formula-fatigue | 07-30
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
