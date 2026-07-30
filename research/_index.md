@@ -1,7 +1,11 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-29 | 카드 80장
+생성: 2026-07-30 | 카드 84장
 
 ## 최근 7일 변경
+- ARCH-011 | 07-30
+- ARCH-012 | 07-30
+- ARCH-013 | 07-30
+- ARCH-014 | 07-30
 - ARCH-001 | 07-29
 - ARCH-002 | 07-29
 - ARCH-003 | 07-29
@@ -141,3 +145,7 @@
 - ARCH-008 | 폴더·네이밍 규약 | 새 파일을 어디에 두고 무슨 이름을 붙일지 미리 정해두어, 사람과 AI가 매번 고민하거나 서로 다르게 놓는 일을 없애는 약속 | #convention #naming #folder #project-structure #unity #workflow | 07-29
 - ARCH-009 | 2D 물리 이동 (Rigidbody2D) | 캐릭터를 좌표로 순간이동시키지 않고 물리 엔진에 '이렇게 움직여 달라'고 부탁해서, 벽과 충돌이 제대로 동작하게 만드는 이동 방식 | #physics #rigidbody2d #movement #player #unity #2d | 07-29
 - ARCH-010 | 로그 규약 (QA 판정용) | 게임이 남기는 기록의 형식과 위치를 미리 못 박아, QA AI가 사람의 감각이 아니라 관찰 가능한 증거로 합격·불합격을 판정할 수 있게 하는 약속 | #logging #convention #qa #verification #observability #unity | 07-29
+- ARCH-011 | Boot 부트스트랩 & 매니저 수명 (DontDestroyOnLoad) | 게임이 켜질 때 딱 한 곳에서만 관리자들을 만들고, 그 관리자들만 씬이 바뀌어도 죽지 않게 남겨서 '누가 언제까지 살아 있는가'를 헷갈리지 않게 하는 방식 | #bootstrap #lifetime #manager #scene #core #unity | 07-30
+- ARCH-012 | Data/ 데이터 자산 규약 (ScriptableObject 테이블) | 아이템 능력치나 확률표 같은 설정값을 코드 안에 박아넣지 않고 프로젝트의 데이터 파일로 따로 빼서, 코드를 안 고치고도 수치를 바꿀 수 있게 하는 규칙 | #data #scriptableobject #convention #balance #unity #authoring | 07-30
+- ARCH-013 | 2D 카메라 추적 (Cinemachine 3 + 경계 제한 + 픽셀 퍼펙트) | 카메라를 캐릭터에 그냥 붙이지 않고 '따라가는 전용 부품'에 맡겨서, 부드럽게 쫓아가면서도 월드 밖 빈 공간은 보여주지 않게 만드는 방식 | #camera #cinemachine #pixel-perfect #2d #unity #world-base | 07-30
+- ARCH-014 | UI 캔버스 구조 (World_Base 정적/동적 분리) | 화면 UI를 한 덩어리로 두지 않고 '거의 안 변하는 것'과 '자주 변하는 것'으로 나눠 담아서, 체력바 한 칸 바뀔 때 화면 전체를 다시 그리지 않게 하는 배치 | #ui #canvas #performance #world-base #unity #structure | 07-30
