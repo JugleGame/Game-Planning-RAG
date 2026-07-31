@@ -1,106 +1,115 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-31 | 카드 118장
+생성: 2026-08-01 | 카드 127장
 
 ## 최근 7일 변경
-- ELEM-009 | 07-31
-- ELEM-034 | 07-31
-- ELEM-027 | 07-31
-- ELEM-001 | 07-31
-- ELEM-012 | 07-31
-- ELEM-032 | 07-31
-- ELEM-018 | 07-31
-- ELEM-020 | 07-31
-- ELEM-029 | 07-31
-- ELEM-035 | 07-31
-- ELEM-016 | 07-31
-- ELEM-019 | 07-31
-- ELEM-003 | 07-31
-- ELEM-011 | 07-31
-- ELEM-033 | 07-31
-- ELEM-028 | 07-31
-- ELEM-014 | 07-31
-- ELEM-002 | 07-31
-- ELEM-008 | 07-31
-- ELEM-031 | 07-31
-- ELEM-004 | 07-31
-- ELEM-021 | 07-31
-- ELEM-007 | 07-31
-- ELEM-013 | 07-31
-- ELEM-015 | 07-31
-- ELEM-022 | 07-31
-- ELEM-005 | 07-31
-- ELEM-010 | 07-31
-- ELEM-023 | 07-31
-- GENRE-020 | 07-31
-- GENRE-016 | 07-31
-- GENRE-019 | 07-31
-- GENRE-017 | 07-31
-- GENRE-018 | 07-31
-- GENRE-015 | 07-31
-- GENRE-002 | 07-31
-- GENRE-021 | 07-31
-- GENRE-013 | 07-31
-- SIGNAL-2026-07-31_td_deckbuilder_survivors_signals | 07-31
-- ARCH-018 | 07-31
-- ARCH-016 | 07-31
-- ARCH-015 | 07-31
-- ARCH-011 | 07-31
-- ARCH-017 | 07-31
-- ARCH-021 | 07-31
-- ARCH-020 | 07-31
+- ELEM-036 | 08-01
+- ELEM-037 | 08-01
+- ELEM-038 | 08-01
+- GAME-042 | 08-01
+- GAME-043 | 08-01
+- GAME-044 | 08-01
+- GENRE-022 | 08-01
+- GENRE-023 | 08-01
+- GENRE-024 | 08-01
 - ARCH-001 | 07-31
+- ARCH-011 | 07-31
+- ARCH-015 | 07-31
+- ARCH-016 | 07-31
+- ARCH-017 | 07-31
+- ARCH-018 | 07-31
+- ARCH-020 | 07-31
+- ARCH-021 | 07-31
+- ELEM-001 | 07-31
+- ELEM-002 | 07-31
+- ELEM-003 | 07-31
+- ELEM-004 | 07-31
+- ELEM-005 | 07-31
+- ELEM-007 | 07-31
+- ELEM-008 | 07-31
+- ELEM-009 | 07-31
+- ELEM-010 | 07-31
+- ELEM-011 | 07-31
+- ELEM-012 | 07-31
+- ELEM-013 | 07-31
+- ELEM-014 | 07-31
+- ELEM-015 | 07-31
+- ELEM-016 | 07-31
+- ELEM-018 | 07-31
+- ELEM-019 | 07-31
+- ELEM-020 | 07-31
+- ELEM-021 | 07-31
+- ELEM-022 | 07-31
+- ELEM-023 | 07-31
+- ELEM-027 | 07-31
+- ELEM-028 | 07-31
+- ELEM-029 | 07-31
+- ELEM-031 | 07-31
+- ELEM-032 | 07-31
+- ELEM-033 | 07-31
+- ELEM-034 | 07-31
+- ELEM-035 | 07-31
+- GAME-001 | 07-31
+- GAME-004 | 07-31
 - GAME-012 | 07-31
-- GAME-041 | 07-31
+- GAME-019 | 07-31
+- GAME-034 | 07-31
+- GAME-035 | 07-31
 - GAME-036 | 07-31
 - GAME-037 | 07-31
-- GAME-001 | 07-31
 - GAME-038 | 07-31
-- GAME-035 | 07-31
 - GAME-040 | 07-31
-- GAME-034 | 07-31
-- GAME-004 | 07-31
-- GAME-019 | 07-31
-- ELEM-025 | 07-30
-- GENRE-014 | 07-30
-- ARCH-014 | 07-30
+- GAME-041 | 07-31
+- GENRE-002 | 07-31
+- GENRE-013 | 07-31
+- GENRE-015 | 07-31
+- GENRE-016 | 07-31
+- GENRE-017 | 07-31
+- GENRE-018 | 07-31
+- GENRE-019 | 07-31
+- GENRE-020 | 07-31
+- GENRE-021 | 07-31
+- SIGNAL-2026-07-31_td_deckbuilder_survivors_signals | 07-31
 - ARCH-012 | 07-30
 - ARCH-013 | 07-30
-- GAME-033 | 07-30
+- ARCH-014 | 07-30
+- ELEM-025 | 07-30
 - GAME-032 | 07-30
-- ELEM-017 | 07-29
-- GENRE-010 | 07-29
-- GENRE-011 | 07-29
-- GENRE-012 | 07-29
-- ARCH-007 | 07-29
+- GAME-033 | 07-30
+- GENRE-014 | 07-30
 - ARCH-002 | 07-29
-- ARCH-008 | 07-29
-- ARCH-006 | 07-29
 - ARCH-003 | 07-29
 - ARCH-004 | 07-29
-- ARCH-010 | 07-29
 - ARCH-005 | 07-29
+- ARCH-006 | 07-29
+- ARCH-007 | 07-29
+- ARCH-008 | 07-29
 - ARCH-009 | 07-29
+- ARCH-010 | 07-29
+- ELEM-017 | 07-29
+- GAME-027 | 07-29
 - GAME-028 | 07-29
 - GAME-029 | 07-29
 - GAME-030 | 07-29
 - GAME-031 | 07-29
-- GAME-027 | 07-29
-- GAME-026 | 07-28
+- GENRE-010 | 07-29
+- GENRE-011 | 07-29
+- GENRE-012 | 07-29
 - GAME-024 | 07-28
 - GAME-025 | 07-28
-- GENRE-009 | 07-27
+- GAME-026 | 07-28
+- GAME-011 | 07-27
+- GAME-021 | 07-27
+- GAME-022 | 07-27
+- GAME-023 | 07-27
+- GENRE-003 | 07-27
 - GENRE-007 | 07-27
 - GENRE-008 | 07-27
-- GENRE-003 | 07-27
+- GENRE-009 | 07-27
 - SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 07-27
-- GAME-011 | 07-27
-- GAME-023 | 07-27
-- GAME-022 | 07-27
-- GAME-021 | 07-27
+- GAME-018 | 07-25
+- GAME-020 | 07-25
 - GENRE-006 | 07-25
 - SIGNAL-2026-07-25_genre_element_weekly | 07-25
-- GAME-020 | 07-25
-- GAME-018 | 07-25
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-31
@@ -135,6 +144,9 @@
 - ELEM-033 | 동적 난이도 조절 (Dynamic Difficulty Adjustment, DDA) | 플레이어의 실시간 성과(피격·정확도·순위)를 관찰해 적 강도나 자원 드롭을 자동으로 조절해, 겉으로 드러나지 않게 난이도를 항상 적당한 긴장 상태로 유지하는 기술 | #difficulty #ai-director #invisible-design #balance #broad-appeal | 07-31
 - ELEM-034 | 탐사형 포토그래피 목표 동사 (Exploration Photography as Core Verb) | 이동이나 전투 대신, 눈앞의 대상을 사진으로 찍어 증거·기록으로 남기는 행위 자체를 탐험의 핵심 목표로 삼는 설계 방식 | #exploration #photography #core-verb #no-combat #cozy #indie | 07-31
 - ELEM-035 | 접객 서비스 루프 (Hospitality / Service Sim Loop) | 손님을 맞고 주문을 받아 무언가를 만들어 내어주는 짧은 상호작용을 반복 가능한 코어 루프로 삼는 서비스업 시뮬레이션 방식 | #hospitality #service-loop #cozy #narrative #indie #pixel-art | 07-31
+- ELEM-036 | 영웅 픽/밴 드래프트 (Hero Pick/Ban Draft) | 시합 시작 전 양 팀이 번갈아 상대가 못 쓸 영웅을 막고(밴), 자기 편이 쓸 영웅을 고르는(픽) 절차 | #moba #draft #esports #strategy #pvp | 08-01
+- ELEM-037 | 좁혀지는 세이프존 (Shrinking Safe Zone) | 시간이 지날수록 플레이 가능 구역을 강제로 줄여 흩어진 플레이어들을 서로 충돌하게 만드는 구조 | #battle-royale #forced-encounter #tension #map-design #pvp | 08-01
+- ELEM-038 | 라운드제 경제 시스템 (Round-based Economy / Buy System) | 라운드가 끝날 때마다 성적에 따라 돈을 받고, 다음 라운드 시작 전 그 돈으로 장비를 사는 구조 | #tactical-shooter #economy #esports #round-based #pvp | 08-01
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -158,6 +170,9 @@
 - GENRE-019 | 서바이버라이크 (Survivors-like / Bullet Heaven) | 캐릭터가 자동으로 공격하고 플레이어는 이동과 업그레이드 선택에만 집중해, 화면을 뒤덮는 물량으로 폭발적 스케일링을 체감하게 만드는 군집 | #survivors-like #bullet-heaven #roguelite #indie #auto-battler #saturated | 07-31
 - GENRE-020 | 서바이벌 크래프팅 오픈월드 (Survival Crafting Open World) | 자원·환경·제작이 서로 맞물리는 개방형 시스템 위에서 굶주림·추위·부상을 관리하며 살아남는 것이 코어인 군집 | #survival #crafting #open-world #co-op #broad-appeal | 07-31
 - GENRE-021 | 분기형 비주얼노벨 (Branching Visual Novel) | 대사 선택이 아니라 행동의 결과(무엇을 내주는가)로 이야기가 갈리는, 정적인 2D 대화 중심의 니치 군집 | #visual-novel #narrative #niche-appeal #indie #low-stress | 07-31
+- GENRE-022 | 배틀로얄 (Battle Royale) | 다수 플레이어가 동시에 낙하해 좁혀지는 세이프존 안에서 최후 1인/1팀만 남을 때까지 겨루는 군집 | #battle-royale #pvp #last-player-standing #aaa #saturated | 08-01
+- GENRE-023 | 택틱컬 라운드제 슈터 (Tactical Round-based Shooter) | 공격/수비 진영을 라운드마다 교대하며 라운드제 경제로 무장을 갖춰 최선승 라운드를 겨루는 경쟁 슈터 군집 | #tactical-shooter #esports #round-based #competitive #pvp | 08-01
+- GENRE-024 | MOBA (Multiplayer Online Battle Arena) | 영웅 픽/밴 드래프트로 시작해 라인·정글이 있는 대칭 맵에서 상대 거점을 파괴하는 것이 코어인 팀 대전 군집 | #moba #esports #lane-based #pvp #free-to-play | 08-01
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-31
@@ -200,6 +215,9 @@
 - GAME-038 | Buckshot Roulette (2024, Mike Klubnika / Critical Reflex) | 실제 산탄총 러시안 룰렛 규칙을 그대로 빌려와 심리전 아이템만 얹은 초저가 1인 개발 공포 게임으로, 출시 2주 만에 100만 장을 판 바이럴 히트작 | #horror #russian-roulette #solo-dev #indie #viral #low-cost | 07-31
 - GAME-040 | Hades II (2024 얼리액세스 / 2025 정식출시, Supergiant Games) | 전작을 뛰어넘는 평가와 판매로 2025년 최고 평점 게임에 오른 로그라이크 내러티브 속편 | #roguelike #narrative #sequel #early-access #indie #broad-appeal | 07-31
 - GAME-041 | Baldur's Gate 3 (2023, Larian Studios) | 2023년 스팀 최고 판매작이자 그해 최고 평점 게임으로, 선택 기반 분기와 협동 플레이를 결합한 CRPG의 상업·평단 정점 | #crpg #narrative #branching #co-op #aaa #goty #broad-appeal | 07-31
+- GAME-042 | Counter-Strike 2 (2023, Valve) | 20년 프랜차이즈를 새 엔진으로 이전하며 압도적 장기 지표를 지켰지만 출시 초기 판정 신뢰 논란을 겪은 라운드제 슈터 | #fps #tactical-shooter #esports #valve #pvp #mixed-reception | 08-01
+- GAME-043 | Dota 2 (2013, Valve) | 완전 무료 영웅 로스터와 코스메틱 전용 수익화로 10년 넘게 Steam 상위권을 지킨 MOBA | #moba #esports #valve #free-to-play #pvp #long-tail | 08-01
+- GAME-044 | PUBG: BATTLEGROUNDS (2017, PUBG Studios / KRAFTON) | 배틀로얄 장르를 대중화시킨 원조작이지만, 후발주자에 밀리며 리뷰가 Mixed로 굳은 사례 | #battle-royale #free-to-play #krafton #pvp #cheating-controversy | 08-01
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
