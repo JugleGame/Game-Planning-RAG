@@ -1,11 +1,12 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-31 | 카드 100장
+생성: 2026-07-31 | 카드 101장
 
 ## 최근 7일 변경
 - ARCH-015 | 07-31
 - ARCH-016 | 07-31
 - ARCH-017 | 07-31
 - ARCH-018 | 07-31
+- ELEM-027 | 07-31
 - GAME-034 | 07-31
 - GAME-035 | 07-31
 - GAME-036 | 07-31
@@ -99,6 +100,7 @@
 - ELEM-024 | 광기 파생 액티브 전투 메커닉 (Derangement-driven Active Combat Mechanic) | 정신력 소모(광기·발작) 상태를 무작위 페널티로만 두지 않고, 플레이어가 의도적으로 유도·활용하는 전투 자원으로 바꾸는 설계 | #horror #dark-fantasy #psychological #punishing #emerging #divisive | 07-30
 - ELEM-025 | 온디바이스 SLM 실시간 음성 대화 NPC (On-device SLM Real-time Voice NPC) | 클라우드 서버 없이 플레이어의 기기 안에서 소형 언어모델이 바로 돌아가며 NPC가 실시간 음성으로 대화하게 만드는 기술 | #ai #voice #on-device #npc #requires-ai #high-cost #emerging | 07-30
 - ELEM-026 | 테마 쏠림형 바이럴 소재 선택 (Thematic Convergence for Shareability) | 장르나 시스템이 아니라 다루는 소재(동물 등)를 무엇으로 고르느냐가 입소문 확산 정도를 가르는 현상 - 고양이 테마가 대표 사례 | #virality #theme #cozy #cat #marketing #shareability | 07-30
+- ELEM-027 | 추출형 런 구조 (Loot-and-Extract Run Structure) | 판마다 얻은 자원을 탈출 지점까지 살아서 가져와야만 실제 보상으로 인정되는 위험-보상 순환 구조 | #extraction #risk-reward #pvpve #live-service #divisive | 07-31
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
