@@ -1,5 +1,5 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-31 | 카드 110장
+생성: 2026-07-31 | 카드 115장
 
 ## 최근 7일 변경
 - ARCH-001 | 07-31
@@ -51,7 +51,12 @@
 - GENRE-002 | 07-31
 - GENRE-013 | 07-31
 - GENRE-015 | 07-31
+- GENRE-016 | 07-31
+- GENRE-017 | 07-31
+- GENRE-018 | 07-31
 - GENRE-019 | 07-31
+- GENRE-020 | 07-31
+- GENRE-021 | 07-31
 - ARCH-012 | 07-30
 - ARCH-013 | 07-30
 - ARCH-014 | 07-30
@@ -142,7 +147,12 @@
 - GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 07-31
 - GENRE-014 | 횡스크롤 공포 (Side-scrolling Horror) | 카메라를 옆에서 따라가게 두고 화면 밖과 어둠을 공포의 재료로 삼는, 전투보다 회피와 숨기가 기본 동사인 군집 | #horror #side-scroller #puzzle-platformer #atmosphere #indie #narrow | 07-30
 - GENRE-015 | 픽셀 2D 생존공포 (Pixel 2D Survival Horror) | 저해상도 도트 그래픽과 광원으로 좁혀진 시야를 결합해, 보이지 않는 영역 자체를 공포의 재료로 쓰는 소규모 개발 중심 군집 | #horror #pixel-art #survival #indie #low-cost #light-mechanic | 07-31
+- GENRE-016 | 탄막 로그라이크 (Bullet Hell Roguelike) | 실시간 회피·조준 조작 위에 매 층 무작위 드래프트와 처벌적 죽음 순환을 얹은 액션 로그라이크 군집 | #roguelike #bullet-hell #action #indie #replayability | 07-31
+- GENRE-017 | 메트로배니아 (Metroidvania) | 능력 해금으로 이전 지역을 다시 열어가는 비선형 탐험이 코어인, 향수 기반 구매 동기가 강한 인디 중심 군집 | #metroidvania #exploration #indie #non-linear #saturated | 07-31
+- GENRE-018 | 소셜 디덕션 (Social Deduction) | 다른 플레이어와 실시간 그룹 상호작용 속에서 숨은 역할을 추론·색출하는 것이 코어인, 무료 플레이·수익화 실험이 활발한 군집 | #social-deduction #multiplayer #free-to-play #monetization #indie | 07-31
 - GENRE-019 | 서바이버라이크 (Survivors-like / Bullet Heaven) | 캐릭터가 자동으로 공격하고 플레이어는 이동과 업그레이드 선택에만 집중해, 화면을 뒤덮는 물량으로 폭발적 스케일링을 체감하게 만드는 군집 | #survivors-like #bullet-heaven #roguelite #indie #auto-battler #saturated | 07-31
+- GENRE-020 | 서바이벌 크래프팅 오픈월드 (Survival Crafting Open World) | 자원·환경·제작이 서로 맞물리는 개방형 시스템 위에서 굶주림·추위·부상을 관리하며 살아남는 것이 코어인 군집 | #survival #crafting #open-world #co-op #broad-appeal | 07-31
+- GENRE-021 | 분기형 비주얼노벨 (Branching Visual Novel) | 대사 선택이 아니라 행동의 결과(무엇을 내주는가)로 이야기가 갈리는, 정적인 2D 대화 중심의 니치 군집 | #visual-novel #narrative #niche-appeal #indie #low-stress | 07-31
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-31
