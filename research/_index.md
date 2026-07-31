@@ -1,5 +1,5 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-31 | 카드 101장
+생성: 2026-07-31 | 카드 106장
 
 ## 최근 7일 변경
 - ARCH-015 | 07-31
@@ -7,11 +7,16 @@
 - ARCH-017 | 07-31
 - ARCH-018 | 07-31
 - ELEM-027 | 07-31
+- ELEM-028 | 07-31
+- ELEM-029 | 07-31
 - GAME-034 | 07-31
 - GAME-035 | 07-31
 - GAME-036 | 07-31
 - GAME-037 | 07-31
 - GAME-038 | 07-31
+- GAME-039 | 07-31
+- GENRE-015 | 07-31
+- GENRE-016 | 07-31
 - ARCH-011 | 07-30
 - ARCH-012 | 07-30
 - ARCH-013 | 07-30
@@ -101,6 +106,8 @@
 - ELEM-025 | 온디바이스 SLM 실시간 음성 대화 NPC (On-device SLM Real-time Voice NPC) | 클라우드 서버 없이 플레이어의 기기 안에서 소형 언어모델이 바로 돌아가며 NPC가 실시간 음성으로 대화하게 만드는 기술 | #ai #voice #on-device #npc #requires-ai #high-cost #emerging | 07-30
 - ELEM-026 | 테마 쏠림형 바이럴 소재 선택 (Thematic Convergence for Shareability) | 장르나 시스템이 아니라 다루는 소재(동물 등)를 무엇으로 고르느냐가 입소문 확산 정도를 가르는 현상 - 고양이 테마가 대표 사례 | #virality #theme #cozy #cat #marketing #shareability | 07-30
 - ELEM-027 | 추출형 런 구조 (Loot-and-Extract Run Structure) | 판마다 얻은 자원을 탈출 지점까지 살아서 가져와야만 실제 보상으로 인정되는 위험-보상 순환 구조 | #extraction #risk-reward #pvpve #live-service #divisive | 07-31
+- ELEM-028 | 재화 전환형 제작 마찰 완화 (Craft Material Conversion Friction Reduction) | 무작위 루트의 흩어진 자원을 정해진 공식으로 합쳐 원하는 아이템을 만들 수 있게 해, 랜덤 드롭의 좌절감을 제작의 성취감으로 바꾸는 구조 | #crafting #live-service #rng-mitigation #grind #itemization | 07-31
+- ELEM-029 | 협력 기반 자산 공유 메커닉 (Shared Vault Co-op Mechanic) | 플레이어가 개인 보상을 포기하거나 일부를 넘겨 팀 공용 저장소에 축적하게 만들어, 협력 인센티브를 자원 관리 수준으로 끌어내리는 구조 | #co-op #squad #live-service #retention #incentive | 07-31
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -117,6 +124,8 @@
 - GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집 | #roguelike #deckbuilder #randomness #indie #replayability #saturated | 07-29
 - GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 07-29
 - GENRE-014 | 횡스크롤 공포 (Side-scrolling Horror) | 카메라를 옆에서 따라가게 두고 화면 밖과 어둠을 공포의 재료로 삼는, 전투보다 회피와 숨기가 기본 동사인 군집 | #horror #side-scroller #puzzle-platformer #atmosphere #indie #narrow | 07-30
+- GENRE-015 | 픽셀 2D 생존공포 (Pixel 2D Survival Horror) | 도트 그래픽으로 제한된 시야·자원 부족·어두운 공포 톤을 결합해 저가 개발로 심리적 긴장을 만드는 장르 | #horror #pixel-art #survival #indie #low-cost #established | 07-31
+- GENRE-016 | 턴제 로그라이크 덱빌더 (Turn-based Roguelike Deckbuilder) | 턴 제한 없이 차근차근 계획하며 카드를 조합하는 로그라이크로, 실시간 판단 스트레스 없이 전략에 집중하는 플레이 패턴 | #deckbuilder #roguelike #turn-based #strategy #indie #established | 07-31
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-14
@@ -157,6 +166,7 @@
 - GAME-036 | Signalis (2022, rose-engine / Humble Games) | 제한된 손전등 시야와 그림다크 SF 톤을 결합한 도트 그래픽 생존 공포로, 소규모 독일 스튜디오의 원작임에도 압도적 긍정 평가를 받은 작품 | #horror #survival #grimdark #indie #pixel #light-mechanic | 07-31
 - GAME-037 | Vampire Survivors (2022, poncle) | 무기 조합이 곱해지며 화면을 뒤덮는 폭발적 스케일링을 코어로 삼아, 1인 개발 원형에서 새 장르(서바이버라이크)를 만든 초저가 인디 대히트작 | #survivors-like #roguelite #indie #solo-dev-origin #power-scaling #broad-appeal | 07-31
 - GAME-038 | Buckshot Roulette (2024, Mike Klubnika / Critical Reflex) | 실제 산탄총 러시안 룰렛 규칙을 그대로 빌려와 심리전 아이템만 얹은 초저가 1인 개발 공포 게임으로, 출시 2주 만에 100만 장을 판 바이럴 히트작 | #horror #russian-roulette #solo-dev #indie #viral #low-cost | 07-31
+- GAME-039 | Cloverpit (2024, solo developer) | Balatro 출시 후 포커 규칙을 차용한 로그라이트 카드 게임의 추종작 중 하나로, 최소한의 인터페이스와 빠른 진행으로 평가받음 | #deckbuilder #roguelite #poker #indie #solo-dev #post-balatro | 07-31
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
