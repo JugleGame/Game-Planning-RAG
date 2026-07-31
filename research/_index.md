@@ -1,12 +1,11 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-31 | 카드 120장
+생성: 2026-07-31 | 카드 114장
 
 ## 최근 7일 변경
 - ARCH-015 | 07-31
 - ARCH-016 | 07-31
 - ARCH-017 | 07-31
 - ARCH-018 | 07-31
-- ARCH-019 | 07-31
 - ARCH-020 | 07-31
 - ARCH-021 | 07-31
 - ELEM-027 | 07-31
@@ -21,16 +20,11 @@
 - GAME-036 | 07-31
 - GAME-037 | 07-31
 - GAME-038 | 07-31
-- GAME-039 | 07-31
 - GAME-040 | 07-31
 - GAME-041 | 07-31
 - GENRE-015 | 07-31
-- GENRE-016 | 07-31
-- GENRE-017 | 07-31
-- GENRE-018 | 07-31
 - GENRE-019 | 07-31
 - GENRE-020 | 07-31
-- GENRE-021 | 07-31
 - ARCH-011 | 07-30
 - ARCH-012 | 07-30
 - ARCH-013 | 07-30
@@ -123,7 +117,7 @@
 - ELEM-028 | 재화 전환형 제작 마찰 완화 (Craft Material Conversion Friction Reduction) | 무작위 루트의 흩어진 자원을 정해진 공식으로 합쳐 원하는 아이템을 만들 수 있게 해, 랜덤 드롭의 좌절감을 제작의 성취감으로 바꾸는 구조 | #crafting #live-service #rng-mitigation #grind #itemization | 07-31
 - ELEM-029 | 협력 기반 자산 공유 메커닉 (Shared Vault Co-op Mechanic) | 플레이어가 개인 보상을 포기하거나 일부를 넘겨 팀 공용 저장소에 축적하게 만들어, 협력 인센티브를 자원 관리 수준으로 끌어내리는 구조 | #co-op #squad #live-service #retention #incentive | 07-31
 - ELEM-030 | 자동화 진행 옵션 (Auto-play / Skip Progression) | 플레이어가 정한 조건에 맞춰 게임이 대신 진행하게 해, 반복 작업을 자동으로 처리하는 편의 기능 | #convenience #grind #mobile #live-service #divisive #quality-of-life | 07-31
-- ELEM-031 | 펙트로스핑 그래픽 효과 (Juiciness / Screen Juice / Screenshake) | 화면 흔들림, 파티클 폭발, 숫자 띄우기 등 시각 피드백을 과장되게 쌓아 버튼 입력이 즉각 반응하는 착각을 주는 기술 | #visual-feedback #feel #indie #game-feel #polish | 07-31
+- ELEM-031 | 시각 피드백 과장 (Juiciness / Game Feel / Screenshake) | 화면 흔들림, 파티클 폭발, 숫자 띄우기 등 시각 피드백을 과장되게 쌓아 버튼 입력이 즉각 반응하는 착각을 주는 기술 | #visual-feedback #feel #indie #game-feel #polish | 07-31
 - ELEM-032 | 뉴 게임 플러스 (New Game+) | 게임을 한 번 클리어한 뒤 유저가 자발적으로 진행도(장비·능력치)를 이어받아 처음부터 다시 도전하게 만드는 사후 재플레이 장치 | #replayability #post-game #difficulty #narrative #broad-appeal | 07-31
 - ELEM-033 | 동적 난이도 조절 (Dynamic Difficulty Adjustment, DDA) | 플레이어의 실시간 성과(피격·정확도·순위)를 관찰해 적 강도나 자원 드롭을 자동으로 조절해, 겉으로 드러나지 않게 난이도를 항상 적당한 긴장 상태로 유지하는 기술 | #difficulty #ai-director #invisible-design #balance #broad-appeal | 07-31
 
@@ -142,13 +136,9 @@
 - GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집 | #roguelike #deckbuilder #randomness #indie #replayability #saturated | 07-29
 - GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 07-29
 - GENRE-014 | 횡스크롤 공포 (Side-scrolling Horror) | 카메라를 옆에서 따라가게 두고 화면 밖과 어둠을 공포의 재료로 삼는, 전투보다 회피와 숨기가 기본 동사인 군집 | #horror #side-scroller #puzzle-platformer #atmosphere #indie #narrow | 07-30
-- GENRE-015 | 픽셀 2D 생존공포 (Pixel 2D Survival Horror) | 도트 그래픽으로 제한된 시야·자원 부족·어두운 공포 톤을 결합해 저가 개발로 심리적 긴장을 만드는 장르 | #horror #pixel-art #survival #indie #low-cost #established | 07-31
-- GENRE-016 | 턴제 로그라이크 덱빌더 (Turn-based Roguelike Deckbuilder) | 턴 제한 없이 차근차근 계획하며 카드를 조합하는 로그라이크로, 실시간 판단 스트레스 없이 전략에 집중하는 플레이 패턴 | #deckbuilder #roguelike #turn-based #strategy #indie #established | 07-31
-- GENRE-017 | 코지 심볼라이저 (Cozy Symbolizer) | 고양이·식물·원숭이 등 특정 소재를 중심으로 디자인해 시각적 통일성으로 플레이어의 감정을 한 방향으로 유도하는 장르 | #cozy #theme #visual-identity #indie #emerging #shareability | 07-31
-- GENRE-018 | 싱글-버튼 플랫포머 (Single-button / Streamlined Platformer) | 점프 버튼 하나만으로 진행하는 플랫포머로, 컨트롤 학습 곡선을 없애고 순수 타이밍 판정에 집중하게 만드는 장르 | #platformer #minimal-control #arcade #indie #emerging #accessibility | 07-31
+- GENRE-015 | 픽셀 2D 생존공포 (Pixel 2D Survival Horror) | 저해상도 도트 그래픽과 광원으로 좁혀진 시야를 결합해, 보이지 않는 영역 자체를 공포의 재료로 쓰는 소규모 개발 중심 군집 | #horror #pixel-art #survival #indie #low-cost #light-mechanic | 07-31
 - GENRE-019 | 서바이버라이크 (Survivors-like / Bullet Heaven) | 캐릭터가 자동으로 공격하고 플레이어는 이동과 업그레이드 선택에만 집중해, 화면을 뒤덮는 물량으로 폭발적 스케일링을 체감하게 만드는 군집 | #survivors-like #bullet-heaven #roguelite #indie #auto-battler #saturated | 07-31
 - GENRE-020 | 1인칭 환경 퍼즐 (Portal-style First-person Puzzle) | 이동·전투 대신 도구 하나로 환경과 상호작용해 밀폐된 공간을 탈출하는 것이 코어인, 완결형 싱글 캠페인 위주의 장르 | #puzzle #first-person #narrative #established #single-player | 07-31
-- GENRE-021 | 쌓기 물리 퍼즐 (Physics-based Stacking Puzzle) | 블록·타워를 무너뜨리지 않고 쌓아 올리는 것 자체가 코어 도전 과제인, 물리 시뮬레이션 기반의 캐주얼~파티 장르 | #physics #stacking #party-game #casual #niche | 07-31
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-14
@@ -189,7 +179,6 @@
 - GAME-036 | Signalis (2022, rose-engine / Humble Games) | 제한된 손전등 시야와 그림다크 SF 톤을 결합한 도트 그래픽 생존 공포로, 소규모 독일 스튜디오의 원작임에도 압도적 긍정 평가를 받은 작품 | #horror #survival #grimdark #indie #pixel #light-mechanic | 07-31
 - GAME-037 | Vampire Survivors (2022, poncle) | 무기 조합이 곱해지며 화면을 뒤덮는 폭발적 스케일링을 코어로 삼아, 1인 개발 원형에서 새 장르(서바이버라이크)를 만든 초저가 인디 대히트작 | #survivors-like #roguelite #indie #solo-dev-origin #power-scaling #broad-appeal | 07-31
 - GAME-038 | Buckshot Roulette (2024, Mike Klubnika / Critical Reflex) | 실제 산탄총 러시안 룰렛 규칙을 그대로 빌려와 심리전 아이템만 얹은 초저가 1인 개발 공포 게임으로, 출시 2주 만에 100만 장을 판 바이럴 히트작 | #horror #russian-roulette #solo-dev #indie #viral #low-cost | 07-31
-- GAME-039 | Cloverpit (2024, solo developer) | Balatro 출시 후 포커 규칙을 차용한 로그라이트 카드 게임의 추종작 중 하나로, 최소한의 인터페이스와 빠른 진행으로 평가받음 | #deckbuilder #roguelite #poker #indie #solo-dev #post-balatro | 07-31
 - GAME-040 | Hades II (2024 얼리액세스 / 2025 정식출시, Supergiant Games) | 전작을 뛰어넘는 평가와 판매로 2025년 최고 평점 게임에 오른 로그라이크 내러티브 속편 | #roguelike #narrative #sequel #early-access #indie #broad-appeal | 07-31
 - GAME-041 | Baldur's Gate 3 (2023, Larian Studios) | 2023년 스팀 최고 판매작이자 그해 최고 평점 게임으로, 선택 기반 분기와 협동 플레이를 결합한 CRPG의 상업·평단 정점 | #crpg #narrative #branching #co-op #aaa #goty #broad-appeal | 07-31
 
@@ -218,6 +207,5 @@
 - ARCH-016 | 입력 시스템 (Input System 패키지 + InputActionAsset) | 키보드·게임패드 같은 서로 다른 장치의 버튼을 코드에 흩어 적지 않고, '이동'·'상호작용' 같은 행동 이름 하나에 여러 장치의 입력을 미리 묶어두는 입력 처리 구조 | #input #inputsystem #inputaction #player #unity #2d | 07-31
 - ARCH-017 | 오디오 매니저 (AudioSource 풀 + BGM/SFX 분리) | 소리를 재생할 때마다 AudioSource를 새로 만들지 않고, BGM 전용과 SFX 풀을 미리 나눠 관리해서 겹쳐 재생되는 효과음도 끊기지 않게 하는 구조 | #audio #sfx #bgm #pooling #singleton #unity | 07-31
 - ARCH-018 | 게임 매니저 (전역 게임 상태: Playing / Paused / GameOver) | 지금 게임이 진행 중인지, 멈춰 있는지, 끝났는지를 여러 스크립트가 각자 판단하지 않고, 딱 한 곳(GameManager)이 들고 있다가 물어보면 답해주는 구조 | #gamemanager #singleton #game-state #core #unity #2d | 07-31
-- ARCH-019 | 세이브 상태 암호화 규약 (Save State Encryption Protocol) | 플레이어가 저장 파일을 직접 열어 게임 상태(체력, 돈, 진행도)를 조작하는 부정행위를 기술적으로 방지하는 설계 | #cheating-prevention #security #savefile #integrity #convention | 07-31
 - ARCH-020 | 애니메이션 상태 머신 (Animator Controller / Animation State Machine) | 캐릭터의 애니메이션 클립을 코드에서 직접 재생하지 않고, 상태(State)와 전환 조건(Transition)으로 미리 짜둔 그래프에 맡겨 파라미터만 바꾸면 알맞은 동작이 자동으로 이어지게 하는 구조 | #animation #animator #state-machine #unity #pattern #player | 07-31
 - ARCH-021 | 인벤토리 시스템 (Inventory / Item Database, ScriptableObject 기반) | 아이템의 '정의'(이름, 아이콘, 능력치)와 '보유 상태'(개수, 내구도)를 분리해, 데이터 자산 하나로 여러 캐릭터·슬롯이 같은 아이템 정보를 공유하게 만드는 구조 | #inventory #item #scriptableobject #rpg #unity #pattern | 07-31

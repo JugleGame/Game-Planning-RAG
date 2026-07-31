@@ -3,8 +3,8 @@ card_id = "GAME-037"
 type = "success"
 title = "Vampire Survivors (2022, poncle)"
 summary = "무기 조합이 곱해지며 화면을 뒤덮는 폭발적 스케일링을 코어로 삼아, 1인 개발 원형에서 새 장르(서바이버라이크)를 만든 초저가 인디 대히트작"
-genres = []
-elements = ["ELEM-022"]
+genres = ["GENRE-019"]
+elements = ["ELEM-022", "ELEM-031"]
 tags = ["survivors-like", "roguelite", "indie", "solo-dev-origin", "power-scaling", "broad-appeal"]
 updated = "2026-07-31"
 confidence = "high"
@@ -17,6 +17,8 @@ confidence = "high"
 
 ## 사용한 요소
 - ELEM-022 (지수적 점수 스케일링) - 개별 무기·패시브 강화 효과가 서로 곱해지며 후반부에 화면 전체가 이펙트로 뒤덮일 만큼 수치가 폭발적으로 불어나는 설계가 이 게임의 정체성 자체다.
+- ELEM-031 (시각 피드백 과장) - 위 수치 폭발이 화면을 뒤덮는 이펙트로 표현되어, 강해졌다는 사실을 숫자가 아니라 화면 밀도로 체감하게 만든다.
+- GENRE-019 (서바이버라이크) - 이 게임이 군집의 원형작이다. 자동 공격 + 이동만 조작하는 문법이 이후 후속작들의 관례가 됐다.
 
 ## 성공/실패 원인
 - 사실: 24만 건 이상 규모의 리뷰에서 98%라는 극히 높은 긍정 비율이 유지되고 있다 [출처: Steam 리뷰 집계 보도, 2026-07 확인].
