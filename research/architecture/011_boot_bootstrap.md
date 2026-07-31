@@ -5,7 +5,7 @@ title = "Boot 부트스트랩 & 매니저 수명 (DontDestroyOnLoad)"
 summary = "게임이 켜질 때 딱 한 곳에서만 관리자들을 만들고, 그 관리자들만 씬이 바뀌어도 죽지 않게 남겨서 '누가 언제까지 살아 있는가'를 헷갈리지 않게 하는 방식"
 tags = ["bootstrap", "lifetime", "manager", "scene", "core", "unity"]
 updated = "2026-07-31"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)가 Boot 씬 = 매니저 전용임을 명시 + Unity 공식 매뉴얼(DontDestroyOnLoad, 스크립트 실행 순서) 근거 + 안티패턴(매니저 중복) 실사례
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)가 Boot 씬 = 매니저 전용임을 명시 + Unity 공식 매뉴얼(DontDestroyOnLoad, 스크립트 실행 순서) 근거 + 안티패턴(매니저 중복) 실사례
 +++ 
 ## 문제
 
@@ -13,8 +13,8 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)가 Boot
 
 ## 구조
 
-- Boot 씬에는 매니저만 둔다. 플레이어·카메라·UI는 World_Base, 월드 오브젝트는 Chunk 씬이다. [출처: prompts/5_developer.md 기준 구조 — Boot.unity "시작 씬 (매니저만 존재)"]
-- 매니저 코드 위치: `Assets/Scripts/Core/` — GameManager, SaveSystem(JSON), EventBus. [출처: prompts/5_developer.md 기준 구조]
+- Boot 씬에는 매니저만 둔다. 플레이어·카메라·UI는 World_Base, 월드 오브젝트는 Chunk 씬이다. [출처: reference/unity_project_baseline.md 기준 구조 — Boot.unity "시작 씬 (매니저만 존재)"]
+- 매니저 코드 위치: `Assets/Scripts/Core/` — GameManager, SaveSystem(JSON), EventBus. [출처: reference/unity_project_baseline.md 기준 구조]
 - 흐름은 한 방향이다 — Boot 씬 실행 → 매니저 생성·초기화 → 씬 경계를 넘어 살아남도록 표시 → World_Base 로드 → 청크 로더가 주변 청크를 Additive로 켠다(ARCH-002, ARCH-003).
 - 씬 경계 생존은 Unity의 DontDestroyOnLoad로 표시한다. 표시된 오브젝트는 씬 단독 로딩 시 파괴되지 않고 전용 보관 씬으로 옮겨진다. [출처: Unity 공식 매뉴얼 — Object.DontDestroyOnLoad]
 - 초기화 순서는 코드가 직접 정한다. 서로 다른 오브젝트의 Awake 호출 순서는 보장되지 않으므로, "EventBus가 준비된 다음 구독자가 붙는다" 같은 순서는 부트스트랩이 명시적으로 실행해야 한다. [출처: Unity 공식 매뉴얼 — 스크립트 실행 순서(Script Execution Order) 안내]
@@ -22,11 +22,11 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)가 Boot
 
 ## 핵심 규칙
 
-- 매니저 인스턴스는 Boot 씬에서만 생성한다. World_Base나 Chunk 씬에 매니저 사본을 놓지 않는다. Chunk는 월드 오브젝트만 담는다. [출처: prompts/5_developer.md 청크 규칙]
+- 매니저 인스턴스는 Boot 씬에서만 생성한다. World_Base나 Chunk 씬에 매니저 사본을 놓지 않는다. Chunk는 월드 오브젝트만 담는다. [출처: reference/unity_project_baseline.md 청크 규칙]
 - 매니저는 단 하나여야 한다. 이미 있으면 나중에 생긴 쪽이 스스로 사라진다. 반대로 하면(먼저 있던 쪽을 지우면) 그 매니저를 붙잡고 있던 구독자들의 연결이 끊긴다.
 - 초기화 순서를 부트스트랩 한 곳에 적어둔다. 순서는 EventBus(방송망) → SaveSystem(불러오기) → 나머지 매니저 → 씬 로드다. 방송망이 없는데 구독자가 먼저 뜨면 구독이 조용히 실패한다.
 - 씬을 켜고 끄는 책임은 매니저 쪽에 둔다. 개별 게임플레이 스크립트가 각자 씬을 로드하면 어느 청크가 켜져 있는지 아무도 모르게 된다.
-- 씬 단독 로딩(Single)은 Boot→World_Base 전환 같은 큰 갈아치우기에만 쓴다. 청크는 반드시 Additive다. [출처: prompts/5_developer.md 기준 구조 — Chunk는 Additive 로딩]
+- 씬 단독 로딩(Single)은 Boot→World_Base 전환 같은 큰 갈아치우기에만 쓴다. 청크는 반드시 Additive다. [출처: reference/unity_project_baseline.md 기준 구조 — Chunk는 Additive 로딩]
 - 매니저가 살아남는다는 것은 매니저가 들고 있던 값도 살아남는다는 뜻이다. 새 플레이로 초기화해야 하는 값은 명시적으로 되돌린다(ARCH-004).
 
 ## Unity 구현 절차
@@ -37,7 +37,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)가 Boot
 4. 해설자 구독 연결을 부트스트랩 순서에 포함시킨다. 구독은 EventBus 준비 이후, 월드 로드 이전이다(ARCH-007).
 5. 준비가 끝난 뒤 `World_Base.unity`를 로드한다. 청크 로딩은 World_Base 쪽 청크 로더에 넘긴다(ARCH-003).
 6. 에디터 편의 처리 — 개발자가 World_Base나 Chunk 씬을 직접 열고 플레이했을 때 매니저가 없으면, 콘솔에 "부트스트랩 없음"을 명확히 알리도록 한다. 조용히 동작하지 않는 상태가 가장 비싸다.
-7. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [출처: prompts/5_developer.md 자체 점검 기준]
+7. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 
 ## 안티패턴
 
@@ -50,10 +50,10 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)가 Boot
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 - 단일성 검사: 플레이 중 매니저 종류별 인스턴스 개수가 각각 1개여야 한다(씬 계층에서 이름으로 확인 가능).
 - 생존 검사: World_Base를 다시 로드한 뒤에도 매니저가 계속 존재해야 하고, 새로 생기지 않아야 한다.
-- 중복 방송 검사: 이벤트 하나를 발생시켰을 때 `Logs/commentator.log`에 같은 이벤트ID 줄이 한 줄만 남아야 한다. 두 줄이면 매니저 또는 구독이 중복된 것이다. [출처: prompts/5_developer.md 로그 규칙]
+- 중복 방송 검사: 이벤트 하나를 발생시켰을 때 `Logs/commentator.log`에 같은 이벤트ID 줄이 한 줄만 남아야 한다. 두 줄이면 매니저 또는 구독이 중복된 것이다. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 부트스트랩 누락 감지 검사: World_Base 씬을 단독으로 열고 플레이했을 때 "부트스트랩 없음" 경고 줄이 콘솔에 남아야 한다(조용히 실행되면 불합격).
 - 순서 검사: 초기화 로그 줄의 순서가 EventBus → SaveSystem → 나머지 → 씬 로드 순으로 나타나야 한다.
 

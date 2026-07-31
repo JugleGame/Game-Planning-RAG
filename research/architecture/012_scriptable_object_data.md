@@ -5,7 +5,7 @@ title = "Data/ 데이터 자산 규약 (ScriptableObject 테이블)"
 summary = "아이템 능력치나 확률표 같은 설정값을 코드 안에 박아넣지 않고 프로젝트의 데이터 파일로 따로 빼서, 코드를 안 고치고도 수치를 바꿀 수 있게 하는 규칙"
 tags = ["data", "scriptableobject", "convention", "balance", "unity", "authoring"]
 updated = "2026-07-30"
-confidence = "high" # prompts/5_developer.md 기준 구조의 Data/ 폴더 명시 + Unity 공식 매뉴얼(ScriptableObject) 근거 + 안티패턴(런타임 변경이 에디터에만 남는 문제) 실사례
+confidence = "high" # reference/unity_project_baseline.md 기준 구조의 Data/ 폴더 명시 + Unity 공식 매뉴얼(ScriptableObject) 근거 + 안티패턴(런타임 변경이 에디터에만 남는 문제) 실사례
 +++ 
 ## 문제
 
@@ -13,11 +13,11 @@ confidence = "high" # prompts/5_developer.md 기준 구조의 Data/ 폴더 명�
 
 ## 구조
 
-- 위치: `Assets/Data/` — 프로젝트 기준 구조의 데이터 전용 폴더다. [출처: prompts/5_developer.md 기준 구조 — Prefabs/ , Tilemaps/ , Data/]
+- 위치: `Assets/Data/` — 프로젝트 기준 구조의 데이터 전용 폴더다. [출처: reference/unity_project_baseline.md 기준 구조 — Prefabs/ , Tilemaps/ , Data/]
 - 종류별로 하위 폴더를 나눈다(예: 아이템, NPC 대화, 드롭 확률표). 폴더·파일 이름은 명명 규약을 따른다(ARCH-008).
 - 데이터는 ScriptableObject 자산으로 만든다. ScriptableObject는 클래스 인스턴스마다 값을 복사해 들고 있는 대신, 프로젝트에 저장된 자산 하나를 여러 곳이 함께 참조하는 데이터 컨테이너다. [출처: Unity 공식 매뉴얼 — ScriptableObject]
 - 자산은 씬에 속하지 않는다. 그래서 World_Base와 어떤 Chunk 씬이든 같은 데이터 자산을 참조할 수 있다. 이것이 청크 스트리밍(ARCH-002, ARCH-003) 구조에서 데이터를 공유하는 유일하게 안전한 방법이다.
-- 데이터와 상태의 소유자가 다르다 — 설정값(변하지 않는 것)은 Data/의 자산이 갖고, 플레이 중 변하는 상태(현재 체력, 소지품, 진행도)는 세이브 시스템이 JSON으로 갖는다. [출처: prompts/5_developer.md 기준 구조 — Core/SaveSystem(JSON)]
+- 데이터와 상태의 소유자가 다르다 — 설정값(변하지 않는 것)은 Data/의 자산이 갖고, 플레이 중 변하는 상태(현재 체력, 소지품, 진행도)는 세이브 시스템이 JSON으로 갖는다. [출처: reference/unity_project_baseline.md 기준 구조 — Core/SaveSystem(JSON)]
 - 데이터 자산은 문자열 ID를 갖는다. 세이브 JSON은 자산을 직접 가리킬 수 없으므로 이 ID로 되찾는다(ARCH-004).
 
 ## 핵심 규칙
@@ -27,7 +27,7 @@ confidence = "high" # prompts/5_developer.md 기준 구조의 Data/ 폴더 명�
 - 같은 수치를 두 곳에 두지 않는다. 데이터 자산이 유일한 원본이고 프리팹·코드는 그것을 참조한다. 수치가 두 곳에 있으면 반드시 언젠가 어긋난다.
 - 데이터 자산끼리는 ID로 참조한다. 카드끼리 ID로만 연결하는 것과 같은 이유다 — 복사한 값은 갱신되지 않는다.
 - 확률·드롭·보상 같은 표는 코드에 조건문으로 쓰지 않고 표 형태 자산으로 만든다. 밸런스 담당이 코드를 만지지 않고 조정할 수 있어야 한다.
-- 데이터가 바뀌었다는 사실을 시스템에 알릴 필요가 있으면 EventBus로 방송한다. 데이터 자산이 시스템을 직접 부르지 않는다. [출처: prompts/5_developer.md 방송 규칙]
+- 데이터가 바뀌었다는 사실을 시스템에 알릴 필요가 있으면 EventBus로 방송한다. 데이터 자산이 시스템을 직접 부르지 않는다. [출처: reference/unity_project_baseline.md 방송 규칙]
 
 ## Unity 구현 절차
 
@@ -37,7 +37,7 @@ confidence = "high" # prompts/5_developer.md 기준 구조의 Data/ 폴더 명�
 4. 각 데이터 자산에 문자열 ID 항목을 넣는다. ID는 파일 이름과 일치시켜 사람이 눈으로 대조할 수 있게 한다.
 5. ID로 자산을 찾아주는 조회용 목록 자산을 종류별로 하나 만든다. 코드가 폴더를 훑는 방식은 쓰지 않는다 — 빌드에서 동작이 달라진다.
 6. 세이브 연동 — JSON에는 ID와 변한 상태만 저장하고, 불러올 때 ID로 자산을 되찾는다(ARCH-004).
-7. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [출처: prompts/5_developer.md 자체 점검 기준]
+7. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 
 ## 안티패턴
 
@@ -50,7 +50,7 @@ confidence = "high" # prompts/5_developer.md 기준 구조의 Data/ 폴더 명�
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 - 위치 검사: 데이터 자산 파일이 `Assets/Data/` 밖에 하나도 없어야 한다(파일 검색으로 확인 가능).
 - 빌드 지속성 검사: 빌드에서 값을 변화시키는 플레이를 한 뒤 재실행했을 때, 시작값이 원래 설정값과 같아야 한다(달라지면 데이터 자산에 상태를 쓰고 있다는 뜻).
 - 상태 소유 검사: 세이브 JSON에 진행 상태가 들어 있고, 데이터 자산 파일의 내용은 플레이 전후로 동일해야 한다(파일 변경 여부로 확인).

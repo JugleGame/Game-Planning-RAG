@@ -42,7 +42,7 @@ confidence = "high"
 
 ## Unity 구현 절차
 1. `Packages/manifest.json`에 Input System 패키지가 있는지 먼저 확인한다 — 없으면
-   패키지 추가이므로 5_developer.md의 금지 목록(패키지 추가는 사람 승인 필요)에
+   패키지 추가이므로 reference/unity_project_baseline.md의 금지 목록(패키지 추가는 사람 승인 필요)에
    해당해 사람에게 먼저 확인한다.
 2. `InputActionAsset`을 만들고 Action Map(예: Player)과 행동(Move, Interact 등)을
    정의한다. Move는 2D Vector Composite로 WASD/방향키/패드 스틱을 함께 바인딩한다.

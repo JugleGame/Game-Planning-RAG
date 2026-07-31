@@ -5,7 +5,7 @@ title = "NPC 상태머신 (Idle / Patrol / Talk)"
 summary = "NPC의 행동을 여러 개의 '상태'로 나누고 한 번에 하나만 켜지게 해서, 조건에 따라 상태를 갈아타는 방식으로 행동을 만드는 구조"
 tags = ["npc", "fsm", "state-machine", "ai-behavior", "unity", "2d"]
 updated = "2026-07-29"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 상태머신 명시 + 널리 검증된 표준 패턴
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 상태머신 명시 + 널리 검증된 표준 패턴
 +++ 
 ## 문제
 
@@ -13,7 +13,7 @@ NPC 행동을 if 문으로 만들면 조건이 늘 때마다 분기가 얽혀 �
 
 ## 구조
 
-- 위치: `Assets/Scripts/NPC/` — 상태머신(Idle / Patrol / Talk). [출처: prompts/5_developer.md 기준 구조]
+- 위치: `Assets/Scripts/NPC/` — 상태머신(Idle / Patrol / Talk). [출처: reference/unity_project_baseline.md 기준 구조]
 - 구성 요소 3가지: ① 상태들(각 상태가 자기 행동을 안다) ② 현재 상태를 하나만 들고 있는 문맥(NPC 본체) ③ 전이 규칙(언제 어느 상태로 옮기는가).
 - 상태별 3개 지점: 들어올 때(Enter), 머무는 동안(Update), 나갈 때(Exit). 나갈 때 정리를 빼먹는 것이 버그의 단골 원인이다.
 - 기본 상태 3종 — Idle(제자리 대기), Patrol(정해진 경로 왕복), Talk(플레이어와 대화). 전이 예: Idle → (시간 경과) → Patrol, Patrol/Idle → (상호작용 발생) → Talk, Talk → (대화 종료) → Idle.
@@ -23,8 +23,8 @@ NPC 행동을 if 문으로 만들면 조건이 늘 때마다 분기가 얽혀 �
 
 - 동시에 활성 상태는 하나뿐이다. "대기하면서 순찰하는" 상태는 없다. 필요하면 새 상태를 만든다.
 - 전이 조건은 한곳에 모은다. 상태 안에서 제멋대로 다른 상태로 뛰면 흐름을 읽을 수 없다.
-- 대화(Talk) 진입은 방송한다. 플레이어의 대화는 방송 규칙 대상 행동이다. [출처: prompts/5_developer.md 방송 규칙]
-- NPC는 청크 씬에 속한다. 언제든 언로드될 수 있으므로 상태머신은 씬 밖 객체를 직접 참조하지 않는다. [출처: prompts/5_developer.md 청크 규칙]
+- 대화(Talk) 진입은 방송한다. 플레이어의 대화는 방송 규칙 대상 행동이다. [출처: reference/unity_project_baseline.md 방송 규칙]
+- NPC는 청크 씬에 속한다. 언제든 언로드될 수 있으므로 상태머신은 씬 밖 객체를 직접 참조하지 않는다. [출처: reference/unity_project_baseline.md 청크 규칙]
 - 상태 이름은 행동을 뜻하는 단어로만 짓는다. TempState, State2 같은 이름 금지 — 이름이 곧 문서다.
 
 ## Unity 구현 절차
@@ -47,10 +47,10 @@ NPC 행동을 if 문으로 만들면 조건이 늘 때마다 분기가 얽혀 �
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 - 단일 상태 검사: 어느 시점에나 NPC의 현재 상태 값이 정확히 하나여야 한다.
 - 전이 검사: 플레이어가 접근해 대화를 시작하면 Talk로, 종료하면 Idle로 돌아와야 한다. 돌아오지 않으면 Exit 처리 누락이다.
-- 방송 검사: 대화 시작 시 `Logs/commentator.log`에 대화 이벤트 줄이 남아야 한다. [출처: prompts/5_developer.md 로그 규칙]
+- 방송 검사: 대화 시작 시 `Logs/commentator.log`에 대화 이벤트 줄이 남아야 한다. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 청크 안전성 검사: NPC가 있는 청크를 언로드해도 콘솔 에러가 나지 않아야 한다.
 - 순찰 검사: Patrol 상태에서 지정한 경로 지점을 순서대로 지나야 한다.
 

@@ -10,9 +10,9 @@ confidence = "medium"
 ## 문제
 "지금 일시정지 상태인가?", "게임이 끝났는가?" 같은 질문에 여러 스크립트가 각자
 `Time.timeScale`이나 자체 변수로 답하기 시작하면, 한쪽은 멈췄다고 생각하는데
-다른 쪽은 계속 움직이는 상태 불일치가 생긴다. `5_developer.md`의 기준 구조는
+다른 쪽은 계속 움직이는 상태 불일치가 생긴다. `reference/unity_project_baseline.md`의 기준 구조는
 `Core/`에 GameManager를 EventBus·SaveSystem과 나란히 명시하지만
-[출처: prompts/5_developer.md, 3절 폴더 지도], 이 프로젝트에는 아직 EventBus(ARCH-001)와
+[출처: reference/unity_project_baseline.md, 3절 폴더 지도], 이 프로젝트에는 아직 EventBus(ARCH-001)와
 SaveSystem(ARCH-004) 카드만 있고 GameManager 자체를 다루는 카드가 없다.
 
 ## 구조

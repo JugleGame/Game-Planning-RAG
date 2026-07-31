@@ -5,7 +5,7 @@ title = "이벤트 버스 (EventBus / Pub-Sub)"
 summary = "시스템끼리 직접 부르지 않고, 가운데 방송국(EventBus)에 사건을 방송하면 듣고 싶은 쪽만 구독해서 반응하는 느슨한 연결 구조"
 tags = ["decoupling", "core", "commentator", "2d-open-world", "unity", "pub-sub"]
 updated = "2026-07-31"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 방송 규칙과 동일 + Unity 공식 아키텍처 자료 근거
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 방송 규칙과 동일 + Unity 공식 아키텍처 자료 근거
 +++ 
 ## 문제
 
@@ -13,7 +13,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 방�
 
 ## 구조
 
-- 위치: `Assets/Scripts/Core/EventBus.cs` [출처: prompts/5_developer.md 기준 구조]
+- 위치: `Assets/Scripts/Core/EventBus.cs` [출처: reference/unity_project_baseline.md 기준 구조]
 - 흐름: 발신자(Player, NPC, World) → `EventBus.Publish(GameEvent)` → 구독자(Commentator, UI, SaveSystem)가 각자 반응
 - `GameEvent`는 이벤트 ID·발생 주체·좌표·페이로드를 담는 직렬화 가능한 데이터 묶음으로 `Scripts/Core/`에 정의한다.
 - 발신자는 누가 듣는지 모르고, 구독자는 누가 보냈는지에 의존하지 않는다. 둘 다 EventBus 하나만 안다.
@@ -21,8 +21,8 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 방�
 
 ## 핵심 규칙
 
-- 방송 규칙: 플레이어 행동(전투, 획득, 대화, 진입)은 반드시 `EventBus.Publish(GameEvent)`로 방송한다. 직접 참조 금지. [출처: prompts/5_developer.md]
-- 해설자 시스템은 이 방송에만 의존한다. Commentator가 다른 시스템의 필드를 직접 읽으면 규칙 위반이다. [출처: prompts/5_developer.md]
+- 방송 규칙: 플레이어 행동(전투, 획득, 대화, 진입)은 반드시 `EventBus.Publish(GameEvent)`로 방송한다. 직접 참조 금지. [출처: reference/unity_project_baseline.md]
+- 해설자 시스템은 이 방송에만 의존한다. Commentator가 다른 시스템의 필드를 직접 읽으면 규칙 위반이다. [출처: reference/unity_project_baseline.md]
 - 구독자는 `OnEnable`에서 구독하고 `OnDisable`에서 반드시 해지한다. 해지를 빼먹으면 파괴된 오브젝트를 부르다 터진다.
 - 이벤트 타입 정의는 `Scripts/Core/`에만 둔다. Chunk 씬 안의 스크립트가 자기만의 이벤트 타입을 만들지 않는다.
 
@@ -31,7 +31,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 방�
 1. `Scripts/Core/GameEvent.cs` 생성 — 이벤트 ID(enum), 주체, 페이로드 필드 정의.
 2. `Scripts/Core/EventBus.cs` 생성 — `Publish(GameEvent)`, `Subscribe(Action<GameEvent>)`, `Unsubscribe(...)` 3개 공개 함수만 노출.
 3. 발신 지점 연결 — PlayerController(전투/획득), Interaction(대화), ChunkLoader(진입)에서 해당 사건 발생 시 `Publish` 호출 한 줄 추가.
-4. 구독 지점 연결 — Commentator가 `OnEnable`에서 구독, 반응 생성 후 `Logs/commentator.log`에 `[시각] [이벤트ID] [반응요약]` 한 줄 기록. [출처: prompts/5_developer.md 로그 규칙]
+4. 구독 지점 연결 — Commentator가 `OnEnable`에서 구독, 반응 생성 후 `Logs/commentator.log`에 `[시각] [이벤트ID] [반응요약]` 한 줄 기록. [출처: reference/unity_project_baseline.md 로그 규칙]
 5. 자체 점검 — 컴파일 에러 0, 콘솔 에러 0 확인 후 커밋.
 
 ## 안티패턴
@@ -43,8 +43,8 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 방�
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
-- `Logs/commentator.log`에 이벤트당 한 줄 형식 `[시각] [이벤트ID] [반응요약]`이 남는지 QA가 로그로 판정. [출처: prompts/5_developer.md 로그 규칙]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
+- `Logs/commentator.log`에 이벤트당 한 줄 형식 `[시각] [이벤트ID] [반응요약]`이 남는지 QA가 로그로 판정. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 느슨함 테스트: Commentator 오브젝트를 씬에서 제거해도 게임 본편이 에러 없이 돌아가야 한다. 돌아가지 않으면 어딘가 직접 참조가 숨어 있다는 뜻이다.
 - 방송 누락 테스트: 전투·획득·대화·진입 4종 행동을 각 1회 수행했을 때 로그에 4줄이 남아야 한다.
 

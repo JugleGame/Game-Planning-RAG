@@ -1,3 +1,6 @@
+이 저장소는 **RAG 데이터(리서치 카드) 수집·검증·미러링만** 담당한다. 스펙 작성·Unity 구현·QA
+판정 파이프라인은 2026-07-31에 제거했다 — 그런 작업 요청을 받으면 이 저장소가 아니라고 알린다.
+
 ## 읽기 지도 (무엇을 할 때 무엇만 읽는가)
 | 상황 | 읽을 파일 (이것만) |
 |---|---|
@@ -6,11 +9,7 @@
 | 카드 집필 | prompts/2_writer.md + templates/해당종류 1개 |
 | 카드 검수 | prompts/3_validator.md |
 | 다이제스트 반영 | prompts/4_updater.md |
-| Unity 구현 지시 | prompts/5_developer.md |
-| 기획/스펙 작성 | prompts/6_planner.md |
-| QA 판정 | prompts/7_qa.md |
-| 스펙을 Developer에게 전달 전 검사 | `python scripts/spec_pipeline.py gate` (lint_spec 통과 확인, design/ 전체 열람 금지) |
-| devreport 제안·qa_report 결함 취합 | `python scripts/spec_pipeline.py inbox` — logs/ 전체 열람 대신 이 결과만 확인 |
+| ARCH 카드의 인용 출처 확인 | reference/unity_project_baseline.md (또는 reference/qa_verification_policy.md) — 근거 문서일 뿐 실행 지시서가 아니다. 해당 절만 확인 |
 | 기존 카드 확인 | research/_index.md 먼저 → 필요한 카드 최대 2장 |
 | 카드 형식 오류 | templates/해당종류 1개 (전체 templates 열람 금지). 규칙 자체는 card_schema.py가 단일 소스 |
 | 여러 카드의 특정 절만 필요 (궁합, 빈칸 등) | tools/read_section.py <카드들> "<절 제목>" — 전체 열람 금지 |

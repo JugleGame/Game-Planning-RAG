@@ -5,7 +5,7 @@ title = "상호작용 (IInteractable 인터페이스 + Trigger)"
 summary = "말 걸기·줍기·열기처럼 서로 다른 행동을 '상호작용할 수 있다'는 하나의 약속으로 묶어, 플레이어가 대상의 정체를 몰라도 다룰 수 있게 하는 구조"
 tags = ["interaction", "interface", "trigger", "player", "unity", "2d"]
 updated = "2026-07-29"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 IInteractable + Trigger 명시
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 IInteractable + Trigger 명시
 +++ 
 ## 문제
 
@@ -13,7 +13,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 IInt
 
 ## 구조
 
-- 위치: `Assets/Scripts/Interaction/` — IInteractable 인터페이스, Trigger 기반. [출처: prompts/5_developer.md 기준 구조]
+- 위치: `Assets/Scripts/Interaction/` — IInteractable 인터페이스, Trigger 기반. [출처: reference/unity_project_baseline.md 기준 구조]
 - 약속(인터페이스): 상호작용 가능한 모든 대상이 지키는 최소 규격. 상호작용 실행 함수 하나와, 화면에 띄울 안내 문구(예: "대화하기") 정도만 노출한다.
 - 감지: 대상에 Trigger로 설정한 2D 콜라이더를 두고, 플레이어가 범위에 들어오면 후보로 등록·나가면 해제한다.
 - 실행: 플레이어가 상호작용 키를 누르면 → 현재 후보 중 하나를 골라 → 약속된 실행 함수를 부른다. 플레이어는 대상이 NPC인지 상자인지 모른다.
@@ -22,7 +22,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 IInt
 ## 핵심 규칙
 
 - 플레이어 코드는 구체 타입을 알지 않는다. 타입 검사로 분기하는 순간 이 구조의 존재 이유가 사라진다.
-- 상호작용 결과 사건(대화, 획득)은 반드시 방송한다. [출처: prompts/5_developer.md 방송 규칙]
+- 상호작용 결과 사건(대화, 획득)은 반드시 방송한다. [출처: reference/unity_project_baseline.md 방송 규칙]
 - 상호작용 대상은 청크 씬에 속한다. 후보 목록은 대상이 파괴되거나 청크가 꺼질 때 반드시 정리한다. 정리하지 않으면 사라진 대상을 부르다 터진다.
 - 후보가 여럿일 때 선택 규칙을 하나로 정한다(예: 가장 가까운 것). 규칙이 없으면 프레임마다 대상이 바뀌어 플레이어가 혼란스러워한다.
 - 상호작용 실행 함수는 짧게 유지한다. 실제 내용(대화 진행, 인벤토리 추가)은 각 시스템에 위임한다.
@@ -47,9 +47,9 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 IInt
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 - 다형성 검사: NPC·아이템·문 세 종류를 각각 상호작용했을 때 플레이어 코드 수정 없이 동작해야 한다.
-- 방송 검사: 대화·획득 상호작용 후 `Logs/commentator.log`에 해당 이벤트 줄이 남아야 한다. [출처: prompts/5_developer.md 로그 규칙]
+- 방송 검사: 대화·획득 상호작용 후 `Logs/commentator.log`에 해당 이벤트 줄이 남아야 한다. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 정리 검사: 상호작용 범위 안에서 대상을 파괴하거나 청크를 언로드한 뒤 상호작용 키를 눌러도 에러가 없어야 한다.
 - 선택 규칙 검사: 두 대상 사이에 섰을 때 항상 같은 규칙(가까운 쪽)으로 선택되어야 한다.
 - UI 검사: 범위 진입 시 안내 문구가 뜨고, 이탈 시 사라져야 한다.

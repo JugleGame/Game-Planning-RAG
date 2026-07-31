@@ -5,7 +5,7 @@ title = "2D 물리 이동 (Rigidbody2D)"
 summary = "캐릭터를 좌표로 순간이동시키지 않고 물리 엔진에 '이렇게 움직여 달라'고 부탁해서, 벽과 충돌이 제대로 동작하게 만드는 이동 방식"
 tags = ["physics", "rigidbody2d", "movement", "player", "unity", "2d"]
 updated = "2026-07-29"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 Rigidbody2D 명시 + Unity 공식 Scripting API 근거
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 Rigidbody2D 명시 + Unity 공식 Scripting API 근거
 +++ 
 ## 문제
 
@@ -13,7 +13,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 Rigi
 
 ## 구조
 
-- 위치: `Assets/Scripts/Player/` — PlayerController(Rigidbody2D), PlayerInput. [출처: prompts/5_developer.md 기준 구조]
+- 위치: `Assets/Scripts/Player/` — PlayerController(Rigidbody2D), PlayerInput. [출처: reference/unity_project_baseline.md 기준 구조]
 - 역할 분리 — 입력을 읽는 쪽(PlayerInput)과 물리로 움직이는 쪽(PlayerController)을 나눈다. 입력은 매 프레임, 물리는 고정 주기로 돌기 때문이다.
 - 물리 갱신은 FixedUpdate에서 한다. 이동 코드는 물리 주기에 맞춰야 결과가 일정하다. [출처: Unity 공식 Scripting API — Rigidbody2D.MovePosition 문서의 FixedUpdate 권고]
 - 이동 방식 2종 — ① Dynamic Rigidbody2D + 속도 지정: 충돌·밀림 같은 물리 반응이 필요한 플레이어에 적합 ② Kinematic Rigidbody2D + MovePosition: 순찰 NPC나 움직이는 발판처럼 정해진 대로 움직이는 대상에 적합. [출처: Unity 공식 Scripting API 및 Rigidbody2D 이동 방식 정리]
@@ -34,7 +34,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 Rigi
 3. `Scripts/Player/PlayerController.cs` — FixedUpdate에서 보관된 방향과 속도로 Rigidbody2D를 움직인다.
 4. 이동 방식 결정 — 플레이어는 Dynamic + 속도 지정을 기본으로 한다. 밀림·반동이 필요 없는 대상은 Kinematic + MovePosition.
 5. 충돌 확인 — 벽 콜라이더를 두고 밀어붙였을 때 뚫리지 않는지 본다.
-6. 전투·피격 사건은 이벤트 버스로 방송한다. [출처: prompts/5_developer.md 방송 규칙]
+6. 전투·피격 사건은 이벤트 버스로 방송한다. [출처: reference/unity_project_baseline.md 방송 규칙]
 7. 자체 점검 — 컴파일·콘솔 에러 0 확인 후 커밋.
 
 ## 안티패턴
@@ -48,11 +48,11 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 Rigi
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 - 벽 뚫림 검사: 벽에 계속 밀어붙였을 때 통과하지 못해야 한다.
 - 프레임 독립성 검사: 프레임률 상한을 다르게 설정해도 같은 시간 동안 이동 거리가 같아야 한다.
 - 방식 일관성 검사: 코드에서 Dynamic 바디에 대한 transform.position 대입이 하나도 없어야 한다(검색으로 확인 가능).
-- 방송 검사: 전투 관련 행동 시 `Logs/commentator.log`에 이벤트 줄이 남아야 한다. [출처: prompts/5_developer.md 로그 규칙]
+- 방송 검사: 전투 관련 행동 시 `Logs/commentator.log`에 이벤트 줄이 남아야 한다. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 입력 유실 검사: 짧게 누른 입력이 무시되지 않아야 한다(Update에서 읽고 FixedUpdate에서 소비하는 구조가 지켜지는지).
 
 ## 조합 궁합

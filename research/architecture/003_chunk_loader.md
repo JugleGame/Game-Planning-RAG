@@ -5,7 +5,7 @@ title = "청크 로더 (3x3 활성 규칙)"
 summary = "플레이어가 선 칸을 중심으로 주변 3x3 청크만 켜두고, 벗어난 칸은 꺼서 넓은 세계를 일정한 비용으로 유지하는 로딩 관리자"
 tags = ["streaming", "chunk", "world", "performance", "open-world", "unity", "2d"]
 updated = "2026-07-29"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 3x3 규칙 명시 + Unity 씬 활성화 비용 근거
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 3x3 규칙 명시 + Unity 씬 활성화 비용 근거
 +++ 
 ## 문제
 
@@ -13,7 +13,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 3x3 
 
 ## 구조
 
-- 위치: `Assets/Scripts/World/ChunkLoader` — 플레이어 주변 3x3 청크만 활성화한다. [출처: prompts/5_developer.md 기준 구조]
+- 위치: `Assets/Scripts/World/ChunkLoader` — 플레이어 주변 3x3 청크만 활성화한다. [출처: reference/unity_project_baseline.md 기준 구조]
 - 상태: 현재 플레이어가 속한 청크 좌표, 현재 켜져 있는 청크 좌표 집합.
 - 흐름: 플레이어 위치 → 속한 청크 좌표 계산 → 좌표가 바뀌었을 때만 → 필요한 집합(중심 기준 3x3 = 9칸) 계산 → (필요한데 없는 칸) 로딩 + (있는데 필요 없는 칸) 언로드.
 - 계산 방식: 월드 좌표를 청크 크기로 나눠 내림하면 청크 좌표가 나온다. 청크 좌표는 ARCH-002의 씬 파일명 `Chunk_x_y`와 1:1로 대응한다.
@@ -21,9 +21,9 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 3x3 
 
 ## 핵심 규칙
 
-- 활성 범위는 중심 포함 3x3, 즉 9칸으로 고정한다. 범위를 늘리는 것은 구조 변경이므로 사람 승인이 필요하다. [출처: prompts/5_developer.md]
+- 활성 범위는 중심 포함 3x3, 즉 9칸으로 고정한다. 범위를 늘리는 것은 구조 변경이므로 사람 승인이 필요하다. [출처: reference/unity_project_baseline.md]
 - 매 프레임 계산하지 않는다. 플레이어의 청크 좌표가 **바뀐 프레임에만** 갱신 판단을 한다.
-- 진입 사건은 반드시 방송한다. 플레이어의 청크 진입은 방송 규칙 대상 행동이다. [출처: prompts/5_developer.md 방송 규칙]
+- 진입 사건은 반드시 방송한다. 플레이어의 청크 진입은 방송 규칙 대상 행동이다. [출처: reference/unity_project_baseline.md 방송 규칙]
 - 로더는 청크 안의 내용물을 모른다. 무엇이 들어 있든 씬 단위로만 켜고 끈다. 내용물을 아는 순간 결합이 생겨 청크를 추가할 때마다 로더를 고쳐야 한다.
 - 언로드 전에 그 청크의 변경 상태(부순 블록, 죽인 적 등)를 저장 계층에 넘긴다. 넘기지 않으면 다시 들어갔을 때 세계가 원래대로 돌아간 것처럼 보인다. 저장 규격은 ARCH-004를 따른다.
 
@@ -47,10 +47,10 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 3x3 
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 - 활성 개수 검사: 플레이 중 어느 시점에나 활성 청크 씬 개수가 9개 이하여야 한다. 초과하면 언로드가 누락된 것이다.
 - 진동 검사: 청크 경계 위를 왕복했을 때 로딩·언로드 로그가 반복해서 쌓이지 않아야 한다.
-- 방송 검사: 청크 진입 시 `Logs/commentator.log`에 진입 이벤트 줄이 남아야 한다. [출처: prompts/5_developer.md 로그 규칙]
+- 방송 검사: 청크 진입 시 `Logs/commentator.log`에 진입 이벤트 줄이 남아야 한다. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 상태 보존 검사: 청크에서 오브젝트를 변경 → 멀리 이동해 언로드 → 되돌아왔을 때 변경이 유지되어야 한다.
 
 ## 조합 궁합

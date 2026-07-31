@@ -5,7 +5,7 @@ title = "세이브 시스템 (JSON 직렬화)"
 summary = "게임 상태를 사람이 읽을 수 있는 JSON 문서로 바꿔 플랫폼별 저장 경로에 안전하게 기록하고 되살리는 구조"
 tags = ["save", "persistence", "json", "core", "unity", "data"]
 updated = "2026-07-29"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 SaveSystem(JSON) 명시 + Unity 공식 API 근거
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 SaveSystem(JSON) 명시 + Unity 공식 API 근거
 +++ 
 ## 문제
 
@@ -13,11 +13,11 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 Save
 
 ## 구조
 
-- 위치: `Assets/Scripts/Core/SaveSystem` — 저장 형식은 JSON. [출처: prompts/5_developer.md 기준 구조]
+- 위치: `Assets/Scripts/Core/SaveSystem` — 저장 형식은 JSON. [출처: reference/unity_project_baseline.md 기준 구조]
 - 계층: 게임 상태 객체(순수 데이터 클래스) → 직렬화 → 문자열 → 파일. 되돌릴 때는 역순.
 - 저장 위치는 `Application.persistentDataPath` 하위. 이 경로는 플랫폼마다 알아서 올바른 위치를 가리키므로 직접 경로를 적지 않는다. [출처: Unity 저장 시스템 정리 문서들의 공통 권고]
 - 저장 단위 2종 — 전역 상태(플레이어 위치·인벤토리·진행도)와 청크 상태(청크별 변경 사항). 청크 상태는 청크 좌표를 키로 분리 보관해 필요한 것만 읽는다.
-- 직렬화 도구는 Unity 내장 JsonUtility 또는 외부 라이브러리 중 택1. 내장은 의존성이 없는 대신 Dictionary 같은 일부 타입을 직접 직렬화하지 못해 감싸는 클래스가 필요하다. [출처: Unity JsonUtility 관련 정리 문서] 외부 라이브러리 추가는 사람 승인 사항이다. [출처: prompts/5_developer.md 금지 목록]
+- 직렬화 도구는 Unity 내장 JsonUtility 또는 외부 라이브러리 중 택1. 내장은 의존성이 없는 대신 Dictionary 같은 일부 타입을 직접 직렬화하지 못해 감싸는 클래스가 필요하다. [출처: Unity JsonUtility 관련 정리 문서] 외부 라이브러리 추가는 사람 승인 사항이다. [출처: reference/unity_project_baseline.md 금지 목록]
 
 ## 핵심 규칙
 
@@ -48,7 +48,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 Save
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 - 왕복 검사: 상태 변경 → 저장 → 게임 종료 → 재실행 → 불러오기 후 값이 동일한지 확인.
 - 파일 없음 검사: 세이브 파일을 지운 상태로 실행했을 때 에러 없이 새 게임이 시작되어야 한다.
 - 깨진 파일 검사: 세이브 파일 내용을 일부러 훼손한 뒤 실행했을 때 게임이 죽지 않고 복구 또는 새 게임으로 넘어가야 한다.

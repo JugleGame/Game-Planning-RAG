@@ -17,7 +17,7 @@ confidence = "medium" # 기준 충족: 공식 문서·실제 프로젝트 출처
 
 ## 핵심 규칙
 
-<!-- Developer AI가 어길 수 없는 규칙 3~5개. prompts/5_developer.md와 어긋나면 안 됨. -->
+<!-- Developer AI가 어길 수 없는 규칙 3~5개. reference/unity_project_baseline.md와 어긋나면 안 됨. -->
 
 ## Unity 구현 절차
 

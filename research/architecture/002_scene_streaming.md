@@ -5,7 +5,7 @@ title = "씬 스트리밍 (Boot / World_Base / Chunk Additive 구조)"
 summary = "게임을 한 덩어리 씬으로 만들지 않고 시작·상시·조각 세 종류로 쪼갠 뒤, 필요한 조각만 덧붙여 켜고 끄는 월드 구성 방식"
 tags = ["scene", "streaming", "additive", "open-world", "core", "unity", "2d"]
 updated = "2026-07-29"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md) + Unity 공식 SceneManager 문서 근거
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md) + Unity 공식 SceneManager 문서 근거
 +++ 
 ## 문제
 
@@ -13,7 +13,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md) + Unity
 
 ## 구조
 
-- 씬 3종 역할 분담 [출처: prompts/5_developer.md 기준 구조]
+- 씬 3종 역할 분담 [출처: reference/unity_project_baseline.md 기준 구조]
 - `Boot.unity` — 시작 씬. 매니저만 존재한다. 게임 시작 시 가장 먼저 열리며 World_Base를 불러온다.
 - `World_Base.unity` — 플레이어, 카메라, UI. 게임이 도는 동안 **항상 켜져 있다**. 여기가 위 비유의 "필기구"다.
 - `Chunk_x_y.unity` — 월드 조각. Additive 로딩으로 켜고 끈다. 지형, 오브젝트, NPC가 들어간다.
@@ -22,10 +22,10 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md) + Unity
 
 ## 핵심 규칙
 
-- 청크 규칙: 월드 오브젝트는 반드시 Chunk 씬에 넣는다. World_Base에 넣지 않는다. [출처: prompts/5_developer.md]
+- 청크 규칙: 월드 오브젝트는 반드시 Chunk 씬에 넣는다. World_Base에 넣지 않는다. [출처: reference/unity_project_baseline.md]
 - World_Base에는 "게임이 도는 내내 살아 있어야 하는 것"만 둔다. 판단 기준: 청크가 꺼져도 살아 있어야 하나? 예 → World_Base, 아니오 → Chunk.
 - Chunk 씬 안의 스크립트는 다른 Chunk의 오브젝트를 직접 참조하지 않는다. 청크는 언제든 꺼질 수 있으므로 참조가 끊긴다. 청크 간 소통은 ARCH-001 이벤트 버스를 쓴다.
-- 씬 구조 자체의 변경은 사람 승인이 필요하다. [출처: prompts/5_developer.md]
+- 씬 구조 자체의 변경은 사람 승인이 필요하다. [출처: reference/unity_project_baseline.md]
 - 청크 좌표 규칙은 파일명 `Chunk_x_y`가 곧 월드 좌표다. 이름과 실제 위치가 어긋나면 로더가 잘못된 조각을 켠다.
 
 ## Unity 구현 절차
@@ -47,7 +47,7 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md) + Unity
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
 - 씬 소속 검사: 플레이 중 청크를 하나 언로드했을 때 플레이어·카메라·UI가 그대로 살아 있어야 한다. 하나라도 사라지면 World_Base에 있어야 할 것이 청크에 들어간 것이다.
 - 반대 검사: 청크를 언로드했을 때 그 안의 월드 오브젝트가 확실히 사라져야 한다. 남아 있으면 청크 규칙 위반이다.
 - 로딩 방식 검사: 청크 전환 순간 프레임이 눈에 띄게 멈추지 않아야 한다(동기 로딩 혼입 탐지).

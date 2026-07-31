@@ -5,7 +5,7 @@ title = "해설자 파이프라인 (구독 → 반응 생성 → 로그)"
 summary = "AI 해설자가 게임 사건 방송을 듣고, 반응을 만들고, 반드시 한 줄 로그를 남기는 3단 처리 흐름"
 tags = ["commentator", "ai", "pipeline", "logging", "core", "unity"]
 updated = "2026-07-29"
-confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 방송·로그 규칙 명시 + ELEM-005 근거 카드 존재
+confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 방송·로그 규칙 명시 + ELEM-005 근거 카드 존재
 +++ 
 ## 문제
 
@@ -13,16 +13,16 @@ AI 해설자는 게임에서 벌어지는 거의 모든 일을 알아야 한다.
 
 ## 구조
 
-- 위치: `Assets/Scripts/Commentator/` — EventBus 구독 → 반응 생성 → 반응 로그 기록. [출처: prompts/5_developer.md 기준 구조]
+- 위치: `Assets/Scripts/Commentator/` — EventBus 구독 → 반응 생성 → 반응 로그 기록. [출처: reference/unity_project_baseline.md 기준 구조]
 - 3단 흐름 — ① 구독: 이벤트 버스에서 사건을 받는다 ② 판단·생성: 반응할지 정하고 반응을 만든다 ③ 기록: 로그 한 줄을 남긴다. 각 단계는 앞 단계만 알고 뒤 단계는 모른다.
-- 입력은 오직 이벤트 버스 방송이다. 해설자 시스템은 이 방송에만 의존한다. 직접 참조 금지. [출처: prompts/5_developer.md 방송 규칙]
-- 출력 형식은 고정 — `Logs/commentator.log`에 `[시각] [이벤트ID] [반응요약]` 한 줄. [출처: prompts/5_developer.md 로그 규칙]
+- 입력은 오직 이벤트 버스 방송이다. 해설자 시스템은 이 방송에만 의존한다. 직접 참조 금지. [출처: reference/unity_project_baseline.md 방송 규칙]
+- 출력 형식은 고정 — `Logs/commentator.log`에 `[시각] [이벤트ID] [반응요약]` 한 줄. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 반응 생성이 외부 AI 호출이면 시간이 걸린다. 따라서 요청은 비동기이고, 그 사이 게임은 멈추지 않는다. [해석] 응답 지연·실패를 정상 경로로 취급해야 하며, 이는 ELEM-005가 지적하는 취약성과 같은 문제다.
 
 ## 핵심 규칙
 
-- 입력 경로는 이벤트 버스 하나뿐이다. 다른 시스템의 필드를 직접 읽는 코드가 하나라도 있으면 규칙 위반이다. [출처: prompts/5_developer.md]
-- 반응할 때마다 반드시 로그를 남긴다. 로그는 선택이 아니라 QA의 판정 근거다. [출처: prompts/5_developer.md 로그 규칙]
+- 입력 경로는 이벤트 버스 하나뿐이다. 다른 시스템의 필드를 직접 읽는 코드가 하나라도 있으면 규칙 위반이다. [출처: reference/unity_project_baseline.md]
+- 반응할 때마다 반드시 로그를 남긴다. 로그는 선택이 아니라 QA의 판정 근거다. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 반응하지 않기로 한 경우에도 판단 자체는 기록에 남기는 편이 좋다. [해석] 침묵이 버그인지 의도인지 구분할 방법이 없으면 QA가 판정할 수 없다.
 - 해설자는 게임 상태를 바꾸지 않는다. 읽고 말할 뿐이다. 상태를 바꾸는 순간 게임 로직이 되고, 제거해도 게임이 도는지 확인할 수 없게 된다.
 - AI 호출 실패는 게임을 멈추지 않는다. 실패해도 게임은 계속되고, 실패 사실은 로그에 남는다.
@@ -48,8 +48,8 @@ AI 해설자는 게임에서 벌어지는 거의 모든 일을 알아야 한다.
 
 ## 검증 방법
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: prompts/5_developer.md 자체 점검 기준]
-- 로그 형식 검사: `Logs/commentator.log`의 모든 줄이 `[시각] [이벤트ID] [반응요약]` 형식이어야 한다. [출처: prompts/5_developer.md 로그 규칙]
+- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
+- 로그 형식 검사: `Logs/commentator.log`의 모든 줄이 `[시각] [이벤트ID] [반응요약]` 형식이어야 한다. [출처: reference/unity_project_baseline.md 로그 규칙]
 - 사건-로그 대응 검사: 전투·획득·대화·진입을 각 1회 수행하면 대응하는 로그 줄이 남아야 한다(필터로 제외한 종류는 제외 사유가 명시되어야 한다).
 - 독립성 검사: 해설자 오브젝트를 제거해도 게임 본편이 에러 없이 동작해야 한다. 실패하면 어딘가 직접 참조 또는 게임 개입이 있다는 뜻이다.
 - 실패 내성 검사: AI 호출을 강제로 실패시켰을 때 게임이 계속 돌고 실패 로그가 남아야 한다.
