@@ -1,5 +1,5 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-31 | 카드 115장
+생성: 2026-07-31 | 카드 120장
 
 ## 최근 7일 변경
 - ARCH-015 | 07-31
@@ -7,11 +7,15 @@
 - ARCH-017 | 07-31
 - ARCH-018 | 07-31
 - ARCH-019 | 07-31
+- ARCH-020 | 07-31
+- ARCH-021 | 07-31
 - ELEM-027 | 07-31
 - ELEM-028 | 07-31
 - ELEM-029 | 07-31
 - ELEM-030 | 07-31
 - ELEM-031 | 07-31
+- ELEM-032 | 07-31
+- ELEM-033 | 07-31
 - GAME-034 | 07-31
 - GAME-035 | 07-31
 - GAME-036 | 07-31
@@ -19,6 +23,7 @@
 - GAME-038 | 07-31
 - GAME-039 | 07-31
 - GAME-040 | 07-31
+- GAME-041 | 07-31
 - GENRE-015 | 07-31
 - GENRE-016 | 07-31
 - GENRE-017 | 07-31
@@ -119,6 +124,8 @@
 - ELEM-029 | 협력 기반 자산 공유 메커닉 (Shared Vault Co-op Mechanic) | 플레이어가 개인 보상을 포기하거나 일부를 넘겨 팀 공용 저장소에 축적하게 만들어, 협력 인센티브를 자원 관리 수준으로 끌어내리는 구조 | #co-op #squad #live-service #retention #incentive | 07-31
 - ELEM-030 | 자동화 진행 옵션 (Auto-play / Skip Progression) | 플레이어가 정한 조건에 맞춰 게임이 대신 진행하게 해, 반복 작업을 자동으로 처리하는 편의 기능 | #convenience #grind #mobile #live-service #divisive #quality-of-life | 07-31
 - ELEM-031 | 펙트로스핑 그래픽 효과 (Juiciness / Screen Juice / Screenshake) | 화면 흔들림, 파티클 폭발, 숫자 띄우기 등 시각 피드백을 과장되게 쌓아 버튼 입력이 즉각 반응하는 착각을 주는 기술 | #visual-feedback #feel #indie #game-feel #polish | 07-31
+- ELEM-032 | 뉴 게임 플러스 (New Game+) | 게임을 한 번 클리어한 뒤 유저가 자발적으로 진행도(장비·능력치)를 이어받아 처음부터 다시 도전하게 만드는 사후 재플레이 장치 | #replayability #post-game #difficulty #narrative #broad-appeal | 07-31
+- ELEM-033 | 동적 난이도 조절 (Dynamic Difficulty Adjustment, DDA) | 플레이어의 실시간 성과(피격·정확도·순위)를 관찰해 적 강도나 자원 드롭을 자동으로 조절해, 겉으로 드러나지 않게 난이도를 항상 적당한 긴장 상태로 유지하는 기술 | #difficulty #ai-director #invisible-design #balance #broad-appeal | 07-31
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -184,6 +191,7 @@
 - GAME-038 | Buckshot Roulette (2024, Mike Klubnika / Critical Reflex) | 실제 산탄총 러시안 룰렛 규칙을 그대로 빌려와 심리전 아이템만 얹은 초저가 1인 개발 공포 게임으로, 출시 2주 만에 100만 장을 판 바이럴 히트작 | #horror #russian-roulette #solo-dev #indie #viral #low-cost | 07-31
 - GAME-039 | Cloverpit (2024, solo developer) | Balatro 출시 후 포커 규칙을 차용한 로그라이트 카드 게임의 추종작 중 하나로, 최소한의 인터페이스와 빠른 진행으로 평가받음 | #deckbuilder #roguelite #poker #indie #solo-dev #post-balatro | 07-31
 - GAME-040 | Hades II (2024 얼리액세스 / 2025 정식출시, Supergiant Games) | 전작을 뛰어넘는 평가와 판매로 2025년 최고 평점 게임에 오른 로그라이크 내러티브 속편 | #roguelike #narrative #sequel #early-access #indie #broad-appeal | 07-31
+- GAME-041 | Baldur's Gate 3 (2023, Larian Studios) | 2023년 스팀 최고 판매작이자 그해 최고 평점 게임으로, 선택 기반 분기와 협동 플레이를 결합한 CRPG의 상업·평단 정점 | #crpg #narrative #branching #co-op #aaa #goty #broad-appeal | 07-31
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
@@ -211,3 +219,5 @@
 - ARCH-017 | 오디오 매니저 (AudioSource 풀 + BGM/SFX 분리) | 소리를 재생할 때마다 AudioSource를 새로 만들지 않고, BGM 전용과 SFX 풀을 미리 나눠 관리해서 겹쳐 재생되는 효과음도 끊기지 않게 하는 구조 | #audio #sfx #bgm #pooling #singleton #unity | 07-31
 - ARCH-018 | 게임 매니저 (전역 게임 상태: Playing / Paused / GameOver) | 지금 게임이 진행 중인지, 멈춰 있는지, 끝났는지를 여러 스크립트가 각자 판단하지 않고, 딱 한 곳(GameManager)이 들고 있다가 물어보면 답해주는 구조 | #gamemanager #singleton #game-state #core #unity #2d | 07-31
 - ARCH-019 | 세이브 상태 암호화 규약 (Save State Encryption Protocol) | 플레이어가 저장 파일을 직접 열어 게임 상태(체력, 돈, 진행도)를 조작하는 부정행위를 기술적으로 방지하는 설계 | #cheating-prevention #security #savefile #integrity #convention | 07-31
+- ARCH-020 | 애니메이션 상태 머신 (Animator Controller / Animation State Machine) | 캐릭터의 애니메이션 클립을 코드에서 직접 재생하지 않고, 상태(State)와 전환 조건(Transition)으로 미리 짜둔 그래프에 맡겨 파라미터만 바꾸면 알맞은 동작이 자동으로 이어지게 하는 구조 | #animation #animator #state-machine #unity #pattern #player | 07-31
+- ARCH-021 | 인벤토리 시스템 (Inventory / Item Database, ScriptableObject 기반) | 아이템의 '정의'(이름, 아이콘, 능력치)와 '보유 상태'(개수, 내구도)를 분리해, 데이터 자산 하나로 여러 캐릭터·슬롯이 같은 아이템 정보를 공유하게 만드는 구조 | #inventory #item #scriptableobject #rpg #unity #pattern | 07-31
