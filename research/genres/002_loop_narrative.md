@@ -4,14 +4,15 @@ type = "genre"
 title = "루프 내러티브 (Loop Narrative)"
 summary = "반복 구조 자체가 이야기를 전달하는 수단이 되는 군집"
 elements = ["ELEM-004", "ELEM-001"]
-example_games = ["GAME-008", "GAME-009", "GAME-005"]
+example_games = ["GAME-008", "GAME-009", "GAME-005", "GAME-040"]
 tags = ["time-loop", "roguelike", "story-rich", "retention"]
-updated = "2026-07-15"
+updated = "2026-07-31"
 confidence = "high"              # 대표작 수치·설계 근거가 출처로 확보됨
 +++
 ## 구성 요소
 - ELEM-004 (반복 메커닉) - 군집의 뼈대. 반복이 벌이 아니라 진행이 되는 구조.
 - ELEM-001 (티저 기반 공개) - 반복을 견디게 하는 연료. "다음 루프에 확인할 것"을 계속 공급.
+- 대표작 갱신: GAME-040 (Hades II)이 GAME-009와 같은 "죽음 = 서사 진행" 구조를 속편에서 반복해 성립시켰다 - 이 군집의 구조가 1회성 아이디어가 아니라 반복 가능한 공식임을 보여주는 근거다 [출처: GAME-040 카드].
 
 ## 시장 포화도
 정점 검증작: GAME-009 (Hades, 100만 장+/98% 긍정), GAME-008 (Outer Wilds,

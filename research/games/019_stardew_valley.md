@@ -3,10 +3,10 @@ card_id = "GAME-019"
 type = "success"
 title = "Stardew Valley (2016, ConcernedApe / Chucklefish)"
 summary = "1인 개발 도트 그래픽 농장 시뮬레이션으로 Steam 최고 평점 게임 자리까지 오른 오픈월드형 생활 시뮬레이터"
-genres = ["GENRE-006"]
+genres = ["GENRE-006", "GENRE-007"]   # GENRE-007(코지 시뮬)의 단일 대표작이기도 함 (역참조 보강 2026-07-31)
 elements = ["ELEM-013"]
 tags = ["farming-sim", "open-world", "pixel", "solo-dev", "broad-appeal"]
-updated = "2026-07-25"
+updated = "2026-07-31"
 confidence = "high"
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

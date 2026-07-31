@@ -4,7 +4,7 @@ type = "mechanic"
 title = "로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft)"
 summary = "매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조"
 tags = ["roguelike", "randomness", "draft", "run-based", "tower-defense", "divisive"]
-updated = "2026-07-29"
+updated = "2026-07-31"
 confidence = "medium"
 +++
 ## 정의
@@ -20,6 +20,8 @@ confidence = "medium"
 - GAME-030 (Slay the Spire) - 전투가 끝날 때마다 무작위로 제시된 카드 보상 중 하나만 골라 덱에
   더하는 구조로 이 요소의 정석을 세웠고 [출처: Eneba 리뷰 기사, 2026-07 확인], PC·콘솔 합산 1,000만
   장을 넘겼다 [출처: Alinea Analytics, 2026-03-20 기준].
+- GAME-034 (Wildfrost) - 매 전투 후 무작위로 제시되는 카드·유물 중 택1로 팀을 꾸리는 런 기반 구조.
+  SteamSpy 추정 보유자 수 50만~100만 명 [출처: GAME-034 카드].
 
 ## 실패 사례
 - GAME-027 (Rogue Tower) - 같은 게임 안에서 일부 유저는 "다음 타일이 뭔지 안 보이는 무작위 경로가
@@ -40,6 +42,8 @@ confidence = "medium"
 - 좋음: ELEM-017 (가챠 확률 & 천장 시스템) - [해석] 둘 다 "무작위이되 완전히 무자비하지는 않게"
   만드는 장치라, 드래프트에 최소 보장·천장 규칙을 얹으면 GAME-027류의 "불공평하다"는 불만을 줄일
   여지가 있음 (아직 실증 사례 없는 가설 - GENRE-010 빈칸 참조)
+- 장르 앵커: GENRE-010 (타워 디펜스), GENRE-012 (로그라이크 덱빌더), GENRE-019 (서바이버라이크) - 세
+  군집이 모두 이 요소를 구성 요소로 지목한다.
 
 ## 리스크
 - [해석] 무작위 요소가 승패를 크게 좌우할수록 "운게임"이라는 반발이 커짐 - GAME-027이 실제로 이

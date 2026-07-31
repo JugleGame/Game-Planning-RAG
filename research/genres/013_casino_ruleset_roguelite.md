@@ -4,9 +4,9 @@ type = "genre"
 title = "카지노 규칙 로그라이트 (Casino-ruleset Roguelite)"
 summary = "포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집"
 elements = ["ELEM-021", "ELEM-022", "ELEM-020"]
-example_games = ["GAME-031"]
+example_games = ["GAME-031", "GAME-038"]
 tags = ["roguelite", "poker", "casino", "indie", "emerging", "regulation"]
-updated = "2026-07-29"
+updated = "2026-07-31"
 confidence = "medium"
 +++
 ## 구성 요소
@@ -15,6 +15,9 @@ confidence = "medium"
 - ELEM-022 (지수적 점수 스케일링) - 빌려온 규칙 위에 조커·카드 효과를 겹쳐 점수가 폭발적으로
   불어나게 만드는 것이 이 군집의 공통된 성장 축이다.
 - ELEM-020 (덱 구축) - 한 판 동안 카드·조커를 모아 자신만의 조합을 완성해 가는 구조.
+- 대표작 확장: GAME-038 (Buckshot Roulette)은 카드가 아닌 러시안 룰렛 규칙을 차용한 사례로,
+  이 군집의 바탕 규칙이 카드 게임에 한정되지 않음을 보여준다 - 다만 덱 구축(ELEM-020)은 쓰지 않아
+  군집의 세 구성 요소 중 둘만 공유한다 [출처: GAME-038 카드].
 - [해석] 이 군집을 GENRE-012(로그라이크 덱빌더)와 가르는 것은 "바탕 규칙이 이미 세상에 존재하는가"이다.
   덱빌더는 규칙 자체를 새로 만들지만, 이 군집은 포커·블랙잭이라는 기성 규칙 위에 시스템만 얹는다.
 

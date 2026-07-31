@@ -4,7 +4,7 @@ type = "pattern"
 title = "이벤트 버스 (EventBus / Pub-Sub)"
 summary = "시스템끼리 직접 부르지 않고, 가운데 방송국(EventBus)에 사건을 방송하면 듣고 싶은 쪽만 구독해서 반응하는 느슨한 연결 구조"
 tags = ["decoupling", "core", "commentator", "2d-open-world", "unity", "pub-sub"]
-updated = "2026-07-29"
+updated = "2026-07-31"
 confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 방송 규칙과 동일 + Unity 공식 아키텍처 자료 근거
 +++ 
 ## 문제
@@ -52,4 +52,6 @@ confidence = "high" # 프로젝트 기준 구조(prompts/5_developer.md)의 방�
 
 - ELEM-005 (AI 통합): AI 해설자가 실시간 반응을 만들려면 사건 스트림이 필요하다. EventBus가 그 공급선이라 사실상 전제 조건이다.
 - 궁합 좋음 — 저장 시스템: SaveSystem이 "무슨 일이 있었나"를 이벤트 구독으로 수집하면 저장 로직이 게임플레이 코드에 침투하지 않는다.
+- ARCH-018 (게임 매니저): 전역 게임 상태(Playing/Paused/GameOver)가 바뀔 때 이 버스로 방송한다. UI·입력·오디오가 GameManager를 직접 참조하지 않게 만드는 유일한 통로다.
+- ARCH-014 (UI 캔버스 구조): 동적 캔버스는 버스 구독으로만 갱신한다 — 매 프레임 폴링 대신 사건이 왔을 때만 다시 그리는 것이 정적/동적 분리의 전제다.
 - 충돌 주의 — 즉시성이 필요한 물리 반응(피격 넉백 등)은 버스를 거치지 말고 해당 컴포넌트 안에서 직접 처리한다. 버스는 "알림"용이지 "제어"용이 아니다.
