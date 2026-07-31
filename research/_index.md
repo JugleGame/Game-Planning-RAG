@@ -1,5 +1,5 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-31 | 카드 116장
+생성: 2026-07-31 | 카드 115장
 
 ## 최근 7일 변경
 - ARCH-015 | 07-31
@@ -7,7 +7,6 @@
 - ARCH-017 | 07-31
 - ARCH-018 | 07-31
 - ARCH-019 | 07-31
-- ARCH-020 | 07-31
 - ELEM-027 | 07-31
 - ELEM-028 | 07-31
 - ELEM-029 | 07-31
@@ -212,4 +211,3 @@
 - ARCH-017 | 오디오 매니저 (AudioSource 풀 + BGM/SFX 분리) | 소리를 재생할 때마다 AudioSource를 새로 만들지 않고, BGM 전용과 SFX 풀을 미리 나눠 관리해서 겹쳐 재생되는 효과음도 끊기지 않게 하는 구조 | #audio #sfx #bgm #pooling #singleton #unity | 07-31
 - ARCH-018 | 게임 매니저 (전역 게임 상태: Playing / Paused / GameOver) | 지금 게임이 진행 중인지, 멈춰 있는지, 끝났는지를 여러 스크립트가 각자 판단하지 않고, 딱 한 곳(GameManager)이 들고 있다가 물어보면 답해주는 구조 | #gamemanager #singleton #game-state #core #unity #2d | 07-31
 - ARCH-019 | 세이브 상태 암호화 규약 (Save State Encryption Protocol) | 플레이어가 저장 파일을 직접 열어 게임 상태(체력, 돈, 진행도)를 조작하는 부정행위를 기술적으로 방지하는 설계 | #cheating-prevention #security #savefile #integrity #convention | 07-31
-- ARCH-020 | 오브젝트 풀링 패턴 (Object Pooling Pattern) | 총알·파티클처럼 짧은 수명으로 자주 생기고 사라지는 오브젝트를 매번 새로 만들고 없애지 않고, 미리 만든 것을 재사용하는 성능 최적화 구조 | #performance #pooling #optimization #unity #pattern #vfx | 07-31
