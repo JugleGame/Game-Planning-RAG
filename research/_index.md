@@ -1,13 +1,15 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-01 | 카드 127장
+생성: 2026-08-01 | 카드 129장
 
 ## 최근 7일 변경
 - ELEM-036 | 08-01
 - ELEM-037 | 08-01
 - ELEM-038 | 08-01
+- ELEM-039 | 08-01
 - GAME-042 | 08-01
 - GAME-043 | 08-01
 - GAME-044 | 08-01
+- GAME-045 | 08-01
 - GENRE-022 | 08-01
 - GENRE-023 | 08-01
 - GENRE-024 | 08-01
@@ -147,6 +149,7 @@
 - ELEM-036 | 영웅 픽/밴 드래프트 (Hero Pick/Ban Draft) | 시합 시작 전 양 팀이 번갈아 상대가 못 쓸 영웅을 막고(밴), 자기 편이 쓸 영웅을 고르는(픽) 절차 | #moba #draft #esports #strategy #pvp | 08-01
 - ELEM-037 | 좁혀지는 세이프존 (Shrinking Safe Zone) | 시간이 지날수록 플레이 가능 구역을 강제로 줄여 흩어진 플레이어들을 서로 충돌하게 만드는 구조 | #battle-royale #forced-encounter #tension #map-design #pvp | 08-01
 - ELEM-038 | 라운드제 경제 시스템 (Round-based Economy / Buy System) | 라운드가 끝날 때마다 성적에 따라 돈을 받고, 다음 라운드 시작 전 그 돈으로 장비를 사는 구조 | #tactical-shooter #economy #esports #round-based #pvp | 08-01
+- ELEM-039 | 포획형 동료 노동 시스템 (Capturable Creature Labor System) | 야생 생물을 잡아 전투 동료가 아니라 채집·제작·운반 같은 노동력으로 기지에 배치하는 구조 | #creature-collection #automation #base-building #survival #co-op | 08-01
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -218,6 +221,7 @@
 - GAME-042 | Counter-Strike 2 (2023, Valve) | 20년 프랜차이즈를 새 엔진으로 이전하며 압도적 장기 지표를 지켰지만 출시 초기 판정 신뢰 논란을 겪은 라운드제 슈터 | #fps #tactical-shooter #esports #valve #pvp #mixed-reception | 08-01
 - GAME-043 | Dota 2 (2013, Valve) | 완전 무료 영웅 로스터와 코스메틱 전용 수익화로 10년 넘게 Steam 상위권을 지킨 MOBA | #moba #esports #valve #free-to-play #pvp #long-tail | 08-01
 - GAME-044 | PUBG: BATTLEGROUNDS (2017, PUBG Studios / KRAFTON) | 배틀로얄 장르를 대중화시킨 원조작이지만, 후발주자에 밀리며 리뷰가 Mixed로 굳은 사례 | #battle-royale #free-to-play #krafton #pvp #cheating-controversy | 08-01
+- GAME-045 | Palworld (2024 얼리액세스 / 2026-07-10 정식출시, Pocketpair) | 포켓몬류 생물 포획과 총기 서바이벌 크래프팅을 결합해 1.0 출시 직후 폭발적 판매를 기록한 오픈월드 서바이벌 | #survival #crafting #open-world #creature-collection #co-op #indie #controversy | 08-01
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
