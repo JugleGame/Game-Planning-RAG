@@ -4,7 +4,7 @@
 초기화했다. 이전 세션들의 누적치를 알 수 없어 pending_new_cards는 이번 세션에
 새로 만든 카드 수만 반영한 값이다 - 실제 누적치와 다를 수 있으니 사람 확인 필요. -->
 
-- pending_new_cards = 3
+- pending_new_cards = 5
 - last_signal_digest = "2026-07-31"
 
 ## 사람 확인 필요
