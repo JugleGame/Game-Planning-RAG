@@ -10,8 +10,8 @@
 
 ## 2026-07-31 23:05 생성 (카테고리: ELEM)
 - [ ] NPC 자율성 의사결정 아키텍처 전면 재설계 (End-to-end Autonomy Decision-Making Redesign) — connects_to: ELEM-005, ARCH-005 — why_now: inZOI 개발일지(2026-07-24)가 부분 수정이 아니라 자율성 의사결정 로직 자체를 전면 재설계 중이라고 발표(8월 업데이트 예정) - 기존 ELEM-005(AI 통합)의 "실시간 반응 생성"과 달리 반응 이전의 의사결정 구조 자체를 다루는 하위 요소 (07-25 다이제스트) — obscurity: 낮음
-- [ ] 탐사형 포토그래피 목표 동사 (Exploration Photography as Core Verb) — connects_to: ELEM-012 — why_now: Wholesome Direct 2026에서 소개된 우주 로버 사진 촬영 신작 'ROVA' - 랜드마크 기반 탐험(ELEM-012)에 "사진으로 증거를 남긴다"는 구체적 목표 동사를 결합한 사례이나 아직 카드 부재 (07-25 다이제스트) — obscurity: 높음
-- [ ] 접객 서비스 루프 (Hospitality / Service Sim Loop) — connects_to: ELEM-013, GENRE-007 — why_now: Wholesome Direct 2026에서 소개된 픽셀아트 주점 시뮬 신작 'Long Live My Lady' - 코지 시뮬 군집에 "손님 접객"이라는 구체적 서비스 루프 사례가 아직 카드로 없음 (07-25 다이제스트) — obscurity: 높음
+- [X] 탐사형 포토그래피 목표 동사 (Exploration Photography as Core Verb) — connects_to: ELEM-012 — why_now: Wholesome Direct 2026에서 소개된 우주 로버 사진 촬영 신작 'ROVA' - 랜드마크 기반 탐험(ELEM-012)에 "사진으로 증거를 남긴다"는 구체적 목표 동사를 결합한 사례이나 아직 카드 부재 (07-25 다이제스트) — obscurity: 높음
+- [X] 접객 서비스 루프 (Hospitality / Service Sim Loop) — connects_to: ELEM-013, GENRE-007 — why_now: Wholesome Direct 2026에서 소개된 픽셀아트 주점 시뮬 신작 'Long Live My Lady' - 코지 시뮬 군집에 "손님 접객"이라는 구체적 서비스 루프 사례가 아직 카드로 없음 (07-25 다이제스트) — obscurity: 높음
 - [ ] 롱테일 유지형 신규 플레이어블 클래스 추가 (Long-tail Retention via New Playable Class Addition) — connects_to: ELEM-032, GAME-022 — why_now: 다키스트 던전 10주년 DLC 'The Fire's Edge'(2026-08-18)가 발작 시스템 확장과 별개로 신규 히어로 2종(듀얼리스트·러너웨이)을 추가해 장기 유지를 노리는 신호 - 뉴 게임 플러스(ELEM-032)와는 다른 '신규 클래스 투입형' 재플레이 유인 (07-27 다이제스트) — obscurity: 낮음
 - [ ] 일상 행동 그럴듯함 미세조정 (Everyday Behavior Plausibility Fix) — connects_to: ARCH-005 — why_now: inZOI 개발일지(2026-07-24)가 자율성 전면 재설계와 별개로 방치된 음식을 냉장고에 넣는 등 소규모 행동 개선을 예고 - 상태머신(ARCH-005)에 세부 상태·조건을 더하는 저비용·고체감 개선 패턴이 아직 카드로 없음 (07-25 다이제스트) — obscurity: 낮음
 
