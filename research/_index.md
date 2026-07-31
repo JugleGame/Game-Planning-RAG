@@ -1,67 +1,76 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-07-30 | 카드 91장
+생성: 2026-07-31 | 카드 100장
 
 ## 최근 7일 변경
-- ELEM-024 | 07-30
-- ELEM-025 | 07-30
-- ELEM-023 | 07-30
-- ELEM-026 | 07-30
-- GENRE-014 | 07-30
-- ARCH-014 | 07-30
+- ARCH-015 | 07-31
+- ARCH-016 | 07-31
+- ARCH-017 | 07-31
+- ARCH-018 | 07-31
+- GAME-034 | 07-31
+- GAME-035 | 07-31
+- GAME-036 | 07-31
+- GAME-037 | 07-31
+- GAME-038 | 07-31
+- ARCH-011 | 07-30
 - ARCH-012 | 07-30
 - ARCH-013 | 07-30
-- ARCH-011 | 07-30
-- GAME-033 | 07-30
+- ARCH-014 | 07-30
+- ELEM-023 | 07-30
+- ELEM-024 | 07-30
+- ELEM-025 | 07-30
+- ELEM-026 | 07-30
 - GAME-032 | 07-30
-- ELEM-018 | 07-29
-- ELEM-020 | 07-29
-- ELEM-019 | 07-29
-- ELEM-017 | 07-29
-- ELEM-004 | 07-29
-- ELEM-021 | 07-29
-- ELEM-022 | 07-29
-- GENRE-010 | 07-29
-- GENRE-011 | 07-29
-- GENRE-012 | 07-29
-- GENRE-013 | 07-29
-- ARCH-007 | 07-29
+- GAME-033 | 07-30
+- GENRE-014 | 07-30
+- ARCH-001 | 07-29
 - ARCH-002 | 07-29
-- ARCH-008 | 07-29
-- ARCH-006 | 07-29
 - ARCH-003 | 07-29
 - ARCH-004 | 07-29
-- ARCH-010 | 07-29
 - ARCH-005 | 07-29
+- ARCH-006 | 07-29
+- ARCH-007 | 07-29
+- ARCH-008 | 07-29
 - ARCH-009 | 07-29
-- ARCH-001 | 07-29
+- ARCH-010 | 07-29
+- ELEM-004 | 07-29
+- ELEM-017 | 07-29
+- ELEM-018 | 07-29
+- ELEM-019 | 07-29
+- ELEM-020 | 07-29
+- ELEM-021 | 07-29
+- ELEM-022 | 07-29
+- GAME-027 | 07-29
 - GAME-028 | 07-29
 - GAME-029 | 07-29
 - GAME-030 | 07-29
 - GAME-031 | 07-29
-- GAME-027 | 07-29
-- GAME-026 | 07-28
+- GENRE-010 | 07-29
+- GENRE-011 | 07-29
+- GENRE-012 | 07-29
+- GENRE-013 | 07-29
 - GAME-024 | 07-28
 - GAME-025 | 07-28
-- ELEM-016 | 07-27
-- ELEM-014 | 07-27
-- ELEM-015 | 07-27
+- GAME-026 | 07-28
 - ELEM-005 | 07-27
 - ELEM-010 | 07-27
-- GENRE-009 | 07-27
+- ELEM-014 | 07-27
+- ELEM-015 | 07-27
+- ELEM-016 | 07-27
+- GAME-011 | 07-27
+- GAME-021 | 07-27
+- GAME-022 | 07-27
+- GAME-023 | 07-27
+- GENRE-003 | 07-27
 - GENRE-007 | 07-27
 - GENRE-008 | 07-27
-- GENRE-003 | 07-27
+- GENRE-009 | 07-27
 - SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 07-27
-- GAME-011 | 07-27
-- GAME-023 | 07-27
-- GAME-022 | 07-27
-- GAME-021 | 07-27
 - ELEM-013 | 07-25
-- GENRE-006 | 07-25
-- SIGNAL-2026-07-25_genre_element_weekly | 07-25
-- GAME-020 | 07-25
 - GAME-018 | 07-25
 - GAME-019 | 07-25
+- GAME-020 | 07-25
+- GENRE-006 | 07-25
+- SIGNAL-2026-07-25_genre_element_weekly | 07-25
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-15
@@ -141,6 +150,11 @@
 - GAME-031 | Balatro (2024, LocalThunk / Playstack) | 누구나 아는 포커 족보를 바탕으로 쓰고 그 위에 조커 조합을 얹어, 익명 1인 개발로 500만 장을 판 로그라이트 | #roguelite #deckbuilder #poker #solo-dev #indie #rating-controversy #broad-appeal | 07-29
 - GAME-032 | LIMBO (2010, Playdead) | 흑백 실루엣과 침묵만으로 공포를 만든 횡스크롤 퍼즐 플랫포머의 원형작 | #horror #side-scroller #puzzle-platformer #indie #atmosphere #monochrome | 07-30
 - GAME-033 | Little Nightmares III (2025, Supermassive Games / Bandai Namco) | 분위기는 그대로였지만 반복된 공식과 겉도는 신규 메커닉으로 시리즈 최저 평가를 받은 후속작 | #horror #side-scroller #sequel #divisive #formula-fatigue | 07-30
+- GAME-034 | Wildfrost (2023, Deadpan Games & Gaziter / Chucklefish) | 카드 궁합과 타일 배치를 결합한 턴제 로그라이크 덱빌더로, 소규모 팀이 출시 첫 해에 대형 판매고를 올린 인디 성공 사례 | #deckbuilder #roguelike #indie #turn-based #card-synergy | 07-31
+- GAME-035 | Darkwood (2017, Acid Wizard Studio) | 손전등 없이 시야가 닿는 원 안에서만 세상이 보이는 탑다운 생존 공포로, 오랜 얼리액세스를 거쳐 흥행에 성공한 인디작 | #horror #survival #top-down #indie #light-mechanic | 07-31
+- GAME-036 | Signalis (2022, rose-engine / Humble Games) | 제한된 손전등 시야와 그림다크 SF 톤을 결합한 도트 그래픽 생존 공포로, 소규모 독일 스튜디오의 원작임에도 압도적 긍정 평가를 받은 작품 | #horror #survival #grimdark #indie #pixel #light-mechanic | 07-31
+- GAME-037 | Vampire Survivors (2022, poncle) | 무기 조합이 곱해지며 화면을 뒤덮는 폭발적 스케일링을 코어로 삼아, 1인 개발 원형에서 새 장르(서바이버라이크)를 만든 초저가 인디 대히트작 | #survivors-like #roguelite #indie #solo-dev-origin #power-scaling #broad-appeal | 07-31
+- GAME-038 | Buckshot Roulette (2024, Mike Klubnika / Critical Reflex) | 실제 산탄총 러시안 룰렛 규칙을 그대로 빌려와 심리전 아이템만 얹은 초저가 1인 개발 공포 게임으로, 출시 2주 만에 100만 장을 판 바이럴 히트작 | #horror #russian-roulette #solo-dev #indie #viral #low-cost | 07-31
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
@@ -163,3 +177,7 @@
 - ARCH-012 | Data/ 데이터 자산 규약 (ScriptableObject 테이블) | 아이템 능력치나 확률표 같은 설정값을 코드 안에 박아넣지 않고 프로젝트의 데이터 파일로 따로 빼서, 코드를 안 고치고도 수치를 바꿀 수 있게 하는 규칙 | #data #scriptableobject #convention #balance #unity #authoring | 07-30
 - ARCH-013 | 2D 카메라 추적 (Cinemachine 3 + 경계 제한 + 픽셀 퍼펙트) | 카메라를 캐릭터에 그냥 붙이지 않고 '따라가는 전용 부품'에 맡겨서, 부드럽게 쫓아가면서도 월드 밖 빈 공간은 보여주지 않게 만드는 방식 | #camera #cinemachine #pixel-perfect #2d #unity #world-base | 07-30
 - ARCH-014 | UI 캔버스 구조 (World_Base 정적/동적 분리) | 화면 UI를 한 덩어리로 두지 않고 '거의 안 변하는 것'과 '자주 변하는 것'으로 나눠 담아서, 체력바 한 칸 바뀔 때 화면 전체를 다시 그리지 않게 하는 배치 | #ui #canvas #performance #world-base #unity #structure | 07-30
+- ARCH-015 | 오브젝트 풀링 (UnityEngine.Pool ObjectPool<T>) | 총알·이펙트처럼 자주 생기고 사라지는 오브젝트를 매번 만들고 없애지 않고, 미리 만들어둔 재고를 빌렸다 반납하는 방식으로 순간적인 성능 부담을 없애는 구조 | #pooling #performance #objectpool #bullet #vfx #unity | 07-31
+- ARCH-016 | 입력 시스템 (Input System 패키지 + InputActionAsset) | 키보드·게임패드 같은 서로 다른 장치의 버튼을 코드에 흩어 적지 않고, '이동'·'상호작용' 같은 행동 이름 하나에 여러 장치의 입력을 미리 묶어두는 입력 처리 구조 | #input #inputsystem #inputaction #player #unity #2d | 07-31
+- ARCH-017 | 오디오 매니저 (AudioSource 풀 + BGM/SFX 분리) | 소리를 재생할 때마다 AudioSource를 새로 만들지 않고, BGM 전용과 SFX 풀을 미리 나눠 관리해서 겹쳐 재생되는 효과음도 끊기지 않게 하는 구조 | #audio #sfx #bgm #pooling #singleton #unity | 07-31
+- ARCH-018 | 게임 매니저 (전역 게임 상태: Playing / Paused / GameOver) | 지금 게임이 진행 중인지, 멈춰 있는지, 끝났는지를 여러 스크립트가 각자 판단하지 않고, 딱 한 곳(GameManager)이 들고 있다가 물어보면 답해주는 구조 | #gamemanager #singleton #game-state #core #unity #2d | 07-31
