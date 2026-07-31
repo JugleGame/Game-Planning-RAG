@@ -28,6 +28,10 @@ QA로 판정하는 파이프라인은 여기 없습니다(2026-07-31 제거). �
                                 │
               사람이 검토 후 research/<계층>/ 로 이동 + 커밋
                                 │
+        scripts/audit_links.py --for <새 카드> (한쪽만 생긴 링크 탐지)
+                                │
+        5_linker(역방향 patch 제안) ──▶ 사람 승인 ──▶ apply_patch.py
+                                │
         M단계: build_index → sync_db → embed_cards → verify_db
 
 research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patch 제안 JSON)
@@ -46,7 +50,8 @@ research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patc
 │   ├── 1_researcher.md             #   웹조사 → 증거 JSON (해석·평가 금지)
 │   ├── 2_writer.md                 #   증거만으로 카드 초안 집필
 │   ├── 3_validator.md              #   적대적 검수 (반려 사유 탐색이 목적)
-│   └── 4_updater.md                #   신호를 기존 카드 patch 제안으로 변환
+│   ├── 4_updater.md                #   신호를 기존 카드 patch 제안으로 변환
+│   └── 5_linker.md                 #   새 카드가 연 간극을 기존 카드 쪽 patch 제안으로 변환
 ├── research/                       # ★ 지식 베이스 (5계층 카드 DB)
 │   ├── _index.md                   #   라우팅 인덱스 겸 ID 등록부 — 직접 수정 금지, build_index.py가 재생성
 │   ├── _scout_queue.md             #   0_scout이 쌓는 조사 후보 큐 (사람이 [ ]→[x]로 선택)
@@ -62,9 +67,9 @@ research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patc
 │   └── qa_verification_policy.md   #   ARCH 카드 '검증 방법' 절이 따르는 판정 기준
 ├── scripts/                        # 카드 생산 도구
 │   ├── make_card.py                #   R→W→V→lint 자동 루프(1회 재시도), 결과는 draft/에 저장
-│   ├── lint_card.py                #   frontmatter·필수 절·ID 참조·수치 근거 검사기
-│   ├── apply_patch.py              #   4_updater의 patch.json을 카드에 섹션 단위로 적용
-│   └── scan_refs.py                #   참조됐지만 카드가 없는 ID를 찾아 작업 큐 생성
+│   ├── lint_card.py                #   카드 한 장이 규격에 맞는가 (frontmatter·필수 절·수치 근거)
+│   ├── audit_links.py              #   카드 사이가 맞물리는가 (한쪽만 생긴 링크·고아·깨진 참조)
+│   └── apply_patch.py              #   4_updater/5_linker의 patch.json을 섹션 단위로 적용
 ├── tools/                          # 인덱스 재생성 + DB 미러링 + 의미 검색
 │   ├── build_index.py              #   카드 frontmatter → research/_index.md 재생성
 │   ├── _db.py                      #   DSN 해석 공통 헬퍼
@@ -118,25 +123,64 @@ python scripts/make_card.py "GAME-042 <제목>" --template templates/Game.md \
 
 # 3) 사람이 draft/ 검토 후 research/<계층>/ 로 이동 + 커밋
 
-# 4) M단계 — 카드를 만들거나 지웠으면 반드시 이 순서로 (embed는 sync 다음)
+# 4) 연결 보강 — 새 카드가 기존 카드 쪽에 만든 간극을 닫는다 (아래 절 참고)
+python scripts/audit_links.py --for GAME-042
+#    → 5_linker로 patch.json 생성 → 사람 승인 →
+python scripts/apply_patch.py patch.json --cards-dir research
+
+# 5) M단계 — 카드를 만들거나 지웠으면 반드시 이 순서로 (embed는 sync 다음)
 python tools/build_index.py
 python tools/sync_db.py
 python tools/embed_cards.py
 python tools/verify_db.py        # unresolved_refs가 0이어야 완료
 
-# 5) 매주 research/signals/YYYY-MM-DD_*.md 작성 (관측 사실만, 추가 전용)
-# 6) 4_updater로 patch.json 생성 → 사람 승인 → 반영
+# 6) 매주 research/signals/YYYY-MM-DD_*.md 작성 (관측 사실만, 추가 전용)
+# 7) 4_updater로 patch.json 생성 → 사람 승인 → 반영
 python scripts/apply_patch.py patch.json --digest research/signals/YYYY-MM-DD_*.md
-
-# 7) 필요 시 참조됐지만 카드가 없는 ID 점검
-python scripts/scan_refs.py --cards-dir research --index research/_index.md
 ```
 
 검사는 언제든 단독 실행할 수 있습니다:
 
 ```bash
-python scripts/lint_card.py research/*/*.md --index research/_index.md
+python scripts/lint_card.py research/*/*.md --index research/_index.md   # 카드 한 장의 규격
+python scripts/audit_links.py                                            # 카드 사이의 맞물림
 ```
+
+## 연결 보강 (audit_links.py + 5_linker)
+
+카드를 새로 쓰면 **새 카드 → 기존 카드** 방향 링크는 생기지만, **기존 카드 → 새 카드** 방향은
+저절로 생기지 않습니다. GAME 카드가 `elements = ["ELEM-021"]`이라고 선언해도 ELEM-021의
+`성공 사례`에는 그 게임이 없는 식입니다. 카드가 100장을 넘으면 이 간극을 눈으로 찾을 수 없습니다.
+(2026-07-31 최초 감사에서 58건이 쌓여 있었습니다.)
+
+`scripts/audit_links.py`가 그 간극만 기계적으로 찾습니다. `lint_card.py`가 **카드 한 장이 규격에
+맞는가**를 본다면, 이쪽은 **카드 사이가 맞물리는가**를 봅니다.
+
+| 검사 | 등급 | 뜻 |
+|---|---|---|
+| `broken_ref` | 확실 | 참조한 ID의 카드가 없다 (오타 또는 삭제된 카드) |
+| `missing_card` | 확실 | `_index.md`에 예약만 되고 카드가 없다 |
+| `backlink_missing` | 확실 | GAME이 지목한 ELEM 카드에 그 게임이 없다 |
+| `genre_example_missing` | 확실 | `GAME.genres` ↔ `GENRE.example_games`가 한쪽만 있다 |
+| `genre_anchor_missing` | 확인 필요 | GENRE가 구성 요소로 지목한 ELEM에 그 장르 표시가 없다 |
+| `fm_body_drift` | 확인 필요 | GAME 본문이 언급하는 ELEM이 frontmatter에 없다 |
+| `orphan` | 확인 필요 | 아무 카드도 참조하지 않아 검색으로 도달할 수 없다 |
+
+```bash
+python scripts/audit_links.py                 # 전체 감사 (확실 항목이 있으면 종료코드 1)
+python scripts/audit_links.py --for GAME-042  # 이 카드 때문에 고쳐야 할 곳만
+python scripts/audit_links.py --json          # 5_linker에 넣을 기계 출력
+python scripts/audit_links.py --strict        # '확인 필요'도 종료코드에 반영 (pre-commit 훅용)
+```
+
+- **'확인 필요'는 결함이 아닐 수 있습니다.** 카드가 "이 요소는 일부러 쓰지 않았다"고 배제한
+  기록일 수 있습니다. 그런 문장은 `<!-- 증거 부족: ... -->` 주석 안에 두면 감사가 더는 잡지 않습니다
+  (주석 안의 ID는 '언급'으로 치지 않습니다).
+- 감사 결과를 [prompts/5_linker.md](prompts/5_linker.md)에 넣으면 `apply_patch.py`가 그대로 먹는
+  patch.json이 나옵니다. **새 사실을 만들지 않는 것**이 이 프롬프트의 유일한 규칙입니다 — 모든
+  문장은 간극 양쪽 카드에 이미 있는 내용을 `[출처: GAME-### 카드]`로 인용해 옮겨 적을 뿐입니다.
+- frontmatter 배열 수정(`genre_example_missing`)은 `apply_patch.py`가 하지 못하므로 5_linker가
+  `manual` 목록으로 따로 내보내고, 사람이 직접 고칩니다.
 
 ## DB 미러 계층 (선택 기능)
 

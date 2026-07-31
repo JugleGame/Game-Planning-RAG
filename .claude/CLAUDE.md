@@ -9,6 +9,8 @@
 | 카드 집필 | prompts/2_writer.md + templates/해당종류 1개 |
 | 카드 검수 | prompts/3_validator.md |
 | 다이제스트 반영 | prompts/4_updater.md |
+| 카드를 새로 넣은 직후 (필수) | `python scripts/audit_links.py --for <ID>` → 간극 있으면 prompts/5_linker.md. 기존 카드를 눈으로 훑지 말 것 — 이 출력이 대상 목록이다 |
+| 저장소 전체 연결 점검 | `python scripts/audit_links.py` — '확실' 등급은 반드시 닫고, '확인 필요'는 해당 카드 본문을 보고 판단 |
 | ARCH 카드의 인용 출처 확인 | reference/unity_project_baseline.md (또는 reference/qa_verification_policy.md) — 근거 문서일 뿐 실행 지시서가 아니다. 해당 절만 확인 |
 | 기존 카드 확인 | research/_index.md 먼저 → 필요한 카드 최대 2장 |
 | 카드 형식 오류 | templates/해당종류 1개 (전체 templates 열람 금지). 규칙 자체는 card_schema.py가 단일 소스 |
@@ -25,4 +27,6 @@
 3. research/ 하위 폴더를 통째로 여는 것 금지 (ls는 허용, cat 전체 금지).
 4. db/, bridge/, tools/*.py 소스는 DB 미러 계층 자체를 고치는 작업이 아니면 열지 않는다 (사용은 CLI 실행만으로 충분).
 5. md가 원본, DB는 거울이다. 거울에 손으로 INSERT/UPDATE 금지 — 쓰기는 sync_db.py만 한다. `tools/init_db.py`는 테이블을 DROP하므로 미러링 목적으로 실행 금지.
-6. 카드 파일을 건드렸으면 M단계까지 끝나야 작업 완료다. DB 접속 실패는 카드 작업의 실패가 아니므로, "카드 완료 / 미러링 실패(사유)"로 보고하고 넘어간다 — 조용히 넘기지 않는다.
+6. 카드를 새로 넣었으면 `audit_links.py --for <ID>`까지가 한 세트다. 새 카드에서 나가는 링크만
+   만들고 끝내면 기존 카드 쪽이 그 카드를 모르는 상태로 남는다 — 역방향은 저절로 생기지 않는다.
+7. 카드 파일을 건드렸으면 M단계까지 끝나야 작업 완료다. DB 접속 실패는 카드 작업의 실패가 아니므로, "카드 완료 / 미러링 실패(사유)"로 보고하고 넘어간다 — 조용히 넘기지 않는다.
