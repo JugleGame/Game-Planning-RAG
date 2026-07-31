@@ -5,7 +5,7 @@
 새로 만든 카드 수만 반영한 값이다 - 실제 누적치와 다를 수 있으니 사람 확인 필요. -->
 
 - pending_new_cards = 3
-- last_signal_digest = "2026-07-27"
+- last_signal_digest = "2026-07-31"
 
 ## 사람 확인 필요
 - 2026-07-30 nightly_executor: `research/_automation_state.md` 파일이 존재하지
