@@ -1,18 +1,24 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-01 | 카드 129장
+생성: 2026-08-01 | 카드 134장
 
 ## 최근 7일 변경
+- ELEM-017 | 08-01
 - ELEM-036 | 08-01
 - ELEM-037 | 08-01
 - ELEM-038 | 08-01
 - ELEM-039 | 08-01
+- ELEM-040 | 08-01
 - GAME-042 | 08-01
 - GAME-043 | 08-01
 - GAME-044 | 08-01
 - GAME-045 | 08-01
+- GAME-046 | 08-01
+- GAME-047 | 08-01
+- GAME-048 | 08-01
 - GENRE-022 | 08-01
 - GENRE-023 | 08-01
 - GENRE-024 | 08-01
+- GENRE-025 | 08-01
 - ARCH-001 | 07-31
 - ARCH-011 | 07-31
 - ARCH-015 | 07-31
@@ -87,7 +93,6 @@
 - ARCH-008 | 07-29
 - ARCH-009 | 07-29
 - ARCH-010 | 07-29
-- ELEM-017 | 07-29
 - GAME-027 | 07-29
 - GAME-028 | 07-29
 - GAME-029 | 07-29
@@ -130,7 +135,7 @@
 - ELEM-014 | 처벌적 죽음 순환 (Punishing Death Loop) | 죽으면 모아둔 자원을 잃고 정해진 지점에서 다시 시작하되, 죽은 자리로 돌아가면 한 번 더 되찾을 기회를 주는 긴장·반복 구조 | #difficulty #dark-fantasy #soulslike #retention #divisive | 07-31
 - ELEM-015 | 스트레스/광기 시스템 (Sanity / Stress Meter) | 캐릭터에게 정신적 압박(스트레스·공포·광기) 수치를 부여해, 임계치를 넘으면 환각·행동 이상 같은 부정적 상태를 발생시키는 방식 | #horror #dark-fantasy #psychological #punishing #divisive | 07-31
 - ELEM-016 | 그림다크 톤 (Grimdark Aesthetic) | 도덕적으로 회색지대인 인물, 부패하고 무너져가는 세계, 희망이 옅은 절망적 분위기를 시각·서사 전반에 깔아두는 톤 | #dark-fantasy #grimdark #tone #narrative #atmosphere | 07-31
-- ELEM-017 | 가챠 확률 & 천장 시스템 (Gacha Probability & Pity System) | 확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치 | #gacha #monetization #randomness #live-service #mobile #regulation #divisive | 07-29
+- ELEM-017 | 가챠 확률 & 천장 시스템 (Gacha Probability & Pity System) | 확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치 | #gacha #monetization #randomness #live-service #mobile #regulation #divisive | 08-01
 - ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조 | #roguelike #randomness #draft #run-based #tower-defense #divisive | 07-31
 - ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조 | #loot #randomness #looter-shooter #arpg #retention #grind #transparency #divisive | 07-31
 - ELEM-020 | 덱 구축 (Deck-building) | 약한 시작 카드 묶음에서 출발해 플레이 도중 카드를 한 장씩 더하고 빼며 자기만의 덱을 만들어가는 구조 | #deckbuilder #roguelike #randomness #replayability #indie #strategy | 07-31
@@ -150,6 +155,7 @@
 - ELEM-037 | 좁혀지는 세이프존 (Shrinking Safe Zone) | 시간이 지날수록 플레이 가능 구역을 강제로 줄여 흩어진 플레이어들을 서로 충돌하게 만드는 구조 | #battle-royale #forced-encounter #tension #map-design #pvp | 08-01
 - ELEM-038 | 라운드제 경제 시스템 (Round-based Economy / Buy System) | 라운드가 끝날 때마다 성적에 따라 돈을 받고, 다음 라운드 시작 전 그 돈으로 장비를 사는 구조 | #tactical-shooter #economy #esports #round-based #pvp | 08-01
 - ELEM-039 | 포획형 동료 노동 시스템 (Capturable Creature Labor System) | 야생 생물을 잡아 전투 동료가 아니라 채집·제작·운반 같은 노동력으로 기지에 배치하는 구조 | #creature-collection #automation #base-building #survival #co-op | 08-01
+- ELEM-040 | 애니메 스타일 캐릭터 수집 (Anime-style Character Collection) | 애니메이션 그림체의 캐릭터를 뽑기로 모으되, 각 캐릭터에 성우 풀보이스·개인 서사·의상을 갖춰 소장 자체를 목적으로 만드는 방식 | #subculture #anime #gacha #character-collection #live-service #waifu | 08-01
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
@@ -176,6 +182,7 @@
 - GENRE-022 | 배틀로얄 (Battle Royale) | 다수 플레이어가 동시에 낙하해 좁혀지는 세이프존 안에서 최후 1인/1팀만 남을 때까지 겨루는 군집 | #battle-royale #pvp #last-player-standing #aaa #saturated | 08-01
 - GENRE-023 | 택틱컬 라운드제 슈터 (Tactical Round-based Shooter) | 공격/수비 진영을 라운드마다 교대하며 라운드제 경제로 무장을 갖춰 최선승 라운드를 겨루는 경쟁 슈터 군집 | #tactical-shooter #esports #round-based #competitive #pvp | 08-01
 - GENRE-024 | MOBA (Multiplayer Online Battle Arena) | 영웅 픽/밴 드래프트로 시작해 라인·정글이 있는 대칭 맵에서 상대 거점을 파괴하는 것이 코어인 팀 대전 군집 | #moba #esports #lane-based #pvp #free-to-play | 08-01
+- GENRE-025 | 서브컬쳐 게임 (Subculture Game / Anime Character-collection Action) | 애니메 그림체 캐릭터를 가챠로 모으고 키우는 것이 수익화·리텐션의 코어인, 일본·중국 개발사가 주도하는 라이브서비스 군집 | #subculture #anime #gacha #live-service #action-rpg #mobile-first | 08-01
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-31
@@ -222,6 +229,9 @@
 - GAME-043 | Dota 2 (2013, Valve) | 완전 무료 영웅 로스터와 코스메틱 전용 수익화로 10년 넘게 Steam 상위권을 지킨 MOBA | #moba #esports #valve #free-to-play #pvp #long-tail | 08-01
 - GAME-044 | PUBG: BATTLEGROUNDS (2017, PUBG Studios / KRAFTON) | 배틀로얄 장르를 대중화시킨 원조작이지만, 후발주자에 밀리며 리뷰가 Mixed로 굳은 사례 | #battle-royale #free-to-play #krafton #pvp #cheating-controversy | 08-01
 - GAME-045 | Palworld (2024 얼리액세스 / 2026-07-10 정식출시, Pocketpair) | 포켓몬류 생물 포획과 총기 서바이벌 크래프팅을 결합해 1.0 출시 직후 폭발적 판매를 기록한 오픈월드 서바이벌 | #survival #crafting #open-world #creature-collection #co-op #indie #controversy | 08-01
+- GAME-046 | Wuthering Waves (2024, Kuro Games) | 2024년 5월 원 출시 이후 이용자 감소를 겪었으나 2025년 4월 Steam 진출과 3.0 업데이트로 자체 기록을 경신하며 반등한 오픈월드 액션 서브컬쳐 게임 | #subculture #anime #gacha #open-world #action-rpg #live-service | 08-01
+- GAME-047 | Zenless Zone Zero (2024, miHoYo/HoYoverse) | 2024년 7월 타 플랫폼 출시 후 2년 만인 2026년 6월 Steam에 진입하며 높은 동시접속과 긍정 평가를 동시에 얻은 도시 액션 서브컬쳐 게임 | #subculture #anime #gacha #action #urban #live-service #hoyoverse | 08-01
+- GAME-048 | GODDESS OF VICTORY: NIKKE (2022, SHIFT UP / Level Infinite) | 모바일에서는 서브컬쳐 매출 3개월 연속 1위를 기록했지만, 2023년부터 열려 있던 Steam 버전은 사실상 방치되어 있는 플랫폼 격차 사례 | #subculture #anime #gacha #shooter #mobile-first #platform-gap | 08-01
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
