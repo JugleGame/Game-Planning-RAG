@@ -1,13 +1,15 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-01 | 카드 134장
+생성: 2026-08-01 | 카드 135장
 
 ## 최근 7일 변경
+- ARCH-007 | 08-01
 - ELEM-017 | 08-01
 - ELEM-036 | 08-01
 - ELEM-037 | 08-01
 - ELEM-038 | 08-01
 - ELEM-039 | 08-01
 - ELEM-040 | 08-01
+- ELEM-041 | 08-01
 - GAME-042 | 08-01
 - GAME-043 | 08-01
 - GAME-044 | 08-01
@@ -15,6 +17,7 @@
 - GAME-046 | 08-01
 - GAME-047 | 08-01
 - GAME-048 | 08-01
+- GENRE-003 | 08-01
 - GENRE-022 | 08-01
 - GENRE-023 | 08-01
 - GENRE-024 | 08-01
@@ -89,7 +92,6 @@
 - ARCH-004 | 07-29
 - ARCH-005 | 07-29
 - ARCH-006 | 07-29
-- ARCH-007 | 07-29
 - ARCH-008 | 07-29
 - ARCH-009 | 07-29
 - ARCH-010 | 07-29
@@ -108,7 +110,6 @@
 - GAME-021 | 07-27
 - GAME-022 | 07-27
 - GAME-023 | 07-27
-- GENRE-003 | 07-27
 - GENRE-007 | 07-27
 - GENRE-008 | 07-27
 - GENRE-009 | 07-27
@@ -156,11 +157,12 @@
 - ELEM-038 | 라운드제 경제 시스템 (Round-based Economy / Buy System) | 라운드가 끝날 때마다 성적에 따라 돈을 받고, 다음 라운드 시작 전 그 돈으로 장비를 사는 구조 | #tactical-shooter #economy #esports #round-based #pvp | 08-01
 - ELEM-039 | 포획형 동료 노동 시스템 (Capturable Creature Labor System) | 야생 생물을 잡아 전투 동료가 아니라 채집·제작·운반 같은 노동력으로 기지에 배치하는 구조 | #creature-collection #automation #base-building #survival #co-op | 08-01
 - ELEM-040 | 애니메 스타일 캐릭터 수집 (Anime-style Character Collection) | 애니메이션 그림체의 캐릭터를 뽑기로 모으되, 각 캐릭터에 성우 풀보이스·개인 서사·의상을 갖춰 소장 자체를 목적으로 만드는 방식 | #subculture #anime #gacha #character-collection #live-service #waifu | 08-01
+- ELEM-041 | AI 관찰자/해설자 결합 (AI Observer-Commentator Synthesis) | AI가 플레이어의 과거 행동·루프를 실시간으로 관찰하고 그 자리에서 캠피하게 반응/언급하는 조합 - ELEM-002+003+005의 종합, 아직 어떤 게임도 완성하지 못한 빈칸 | #ai #campy #fourth-wall #commentator #meta #emerging #gap | 08-01
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
 - GENRE-002 | 루프 내러티브 (Loop Narrative) | 반복 구조 자체가 이야기를 전달하는 수단이 되는 군집 | #time-loop #roguelike #story-rich #retention | 07-31
-- GENRE-003 | AI 네이티브 게임 (AI-native Games) | 실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 군집 | #ai-native #emerging #fragile #high-cost | 07-27
+- GENRE-003 | AI 네이티브 게임 (AI-native Games) | 실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 군집 | #ai-native #emerging #fragile #high-cost | 08-01
 - GENRE-004 | 코미디 슈터 (Comedy Shooter) | 견고한 슈팅 루프 위에 캠피 유머를 얹은 군집 | #fps #comedy #divisive | 07-15
 - GENRE-005 | 오픈월드 (Open World) | 정해진 경로 대신 넓게 이어진 하나의 세계를 자유롭게 돌아다니며 플레이어가 스스로 순서를 정하는 군집 | #open-world #exploration #sandbox #aaa #broad-appeal | 07-21
 - GENRE-006 | 도트 그래픽 2D 오픈월드/샌드박스 (Pixel-art 2D Open World / Sandbox) | 픽셀 아트로 표현된 2D 세계를 채굴·건설·경작 등 자유도 높은 방식으로 탐험하게 하는 군집 | #pixel #open-world #sandbox #2d #indie #exploration | 07-25
@@ -247,7 +249,7 @@
 - ARCH-004 | 세이브 시스템 (JSON 직렬화) | 게임 상태를 사람이 읽을 수 있는 JSON 문서로 바꿔 플랫폼별 저장 경로에 안전하게 기록하고 되살리는 구조 | #save #persistence #json #core #unity #data | 07-29
 - ARCH-005 | NPC 상태머신 (Idle / Patrol / Talk) | NPC의 행동을 여러 개의 '상태'로 나누고 한 번에 하나만 켜지게 해서, 조건에 따라 상태를 갈아타는 방식으로 행동을 만드는 구조 | #npc #fsm #state-machine #ai-behavior #unity #2d | 07-29
 - ARCH-006 | 상호작용 (IInteractable 인터페이스 + Trigger) | 말 걸기·줍기·열기처럼 서로 다른 행동을 '상호작용할 수 있다'는 하나의 약속으로 묶어, 플레이어가 대상의 정체를 몰라도 다룰 수 있게 하는 구조 | #interaction #interface #trigger #player #unity #2d | 07-29
-- ARCH-007 | 해설자 파이프라인 (구독 → 반응 생성 → 로그) | AI 해설자가 게임 사건 방송을 듣고, 반응을 만들고, 반드시 한 줄 로그를 남기는 3단 처리 흐름 | #commentator #ai #pipeline #logging #core #unity | 07-29
+- ARCH-007 | 해설자 파이프라인 (구독 → 반응 생성 → 로그) | AI 해설자가 게임 사건 방송을 듣고, 반응을 만들고, 반드시 한 줄 로그를 남기는 3단 처리 흐름 | #commentator #ai #pipeline #logging #core #unity | 08-01
 - ARCH-008 | 폴더·네이밍 규약 | 새 파일을 어디에 두고 무슨 이름을 붙일지 미리 정해두어, 사람과 AI가 매번 고민하거나 서로 다르게 놓는 일을 없애는 약속 | #convention #naming #folder #project-structure #unity #workflow | 07-29
 - ARCH-009 | 2D 물리 이동 (Rigidbody2D) | 캐릭터를 좌표로 순간이동시키지 않고 물리 엔진에 '이렇게 움직여 달라'고 부탁해서, 벽과 충돌이 제대로 동작하게 만드는 이동 방식 | #physics #rigidbody2d #movement #player #unity #2d | 07-29
 - ARCH-010 | 로그 규약 (QA 판정용) | 게임이 남기는 기록의 형식과 위치를 미리 못 박아, QA AI가 사람의 감각이 아니라 관찰 가능한 증거로 합격·불합격을 판정할 수 있게 하는 약속 | #logging #convention #qa #verification #observability #unity | 07-29

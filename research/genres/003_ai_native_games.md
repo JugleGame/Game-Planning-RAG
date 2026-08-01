@@ -6,7 +6,7 @@ summary = "실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 �
 elements = ["ELEM-005"]
 example_games = ["GAME-010", "GAME-011"]
 tags = ["ai-native", "emerging", "fragile", "high-cost"]
-updated = "2026-07-27"
+updated = "2026-08-01"
 confidence = "medium"            # 군집 자체가 형성 초기 - 신호 변동 큼, 주간 추적 필수
 +++
 ## 구성 요소
@@ -39,5 +39,6 @@ AI 공개(disclosure) 표시 신작 비율이 2024-01 공개 의무화 시행 �
 AI에게 말을 검) 또는 "자율 시뮬레이션"(GAME-011 - AI들끼리 살아감). 세 번째
 역할인 "관찰자/해설자"(AI가 플레이어의 플레이를 보고 말을 걺)는 게임 형태로
 미점유 - 우리 프로젝트의 조준점. ELEM-002+003+005 조합의 실행 무대가 이 군집.
+이 결합 자체를 종합한 카드가 ELEM-041(AI 관찰자/해설자 결합)이다.
 - 확인 방법: Steam 'Artificial Intelligence' 태그 신작 전수 확인 + AI 게임 쇼케이스 보도
 - 확인일: 2026-07-15 / 재확인 주기: 격주 (형성기 군집이라 가장 빠르게 변함)
