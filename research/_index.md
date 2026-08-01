@@ -1,9 +1,11 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-02 | 카드 140장
+생성: 2026-08-02 | 카드 142장
 
 ## 최근 7일 변경
 - ARCH-022 | 08-02
 - ARCH-023 | 08-02
+- ARCH-024 | 08-02
+- ARCH-025 | 08-02
 - ARCH-007 | 08-01
 - ELEM-017 | 08-01
 - ELEM-036 | 08-01
@@ -269,3 +271,5 @@
 - ARCH-021 | 인벤토리 시스템 (Inventory / Item Database, ScriptableObject 기반) | 아이템의 '정의'(이름, 아이콘, 능력치)와 '보유 상태'(개수, 내구도)를 분리해, 데이터 자산 하나로 여러 캐릭터·슬롯이 같은 아이템 정보를 공유하게 만드는 구조 | #inventory #item #scriptableobject #rpg #unity #pattern | 07-31
 - ARCH-022 | 어셈블리 정의 모듈 경계 (Assembly Definition / asmdef) | 스크립트 폴더마다 어셈블리 정의 파일을 두어 모듈의 경계와 의존 방향을 컴파일러가 강제하게 만드는 프로젝트 분할 규약 | #asmdef #module #dependency #compile-time #convention #unity #project-structure | 08-02
 - ARCH-023 | 게임 흐름 구조 (Boot → 타이틀 → 플레이 → 결과 씬 전이) | 씬을 아무 스크립트나 부르지 않고 흐름 담당자 한 곳이 허용된 전이만 비동기로 수행하게 만드는 게임 전체 골격 | #scene-flow #game-loop #loadsceneasync #structure #unity #core | 08-02
+- ARCH-024 | 타일맵 레벨 구조 (Grid + 다중 Tilemap + Composite Collider 2D) | 2D 맵을 스프라이트 오브젝트로 하나씩 놓지 않고 격자 위 여러 겹의 타일맵으로 나눠 그리기·충돌·판정을 겹별로 분리하는 레벨 구성 방식 | #tilemap #grid #collider #level-design #2d #unity #performance | 08-02
+- ARCH-025 | 2D 정렬 순서 규약 (Sorting Layer / Order in Layer / Y축 정렬) | 2D에서 무엇이 무엇 앞에 그려지는지를 개별 오브젝트의 좌표 조정이 아니라 프로젝트 전체가 공유하는 정렬 층과 축 규칙으로 정하는 약속 | #sorting #sprite #render-order #convention #2d #unity | 08-02
