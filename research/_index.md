@@ -1,11 +1,14 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-02 | 카드 142장
+생성: 2026-08-02 | 카드 145장
 
 ## 최근 7일 변경
 - ARCH-022 | 08-02
 - ARCH-023 | 08-02
 - ARCH-024 | 08-02
 - ARCH-025 | 08-02
+- ARCH-026 | 08-02
+- ARCH-027 | 08-02
+- ARCH-028 | 08-02
 - ARCH-007 | 08-01
 - ELEM-017 | 08-01
 - ELEM-036 | 08-01
@@ -273,3 +276,6 @@
 - ARCH-023 | 게임 흐름 구조 (Boot → 타이틀 → 플레이 → 결과 씬 전이) | 씬을 아무 스크립트나 부르지 않고 흐름 담당자 한 곳이 허용된 전이만 비동기로 수행하게 만드는 게임 전체 골격 | #scene-flow #game-loop #loadsceneasync #structure #unity #core | 08-02
 - ARCH-024 | 타일맵 레벨 구조 (Grid + 다중 Tilemap + Composite Collider 2D) | 2D 맵을 스프라이트 오브젝트로 하나씩 놓지 않고 격자 위 여러 겹의 타일맵으로 나눠 그리기·충돌·판정을 겹별로 분리하는 레벨 구성 방식 | #tilemap #grid #collider #level-design #2d #unity #performance | 08-02
 - ARCH-025 | 2D 정렬 순서 규약 (Sorting Layer / Order in Layer / Y축 정렬) | 2D에서 무엇이 무엇 앞에 그려지는지를 개별 오브젝트의 좌표 조정이 아니라 프로젝트 전체가 공유하는 정렬 층과 축 규칙으로 정하는 약속 | #sorting #sprite #render-order #convention #2d #unity | 08-02
+- ARCH-026 | 스프라이트 아틀라스 & 드로우콜 배칭 (Sprite Atlas) | 흩어진 스프라이트를 큰 텍스처 한 장으로 묶어 GPU에 보내는 그리기 요청 횟수를 줄이는 자산 묶음 규약 | #sprite-atlas #draw-call #batching #performance #2d #unity #asset | 08-02
+- ARCH-027 | URP 2D 라이팅 (2D Renderer + Light 2D + Shadow Caster 2D) | 2D 화면의 밝기와 분위기를 스프라이트에 그려 넣지 않고 조명 오브젝트와 정렬 레이어별 영향 범위로 조립하는 렌더링 구조 | #lighting #urp #light2d #rendering #2d #unity #atmosphere | 08-02
+- ARCH-028 | 피격·대미지 인터페이스 (IDamageable + 체력 컴포넌트) | 때리는 쪽이 맞는 쪽의 정체를 모르게 '피해를 받을 수 있다'는 하나의 약속으로 묶어, 적·플레이어·상자를 같은 방식으로 다루는 전투 구조 | #combat #damage #interface #health #pattern #unity #2d | 08-02
