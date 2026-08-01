@@ -22,6 +22,11 @@ confidence = "medium"
   장을 넘겼다 [출처: Alinea Analytics, 2026-03-20 기준].
 - GAME-034 (Wildfrost) - 매 전투 후 무작위로 제시되는 카드·유물 중 택1로 팀을 꾸리는 런 기반 구조.
   SteamSpy 추정 보유자 수 50만~100만 명 [출처: GAME-034 카드].
+- GAME-050 (Towerful Defense: A Rogue TD) - 매판 스킬 최대 4개와 특성·아이템을 무작위로 골라
+  단일 타워 빌드를 짜는 구조. Steam 리뷰 207건 중 70% 긍정 [출처: GAME-050 카드].
+- GAME-051 (Yet Another Zombie Survivors) - 레벨업 시 무기·능력 중 하나를 고르는 드래프트 구조를
+  서바이버라이크 스쿼드 변주에 그대로 이어받았다. Steam 리뷰 1만 3,000건 이상 중 91% 긍정
+  [출처: GAME-051 카드].
 
 ## 실패 사례
 - GAME-027 (Rogue Tower) - 같은 게임 안에서 일부 유저는 "다음 타일이 뭔지 안 보이는 무작위 경로가

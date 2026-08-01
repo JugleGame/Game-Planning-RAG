@@ -19,8 +19,9 @@ confidence = "medium"
   NeMo Minitron, 약 0.5B 파라미터, VRAM 약 1GB)로 구동되며, 성격에 따라 길 잃은
   캐릭터를 돕거나 배고픈 낯선 사람에게 음식을 건네는 등의 행동을 스스로 결정한다
   [출처: NVIDIA GeForce News, 2026-07 확인].
-- NARAKA: BLADEPOINT 모바일 PC 버전에 온디바이스 NVIDIA ACE 기반 AI 팀원이 탑재돼
-  전투·파밍을 함께 수행한다 [출처: NVIDIA GeForce News/wccftech, 2026-07 확인].
+- GAME-049 (NARAKA: BLADEPOINT) - 모바일 PC 버전에 온디바이스 NVIDIA ACE 기반 AI
+  팀원 'Viper'가 탑재돼 전투·파밍을 함께 수행한다. Steam 리뷰 약 30만 1,739건 중
+  73% 긍정 [출처: GAME-049 카드].
 
 ## 실패 사례
 <!-- 증거 부족: 이번 조사에서 이 온디바이스 음성 파이프라인 자체의 실패·혹평 사례는

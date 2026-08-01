@@ -11,9 +11,9 @@
 ## 2026-08-01 23:05 생성 (카테고리: GAME)
 - [ ] Mistfall Hunter (다크 판타지 추출형 ARPG) — connects_to: ELEM-027, GENRE-009 — why_now: 오픈베타(2026-06-14~22) 약 43만 명 참여 후 07-29 정식 출시, Game Pass 무료 포함 - ELEM-027(추출형 런 구조) 카드는 이미 있지만 이를 실제로 구현한 GAME 카드가 아직 없음 (07-27 다이제스트) — obscurity: 중간
 - [ ] Forsaken Realms: Vahrin's Call (다크 판타지 신작) — connects_to: GENRE-009 — why_now: 2026년 7월 마지막 주 다크 판타지/소울라이크 태그 신작 밀집 출시(07-27) 사례 중 하나 - Mistfall Hunter·Beast of Reincarnation과 함께 언급됐지만 개별 GAME 카드는 아직 없음 (07-27 다이제스트) — obscurity: 높음
-- [x] NARAKA: BLADEPOINT (NVIDIA ACE 탑재 배틀로얄) — connects_to: ELEM-025, GENRE-003 — why_now: NVIDIA ACE(온디바이스 SLM 실시간 음성 NPC) 스택이 데모를 넘어 실제 출시 빌드에 탑재된 구체 사례로 inZOI와 함께 거론됨 - ELEM-025 카드는 있지만 이를 보여주는 GAME 카드가 아직 없음 (07-27 다이제스트) — obscurity: 낮음
-- [x] Towerful Defense: A Rogue TD (로그라이트 TD 하이브리드) — connects_to: GENRE-010, ELEM-018, GAME-027 — why_now: 로그라이트+타워 디펜스 하이브리드화가 개별 사례가 아니라 장르 차원 흐름임을 보여주는 신작(2026-07-30 itch.io 출시), Rogue Tower(GAME-027)와 유사하나 별도 GAME 카드는 없음 (07-31 다이제스트) — obscurity: 높음
-- [x] Yet Another Zombie Survivors (스쿼드형 서바이버라이크) — connects_to: GENRE-019, GAME-037 — why_now: 단일 캐릭터 자동전투가 기본인 서바이버라이크 장르 정의에서 벗어나 최대 3인 스쿼드 동시 조작을 도입한 변주 - 정식판 08-20 얼리액세스 종료 예정, 재확인 필요 ★ (07-31 다이제스트) — obscurity: 높음
+- [done] NARAKA: BLADEPOINT (NVIDIA ACE 탑재 배틀로얄) — connects_to: ELEM-025, GENRE-003 — why_now: NVIDIA ACE(온디바이스 SLM 실시간 음성 NPC) 스택이 데모를 넘어 실제 출시 빌드에 탑재된 구체 사례로 inZOI와 함께 거론됨 - ELEM-025 카드는 있지만 이를 보여주는 GAME 카드가 아직 없음 (07-27 다이제스트) — obscurity: 낮음 — GAME-049
+- [done] Towerful Defense: A Rogue TD (로그라이트 TD 하이브리드) — connects_to: GENRE-010, ELEM-018, GAME-027 — why_now: 로그라이트+타워 디펜스 하이브리드화가 개별 사례가 아니라 장르 차원 흐름임을 보여주는 신작(2026-07-30 itch.io 출시), Rogue Tower(GAME-027)와 유사하나 별도 GAME 카드는 없음 (07-31 다이제스트) — obscurity: 높음 — GAME-050
+- [done] Yet Another Zombie Survivors (스쿼드형 서바이버라이크) — connects_to: GENRE-019, GAME-037 — why_now: 단일 캐릭터 자동전투가 기본인 서바이버라이크 장르 정의에서 벗어나 최대 3인 스쿼드 동시 조작을 도입한 변주 - 정식판 08-20 얼리액세스 종료 예정, 재확인 필요 ★ (07-31 다이제스트) — obscurity: 높음 — GAME-051
 
 ## 2026-07-31 23:05 생성 (카테고리: ELEM)
 - [ ] NPC 자율성 의사결정 아키텍처 전면 재설계 (End-to-end Autonomy Decision-Making Redesign) — connects_to: ELEM-005, ARCH-005 — why_now: inZOI 개발일지(2026-07-24)가 부분 수정이 아니라 자율성 의사결정 로직 자체를 전면 재설계 중이라고 발표(8월 업데이트 예정) - 기존 ELEM-005(AI 통합)의 "실시간 반응 생성"과 달리 반응 이전의 의사결정 구조 자체를 다루는 하위 요소 (07-25 다이제스트) — obscurity: 낮음
