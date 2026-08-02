@@ -8,6 +8,13 @@
 
 ---
 
+## 2026-08-02 23:05 생성 (카테고리: GENRE)
+- [ ] 익스트랙션 슈터 (Extraction Shooter / PvPvE) — connects_to: ELEM-027 — why_now: ELEM-027(추출형 런 구조) 카드는 있으나 이를 코어로 삼는 GENRE 군집 카드가 없음 - 07-27 다이제스트의 다크 판타지 추출형 ARPG 'Mistfall Hunter'(오픈베타 약 43만 명 참여, 07-29 정식출시)가 대표 사례 — obscurity: 중간
+- [ ] 히어로 슈터 (Hero Shooter) — connects_to: ELEM-036 — why_now: ELEM-036(픽/밴 드래프트)이 MOBA(GENRE-024) 카드로만 연결돼 있고, 같은 절차를 쓰는 경쟁 히어로 슈터 자체의 GENRE 군집 카드가 비어 있음 — obscurity: 낮음
+- [ ] 오토배틀러 (Auto Battler / Auto Chess) — connects_to: ELEM-022 — why_now: GENRE-019(서바이버라이크) 태그에 #auto-battler가 이미 쓰이고 있으나, 자동 전투와 지수적 스케일링(ELEM-022)이 코어인 오토배틀러 자체 장르 카드가 없어 태그-카드 간극이 있음 — obscurity: 중간
+- [ ] 수집형 카드 대전 PvP (Collectible Card Game PvP) — connects_to: ELEM-020 — why_now: GENRE-012(로그라이크 덱빌더)는 1인 런 기반만 다루며, 같은 덱 구축(ELEM-020) 요소를 상시 대전형(PvP)으로 쓰는 군집이 비어 있음 — obscurity: 높음
+- [ ] 리듬 액션 (Rhythm Action) — connects_to: ELEM-031 — why_now: ELEM-031(시각 피드백 과장/Juiciness)이 여러 카드에 걸쳐 재료로 쓰이지만, 입력 타이밍 자체가 코어이고 피드백 과장이 필수인 리듬 장르를 다루는 GENRE 카드가 아직 없음 — obscurity: 높음
+
 ## 2026-08-01 23:05 생성 (카테고리: GAME)
 - [ ] Mistfall Hunter (다크 판타지 추출형 ARPG) — connects_to: ELEM-027, GENRE-009 — why_now: 오픈베타(2026-06-14~22) 약 43만 명 참여 후 07-29 정식 출시, Game Pass 무료 포함 - ELEM-027(추출형 런 구조) 카드는 이미 있지만 이를 실제로 구현한 GAME 카드가 아직 없음 (07-27 다이제스트) — obscurity: 중간
 - [ ] Forsaken Realms: Vahrin's Call (다크 판타지 신작) — connects_to: GENRE-009 — why_now: 2026년 7월 마지막 주 다크 판타지/소울라이크 태그 신작 밀집 출시(07-27) 사례 중 하나 - Mistfall Hunter·Beast of Reincarnation과 함께 언급됐지만 개별 GAME 카드는 아직 없음 (07-27 다이제스트) — obscurity: 높음
