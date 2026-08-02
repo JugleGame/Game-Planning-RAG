@@ -6,7 +6,7 @@ summary = "한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택
 elements = ["ELEM-020", "ELEM-018", "ELEM-004"]
 example_games = ["GAME-030", "GAME-001", "GAME-031", "GAME-034"]
 tags = ["roguelike", "deckbuilder", "randomness", "indie", "replayability", "saturated"]
-updated = "2026-07-29"
+updated = "2026-08-02"
 confidence = "medium"
 +++
 ## 구성 요소
@@ -30,6 +30,7 @@ confidence = "medium"
   같으면 즉시 묻힌다. 진입 장벽이 낮은 대신 "왜 이걸 해야 하는가"의 답이 없으면 노출조차 안 되는
   구조다.
 <!-- 증거 부족: 연간 신작 수 등 장르 단위 출시 규모 집계는 확인하지 못함 -->
+- 사실: Balatro(GAME-031)는 2026-07-31 기준 버전 1.0.1o-FULL "Friends of Jimbo 4"까지 갱신됐고 무료 1.1 콘텐츠 업데이트가 예고돼, 출시 후 2년 넘게 라이브 지원이 이어지고 있다 [출처: Balatro Wiki, 2026-07-31 기준 / 다이제스트 2026-07-31].
 
 ## 관례와 기대치
 - 사실: 전투가 끝날 때마다 무작위로 제시된 카드 중 하나만 고르는 보상 방식이 표준 문법이다

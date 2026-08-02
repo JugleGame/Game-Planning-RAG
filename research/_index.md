@@ -1,129 +1,133 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-02 | 카드 145장
+생성: 2026-08-02 | 카드 149장
 
 ## 최근 7일 변경
-- ARCH-022 | 08-02
+- GENRE-026 | 08-02
+- GENRE-019 | 08-02
+- GENRE-028 | 08-02
+- GENRE-027 | 08-02
+- GENRE-010 | 08-02
+- GENRE-029 | 08-02
+- GENRE-012 | 08-02
+- GENRE-013 | 08-02
 - ARCH-023 | 08-02
-- ARCH-024 | 08-02
-- ARCH-025 | 08-02
-- ARCH-026 | 08-02
+- ARCH-022 | 08-02
 - ARCH-027 | 08-02
+- ARCH-025 | 08-02
+- ARCH-024 | 08-02
+- ARCH-026 | 08-02
 - ARCH-028 | 08-02
-- ARCH-007 | 08-01
+- GAME-023 | 08-02
+- ELEM-040 | 08-01
+- ELEM-038 | 08-01
+- ELEM-037 | 08-01
 - ELEM-017 | 08-01
 - ELEM-036 | 08-01
-- ELEM-037 | 08-01
-- ELEM-038 | 08-01
 - ELEM-039 | 08-01
-- ELEM-040 | 08-01
 - ELEM-041 | 08-01
-- GAME-042 | 08-01
-- GAME-043 | 08-01
-- GAME-044 | 08-01
-- GAME-045 | 08-01
-- GAME-046 | 08-01
-- GAME-047 | 08-01
-- GAME-048 | 08-01
-- GAME-049 | 08-01
-- GAME-050 | 08-01
-- GAME-051 | 08-01
+- GENRE-025 | 08-01
+- GENRE-024 | 08-01
+- GENRE-023 | 08-01
 - GENRE-003 | 08-01
 - GENRE-022 | 08-01
-- GENRE-023 | 08-01
-- GENRE-024 | 08-01
-- GENRE-025 | 08-01
-- ARCH-001 | 07-31
-- ARCH-011 | 07-31
-- ARCH-015 | 07-31
-- ARCH-016 | 07-31
-- ARCH-017 | 07-31
-- ARCH-018 | 07-31
-- ARCH-020 | 07-31
-- ARCH-021 | 07-31
-- ELEM-001 | 07-31
-- ELEM-002 | 07-31
-- ELEM-003 | 07-31
-- ELEM-004 | 07-31
-- ELEM-005 | 07-31
-- ELEM-007 | 07-31
-- ELEM-008 | 07-31
+- ARCH-007 | 08-01
+- GAME-051 | 08-01
+- GAME-050 | 08-01
+- GAME-049 | 08-01
+- GAME-042 | 08-01
+- GAME-045 | 08-01
+- GAME-043 | 08-01
+- GAME-046 | 08-01
+- GAME-047 | 08-01
+- GAME-044 | 08-01
+- GAME-048 | 08-01
 - ELEM-009 | 07-31
-- ELEM-010 | 07-31
-- ELEM-011 | 07-31
-- ELEM-012 | 07-31
-- ELEM-013 | 07-31
-- ELEM-014 | 07-31
-- ELEM-015 | 07-31
-- ELEM-016 | 07-31
-- ELEM-018 | 07-31
-- ELEM-019 | 07-31
-- ELEM-020 | 07-31
-- ELEM-021 | 07-31
-- ELEM-022 | 07-31
-- ELEM-023 | 07-31
-- ELEM-027 | 07-31
-- ELEM-028 | 07-31
-- ELEM-029 | 07-31
-- ELEM-031 | 07-31
-- ELEM-032 | 07-31
-- ELEM-033 | 07-31
 - ELEM-034 | 07-31
+- ELEM-027 | 07-31
+- ELEM-001 | 07-31
+- ELEM-012 | 07-31
+- ELEM-032 | 07-31
+- ELEM-018 | 07-31
+- ELEM-020 | 07-31
+- ELEM-029 | 07-31
 - ELEM-035 | 07-31
-- GAME-001 | 07-31
-- GAME-004 | 07-31
-- GAME-012 | 07-31
-- GAME-019 | 07-31
-- GAME-034 | 07-31
-- GAME-035 | 07-31
-- GAME-036 | 07-31
-- GAME-037 | 07-31
-- GAME-038 | 07-31
-- GAME-040 | 07-31
-- GAME-041 | 07-31
-- GENRE-002 | 07-31
-- GENRE-013 | 07-31
-- GENRE-015 | 07-31
+- ELEM-016 | 07-31
+- ELEM-019 | 07-31
+- ELEM-003 | 07-31
+- ELEM-011 | 07-31
+- ELEM-033 | 07-31
+- ELEM-028 | 07-31
+- ELEM-014 | 07-31
+- ELEM-002 | 07-31
+- ELEM-008 | 07-31
+- ELEM-031 | 07-31
+- ELEM-004 | 07-31
+- ELEM-021 | 07-31
+- ELEM-007 | 07-31
+- ELEM-013 | 07-31
+- ELEM-015 | 07-31
+- ELEM-022 | 07-31
+- ELEM-005 | 07-31
+- ELEM-010 | 07-31
+- ELEM-023 | 07-31
+- GENRE-020 | 07-31
 - GENRE-016 | 07-31
 - GENRE-017 | 07-31
 - GENRE-018 | 07-31
-- GENRE-019 | 07-31
-- GENRE-020 | 07-31
+- GENRE-015 | 07-31
+- GENRE-002 | 07-31
 - GENRE-021 | 07-31
 - SIGNAL-2026-07-31_td_deckbuilder_survivors_signals | 07-31
+- ARCH-018 | 07-31
+- ARCH-016 | 07-31
+- ARCH-015 | 07-31
+- ARCH-011 | 07-31
+- ARCH-017 | 07-31
+- ARCH-021 | 07-31
+- ARCH-020 | 07-31
+- ARCH-001 | 07-31
+- GAME-012 | 07-31
+- GAME-041 | 07-31
+- GAME-036 | 07-31
+- GAME-037 | 07-31
+- GAME-001 | 07-31
+- GAME-038 | 07-31
+- GAME-035 | 07-31
+- GAME-040 | 07-31
+- GAME-034 | 07-31
+- GAME-004 | 07-31
+- GAME-019 | 07-31
+- ELEM-025 | 07-30
+- GENRE-014 | 07-30
+- ARCH-014 | 07-30
 - ARCH-012 | 07-30
 - ARCH-013 | 07-30
-- ARCH-014 | 07-30
-- ELEM-025 | 07-30
-- GAME-032 | 07-30
 - GAME-033 | 07-30
-- GENRE-014 | 07-30
+- GAME-032 | 07-30
+- GENRE-011 | 07-29
 - ARCH-002 | 07-29
+- ARCH-008 | 07-29
+- ARCH-006 | 07-29
 - ARCH-003 | 07-29
 - ARCH-004 | 07-29
-- ARCH-005 | 07-29
-- ARCH-006 | 07-29
-- ARCH-008 | 07-29
-- ARCH-009 | 07-29
 - ARCH-010 | 07-29
-- GAME-027 | 07-29
+- ARCH-005 | 07-29
+- ARCH-009 | 07-29
 - GAME-028 | 07-29
 - GAME-029 | 07-29
 - GAME-030 | 07-29
 - GAME-031 | 07-29
-- GENRE-010 | 07-29
-- GENRE-011 | 07-29
-- GENRE-012 | 07-29
+- GAME-027 | 07-29
+- GAME-026 | 07-28
 - GAME-024 | 07-28
 - GAME-025 | 07-28
-- GAME-026 | 07-28
-- GAME-011 | 07-27
-- GAME-021 | 07-27
-- GAME-022 | 07-27
-- GAME-023 | 07-27
+- GENRE-009 | 07-27
 - GENRE-007 | 07-27
 - GENRE-008 | 07-27
-- GENRE-009 | 07-27
 - SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 07-27
+- GAME-011 | 07-27
+- GAME-022 | 07-27
+- GAME-021 | 07-27
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-31
@@ -175,22 +179,26 @@
 - GENRE-007 | 코지 시뮬 (Cozy Sim) | 실패 상태 없이 낮은 긴장으로 일상 루틴(농사·꾸미기·수집)을 반복하게 하는 저스트레스 생활 시뮬 군집 | #cozy #life-sim #low-stress #no-fail #farming #broad-appeal | 07-27
 - GENRE-008 | 감정 서사 어드벤처 (Wholesome / Emotional Narrative Adventure) | 상실·이별·치유 같은 감정 아크를 짧고 완결된 모험으로 전달하는 것이 코어인 군집 | #wholesome #narrative #emotional #indie #short-form #niche-appeal | 07-27
 - GENRE-009 | 다크 판타지 (Dark Fantasy) | 절망적이고 도덕적으로 모호한 세계관 위에 처벌적인 죽음·정신력 소모 순환을 얹어, 공포와 성취감을 동시에 주는 군집 | #dark-fantasy #grimdark #difficulty #horror #soulslike #aaa #indie | 07-27
-- GENRE-010 | 타워 디펜스 (Tower Defense) | 정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집 | #tower-defense #strategy #wave-based #roguelike-subgenre | 07-29
+- GENRE-010 | 타워 디펜스 (Tower Defense) | 정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집 | #tower-defense #strategy #wave-based #roguelike-subgenre | 08-02
 - GENRE-011 | 루트 슈터 (Looter Shooter) | 총격 전투 위에 무작위로 굴려진 장비 파밍을 얹어, 더 좋은 총을 얻기 위해 같은 구간을 반복하게 만드는 것이 코어인 군집 | #looter-shooter #fps #loot #live-service #grind #aaa #divisive | 07-29
-- GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집 | #roguelike #deckbuilder #randomness #indie #replayability #saturated | 07-29
-- GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 07-31
+- GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집 | #roguelike #deckbuilder #randomness #indie #replayability #saturated | 08-02
+- GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 08-02
 - GENRE-014 | 횡스크롤 공포 (Side-scrolling Horror) | 카메라를 옆에서 따라가게 두고 화면 밖과 어둠을 공포의 재료로 삼는, 전투보다 회피와 숨기가 기본 동사인 군집 | #horror #side-scroller #puzzle-platformer #atmosphere #indie #narrow | 07-30
 - GENRE-015 | 픽셀 2D 생존공포 (Pixel 2D Survival Horror) | 저해상도 도트 그래픽과 광원으로 좁혀진 시야를 결합해, 보이지 않는 영역 자체를 공포의 재료로 쓰는 소규모 개발 중심 군집 | #horror #pixel-art #survival #indie #low-cost #light-mechanic | 07-31
 - GENRE-016 | 탄막 로그라이크 (Bullet Hell Roguelike) | 실시간 회피·조준 조작 위에 매 층 무작위 드래프트와 처벌적 죽음 순환을 얹은 액션 로그라이크 군집 | #roguelike #bullet-hell #action #indie #replayability | 07-31
 - GENRE-017 | 메트로배니아 (Metroidvania) | 능력 해금으로 이전 지역을 다시 열어가는 비선형 탐험이 코어인, 향수 기반 구매 동기가 강한 인디 중심 군집 | #metroidvania #exploration #indie #non-linear #saturated | 07-31
 - GENRE-018 | 소셜 디덕션 (Social Deduction) | 다른 플레이어와 실시간 그룹 상호작용 속에서 숨은 역할을 추론·색출하는 것이 코어인, 무료 플레이·수익화 실험이 활발한 군집 | #social-deduction #multiplayer #free-to-play #monetization #indie | 07-31
-- GENRE-019 | 서바이버라이크 (Survivors-like / Bullet Heaven) | 캐릭터가 자동으로 공격하고 플레이어는 이동과 업그레이드 선택에만 집중해, 화면을 뒤덮는 물량으로 폭발적 스케일링을 체감하게 만드는 군집 | #survivors-like #bullet-heaven #roguelite #indie #auto-battler #saturated | 07-31
+- GENRE-019 | 서바이버라이크 (Survivors-like / Bullet Heaven) | 캐릭터가 자동으로 공격하고 플레이어는 이동과 업그레이드 선택에만 집중해, 화면을 뒤덮는 물량으로 폭발적 스케일링을 체감하게 만드는 군집 | #survivors-like #bullet-heaven #roguelite #indie #auto-battler #saturated | 08-02
 - GENRE-020 | 서바이벌 크래프팅 오픈월드 (Survival Crafting Open World) | 자원·환경·제작이 서로 맞물리는 개방형 시스템 위에서 굶주림·추위·부상을 관리하며 살아남는 것이 코어인 군집 | #survival #crafting #open-world #co-op #broad-appeal | 07-31
 - GENRE-021 | 분기형 비주얼노벨 (Branching Visual Novel) | 대사 선택이 아니라 행동의 결과(무엇을 내주는가)로 이야기가 갈리는, 정적인 2D 대화 중심의 니치 군집 | #visual-novel #narrative #niche-appeal #indie #low-stress | 07-31
 - GENRE-022 | 배틀로얄 (Battle Royale) | 다수 플레이어가 동시에 낙하해 좁혀지는 세이프존 안에서 최후 1인/1팀만 남을 때까지 겨루는 군집 | #battle-royale #pvp #last-player-standing #aaa #saturated | 08-01
 - GENRE-023 | 택틱컬 라운드제 슈터 (Tactical Round-based Shooter) | 공격/수비 진영을 라운드마다 교대하며 라운드제 경제로 무장을 갖춰 최선승 라운드를 겨루는 경쟁 슈터 군집 | #tactical-shooter #esports #round-based #competitive #pvp | 08-01
 - GENRE-024 | MOBA (Multiplayer Online Battle Arena) | 영웅 픽/밴 드래프트로 시작해 라인·정글이 있는 대칭 맵에서 상대 거점을 파괴하는 것이 코어인 팀 대전 군집 | #moba #esports #lane-based #pvp #free-to-play | 08-01
 - GENRE-025 | 서브컬쳐 게임 (Subculture Game / Anime Character-collection Action) | 애니메 그림체 캐릭터를 가챠로 모으고 키우는 것이 수익화·리텐션의 코어인, 일본·중국 개발사가 주도하는 라이브서비스 군집 | #subculture #anime #gacha #live-service #action-rpg #mobile-first | 08-01
+- GENRE-026 | 히어로 슈터 (Hero Shooter) | 고유 능력을 가진 영웅을 골라 탱커/딜러/서포터 역할로 팀을 짜고 오브젝티브를 두고 싸우는 대전 슈터 군집 | #hero-shooter #pvp #team-based #esports #live-service #saturated | 08-02
+- GENRE-027 | 오토배틀러 (Auto Battler / Auto Chess) | 매 라운드 상점에서 유닛을 사고 배치만 하면 전투 자체는 자동으로 진행되는, 경제 관리와 시너지 조합이 코어인 PvP 군집 | #auto-battler #auto-chess #pvp #economy #synergy #esports | 08-02
+- GENRE-028 | 수집형 카드 대전 PvP (Collectible Card Game PvP) | 한 판 안에서만 쓰고 버리는 런 기반 덱이 아니라, 플레이어가 소유한 카드 수집 전체에서 상시 대전용 덱을 미리 짜 맞붙는 군집 | #ccg #tcg #pvp #deckbuilder #meta #live-service | 08-02
+- GENRE-029 | 리듬 액션 (Rhythm Action) | 박자에 맞춰 입력을 요구하고 그 입력이 화면·사운드에 과장되게 반응하는 것이 코어인, 음악 자체가 규칙이 되는 군집 | #rhythm #timing #music #indie #juiciness #input-heavy | 08-02
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-31
@@ -215,7 +223,7 @@
 - GAME-020 | Core Keeper (2022 얼리액세스 / 2024 정식출시, Pugstorm / Fireshine Games) | 탑다운 도트 그래픽으로 Terraria식 샌드박스를 지하 채굴 중심으로 재구성한 최근 세대 사례 | #sandbox #survival #pixel #mining #early-access #co-op | 07-25
 - GAME-021 | Dark Souls III (2016, FromSoftware / Bandai Namco) | 소울류 시리즈가 확립한 전투·죽음 순환 공식을 완성도로 밀어붙여 시리즈 최다 판매를 기록한 완결편 | #action-rpg #dark-fantasy #soulslike #difficulty #broad-appeal | 07-27
 - GAME-022 | Darkest Dungeon (2016, Red Hook Studios) | 스트레스·발작(Affliction) 시스템으로 다크 판타지 로그라이크에 심리적 공포를 결합했으나, 그 처벌적 설계 자체가 호불호를 가른 사례 | #roguelike #dark-fantasy #stress-system #punishing #divisive #indie | 07-27
-- GAME-023 | Diablo IV (2023, Blizzard Entertainment) | 출시 직후 블리자드 역대 최고 흥행 기록을 세웠으나, 아이템화·엔드게임 설계에 대한 커뮤니티 반발이 이어진 다크 판타지 오픈월드 ARPG | #arpg #dark-fantasy #open-world #live-service #itemization #divisive #aaa | 07-27
+- GAME-023 | Diablo IV (2023, Blizzard Entertainment) | 출시 직후 블리자드 역대 최고 흥행 기록을 세웠으나, 아이템화·엔드게임 설계에 대한 커뮤니티 반발이 이어진 다크 판타지 오픈월드 ARPG | #arpg #dark-fantasy #open-world #live-service #itemization #divisive #aaa | 08-02
 - GAME-024 | Genshin Impact (2020, miHoYo/HoYoverse) | 소프트/하드 천장과 50/50 보장을 결합한 캐릭터 가챠로 역대 최고 매출 모바일 게임 중 하나가 된 오픈월드 액션 RPG | #gacha #open-world #action-rpg #live-service #mobile #broad-appeal | 07-28
 - GAME-025 | 메이플스토리 - 큐브 확률조작 사건 (2003 출시, Nexon / 2024 공정위 제재) | 확률형 강화 아이템 '큐브'의 확률을 몰래 낮추고 알리지 않아 사상 최대 과징금을 받은 확률 신뢰 붕괴 사례 | #probability-item #mmorpg #regulation #trust-failure #korea #cautionary | 07-28
 - GAME-026 | Bloons TD 6 (2018, Ninja Kiwi) | 정해진 경로와 타워 업그레이드 트리 중심의 정통 타워 디펜스로 장르의 상업적 기준을 세운 작품 | #tower-defense #mobile #pc #broad-appeal #non-random | 07-28
@@ -249,7 +257,7 @@
 - SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)] Steam 리뷰 집계(games-stats.com 경유), inZOI 공식 Steam 뉴스 'Fundamentals First & 2026 Roadmap', SteamDB 패치노트, 팬사이트 simscommunity.info, SteamDB/Tom's Hardware AI 태그 집계 보도, Frisson Labs 블로그 |  | 07-20
 - SIGNAL-2026-07-25_genre_element_weekly | 주간 관측 (2026-07-20 ~ 2026-07-25) | [반영(2026-07-27)] GAMES.GG 7월 코지 출시 정리, Cozy Game Reviews 2026 Steam 코지 신작 집계, Outrun Gaming Wholesome Direct 2026 정리, simscommunity.info inZOI 개발일지 보도(07-04/07-17/07-24), Gaming.net·wasdland.com Steam 샌드박스/오픈월드 리스트 |  | 07-25
 - SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 주간 관측 (2026-07-20 ~ 2026-07-27) | [반영(2026-07-27)] Diablo IV 공식 패치노트(Blizzard News/Forums), Dexerto/Tech4Gamers 등 유출 보도, RPG Site/Worthplaying(Darkest Dungeon DLC 보도), TechTimes/GameGrin(다크 판타지 신작 집계), NVIDIA GeForce News/PCGamer(AI NPC 기술), 웹 검색 종합 |  | 07-27
-- SIGNAL-2026-07-31_td_deckbuilder_survivors_signals | 주간 관측 (2026-07-27 ~ 2026-07-31) | [미반영(편집자 확인 대기)] Blizzard 공식 패치노트/MP1st(Diablo IV), itch.io devlog/Google Play/Bleeding Cool(로그라이트 TD 신작·업데이트), Balatro Wiki(버전 갱신), Saving Content(Yet Another Zombie Survivors), 웹 검색 종합 |  | 07-31
+- SIGNAL-2026-07-31_td_deckbuilder_survivors_signals | 주간 관측 (2026-07-27 ~ 2026-07-31) | [반영(2026-08-02)] Blizzard 공식 패치노트/MP1st(Diablo IV), itch.io devlog/Google Play/Bleeding Cool(로그라이트 TD 신작·업데이트), Balatro Wiki(버전 갱신), Saving Content(Yet Another Zombie Survivors), 웹 검색 종합 |  | 07-31
 
 ## ⑤ 아키텍처
 - ARCH-001 | 이벤트 버스 (EventBus / Pub-Sub) | 시스템끼리 직접 부르지 않고, 가운데 방송국(EventBus)에 사건을 방송하면 듣고 싶은 쪽만 구독해서 반응하는 느슨한 연결 구조 | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-31

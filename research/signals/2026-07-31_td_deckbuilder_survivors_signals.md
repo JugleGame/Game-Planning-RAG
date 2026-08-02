@@ -4,7 +4,7 @@ period = "2026-07-27 ~ 2026-07-31"
 period_at = "2026-07-27"
 period_end = "2026-07-31"
 sources = ["Blizzard 공식 패치노트/MP1st(Diablo IV)", "itch.io devlog/Google Play/Bleeding Cool(로그라이트 TD 신작·업데이트)", "Balatro Wiki(버전 갱신)", "Saving Content(Yet Another Zombie Survivors)", "웹 검색 종합"]
-status = "미반영(편집자 확인 대기)"
+status = "반영(2026-08-02)"
 +++
 ## 기간 / 수집원
 2026-07-27 ~ 2026-07-31 / 웹 검색으로 게임 커뮤니티·업계 보도 확인.

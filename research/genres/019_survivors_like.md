@@ -6,7 +6,7 @@ summary = "캐릭터가 자동으로 공격하고 플레이어는 이동과 업�
 elements = ["ELEM-022", "ELEM-031", "ELEM-018"]
 example_games = ["GAME-037", "GAME-051"]
 tags = ["survivors-like", "bullet-heaven", "roguelite", "indie", "auto-battler", "saturated"]
-updated = "2026-07-31"
+updated = "2026-08-02"
 confidence = "high"
 +++
 ## 구성 요소
@@ -27,6 +27,7 @@ confidence = "high"
 - 관례: 캐릭터는 자동 공격, 플레이어는 이동과 레벨업 선택지에만 관여 (Vampire Survivors 원형)
 - 변주: 20 Minutes Till Dawn은 수동 조준을 추가해 원형과 차별화했다 [출처: Wikipedia,
   2026 확인] - 순수 자동전투가 관례이나 일부는 조작 개입을 늘려 차별화를 시도.
+- 변주: Yet Another Zombie Survivors(GAME-051)는 최대 3인 스쿼드를 동시 조작하는 방식으로 단일 캐릭터 자동전투 관례에서 벗어났다 [출처: GAME-051 카드]. ★ 2026-08-20 정식 출시 전이라 재확인 필요.
 
 ## 빈칸
 [해석] ★ 서바이버라이크 구조에 "탈출형 런"(ELEM-027)의 탈출 성공/실패 분기를
