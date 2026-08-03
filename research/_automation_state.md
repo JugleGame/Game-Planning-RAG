@@ -4,8 +4,15 @@
 초기화했다. 이전 세션들의 누적치를 알 수 없어 pending_new_cards는 이번 세션에
 새로 만든 카드 수만 반영한 값이다 - 실제 누적치와 다를 수 있으니 사람 확인 필요. -->
 
-- pending_new_cards = 0
+- pending_new_cards = 2
 - last_signal_digest = "2026-07-31"
+
+<!-- 2026-08-03 nightly_executor: 큐에서 [X] 체크된 GENRE 카드 2장(GENRE-030, GENRE-031)을
+새로 만듦. pending_new_cards 0+2=2로 임계치(10) 미만이라 다이제스트 반영(4_updater)은
+건너뜀. last_signal_digest(2026-07-31)가 오늘(2026-08-03)로부터 7일 미만이라 신규
+다이제스트도 만들지 않음. DB 미러링은 이 세션 환경에 DATABASE_URL이 없어 5432/443
+브리지 모두 실패 - md 카드 자체는 완결 상태이며 미러링만 보류됨. -->
+
 
 <!-- 2026-08-02 nightly_executor: 큐에서 [X] 체크된 GENRE 카드 4장(GENRE-026~029)을
 새로 만들며 pending_new_cards가 8+4=12로 임계치(10)를 넘어, SIGNAL-2026-07-31

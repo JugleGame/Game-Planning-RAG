@@ -11,8 +11,8 @@
 ## 2026-08-03 23:05 생성 (카테고리: GENRE)
 - [ ] 접객 서비스 시뮬레이션 (Hospitality / Service Sim) — connects_to: ELEM-035, GENRE-007 — why_now: ELEM-035(접객 서비스 루프)는 카드로 있지만, GENRE-007(코지 심)은 농사·꾸미기 위주 서술이라 손님 응대 루프만의 시장 궤적을 다루는 GENRE 카드가 없음 - 서브컬쳐·라이브서비스 장르가 계속 세분화되는 가운데 코지 계열의 세분화는 아직 비어 있음 — obscurity: 높음
 - [ ] 사진 탐험 어드벤처 (Photo Exploration Adventure) — connects_to: ELEM-034, GENRE-008 — why_now: ELEM-034(탐사형 포토그래피 목표 동사)는 있으나, 전투 없는 저스트레스 탐험이 코어인 이 갈래를 GENRE-008(감정 서사 어드벤처)과 구분해 다루는 장르 카드가 없음 - 최근 신설 GENRE가 대전형(MOBA·배틀로얄·CCG)에 쏠려 비전투 탐험 계열이 상대적으로 비어 있음 — obscurity: 높음
-- [X] 크리처 노동 자동화 서바이벌 (Creature Labor Automation Survival) — connects_to: ELEM-039, GAME-045 — why_now: GAME-045(Palworld)가 2026-07-10 정식 출시 후 폭발적 판매를 기록했지만, ELEM-039(포획형 동료 노동 시스템)를 코어로 삼아 GENRE-020(서바이벌 크래프팅 오픈월드)과 구분되는 '포획→노동 배치→자동화' 장르 궤적을 다루는 GENRE 카드가 없음 — obscurity: 중간
-- [X] 무협 근접 액션 배틀로얄 (Wuxia Melee Action Battle Royale) — connects_to: GAME-049, GENRE-022 — why_now: GAME-049(NARAKA: BLADEPOINT)가 NVIDIA ACE AI 팀원 탑재로 재조명됐지만, 총격 중심인 GENRE-022(배틀로얄)와 조작 축 자체가 다른 근접 무협 액션 배틀로얄을 별도로 다루는 장르 카드가 없음 — obscurity: 중간
+- [done] 크리처 노동 자동화 서바이벌 (Creature Labor Automation Survival) — connects_to: ELEM-039, GAME-045 — why_now: GAME-045(Palworld)가 2026-07-10 정식 출시 후 폭발적 판매를 기록했지만, ELEM-039(포획형 동료 노동 시스템)를 코어로 삼아 GENRE-020(서바이벌 크래프팅 오픈월드)과 구분되는 '포획→노동 배치→자동화' 장르 궤적을 다루는 GENRE 카드가 없음 — obscurity: 중간 — GENRE-030
+- [done] 무협 근접 액션 배틀로얄 (Wuxia Melee Action Battle Royale) — connects_to: GAME-049, GENRE-022 — why_now: GAME-049(NARAKA: BLADEPOINT)가 NVIDIA ACE AI 팀원 탑재로 재조명됐지만, 총격 중심인 GENRE-022(배틀로얄)와 조작 축 자체가 다른 근접 무협 액션 배틀로얄을 별도로 다루는 장르 카드가 없음 — obscurity: 중간 — GENRE-031
 - [ ] AI 코멘터리 동반 게임 (AI Commentary Companion Genre) — connects_to: ELEM-041, ARCH-007 — why_now: ELEM-041 카드 자체가 "아직 어떤 게임도 완성하지 못한 빈칸"으로 명시돼 있고 ARCH-007(해설자 파이프라인)까지 구현 아키텍처가 문서화된 상태 - 이 조합을 상용 코어 판매 포인트로 삼는 장르가 실제로 형성되는지 추적할 GENRE 카드가 필요 — obscurity: 높음
 
 ## 2026-08-02 23:05 생성 (카테고리: GENRE)

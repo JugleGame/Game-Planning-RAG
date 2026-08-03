@@ -1,7 +1,9 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-02 | 카드 149장
+생성: 2026-08-03 | 카드 151장
 
 ## 최근 7일 변경
+- GENRE-031 | 08-03
+- GENRE-030 | 08-03
 - GENRE-026 | 08-02
 - GENRE-019 | 08-02
 - GENRE-028 | 08-02
@@ -199,6 +201,8 @@
 - GENRE-027 | 오토배틀러 (Auto Battler / Auto Chess) | 매 라운드 상점에서 유닛을 사고 배치만 하면 전투 자체는 자동으로 진행되는, 경제 관리와 시너지 조합이 코어인 PvP 군집 | #auto-battler #auto-chess #pvp #economy #synergy #esports | 08-02
 - GENRE-028 | 수집형 카드 대전 PvP (Collectible Card Game PvP) | 한 판 안에서만 쓰고 버리는 런 기반 덱이 아니라, 플레이어가 소유한 카드 수집 전체에서 상시 대전용 덱을 미리 짜 맞붙는 군집 | #ccg #tcg #pvp #deckbuilder #meta #live-service | 08-02
 - GENRE-029 | 리듬 액션 (Rhythm Action) | 박자에 맞춰 입력을 요구하고 그 입력이 화면·사운드에 과장되게 반응하는 것이 코어인, 음악 자체가 규칙이 되는 군집 | #rhythm #timing #music #indie #juiciness #input-heavy | 08-02
+- GENRE-030 | 크리처 노동 자동화 서바이벌 (Creature Labor Automation Survival) | 포획한 생물을 전투 동료가 아니라 채집·제작 노동력으로 배치해 자동화 생산 라인을 짜는 것이 코어인 서바이벌 군집 | #survival #automation #creature-collection #crafting #base-building #emerging | 08-03
+- GENRE-031 | 무협 근접 액션 배틀로얄 (Wuxia Melee Action Battle Royale) | 총격이 아니라 검술·경공 같은 근접 무술 조작이 코어인, 무협 세계관 위에 좁혀지는 세이프존을 얹은 배틀로얄 군집 | #battle-royale #wuxia #melee #action #parkour #niche | 08-03
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-31
