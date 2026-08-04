@@ -3,10 +3,10 @@ card_id = "GAME-023"
 type = "mixed"
 title = "Diablo IV (2023, Blizzard Entertainment)"
 summary = "출시 직후 블리자드 역대 최고 흥행 기록을 세웠으나, 아이템화·엔드게임 설계에 대한 커뮤니티 반발이 이어진 다크 판타지 오픈월드 ARPG"
-genres = ["GENRE-009"]
+genres = ["GENRE-009", "GENRE-034"]
 elements = ["ELEM-016"]
 tags = ["arpg", "dark-fantasy", "open-world", "live-service", "itemization", "divisive", "aaa"]
-updated = "2026-08-02"
+updated = "2026-08-04"
 confidence = "medium"
 +++
 ## 한 줄 요약 + 판매·리뷰 수치

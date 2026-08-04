@@ -4,7 +4,7 @@ type = "mechanic"
 title = "무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table)"
 summary = "적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조"
 tags = ["loot", "randomness", "looter-shooter", "arpg", "retention", "grind", "transparency", "divisive"]
-updated = "2026-07-31"
+updated = "2026-08-04"
 confidence = "medium"
 +++
 ## 정의
@@ -63,6 +63,7 @@ confidence = "medium"
 - 구현 다리: ARCH-021 (인벤토리 시스템) - 드롭된 아이템이 실제로 담기는 자료 구조. 확률표(ARCH-012)와
   보유 상태를 분리해두지 않으면 드롭 튜닝마다 코드를 고쳐야 한다.
 - 장르 앵커: GENRE-011 (루트 슈터) - 이 군집이 이 요소를 구성 요소로 지목한다.
+- 장르 앵커: GENRE-034 (핵앤슬래시 던전크롤러 ARPG) - 이 군집이 이 요소를 구성 요소로 지목한다.
 
 ## 리스크
 - [해석] 상한선(천장·확정 드롭) 없이 확률만 두면 플레이 시간이 길어질수록 이탈 사유가 누적된다.

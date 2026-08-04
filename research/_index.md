@@ -1,7 +1,15 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-03 | 카드 151장
+생성: 2026-08-04 | 카드 154장
 
 ## 최근 7일 변경
+- ELEM-019 | 08-04
+- ELEM-011 | 08-04
+- ELEM-007 | 08-04
+- GENRE-033 | 08-04
+- GENRE-032 | 08-04
+- GENRE-034 | 08-04
+- GAME-041 | 08-04
+- GAME-023 | 08-04
 - GENRE-031 | 08-03
 - GENRE-030 | 08-03
 - GENRE-026 | 08-02
@@ -19,7 +27,6 @@
 - ARCH-024 | 08-02
 - ARCH-026 | 08-02
 - ARCH-028 | 08-02
-- GAME-023 | 08-02
 - ELEM-040 | 08-01
 - ELEM-038 | 08-01
 - ELEM-037 | 08-01
@@ -54,9 +61,7 @@
 - ELEM-029 | 07-31
 - ELEM-035 | 07-31
 - ELEM-016 | 07-31
-- ELEM-019 | 07-31
 - ELEM-003 | 07-31
-- ELEM-011 | 07-31
 - ELEM-033 | 07-31
 - ELEM-028 | 07-31
 - ELEM-014 | 07-31
@@ -65,7 +70,6 @@
 - ELEM-031 | 07-31
 - ELEM-004 | 07-31
 - ELEM-021 | 07-31
-- ELEM-007 | 07-31
 - ELEM-013 | 07-31
 - ELEM-015 | 07-31
 - ELEM-022 | 07-31
@@ -89,7 +93,6 @@
 - ARCH-020 | 07-31
 - ARCH-001 | 07-31
 - GAME-012 | 07-31
-- GAME-041 | 07-31
 - GAME-036 | 07-31
 - GAME-037 | 07-31
 - GAME-001 | 07-31
@@ -123,13 +126,6 @@
 - GAME-026 | 07-28
 - GAME-024 | 07-28
 - GAME-025 | 07-28
-- GENRE-009 | 07-27
-- GENRE-007 | 07-27
-- GENRE-008 | 07-27
-- SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 07-27
-- GAME-011 | 07-27
-- GAME-022 | 07-27
-- GAME-021 | 07-27
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-31
@@ -138,11 +134,11 @@
 - ELEM-004 | 반복 메커닉 (Loop Mechanic) | 같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조 | #retention #high-cost #puzzle #roguelike #divisive | 07-31
 - ELEM-005 | AI 통합 (AI Integration) | AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술 | #requires-ai #high-cost #viral-hook #fragile #divisive | 07-31
 - ELEM-006 | AI 기반 심문 (AI-driven interrogation) | 미리 쓴 대사가 아니라 실시간 생성 AI가 등장인물을 움직여 플레이어의 질문에 즉석으로 답하게 하는 방식 | #AI #dialogue #local-llm #divisive | 07-16
-- ELEM-007 | 선택 반응형 비-LLM 내러티브 (Choice-reactive, non-LLM narration) | AI가 아니라 개발자가 미리 써놓은 여러 갈래의 이야기 중 하나를 플레이어의 선택에 따라 보여주는 방식 | #narrative #branching #no-ai #illusion-of-choice | 07-31
+- ELEM-007 | 선택 반응형 비-LLM 내러티브 (Choice-reactive, non-LLM narration) | AI가 아니라 개발자가 미리 써놓은 여러 갈래의 이야기 중 하나를 플레이어의 선택에 따라 보여주는 방식 | #narrative #branching #no-ai #illusion-of-choice | 08-04
 - ELEM-008 | 동반자 / 함께 플레이 가능한 캐릭터 (Companion / co-playable character) | 플레이어와 함께 게임을 하거나 곁에서 반응해주는 또 다른 캐릭터를 두는 방식 | #co-op #companion #AI-controversy #divisive | 07-31
 - ELEM-009 | 철학적 내러티브 로그라이트/로그라이크 (Philosophical narrative roguelite/roguelike) | 죽거나 다시 시작해도 이야기가 이어지는 구조에 삶과 죽음, 의미 같은 철학적 질문을 담는 방식 | #philosophy #roguelike #metafiction #conflicting-data | 07-31
 - ELEM-010 | 클립 기반 바이럴리티 (Clip-driven virality) | 짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식 | #virality #clip #spectacle #expectation-mismatch | 07-31
-- ELEM-011 | 창발적 시스템 상호작용 (Emergent Systemic Interaction, "화학 엔진") | 불/물/바람 같은 기본 규칙 몇 개만 만들어두고, 그 규칙들이 서로 부딪히며 개발자도 예상 못한 해법이 나오게 하는 설계 | #exploration #physics #sandbox #open-world #high-cost | 07-31
+- ELEM-011 | 창발적 시스템 상호작용 (Emergent Systemic Interaction, "화학 엔진") | 불/물/바람 같은 기본 규칙 몇 개만 만들어두고, 그 규칙들이 서로 부딪히며 개발자도 예상 못한 해법이 나오게 하는 설계 | #exploration #physics #sandbox #open-world #high-cost | 08-04
 - ELEM-012 | 랜드마크 기반 탐험 (Landmark-based / Minimal-marker Exploration) | 지도 아이콘이나 화살표 대신, 멀리서도 보이는 지형지물로 '저기 가보고 싶다'는 마음을 이끌어내는 레벨 디자인 | #exploration #open-world #no-markers #level-design #divisive | 07-31
 - ELEM-013 | 도트 그래픽 아트 스타일 (Pixel Art Style) | 3D 모델링 없이 저해상도 픽셀 단위로 그래픽을 표현해 개발 비용과 파이프라인을 줄이는 시각 제작 방식 | #pixel-art #art-style #low-cost #indie #2d #nostalgia | 07-31
 - ELEM-014 | 처벌적 죽음 순환 (Punishing Death Loop) | 죽으면 모아둔 자원을 잃고 정해진 지점에서 다시 시작하되, 죽은 자리로 돌아가면 한 번 더 되찾을 기회를 주는 긴장·반복 구조 | #difficulty #dark-fantasy #soulslike #retention #divisive | 07-31
@@ -150,7 +146,7 @@
 - ELEM-016 | 그림다크 톤 (Grimdark Aesthetic) | 도덕적으로 회색지대인 인물, 부패하고 무너져가는 세계, 희망이 옅은 절망적 분위기를 시각·서사 전반에 깔아두는 톤 | #dark-fantasy #grimdark #tone #narrative #atmosphere | 07-31
 - ELEM-017 | 가챠 확률 & 천장 시스템 (Gacha Probability & Pity System) | 확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치 | #gacha #monetization #randomness #live-service #mobile #regulation #divisive | 08-01
 - ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조 | #roguelike #randomness #draft #run-based #tower-defense #divisive | 07-31
-- ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조 | #loot #randomness #looter-shooter #arpg #retention #grind #transparency #divisive | 07-31
+- ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조 | #loot #randomness #looter-shooter #arpg #retention #grind #transparency #divisive | 08-04
 - ELEM-020 | 덱 구축 (Deck-building) | 약한 시작 카드 묶음에서 출발해 플레이 도중 카드를 한 장씩 더하고 빼며 자기만의 덱을 만들어가는 구조 | #deckbuilder #roguelike #randomness #replayability #indie #strategy | 07-31
 - ELEM-021 | 친숙한 규칙 차용 (Familiar Ruleset Appropriation) | 포커·블랙잭처럼 이미 대부분이 아는 규칙을 게임의 바탕으로 그대로 빌려와, 가르치는 비용 없이 그 위에 새 시스템만 얹는 방식 | #onboarding #low-cost #indie #solo-dev #card-game #regulation #broad-appeal | 07-31
 - ELEM-022 | 지수적 점수 스케일링 (Exponential Scoring) | 개별 강화 효과들이 서로 곱해지고 중첩되게 만들어, 판이 진행될수록 점수가 선형이 아니라 폭발적으로 불어나게 하는 설계 | #scoring #power-fantasy #roguelike #numbers-go-up #combo #balance-risk | 07-31
@@ -203,6 +199,9 @@
 - GENRE-029 | 리듬 액션 (Rhythm Action) | 박자에 맞춰 입력을 요구하고 그 입력이 화면·사운드에 과장되게 반응하는 것이 코어인, 음악 자체가 규칙이 되는 군집 | #rhythm #timing #music #indie #juiciness #input-heavy | 08-02
 - GENRE-030 | 크리처 노동 자동화 서바이벌 (Creature Labor Automation Survival) | 포획한 생물을 전투 동료가 아니라 채집·제작 노동력으로 배치해 자동화 생산 라인을 짜는 것이 코어인 서바이벌 군집 | #survival #automation #creature-collection #crafting #base-building #emerging | 08-03
 - GENRE-031 | 무협 근접 액션 배틀로얄 (Wuxia Melee Action Battle Royale) | 총격이 아니라 검술·경공 같은 근접 무술 조작이 코어인, 무협 세계관 위에 좁혀지는 세이프존을 얹은 배틀로얄 군집 | #battle-royale #wuxia #melee #action #parkour #niche | 08-03
+- GENRE-032 | 이머시브 심 (Immersive Sim) | 여러 개의 상호작용 가능한 규칙을 겹쳐 두고, 플레이어가 스스로 조합해 문제를 풀게 만드는 시스템 중심 1인칭 장르 | #immersive-sim #systemic #stealth #niche-appeal #high-cost #cautionary | 08-04
+- GENRE-033 | CRPG (선택 기반 파티 롤플레잉) | 테이블탑 RPG 규칙을 충실히 재현한 파티 단위 롤플레잉 위에, 선택이 실제 서사 분기를 바꾸는 것이 코어인 군집 | #crpg #narrative #branching #party-based #tabletop #co-op #resurgent | 08-04
+- GENRE-034 | 핵앤슬래시 던전크롤러 ARPG (시즌제 리그형) | 좁은 던전형 맵을 빠르게 반복하며 빌드를 파밍하는 전투 위에, 정기적으로 리셋되는 시즌(리그)이 재플레이 동기를 새로 공급하는 액션 RPG 군집 | #arpg #hack-and-slash #loot #season #league #live-service #saturated | 08-04
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-31
@@ -227,7 +226,7 @@
 - GAME-020 | Core Keeper (2022 얼리액세스 / 2024 정식출시, Pugstorm / Fireshine Games) | 탑다운 도트 그래픽으로 Terraria식 샌드박스를 지하 채굴 중심으로 재구성한 최근 세대 사례 | #sandbox #survival #pixel #mining #early-access #co-op | 07-25
 - GAME-021 | Dark Souls III (2016, FromSoftware / Bandai Namco) | 소울류 시리즈가 확립한 전투·죽음 순환 공식을 완성도로 밀어붙여 시리즈 최다 판매를 기록한 완결편 | #action-rpg #dark-fantasy #soulslike #difficulty #broad-appeal | 07-27
 - GAME-022 | Darkest Dungeon (2016, Red Hook Studios) | 스트레스·발작(Affliction) 시스템으로 다크 판타지 로그라이크에 심리적 공포를 결합했으나, 그 처벌적 설계 자체가 호불호를 가른 사례 | #roguelike #dark-fantasy #stress-system #punishing #divisive #indie | 07-27
-- GAME-023 | Diablo IV (2023, Blizzard Entertainment) | 출시 직후 블리자드 역대 최고 흥행 기록을 세웠으나, 아이템화·엔드게임 설계에 대한 커뮤니티 반발이 이어진 다크 판타지 오픈월드 ARPG | #arpg #dark-fantasy #open-world #live-service #itemization #divisive #aaa | 08-02
+- GAME-023 | Diablo IV (2023, Blizzard Entertainment) | 출시 직후 블리자드 역대 최고 흥행 기록을 세웠으나, 아이템화·엔드게임 설계에 대한 커뮤니티 반발이 이어진 다크 판타지 오픈월드 ARPG | #arpg #dark-fantasy #open-world #live-service #itemization #divisive #aaa | 08-04
 - GAME-024 | Genshin Impact (2020, miHoYo/HoYoverse) | 소프트/하드 천장과 50/50 보장을 결합한 캐릭터 가챠로 역대 최고 매출 모바일 게임 중 하나가 된 오픈월드 액션 RPG | #gacha #open-world #action-rpg #live-service #mobile #broad-appeal | 07-28
 - GAME-025 | 메이플스토리 - 큐브 확률조작 사건 (2003 출시, Nexon / 2024 공정위 제재) | 확률형 강화 아이템 '큐브'의 확률을 몰래 낮추고 알리지 않아 사상 최대 과징금을 받은 확률 신뢰 붕괴 사례 | #probability-item #mmorpg #regulation #trust-failure #korea #cautionary | 07-28
 - GAME-026 | Bloons TD 6 (2018, Ninja Kiwi) | 정해진 경로와 타워 업그레이드 트리 중심의 정통 타워 디펜스로 장르의 상업적 기준을 세운 작품 | #tower-defense #mobile #pc #broad-appeal #non-random | 07-28
@@ -244,7 +243,7 @@
 - GAME-037 | Vampire Survivors (2022, poncle) | 무기 조합이 곱해지며 화면을 뒤덮는 폭발적 스케일링을 코어로 삼아, 1인 개발 원형에서 새 장르(서바이버라이크)를 만든 초저가 인디 대히트작 | #survivors-like #roguelite #indie #solo-dev-origin #power-scaling #broad-appeal | 07-31
 - GAME-038 | Buckshot Roulette (2024, Mike Klubnika / Critical Reflex) | 실제 산탄총 러시안 룰렛 규칙을 그대로 빌려와 심리전 아이템만 얹은 초저가 1인 개발 공포 게임으로, 출시 2주 만에 100만 장을 판 바이럴 히트작 | #horror #russian-roulette #solo-dev #indie #viral #low-cost | 07-31
 - GAME-040 | Hades II (2024 얼리액세스 / 2025 정식출시, Supergiant Games) | 전작을 뛰어넘는 평가와 판매로 2025년 최고 평점 게임에 오른 로그라이크 내러티브 속편 | #roguelike #narrative #sequel #early-access #indie #broad-appeal | 07-31
-- GAME-041 | Baldur's Gate 3 (2023, Larian Studios) | 2023년 스팀 최고 판매작이자 그해 최고 평점 게임으로, 선택 기반 분기와 협동 플레이를 결합한 CRPG의 상업·평단 정점 | #crpg #narrative #branching #co-op #aaa #goty #broad-appeal | 07-31
+- GAME-041 | Baldur's Gate 3 (2023, Larian Studios) | 2023년 스팀 최고 판매작이자 그해 최고 평점 게임으로, 선택 기반 분기와 협동 플레이를 결합한 CRPG의 상업·평단 정점 | #crpg #narrative #branching #co-op #aaa #goty #broad-appeal | 08-04
 - GAME-042 | Counter-Strike 2 (2023, Valve) | 20년 프랜차이즈를 새 엔진으로 이전하며 압도적 장기 지표를 지켰지만 출시 초기 판정 신뢰 논란을 겪은 라운드제 슈터 | #fps #tactical-shooter #esports #valve #pvp #mixed-reception | 08-01
 - GAME-043 | Dota 2 (2013, Valve) | 완전 무료 영웅 로스터와 코스메틱 전용 수익화로 10년 넘게 Steam 상위권을 지킨 MOBA | #moba #esports #valve #free-to-play #pvp #long-tail | 08-01
 - GAME-044 | PUBG: BATTLEGROUNDS (2017, PUBG Studios / KRAFTON) | 배틀로얄 장르를 대중화시킨 원조작이지만, 후발주자에 밀리며 리뷰가 Mixed로 굳은 사례 | #battle-royale #free-to-play #krafton #pvp #cheating-controversy | 08-01

@@ -3,10 +3,10 @@ card_id = "GAME-041"
 type = "success"
 title = "Baldur's Gate 3 (2023, Larian Studios)"
 summary = "2023년 스팀 최고 판매작이자 그해 최고 평점 게임으로, 선택 기반 분기와 협동 플레이를 결합한 CRPG의 상업·평단 정점"
-genres = []                    # CRPG 장르 카드는 미작성 - 요소 증거 전용 카드
+genres = ["GENRE-033"]
 elements = ["ELEM-007"]
 tags = ["crpg", "narrative", "branching", "co-op", "aaa", "goty", "broad-appeal"]
-updated = "2026-07-31"
+updated = "2026-08-04"
 confidence = "high"
 +++
 ## 한 줄 요약 + 판매·리뷰 수치
