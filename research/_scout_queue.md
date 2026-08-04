@@ -9,11 +9,11 @@
 ---
 
 ## 2026-08-04 23:05 생성 (카테고리: GENRE)
-- [ ] 이머시브 심 (Immersive Sim) — connects_to: ELEM-011 — why_now: BOTW/TOTK(ELEM-011, 창발적 시스템 상호작용)의 계보상 원류인 이머시브 심 장르(Dishonored, Prey, System Shock류)를 다루는 GENRE 군집 카드가 없어, "화학 엔진" 서술의 역사적 뿌리가 빠져 있음 — obscurity: 높음
-- [ ] CRPG (선택 기반 파티 롤플레잉) — connects_to: GAME-041 — why_now: GAME-041(발더스 게이트 3)이 이미 #crpg 태그로 등록돼 있으나, 이를 묶는 GENRE 군집 카드가 없어 태그만 있고 장르 서술이 비어 있는 간극 — obscurity: 낮음
+- [x] 이머시브 심 (Immersive Sim) — connects_to: ELEM-011 — why_now: BOTW/TOTK(ELEM-011, 창발적 시스템 상호작용)의 계보상 원류인 이머시브 심 장르(Dishonored, Prey, System Shock류)를 다루는 GENRE 군집 카드가 없어, "화학 엔진" 서술의 역사적 뿌리가 빠져 있음 — obscurity: 높음
+- [x] CRPG (선택 기반 파티 롤플레잉) — connects_to: GAME-041 — why_now: GAME-041(발더스 게이트 3)이 이미 #crpg 태그로 등록돼 있으나, 이를 묶는 GENRE 군집 카드가 없어 태그만 있고 장르 서술이 비어 있는 간극 — obscurity: 낮음
 - [ ] PvP 하드코어 서바이벌 크래프팅 (Rust/ARK류) — connects_to: GENRE-020 — why_now: GENRE-020(서바이벌 크래프팅 오픈월드)은 협동(#co-op) 중심 서술만 갖고 있고, 같은 시스템을 플레이어 간 약탈·레이드로 돌리는 PvP 갈래는 서버 경제·공격 손실 같은 별도 시장 궤적을 가져 구분 서술이 필요 — obscurity: 중간
 - [ ] 파티 협동 카오스 게임 (Overcooked류) — connects_to: ELEM-031 — why_now: ELEM-031(시각 피드백 과장/Juiciness)이 여러 카드의 재료로만 쓰이고, 시간 압박형 협동 자체가 코어 루프인 파티 게임 GENRE 군집이 비어 있음 — obscurity: 중간
-- [ ] 핵앤슬래시 던전크롤러 ARPG (시즌제 리그형, 예: Path of Exile류) — connects_to: GAME-023 — why_now: GAME-023(디아블로 IV)이 오픈월드 다크 판타지(GENRE-009)로만 연결돼 있고, 좁은 던전 반복과 시즌제 리그·빌드 메타가 코어인 핵앤슬래시 ARPG 고유 갈래를 다루는 GENRE 카드가 없음 — obscurity: 낮음
+- [x] 핵앤슬래시 던전크롤러 ARPG (시즌제 리그형, 예: Path of Exile류) — connects_to: GAME-023 — why_now: GAME-023(디아블로 IV)이 오픈월드 다크 판타지(GENRE-009)로만 연결돼 있고, 좁은 던전 반복과 시즌제 리그·빌드 메타가 코어인 핵앤슬래시 ARPG 고유 갈래를 다루는 GENRE 카드가 없음 — obscurity: 낮음
 
 ## 2026-08-03 23:05 생성 (카테고리: GENRE)
 - [ ] 접객 서비스 시뮬레이션 (Hospitality / Service Sim) — connects_to: ELEM-035, GENRE-007 — why_now: ELEM-035(접객 서비스 루프)는 카드로 있지만, GENRE-007(코지 심)은 농사·꾸미기 위주 서술이라 손님 응대 루프만의 시장 궤적을 다루는 GENRE 카드가 없음 - 서브컬쳐·라이브서비스 장르가 계속 세분화되는 가운데 코지 계열의 세분화는 아직 비어 있음 — obscurity: 높음
