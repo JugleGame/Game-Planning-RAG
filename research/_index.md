@@ -1,13 +1,17 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-04 | 카드 154장
+생성: 2026-08-05 | 카드 156장
 
 ## 최근 7일 변경
-- ELEM-019 | 08-04
+- ELEM-018 | 08-05
+- ELEM-019 | 08-05
+- GENRE-010 | 08-05
+- GENRE-034 | 08-05
+- GAME-052 | 08-05
+- GAME-053 | 08-05
 - ELEM-011 | 08-04
 - ELEM-007 | 08-04
 - GENRE-033 | 08-04
 - GENRE-032 | 08-04
-- GENRE-034 | 08-04
 - GAME-041 | 08-04
 - GAME-023 | 08-04
 - GENRE-031 | 08-03
@@ -16,7 +20,6 @@
 - GENRE-019 | 08-02
 - GENRE-028 | 08-02
 - GENRE-027 | 08-02
-- GENRE-010 | 08-02
 - GENRE-029 | 08-02
 - GENRE-012 | 08-02
 - GENRE-013 | 08-02
@@ -56,7 +59,6 @@
 - ELEM-001 | 07-31
 - ELEM-012 | 07-31
 - ELEM-032 | 07-31
-- ELEM-018 | 07-31
 - ELEM-020 | 07-31
 - ELEM-029 | 07-31
 - ELEM-035 | 07-31
@@ -123,9 +125,6 @@
 - GAME-030 | 07-29
 - GAME-031 | 07-29
 - GAME-027 | 07-29
-- GAME-026 | 07-28
-- GAME-024 | 07-28
-- GAME-025 | 07-28
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-31
@@ -145,8 +144,8 @@
 - ELEM-015 | 스트레스/광기 시스템 (Sanity / Stress Meter) | 캐릭터에게 정신적 압박(스트레스·공포·광기) 수치를 부여해, 임계치를 넘으면 환각·행동 이상 같은 부정적 상태를 발생시키는 방식 | #horror #dark-fantasy #psychological #punishing #divisive | 07-31
 - ELEM-016 | 그림다크 톤 (Grimdark Aesthetic) | 도덕적으로 회색지대인 인물, 부패하고 무너져가는 세계, 희망이 옅은 절망적 분위기를 시각·서사 전반에 깔아두는 톤 | #dark-fantasy #grimdark #tone #narrative #atmosphere | 07-31
 - ELEM-017 | 가챠 확률 & 천장 시스템 (Gacha Probability & Pity System) | 확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치 | #gacha #monetization #randomness #live-service #mobile #regulation #divisive | 08-01
-- ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조 | #roguelike #randomness #draft #run-based #tower-defense #divisive | 07-31
-- ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조 | #loot #randomness #looter-shooter #arpg #retention #grind #transparency #divisive | 08-04
+- ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조 | #roguelike #randomness #draft #run-based #tower-defense #divisive | 08-05
+- ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조 | #loot #randomness #looter-shooter #arpg #retention #grind #transparency #divisive | 08-05
 - ELEM-020 | 덱 구축 (Deck-building) | 약한 시작 카드 묶음에서 출발해 플레이 도중 카드를 한 장씩 더하고 빼며 자기만의 덱을 만들어가는 구조 | #deckbuilder #roguelike #randomness #replayability #indie #strategy | 07-31
 - ELEM-021 | 친숙한 규칙 차용 (Familiar Ruleset Appropriation) | 포커·블랙잭처럼 이미 대부분이 아는 규칙을 게임의 바탕으로 그대로 빌려와, 가르치는 비용 없이 그 위에 새 시스템만 얹는 방식 | #onboarding #low-cost #indie #solo-dev #card-game #regulation #broad-appeal | 07-31
 - ELEM-022 | 지수적 점수 스케일링 (Exponential Scoring) | 개별 강화 효과들이 서로 곱해지고 중첩되게 만들어, 판이 진행될수록 점수가 선형이 아니라 폭발적으로 불어나게 하는 설계 | #scoring #power-fantasy #roguelike #numbers-go-up #combo #balance-risk | 07-31
@@ -177,7 +176,7 @@
 - GENRE-007 | 코지 시뮬 (Cozy Sim) | 실패 상태 없이 낮은 긴장으로 일상 루틴(농사·꾸미기·수집)을 반복하게 하는 저스트레스 생활 시뮬 군집 | #cozy #life-sim #low-stress #no-fail #farming #broad-appeal | 07-27
 - GENRE-008 | 감정 서사 어드벤처 (Wholesome / Emotional Narrative Adventure) | 상실·이별·치유 같은 감정 아크를 짧고 완결된 모험으로 전달하는 것이 코어인 군집 | #wholesome #narrative #emotional #indie #short-form #niche-appeal | 07-27
 - GENRE-009 | 다크 판타지 (Dark Fantasy) | 절망적이고 도덕적으로 모호한 세계관 위에 처벌적인 죽음·정신력 소모 순환을 얹어, 공포와 성취감을 동시에 주는 군집 | #dark-fantasy #grimdark #difficulty #horror #soulslike #aaa #indie | 07-27
-- GENRE-010 | 타워 디펜스 (Tower Defense) | 정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집 | #tower-defense #strategy #wave-based #roguelike-subgenre | 08-02
+- GENRE-010 | 타워 디펜스 (Tower Defense) | 정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집 | #tower-defense #strategy #wave-based #roguelike-subgenre | 08-05
 - GENRE-011 | 루트 슈터 (Looter Shooter) | 총격 전투 위에 무작위로 굴려진 장비 파밍을 얹어, 더 좋은 총을 얻기 위해 같은 구간을 반복하게 만드는 것이 코어인 군집 | #looter-shooter #fps #loot #live-service #grind #aaa #divisive | 07-29
 - GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집 | #roguelike #deckbuilder #randomness #indie #replayability #saturated | 08-02
 - GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 08-02
@@ -201,7 +200,7 @@
 - GENRE-031 | 무협 근접 액션 배틀로얄 (Wuxia Melee Action Battle Royale) | 총격이 아니라 검술·경공 같은 근접 무술 조작이 코어인, 무협 세계관 위에 좁혀지는 세이프존을 얹은 배틀로얄 군집 | #battle-royale #wuxia #melee #action #parkour #niche | 08-03
 - GENRE-032 | 이머시브 심 (Immersive Sim) | 여러 개의 상호작용 가능한 규칙을 겹쳐 두고, 플레이어가 스스로 조합해 문제를 풀게 만드는 시스템 중심 1인칭 장르 | #immersive-sim #systemic #stealth #niche-appeal #high-cost #cautionary | 08-04
 - GENRE-033 | CRPG (선택 기반 파티 롤플레잉) | 테이블탑 RPG 규칙을 충실히 재현한 파티 단위 롤플레잉 위에, 선택이 실제 서사 분기를 바꾸는 것이 코어인 군집 | #crpg #narrative #branching #party-based #tabletop #co-op #resurgent | 08-04
-- GENRE-034 | 핵앤슬래시 던전크롤러 ARPG (시즌제 리그형) | 좁은 던전형 맵을 빠르게 반복하며 빌드를 파밍하는 전투 위에, 정기적으로 리셋되는 시즌(리그)이 재플레이 동기를 새로 공급하는 액션 RPG 군집 | #arpg #hack-and-slash #loot #season #league #live-service #saturated | 08-04
+- GENRE-034 | 핵앤슬래시 던전크롤러 ARPG (시즌제 리그형) | 좁은 던전형 맵을 빠르게 반복하며 빌드를 파밍하는 전투 위에, 정기적으로 리셋되는 시즌(리그)이 재플레이 동기를 새로 공급하는 액션 RPG 군집 | #arpg #hack-and-slash #loot #season #league #live-service #saturated | 08-05
 
 ## ③ 게임
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-31
@@ -254,6 +253,8 @@
 - GAME-049 | NARAKA: BLADEPOINT (2021, 24 Entertainment / NetEase Games) | 온디바이스 NVIDIA ACE AI 팀원(Viper)을 실제 출시 빌드에 탑재한 무협 배틀로얄 | #battle-royale #ai-native #voice-npc #wuxia #live-service #cross-play | 08-01
 - GAME-050 | Towerful Defense: A Rogue TD (2024, Mini Fun Games) | 단일 타워를 스킬로 직접 조작하며 방어하는 로그라이크 타워 디펜스 - Brotato식 조작을 TD 시점으로 옮긴 하이브리드 | #tower-defense #roguelite #indie #single-tower #skill-based | 08-01
 - GAME-051 | Yet Another Zombie Survivors (2023 얼리액세스 / 2026-08-20 정식출시 예정, Awesome Games Studio) | 최대 3인 스쿼드를 동시 조작하는 변주로, 단일 캐릭터 자동전투가 관례인 서바이버라이크 장르에 새 조작 축을 더한 좀비 서바이벌 | #survivors-like #bullet-heaven #squad #early-access #zombie | 08-01
+- GAME-052 | Rogue Defense: Hybrid Tower TD (2025, CyberJoy Games) | 사이버펑크 로그 AI 세계관 위에 무작위 웨이브와 무기 시너지를 결합한 모바일 로그라이트 타워 디펜스 | #tower-defense #roguelite #mobile #free-to-play #cyberpunk | 08-05
+- GAME-053 | Last Epoch (2024, Eleventh Hour Games) | 시간여행 서사 위에 방대한 스킬 트리와 파벌 선택형 아이템 경제를 얹은 시즌제 핵앤슬래시 ARPG | #arpg #hack-and-slash #loot #season #league #solo-dev-origin #broad-appeal | 08-05
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14

@@ -4,7 +4,7 @@ type = "mechanic"
 title = "로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft)"
 summary = "매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조"
 tags = ["roguelike", "randomness", "draft", "run-based", "tower-defense", "divisive"]
-updated = "2026-07-31"
+updated = "2026-08-05"
 confidence = "medium"
 +++
 ## 정의
@@ -27,6 +27,9 @@ confidence = "medium"
 - GAME-051 (Yet Another Zombie Survivors) - 레벨업 시 무기·능력 중 하나를 고르는 드래프트 구조를
   서바이버라이크 스쿼드 변주에 그대로 이어받았다. Steam 리뷰 1만 3,000건 이상 중 91% 긍정
   [출처: GAME-051 카드].
+- GAME-052 (Rogue Defense: Hybrid Tower TD) - 절차적으로 생성되는 적 웨이브에 맞서 무기와 가디언
+  스킬 조합을 무작위로 골라 짜는 구조. Google Play 누적 다운로드 100만 회 이상, 평점 4.2/5
+  [출처: GAME-052 카드].
 
 ## 실패 사례
 - GAME-027 (Rogue Tower) - 같은 게임 안에서 일부 유저는 "다음 타일이 뭔지 안 보이는 무작위 경로가

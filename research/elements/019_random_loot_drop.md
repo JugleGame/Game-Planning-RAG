@@ -4,7 +4,7 @@ type = "mechanic"
 title = "무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table)"
 summary = "적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조"
 tags = ["loot", "randomness", "looter-shooter", "arpg", "retention", "grind", "transparency", "divisive"]
-updated = "2026-08-04"
+updated = "2026-08-05"
 confidence = "medium"
 +++
 ## 정의
@@ -24,6 +24,9 @@ confidence = "medium"
 - GAME-029 (Warframe) - 확률 테이블 자체를 공식 사이트에 전부 공개해 무작위성을 감추지 않는 쪽을
   택했고, 2026년 7월 기준 누적 등록 플레이어 8,500만 명 이상 규모로 14년째 서비스 중이다
   [출처: Digital Extremes TennoCon 보도자료(Business Wire), 2026-07-11 기준].
+- GAME-053 (Last Epoch) - 좁은 던전·필드를 반복하며 확률표 기반 장비를 파밍하는 것이 코어 루프다.
+  출시 직후 Steam 동시접속 16만 2,000명 이상, 종합 리뷰 77% 긍정(11만 8,270건)
+  [출처: GAME-053 카드].
 
 ## 실패 사례
 - GAME-028 (Destiny 2) - 같은 요소의 반대편. 상한선 없는 무작위 롤 때문에 한 플레이어가 트라이얼

@@ -4,9 +4,9 @@ type = "genre"
 title = "핵앤슬래시 던전크롤러 ARPG (시즌제 리그형)"
 summary = "좁은 던전형 맵을 빠르게 반복하며 빌드를 파밍하는 전투 위에, 정기적으로 리셋되는 시즌(리그)이 재플레이 동기를 새로 공급하는 액션 RPG 군집"
 elements = ["ELEM-019"]
-example_games = ["GAME-023"]
+example_games = ["GAME-023", "GAME-053"]
 tags = ["arpg", "hack-and-slash", "loot", "season", "league", "live-service", "saturated"]
-updated = "2026-08-04"
+updated = "2026-08-05"
 confidence = "medium"
 +++
 ## 구성 요소

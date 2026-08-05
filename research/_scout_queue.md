@@ -10,10 +10,10 @@
 
 ## 2026-08-05 23:05 생성 (카테고리: GAME)
 - [ ] Beast of Reincarnation (다크 판타지 신작) — connects_to: GENRE-009, ELEM-014 — why_now: 2026년 7월 마지막 주 다크 판타지/소울라이크 태그 신작 밀집 출시(07-31) 사례 중 하나 - Mistfall Hunter·Forsaken Realms: Vahrin's Call과 함께 언급됐지만 개별 GAME 카드는 아직 없음 (07-27 다이제스트) — obscurity: 높음
-- [x] Rogue Defense: Hybrid Tower TD (로그라이트 TD 하이브리드) — connects_to: GENRE-010, ELEM-018, GAME-050 — why_now: Towerful Defense(GAME-050)와 별개로 같은 주 Google Play에서 업데이트된 사례 - 로그라이트+TD 하이브리드화가 단일 신작이 아니라 장르 차원 흐름임을 보여주는 두 번째 데이터포인트 (07-31 다이제스트) — obscurity: 높음
+- [done] Rogue Defense: Hybrid Tower TD (로그라이트 TD 하이브리드) — connects_to: GENRE-010, ELEM-018, GAME-050 — why_now: Towerful Defense(GAME-050)와 별개로 같은 주 Google Play에서 업데이트된 사례 - 로그라이트+TD 하이브리드화가 단일 신작이 아니라 장르 차원 흐름임을 보여주는 두 번째 데이터포인트 (07-31 다이제스트) — obscurity: 높음 — GAME-052
 - [ ] Disco Elysium (2019, ZA/UM) — connects_to: GENRE-033 — why_now: GENRE-033(CRPG)이 08-04 신설됐으나 GAME-041(발더스 게이트 3) 외에는 이 군집을 실증하는 GAME 카드가 없어, 대사·서사 분기 중심의 또 다른 대표 사례로 간극을 채울 필요 — obscurity: 낮음
 - [ ] Dishonored (2012, Arkane Studios) — connects_to: GENRE-032, ELEM-011 — why_now: GENRE-032(이머시브 심)가 08-04 ELEM-011("화학 엔진")의 역사적 원류로 신설됐으나, 이를 실증하는 GAME 카드가 아직 없어 장르 서술이 태그만 있고 사례가 비어 있음 — obscurity: 낮음
-- [x] Last Epoch (2024, Eleventh Hour Games) — connects_to: GENRE-034 — why_now: GENRE-034(핵앤슬래시 던전크롤러 ARPG, 시즌제 리그형)가 08-04 신설됐으나 GAME-023(디아블로 IV, 오픈월드형)뿐이라 좁은 던전 반복·시즌 리그가 코어인 정통 사례가 비어 있음 — obscurity: 중간
+- [done] Last Epoch (2024, Eleventh Hour Games) — connects_to: GENRE-034 — why_now: GENRE-034(핵앤슬래시 던전크롤러 ARPG, 시즌제 리그형)가 08-04 신설됐으나 GAME-023(디아블로 IV, 오픈월드형)뿐이라 좁은 던전 반복·시즌 리그가 코어인 정통 사례가 비어 있음 — obscurity: 중간 — GAME-053
 
 ## 2026-08-04 23:05 생성 (카테고리: GENRE)
 - [done] 이머시브 심 (Immersive Sim) — connects_to: ELEM-011 — why_now: BOTW/TOTK(ELEM-011, 창발적 시스템 상호작용)의 계보상 원류인 이머시브 심 장르(Dishonored, Prey, System Shock류)를 다루는 GENRE 군집 카드가 없어, "화학 엔진" 서술의 역사적 뿌리가 빠져 있음 — obscurity: 높음 — GENRE-032

@@ -4,9 +4,9 @@ type = "genre"
 title = "타워 디펜스 (Tower Defense)"
 summary = "정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집"
 elements = ["ELEM-004", "ELEM-018"]
-example_games = ["GAME-026", "GAME-027", "GAME-050"]
+example_games = ["GAME-026", "GAME-027", "GAME-050", "GAME-052"]
 tags = ["tower-defense", "strategy", "wave-based", "roguelike-subgenre"]
-updated = "2026-08-02"
+updated = "2026-08-05"
 confidence = "medium"
 +++
 ## 구성 요소
@@ -24,7 +24,7 @@ confidence = "medium"
 - 로그라이크 하위 군집 대표작 GAME-027(Rogue Tower)는 리뷰 4,356건 중 80% 긍정으로, 정통파보다 표본이
   작지만 별도의 팬층을 형성함 [출처: 리뷰 집계 사이트, 2026-07 확인].
 <!-- 증거 부족: Steam 태그 "Tower Defense" 최근 신작 수를 보여주는 공식 집계를 찾지 못함 -->
-- 사실: 로그라이트+타워 디펜스 하이브리드 신작·업데이트가 2026-07-23~07-30 사이 밀집했다 - 'Towerful Defense: A Rogue TD'(GAME-050) 출시(07-30, itch.io), 'Rogue Defense: Hybrid Tower TD' 업데이트(07-23, Google Play) - GAME-027 하나만의 사례가 아니라 장르 차원의 하이브리드화 흐름으로 보인다 [출처: itch.io devlog/Google Play, 2026-07-23·07-30 기준 / 다이제스트 2026-07-31].
+- 사실: 로그라이트+타워 디펜스 하이브리드 신작·업데이트가 2026-07-23~07-30 사이 밀집했다 - 'Towerful Defense: A Rogue TD'(GAME-050) 출시(07-30, itch.io), 'Rogue Defense: Hybrid Tower TD'(GAME-052) 업데이트(07-23, Google Play) - GAME-027 하나만의 사례가 아니라 장르 차원의 하이브리드화 흐름으로 보인다 [출처: itch.io devlog/Google Play, 2026-07-23·07-30 기준 / 다이제스트 2026-07-31].
 
 ## 관례와 기대치
 - 유저는 고정되거나 준고정된 경로, 웨이브 단위 난이도 상승, 타워 업그레이드·속성 상성을 기본값으로
