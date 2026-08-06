@@ -9,11 +9,11 @@
 ---
 
 ## 2026-08-06 23:05 생성 (카테고리: ELEM)
-- [ ] 단일 타워 직접 조작형 방어 (Single-Tower Skill-Controlled Defense) — connects_to: GAME-050, ELEM-018, GENRE-010 — why_now: GAME-050(Towerful Defense)이 이미 '단일 타워를 스킬로 직접 조작'하는 방식을 쓰지만, 이를 로그라이크 드래프트(ELEM-018)와 구분되는 별도 요소로 다루는 ELEM 카드가 없음 - Brotato식 조작을 TD로 옮긴 하이브리드가 개별 게임을 넘어 요소 자체로 반복될 조짐 (07-31 다이제스트, TD 하이브리드화 흐름) — obscurity: 높음
+- [x] 단일 타워 직접 조작형 방어 (Single-Tower Skill-Controlled Defense) — connects_to: GAME-050, ELEM-018, GENRE-010 — why_now: GAME-050(Towerful Defense)이 이미 '단일 타워를 스킬로 직접 조작'하는 방식을 쓰지만, 이를 로그라이크 드래프트(ELEM-018)와 구분되는 별도 요소로 다루는 ELEM 카드가 없음 - Brotato식 조작을 TD로 옮긴 하이브리드가 개별 게임을 넘어 요소 자체로 반복될 조짐 (07-31 다이제스트, TD 하이브리드화 흐름) — obscurity: 높음
 - [ ] 족보 등급별 배수 스코어링 (Poker Hand-Rank Tiered Multiplier Scoring) — connects_to: ELEM-021, ELEM-022, GAME-031, GENRE-013 — why_now: Balatro Wiki 기준 2년 넘게 라이브 지원이 지속되며 "Balatro-like"가 하위장르 용어로 정착(07-31 다이제스트) - 그러나 '족보 등급이 곧 배수가 되는' 구체 스코어링 메커닉 자체를 다루는 ELEM 카드는 없고 ELEM-021·022는 각각 규칙 차용과 지수적 스케일링만 다룸 — obscurity: 낮음
-- [ ] 스쿼드 동시 조작 자동전투 (Squad Multi-Character Simultaneous Auto-Combat) — connects_to: GENRE-019, GAME-051, GAME-037 — why_now: Yet Another Zombie Survivors가 단일 캐릭터 자동전투라는 서바이버라이크 정의를 벗어나 최대 3인 스쿼드 동시 조작을 도입(07-31 다이제스트) - 이 조작 축 변주 자체를 다루는 ELEM 카드가 없어, 장르 정의의 예외가 요소로는 기록되지 않은 상태 — obscurity: 높음
+- [x] 스쿼드 동시 조작 자동전투 (Squad Multi-Character Simultaneous Auto-Combat) — connects_to: GENRE-019, GAME-051, GAME-037 — why_now: Yet Another Zombie Survivors가 단일 캐릭터 자동전투라는 서바이버라이크 정의를 벗어나 최대 3인 스쿼드 동시 조작을 도입(07-31 다이제스트) - 이 조작 축 변주 자체를 다루는 ELEM 카드가 없어, 장르 정의의 예외가 요소로는 기록되지 않은 상태 — obscurity: 높음
 - [ ] AI NPC 멀티모달 실시간 파이프라인 (ASR+SLM+TTS+표정 합성 통합 스택) — connects_to: ELEM-025, ELEM-005, GAME-049, GAME-011 — why_now: NVIDIA ACE가 온디바이스 여부와 무관하게 '음성 인식→소형 언어모델→음성 합성→표정 애니메이션'을 하나로 묶은 파이프라인으로 확산 중(07-27 다이제스트) - ELEM-025는 온디바이스 SLM 자체에 한정돼, 다중 AI 컴포넌트를 잇는 파이프라인 구조 자체는 별도로 기록된 적이 없음 — obscurity: 중간
-- [ ] 그림다크 추출런 결합 (Grimdark Extraction Hybrid) — connects_to: ELEM-016, ELEM-027, GENRE-009, GENRE-011 — why_now: Mistfall Hunter가 다크 판타지 톤(ELEM-016)과 추출형 런 구조(ELEM-027)를 결합해 오픈베타 43만 명 참여 후 Game Pass 무료 포함 정식 출시(07-27 다이제스트) - 두 요소의 결합 자체가 아직 독립 ELEM으로 기록되지 않은 빈칸(ELEM-041과 같은 조합형 패턴) — obscurity: 중간
+- [x] 그림다크 추출런 결합 (Grimdark Extraction Hybrid) — connects_to: ELEM-016, ELEM-027, GENRE-009, GENRE-011 — why_now: Mistfall Hunter가 다크 판타지 톤(ELEM-016)과 추출형 런 구조(ELEM-027)를 결합해 오픈베타 43만 명 참여 후 Game Pass 무료 포함 정식 출시(07-27 다이제스트) - 두 요소의 결합 자체가 아직 독립 ELEM으로 기록되지 않은 빈칸(ELEM-041과 같은 조합형 패턴) — obscurity: 중간
 
 ## 2026-08-05 23:05 생성 (카테고리: GAME)
 - [ ] Beast of Reincarnation (다크 판타지 신작) — connects_to: GENRE-009, ELEM-014 — why_now: 2026년 7월 마지막 주 다크 판타지/소울라이크 태그 신작 밀집 출시(07-31) 사례 중 하나 - Mistfall Hunter·Forsaken Realms: Vahrin's Call과 함께 언급됐지만 개별 GAME 카드는 아직 없음 (07-27 다이제스트) — obscurity: 높음
