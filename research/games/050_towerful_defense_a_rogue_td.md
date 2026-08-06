@@ -4,7 +4,7 @@ type = "success"
 title = "Towerful Defense: A Rogue TD (2024, Mini Fun Games)"
 summary = "단일 타워를 스킬로 직접 조작하며 방어하는 로그라이크 타워 디펜스 - Brotato식 조작을 TD 시점으로 옮긴 하이브리드"
 genres = ["GENRE-010"]
-elements = ["ELEM-018"]
+elements = ["ELEM-018", "ELEM-042"]
 tags = ["tower-defense", "roguelite", "indie", "single-tower", "skill-based"]
 updated = "2026-08-01"
 confidence = "medium"
@@ -17,6 +17,7 @@ confidence = "medium"
 ## 사용한 요소
 - ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 매판 스킬 최대 4개와 특성(trait)·아이템을 무작위로 골라 빌드를 짜는 구조다 [출처: itch.io/Steam 페이지, 2026-08 확인].
 - GENRE-010 (타워 디펜스) - 사방에서 오는 적 웨이브를 하나의 타워로 막는다는 점에서 장르 코어는 지키지만, GAME-027(Rogue Tower)의 "여러 타워를 배치"하는 방식과 달리 이 게임은 플레이어가 타워 하나를 스킬로 직접 조작(이동 없이 스킬 사용으로만 대응)하는 구조다 [출처: itch.io 페이지 설명, 2026-08 확인].
+- ELEM-042 (단일 타워 직접 조작형 방어) - 위 GENRE-010 서술이 가리키는 "타워 하나를 스킬로 직접 조작"하는 조작 방식 자체를 다루는 요소 카드다.
 
 ## 성공/실패 원인
 - 사실: 리뷰에서 "Brotato를 타워 디펜스 시점으로 옮긴 듯한, 이상하지만 영리한" 게임이라는 평가가 있다 [출처: Steam 유저 리뷰 인용, 2026-08 확인].

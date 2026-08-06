@@ -3,7 +3,7 @@ card_id = "GENRE-010"
 type = "genre"
 title = "타워 디펜스 (Tower Defense)"
 summary = "정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집"
-elements = ["ELEM-004", "ELEM-018"]
+elements = ["ELEM-004", "ELEM-018", "ELEM-042"]
 example_games = ["GAME-026", "GAME-027", "GAME-050", "GAME-052"]
 tags = ["tower-defense", "strategy", "wave-based", "roguelike-subgenre"]
 updated = "2026-08-05"
@@ -15,6 +15,8 @@ confidence = "medium"
 - ELEM-004 (반복 메커닉) - 라운드가 계속되며 점점 강한 적이 오는 반복 구조가 장르의 기본 뼈대 [해석].
 - ELEM-018 (로그라이크 무작위 드래프트) - 최근 하위 군집(로그라이크 타워 디펜스)에서 매 판 다른 타워
   조합을 만드는 핵심 축이지만, 장르 전체의 다수는 아님 [해석].
+- ELEM-042 (단일 타워 직접 조작형 방어) - GAME-050(Towerful Defense)이 실증하듯, 여러 타워를
+  배치하는 정통 방식과 달리 타워 하나를 스킬로 직접 조작하는 하위 갈래도 나타나고 있음 [해석].
 
 ## 시장 포화도
 - 최초의 타워 디펜스로 꼽히는 작품은 1990년 Rampart이며, 2000년대 초 워크래프트3 맵 에디터를 거쳐

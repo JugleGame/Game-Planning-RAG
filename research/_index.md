@@ -1,7 +1,10 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-05 | 카드 156장
+생성: 2026-08-06 | 카드 159장
 
 ## 최근 7일 변경
+- ELEM-043 | 08-06
+- ELEM-042 | 08-06
+- ELEM-044 | 08-06
 - ELEM-018 | 08-05
 - ELEM-019 | 08-05
 - GENRE-010 | 08-05
@@ -111,20 +114,6 @@
 - ARCH-013 | 07-30
 - GAME-033 | 07-30
 - GAME-032 | 07-30
-- GENRE-011 | 07-29
-- ARCH-002 | 07-29
-- ARCH-008 | 07-29
-- ARCH-006 | 07-29
-- ARCH-003 | 07-29
-- ARCH-004 | 07-29
-- ARCH-010 | 07-29
-- ARCH-005 | 07-29
-- ARCH-009 | 07-29
-- GAME-028 | 07-29
-- GAME-029 | 07-29
-- GAME-030 | 07-29
-- GAME-031 | 07-29
-- GAME-027 | 07-29
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-31
@@ -165,6 +154,9 @@
 - ELEM-039 | 포획형 동료 노동 시스템 (Capturable Creature Labor System) | 야생 생물을 잡아 전투 동료가 아니라 채집·제작·운반 같은 노동력으로 기지에 배치하는 구조 | #creature-collection #automation #base-building #survival #co-op | 08-01
 - ELEM-040 | 애니메 스타일 캐릭터 수집 (Anime-style Character Collection) | 애니메이션 그림체의 캐릭터를 뽑기로 모으되, 각 캐릭터에 성우 풀보이스·개인 서사·의상을 갖춰 소장 자체를 목적으로 만드는 방식 | #subculture #anime #gacha #character-collection #live-service #waifu | 08-01
 - ELEM-041 | AI 관찰자/해설자 결합 (AI Observer-Commentator Synthesis) | AI가 플레이어의 과거 행동·루프를 실시간으로 관찰하고 그 자리에서 캠피하게 반응/언급하는 조합 - ELEM-002+003+005의 종합, 아직 어떤 게임도 완성하지 못한 빈칸 | #ai #campy #fourth-wall #commentator #meta #emerging #gap | 08-01
+- ELEM-042 | 단일 타워 직접 조작형 방어 (Single-Tower Skill-Controlled Defense) | 여러 타워를 배치하는 대신, 플레이어가 하나의 타워/거점을 스킬로 직접 조작해 사방에서 오는 웨이브를 막는 방어 구조 | #tower-defense #roguelike #brotato-like #single-tower #skill-based #emerging | 08-06
+- ELEM-043 | 스쿼드 동시 조작 자동전투 (Squad Multi-Character Simultaneous Auto-Combat) | 서바이버라이크의 단일 캐릭터 자동전투 관례를 벗어나, 한 명의 플레이어가 여러 캐릭터를 동시에 지휘하며 각 캐릭터는 스스로 공격하게 만드는 조작 구조 | #survivors-like #bullet-heaven #squad #auto-combat #control-variant #emerging | 08-06
+- ELEM-044 | 그림다크 추출런 결합 (Grimdark Extraction Hybrid) | 그림다크 톤(ELEM-016)의 절망적 세계관 위에 추출형 런 구조(ELEM-027)의 위험-보상 순환을 얹어, 죽음의 무게를 서사와 시스템 양쪽에서 동시에 가중시키는 결합 | #extraction #dark-fantasy #grimdark #risk-reward #emerging #mixed-reception | 08-06
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20

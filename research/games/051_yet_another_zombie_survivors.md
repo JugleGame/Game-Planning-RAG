@@ -4,7 +4,7 @@ type = "success"
 title = "Yet Another Zombie Survivors (2023 얼리액세스 / 2026-08-20 정식출시 예정, Awesome Games Studio)"
 summary = "최대 3인 스쿼드를 동시 조작하는 변주로, 단일 캐릭터 자동전투가 관례인 서바이버라이크 장르에 새 조작 축을 더한 좀비 서바이벌"
 genres = ["GENRE-019"]
-elements = ["ELEM-022", "ELEM-018"]
+elements = ["ELEM-022", "ELEM-018", "ELEM-043"]
 tags = ["survivors-like", "bullet-heaven", "squad", "early-access", "zombie"]
 updated = "2026-08-01"
 confidence = "medium"
@@ -18,6 +18,7 @@ confidence = "medium"
 - ELEM-022 (지수적 점수 스케일링) - 서바이버라이크 원형(GAME-037)과 동일하게 무기·패시브 조합이 곱연산으로 불어나는 후반부 스케일링을 공유한다 [해석].
 - ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 레벨업 시 무기·능력 중 하나를 고르는 드래프트 구조를 공유한다 [해석].
 - GENRE-019 (서바이버라이크) - 이 장르의 관례(단일 캐릭터 자동전투)에서 벗어나, 플레이어 한 명이 최대 3인 스쿼드를 동시에 굴리는 변주를 도입했다 [출처: gamespress.com/thexboxhub.com 보도, 2026 확인].
+- ELEM-043 (스쿼드 동시 조작 자동전투) - 위 변주 자체를 다루는 요소 카드로, 이 게임이 그 대표 실증 사례다.
 
 ## 성공/실패 원인
 - 사실: 스쿼드 시스템과 의미 있는 메타 진행이 장점으로 꼽히며, 맵 곳곳의 구조(rescue)·아이템 습득이 이동 유인을 만든다는 평가가 있다 [출처: rogueliker.com 리뷰, 2026 확인].

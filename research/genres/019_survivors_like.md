@@ -3,7 +3,7 @@ card_id = "GENRE-019"
 type = "genre"
 title = "서바이버라이크 (Survivors-like / Bullet Heaven)"
 summary = "캐릭터가 자동으로 공격하고 플레이어는 이동과 업그레이드 선택에만 집중해, 화면을 뒤덮는 물량으로 폭발적 스케일링을 체감하게 만드는 군집"
-elements = ["ELEM-022", "ELEM-031", "ELEM-018"]
+elements = ["ELEM-022", "ELEM-031", "ELEM-018", "ELEM-043"]
 example_games = ["GAME-037", "GAME-051"]
 tags = ["survivors-like", "bullet-heaven", "roguelite", "indie", "auto-battler", "saturated"]
 updated = "2026-08-02"
@@ -13,6 +13,8 @@ confidence = "high"
 - ELEM-022 (지수적 점수 스케일링) - 무기 조합이 곱해지며 화면을 뒤덮는 핵심 축
 - ELEM-031 (시각 피드백 과장) - 대량 처치의 시각 피드백이 쾌감을 만듦
 - ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 매 레벨업마다 무기/패시브 택1
+- ELEM-043 (스쿼드 동시 조작 자동전투) - GAME-051이 실증하듯, 단일 캐릭터 자동전투 관례를 벗어나 여러
+  캐릭터를 동시에 지휘하는 변주 축
 
 ## 시장 포화도
 - 사실: Steam이 2026-05-18 "Bullet Heaven"을 공식 장르 태그로 공식화했다 [출처:

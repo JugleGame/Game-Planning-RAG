@@ -4,8 +4,20 @@
 초기화했다. 이전 세션들의 누적치를 알 수 없어 pending_new_cards는 이번 세션에
 새로 만든 카드 수만 반영한 값이다 - 실제 누적치와 다를 수 있으니 사람 확인 필요. -->
 
-- pending_new_cards = 7
+- pending_new_cards = 10
 - last_signal_digest = "2026-07-31"
+
+<!-- 2026-08-06 nightly_executor: 큐에서 [x] 체크된 ELEM 카드 3장(ELEM-042 단일 타워
+직접 조작형 방어, ELEM-043 스쿼드 동시 조작 자동전투, ELEM-044 그림다크 추출런 결합)을
+새로 만듦. audit_links --for로 각 카드가 연 역방향 링크 간극(GAME-050/ELEM-018/GENRE-010,
+GAME-051/GENRE-019, ELEM-016/ELEM-027)을 모두 닫음. pending_new_cards 7+3=10으로
+임계치(10)를 넘지 않아(초과가 아니라 도달) 다이제스트 반영(4_updater)은 이번에도 건너뜀.
+last_signal_digest(2026-07-31)가 오늘(2026-08-06)로부터 6일 경과로 7일 미만이라 신규
+다이제스트도 만들지 않음. DB 미러링은 이 세션 환경에 psycopg2 모듈이 없어 sync_db.py
+자체가 즉시 실패 - md 카드 자체는 완결 상태이며 미러링만 보류됨. 저장소 전체
+audit_links.py 정기 점검에서 이번 세션과 무관한 기존 카드 5장(GAME-013/014/026/033/038)의
+'확인 필요'(fm_body_drift) 간극이 확인됐으나, 오늘 세션 대상이 아니라 손대지 않고
+남겨둠 - 별도 정기 점검에서 다룰 것. -->
 
 <!-- 2026-08-05 nightly_executor: 큐에서 [x] 체크된 GAME 카드 2장(GAME-052 Rogue Defense:
 Hybrid Tower TD, GAME-053 Last Epoch)을 새로 만듦. pending_new_cards 5+2=7로 임계치(10)
