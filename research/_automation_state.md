@@ -5,7 +5,19 @@
 새로 만든 카드 수만 반영한 값이다 - 실제 누적치와 다를 수 있으니 사람 확인 필요. -->
 
 - pending_new_cards = 10
-- last_signal_digest = "2026-07-31"
+- last_signal_digest = "2026-08-07"
+
+<!-- 2026-08-07 nightly_executor: `_scout_queue.md`에 '[x]' 체크된 항목이 하나도
+없었음(전부 '[ ]' 미체크 또는 '[done]') - 지침에 따라 어떤 항목도 건드리지 않고
+카드 생성 단계(1~2)는 완전히 건너뜀. pending_new_cards는 이번 세션 신규 카드
+0장이라 10+0=10으로 변동 없음(임계치 10 초과 아님 - 도달 상태 유지). last_signal_digest
+(2026-07-31)가 오늘(2026-08-07)로부터 정확히 7일 경과라 신규 다이제스트 대상으로 판단해
+research/signals/2026-08-07_arpg_td_deckbuilder_signals.md를 웹 검색 기반으로 작성함
+(status="미반영(편집자 확인 대기)", 연결 제안 3건: GENRE-034/GAME-023 Diablo IV 3.2.0
+PTR 코어 스탯 스케일러 하향, GENRE-010 그리스 신화 소재 로그라이트 TD 밀집, GENRE-012/
+ELEM-021 로그라이크 덱빌더 규칙·소재 차용 다변화). last_signal_digest를 2026-08-07로
+갱신. pending_new_cards가 10을 초과하지 않아(도달만) 4_updater 반영은 이번에도 건너뜀.
+카드 파일 변경이 없어 M단계(build_index/sync_db/embed_cards/verify_db)는 실행하지 않음. -->
 
 <!-- 2026-08-06 nightly_executor: 큐에서 [x] 체크된 ELEM 카드 3장(ELEM-042 단일 타워
 직접 조작형 방어, ELEM-043 스쿼드 동시 조작 자동전투, ELEM-044 그림다크 추출런 결합)을
