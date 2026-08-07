@@ -8,6 +8,13 @@
 
 ---
 
+## 2026-08-07 23:05 생성 (카테고리: ELEM)
+- [ ] 제작 캡 철폐 (Repeatable High-Rarity Crafting Cap Removal) — connects_to: ELEM-028, GAME-023 — why_now: Diablo IV 3.1.1/3.1.1a 패치가 "신화 아이템 1회 제작" 제한을 완전히 철폐해 몇 번이든 재도전할 수 있게 함(07-27 다이제스트) - ELEM-028은 흩어진 재료를 합쳐 아이템을 만드는 공식만 다루고, 만든 뒤에도 반복 재시도를 허용하는 '캡 철폐' 자체는 별도 요소로 기록된 적 없음 — obscurity: 낮음
+- [ ] 무작위 웨이브 구성 (Randomized Enemy Wave Composition) — connects_to: GENRE-010, GAME-052, ELEM-018 — why_now: Rogue Defense: Hybrid Tower TD(GAME-052)가 무작위 웨이브와 무기 시너지를 결합한 모바일 로그라이트 TD로 색인에 반영됨(07-31 다이제스트의 TD 하이브리드화 흐름 연장) - ELEM-018은 플레이어가 고르는 드래프트의 무작위성만 다루고, 적 웨이브 구성 자체가 매 판 달라지는 무작위성은 별도 요소로 기록된 적 없음 — obscurity: 높음
+- [ ] 조건부 빌드 시너지 보너스 (Conditional Build Synergy Bonus) — connects_to: ELEM-022, GAME-052, GAME-034 — why_now: Rogue Defense: Hybrid Tower TD의 '무기 시너지'와 Wildfrost(GAME-034)의 카드 궁합이 같은 패턴을 공유하지만(07-31 다이제스트 TD 하이브리드화 흐름), 특정 조합이 맞아떨어질 때만 조건부로 발동하는 보너스 구조 자체는 ELEM-022(곱연산 지수적 스케일링)와 구분되는 독립 요소로 기록된 적 없음 — obscurity: 높음
+- [ ] 보스 텔레그래프 회피 타이밍 (Boss Attack Telegraph & Dodge-Timing Window) — connects_to: ELEM-014, GAME-021, GENRE-009 — why_now: 07월 마지막 주 다크 판타지/소울라이크 신작 밀집 출시(07-27 다이제스트)로 장르 포화가 이어지는 가운데, 처벌적 죽음 순환(ELEM-014)의 핵심 재료인 '보스 공격 예고 후 회피 타이밍'이라는 구체 전투 메커닉 자체는 아직 별도 ELEM 카드로 분해된 적 없음 — obscurity: 낮음
+- [ ] 협동 자원 풀 내 숨은 배신자 긴장 (Hidden-role Betrayal Tension within Shared Co-op Pool) — connects_to: ELEM-029, GENRE-018 — why_now: 공유 금고형 협동(ELEM-029)과 소셜 디덕션(GENRE-018)이 각각 카드로 있으나, 같은 협동 자원 풀 안에 숨은 배신자 역할을 얹어 신뢰를 시험하는 결합형 긴장 구조는 두 카드 어디에도 기록되지 않은 빈칸 — obscurity: 높음
+
 ## 2026-08-06 23:05 생성 (카테고리: ELEM)
 - [done] 단일 타워 직접 조작형 방어 (Single-Tower Skill-Controlled Defense) — connects_to: GAME-050, ELEM-018, GENRE-010 — why_now: GAME-050(Towerful Defense)이 이미 '단일 타워를 스킬로 직접 조작'하는 방식을 쓰지만, 이를 로그라이크 드래프트(ELEM-018)와 구분되는 별도 요소로 다루는 ELEM 카드가 없음 - Brotato식 조작을 TD로 옮긴 하이브리드가 개별 게임을 넘어 요소 자체로 반복될 조짐 (07-31 다이제스트, TD 하이브리드화 흐름) — obscurity: 높음 — ELEM-042
 - [ ] 족보 등급별 배수 스코어링 (Poker Hand-Rank Tiered Multiplier Scoring) — connects_to: ELEM-021, ELEM-022, GAME-031, GENRE-013 — why_now: Balatro Wiki 기준 2년 넘게 라이브 지원이 지속되며 "Balatro-like"가 하위장르 용어로 정착(07-31 다이제스트) - 그러나 '족보 등급이 곧 배수가 되는' 구체 스코어링 메커닉 자체를 다루는 ELEM 카드는 없고 ELEM-021·022는 각각 규칙 차용과 지수적 스케일링만 다룸 — obscurity: 낮음
