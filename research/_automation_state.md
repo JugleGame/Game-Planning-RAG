@@ -7,6 +7,14 @@
 - pending_new_cards = 10
 - last_signal_digest = "2026-08-07"
 
+<!-- 2026-08-08 nightly_executor: `_scout_queue.md`에 '[x]' 체크된 항목이 하나도
+없었음(전부 '[ ]' 미체크 또는 '[done]') - 지침에 따라 어떤 항목도 건드리지 않고
+카드 생성 단계(1~2)는 완전히 건너뜀. pending_new_cards는 이번 세션 신규 카드
+0장이라 10+0=10으로 변동 없음(임계치 10 초과 아님 - 도달 상태 유지, 3c 다이제스트
+반영도 건너뜀). last_signal_digest(2026-08-07)가 오늘(2026-08-08)로부터 1일 경과로
+7일 미만이라 신규 다이제스트도 만들지 않음. 카드 파일 변경이 없어 M단계
+(build_index/sync_db/embed_cards/verify_db)는 실행하지 않음. -->
+
 <!-- 2026-08-07 nightly_executor: `_scout_queue.md`에 '[x]' 체크된 항목이 하나도
 없었음(전부 '[ ]' 미체크 또는 '[done]') - 지침에 따라 어떤 항목도 건드리지 않고
 카드 생성 단계(1~2)는 완전히 건너뜀. pending_new_cards는 이번 세션 신규 카드
