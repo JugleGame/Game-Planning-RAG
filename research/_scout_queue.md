@@ -9,11 +9,11 @@
 ---
 
 ## 2026-08-08 23:05 생성 (카테고리: GENRE)
-- [ ] 타일매칭 로그라이크 덱빌더 (Tile-matching Roguelike Deckbuilder Hybrid) — connects_to: GENRE-012, ELEM-021 — why_now: 08-07 다이제스트에 도미노 타일 매칭과 로그라이크 덱빌딩을 결합한 'Dominocalypse'가 Steam 출시 예정으로 확인되고, 같은 다이제스트가 일본 신화(요괴) 소재 로그라이크 덱빌더 동시 출시까지 보고함 — 친숙한 규칙 차용(ELEM-021)의 대상이 포커·카드류를 넘어 보드게임 규칙 자체로 확장되는 흐름인데 이를 담을 GENRE 카드가 없음 — obscurity: 높음
-- [ ] 팩토리 자동화 빌더 (Factory / Production-chain Automation Builder) — connects_to: ELEM-039, GENRE-030 — why_now: GENRE-030(크리처 노동 자동화 서바이벌)이 '포획한 생물'이라는 전제에 자동화를 묶어서만 다루고 있어, Factorio·Satisfactory류처럼 생물 포획 없이 순수 생산 사슬 설계 자체가 코어인 자동화 장르는 레지스트리에 빈칸으로 남아 있음 — obscurity: 낮음
-- [ ] 솔로 PvE 로그라이크 오토배틀러 (Solo PvE Roguelike Auto-battler) — connects_to: GENRE-027, GENRE-012 — why_now: GENRE-027(오토배틀러)은 PvP 경제형만, GENRE-012(로그라이크 덱빌더)는 능동 조작 런만 다루는데, Backpack Battles류처럼 런 기반 드래프트 위에서 유닛·장비를 배치만 하고 전투는 자동으로 흘러가는 1인 PvE 하이브리드는 두 카드 사이 빈칸으로 남아 있음 — obscurity: 높음
-- [ ] 방치형/증분형 게임 (Idle / Incremental Game) — connects_to: ELEM-022 — why_now: ELEM-022(지수적 점수 스케일링)가 방치형 게임의 핵심 동력인데도, 모바일 매출 상위권을 꾸준히 차지하는 이 장르 자체를 감싸는 GENRE 클러스터 카드가 없음 — obscurity: 낮음
-- [ ] 턴제 전술 로그라이크 (Turn-based Tactical Roguelike) — connects_to: ELEM-018, GENRE-016 — why_now: GENRE-016(탄막 로그라이크)이 실시간 회피·조준 조작만 다루는데, ELEM-018(로그라이크 무작위 업그레이드/경로 드래프트)을 공유하면서도 턴제 격자 전투가 코어인 Into the Breach/FTL류 갈래는 별도 GENRE 카드가 없음 — obscurity: 중간
+- [x] 타일매칭 로그라이크 덱빌더 (Tile-matching Roguelike Deckbuilder Hybrid) — connects_to: GENRE-012, ELEM-021 — why_now: 08-07 다이제스트에 도미노 타일 매칭과 로그라이크 덱빌딩을 결합한 'Dominocalypse'가 Steam 출시 예정으로 확인되고, 같은 다이제스트가 일본 신화(요괴) 소재 로그라이크 덱빌더 동시 출시까지 보고함 — 친숙한 규칙 차용(ELEM-021)의 대상이 포커·카드류를 넘어 보드게임 규칙 자체로 확장되는 흐름인데 이를 담을 GENRE 카드가 없음 — obscurity: 높음
+- [x] 팩토리 자동화 빌더 (Factory / Production-chain Automation Builder) — connects_to: ELEM-039, GENRE-030 — why_now: GENRE-030(크리처 노동 자동화 서바이벌)이 '포획한 생물'이라는 전제에 자동화를 묶어서만 다루고 있어, Factorio·Satisfactory류처럼 생물 포획 없이 순수 생산 사슬 설계 자체가 코어인 자동화 장르는 레지스트리에 빈칸으로 남아 있음 — obscurity: 낮음
+- [x] 솔로 PvE 로그라이크 오토배틀러 (Solo PvE Roguelike Auto-battler) — connects_to: GENRE-027, GENRE-012 — why_now: GENRE-027(오토배틀러)은 PvP 경제형만, GENRE-012(로그라이크 덱빌더)는 능동 조작 런만 다루는데, Backpack Battles류처럼 런 기반 드래프트 위에서 유닛·장비를 배치만 하고 전투는 자동으로 흘러가는 1인 PvE 하이브리드는 두 카드 사이 빈칸으로 남아 있음 — obscurity: 높음
+- [x] 방치형/증분형 게임 (Idle / Incremental Game) — connects_to: ELEM-022 — why_now: ELEM-022(지수적 점수 스케일링)가 방치형 게임의 핵심 동력인데도, 모바일 매출 상위권을 꾸준히 차지하는 이 장르 자체를 감싸는 GENRE 클러스터 카드가 없음 — obscurity: 낮음
+- [x] 턴제 전술 로그라이크 (Turn-based Tactical Roguelike) — connects_to: ELEM-018, GENRE-016 — why_now: GENRE-016(탄막 로그라이크)이 실시간 회피·조준 조작만 다루는데, ELEM-018(로그라이크 무작위 업그레이드/경로 드래프트)을 공유하면서도 턴제 격자 전투가 코어인 Into the Breach/FTL류 갈래는 별도 GENRE 카드가 없음 — obscurity: 중간
 
 ## 2026-08-07 23:05 생성 (카테고리: ELEM)
 - [ ] 제작 캡 철폐 (Repeatable High-Rarity Crafting Cap Removal) — connects_to: ELEM-028, GAME-023 — why_now: Diablo IV 3.1.1/3.1.1a 패치가 "신화 아이템 1회 제작" 제한을 완전히 철폐해 몇 번이든 재도전할 수 있게 함(07-27 다이제스트) - ELEM-028은 흩어진 재료를 합쳐 아이템을 만드는 공식만 다루고, 만든 뒤에도 반복 재시도를 허용하는 '캡 철폐' 자체는 별도 요소로 기록된 적 없음 — obscurity: 낮음
