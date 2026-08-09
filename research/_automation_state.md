@@ -4,8 +4,26 @@
 초기화했다. 이전 세션들의 누적치를 알 수 없어 pending_new_cards는 이번 세션에
 새로 만든 카드 수만 반영한 값이다 - 실제 누적치와 다를 수 있으니 사람 확인 필요. -->
 
-- pending_new_cards = 10
+- pending_new_cards = 0
 - last_signal_digest = "2026-08-07"
+
+<!-- 2026-08-09 nightly_executor: 큐에서 [x] 체크된 GENRE 카드 5장(GENRE-035 타일매칭
+로그라이크 덱빌더, GENRE-036 팩토리 자동화 빌더, GENRE-037 솔로 PvE 로그라이크
+오토배틀러, GENRE-038 방치형/증분형 게임, GENRE-039 턴제 전술 로그라이크)을 새로 만듦.
+audit_links --for로 각 카드가 연 역방향 링크 간극(ELEM-021/GENRE-012, GENRE-030,
+GENRE-027/ELEM-018/ELEM-022/ELEM-004, ELEM-022, ELEM-018/GENRE-016)을 모두 닫음 -
+'확실' 등급 잔여 0건. pending_new_cards 10+5=15로 임계치(10)를 초과해 SIGNAL-2026-08-07
+다이제스트(status="미반영(편집자 확인 대기)")를 prompts/4_updater.md 규칙대로 반영함 -
+제안 연결 3건(GAME-023 3.2.0 PTR 코어 스탯 스케일러 하향, GENRE-010 그리스 신화 소재
+로그라이트 TD 밀집, GENRE-012 도미노/요괴 소재 다변화→GENRE-035로 분리 신설됐음을 교차
+참조) 모두 기존 카드와 충돌 없는 순수 추가로 판단해 conflict 없이 patch 적용, 다이제스트
+status를 반영(2026-08-09)으로 갱신, pending_new_cards를 0으로 리셋함. last_signal_digest
+(2026-08-07)가 오늘(2026-08-09)로부터 2일 경과로 7일 미만이라 신규 다이제스트는 만들지
+않음. DB 미러링은 이 세션 환경에 psycopg2 모듈이 없어 sync_db.py 자체가 즉시 실패(2026-08-06
+세션과 동일 원인) - md 카드 자체는 완결 상태이며 미러링만 보류됨. 저장소 전체 audit_links.py
+정기 점검에서 이번 세션과 무관한 기존 카드 5장(GAME-013/014/026/033/038)의 '확인 필요'
+(fm_body_drift) 간극이 재확인됐으나, 2026-08-06 세션이 이미 남긴 대로 오늘도 대상이 아니라
+손대지 않고 남겨둠. -->
 
 <!-- 2026-08-08 nightly_executor: `_scout_queue.md`에 '[x]' 체크된 항목이 하나도
 없었음(전부 '[ ]' 미체크 또는 '[done]') - 지침에 따라 어떤 항목도 건드리지 않고

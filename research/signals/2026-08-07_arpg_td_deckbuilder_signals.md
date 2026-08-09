@@ -4,7 +4,7 @@ period = "2026-08-01 ~ 2026-08-07"
 period_at = "2026-08-01"
 period_end = "2026-08-07"
 sources = ["Blizzard 공식 뉴스(news.blizzard.com, Diablo IV 3.2.0 PTR)", "Steam 상점 페이지(Gods & Gore, Dominocalypse)", "Rogueliker.com(2026년 8월 로그라이크/로그라이트 월간 정리)", "TechTimes/GameSpew/ButWhyTho(Beast of Reincarnation 출시·리뷰)", "웹 검색 종합"]
-status = "미반영(편집자 확인 대기)"
+status = "반영(2026-08-09)"
 +++
 ## 기간 / 수집원
 2026-08-01 ~ 2026-08-07 / 웹 검색으로 게임 커뮤니티·업계 보도 확인.

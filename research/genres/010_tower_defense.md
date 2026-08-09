@@ -6,7 +6,7 @@ summary = "정해진 경로로 오는 적 웨이브를 막기 위해 길목에 �
 elements = ["ELEM-004", "ELEM-018", "ELEM-042"]
 example_games = ["GAME-026", "GAME-027", "GAME-050", "GAME-052"]
 tags = ["tower-defense", "strategy", "wave-based", "roguelike-subgenre"]
-updated = "2026-08-05"
+updated = "2026-08-09"
 confidence = "medium"
 +++
 ## 구성 요소
@@ -27,6 +27,7 @@ confidence = "medium"
   작지만 별도의 팬층을 형성함 [출처: 리뷰 집계 사이트, 2026-07 확인].
 <!-- 증거 부족: Steam 태그 "Tower Defense" 최근 신작 수를 보여주는 공식 집계를 찾지 못함 -->
 - 사실: 로그라이트+타워 디펜스 하이브리드 신작·업데이트가 2026-07-23~07-30 사이 밀집했다 - 'Towerful Defense: A Rogue TD'(GAME-050) 출시(07-30, itch.io), 'Rogue Defense: Hybrid Tower TD'(GAME-052) 업데이트(07-23, Google Play) - GAME-027 하나만의 사례가 아니라 장르 차원의 하이브리드화 흐름으로 보인다 [출처: itch.io devlog/Google Play, 2026-07-23·07-30 기준 / 다이제스트 2026-07-31].
+- 사실: 그리스 신화 소재 로그라이트 TD가 같은 주(2026년 8월 첫 주) 안에 최소 2건 확인됐다 - 'Gods & Gore'(Steam 얼리액세스, 신을 골라 신화 속 생물을 모으고 도시를 방어하는 카드 선택+포지셔닝 결합 구조, Steam Tower Defense Fest 2026 데모 참가), 'Atlanta TD'(아레스 군대로부터 아틀란타를 지키는 절차적 생성 로그라이트 TD, Steam 얼리액세스 출시 예정 발표) - 07-31 다이제스트가 기록한 "장르 차원 하이브리드화" 흐름이 이번엔 소재(신화) 쏠림으로도 나타난다 [출처: Steam 상점 페이지/Bleeding Cool·Games Press, 2026-08 기준 / 다이제스트 2026-08-07].
 
 ## 관례와 기대치
 - 유저는 고정되거나 준고정된 경로, 웨이브 단위 난이도 상승, 타워 업그레이드·속성 상성을 기본값으로
