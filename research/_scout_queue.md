@@ -8,6 +8,13 @@
 
 ---
 
+## 2026-08-09 23:05 생성 (카테고리: GENRE)
+- [ ] PvPvE 익스트랙션 (Extraction Shooter/Looter) — connects_to: ELEM-027, ELEM-029, GENRE-011 — why_now: 요소 카드(추출형 런 구조 ELEM-027, 협력 기반 자산 공유 ELEM-029)는 있지만 이를 코어로 삼는 장르 군집 카드가 없음 — 루트 슈터(GENRE-011)가 포화 태그로 분류된 이후 인접 하이브리드(Dark and Darker, Hunt: Showdown류)로 관심이 옮겨가는 흐름 — obscurity: 중간
+- [ ] 경영/타이쿤 시뮬레이션 (Tycoon / Management Sim) — connects_to: ELEM-035, GENRE-007 — why_now: 접객 서비스 루프(ELEM-035) 요소 카드는 있으나 이를 확장한 경영·최적화 중심 장르 군집 카드가 레지스트리에 없음 — 코지 심(GENRE-007)과 인접하지만 실패 상태 없음이 아니라 수익·효율 최적화가 코어라는 점에서 구분되는 빈칸 — obscurity: 낮음
+- [ ] 탐사형 포토그래피 어드벤처 (Photography Exploration Adventure) — connects_to: ELEM-034 — why_now: ELEM-034(탐사형 포토그래피 목표 동사) 요소 카드는 있으나 이를 코어 동사로 삼는 장르 군집 카드가 없음 — 전투 없는 저스트레스 탐험 인디(Toem, Season: A letter to the future류)가 소규모로 꾸준히 출시되는 니치 갈래 — obscurity: 높음
+- [ ] 리듬 로그라이크 (Rhythm Roguelike) — connects_to: GENRE-029, GENRE-016, ELEM-004 — why_now: 리듬 액션(GENRE-029)은 박자 입력만, 탄막 로그라이크(GENRE-016)는 실시간 회피·조준만 다루는데, 박자에 맞춰야만 이동·공격이 성립하면서 런 기반 무작위 업그레이드까지 겹치는 하이브리드(Crypt of the NecroDancer, Cadence of Hyrule류)는 두 카드 사이 빈칸으로 남아 있음 — obscurity: 중간
+- [ ] 협동 파티 카오스 게임 (Co-op Party Chaos) — connects_to: ELEM-035, ELEM-031 — why_now: 접객 서비스 루프(ELEM-035)와 시각 피드백 과장(ELEM-031, Juiciness)이 결합해 제한시간 안에 다인원이 동시에 허둥대는 코어 루프를 이루는 장르(Overcooked류)가 레지스트리에 없음 — 코지 심(GENRE-007)의 저스트레스 전제와 정반대로 고스트레스·시간압박이 코어라는 점에서 별도 군집 — obscurity: 높음
+
 ## 2026-08-08 23:05 생성 (카테고리: GENRE)
 - [done] 타일매칭 로그라이크 덱빌더 (Tile-matching Roguelike Deckbuilder Hybrid) — connects_to: GENRE-012, ELEM-021 — why_now: 08-07 다이제스트에 도미노 타일 매칭과 로그라이크 덱빌딩을 결합한 'Dominocalypse'가 Steam 출시 예정으로 확인되고, 같은 다이제스트가 일본 신화(요괴) 소재 로그라이크 덱빌더 동시 출시까지 보고함 — 친숙한 규칙 차용(ELEM-021)의 대상이 포커·카드류를 넘어 보드게임 규칙 자체로 확장되는 흐름인데 이를 담을 GENRE 카드가 없음 — obscurity: 높음 — GENRE-035
 - [done] 팩토리 자동화 빌더 (Factory / Production-chain Automation Builder) — connects_to: ELEM-039, GENRE-030 — why_now: GENRE-030(크리처 노동 자동화 서바이벌)이 '포획한 생물'이라는 전제에 자동화를 묶어서만 다루고 있어, Factorio·Satisfactory류처럼 생물 포획 없이 순수 생산 사슬 설계 자체가 코어인 자동화 장르는 레지스트리에 빈칸으로 남아 있음 — obscurity: 낮음 — GENRE-036
