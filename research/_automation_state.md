@@ -4,8 +4,19 @@
 초기화했다. 이전 세션들의 누적치를 알 수 없어 pending_new_cards는 이번 세션에
 새로 만든 카드 수만 반영한 값이다 - 실제 누적치와 다를 수 있으니 사람 확인 필요. -->
 
-- pending_new_cards = 0
+- pending_new_cards = 3
 - last_signal_digest = "2026-08-07"
+
+<!-- 2026-08-10 nightly_executor: 큐에서 [x] 체크된 GAME 카드 3장(GAME-054 Dominocalypse,
+GAME-055 Loop Hero, GAME-056 Factorio)을 새로 만듦. GAME-054는 아직 미출시라 판매·리뷰로
+성공/실패를 판정할 근거가 없어 type="mixed", confidence="low"로 표기하고 근거 부족을 명시함.
+audit_links --for로 각 카드가 연 역방향 링크 간극(ELEM-021/GENRE-035, ELEM-004/GENRE-037,
+GENRE-036)을 모두 닫음 - '확실' 등급 잔여는 build_index 미실행으로 인한 일시적 broken_ref뿐.
+GAME-056의 '확인 필요'(fm_body_drift, ELEM-039 언급)는 GENRE-030(Palworld)과의 의도된 대비
+서술로 판단해 GENRE-036 카드의 기존 관례(가시적 대비 서술)를 따라 그대로 둠. pending_new_cards
+0+3=3으로 임계치(10) 미만이라 다이제스트 반영(4_updater)은 건너뜀. last_signal_digest
+(2026-08-07)가 오늘(2026-08-10)로부터 3일 경과로 7일 미만이라 신규 다이제스트도 만들지
+않음. -->
 
 <!-- 2026-08-09 nightly_executor: 큐에서 [x] 체크된 GENRE 카드 5장(GENRE-035 타일매칭
 로그라이크 덱빌더, GENRE-036 팩토리 자동화 빌더, GENRE-037 솔로 PvE 로그라이크

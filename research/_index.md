@@ -1,7 +1,10 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-09 | 카드 165장
+생성: 2026-08-10 | 카드 168장
 
 ## 최근 7일 변경
+- GAME-056 | 08-10
+- GAME-055 | 08-10
+- GAME-054 | 08-10
 - GENRE-035 | 08-09
 - GENRE-038 | 08-09
 - GENRE-039 | 08-09
@@ -26,19 +29,6 @@
 - GAME-041 | 08-04
 - GENRE-031 | 08-03
 - GENRE-030 | 08-03
-- GENRE-026 | 08-02
-- GENRE-019 | 08-02
-- GENRE-028 | 08-02
-- GENRE-027 | 08-02
-- GENRE-029 | 08-02
-- GENRE-013 | 08-02
-- ARCH-023 | 08-02
-- ARCH-022 | 08-02
-- ARCH-027 | 08-02
-- ARCH-025 | 08-02
-- ARCH-024 | 08-02
-- ARCH-026 | 08-02
-- ARCH-028 | 08-02
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-31
@@ -177,6 +167,9 @@
 - GAME-051 | Yet Another Zombie Survivors (2023 얼리액세스 / 2026-08-20 정식출시 예정, Awesome Games Studio) | 최대 3인 스쿼드를 동시 조작하는 변주로, 단일 캐릭터 자동전투가 관례인 서바이버라이크 장르에 새 조작 축을 더한 좀비 서바이벌 | #survivors-like #bullet-heaven #squad #early-access #zombie | 08-01
 - GAME-052 | Rogue Defense: Hybrid Tower TD (2025, CyberJoy Games) | 사이버펑크 로그 AI 세계관 위에 무작위 웨이브와 무기 시너지를 결합한 모바일 로그라이트 타워 디펜스 | #tower-defense #roguelite #mobile #free-to-play #cyberpunk | 08-05
 - GAME-053 | Last Epoch (2024, Eleventh Hour Games) | 시간여행 서사 위에 방대한 스킬 트리와 파벌 선택형 아이템 경제를 얹은 시즌제 핵앤슬래시 ARPG | #arpg #hack-and-slash #loot #season #league #solo-dev-origin #broad-appeal | 08-05
+- GAME-054 | Dominocalypse (출시 예정, Barely Cohesive Games) | 도미노 타일 밀기·매칭에 로그라이크 아티팩트 빌드와 절차적 보드 생성을 결합한 출시 예정작 | #roguelike #deckbuilder #tile-matching #domino #indie #upcoming | 08-10
+- GAME-055 | Loop Hero (2021, Four Quarters / Devolver Digital) | 루프 경로에 타일을 배치하는 결정만 남기고 전투는 완전 자동으로 흘러가는, 반복 메커닉 위 솔로 PvE 오토배틀러의 원형작 | #roguelike #auto-battle #loop-mechanic #indie #solo-pve #broad-appeal | 08-10
+- GAME-056 | Factorio (2020, Wube Software) | 생물 포획 없이 컨베이어 벨트·인서터 물류망만으로 생산 사슬을 설계하는 팩토리 자동화 빌더 장르의 원형작 | #automation #factory #production-chain #logistics #conveyor-belt #no-creature-capture #indie #sandbox | 08-10
 
 ## ④ 신호
 - SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
