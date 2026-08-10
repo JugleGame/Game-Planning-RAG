@@ -8,6 +8,13 @@
 
 ---
 
+## 2026-08-10 23:05 생성 (카테고리: GAME)
+- [ ] Gods & Gore (그리스 신화 로그라이트 TD) — connects_to: GENRE-010 — why_now: 08-07 다이제스트에서 그리스 신화 소재 로그라이트 TD로 확인, Steam Tower Defense Fest 2026 데모 참가 - 같은 주 Atlanta TD와 함께 "장르 하이브리드화가 이번엔 소재 쏠림으로도 나타남"이라는 신호의 첫 사례 — obscurity: 높음
+- [ ] Atlanta TD (그리스 신화 로그라이트 TD) — connects_to: GENRE-010, GAME-027 — why_now: 08-07 다이제스트에서 Gods & Gore와 같은 주에 확인된 두 번째 그리스 신화 로그라이트 TD - 개별 사례가 아니라 소재 쏠림이 반복되고 있다는 근거의 짝 사례 — obscurity: 높음
+- [ ] Dominocalypse (도미노 타일매칭 로그라이크 덱빌더) — connects_to: GENRE-035, ELEM-021 — why_now: GENRE-035(타일매칭 로그라이크 덱빌더, 08-09 신설)의 신설 근거가 된 게임 자체가 아직 개별 GAME 카드로 없음 - 친숙한 규칙 차용(ELEM-021) 대상이 포커류를 넘어 도미노로 확장된 구체 사례 — obscurity: 높음
+- [ ] Loop Hero (2021, Four Quarters / Devolver Digital) — connects_to: GENRE-037, ELEM-004 — why_now: GENRE-037(솔로 PvE 로그라이크 오토배틀러, 08-09 신설)이 Backpack Battles류로만 예시돼 있고 이를 실증할 GAME 카드가 없음 - 카드를 루프 경로에 배치하면 전투 자체는 완전 자동으로 흘러가는 원형적 사례 — obscurity: 중간
+- [ ] Factorio (2020, Wube Software) — connects_to: GENRE-036, ELEM-039 — why_now: GENRE-036(팩토리 자동화 빌더, 08-09 신설, "생물 포획 없이 순수 생산 사슬"로 정의)를 실증할 GAME 카드가 없음 - 장르명 자체가 유래한 원형적 사례로, GENRE-030(크리처 노동 자동화)의 Palworld와 대비되는 짝 사례 — obscurity: 낮음
+
 ## 2026-08-09 23:05 생성 (카테고리: GENRE)
 - [ ] PvPvE 익스트랙션 (Extraction Shooter/Looter) — connects_to: ELEM-027, ELEM-029, GENRE-011 — why_now: 요소 카드(추출형 런 구조 ELEM-027, 협력 기반 자산 공유 ELEM-029)는 있지만 이를 코어로 삼는 장르 군집 카드가 없음 — 루트 슈터(GENRE-011)가 포화 태그로 분류된 이후 인접 하이브리드(Dark and Darker, Hunt: Showdown류)로 관심이 옮겨가는 흐름 — obscurity: 중간
 - [ ] 경영/타이쿤 시뮬레이션 (Tycoon / Management Sim) — connects_to: ELEM-035, GENRE-007 — why_now: 접객 서비스 루프(ELEM-035) 요소 카드는 있으나 이를 확장한 경영·최적화 중심 장르 군집 카드가 레지스트리에 없음 — 코지 심(GENRE-007)과 인접하지만 실패 상태 없음이 아니라 수익·효율 최적화가 코어라는 점에서 구분되는 빈칸 — obscurity: 낮음
