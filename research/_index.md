@@ -1,7 +1,10 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-10 | 카드 168장
+생성: 2026-08-11 | 카드 171장
 
 ## 최근 7일 변경
+- ELEM-047 | 08-11
+- ELEM-045 | 08-11
+- ELEM-046 | 08-11
 - GAME-056 | 08-10
 - GAME-055 | 08-10
 - GAME-054 | 08-10
@@ -27,8 +30,6 @@
 - GENRE-033 | 08-04
 - GENRE-032 | 08-04
 - GAME-041 | 08-04
-- GENRE-031 | 08-03
-- GENRE-030 | 08-03
 
 ## ① 요소
 - ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-31
@@ -72,6 +73,9 @@
 - ELEM-042 | 단일 타워 직접 조작형 방어 (Single-Tower Skill-Controlled Defense) | 여러 타워를 배치하는 대신, 플레이어가 하나의 타워/거점을 스킬로 직접 조작해 사방에서 오는 웨이브를 막는 방어 구조 | #tower-defense #roguelike #brotato-like #single-tower #skill-based #emerging | 08-06
 - ELEM-043 | 스쿼드 동시 조작 자동전투 (Squad Multi-Character Simultaneous Auto-Combat) | 서바이버라이크의 단일 캐릭터 자동전투 관례를 벗어나, 한 명의 플레이어가 여러 캐릭터를 동시에 지휘하며 각 캐릭터는 스스로 공격하게 만드는 조작 구조 | #survivors-like #bullet-heaven #squad #auto-combat #control-variant #emerging | 08-06
 - ELEM-044 | 그림다크 추출런 결합 (Grimdark Extraction Hybrid) | 그림다크 톤(ELEM-016)의 절망적 세계관 위에 추출형 런 구조(ELEM-027)의 위험-보상 순환을 얹어, 죽음의 무게를 서사와 시스템 양쪽에서 동시에 가중시키는 결합 | #extraction #dark-fantasy #grimdark #risk-reward #emerging #mixed-reception | 08-06
+- ELEM-045 | 신격/후원자 선택형 소환 로스터 고정 (Deity/Patron Selection Locking Summonable Roster) | 런 시작 시 고른 신·후원자에 따라 이후 소환할 수 있는 유닛 풀이 그 신에게 속한 것으로 정해지는 구조 | #tower-defense #roguelite #greek-mythology #draft #emerging | 08-11
+- ELEM-046 | 전투 참여형 동물 동료 자동 보조 (Combat-participating Animal Companion Auto-assist) | 플레이어가 따로 조작하지 않아도 동물 동료가 전투 중 자동으로 공격·보조를 넣는 구조 | #companion #action-rpg #combat #auto-assist #single-character | 08-11
+- ELEM-047 | 비대칭 시작덱 캐릭터 로스터 (Asymmetric Starting-deck Character Roster) | 로그라이크 덱빌더에서 플레이어블 캐릭터마다 서로 다른 시작 덱과 카드 풀을 부여해, 캐릭터를 바꿀 때마다 다른 게임처럼 느껴지게 만드는 구조 | #deckbuilder #roguelike #character-roster #replayability #asymmetric | 08-11
 
 ## ② 장르
 - GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20

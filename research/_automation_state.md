@@ -4,8 +4,25 @@
 초기화했다. 이전 세션들의 누적치를 알 수 없어 pending_new_cards는 이번 세션에
 새로 만든 카드 수만 반영한 값이다 - 실제 누적치와 다를 수 있으니 사람 확인 필요. -->
 
-- pending_new_cards = 3
+- pending_new_cards = 6
 - last_signal_digest = "2026-08-07"
+
+<!-- 2026-08-11 nightly_executor: 큐에서 [x] 체크된 ELEM 카드 3장(ELEM-045 신격/후원자
+선택형 소환 로스터 고정, ELEM-046 전투 참여형 동물 동료 자동 보조, ELEM-047 비대칭
+시작덱 캐릭터 로스터)을 새로 만듦. R단계 웹 검색으로 근거를 모으고(Gods & Gore,
+Beast of Reincarnation, Talespinner, 비교 사례로 Slay the Spire), lint_card.py는
+세 카드 모두 초안에서 바로 PASS(재작성 없음). ELEM-045는 "고른 신에 속하지 않은
+생물을 완전히 볼 수 없다"는 잠금 자체를 1차 출처로 확인하지 못해 confidence=medium,
+증거 부족 주석으로 표시함. audit_links --for로 각 카드가 연 역방향 링크 간극(orphan,
+'확인 필요' 등급)을 모두 닫음 - GENRE-010/ELEM-036(ELEM-045), ELEM-008(ELEM-046),
+ELEM-020/GENRE-012(ELEM-047)에 조합 궁합·구성 요소 절 보강. 저장소 전체 audit_links
+재확인 결과 '확실' 등급 0건, 이번 세션과 무관한 기존 '확인 필요' 6건(fm_body_drift,
+GAME-013/014/026/033/038/056)은 2026-08-06·08-09·08-10 세션이 이미 검토해 남겨둔
+대로 손대지 않음. pending_new_cards 3+3=6으로 임계치(10) 미만이라 다이제스트
+반영(4_updater)은 건너뜀. last_signal_digest(2026-08-07)가 오늘(2026-08-11)로부터
+4일 경과로 7일 미만이라 신규 다이제스트도 만들지 않음. DB 미러링은 이 세션 환경에
+psycopg2 모듈이 없어 sync_db.py 자체가 즉시 실패(2026-08-06/08-09 세션과 동일 원인) -
+md 카드 자체는 완결 상태이며 미러링만 보류됨. -->
 
 <!-- 2026-08-10 nightly_executor: 큐에서 [x] 체크된 GAME 카드 3장(GAME-054 Dominocalypse,
 GAME-055 Loop Hero, GAME-056 Factorio)을 새로 만듦. GAME-054는 아직 미출시라 판매·리뷰로

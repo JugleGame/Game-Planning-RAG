@@ -3,7 +3,7 @@ card_id = "GENRE-012"
 type = "genre"
 title = "로그라이크 덱빌더 (Roguelike Deckbuilder)"
 summary = "한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집"
-elements = ["ELEM-020", "ELEM-018", "ELEM-004"]
+elements = ["ELEM-020", "ELEM-018", "ELEM-004", "ELEM-047"]
 example_games = ["GAME-030", "GAME-001", "GAME-031", "GAME-034"]
 tags = ["roguelike", "deckbuilder", "randomness", "indie", "replayability", "saturated"]
 updated = "2026-08-09"
@@ -21,6 +21,9 @@ confidence = "medium"
   점수, 라운드형 상점)를 공유하는 인접 군집이다. 다만 이 군집은 규칙을 개발자가 새로 발명하는 반면,
   GENRE-035는 도미노·마작처럼 이미 존재하는 타일 배치 규칙을 그대로 빌려온다는 점에서 갈린다
   [출처: GENRE-035 카드].
+- ELEM-047 (비대칭 시작덱 캐릭터 로스터) - Slay the Spire류 원조작부터 이어지는 관례로, 플레이어블
+  캐릭터마다 서로 다른 시작 덱·카드 풀을 부여해 재플레이 가치를 만든다. 신생 사례 Talespinner(요괴
+  신화 소재)도 3명의 캐릭터에 각각 고유 메커닉을 부여하며 이 관례를 따른다 [출처: ELEM-047 카드].
 
 ## 시장 포화도
 - 사실: 2017년 말 GAME-030의 얼리액세스 성공 이후 장르는 포화 상태가 됐고, 원조와 플레이 루프가

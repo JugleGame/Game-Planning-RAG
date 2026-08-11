@@ -3,7 +3,7 @@ card_id = "GENRE-010"
 type = "genre"
 title = "타워 디펜스 (Tower Defense)"
 summary = "정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집"
-elements = ["ELEM-004", "ELEM-018", "ELEM-042"]
+elements = ["ELEM-004", "ELEM-018", "ELEM-042", "ELEM-045"]
 example_games = ["GAME-026", "GAME-027", "GAME-050", "GAME-052"]
 tags = ["tower-defense", "strategy", "wave-based", "roguelike-subgenre"]
 updated = "2026-08-09"
@@ -17,6 +17,9 @@ confidence = "medium"
   조합을 만드는 핵심 축이지만, 장르 전체의 다수는 아님 [해석].
 - ELEM-042 (단일 타워 직접 조작형 방어) - GAME-050(Towerful Defense)이 실증하듯, 여러 타워를
   배치하는 정통 방식과 달리 타워 하나를 스킬로 직접 조작하는 하위 갈래도 나타나고 있음 [해석].
+- ELEM-045 (신격/후원자 선택형 소환 로스터 고정) - 그리스 신화 소재 로그라이트 TD 'Gods & Gore'가
+  신을 골라 그 신에게 속한 생물만 이후 소환하는 구조를 쓰는 등, 위 소재 쏠림 흐름의 구체적 잠금
+  메커닉 후보로 관찰된다 [출처: ELEM-045 카드].
 
 ## 시장 포화도
 - 최초의 타워 디펜스로 꼽히는 작품은 1990년 Rampart이며, 2000년대 초 워크래프트3 맵 에디터를 거쳐
