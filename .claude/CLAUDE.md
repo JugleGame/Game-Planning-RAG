@@ -12,18 +12,24 @@
 | 카드를 새로 넣은 직후 (필수) | `python scripts/audit_links.py --for <ID>` → 간극 있으면 prompts/5_linker.md. 기존 카드를 눈으로 훑지 말 것 — 이 출력이 대상 목록이다 |
 | 저장소 전체 연결 점검 | `python scripts/audit_links.py` — '확실' 등급은 반드시 닫고, '확인 필요'는 해당 카드 본문을 보고 판단 |
 | ARCH 카드의 인용 출처 확인 | reference/unity_project_baseline.md (또는 reference/qa_verification_policy.md) — 근거 문서일 뿐 실행 지시서가 아니다. 해당 절만 확인 |
-| 기존 카드 확인 | research/_index.md 먼저 → 필요한 카드 최대 2장 |
+| 기존 카드 확인 | research/_index.md(표지, 4KB) → 필요한 **한 종류만** research/_index_<종류>.md → 카드 본문 최대 2장 |
 | 카드 형식 오류 | templates/해당종류 1개 (전체 templates 열람 금지). 규칙 자체는 card_schema.py가 단일 소스 |
 | 여러 카드의 특정 절만 필요 (궁합, 빈칸 등) | tools/read_section.py <카드들> "<절 제목>" — 전체 열람 금지 |
-| 반례(실패·혼재 사례)·유사 카드 탐색 | `python tools/search_cards.py "<질문>"` — DB 미러 켜져 있을 때만, 본문 대신 검색 결과로 판단. 미러가 낡았으면 먼저 M단계부터 |
-| 카드 생성·삭제·ID 변경·다이제스트 반영 후 (M단계) | `python tools/build_index.py` → `tools/sync_db.py` → `tools/embed_cards.py` → `tools/verify_db.py` **이 순서로**. embed는 cards 테이블을 읽으므로 반드시 sync 다음 |
+| 반례(실패·혼재 사례)·유사 카드 탐색 | `python tools/search_cards.py "<질문>"` — 절 단위로 회수한다. `--show-body`면 본문까지 나오므로 카드 파일을 따로 열 필요가 없다. `--kind`/`--section-key`로 좁힐 것. DB 미러가 낡았으면 먼저 M단계부터 |
+| 절 분할이 깨졌는지 확인 (DB 없이) | `python scripts/check_sections.py` — 카드 전부가 표준 절로 쪼개지는지. sync_db 전에 여기서 먼저 깨진다 |
+| 카드 생성·삭제·ID 변경·다이제스트 반영 후 (M단계) | `python tools/build_index.py` → `tools/sync_db.py` → `tools/embed_cards.py` → `tools/verify_db.py` **이 순서로**. embed는 cards/card_sections를 읽으므로 반드시 sync 다음 |
+| DB 스키마가 v1(카드 단위)인 경우 | `psql "$DATABASE_URL" -f db/01_migrate_v2.sql` 1회. `verify_db.py`가 `card_sections` 없음으로 죽으면 이것 |
+| 검색기·모델·청크 단위를 건드릴 때 (필수) | 고치기 **전에** `python scripts/eval_retrieval.py`로 기준선을 찍고, 고친 뒤 다시 잰다. 골드셋은 eval/queries.json |
+| 카드를 영어로 옮길 때 | `python scripts/migrate_card_lang.py <카드들> --out draft/en` → 사람 확인 → `--apply`. 수치·ID·출처 태그가 하나라도 어긋나면 그 카드는 통과하지 못한다 |
+| 임베딩이 느릴 때 | `embed_cards.py`는 `--device auto`가 기본이라 GPU가 보이면 알아서 쓴다. 안 쓰면 torch가 CPU 빌드다 — db/requirements.txt의 CUDA 설치 주석 참조. VRAM 6GB 미만은 fp16 + 배치 8로 자동 조정 |
 | 5432가 막힌 망 | 위 3개 스크립트는 `--transport auto`(기본값)로 443/HTTPS 브리지에 자동 폴백. 출력의 `[5432]`/`[443/HTTPS]`로 경로 확인. HTTPS에선 `--dry-run`이 실행 없이 예정 건수만 보고 |
 | 미러링 결과 확인 | `verify_db.py`의 `unresolved_refs`가 0이 아니면 없는 ID를 참조하는 카드가 있다는 뜻 → md 원본을 고치고 재실행 |
-| 절 제목은 표준 사전의 문자열 그대로 | 변형 제목 발견 시 lint로 잡아 수정 (임의 추측 금지) |
+| 절 제목은 표준 사전의 문자열 그대로 | 변형 제목 발견 시 lint로 잡아 수정 (임의 추측 금지). 사전은 card_schema.py의 `SECTIONS` — 제목(한국어)과 `section_key`(언어 중립)를 짝으로 들고 있다. 절 제목을 바꾸려면 이 사전만 고친다 |
 
 ## 읽기 규율 (토큰 예산)
 1. 위 지도에 없는 파일은 열지 않는다. 단계당 프롬프트 1개만 읽는다.
-2. 카드 확인은 반드시 _index.md부터. 본문 열람은 작업당 최대 2장.
+2. 카드 확인은 _index.md 표지부터. 상세는 필요한 종류 파일 **하나만** 연다.
+   본문 열람은 작업당 최대 2장 — 그 전에 search_cards.py로 절만 뽑아 쓸 수 있는지 볼 것.
 3. research/ 하위 폴더를 통째로 여는 것 금지 (ls는 허용, cat 전체 금지).
 4. db/, bridge/, tools/*.py 소스는 DB 미러 계층 자체를 고치는 작업이 아니면 열지 않는다 (사용은 CLI 실행만으로 충분).
 5. md가 원본, DB는 거울이다. 거울에 손으로 INSERT/UPDATE 금지 — 쓰기는 sync_db.py만 한다. `tools/init_db.py`는 테이블을 DROP하므로 미러링 목적으로 실행 금지.

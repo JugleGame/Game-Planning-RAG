@@ -1,213 +1,44 @@
 # RESEARCH INDEX (자동 생성 - 직접 수정 금지)
-생성: 2026-08-11 | 카드 171장
+생성: 2026-08-12 | 카드 171장
+
+상세는 종류별 파일을 볼 것. 한 번에 한 종류만 연다.
+- ① 요소: `research/_index_element.md` (44장, 13,189B)
+- ② 장르: `research/_index_genre.md` (39장, 11,346B)
+- ③ 게임: `research/_index_game.md` (55장, 15,081B)
+- ④ 신호: `research/_index_signal.md` (6장, 2,258B)
+- ⑤ 아키텍처: `research/_index_arch.md` (27장, 8,820B)
+
+특정 카드를 찾는 게 아니라 '무엇이 있나'를 훑는 중이라면 색인 통독보다
+`python tools/search_cards.py "<질문>"` 이 싸고 정확하다.
 
 ## 최근 7일 변경
-- ELEM-047 | 08-11
-- ELEM-045 | 08-11
-- ELEM-046 | 08-11
-- GAME-056 | 08-10
-- GAME-055 | 08-10
-- GAME-054 | 08-10
-- GENRE-035 | 08-09
-- GENRE-038 | 08-09
-- GENRE-039 | 08-09
-- GENRE-010 | 08-09
-- GENRE-036 | 08-09
-- GENRE-012 | 08-09
-- GENRE-037 | 08-09
-- GAME-023 | 08-09
-- SIGNAL-2026-08-07_arpg_td_deckbuilder_signals | 08-07
-- ELEM-043 | 08-06
-- ELEM-042 | 08-06
-- ELEM-044 | 08-06
-- ELEM-018 | 08-05
-- ELEM-019 | 08-05
-- GENRE-034 | 08-05
-- GAME-052 | 08-05
-- GAME-053 | 08-05
-- ELEM-011 | 08-04
-- ELEM-007 | 08-04
-- GENRE-033 | 08-04
-- GENRE-032 | 08-04
-- GAME-041 | 08-04
+- ELEM-045 | 신격/후원자 선택형 소환 로스터 고정 (Deity/Patron Selection Locking Summonable Roster) | 08-11
+- ELEM-046 | 전투 참여형 동물 동료 자동 보조 (Combat-participating Animal Companion Auto-assist) | 08-11
+- ELEM-047 | 비대칭 시작덱 캐릭터 로스터 (Asymmetric Starting-deck Character Roster) | 08-11
+- GAME-054 | Dominocalypse (출시 예정, Barely Cohesive Games) | 08-10
+- GAME-055 | Loop Hero (2021, Four Quarters / Devolver Digital) | 08-10
+- GAME-056 | Factorio (2020, Wube Software) | 08-10
+- GAME-023 | Diablo IV (2023, Blizzard Entertainment) | 08-09
+- GENRE-010 | 타워 디펜스 (Tower Defense) | 08-09
+- GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 08-09
+- GENRE-035 | 타일매칭 로그라이크 덱빌더 (Tile-matching Roguelike Deckbuilder Hybrid) | 08-09
+- GENRE-036 | 팩토리 자동화 빌더 (Factory / Production-chain Automation Builder) | 08-09
+- GENRE-037 | 솔로 PvE 로그라이크 오토배틀러 (Solo PvE Roguelike Auto-battler) | 08-09
+- GENRE-038 | 방치형/증분형 게임 (Idle / Incremental Game) | 08-09
+- GENRE-039 | 턴제 전술 로그라이크 (Turn-based Tactical Roguelike) | 08-09
+- SIGNAL-2026-08-07_arpg_td_deckbuilder_signals | 주간 관측 (2026-08-01 ~ 2026-08-07) | 08-07
+- ELEM-042 | 단일 타워 직접 조작형 방어 (Single-Tower Skill-Controlled Defense) | 08-06
+- ELEM-043 | 스쿼드 동시 조작 자동전투 (Squad Multi-Character Simultaneous Auto-Combat) | 08-06
+- ELEM-044 | 그림다크 추출런 결합 (Grimdark Extraction Hybrid) | 08-06
+- ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 08-05
+- ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 08-05
+- GAME-052 | Rogue Defense: Hybrid Tower TD (2025, CyberJoy Games) | 08-05
+- GAME-053 | Last Epoch (2024, Eleventh Hour Games) | 08-05
+- GENRE-034 | 핵앤슬래시 던전크롤러 ARPG (시즌제 리그형) | 08-05
 
-## ① 요소
-- ELEM-001 | 티저 기반 공개 (Teaser-based reveals)  | 다음 단계가 있음을 간접적인 요소들로 나타냄 | #narrative #viral-hook #fragile | 07-31
-- ELEM-002 | 캠피 (B급/B-movie 유머, Campy) | 일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤 | #comedy #divisive #viral-hook #scriptable | 07-31
-- ELEM-003 | 제 4의 벽 붕괴 (Fourth Wall Breaking) | 게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치 | #meta #narrative #viral-hook #overuse-risk | 07-31
-- ELEM-004 | 반복 메커닉 (Loop Mechanic) | 같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조 | #retention #high-cost #puzzle #roguelike #divisive | 07-31
-- ELEM-005 | AI 통합 (AI Integration) | AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술 | #requires-ai #high-cost #viral-hook #fragile #divisive | 07-31
-- ELEM-006 | AI 기반 심문 (AI-driven interrogation) | 미리 쓴 대사가 아니라 실시간 생성 AI가 등장인물을 움직여 플레이어의 질문에 즉석으로 답하게 하는 방식 | #AI #dialogue #local-llm #divisive | 07-16
-- ELEM-007 | 선택 반응형 비-LLM 내러티브 (Choice-reactive, non-LLM narration) | AI가 아니라 개발자가 미리 써놓은 여러 갈래의 이야기 중 하나를 플레이어의 선택에 따라 보여주는 방식 | #narrative #branching #no-ai #illusion-of-choice | 08-04
-- ELEM-008 | 동반자 / 함께 플레이 가능한 캐릭터 (Companion / co-playable character) | 플레이어와 함께 게임을 하거나 곁에서 반응해주는 또 다른 캐릭터를 두는 방식 | #co-op #companion #AI-controversy #divisive | 07-31
-- ELEM-009 | 철학적 내러티브 로그라이트/로그라이크 (Philosophical narrative roguelite/roguelike) | 죽거나 다시 시작해도 이야기가 이어지는 구조에 삶과 죽음, 의미 같은 철학적 질문을 담는 방식 | #philosophy #roguelike #metafiction #conflicting-data | 07-31
-- ELEM-010 | 클립 기반 바이럴리티 (Clip-driven virality) | 짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식 | #virality #clip #spectacle #expectation-mismatch | 07-31
-- ELEM-011 | 창발적 시스템 상호작용 (Emergent Systemic Interaction, "화학 엔진") | 불/물/바람 같은 기본 규칙 몇 개만 만들어두고, 그 규칙들이 서로 부딪히며 개발자도 예상 못한 해법이 나오게 하는 설계 | #exploration #physics #sandbox #open-world #high-cost | 08-04
-- ELEM-012 | 랜드마크 기반 탐험 (Landmark-based / Minimal-marker Exploration) | 지도 아이콘이나 화살표 대신, 멀리서도 보이는 지형지물로 '저기 가보고 싶다'는 마음을 이끌어내는 레벨 디자인 | #exploration #open-world #no-markers #level-design #divisive | 07-31
-- ELEM-013 | 도트 그래픽 아트 스타일 (Pixel Art Style) | 3D 모델링 없이 저해상도 픽셀 단위로 그래픽을 표현해 개발 비용과 파이프라인을 줄이는 시각 제작 방식 | #pixel-art #art-style #low-cost #indie #2d #nostalgia | 07-31
-- ELEM-014 | 처벌적 죽음 순환 (Punishing Death Loop) | 죽으면 모아둔 자원을 잃고 정해진 지점에서 다시 시작하되, 죽은 자리로 돌아가면 한 번 더 되찾을 기회를 주는 긴장·반복 구조 | #difficulty #dark-fantasy #soulslike #retention #divisive | 07-31
-- ELEM-015 | 스트레스/광기 시스템 (Sanity / Stress Meter) | 캐릭터에게 정신적 압박(스트레스·공포·광기) 수치를 부여해, 임계치를 넘으면 환각·행동 이상 같은 부정적 상태를 발생시키는 방식 | #horror #dark-fantasy #psychological #punishing #divisive | 07-31
-- ELEM-016 | 그림다크 톤 (Grimdark Aesthetic) | 도덕적으로 회색지대인 인물, 부패하고 무너져가는 세계, 희망이 옅은 절망적 분위기를 시각·서사 전반에 깔아두는 톤 | #dark-fantasy #grimdark #tone #narrative #atmosphere | 07-31
-- ELEM-017 | 가챠 확률 & 천장 시스템 (Gacha Probability & Pity System) | 확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치 | #gacha #monetization #randomness #live-service #mobile #regulation #divisive | 08-01
-- ELEM-018 | 로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft) | 매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조 | #roguelike #randomness #draft #run-based #tower-defense #divisive | 08-05
-- ELEM-019 | 무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table) | 적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조 | #loot #randomness #looter-shooter #arpg #retention #grind #transparency #divisive | 08-05
-- ELEM-020 | 덱 구축 (Deck-building) | 약한 시작 카드 묶음에서 출발해 플레이 도중 카드를 한 장씩 더하고 빼며 자기만의 덱을 만들어가는 구조 | #deckbuilder #roguelike #randomness #replayability #indie #strategy | 07-31
-- ELEM-021 | 친숙한 규칙 차용 (Familiar Ruleset Appropriation) | 포커·블랙잭처럼 이미 대부분이 아는 규칙을 게임의 바탕으로 그대로 빌려와, 가르치는 비용 없이 그 위에 새 시스템만 얹는 방식 | #onboarding #low-cost #indie #solo-dev #card-game #regulation #broad-appeal | 07-31
-- ELEM-022 | 지수적 점수 스케일링 (Exponential Scoring) | 개별 강화 효과들이 서로 곱해지고 중첩되게 만들어, 판이 진행될수록 점수가 선형이 아니라 폭발적으로 불어나게 하는 설계 | #scoring #power-fantasy #roguelike #numbers-go-up #combo #balance-risk | 07-31
-- ELEM-023 | 광원·시야 제한 (Light Source & Vision Limit) | 플레이어가 볼 수 있는 범위를 광원으로 좁혀두고 그 빛을 닳는 자원으로 만들어, '보는 것' 자체에 대가를 매기는 방식 | #horror #light #vision #resource #tension #divisive | 07-31
-- ELEM-025 | 온디바이스 SLM 실시간 음성 대화 NPC (On-device SLM Real-time Voice NPC) | 클라우드 서버 없이 플레이어의 기기 안에서 소형 언어모델이 바로 돌아가며 NPC가 실시간 음성으로 대화하게 만드는 기술 | #ai #voice #on-device #npc #requires-ai #high-cost #emerging | 07-30
-- ELEM-027 | 추출형 런 구조 (Loot-and-Extract Run Structure) | 판마다 얻은 자원을 탈출 지점까지 살아서 가져와야만 실제 보상으로 인정되는 위험-보상 순환 구조 | #extraction #risk-reward #pvpve #live-service #divisive | 07-31
-- ELEM-028 | 재화 전환형 제작 마찰 완화 (Craft Material Conversion Friction Reduction) | 무작위 루트의 흩어진 자원을 정해진 공식으로 합쳐 원하는 아이템을 만들 수 있게 해, 랜덤 드롭의 좌절감을 제작의 성취감으로 바꾸는 구조 | #crafting #live-service #rng-mitigation #grind #itemization | 07-31
-- ELEM-029 | 협력 기반 자산 공유 메커닉 (Shared Vault Co-op Mechanic) | 플레이어가 개인 보상을 포기하거나 일부를 넘겨 팀 공용 저장소에 축적하게 만들어, 협력 인센티브를 자원 관리 수준으로 끌어내리는 구조 | #co-op #squad #live-service #retention #incentive | 07-31
-- ELEM-031 | 시각 피드백 과장 (Juiciness / Game Feel / Screenshake) | 화면 흔들림, 파티클 폭발, 숫자 띄우기 등 시각 피드백을 과장되게 쌓아 버튼 입력이 즉각 반응하는 착각을 주는 기술 | #visual-feedback #feel #indie #game-feel #polish | 07-31
-- ELEM-032 | 뉴 게임 플러스 (New Game+) | 게임을 한 번 클리어한 뒤 유저가 자발적으로 진행도(장비·능력치)를 이어받아 처음부터 다시 도전하게 만드는 사후 재플레이 장치 | #replayability #post-game #difficulty #narrative #broad-appeal | 07-31
-- ELEM-033 | 동적 난이도 조절 (Dynamic Difficulty Adjustment, DDA) | 플레이어의 실시간 성과(피격·정확도·순위)를 관찰해 적 강도나 자원 드롭을 자동으로 조절해, 겉으로 드러나지 않게 난이도를 항상 적당한 긴장 상태로 유지하는 기술 | #difficulty #ai-director #invisible-design #balance #broad-appeal | 07-31
-- ELEM-034 | 탐사형 포토그래피 목표 동사 (Exploration Photography as Core Verb) | 이동이나 전투 대신, 눈앞의 대상을 사진으로 찍어 증거·기록으로 남기는 행위 자체를 탐험의 핵심 목표로 삼는 설계 방식 | #exploration #photography #core-verb #no-combat #cozy #indie | 07-31
-- ELEM-035 | 접객 서비스 루프 (Hospitality / Service Sim Loop) | 손님을 맞고 주문을 받아 무언가를 만들어 내어주는 짧은 상호작용을 반복 가능한 코어 루프로 삼는 서비스업 시뮬레이션 방식 | #hospitality #service-loop #cozy #narrative #indie #pixel-art | 07-31
-- ELEM-036 | 영웅 픽/밴 드래프트 (Hero Pick/Ban Draft) | 시합 시작 전 양 팀이 번갈아 상대가 못 쓸 영웅을 막고(밴), 자기 편이 쓸 영웅을 고르는(픽) 절차 | #moba #draft #esports #strategy #pvp | 08-01
-- ELEM-037 | 좁혀지는 세이프존 (Shrinking Safe Zone) | 시간이 지날수록 플레이 가능 구역을 강제로 줄여 흩어진 플레이어들을 서로 충돌하게 만드는 구조 | #battle-royale #forced-encounter #tension #map-design #pvp | 08-01
-- ELEM-038 | 라운드제 경제 시스템 (Round-based Economy / Buy System) | 라운드가 끝날 때마다 성적에 따라 돈을 받고, 다음 라운드 시작 전 그 돈으로 장비를 사는 구조 | #tactical-shooter #economy #esports #round-based #pvp | 08-01
-- ELEM-039 | 포획형 동료 노동 시스템 (Capturable Creature Labor System) | 야생 생물을 잡아 전투 동료가 아니라 채집·제작·운반 같은 노동력으로 기지에 배치하는 구조 | #creature-collection #automation #base-building #survival #co-op | 08-01
-- ELEM-040 | 애니메 스타일 캐릭터 수집 (Anime-style Character Collection) | 애니메이션 그림체의 캐릭터를 뽑기로 모으되, 각 캐릭터에 성우 풀보이스·개인 서사·의상을 갖춰 소장 자체를 목적으로 만드는 방식 | #subculture #anime #gacha #character-collection #live-service #waifu | 08-01
-- ELEM-041 | AI 관찰자/해설자 결합 (AI Observer-Commentator Synthesis) | AI가 플레이어의 과거 행동·루프를 실시간으로 관찰하고 그 자리에서 캠피하게 반응/언급하는 조합 - ELEM-002+003+005의 종합, 아직 어떤 게임도 완성하지 못한 빈칸 | #ai #campy #fourth-wall #commentator #meta #emerging #gap | 08-01
-- ELEM-042 | 단일 타워 직접 조작형 방어 (Single-Tower Skill-Controlled Defense) | 여러 타워를 배치하는 대신, 플레이어가 하나의 타워/거점을 스킬로 직접 조작해 사방에서 오는 웨이브를 막는 방어 구조 | #tower-defense #roguelike #brotato-like #single-tower #skill-based #emerging | 08-06
-- ELEM-043 | 스쿼드 동시 조작 자동전투 (Squad Multi-Character Simultaneous Auto-Combat) | 서바이버라이크의 단일 캐릭터 자동전투 관례를 벗어나, 한 명의 플레이어가 여러 캐릭터를 동시에 지휘하며 각 캐릭터는 스스로 공격하게 만드는 조작 구조 | #survivors-like #bullet-heaven #squad #auto-combat #control-variant #emerging | 08-06
-- ELEM-044 | 그림다크 추출런 결합 (Grimdark Extraction Hybrid) | 그림다크 톤(ELEM-016)의 절망적 세계관 위에 추출형 런 구조(ELEM-027)의 위험-보상 순환을 얹어, 죽음의 무게를 서사와 시스템 양쪽에서 동시에 가중시키는 결합 | #extraction #dark-fantasy #grimdark #risk-reward #emerging #mixed-reception | 08-06
-- ELEM-045 | 신격/후원자 선택형 소환 로스터 고정 (Deity/Patron Selection Locking Summonable Roster) | 런 시작 시 고른 신·후원자에 따라 이후 소환할 수 있는 유닛 풀이 그 신에게 속한 것으로 정해지는 구조 | #tower-defense #roguelite #greek-mythology #draft #emerging | 08-11
-- ELEM-046 | 전투 참여형 동물 동료 자동 보조 (Combat-participating Animal Companion Auto-assist) | 플레이어가 따로 조작하지 않아도 동물 동료가 전투 중 자동으로 공격·보조를 넣는 구조 | #companion #action-rpg #combat #auto-assist #single-character | 08-11
-- ELEM-047 | 비대칭 시작덱 캐릭터 로스터 (Asymmetric Starting-deck Character Roster) | 로그라이크 덱빌더에서 플레이어블 캐릭터마다 서로 다른 시작 덱과 카드 풀을 부여해, 캐릭터를 바꿀 때마다 다른 게임처럼 느껴지게 만드는 구조 | #deckbuilder #roguelike #character-roster #replayability #asymmetric | 08-11
-
-## ② 장르
-- GENRE-001 | 메타 내러티브 인디 (Meta-narrative Indie) | 게임이 스스로 "게임임"을 인식하고 그것을 이야기 재료로 쓰는 군집 | #indie #story-rich #meta | 07-20
-- GENRE-002 | 루프 내러티브 (Loop Narrative) | 반복 구조 자체가 이야기를 전달하는 수단이 되는 군집 | #time-loop #roguelike #story-rich #retention | 07-31
-- GENRE-003 | AI 네이티브 게임 (AI-native Games) | 실시간 AI 생성이 게임의 코어 메커닉인 형성 초기 군집 | #ai-native #emerging #fragile #high-cost | 08-01
-- GENRE-004 | 코미디 슈터 (Comedy Shooter) | 견고한 슈팅 루프 위에 캠피 유머를 얹은 군집 | #fps #comedy #divisive | 07-15
-- GENRE-005 | 오픈월드 (Open World) | 정해진 경로 대신 넓게 이어진 하나의 세계를 자유롭게 돌아다니며 플레이어가 스스로 순서를 정하는 군집 | #open-world #exploration #sandbox #aaa #broad-appeal | 07-21
-- GENRE-006 | 도트 그래픽 2D 오픈월드/샌드박스 (Pixel-art 2D Open World / Sandbox) | 픽셀 아트로 표현된 2D 세계를 채굴·건설·경작 등 자유도 높은 방식으로 탐험하게 하는 군집 | #pixel #open-world #sandbox #2d #indie #exploration | 07-25
-- GENRE-007 | 코지 시뮬 (Cozy Sim) | 실패 상태 없이 낮은 긴장으로 일상 루틴(농사·꾸미기·수집)을 반복하게 하는 저스트레스 생활 시뮬 군집 | #cozy #life-sim #low-stress #no-fail #farming #broad-appeal | 07-27
-- GENRE-008 | 감정 서사 어드벤처 (Wholesome / Emotional Narrative Adventure) | 상실·이별·치유 같은 감정 아크를 짧고 완결된 모험으로 전달하는 것이 코어인 군집 | #wholesome #narrative #emotional #indie #short-form #niche-appeal | 07-27
-- GENRE-009 | 다크 판타지 (Dark Fantasy) | 절망적이고 도덕적으로 모호한 세계관 위에 처벌적인 죽음·정신력 소모 순환을 얹어, 공포와 성취감을 동시에 주는 군집 | #dark-fantasy #grimdark #difficulty #horror #soulslike #aaa #indie | 07-27
-- GENRE-010 | 타워 디펜스 (Tower Defense) | 정해진 경로로 오는 적 웨이브를 막기 위해 길목에 방어 타워를 배치·강화하는 것이 코어인 군집 | #tower-defense #strategy #wave-based #roguelike-subgenre | 08-09
-- GENRE-011 | 루트 슈터 (Looter Shooter) | 총격 전투 위에 무작위로 굴려진 장비 파밍을 얹어, 더 좋은 총을 얻기 위해 같은 구간을 반복하게 만드는 것이 코어인 군집 | #looter-shooter #fps #loot #live-service #grind #aaa #divisive | 07-29
-- GENRE-012 | 로그라이크 덱빌더 (Roguelike Deckbuilder) | 한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집 | #roguelike #deckbuilder #randomness #indie #replayability #saturated | 08-09
-- GENRE-013 | 카지노 규칙 로그라이트 (Casino-ruleset Roguelite) | 포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집 | #roguelite #poker #casino #indie #emerging #regulation | 08-02
-- GENRE-014 | 횡스크롤 공포 (Side-scrolling Horror) | 카메라를 옆에서 따라가게 두고 화면 밖과 어둠을 공포의 재료로 삼는, 전투보다 회피와 숨기가 기본 동사인 군집 | #horror #side-scroller #puzzle-platformer #atmosphere #indie #narrow | 07-30
-- GENRE-015 | 픽셀 2D 생존공포 (Pixel 2D Survival Horror) | 저해상도 도트 그래픽과 광원으로 좁혀진 시야를 결합해, 보이지 않는 영역 자체를 공포의 재료로 쓰는 소규모 개발 중심 군집 | #horror #pixel-art #survival #indie #low-cost #light-mechanic | 07-31
-- GENRE-016 | 탄막 로그라이크 (Bullet Hell Roguelike) | 실시간 회피·조준 조작 위에 매 층 무작위 드래프트와 처벌적 죽음 순환을 얹은 액션 로그라이크 군집 | #roguelike #bullet-hell #action #indie #replayability | 07-31
-- GENRE-017 | 메트로배니아 (Metroidvania) | 능력 해금으로 이전 지역을 다시 열어가는 비선형 탐험이 코어인, 향수 기반 구매 동기가 강한 인디 중심 군집 | #metroidvania #exploration #indie #non-linear #saturated | 07-31
-- GENRE-018 | 소셜 디덕션 (Social Deduction) | 다른 플레이어와 실시간 그룹 상호작용 속에서 숨은 역할을 추론·색출하는 것이 코어인, 무료 플레이·수익화 실험이 활발한 군집 | #social-deduction #multiplayer #free-to-play #monetization #indie | 07-31
-- GENRE-019 | 서바이버라이크 (Survivors-like / Bullet Heaven) | 캐릭터가 자동으로 공격하고 플레이어는 이동과 업그레이드 선택에만 집중해, 화면을 뒤덮는 물량으로 폭발적 스케일링을 체감하게 만드는 군집 | #survivors-like #bullet-heaven #roguelite #indie #auto-battler #saturated | 08-02
-- GENRE-020 | 서바이벌 크래프팅 오픈월드 (Survival Crafting Open World) | 자원·환경·제작이 서로 맞물리는 개방형 시스템 위에서 굶주림·추위·부상을 관리하며 살아남는 것이 코어인 군집 | #survival #crafting #open-world #co-op #broad-appeal | 07-31
-- GENRE-021 | 분기형 비주얼노벨 (Branching Visual Novel) | 대사 선택이 아니라 행동의 결과(무엇을 내주는가)로 이야기가 갈리는, 정적인 2D 대화 중심의 니치 군집 | #visual-novel #narrative #niche-appeal #indie #low-stress | 07-31
-- GENRE-022 | 배틀로얄 (Battle Royale) | 다수 플레이어가 동시에 낙하해 좁혀지는 세이프존 안에서 최후 1인/1팀만 남을 때까지 겨루는 군집 | #battle-royale #pvp #last-player-standing #aaa #saturated | 08-01
-- GENRE-023 | 택틱컬 라운드제 슈터 (Tactical Round-based Shooter) | 공격/수비 진영을 라운드마다 교대하며 라운드제 경제로 무장을 갖춰 최선승 라운드를 겨루는 경쟁 슈터 군집 | #tactical-shooter #esports #round-based #competitive #pvp | 08-01
-- GENRE-024 | MOBA (Multiplayer Online Battle Arena) | 영웅 픽/밴 드래프트로 시작해 라인·정글이 있는 대칭 맵에서 상대 거점을 파괴하는 것이 코어인 팀 대전 군집 | #moba #esports #lane-based #pvp #free-to-play | 08-01
-- GENRE-025 | 서브컬쳐 게임 (Subculture Game / Anime Character-collection Action) | 애니메 그림체 캐릭터를 가챠로 모으고 키우는 것이 수익화·리텐션의 코어인, 일본·중국 개발사가 주도하는 라이브서비스 군집 | #subculture #anime #gacha #live-service #action-rpg #mobile-first | 08-01
-- GENRE-026 | 히어로 슈터 (Hero Shooter) | 고유 능력을 가진 영웅을 골라 탱커/딜러/서포터 역할로 팀을 짜고 오브젝티브를 두고 싸우는 대전 슈터 군집 | #hero-shooter #pvp #team-based #esports #live-service #saturated | 08-02
-- GENRE-027 | 오토배틀러 (Auto Battler / Auto Chess) | 매 라운드 상점에서 유닛을 사고 배치만 하면 전투 자체는 자동으로 진행되는, 경제 관리와 시너지 조합이 코어인 PvP 군집 | #auto-battler #auto-chess #pvp #economy #synergy #esports | 08-02
-- GENRE-028 | 수집형 카드 대전 PvP (Collectible Card Game PvP) | 한 판 안에서만 쓰고 버리는 런 기반 덱이 아니라, 플레이어가 소유한 카드 수집 전체에서 상시 대전용 덱을 미리 짜 맞붙는 군집 | #ccg #tcg #pvp #deckbuilder #meta #live-service | 08-02
-- GENRE-029 | 리듬 액션 (Rhythm Action) | 박자에 맞춰 입력을 요구하고 그 입력이 화면·사운드에 과장되게 반응하는 것이 코어인, 음악 자체가 규칙이 되는 군집 | #rhythm #timing #music #indie #juiciness #input-heavy | 08-02
-- GENRE-030 | 크리처 노동 자동화 서바이벌 (Creature Labor Automation Survival) | 포획한 생물을 전투 동료가 아니라 채집·제작 노동력으로 배치해 자동화 생산 라인을 짜는 것이 코어인 서바이벌 군집 | #survival #automation #creature-collection #crafting #base-building #emerging | 08-03
-- GENRE-031 | 무협 근접 액션 배틀로얄 (Wuxia Melee Action Battle Royale) | 총격이 아니라 검술·경공 같은 근접 무술 조작이 코어인, 무협 세계관 위에 좁혀지는 세이프존을 얹은 배틀로얄 군집 | #battle-royale #wuxia #melee #action #parkour #niche | 08-03
-- GENRE-032 | 이머시브 심 (Immersive Sim) | 여러 개의 상호작용 가능한 규칙을 겹쳐 두고, 플레이어가 스스로 조합해 문제를 풀게 만드는 시스템 중심 1인칭 장르 | #immersive-sim #systemic #stealth #niche-appeal #high-cost #cautionary | 08-04
-- GENRE-033 | CRPG (선택 기반 파티 롤플레잉) | 테이블탑 RPG 규칙을 충실히 재현한 파티 단위 롤플레잉 위에, 선택이 실제 서사 분기를 바꾸는 것이 코어인 군집 | #crpg #narrative #branching #party-based #tabletop #co-op #resurgent | 08-04
-- GENRE-034 | 핵앤슬래시 던전크롤러 ARPG (시즌제 리그형) | 좁은 던전형 맵을 빠르게 반복하며 빌드를 파밍하는 전투 위에, 정기적으로 리셋되는 시즌(리그)이 재플레이 동기를 새로 공급하는 액션 RPG 군집 | #arpg #hack-and-slash #loot #season #league #live-service #saturated | 08-05
-- GENRE-035 | 타일매칭 로그라이크 덱빌더 (Tile-matching Roguelike Deckbuilder Hybrid) | 도미노·마작처럼 이미 존재하는 타일 배치·매칭 보드게임 규칙을 바탕으로 삼고, 그 위에 로그라이크 덱빌딩의 아티팩트·점수 폭증 구조를 얹은 신생 군집 | #roguelike #deckbuilder #tile-matching #domino #mahjong #indie #emerging | 08-09
-- GENRE-036 | 팩토리 자동화 빌더 (Factory / Production-chain Automation Builder) | 생물 포획 없이 컨베이어 벨트·인서터 같은 기계 물류망으로 원자재를 다단계 가공해 생산 사슬 설계 자체를 코어로 삼는 군집 | #automation #factory #production-chain #logistics #conveyor-belt #no-creature-capture #indie #sandbox #saturated | 08-09
-- GENRE-037 | 솔로 PvE 로그라이크 오토배틀러 (Solo PvE Roguelike Auto-battler) | 런 기반 무작위 드래프트로 유닛·장비를 배치만 하고 전투 자체는 자동으로 흘러가는, 상대가 다른 플레이어가 아니라 AI 몬스터/웨이브인 1인 PvE 하이브리드 군집 | #auto-battler #roguelike #pve #solo #draft #singleplayer #emerging | 08-09
-- GENRE-038 | 방치형/증분형 게임 (Idle / Incremental Game) | 플레이어의 능동 조작 없이도 자원이 시간에 비례해(주로 지수적으로) 계속 쌓이게 만들어, 짧은 체크인과 오프라인 누적을 리텐션의 중심으로 삼는 군집 | #idle #incremental #mobile #clicker #idle-rpg #offline-progress #ad-monetization | 08-09
-- GENRE-039 | 턴제 전술 로그라이크 (Turn-based Tactical Roguelike) | 실시간 조작 대신 격자 위 턴제 전술 전투를 코어로 삼고, 그 위에 로그라이크식 무작위 업그레이드/경로 드래프트를 얹은 군집 | #roguelike #turn-based #tactics #grid-based #indie #permadeath | 08-09
-
-## ③ 게임
-- GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | 카드 게임으로 시작해 장르 자체를 배신하는 메타 내러티브 히트작 | #deckbuilder #horror #meta #indie | 07-31
-- GAME-002 | Undertale (2015, Toby Fox) | 플레이어의 모든 선택을 게임이 기억하는 메타 내러티브 RPG의 원형 | #rpg #indie #meta #comedy #pixel | 07-15
-- GAME-003 | OneShot (2016, Future Cat / Degica) | 게임이 플레이어의 OS까지 개입하는 포스 월 브레이킹의 극단 사례 | #puzzle #adventure #meta #indie #niche-appeal | 07-15
-- GAME-004 | ANTHEM (2019, BioWare / EA) | 티저와 약속의 크기를 결과물이 못 따라간 과대약속 실패의 대표 사례 | #looter-shooter #live-service #aaa #cautionary | 07-31
-- GAME-005 | Twelve Minutes (2021, Luis Antonio / Annapurna Interactive) | 화제성 높은 타임루프 콘셉트가 반복 노동으로 전락한 반면교사 | #time-loop #narrative #point-and-click #divisive #cautionary | 07-15
-- GAME-006 | Overwatch - 솜브라 ARG (2016, Blizzard) | 커뮤니티 전체를 수사대로 만든 티저 마케팅의 대표 사례 (후반 피로 교훈 포함) | #arg #marketing #community #live-service | 07-15
-- GAME-007 | High on Life (2022, Squanch Games) | 쉼 없는 농담 폭격이 평단 혹평과 유저 팬덤으로 극단 분열된 캠피 사례 | #fps #comedy #divisive #cautionary | 07-15
-- GAME-008 | Outer Wilds (2019, Mobius Digital / Annapurna Interactive) | "지식이 유일한 진행도"인 타임루프 탐험 - 루프+티저 결합의 정점 | #time-loop #exploration #mystery #divisive #retention | 07-15
-- GAME-009 | Hades (2020, Supergiant Games) | "죽음 = 서사 진행"으로 반복을 보상으로 바꾼 내러티브 로그라이크의 정점 | #roguelike #narrative #retention #broad-appeal | 07-15
-- GAME-010 | Suck Up! (2023, Proxima Enterprises) | AI 설득이 코어 루프인 첫 바이럴 사례 - 화제성 입증, 유지 실패 | #ai-native #comedy #voice #viral-hook #fragile | 07-15
-- GAME-011 | inZOI (2025 얼리액세스, inZOI Studio / KRAFTON) | AI NPC를 탑재한 첫 대형 타이틀 - 판매 성공, 유지·성능·여론 3중 과제 | #life-sim #ai-native #aaa #high-cost #divisive | 07-27
-- GAME-012 | Borderlands 2 (2012, Gearbox / 2K) | 유머를 캐릭터(악당)에 집중시켜 3,000만 장을 판 캠피 톤의 상업적 정점 | #fps #looter-shooter #comedy #broad-appeal | 07-31
-- GAME-013 | The Stanley Parable (2013, Galactic Cafe) / Ultra Deluxe (2022, Crows Crows Crows) | 실시간으로 플레이어의 선택에 말을 거는 내레이터로 '선택의 환상'을 다룬 메타 내러티브의 원형 | #walking-sim #narrative #meta #indie #comedy #broad-appeal | 07-20
-- GAME-014 | The Legend of Zelda: Breath of the Wild (2017, Nintendo EPD) | "화학 엔진"으로 세계의 모든 요소가 서로 반응하게 만들어 오픈월드 탐험의 기준을 새로 쓴 작품 | #action-adventure #open-world #physics #exploration #broad-appeal | 07-21
-- GAME-015 | The Legend of Zelda: Tears of the Kingdom (2023, Nintendo EPD) | 울트라핸드로 오브젝트 결합 자체를 탐험 도구로 만들어 창발적 시스템 상호작용을 한 단계 더 밀어붙인 후속작 | #action-adventure #open-world #physics #building #sequel #broad-appeal | 07-21
-- GAME-016 | Elden Ring (2022, FromSoftware / Bandai Namco) | 퀘스트 마커 없이 지형지물만으로 플레이어가 스스로 경로를 찾게 만들어 오픈월드 탐험 설계의 기준을 다시 세운 작품 | #action-rpg #open-world #exploration #no-markers #broad-appeal | 07-21
-- GAME-017 | Assassin's Creed Valhalla (2020, Ubisoft) | 출시 직후 흥행·평단 모두 좋은 성적을 냈지만, 지도 아이콘과 플레이 시간 과잉으로 '체크리스트형 오픈월드 피로'의 대표 사례로 자주 인용되는 작품 | #action-rpg #open-world #ubisoft #map-icons #divisive #cautionary | 07-21
-- GAME-018 | Terraria (2011, Re-Logic) | 도트 그래픽 채굴·건설 샌드박스로 2D 오픈월드의 상업적 정점을 찍은 원조격 작품 | #sandbox #open-world #pixel #crafting #solo-dev-origin #broad-appeal | 07-25
-- GAME-019 | Stardew Valley (2016, ConcernedApe / Chucklefish) | 1인 개발 도트 그래픽 농장 시뮬레이션으로 Steam 최고 평점 게임 자리까지 오른 오픈월드형 생활 시뮬레이터 | #farming-sim #open-world #pixel #solo-dev #broad-appeal | 07-31
-- GAME-020 | Core Keeper (2022 얼리액세스 / 2024 정식출시, Pugstorm / Fireshine Games) | 탑다운 도트 그래픽으로 Terraria식 샌드박스를 지하 채굴 중심으로 재구성한 최근 세대 사례 | #sandbox #survival #pixel #mining #early-access #co-op | 07-25
-- GAME-021 | Dark Souls III (2016, FromSoftware / Bandai Namco) | 소울류 시리즈가 확립한 전투·죽음 순환 공식을 완성도로 밀어붙여 시리즈 최다 판매를 기록한 완결편 | #action-rpg #dark-fantasy #soulslike #difficulty #broad-appeal | 07-27
-- GAME-022 | Darkest Dungeon (2016, Red Hook Studios) | 스트레스·발작(Affliction) 시스템으로 다크 판타지 로그라이크에 심리적 공포를 결합했으나, 그 처벌적 설계 자체가 호불호를 가른 사례 | #roguelike #dark-fantasy #stress-system #punishing #divisive #indie | 07-27
-- GAME-023 | Diablo IV (2023, Blizzard Entertainment) | 출시 직후 블리자드 역대 최고 흥행 기록을 세웠으나, 아이템화·엔드게임 설계에 대한 커뮤니티 반발이 이어진 다크 판타지 오픈월드 ARPG | #arpg #dark-fantasy #open-world #live-service #itemization #divisive #aaa | 08-09
-- GAME-024 | Genshin Impact (2020, miHoYo/HoYoverse) | 소프트/하드 천장과 50/50 보장을 결합한 캐릭터 가챠로 역대 최고 매출 모바일 게임 중 하나가 된 오픈월드 액션 RPG | #gacha #open-world #action-rpg #live-service #mobile #broad-appeal | 07-28
-- GAME-025 | 메이플스토리 - 큐브 확률조작 사건 (2003 출시, Nexon / 2024 공정위 제재) | 확률형 강화 아이템 '큐브'의 확률을 몰래 낮추고 알리지 않아 사상 최대 과징금을 받은 확률 신뢰 붕괴 사례 | #probability-item #mmorpg #regulation #trust-failure #korea #cautionary | 07-28
-- GAME-026 | Bloons TD 6 (2018, Ninja Kiwi) | 정해진 경로와 타워 업그레이드 트리 중심의 정통 타워 디펜스로 장르의 상업적 기준을 세운 작품 | #tower-defense #mobile #pc #broad-appeal #non-random | 07-28
-- GAME-027 | Rogue Tower (2022, Die of Death Games) | 무작위 갈래 경로와 400장 이상의 카드 드래프트로 로그라이크와 타워 디펜스를 결합한 인디작 | #tower-defense #roguelike #randomness #indie #divisive | 07-29
-- GAME-028 | Destiny 2 (2017, Bungie / Activision) | 무작위 퍼크 롤을 빼고 출시했다가 Forsaken 확장에서 되살려 플레이어 수를 3배로 끌어올렸지만, 매출 기대치는 채우지 못한 루트 슈터 | #looter-shooter #fps #live-service #random-rolls #divisive #aaa | 07-29
-- GAME-029 | Warframe (2013, Digital Extremes) | 규제가 강제하기 전에 전체 드롭 테이블을 자발적으로 공개해 확률 투명성을 브랜드로 만든 부분유료 루트 슈터 | #looter-shooter #free-to-play #transparency #drop-table #live-service #long-tail | 07-29
-- GAME-030 | Slay the Spire (2019, Mega Crit) | 전투마다 제시된 카드 중 하나만 골라 덱을 키워가는 구조로 로그라이크 덱빌더라는 군집 자체를 만들어낸 원형작 | #roguelike #deckbuilder #randomness #indie #replayability #broad-appeal | 07-29
-- GAME-031 | Balatro (2024, LocalThunk / Playstack) | 누구나 아는 포커 족보를 바탕으로 쓰고 그 위에 조커 조합을 얹어, 익명 1인 개발로 500만 장을 판 로그라이트 | #roguelite #deckbuilder #poker #solo-dev #indie #rating-controversy #broad-appeal | 07-29
-- GAME-032 | LIMBO (2010, Playdead) | 흑백 실루엣과 침묵만으로 공포를 만든 횡스크롤 퍼즐 플랫포머의 원형작 | #horror #side-scroller #puzzle-platformer #indie #atmosphere #monochrome | 07-30
-- GAME-033 | Little Nightmares III (2025, Supermassive Games / Bandai Namco) | 분위기는 그대로였지만 반복된 공식과 겉도는 신규 메커닉으로 시리즈 최저 평가를 받은 후속작 | #horror #side-scroller #sequel #divisive #formula-fatigue | 07-30
-- GAME-034 | Wildfrost (2023, Deadpan Games & Gaziter / Chucklefish) | 카드 궁합과 타일 배치를 결합한 턴제 로그라이크 덱빌더로, 소규모 팀이 출시 첫 해에 대형 판매고를 올린 인디 성공 사례 | #deckbuilder #roguelike #indie #turn-based #card-synergy | 07-31
-- GAME-035 | Darkwood (2017, Acid Wizard Studio) | 손전등 없이 시야가 닿는 원 안에서만 세상이 보이는 탑다운 생존 공포로, 오랜 얼리액세스를 거쳐 흥행에 성공한 인디작 | #horror #survival #top-down #indie #light-mechanic | 07-31
-- GAME-036 | Signalis (2022, rose-engine / Humble Games) | 제한된 손전등 시야와 그림다크 SF 톤을 결합한 도트 그래픽 생존 공포로, 소규모 독일 스튜디오의 원작임에도 압도적 긍정 평가를 받은 작품 | #horror #survival #grimdark #indie #pixel #light-mechanic | 07-31
-- GAME-037 | Vampire Survivors (2022, poncle) | 무기 조합이 곱해지며 화면을 뒤덮는 폭발적 스케일링을 코어로 삼아, 1인 개발 원형에서 새 장르(서바이버라이크)를 만든 초저가 인디 대히트작 | #survivors-like #roguelite #indie #solo-dev-origin #power-scaling #broad-appeal | 07-31
-- GAME-038 | Buckshot Roulette (2024, Mike Klubnika / Critical Reflex) | 실제 산탄총 러시안 룰렛 규칙을 그대로 빌려와 심리전 아이템만 얹은 초저가 1인 개발 공포 게임으로, 출시 2주 만에 100만 장을 판 바이럴 히트작 | #horror #russian-roulette #solo-dev #indie #viral #low-cost | 07-31
-- GAME-040 | Hades II (2024 얼리액세스 / 2025 정식출시, Supergiant Games) | 전작을 뛰어넘는 평가와 판매로 2025년 최고 평점 게임에 오른 로그라이크 내러티브 속편 | #roguelike #narrative #sequel #early-access #indie #broad-appeal | 07-31
-- GAME-041 | Baldur's Gate 3 (2023, Larian Studios) | 2023년 스팀 최고 판매작이자 그해 최고 평점 게임으로, 선택 기반 분기와 협동 플레이를 결합한 CRPG의 상업·평단 정점 | #crpg #narrative #branching #co-op #aaa #goty #broad-appeal | 08-04
-- GAME-042 | Counter-Strike 2 (2023, Valve) | 20년 프랜차이즈를 새 엔진으로 이전하며 압도적 장기 지표를 지켰지만 출시 초기 판정 신뢰 논란을 겪은 라운드제 슈터 | #fps #tactical-shooter #esports #valve #pvp #mixed-reception | 08-01
-- GAME-043 | Dota 2 (2013, Valve) | 완전 무료 영웅 로스터와 코스메틱 전용 수익화로 10년 넘게 Steam 상위권을 지킨 MOBA | #moba #esports #valve #free-to-play #pvp #long-tail | 08-01
-- GAME-044 | PUBG: BATTLEGROUNDS (2017, PUBG Studios / KRAFTON) | 배틀로얄 장르를 대중화시킨 원조작이지만, 후발주자에 밀리며 리뷰가 Mixed로 굳은 사례 | #battle-royale #free-to-play #krafton #pvp #cheating-controversy | 08-01
-- GAME-045 | Palworld (2024 얼리액세스 / 2026-07-10 정식출시, Pocketpair) | 포켓몬류 생물 포획과 총기 서바이벌 크래프팅을 결합해 1.0 출시 직후 폭발적 판매를 기록한 오픈월드 서바이벌 | #survival #crafting #open-world #creature-collection #co-op #indie #controversy | 08-01
-- GAME-046 | Wuthering Waves (2024, Kuro Games) | 2024년 5월 원 출시 이후 이용자 감소를 겪었으나 2025년 4월 Steam 진출과 3.0 업데이트로 자체 기록을 경신하며 반등한 오픈월드 액션 서브컬쳐 게임 | #subculture #anime #gacha #open-world #action-rpg #live-service | 08-01
-- GAME-047 | Zenless Zone Zero (2024, miHoYo/HoYoverse) | 2024년 7월 타 플랫폼 출시 후 2년 만인 2026년 6월 Steam에 진입하며 높은 동시접속과 긍정 평가를 동시에 얻은 도시 액션 서브컬쳐 게임 | #subculture #anime #gacha #action #urban #live-service #hoyoverse | 08-01
-- GAME-048 | GODDESS OF VICTORY: NIKKE (2022, SHIFT UP / Level Infinite) | 모바일에서는 서브컬쳐 매출 3개월 연속 1위를 기록했지만, 2023년부터 열려 있던 Steam 버전은 사실상 방치되어 있는 플랫폼 격차 사례 | #subculture #anime #gacha #shooter #mobile-first #platform-gap | 08-01
-- GAME-049 | NARAKA: BLADEPOINT (2021, 24 Entertainment / NetEase Games) | 온디바이스 NVIDIA ACE AI 팀원(Viper)을 실제 출시 빌드에 탑재한 무협 배틀로얄 | #battle-royale #ai-native #voice-npc #wuxia #live-service #cross-play | 08-01
-- GAME-050 | Towerful Defense: A Rogue TD (2024, Mini Fun Games) | 단일 타워를 스킬로 직접 조작하며 방어하는 로그라이크 타워 디펜스 - Brotato식 조작을 TD 시점으로 옮긴 하이브리드 | #tower-defense #roguelite #indie #single-tower #skill-based | 08-01
-- GAME-051 | Yet Another Zombie Survivors (2023 얼리액세스 / 2026-08-20 정식출시 예정, Awesome Games Studio) | 최대 3인 스쿼드를 동시 조작하는 변주로, 단일 캐릭터 자동전투가 관례인 서바이버라이크 장르에 새 조작 축을 더한 좀비 서바이벌 | #survivors-like #bullet-heaven #squad #early-access #zombie | 08-01
-- GAME-052 | Rogue Defense: Hybrid Tower TD (2025, CyberJoy Games) | 사이버펑크 로그 AI 세계관 위에 무작위 웨이브와 무기 시너지를 결합한 모바일 로그라이트 타워 디펜스 | #tower-defense #roguelite #mobile #free-to-play #cyberpunk | 08-05
-- GAME-053 | Last Epoch (2024, Eleventh Hour Games) | 시간여행 서사 위에 방대한 스킬 트리와 파벌 선택형 아이템 경제를 얹은 시즌제 핵앤슬래시 ARPG | #arpg #hack-and-slash #loot #season #league #solo-dev-origin #broad-appeal | 08-05
-- GAME-054 | Dominocalypse (출시 예정, Barely Cohesive Games) | 도미노 타일 밀기·매칭에 로그라이크 아티팩트 빌드와 절차적 보드 생성을 결합한 출시 예정작 | #roguelike #deckbuilder #tile-matching #domino #indie #upcoming | 08-10
-- GAME-055 | Loop Hero (2021, Four Quarters / Devolver Digital) | 루프 경로에 타일을 배치하는 결정만 남기고 전투는 완전 자동으로 흘러가는, 반복 메커닉 위 솔로 PvE 오토배틀러의 원형작 | #roguelike #auto-battle #loop-mechanic #indie #solo-pve #broad-appeal | 08-10
-- GAME-056 | Factorio (2020, Wube Software) | 생물 포획 없이 컨베이어 벨트·인서터 물류망만으로 생산 사슬을 설계하는 팩토리 자동화 빌더 장르의 원형작 | #automation #factory #production-chain #logistics #conveyor-belt #no-creature-capture #indie #sandbox | 08-10
-
-## ④ 신호
-- SIGNAL-2026-07-14_steam_trend | 주간 관측 (2026-07-07 ~ 2026-07-14) | [반영(2026-07-27)] Steam AI 공개(disclosure) 데이터 분석(Substack 'Three years of AI on Steam' 외 보도 종합), games-stats.com Steam 신작 캘린더, 웹 검색 종합(재조사: 2026-07-27) |  | 07-14
-- SIGNAL-2026-07-20_ai_native_signals | 주간 관측 (2026-07-14 ~ 2026-07-20) | [반영(2026-07-20)] Steam 리뷰 집계(games-stats.com 경유), inZOI 공식 Steam 뉴스 'Fundamentals First & 2026 Roadmap', SteamDB 패치노트, 팬사이트 simscommunity.info, SteamDB/Tom's Hardware AI 태그 집계 보도, Frisson Labs 블로그 |  | 07-20
-- SIGNAL-2026-07-25_genre_element_weekly | 주간 관측 (2026-07-20 ~ 2026-07-25) | [반영(2026-07-27)] GAMES.GG 7월 코지 출시 정리, Cozy Game Reviews 2026 Steam 코지 신작 집계, Outrun Gaming Wholesome Direct 2026 정리, simscommunity.info inZOI 개발일지 보도(07-04/07-17/07-24), Gaming.net·wasdland.com Steam 샌드박스/오픈월드 리스트 |  | 07-25
-- SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals | 주간 관측 (2026-07-20 ~ 2026-07-27) | [반영(2026-07-27)] Diablo IV 공식 패치노트(Blizzard News/Forums), Dexerto/Tech4Gamers 등 유출 보도, RPG Site/Worthplaying(Darkest Dungeon DLC 보도), TechTimes/GameGrin(다크 판타지 신작 집계), NVIDIA GeForce News/PCGamer(AI NPC 기술), 웹 검색 종합 |  | 07-27
-- SIGNAL-2026-07-31_td_deckbuilder_survivors_signals | 주간 관측 (2026-07-27 ~ 2026-07-31) | [반영(2026-08-02)] Blizzard 공식 패치노트/MP1st(Diablo IV), itch.io devlog/Google Play/Bleeding Cool(로그라이트 TD 신작·업데이트), Balatro Wiki(버전 갱신), Saving Content(Yet Another Zombie Survivors), 웹 검색 종합 |  | 07-31
-- SIGNAL-2026-08-07_arpg_td_deckbuilder_signals | 주간 관측 (2026-08-01 ~ 2026-08-07) | [반영(2026-08-09)] Blizzard 공식 뉴스(news.blizzard.com, Diablo IV 3.2.0 PTR), Steam 상점 페이지(Gods & Gore, Dominocalypse), Rogueliker.com(2026년 8월 로그라이크/로그라이트 월간 정리), TechTimes/GameSpew/ButWhyTho(Beast of Reincarnation 출시·리뷰), 웹 검색 종합 |  | 08-07
-
-## ⑤ 아키텍처
-- ARCH-001 | 이벤트 버스 (EventBus / Pub-Sub) | 시스템끼리 직접 부르지 않고, 가운데 방송국(EventBus)에 사건을 방송하면 듣고 싶은 쪽만 구독해서 반응하는 느슨한 연결 구조 | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-31
-- ARCH-002 | 씬 스트리밍 (Boot / World_Base / Chunk Additive 구조) | 게임을 한 덩어리 씬으로 만들지 않고 시작·상시·조각 세 종류로 쪼갠 뒤, 필요한 조각만 덧붙여 켜고 끄는 월드 구성 방식 | #scene #streaming #additive #open-world #core #unity #2d | 07-29
-- ARCH-003 | 청크 로더 (3x3 활성 규칙) | 플레이어가 선 칸을 중심으로 주변 3x3 청크만 켜두고, 벗어난 칸은 꺼서 넓은 세계를 일정한 비용으로 유지하는 로딩 관리자 | #streaming #chunk #world #performance #open-world #unity #2d | 07-29
-- ARCH-004 | 세이브 시스템 (JSON 직렬화) | 게임 상태를 사람이 읽을 수 있는 JSON 문서로 바꿔 플랫폼별 저장 경로에 안전하게 기록하고 되살리는 구조 | #save #persistence #json #core #unity #data | 07-29
-- ARCH-005 | NPC 상태머신 (Idle / Patrol / Talk) | NPC의 행동을 여러 개의 '상태'로 나누고 한 번에 하나만 켜지게 해서, 조건에 따라 상태를 갈아타는 방식으로 행동을 만드는 구조 | #npc #fsm #state-machine #ai-behavior #unity #2d | 07-29
-- ARCH-006 | 상호작용 (IInteractable 인터페이스 + Trigger) | 말 걸기·줍기·열기처럼 서로 다른 행동을 '상호작용할 수 있다'는 하나의 약속으로 묶어, 플레이어가 대상의 정체를 몰라도 다룰 수 있게 하는 구조 | #interaction #interface #trigger #player #unity #2d | 07-29
-- ARCH-007 | 해설자 파이프라인 (구독 → 반응 생성 → 로그) | AI 해설자가 게임 사건 방송을 듣고, 반응을 만들고, 반드시 한 줄 로그를 남기는 3단 처리 흐름 | #commentator #ai #pipeline #logging #core #unity | 08-01
-- ARCH-008 | 폴더·네이밍 규약 | 새 파일을 어디에 두고 무슨 이름을 붙일지 미리 정해두어, 사람과 AI가 매번 고민하거나 서로 다르게 놓는 일을 없애는 약속 | #convention #naming #folder #project-structure #unity #workflow | 07-29
-- ARCH-009 | 2D 물리 이동 (Rigidbody2D) | 캐릭터를 좌표로 순간이동시키지 않고 물리 엔진에 '이렇게 움직여 달라'고 부탁해서, 벽과 충돌이 제대로 동작하게 만드는 이동 방식 | #physics #rigidbody2d #movement #player #unity #2d | 07-29
-- ARCH-010 | 로그 규약 (QA 판정용) | 게임이 남기는 기록의 형식과 위치를 미리 못 박아, QA AI가 사람의 감각이 아니라 관찰 가능한 증거로 합격·불합격을 판정할 수 있게 하는 약속 | #logging #convention #qa #verification #observability #unity | 07-29
-- ARCH-011 | Boot 부트스트랩 & 매니저 수명 (DontDestroyOnLoad) | 게임이 켜질 때 딱 한 곳에서만 관리자들을 만들고, 그 관리자들만 씬이 바뀌어도 죽지 않게 남겨서 '누가 언제까지 살아 있는가'를 헷갈리지 않게 하는 방식 | #bootstrap #lifetime #manager #scene #core #unity | 07-31
-- ARCH-012 | Data/ 데이터 자산 규약 (ScriptableObject 테이블) | 아이템 능력치나 확률표 같은 설정값을 코드 안에 박아넣지 않고 프로젝트의 데이터 파일로 따로 빼서, 코드를 안 고치고도 수치를 바꿀 수 있게 하는 규칙 | #data #scriptableobject #convention #balance #unity #authoring | 07-30
-- ARCH-013 | 2D 카메라 추적 (Cinemachine 3 + 경계 제한 + 픽셀 퍼펙트) | 카메라를 캐릭터에 그냥 붙이지 않고 '따라가는 전용 부품'에 맡겨서, 부드럽게 쫓아가면서도 월드 밖 빈 공간은 보여주지 않게 만드는 방식 | #camera #cinemachine #pixel-perfect #2d #unity #world-base | 07-30
-- ARCH-014 | UI 캔버스 구조 (World_Base 정적/동적 분리) | 화면 UI를 한 덩어리로 두지 않고 '거의 안 변하는 것'과 '자주 변하는 것'으로 나눠 담아서, 체력바 한 칸 바뀔 때 화면 전체를 다시 그리지 않게 하는 배치 | #ui #canvas #performance #world-base #unity #structure | 07-30
-- ARCH-015 | 오브젝트 풀링 (UnityEngine.Pool ObjectPool<T>) | 총알·이펙트처럼 자주 생기고 사라지는 오브젝트를 매번 만들고 없애지 않고, 미리 만들어둔 재고를 빌렸다 반납하는 방식으로 순간적인 성능 부담을 없애는 구조 | #pooling #performance #objectpool #bullet #vfx #unity | 07-31
-- ARCH-016 | 입력 시스템 (Input System 패키지 + InputActionAsset) | 키보드·게임패드 같은 서로 다른 장치의 버튼을 코드에 흩어 적지 않고, '이동'·'상호작용' 같은 행동 이름 하나에 여러 장치의 입력을 미리 묶어두는 입력 처리 구조 | #input #inputsystem #inputaction #player #unity #2d | 07-31
-- ARCH-017 | 오디오 매니저 (AudioSource 풀 + BGM/SFX 분리) | 소리를 재생할 때마다 AudioSource를 새로 만들지 않고, BGM 전용과 SFX 풀을 미리 나눠 관리해서 겹쳐 재생되는 효과음도 끊기지 않게 하는 구조 | #audio #sfx #bgm #pooling #singleton #unity | 07-31
-- ARCH-018 | 게임 매니저 (전역 게임 상태: Playing / Paused / GameOver) | 지금 게임이 진행 중인지, 멈춰 있는지, 끝났는지를 여러 스크립트가 각자 판단하지 않고, 딱 한 곳(GameManager)이 들고 있다가 물어보면 답해주는 구조 | #gamemanager #singleton #game-state #core #unity #2d | 07-31
-- ARCH-020 | 애니메이션 상태 머신 (Animator Controller / Animation State Machine) | 캐릭터의 애니메이션 클립을 코드에서 직접 재생하지 않고, 상태(State)와 전환 조건(Transition)으로 미리 짜둔 그래프에 맡겨 파라미터만 바꾸면 알맞은 동작이 자동으로 이어지게 하는 구조 | #animation #animator #state-machine #unity #pattern #player | 07-31
-- ARCH-021 | 인벤토리 시스템 (Inventory / Item Database, ScriptableObject 기반) | 아이템의 '정의'(이름, 아이콘, 능력치)와 '보유 상태'(개수, 내구도)를 분리해, 데이터 자산 하나로 여러 캐릭터·슬롯이 같은 아이템 정보를 공유하게 만드는 구조 | #inventory #item #scriptableobject #rpg #unity #pattern | 07-31
-- ARCH-022 | 어셈블리 정의 모듈 경계 (Assembly Definition / asmdef) | 스크립트 폴더마다 어셈블리 정의 파일을 두어 모듈의 경계와 의존 방향을 컴파일러가 강제하게 만드는 프로젝트 분할 규약 | #asmdef #module #dependency #compile-time #convention #unity #project-structure | 08-02
-- ARCH-023 | 게임 흐름 구조 (Boot → 타이틀 → 플레이 → 결과 씬 전이) | 씬을 아무 스크립트나 부르지 않고 흐름 담당자 한 곳이 허용된 전이만 비동기로 수행하게 만드는 게임 전체 골격 | #scene-flow #game-loop #loadsceneasync #structure #unity #core | 08-02
-- ARCH-024 | 타일맵 레벨 구조 (Grid + 다중 Tilemap + Composite Collider 2D) | 2D 맵을 스프라이트 오브젝트로 하나씩 놓지 않고 격자 위 여러 겹의 타일맵으로 나눠 그리기·충돌·판정을 겹별로 분리하는 레벨 구성 방식 | #tilemap #grid #collider #level-design #2d #unity #performance | 08-02
-- ARCH-025 | 2D 정렬 순서 규약 (Sorting Layer / Order in Layer / Y축 정렬) | 2D에서 무엇이 무엇 앞에 그려지는지를 개별 오브젝트의 좌표 조정이 아니라 프로젝트 전체가 공유하는 정렬 층과 축 규칙으로 정하는 약속 | #sorting #sprite #render-order #convention #2d #unity | 08-02
-- ARCH-026 | 스프라이트 아틀라스 & 드로우콜 배칭 (Sprite Atlas) | 흩어진 스프라이트를 큰 텍스처 한 장으로 묶어 GPU에 보내는 그리기 요청 횟수를 줄이는 자산 묶음 규약 | #sprite-atlas #draw-call #batching #performance #2d #unity #asset | 08-02
-- ARCH-027 | URP 2D 라이팅 (2D Renderer + Light 2D + Shadow Caster 2D) | 2D 화면의 밝기와 분위기를 스프라이트에 그려 넣지 않고 조명 오브젝트와 정렬 레이어별 영향 범위로 조립하는 렌더링 구조 | #lighting #urp #light2d #rendering #2d #unity #atmosphere | 08-02
-- ARCH-028 | 피격·대미지 인터페이스 (IDamageable + 체력 컴포넌트) | 때리는 쪽이 맞는 쪽의 정체를 모르게 '피해를 받을 수 있다'는 하나의 약속으로 묶어, 적·플레이어·상자를 같은 방식으로 다루는 전투 구조 | #combat #damage #interface #health #pattern #unity #2d | 08-02
+## 등록 ID (기계 조회용)
+- ① 요소: ELEM-001 ELEM-002 ELEM-003 ELEM-004 ELEM-005 ELEM-006 ELEM-007 ELEM-008 ELEM-009 ELEM-010 ELEM-011 ELEM-012 ELEM-013 ELEM-014 ELEM-015 ELEM-016 ELEM-017 ELEM-018 ELEM-019 ELEM-020 ELEM-021 ELEM-022 ELEM-023 ELEM-025 ELEM-027 ELEM-028 ELEM-029 ELEM-031 ELEM-032 ELEM-033 ELEM-034 ELEM-035 ELEM-036 ELEM-037 ELEM-038 ELEM-039 ELEM-040 ELEM-041 ELEM-042 ELEM-043 ELEM-044 ELEM-045 ELEM-046 ELEM-047
+- ② 장르: GENRE-001 GENRE-002 GENRE-003 GENRE-004 GENRE-005 GENRE-006 GENRE-007 GENRE-008 GENRE-009 GENRE-010 GENRE-011 GENRE-012 GENRE-013 GENRE-014 GENRE-015 GENRE-016 GENRE-017 GENRE-018 GENRE-019 GENRE-020 GENRE-021 GENRE-022 GENRE-023 GENRE-024 GENRE-025 GENRE-026 GENRE-027 GENRE-028 GENRE-029 GENRE-030 GENRE-031 GENRE-032 GENRE-033 GENRE-034 GENRE-035 GENRE-036 GENRE-037 GENRE-038 GENRE-039
+- ③ 게임: GAME-001 GAME-002 GAME-003 GAME-004 GAME-005 GAME-006 GAME-007 GAME-008 GAME-009 GAME-010 GAME-011 GAME-012 GAME-013 GAME-014 GAME-015 GAME-016 GAME-017 GAME-018 GAME-019 GAME-020 GAME-021 GAME-022 GAME-023 GAME-024 GAME-025 GAME-026 GAME-027 GAME-028 GAME-029 GAME-030 GAME-031 GAME-032 GAME-033 GAME-034 GAME-035 GAME-036 GAME-037 GAME-038 GAME-040 GAME-041 GAME-042 GAME-043 GAME-044 GAME-045 GAME-046 GAME-047 GAME-048 GAME-049 GAME-050 GAME-051 GAME-052 GAME-053 GAME-054 GAME-055 GAME-056
+- ④ 신호: SIGNAL-2026-07-14_steam_trend SIGNAL-2026-07-20_ai_native_signals SIGNAL-2026-07-25_genre_element_weekly SIGNAL-2026-07-27_dark_fantasy_and_ai_native_signals SIGNAL-2026-07-31_td_deckbuilder_survivors_signals SIGNAL-2026-08-07_arpg_td_deckbuilder_signals
+- ⑤ 아키텍처: ARCH-001 ARCH-002 ARCH-003 ARCH-004 ARCH-005 ARCH-006 ARCH-007 ARCH-008 ARCH-009 ARCH-010 ARCH-011 ARCH-012 ARCH-013 ARCH-014 ARCH-015 ARCH-016 ARCH-017 ARCH-018 ARCH-020 ARCH-021 ARCH-022 ARCH-023 ARCH-024 ARCH-025 ARCH-026 ARCH-027 ARCH-028

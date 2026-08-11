@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""sync_db.py - research/*.md (원본) -> Postgres cards/card_refs/digests (거울) 동기화.
+"""sync_db.py - research/*.md (원본) -> Postgres cards/card_sections/card_refs/digests (거울) 동기화.
 
-원칙: md 파일이 원본, DB는 거울. 이 스크립트만이 cards/card_refs/digests에 쓴다.
-- ELEM-###/GAME-###/GENRE-### 카드 -> cards (+ 본문에서 스캔한 ID 언급 -> card_refs)
+원칙: md 파일이 원본, DB는 거울. 이 스크립트만이 거울 테이블에 쓴다.
+- ELEM/GAME/GENRE/ARCH-### 카드 -> cards (+ 본문에서 스캔한 ID 언급 -> card_refs)
+- 카드 본문을 '## ' 절 단위로 쪼개 -> card_sections (검색의 실제 작업 단위)
 - signals/YYYY-MM-DD_*.md (type = "digest") -> digests (digest_date = 파일명 날짜)
 - 파일에서 사라진 카드/다이제스트는 DB에서도 삭제한다 (완전 거울). 단, frontmatter
   파싱에 실패한 파일은 '성공적으로 확인된 상태'가 아니므로 기존 DB 행을 보존한다
   (알 수 없는 상태에서 데이터를 지우지 않는다).
 - embedding/body_hash 컬럼은 건드리지 않는다 - 그건 embed_cards.py의 책임.
+  단 절 본문이 바뀌면 embed_cards가 지문 불일치로 알아서 다시 계산한다.
 
 사용법:
   python tools/sync_db.py [--dsn postgresql://...] [--dry-run]
@@ -28,7 +30,7 @@ BASE = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 sys.path.insert(0, str(BASE))
 from _db import resolve_dsn
-from card_schema import CARD_REQUIRED, DIGEST_REQUIRED
+from card_schema import CARD_REQUIRED, DIGEST_REQUIRED, split_sections
 
 RESEARCH = BASE / "research"
 
@@ -58,7 +60,13 @@ def collect():
     card_rows, digest_rows, errors = [], [], []
     for path_str in glob.glob(str(RESEARCH / "**" / "*.md"), recursive=True):
         path = pathlib.Path(path_str)
-        if path.name == "_index.md":
+        # '_'로 시작하는 파일은 카드가 아니라 운영 문서다 (_index*, _scout_queue,
+        # _automation_state). audit_links.py와 같은 규칙을 쓴다.
+        #
+        # 전에는 _index.md 하나만 건너뛰어서, 나머지 운영 문서가 매번 '프론트매터
+        # 없음'으로 errors에 쌓이고 종료코드 1을 냈다 - 실패가 아닌데 실패로 보이는
+        # 상태였고, 그 탓에 진짜 실패도 같이 무시되기 쉬웠다.
+        if path.name.startswith("_"):
             continue
         rel = str(path.relative_to(BASE))
         try:
@@ -94,6 +102,11 @@ def collect():
                 refs = {r for r in ID_PAT.findall(body) if r != card_id}
                 refs |= {g for g in fm.get("example_games", []) if g != card_id}
 
+                sections = split_sections(body)
+                if not sections:
+                    raise ValueError("표준 사전에 있는 '## ' 절을 하나도 찾지 못함 "
+                                     "(lint_card.py로 절 제목 확인 필요)")
+
                 card_rows.append({
                     "card_id": card_id,
                     "type": str(fm["type"]),
@@ -107,6 +120,7 @@ def collect():
                     "body": body,
                     "file_path": rel,
                     "refs": sorted(refs),
+                    "sections": sections,
                 })
         except Exception as e:
             errors.append((rel, f"{type(e).__name__}: {e}"))
@@ -124,6 +138,19 @@ ON CONFLICT (card_id) DO UPDATE SET
   file_path=EXCLUDED.file_path
 """
 
+# 절은 (card_id, ord)로 upsert하고 남는 꼬리만 자른다.
+#
+# 통째로 DELETE 후 INSERT 하지 않는 이유: 그러면 매 동기화마다 embedding과
+# body_hash가 같이 날아가 embed_cards.py가 전량 재계산을 하게 된다. 본문이 안 바뀐
+# 절의 좌표는 그대로 둬야 '지문 안 바뀐 건 건너뛴다'는 설계가 산다.
+SECTION_UPSERT = """
+INSERT INTO card_sections (card_id, ord, section_key, section_title, body)
+VALUES ($1, $2, $3, $4, $5)
+ON CONFLICT (card_id, ord) DO UPDATE SET
+  section_key=EXCLUDED.section_key, section_title=EXCLUDED.section_title,
+  body=EXCLUDED.body
+"""
+
 DIGEST_UPSERT = """
 INSERT INTO digests (digest_date, period, sources, status, body)
 VALUES ($1::date, $2, $3::text[], $4, $5)
@@ -139,15 +166,30 @@ def build_plan(card_rows, digest_rows):
     (각 $n은 문 안에서 정확히 한 번, 오름차순으로만 등장해야 한다).
     tag가 붙은 문은 실행 후 삭제 건수를 세기 위한 것이다.
     """
+    # 같은 SQL을 연달아 놓는다 (카드별 인터리브가 아니라 단계별로).
+    #
+    # execute_pg가 '연속된 같은 문'을 execute_batch 한 번으로 묶기 때문에, 이 순서가
+    # 곧 왕복 횟수다. 카드별로 섞어 놓으면 162장 × 약 12문 ≈ 2,000회 왕복이 되고
+    # 원격 Neon에서는 그것만으로 수 분이 걸린다. 단계별로 모으면 8회 남짓이다.
+    #
+    # 단계 순서는 의미상 지켜야 한다: refs는 지운 뒤 다시 넣고, 절은 upsert한 뒤
+    # 꼬리를 자른다. 단계 사이 순서만 맞으면 단계 안의 순서는 상관없다.
     plan = []
-    for c in card_rows:
-        plan.append((CARD_UPSERT, [c["card_id"], c["type"], c["title"], c["summary"],
-                                   c["tags"], c["elements"], c["genres"],
-                                   c["updated"], c["confidence"], c["body"], c["file_path"]], None))
-        plan.append(("DELETE FROM card_refs WHERE from_id = $1", [c["card_id"]], None))
-        for to_id in c["refs"]:
-            plan.append(("INSERT INTO card_refs (from_id, to_id) VALUES ($1, $2) "
-                         "ON CONFLICT DO NOTHING", [c["card_id"], to_id], None))
+    plan += [(CARD_UPSERT, [c["card_id"], c["type"], c["title"], c["summary"],
+                            c["tags"], c["elements"], c["genres"],
+                            c["updated"], c["confidence"], c["body"], c["file_path"]], None)
+             for c in card_rows]
+    plan += [("DELETE FROM card_refs WHERE from_id = $1", [c["card_id"]], None)
+             for c in card_rows]
+    plan += [("INSERT INTO card_refs (from_id, to_id) VALUES ($1, $2) ON CONFLICT DO NOTHING",
+              [c["card_id"], to_id], None)
+             for c in card_rows for to_id in c["refs"]]
+    plan += [(SECTION_UPSERT, [c["card_id"], ordn, key, title, text], None)
+             for c in card_rows for ordn, key, title, text in c["sections"]]
+    # 절이 줄어든 카드의 꼬리 행 제거 (늘어난 경우는 upsert가 처리한다)
+    plan += [("DELETE FROM card_sections WHERE card_id = $1 AND ord >= $2",
+              [c["card_id"], len(c["sections"])], None)
+             for c in card_rows]
 
     live_card_ids = [c["card_id"] for c in card_rows]
     if live_card_ids:
@@ -179,15 +221,34 @@ def _to_pyformat(sql: str) -> str:
 
 
 def execute_pg(dsn, plan, dry_run=False):
-    """psycopg2(5432)로 계획을 한 트랜잭션에 실행한다."""
+    """psycopg2(5432)로 계획을 한 트랜잭션에 실행한다.
+
+    연속된 같은 SQL은 execute_batch로 묶어 한 번에 보낸다. psycopg2는 문 하나마다
+    서버 응답을 기다리므로, 원격 Neon에서는 왕복 지연이 실행 시간의 전부다.
+    rowcount를 봐야 하는 문(tag가 붙은 것)은 묶지 않고 따로 실행한다 -
+    execute_batch의 rowcount는 마지막 배치 것이라 신뢰할 수 없다.
+    """
     counts = {}
     conn = psycopg2.connect(dsn)
     try:
         cur = conn.cursor()
-        for sql, params, tag in plan:
-            cur.execute(_to_pyformat(sql), params)
+        i = 0
+        while i < len(plan):
+            sql, params, tag = plan[i]
             if tag:
+                cur.execute(_to_pyformat(sql), params)
                 counts[tag] = cur.rowcount
+                i += 1
+                continue
+            j = i
+            while j < len(plan) and plan[j][0] == sql and plan[j][2] is None:
+                j += 1
+            batch = [p for _, p, _ in plan[i:j]]
+            if len(batch) == 1:
+                cur.execute(_to_pyformat(sql), batch[0])
+            else:
+                psycopg2.extras.execute_batch(cur, _to_pyformat(sql), batch, page_size=200)
+            i = j
         conn.rollback() if dry_run else conn.commit()
         cur.close()
     except Exception:
@@ -214,6 +275,16 @@ def execute_https(plan, dry_run=False):
         db_dates = {str(r["d"])[:10] for r in https_query("SELECT digest_date::text AS d FROM digests")}
         return {"deleted_cards": len(db_cards - live_cards),
                 "deleted_digests": len(db_dates - live_dates)}
+
+    # HTTPS 경로는 계획 전체를 한 요청 본문에 담는다. 카드가 늘면 본문에 카드 전문이
+    # 전부 실려 수 MB가 되고, 어느 지점에서 Neon HTTP 한도에 걸린다. 조용히 잘리는
+    # 것보다 여기서 크게 실패하는 편이 낫다 - 5432가 열려 있으면 그쪽이 정답이다.
+    approx_mb = sum(len(sql) + sum(len(str(x)) for x in params)
+                    for sql, params, _ in plan) / 1_000_000
+    if approx_mb > 4:
+        raise RuntimeError(
+            f"HTTPS 경로로 보내기엔 계획이 너무 큼(약 {approx_mb:.1f}MB). "
+            "5432(psycopg2) 경로를 쓰거나(--transport pg), 카드를 나눠 동기화할 것.")
 
     results = https_transaction([(sql, params) for sql, params, _ in plan])
     counts = {}
@@ -268,8 +339,10 @@ def main():
         mode = "[DRY-RUN, 롤백됨] " if used == "5432" else "[DRY-RUN, 실행 안 함] "
     else:
         mode = ""
+    n_sections = sum(len(c["sections"]) for c in card_rows)
     print(f"{mode}[{used}] cards upsert {len(card_rows)}장 "
           f"(삭제 {counts.get('deleted_cards', 0)}장) | "
+          f"sections upsert {n_sections}개 | "
           f"digests upsert {len(digest_rows)}건 "
           f"(삭제 {counts.get('deleted_digests', 0)}건)")
     if errors:

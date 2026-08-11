@@ -12,14 +12,9 @@ import sys, re, argparse, pathlib, datetime
 import tomllib   # Python 3.11+ 표준 내장. 3.10 이하면: pip install tomli 후 'import tomli as tomllib'
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from card_schema import CARD_REQUIRED as REQUIRED, DIGEST_REQUIRED, TYPE_VOCAB
-
-REQUIRED_SECTIONS = {
-    "ELEM":  ["정의", "성공 사례", "실패 사례", "유저 반응 요약", "조합 궁합", "리스크"],
-    "GAME":  ["한 줄 요약 + 판매·리뷰 수치", "사용한 요소", "성공/실패 원인", "우리 프로젝트 시사점"],
-    "GENRE": ["구성 요소", "시장 포화도", "관례와 기대치", "빈칸"],
-    "ARCH":  ["문제", "구조", "핵심 규칙", "Unity 구현 절차", "안티패턴", "검증 방법", "조합 궁합"],
-}
+from card_schema import (CARD_REQUIRED as REQUIRED, DIGEST_REQUIRED, TYPE_VOCAB,
+                         KIND_SECTIONS, SECTION_KEY, SECTION_TITLES, section_title,
+                         SOURCE_OPENERS, INTERP_MARKS)
 
 ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE|ARCH)-\d{3}\b")
 METRIC = re.compile(r"\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?%|\d+(?:만|천억|억|천)\b|\d{4,}|\d{2,}(?:점|장|건|fps)")
@@ -90,9 +85,31 @@ def check_numbers(body):
             continue
         clean = ID_PAT.sub("", blk)
         nums = [n for n in METRIC.findall(clean) if not DATEISH.match(n)]
-        if nums and "[출처" not in blk and "[해석]" not in blk:
+        marked = (any(o in blk for o in SOURCE_OPENERS)
+                  or any(m in blk for m in INTERP_MARKS))
+        if nums and not marked:
             errs.append(f"출처/해석 없는 지표 {nums[:3]}  <- \"{blk[:40]}...\"")
     return errs
+
+# 다이제스트(신호)의 '연결' 절은 구조상 전부 제안이다.
+#
+# 신호 파일은 세 절 고정이다: `## 기간 / 수집원`, `## 관측 사실만`,
+# `## 연결 (제안 - 편집자 확정 필요)`. 앞의 둘은 출처가 붙은 관측이고, 마지막은
+# 그 관측을 어느 카드에 반영할지 제안하는 편집 메모라 관측 수치를 되풀이한다.
+#
+# 그 되풀이에 출처를 요구하면 고칠 수 없는 실패가 남는다 — 신호 파일은
+# **추가 전용이고 수정 금지**이기 때문이다(README 3곳에 명시). 고칠 수 없는
+# 파일을 계속 실패시키면 저장소가 깨끗한 lint 상태에 영영 도달하지 못하고,
+# 그러면 진짜 실패도 같이 묻힌다.
+DIGEST_PROPOSAL_HEADING = "## 연결"
+
+
+def facts_only(body: str) -> str:
+    """다이제스트에서 관측 부분만 남긴다 (제안 절 이후를 자른다)."""
+
+    head, sep, _ = body.partition(DIGEST_PROPOSAL_HEADING)
+    return head if sep else body
+
 
 def check_refs(fm, body, index_ids):
     self_id = str((fm or {}).get("card_id", ""))
@@ -115,10 +132,35 @@ def load_index_ids(index_path):
     return {m.group(0) for m in ID_PAT.finditer(text)}
 
 def check_sections(card_id, body):
-    found = [l[3:].rstrip() for l in body.splitlines() if l.startswith("## ")]
-    need = REQUIRED_SECTIONS.get(card_id.split("-")[0], [])
-    errs  = [f"필수 절 누락: ## {s}" for s in need if s not in found]
-    errs += [f"사전에 없는 절 제목: ## {f}" for f in found if f not in need]  # 오타·변형 탐지
+    """절 검사는 제목이 아니라 section_key로 한다.
+
+    제목은 한국어/영어 둘 다 받는다 - 카드 168장을 한 번에 번역할 수 없으므로
+    전환 기간에는 언어가 섞이고, 그 상태에서도 검사가 돌아야 한다.
+    다만 **한 카드 안에서** 섞이는 건 반쯤 옮기다 만 것이므로 오류로 잡는다.
+    """
+    found_titles = [l[3:].rstrip() for l in body.splitlines() if l.startswith("## ")]
+    need = KIND_SECTIONS.get(card_id.split("-")[0], [])
+
+    errs, found_keys, langs = [], [], set()
+    for t in found_titles:
+        key = SECTION_KEY.get(t)
+        if key is None:
+            errs.append(f"사전에 없는 절 제목: ## {t}")   # 오타·변형 탐지
+            continue
+        found_keys.append(key)
+        langs |= {lang for lang, title in SECTION_TITLES[key].items() if title == t}
+
+    errs += [f"필수 절 누락: ## {section_title(k)}" for k in need if k not in found_keys]
+    errs += [f"이 종류({card_id.split('-')[0]})에 없는 절: ## {section_title(k)}"
+             for k in found_keys if k not in need]
+    # 같은 절이 두 번 나오면 card_sections에서 같은 section_key가 중복된다.
+    # (card_id, ord) 기본키라 저장은 되지만, 절 단위 필터가 어느 쪽을 뜻하는지
+    # 모호해진다 - 카드 안에서 절은 유일해야 한다.
+    errs += [f"절 중복: ## {section_title(k)}"
+             for k in sorted(set(found_keys)) if found_keys.count(k) > 1]
+    if len(langs) > 1:
+        errs.append(f"한 카드 안에서 절 제목 언어가 섞임: {sorted(langs)} "
+                    "(번역이 중단된 카드일 수 있음)")
     # 뒤 공백 탐지 (정확 일치를 깨뜨리는 주범)
     errs += [f"절 제목 뒤 공백: '## {l[3:]}'" for l in body.splitlines()
              if l.startswith("## ") and l != l.rstrip()]
@@ -134,9 +176,11 @@ def main():
     fail = False
     for card in a.cards:
         fm, body, errs = load_card(card)
+        is_digest = fm is not None and str(fm.get("type", "")).strip() == "digest"
         if fm is not None:
-            errs += check_frontmatter(fm) + check_numbers(body)
-        if str(fm.get("type", "")).strip() != "digest":
+            errs += check_frontmatter(fm)
+            errs += check_numbers(facts_only(body) if is_digest else body)
+        if not is_digest:
             errs += check_sections(fm.get("card_id", ""), body)
             if index_ids:
                 errs += check_refs(fm, body, index_ids)

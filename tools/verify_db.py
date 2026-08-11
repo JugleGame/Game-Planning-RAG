@@ -70,6 +70,9 @@ def main():
                              ["kind", "n"])))
     print("card_refs:", r.q("SELECT count(*) AS n FROM card_refs", ["n"])[0][0])
     print("digests:", r.q("SELECT count(*) AS n FROM digests", ["n"])[0][0])
+    print("sections:", dict(r.q("SELECT section_key, count(*) AS n FROM card_sections "
+                                "GROUP BY section_key ORDER BY section_key",
+                                ["section_key", "n"])))
 
     unresolved = r.q("SELECT missing_card, referenced_by FROM unresolved_refs",
                      ["missing_card", "referenced_by"])
@@ -78,7 +81,13 @@ def main():
         print(f"  - {missing} <- {refs}")
 
     n_embedded = r.q("SELECT count(*) AS n FROM cards WHERE embedding IS NOT NULL", ["n"])[0][0]
+    n_sec_emb = r.q("SELECT count(*) AS n FROM card_sections WHERE embedding IS NOT NULL",
+                    ["n"])[0][0]
+    n_sec = r.q("SELECT count(*) AS n FROM card_sections", ["n"])[0][0]
     print(f"embedding 채워진 카드: {n_embedded}")
+    print(f"embedding 채워진 절: {n_sec_emb} / {n_sec}")
+    if n_sec_emb < n_sec:
+        print("  ! 좌표 없는 절이 있다 - tools/embed_cards.py 실행 필요", file=sys.stderr)
 
     if a.like:
         rows = r.q(

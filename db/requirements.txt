@@ -1,2 +1,18 @@
 psycopg2-binary>=2.9
 sentence-transformers>=3.0
+
+# GPU 인코딩 (선택)
+#
+# 기본 설치의 torch는 CPU 빌드다. tools/embed_cards.py --device auto 는 GPU가
+# 보이면 자동으로 쓰지만, CPU 빌드에서는 GPU가 보이지 않는다.
+#
+# CUDA 빌드로 교체 (드라이버에 맞는 채널을 고를 것 - cu126 / cu128 / cu130):
+#   pip install --upgrade torch --index-url https://download.pytorch.org/whl/cu130
+# 되돌리기:
+#   pip install --upgrade torch --index-url https://download.pytorch.org/whl/cpu
+#
+# 확인:
+#   python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+#
+# VRAM이 6GB 미만이면 embed_cards.py가 fp16 + 배치 8로 자동 조정한다
+# (bge-m3는 568M 파라미터라 fp32로는 4GB급 노트북 GPU에서 OOM이 난다).

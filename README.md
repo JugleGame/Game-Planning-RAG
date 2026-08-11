@@ -53,7 +53,8 @@ research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patc
 │   ├── 4_updater.md                #   신호를 기존 카드 patch 제안으로 변환
 │   └── 5_linker.md                 #   새 카드가 연 간극을 기존 카드 쪽 patch 제안으로 변환
 ├── research/                       # ★ 지식 베이스 (5계층 카드 DB)
-│   ├── _index.md                   #   라우팅 인덱스 겸 ID 등록부 — 직접 수정 금지, build_index.py가 재생성
+│   ├── _index.md                   #   표지(장수·최근 변경·ID 등록부) — 직접 수정 금지, build_index.py가 재생성
+│   ├── _index_<종류>.md             #   종류별 상세 색인 (element/genre/game/signal/arch) — 한 번에 하나만 연다
 │   ├── _scout_queue.md             #   0_scout이 쌓는 조사 후보 큐 (사람이 [ ]→[x]로 선택)
 │   ├── _automation_state.md        #   야간 자동 실행 상태 기록
 │   ├── elements/                   #   ① 요소: 설계 블록 (ELEM-###)
@@ -69,18 +70,20 @@ research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patc
 │   ├── make_card.py                #   R→W→V→lint 자동 루프(1회 재시도), 결과는 draft/에 저장
 │   ├── lint_card.py                #   카드 한 장이 규격에 맞는가 (frontmatter·필수 절·수치 근거)
 │   ├── audit_links.py              #   카드 사이가 맞물리는가 (한쪽만 생긴 링크·고아·깨진 참조)
+│   ├── check_sections.py           #   카드 전부가 표준 절로 쪼개지는가 (DB 없이, sync_db 전 관문)
 │   └── apply_patch.py              #   4_updater/5_linker의 patch.json을 섹션 단위로 적용
 ├── tools/                          # 인덱스 재생성 + DB 미러링 + 의미 검색
-│   ├── build_index.py              #   카드 frontmatter → research/_index.md 재생성
+│   ├── build_index.py              #   카드 frontmatter → _index.md 표지 + 종류별 색인 재생성
 │   ├── _db.py                      #   DSN 해석 공통 헬퍼
 │   ├── init_db.py                  #   db/00_init_all.sql 실행 (테이블 DROP 포함 — 최초 1회만)
-│   ├── sync_db.py                  #   research/*.md(원본) → cards/card_refs/digests(거울)
-│   ├── embed_cards.py              #   카드 본문 → pgvector 임베딩 (본문 해시로 변경분만)
-│   ├── search_cards.py             #   하이브리드(벡터+트라이그램) 검색 + 반례 자동 조회
+│   ├── sync_db.py                  #   research/*.md(원본) → cards/card_sections/card_refs/digests(거울)
+│   ├── embed_cards.py              #   절+카드 → pgvector 임베딩 (지문 해시로 변경분만)
+│   ├── search_cards.py             #   하이브리드(벡터+트라이그램) **절 단위** 검색 + 반례 자동 조회
 │   ├── verify_db.py                #   행 수·참조 무결성·임베딩 커버리지 점검
 │   └── read_section.py             #   여러 카드에서 같은 절만 잘라 읽기 (토큰 절약)
 ├── db/                             # Postgres(Neon) 스키마 + 443/HTTPS 우회 경로
-│   ├── 00_init_all.sql
+│   ├── 00_init_all.sql             #   빈 DB를 새로 지을 때 (DROP 포함)
+│   ├── 01_migrate_v2.sql           #   살아 있는 DB를 v1(카드 단위) → v2(절 단위)로 (DROP 없음)
 │   ├── neon_https.py
 │   └── requirements.txt
 ├── bridge/                         # neon_https.py가 쓰는 Node.js 브리지(@neondatabase/serverless)
@@ -199,6 +202,62 @@ python tools/search_cards.py "AI가 실시간으로 심문하는 게임"
 - **5432가 막힌 망**: `sync_db.py`·`embed_cards.py`·`verify_db.py`는 `--transport auto`(기본값)로 `bridge/neon_bridge.mjs`를 경유한 443/HTTPS 브리지에 자동 폴백합니다. 출력의 `[5432]` / `[443/HTTPS]` 표시로 어느 경로를 탔는지 확인하세요. HTTPS 경로에서는 `--dry-run`이 실행 없이 예정 건수만 보고합니다.
 - 검색은 **하이브리드**입니다. 의미 임베딩만 쓰면 고유명사(게임 제목)를 뭉개기 때문에, 벡터 검색과 트라이그램 검색의 **순위**를 Reciprocal Rank Fusion으로 합칩니다.
 - `strategy_ai` 롤은 읽기 전용(`SELECT`만) — 이 저장소를 소비하는 외부 에이전트가 쓸 계정입니다.
+
+### 회수 단위는 카드가 아니라 절입니다 (스키마 v2, 2026-08-12)
+
+소비 측(기획 AI)이 아는 계약이 바뀌었습니다.
+
+| | v1 | v2 |
+|---|---|---|
+| 검색 대상 | `cards` (카드 1장 = 1벡터) | `card_sections` (절 1개 = 1벡터) |
+| 임베딩 모델 | `jhgan/ko-sroberta-multitask` | `BAAI/bge-m3` |
+| 창 / 차원 | 128토큰 / 768 | 8192토큰 / 1024 |
+| 반례 정의 | `kind='GAME' AND type IN ('failure','mixed')` | `section_key IN (실패 사례·리스크·안티패턴·시장 포화도·빈칸)` |
+
+v1의 128토큰 창은 카드 임베딩 텍스트(중앙값 811토큰)를 잘라내 **168장 전부에서 카드의
+15.8%만 벡터에 들어가 있었습니다.** `## 실패 사례`·`## 리스크`·`## 안티패턴` 같은 절은
+벡터 공간에 존재한 적이 없어 반례 검색이 구조적으로 불가능했습니다.
+
+절 단위 회수는 주입 토큰도 줄입니다 — 카드 평균 2,075자 대신 절 평균 340자.
+같은 회수 폭에서 약 85% 절감입니다.
+
+`section_key`는 언어 중립 식별자(`card_schema.py`의 `SECTIONS`)입니다. 절 제목을 영어로
+바꿔도 이 키와 그 위에 걸린 질의는 그대로 삽니다.
+
+```bash
+python tools/search_cards.py "덱빌딩 로그라이트의 흔한 실패" --kind GAME --show-body
+python tools/search_cards.py "타워 디펜스 시장 포화" --section-key market_saturation,gaps
+```
+
+**Game-Developer-AI 의 `strategic/research_repo.py`가 이 SQL을 복제합니다.** 테이블·차원·
+모델이 전부 바뀌었으므로 그쪽도 같이 고치지 않으면 같은 질의에 다른 근거가 나옵니다.
+
+### 검색기를 건드리기 전에 재세요
+
+```bash
+python scripts/eval_retrieval.py              # recall@6, 골드셋 eval/queries.json
+python scripts/eval_retrieval.py --mode vector  # 벡터 단독과 비교
+```
+
+2026-07-29 하이브리드 도입 때의 실측(질의 17개)이 코드에 남지 않고 주석 문장으로만
+남아, 이번 개편의 전후 비교가 불가능했습니다. 같은 일이 없도록 골드셋을 파일로
+고정했습니다 — **현재 3개뿐이니 최소 20개까지 채우세요.** 고유명사형과 의역형을
+반드시 섞어야 합니다(한쪽만 있으면 한쪽 검색 팔이 망가져도 점수가 안 떨어집니다).
+
+### 카드 언어 전환 (한국어 → 영어)
+
+절 제목은 언어 중립 `section_key`로 다루므로 두 언어가 섞여 있어도 lint·검색이
+모두 동작합니다. 전환은 카드 단위로 점진적으로 합니다.
+
+```bash
+python scripts/migrate_card_lang.py research/games/*.md --out draft/en
+python scripts/migrate_card_lang.py --out draft/en --apply     # 확인 후
+```
+
+번역 결과는 **수치 집합·카드 ID 집합·출처 태그 수·[해석] 수·절 구성·frontmatter가
+원본과 완전히 일치할 때만** 통과합니다. 하나라도 어긋나면 그 카드는 손대지 않고
+원문 그대로 남습니다. 전부 옮긴 뒤 `card_schema.py`의 `CARD_LANG`을 `"en"`으로
+바꾸면 새 카드가 영어 절 제목을 쓰기 시작합니다(템플릿도 같이 교체).
 
 ## reference/ 폴더에 대해
 
