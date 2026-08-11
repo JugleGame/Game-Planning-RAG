@@ -193,6 +193,54 @@ def process(path, outdir, model):
     return dest, []
 
 
+def verify_against_head(paths):
+    """이미 번역된 카드를 git HEAD 판본과 대조한다 (번역기 없이 검사만).
+
+    ``--out`` 흐름은 이 스크립트가 번역까지 하지만, 사람이나 에이전트가 직접
+    번역해 파일을 갈아끼운 경우에도 **같은 게이트를 통과해야 한다.** 그때 원본은
+    git 이 갖고 있으므로 HEAD 판본과 비교하면 된다 - 별도 사본을 만들 필요가 없다.
+
+    번역기를 부르지 않으므로 ANTHROPIC_API_KEY 가 필요 없다.
+    """
+    import subprocess
+
+    ok, failed = [], []
+    for p in paths:
+        path = pathlib.Path(p).resolve()
+        rel = path.relative_to(BASE).as_posix()
+        try:
+            raw = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=BASE,
+                                 capture_output=True, check=True).stdout.decode("utf-8")
+        except subprocess.CalledProcessError:
+            failed.append((rel, ["HEAD 에 없는 파일 - 새 카드는 이 검사 대상이 아니다"]))
+            continue
+
+        m = FM_PAT.match(raw)
+        if not m:
+            failed.append((rel, ["HEAD 판본에 frontmatter 가 없음"]))
+            continue
+        before = fingerprint(m.group(1), m.group(2))
+
+        m2 = FM_PAT.match(path.read_text(encoding="utf-8"))
+        if not m2:
+            failed.append((rel, ["현재 파일에 frontmatter 가 없음"]))
+            continue
+        after = fingerprint(m2.group(1), m2.group(2))
+
+        problems = diff(before, after)
+        if problems:
+            failed.append((rel, problems))
+            print(f"[FAIL] {rel}")
+            for pr in problems:
+                print("   -", pr)
+        else:
+            ok.append(rel)
+            print(f"[PASS] {rel}")
+
+    print(f"\n통과 {len(ok)}장 / 실패 {len(failed)}장")
+    return failed
+
+
 def apply(outdir):
     """검증을 통과해 outdir에 쌓인 것을 research/ 원위치로 옮긴다."""
     n = 0
@@ -215,7 +263,14 @@ def main():
     ap.add_argument("--out", default="draft/en", help="검증 통과분을 쌓을 디렉터리")
     ap.add_argument("--model", default="claude-opus-5")
     ap.add_argument("--apply", action="store_true", help="--out의 내용을 research/에 반영")
+    ap.add_argument("--verify", action="store_true",
+                    help="번역기를 부르지 않고, 이미 바뀐 카드를 git HEAD 판본과 대조만 한다")
     a = ap.parse_args()
+
+    if a.verify:
+        if not a.cards:
+            sys.exit("검사할 카드 경로를 지정할 것 (예: --verify research/games/*.md)")
+        sys.exit(1 if verify_against_head(a.cards) else 0)
 
     outdir = BASE / a.out
     if a.apply and not a.cards:
