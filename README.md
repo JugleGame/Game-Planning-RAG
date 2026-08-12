@@ -85,7 +85,7 @@ research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patc
 │   ├── neon_https.py
 │   └── requirements.txt
 ├── bridge/                         # neon_https.py가 쓰는 Node.js 브리지(@neondatabase/serverless)
-├── skills/                         # 이식용 Skill 패키지 (Codex용·Claude용 이름을 분리해 유지)
+├── skills/                         # 이식용 Skill 패키지 (Codex는 .skill, Claude 업로드는 .zip)
 └── reports/                        # 설계 결정 기록 (예: ARCH 계층 도입 평가 보고서)
 ```
 
