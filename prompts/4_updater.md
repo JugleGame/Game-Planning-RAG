@@ -13,14 +13,15 @@ but you propose **patches at the section level** rather than rewriting the entir
 3. If a signal conflicts with existing card content, report it as a "conflict" rather than a patch.
    (e.g., Card states "unoccupied," but digest signals the emergence of a competitor → requires human judgment)
 4. If the signal does not warrant a card update, output an empty array. Do not force patches.
-5. `section` must be the card's **literal Korean section title** (e.g. `유저 반응 요약`, `조합 궁합`,
-   `시장 포화도`). A translated or approximated name makes `apply_patch.py` skip the patch silently.
+5. `section` must be the card's **literal English section title** from `card_schema.py`
+   (e.g. `User Reaction Summary`, `Synergy`, `Market Saturation`). An approximated name makes
+   `apply_patch.py` skip the patch silently.
 
 # Output Format (JSON only)
 {
   "patches": [
-    {"card_id": "ELEM-004", "section": "유저 반응 요약", "action": "append",
-     "text": "- Negative: ... [Source: Digest 2026-07-14]",
+    {"card_id": "ELEM-004", "section": "User Reaction Summary", "action": "append",
+     "text": "- Negative: ... [source: Digest 2026-07-14]",
      "reason": "Signal indicating a surge in new titles with the 'Loop Tag'"}
   ],
   "conflicts": [

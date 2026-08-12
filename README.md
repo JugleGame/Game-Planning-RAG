@@ -4,14 +4,12 @@
 검색해 쓸 수 있는 **RAG 지식 베이스**를 만드는 저장소입니다.
 
 이 저장소가 하는 일은 **데이터 수집·검증·미러링 하나**입니다. 게임을 기획하거나 Unity로 구현하거나
-QA로 판정하는 파이프라인은 여기 없습니다(2026-07-31 제거). 그런 작업은 이 저장소를 **읽어 가는 쪽**의
+QA로 판정하는 파이프라인은 여기 없습니다. 그런 작업은 이 저장소를 **읽어 가는 쪽**의
 몫이고, 여기는 읽히는 쪽입니다.
 
 - **원본은 항상 마크다운 파일**입니다. Postgres/pgvector는 검색을 위한 **거울**일 뿐, 없어도 저장소는 동작합니다.
-- **사실과 해석을 문장 단위로 분리**합니다. 수치 주장에는 `[출처: 매체, 날짜 기준]`, 우리 추론에는 `[해석]`을 붙이고 `lint_card.py`가 기계로 검사합니다.
+- **사실과 해석을 문장 단위로 분리**합니다. 수치 주장에는 `[source: publisher, as of date]`, 우리 추론에는 `[interpretation]`을 붙이고 `lint_card.py`가 기계로 검사합니다.
 - **모든 편입은 사람이 승인**합니다. 카드를 쓴 프롬프트가 스스로 통과시키지 않습니다.
-
-현재 규모: 카드 106장(ARCH 20 / ELEM 30 / GAME 40 / GENRE 16) + 주간 신호 4건.
 
 ## 파이프라인
 
@@ -23,7 +21,7 @@ QA로 판정하는 파이프라인은 여기 없습니다(2026-07-31 제거). �
 1_researcher(웹조사 ▶ 증거 JSON) ──▶ 2_writer(카드 초안)
                                 │
             3_validator(적대적 검수) ⇄ scripts/lint_card.py(기계 검사)
-                     │ fail → 사유 되먹여 1회 재시도       │ pass
+                     │ fail → 사유를 집필 단계에 반환      │ pass
                      └─────────────────────────▶ draft/*.md
                                 │
               사람이 검토 후 research/<계층>/ 로 이동 + 커밋
@@ -64,10 +62,10 @@ research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patc
 │   └── architecture/               #   ⑤ 아키텍처: Unity 구현 패턴·규약 (ARCH-###)
 ├── templates/                      # 카드 스키마 템플릿 (Elem/Genre/Game/Arch)
 ├── reference/                      # 카드가 인용하는 근거 문서 (실행 지시서가 아님)
-│   ├── unity_project_baseline.md   #   ARCH 카드 16장이 인용하는 프로젝트 기준 구조·규칙
+│   ├── unity_project_baseline.md   #   ARCH 카드가 인용하는 프로젝트 기준 구조·규칙
 │   └── qa_verification_policy.md   #   ARCH 카드 '검증 방법' 절이 따르는 판정 기준
 ├── scripts/                        # 카드 생산 도구
-│   ├── make_card.py                #   R→W→V→lint 자동 루프(1회 재시도), 결과는 draft/에 저장
+│   ├── make_card.py                #   R→W→V→lint 자동 루프, 결과는 draft/에 저장
 │   ├── lint_card.py                #   카드 한 장이 규격에 맞는가 (frontmatter·필수 절·수치 근거)
 │   ├── audit_links.py              #   카드 사이가 맞물리는가 (한쪽만 생긴 링크·고아·깨진 참조)
 │   ├── check_sections.py           #   카드 전부가 표준 절로 쪼개지는가 (DB 없이, sync_db 전 관문)
@@ -87,7 +85,7 @@ research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patc
 │   ├── neon_https.py
 │   └── requirements.txt
 ├── bridge/                         # neon_https.py가 쓰는 Node.js 브리지(@neondatabase/serverless)
-├── skills/                         # 이식용 Claude Skill 패키지 (R→W→V→L→M→C 전 공정, 최신 버전만 유지)
+├── skills/                         # 이식용 Skill 패키지 (R→W→V→L→M, 최신 버전만 유지)
 └── reports/                        # 설계 결정 기록 (예: ARCH 계층 도입 평가 보고서)
 ```
 
@@ -99,20 +97,20 @@ research/signals/ (주간 관측, 추가 전용) ──▶ 4_updater(섹션 patc
 
 | 계층 | ID | 고정 절 | 갱신 규칙 |
 |---|---|---|---|
-| ① elements | ELEM-### | 정의 / 성공 사례 / 실패 사례 / 유저 반응 요약 / 조합 궁합 / 리스크 | 거의 불변 |
-| ② genres | GENRE-### | 구성 요소 / 시장 포화도 / 관례와 기대치 / **빈칸(기회)** | 신호 반영 시 patch |
-| ③ games | GAME-### | 한 줄 요약+수치 / 사용한 요소 / 성공·실패 원인 / 시사점 | 사건 시 추가 |
-| ④ signals | 날짜 파일명 | 기간 / 수집원 / 관측 사실만 / 연결 제안 | 매주 추가, 수정 금지 |
-| ⑤ architecture | ARCH-### | 문제 / 구조 / 핵심 규칙 / Unity 구현 절차 / 안티패턴 / 검증 방법 / 조합 궁합 | 기준 구조 변경 시 |
+| elements | ELEM-### | Definition / Success Cases / Failure Cases / User Response Summary / Combination Compatibility / Risks | 거의 불변 |
+| genres | GENRE-### | Components / Market Saturation / Conventions and Expectations / Gaps (Opportunities) | 신호 반영 시 patch |
+| games | GAME-### | One-line Summary + Metrics / Elements Used / Success/Failure Factors / Implications | 사건 시 추가 |
+| signals | 날짜 파일명 | Period / Sources / Observations / Link Suggestions | 추가 전용 |
+| architecture | ARCH-### | Problem / Structure / Core Rules / Unity Implementation Steps / Anti-patterns / Verification Methods / Combination Compatibility | 기준 구조 변경 시 |
 
 절 제목은 위 문자열과 **글자까지 일치**해야 합니다(`lint_card.py`가 변형 제목을 잡아냅니다).
 
 ## 카드 작성 표준
 
-- **카드 하나 = 개념 하나, 1페이지 이내.** 넘치면 쪼갭니다.
-- **2단 구성**: TOML frontmatter(`+++ ... +++` — `card_id`, `type`, `title`, `summary`, `tags`, 연결 ID, `updated`, `confidence`) + 고정 순서의 마크다운 절.
-- **모든 수치 주장에 꼬리표**: `[출처: 매체, 날짜 기준]` 또는 `[해석]`. 둘 다 없는 수치는 lint에서 FAIL입니다.
-- **근거가 없으면 빈칸을 빈칸이라고 씁니다**: `<!-- 증거 부족: ... -->` 주석으로 무엇이 없는지 명시합니다.
+- **카드 하나 = 개념 하나.** 범위가 넓으면 카드를 나눕니다.
+- **두 부분으로 구성**합니다: TOML frontmatter(`+++ ... +++` — `card_id`, `type`, `title`, `summary`, `tags`, 연결 ID, `updated`, `confidence`)와 고정 순서의 마크다운 절입니다.
+- **카드 본문과 절 제목은 영어로 작성**합니다. 수치 주장에는 `[source: publisher, as of date]`, 자체 추론에는 `[interpretation]`을 붙입니다.
+- **근거가 없으면 빈칸을 명시**합니다: `<!-- insufficient evidence: ... -->` 주석으로 무엇이 없는지 기록합니다.
 - 참조하는 ID는 `_index.md`에 먼저 등록돼 있어야 합니다(단일 ID 발급처 규칙).
 - **양방향 참조**: GAME이 요소를 지목하면 그 ELEM 카드의 성공/실패 사례에도 그 게임이 있어야 합니다. GENRE의 `example_games`와 GAME의 `genres`도 마찬가지입니다.
 
@@ -145,16 +143,16 @@ python scripts/apply_patch.py patch.json --digest research/signals/YYYY-MM-DD_*.
 검사는 언제든 단독 실행할 수 있습니다:
 
 ```bash
-python scripts/lint_card.py research/*/*.md --index research/_index.md   # 카드 한 장의 규격
+# PowerShell: 경로 배열을 넘겨 전체 카드를 검사
+python scripts/lint_card.py (Get-ChildItem research -Recurse -Filter *.md | Where-Object { $_.Name -notlike '_*' } | ForEach-Object FullName) --index research/_index.md
 python scripts/audit_links.py                                            # 카드 사이의 맞물림
 ```
 
 ## 연결 보강 (audit_links.py + 5_linker)
 
 카드를 새로 쓰면 **새 카드 → 기존 카드** 방향 링크는 생기지만, **기존 카드 → 새 카드** 방향은
-저절로 생기지 않습니다. GAME 카드가 `elements = ["ELEM-021"]`이라고 선언해도 ELEM-021의
-`성공 사례`에는 그 게임이 없는 식입니다. 카드가 100장을 넘으면 이 간극을 눈으로 찾을 수 없습니다.
-(2026-07-31 최초 감사에서 58건이 쌓여 있었습니다.)
+저절로 생기지 않습니다. GAME 카드가 특정 ELEM을 선언해도 해당 ELEM의 `Success Cases` 또는
+`Failure Cases`에 그 게임이 없는 식입니다. 이 간극은 눈으로 추적하지 않고 감사 도구로 찾습니다.
 
 `scripts/audit_links.py`가 그 간극만 기계적으로 찾습니다. `lint_card.py`가 **카드 한 장이 규격에
 맞는가**를 본다면, 이쪽은 **카드 사이가 맞물리는가**를 봅니다.
@@ -177,11 +175,11 @@ python scripts/audit_links.py --strict        # '확인 필요'도 종료코드�
 ```
 
 - **'확인 필요'는 결함이 아닐 수 있습니다.** 카드가 "이 요소는 일부러 쓰지 않았다"고 배제한
-  기록일 수 있습니다. 그런 문장은 `<!-- 증거 부족: ... -->` 주석 안에 두면 감사가 더는 잡지 않습니다
+  기록일 수 있습니다. 그런 문장은 `<!-- insufficient evidence: ... -->` 주석 안에 두면 감사가 더는 잡지 않습니다
   (주석 안의 ID는 '언급'으로 치지 않습니다).
 - 감사 결과를 [prompts/5_linker.md](prompts/5_linker.md)에 넣으면 `apply_patch.py`가 그대로 먹는
   patch.json이 나옵니다. **새 사실을 만들지 않는 것**이 이 프롬프트의 유일한 규칙입니다 — 모든
-  문장은 간극 양쪽 카드에 이미 있는 내용을 `[출처: GAME-### 카드]`로 인용해 옮겨 적을 뿐입니다.
+  문장은 간극 양쪽 카드에 이미 있는 내용을 `[source: GAME-### card]`로 인용해 옮겨 적을 뿐입니다.
 - frontmatter 배열 수정(`genre_example_missing`)은 `apply_patch.py`가 하지 못하므로 5_linker가
   `manual` 목록으로 따로 내보내고, 사람이 직접 고칩니다.
 
@@ -204,23 +202,13 @@ python tools/search_cards.py "AI가 실시간으로 심문하는 게임"
 - 검색은 **하이브리드**입니다. 의미 임베딩만 쓰면 고유명사(게임 제목)를 뭉개기 때문에, 벡터 검색과 트라이그램 검색의 **순위**를 Reciprocal Rank Fusion으로 합칩니다.
 - `strategy_ai` 롤은 읽기 전용(`SELECT`만) — 이 저장소를 소비하는 외부 에이전트가 쓸 계정입니다.
 
-### 회수 단위는 카드가 아니라 절입니다 (스키마 v2, 2026-08-12)
+### 회수 단위는 카드가 아니라 절입니다
 
 소비 측(기획 AI)이 아는 계약이 바뀌었습니다.
 
-| | v1 | v2 |
-|---|---|---|
-| 검색 대상 | `cards` (카드 1장 = 1벡터) | `card_sections` (절 1개 = 1벡터) |
-| 임베딩 모델 | `jhgan/ko-sroberta-multitask` | `BAAI/bge-m3` |
-| 창 / 차원 | 128토큰 / 768 | 8192토큰 / 1024 |
-| 반례 정의 | `kind='GAME' AND type IN ('failure','mixed')` | `section_key IN (실패 사례·리스크·안티패턴·시장 포화도·빈칸)` |
-
-v1의 128토큰 창은 카드 임베딩 텍스트(중앙값 811토큰)를 잘라내 **168장 전부에서 카드의
-15.8%만 벡터에 들어가 있었습니다.** `## 실패 사례`·`## 리스크`·`## 안티패턴` 같은 절은
-벡터 공간에 존재한 적이 없어 반례 검색이 구조적으로 불가능했습니다.
-
-절 단위 회수는 주입 토큰도 줄입니다 — 카드 평균 2,075자 대신 절 평균 340자.
-같은 회수 폭에서 약 85% 절감입니다.
+검색 대상은 `card_sections`이며, 임베딩은 `BAAI/bge-m3`를 사용합니다. 절 단위 회수는 관련 근거만
+주입하고 실패 사례·리스크·안티패턴 같은 반례 절을 직접 찾을 수 있게 합니다. 실제 차원과 검색 파라미터는
+DB 스키마와 도구 설정을 단일 소스로 삼고 README에 복제하지 않습니다.
 
 `section_key`는 언어 중립 식별자(`card_schema.py`의 `SECTIONS`)입니다. 절 제목을 영어로
 바꿔도 이 키와 그 위에 걸린 질의는 그대로 삽니다.
@@ -230,25 +218,23 @@ python tools/search_cards.py "덱빌딩 로그라이트의 흔한 실패" --kind
 python tools/search_cards.py "타워 디펜스 시장 포화" --section-key market_saturation,gaps
 ```
 
-**Game-Developer-AI 의 `strategic/research_repo.py`가 이 SQL을 복제합니다.** 테이블·차원·
-모델이 전부 바뀌었으므로 그쪽도 같이 고치지 않으면 같은 질의에 다른 근거가 나옵니다.
+외부 소비자가 검색 SQL이나 임베딩 설정을 복제한다면 이 저장소의 스키마 변경과 함께 갱신해야 합니다.
 
 ### 검색기를 건드리기 전에 재세요
 
 ```bash
-python scripts/eval_retrieval.py              # recall@6, 골드셋 eval/retrieval.jsonl
+python scripts/eval_retrieval.py                # 골드셋 eval/retrieval.jsonl
 python scripts/eval_retrieval.py --mode vector  # 벡터 단독과 비교
 ```
 
-2026-07-29 하이브리드 도입 때의 실측(질의 17개)이 코드에 남지 않고 주석 문장으로만
-남아, 이번 개편의 전후 비교가 불가능했습니다. 같은 일이 없도록 골드셋을 파일로
-고정했습니다 — **현재 3개뿐이니 최소 20개까지 채우세요.** 고유명사형과 의역형을
-반드시 섞어야 합니다(한쪽만 있으면 한쪽 검색 팔이 망가져도 점수가 안 떨어집니다).
+평가 기준과 질의는 `eval/retrieval.jsonl`에 버전 관리합니다. 고유명사형과 의역형을 함께 유지하고,
+검색 변경 전후의 결과는 실행 시 생성되는 지표로 비교합니다. README에는 시점에 따라 달라지는 표본 수나
+점수를 고정해 적지 않습니다.
 
 ### 카드 언어 전환 (한국어 → 영어)
 
-절 제목은 언어 중립 `section_key`로 다룹니다. 2026-08-12에 카드 165장과 템플릿의
-절 제목·근거 표시·본문 산문을 모두 영어로 전환했습니다. 새 카드도 영어로 작성합니다.
+절 제목은 언어 중립 `section_key`로 다룹니다. 카드와 템플릿의 절 제목·근거 표시·본문 산문은
+영어가 기준이며, 새 카드도 영어로 작성합니다.
 
 ```bash
 python scripts/migrate_card_lang.py research/games/*.md --out draft/en
@@ -262,9 +248,8 @@ python scripts/migrate_card_lang.py --out draft/en --apply     # 확인 후
 ## reference/ 폴더에 대해
 
 ARCH 카드는 "우리 프로젝트의 Unity 기준 구조"를 출처로 인용합니다. 그 원문이
-`reference/unity_project_baseline.md`입니다. 구현 파이프라인을 제거한 뒤에도 카드 16장이
-이 문서를 90회 넘게 인용하고 있어 **근거 문서로만** 남겼습니다. 절 번호와 제목이 카드의 인용
-문자열과 맞물려 있으므로 **제목을 바꾸지 마세요** — 바꾸면 인용이 끊깁니다.
+`reference/unity_project_baseline.md`입니다. 이 파일은 실행 지시서가 아니라 **근거 문서**입니다.
+절 제목이 카드의 인용 문자열과 맞물려 있으므로 제목을 바꾸면 관련 인용도 함께 갱신해야 합니다.
 
 ## Quick Start
 
@@ -277,5 +262,5 @@ python tools/build_index.py    # 인덱스 생성
 
 Python 3.11+ 필요 (`lint_card.py`/`build_index.py`가 표준 내장 `tomllib`로 TOML frontmatter를 읽습니다).
 
-처음 시작한다면 `templates/`의 스키마로 **요소 카드 몇 장을 손으로 작성**하세요.
+처음 시작한다면 `templates/`의 스키마로 **작은 수의 요소 카드를 직접 작성**하세요.
 카드 품질이 파이프라인 전체 품질의 상한선입니다.
