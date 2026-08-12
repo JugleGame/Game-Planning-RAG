@@ -4,7 +4,7 @@ period = "2026-08-10 ~ 2026-08-12"
 period_at = "2026-08-10"
 period_end = "2026-08-12"
 sources = ["Steam Store (Heritage)", "Steam Store (Crown Jewels)", "Steam Store (Dorts: A Darts Roguelike)"]
-status = "unreflected"
+status = "반영(2026-08-12)"
 +++
 ## Period / Sources
 2026-08-10 ~ 2026-08-12 / Official Steam store pages were checked on 2026-08-12.

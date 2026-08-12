@@ -6,7 +6,7 @@ summary = "A one-person PvE hybrid swarm where you just place units and equipmen
 elements = ["ELEM-018", "ELEM-022", "ELEM-004"]
 example_games = ["GAME-055"]
 tags = ["auto-battler", "roguelike", "pve", "solo", "draft", "singleplayer", "emerging"]
-updated = "2026-08-09"
+updated = "2026-08-12"
 confidence = "medium"
 +++
 ## Components
@@ -28,6 +28,8 @@ This English translation preserves the original distinction between a preparatio
 - [interpretation] Similar title names such as Hadean Tactics and Deckanism: Singularity Island came up in the same search, but this investigation (summary results) did not cross-verify the developer and exact genre composition.
 <!-- 증거 부족: Hadean Tactics / Deckanism: Singularity Island의 개발사·판매량·리뷰 점수는 원 출처(Steam 페이지 등)를 직접 열어 확인하지 못함 -->
 - [interpretation] In summary, this group appears to be a new group that has not yet produced a commercially proven hit like PvP Auto Battlers (Backpack Battles, GENRE-027).
+- Fact: `Heritage` launched on Steam on 2026-08-11 as a single-player roguelike auto-battler in which combat resolves as an idle simulation driven by the attributes, skills, equipment, and life choices built through repeated three-Scroll decisions [source: digest 2026-08-12 / Steam Store, as of 2026-08-12].
+- [interpretation] `Heritage` is a second direct example of the cluster because its build is assembled through run choices while combat resolves automatically against PvE enemies; its life-course framing also shows that the cluster does not require a conventional wave arena.
 
 ## Conventions and Expectations
 The convention evidence is retained in the translated paragraphs above.

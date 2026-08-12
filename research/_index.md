@@ -11,6 +11,8 @@ Open only one relevant type index for details.
 For semantic lookup, use `python tools/search_cards.py "<query>"` instead of reading an entire index.
 
 ## Changes in the last 7 days
+- GENRE-010 | Tower Defense | 08-12
+- GENRE-037 | Solo PvE Roguelike Auto-battler | 08-12
 - SIGNAL-2026-08-12_auto_battler_ruleset_signals | Weekly observations (2026-08-10 to 2026-08-12) | 08-12
 - ELEM-045 | Deity/Patron Selection Locking Summonable Roster | 08-11
 - ELEM-046 | Combat-Participating Animal Companion Auto-Assist | 08-11
@@ -19,11 +21,9 @@ For semantic lookup, use `python tools/search_cards.py "<query>"` instead of rea
 - GAME-055 | Loop Hero (2021, Four Quarters / Devolver Digital) | 08-10
 - GAME-056 | Factorio (2020, Wube Software) | 08-10
 - GAME-023 | Diablo IV (2023, Blizzard Entertainment) | 08-09
-- GENRE-010 | Tower Defense | 08-09
 - GENRE-012 | Roguelike Deckbuilder | 08-09
 - GENRE-035 | Tile-matching Roguelike Deckbuilder Hybrid | 08-09
 - GENRE-036 | Factory / Production-chain Automation Builder | 08-09
-- GENRE-037 | Solo PvE Roguelike Auto-battler | 08-09
 - GENRE-038 | Idle / Incremental Game | 08-09
 - GENRE-039 | Turn-based Tactical Roguelike | 08-09
 - SIGNAL-2026-08-09_roguelike_hybrid_signals | Weekly observations (2026-08-03 to 2026-08-09) | 08-09

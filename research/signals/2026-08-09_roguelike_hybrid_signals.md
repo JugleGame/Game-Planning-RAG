@@ -4,7 +4,7 @@ period = "2026-08-03 ~ 2026-08-09"
 period_at = "2026-08-03"
 period_end = "2026-08-09"
 sources = ["Steam Store (corectl)", "Steam Store (Anomaly President)", "SIGNAL-2026-08-07_arpg_td_deckbuilder_signals (overlap check)"]
-status = "unreflected"
+status = "반영(2026-08-12)"
 +++
 ## Period / Sources
 2026-08-03 ~ 2026-08-09 / Official Steam store pages were checked on 2026-08-12.

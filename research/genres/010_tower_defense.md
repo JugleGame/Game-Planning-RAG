@@ -6,7 +6,7 @@ summary = "A cluster whose core is placing and upgrading defensive towers along 
 elements = ["ELEM-004", "ELEM-018", "ELEM-042", "ELEM-045"]
 example_games = ["GAME-026", "GAME-027", "GAME-050", "GAME-052"]
 tags = ["tower-defense", "strategy", "wave-based", "roguelike-subgenre"]
-updated = "2026-08-09"
+updated = "2026-08-12"
 confidence = "medium"
 +++
 ## Components
@@ -31,6 +31,8 @@ confidence = "medium"
 <!-- Insufficient evidence: could not find an official tally showing the number of recent new releases under the Steam tag "Tower Defense" -->
 - Fact: roguelite + tower defense hybrid releases and updates were dense between 2026-07-23 and 07-30 - the release of 'Towerful Defense: A Rogue TD' (GAME-050) (07-30, itch.io) and the update to 'Rogue Defense: Hybrid Tower TD' (GAME-052) (07-23, Google Play) - this looks like a genre-level hybridization trend rather than the single case of GAME-027 [source: itch.io devlog/Google Play, as of 2026-07-23 and 07-30 / digest 2026-07-31].
 - Fact: at least 2 Greek-mythology roguelite TDs were confirmed within the same week (the first week of August 2026) - 'Gods & Gore' (Steam Early Access, a structure combining card selection and positioning in which you pick a god, gather mythological creatures and defend a city; participated in the Steam Tower Defense Fest 2026 demo) and 'Atlanta TD' (a procedurally generated roguelite TD defending Atlanta from the army of Ares; announced as an upcoming Steam Early Access release) - the "genre-level hybridization" trend recorded by the 07-31 digest appears this time as a subject-matter (mythology) concentration as well [source: Steam store pages / Bleeding Cool / Games Press, as of 2026-08 / digest 2026-08-07].
+- Fact: `corectl` launched on Steam on 2026-08-05 with a six-building loadout limit, player-shaped enemy routes, one augment choice after each defended wave, and permanent research effects in a 2D roguelite tower-defense structure [source: digest 2026-08-09 / Steam Store, as of 2026-08-12].
+- [interpretation] This adds a route-design and restricted-loadout variant to the roguelite tower-defense examples already tracked here, but one launch does not establish a market-wide trend.
 
 ## Conventions and Expectations
 - Users expect fixed or semi-fixed routes, wave-by-wave difficulty escalation, and tower upgrades and elemental matchups as defaults
