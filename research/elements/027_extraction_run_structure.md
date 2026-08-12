@@ -1,62 +1,37 @@
 +++
 card_id = "ELEM-027"
 type = "mechanic"
-title = "추출형 런 구조 (Loot-and-Extract Run Structure)"
-summary = "판마다 얻은 자원을 탈출 지점까지 살아서 가져와야만 실제 보상으로 인정되는 위험-보상 순환 구조"
+title = "Loot-and-Extract Run Structure (Loot-and-Extract Run Structure)"
+summary = "A risk-reward loop in which resources collected each run count as real rewards only if the player survives to an extraction point"
 tags = ["extraction", "risk-reward", "pvpve", "live-service", "divisive"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-플레이어가 한 판 동안 재화나 장비를 모아도, 정해진 탈출 지점까지 살아서 나가야만
-그걸 진짜 내 것으로 가져갈 수 있는 구조입니다. 죽으면 그 판에 모은 것을 대부분
-잃습니다. 시험 문제를 다 풀어도 답안지를 제출하지 못하면 점수가 안 나오는 것과
-비슷합니다.
+Even after collecting currency or equipment during a run, the player must survive to a designated extraction point to keep it. Death usually forfeits most of what was collected in that run. It is like solving an exam but receiving no score without submitting the answer sheet.
 
 ## Success Cases
-- Hunt: Showdown (2018, Crytek) - 1896 리브랜딩 이후 스팀 누적 약 880만 장, 매출
-  약 1억 5,790만 달러로 추산 [source: raijin.gg 스팀 통계 집계, 2026-07 확인].
-  등록 이용자는 2024년 말 기준 약 1,000만 명 [source: Hunt: Showdown 공식 발표,
-  2024-12 기준].
-- Mistfall Hunter (2026, Bellring Games) - 소울라이크 전투에 추출 구조를 결합해
-  2026-07-30 정식 출시 직후 스팀 글로벌 판매 3위까지 올랐다 [source: Inven Global
-  보도, 2026-07 기준].
+- Hunt: Showdown (2018, Crytek) - About 8,800,000 cumulative Steam copies and estimated revenue of about $100,000,000 plus $57,900,000 after the 1896 rebranding [source: raijin.gg Steam statistics roundup, confirmed 2026-07]. Registered users were about 10,000,000 at the end of 2024 [source: official Hunt: Showdown announcement, as of 2024-12].
+- Mistfall Hunter (2026, Bellring Games) - Combined Soulslike combat with extraction and reached third place in global Steam sales immediately after its official release on 2026-07-30 [source: Inven Global report, as of 2026-07].
 
 ## Failure Cases
-- The Cycle: Frontier (2022, Yager Development) - 출시 직후 최고 동시접속
-  40,690명을 찍었지만 무료화 이후 수익모델이 무너져 2023-09-27 서버를
-  종료했다 [source: TechRadar 보도 / Wikipedia, 2023-09 기준].
-  실패 지점: 과금 유인이 약한 무료 배포 + 안티치트 팀 유지 비용을 감당하지 못함.
-- Hyenas (미출시, Creative Assembly / Sega) - 완성 단계까지 갔으나 유럽 수익성
-  악화를 이유로 2023년 출시 전 전면 취소됐다 [source: Sega 발표 관련 보도,
-  2023 기준].
+- The Cycle: Frontier (2022, Yager Development) - Reached 40,690 peak concurrent users after launch, but its revenue model collapsed after going free-to-play and the servers closed on 2023-09-27 [source: TechRadar report / Wikipedia, as of 2023-09].
+  Failure point: Free distribution with weak payment incentives could not cover anti-cheat team maintenance costs.
+- Hyenas (unreleased, Creative Assembly / Sega) - Reached the completion stage but was fully cancelled before its 2023 release because of worsening profitability in Europe [source: reports concerning Sega’s announcement, as of 2023].
 
 ## User Reaction Summary
-- 선호: 탈출에 성공하는 것 자체가 리스크를 감수한 데 대한 보상으로 느껴진다는
-  반응 - Hunt: Showdown의 장기 흥행 추세가 근거 [source: raijin.gg, 2026-07 확인]
-- 불호: "출시 직후 버그·서버 문제로 탈출 전에 죽는 게 실력이 아니라 운" -
-  Mistfall Hunter는 출시 30분 내 공식 12건 알려진 이슈 목록을 공개했고, 종합
-  평가는 '복합적' 57% 긍정에 그쳤다 [source: gamerfuzion.com 보도 / Steam,
-  2026-07 기준]
+- Preference: Successfully extracting itself feels like a reward for taking the risk, supported by Hunt: Showdown’s long-term performance [source: raijin.gg, confirmed 2026-07]
+- Dislike: “Dying before extraction because of launch bugs and server problems is luck, not skill” - Mistfall Hunter published an official list of 12 known issues within 30 minutes of launch, and its overall rating remained “Mixed,” with 57% positive [source: gamerfuzion.com report / Steam, as of 2026-07].
 
 ## Synergy
-- 좋음: ELEM-014 (처벌적 죽음 순환) - "죽으면 잃는다"는 긴장을 탈출 성공 여부라는
-  별도의 축으로 한 번 더 쪼갠다.
-- 좋음: ELEM-004 (반복 메커닉) - 매 런마다 다른 조우를 겪고 지식만 누적된다는
-  점에서 로그라이크형 반복과 구조적으로 닮았다.
-- 인접 군집: GENRE-011 (루트 슈터) - 반복 파밍이 코어라는 점은 같고, 갈리는 지점은
-  획득의 확정 시점이다. 루트 슈터는 주우면 내 것이고, 이 요소는 탈출해야 내 것이 된다.
-- 인접 군집: GENRE-009 (다크 판타지) - Mistfall Hunter처럼 소울라이크 전투·톤과
-  결합한 사례가 이 군집에서 나오고 있다.
-- 좋음: ELEM-016 (그림다크 톤) - 위 결합을 요소 단위로 다루는 카드가 ELEM-044
-  (그림다크 추출런 결합)다.
-- 빈칸 연결: GENRE-019 (서바이버라이크) - 그 카드의 빈칸 항목이 이 요소와의 결합
-  부재를 지목한다 (시간 제한 생존만 있고 탈출 지점 개념이 없음).
+- Good: ELEM-014 (Punishing Death Loop) - Splits the tension of “death means loss” along a second axis: whether extraction succeeds.
+- Good: ELEM-004 (Repetition Mechanic) - Structurally resembles roguelike repetition because each run brings different encounters while knowledge accumulates.
+- Adjacent cluster: GENRE-011 (Looter Shooter) - Both center on repeated farming; they differ in when acquisition becomes certain. In a looter shooter, picking up an item makes it yours; here, extraction does.
+- Adjacent cluster: GENRE-009 (Dark Fantasy) - Cases combining Soulslike combat and tone, such as Mistfall Hunter, appear in this cluster.
+- Good: ELEM-016 (Grimdark Tone) - ELEM-044 (Grimdark Extraction-run Combination) treats this combination at the element level.
+- Gap connection: GENRE-019 (Survivorlike) - Its gap section identifies the absence of this combination (time-limited survival exists, but not an extraction-point concept).
 
 ## Risks
-- [interpretation] 무료화·라이브서비스 수익모델과 잘못 결합하면 The Cycle: Frontier처럼
-  과금 유인 부족으로 무너지기 쉽다.
-- [interpretation] 장르 자체가 스팀 커뮤니티에서 "포화 상태"라는 지적이 나올 만큼
-  경쟁작이 몰려 있어(ARC Raiders 등), 신규 진입은 뚜렷한 차별점 없이는
-  묻히기 쉽다 [source: Steam 커뮤니티 토론, 2026 확인].
-<!-- 증거 부족: 장르 전체의 평균 유지율·이탈률 집계는 확인하지 못함 -->
+- [interpretation] A poor combination with a free-to-play live-service revenue model can collapse from insufficient payment incentives, as with The Cycle: Frontier.
+- [interpretation] Competitors are crowded enough for Steam communities to call the genre “saturated” (including ARC Raiders), so new entrants are easily buried without a clear differentiator [source: Steam community discussion, confirmed 2026].
+<!-- Evidence gap: no aggregate average retention or churn figures for the genre were confirmed. -->

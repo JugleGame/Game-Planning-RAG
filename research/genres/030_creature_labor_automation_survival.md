@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-030"
 type = "genre"
-title = "크리처 노동 자동화 서바이벌 (Creature Labor Automation Survival)"
-summary = "포획한 생물을 전투 동료가 아니라 채집·제작 노동력으로 배치해 자동화 생산 라인을 짜는 것이 코어인 서바이벌 군집"
+title = "Creature Labor Automation Survival"
+summary = "A survival cluster whose core is placing captured creatures as gathering and crafting labor rather than combat companions to build an automated production line"
 elements = ["ELEM-039", "ELEM-028"]
 example_games = ["GAME-045"]
 tags = ["survival", "automation", "creature-collection", "crafting", "base-building", "emerging"]
@@ -10,22 +10,22 @@ updated = "2026-08-03"
 confidence = "medium"
 +++
 ## Components
-- ELEM-039 (포획형 동료 노동 시스템) - 군집의 정체성. 잡은 생물을 전투가 아니라 채집·제작·운반 노동력으로 배치하는 것이 핵심이다.
-- ELEM-028 (재화 전환형 제작 마찰 완화) - 배치된 노동력이 캐낸 원자재를 자동으로 제작 공식에 흘려보내는 순환 축이다.
-- [interpretation] GENRE-020(서바이벌 크래프팅 오픈월드)과 가르는 기준은 "생물 포획이 전투의 변주인가, 생산 라인의 톱니바퀴인가"이다 - GENRE-020은 굶주림·추위 관리가 코어이고 노동 시스템은 그 위의 변형 축 중 하나지만, 이 군집은 자동화 그 자체가 목표다.
-- GENRE-036 (팩토리 자동화 빌더) - [interpretation] "자동화된 생산 라인 설계"라는 목표를 공유하는 인접 군집이다. 다만 이 군집은 노동력의 정체가 포획한 생물인 반면, GENRE-036은 생물 포획이 아예 없이 컨베이어 벨트·인서터 같은 기계 물류망만으로 생산 사슬을 짠다는 점에서 갈린다 [source: GENRE-036 카드].
+- ELEM-039 (captured-companion labor system) - the cluster's identity. The core is assigning captured creatures to gathering, crafting, and transport labor rather than combat.
+- ELEM-028 (resource-conversion crafting friction reduction) - the circulation axis that automatically feeds raw materials collected by assigned labor into crafting recipes.
+- [interpretation] The dividing question from GENRE-020 (survival crafting open world) is whether creature capture is a variation of combat or a cog in a production line - GENRE-020 centers hunger and cold management, with labor as one variation, while this cluster makes automation itself the goal.
+- GENRE-036 (factory automation builder) - [interpretation] an adjacent cluster sharing the goal of designing an automated production line. Here the labor force is captured creatures; GENRE-036 instead builds its production chain entirely through mechanical logistics such as conveyors and inserters, without creature capture [source: GENRE-036 card].
 
 ## Market Saturation
-- 사실: GAME-045(Palworld)는 1.0 정식 출시(2026-07-10) 후 10일간 180만 장 이상 판매, 누적 3,000만 장 이상을 기록했다 [source: GAME-045 카드 / Forbes·Notebookcheck, 2026-07 기준].
-- 사실: 같은 개발사 Pocketpair의 이전작 Craftopia(2020-09 얼리액세스 출시)는 몬스터 프리즘으로 포획한 생물을 발전기에 배치해 배터리를 만들고, 그 전력으로 컨베이어 벨트로 이어진 공장을 자동화하는 동일 구조의 원형이다 - Steam 소유자는 100만~200만 명 규모이며, 사용자 리뷰는 집계 기관에 따라 7,497건 중 79% 긍정, 17,547건 중 77% 긍정으로 표본 수가 다르게 잡힌다 [source: SteamSpy·Steambase 웹 검색 종합, 2026-08 확인] (두 표본 중 어느 쪽이 최신 공식 집계인지 확정하지 못함).
-- [interpretation] Pocketpair CEO는 생물을 각 공장에 배치하는 행위 자체가 Palworld 흥행의 핵심이었다고 밝혔다 [source: GameDeveloper.com 인터뷰 보도, 2026 확인].
-- [interpretation] 현재 이 궤적을 상용 규모로 실행한 곳은 사실상 Pocketpair 한 곳(Craftopia → Palworld)뿐이라, 독립된 장르라기보다 한 스튜디오가 반복해 온 공식에 더 가깝다.
+- Fact: GAME-045 (Palworld) sold over 1,800,000 copies in the 10 days after its 1.0 full release (2026-07-10), reaching over 30,000,000 copies cumulatively [source: GAME-045 card / Forbes·Notebookcheck, as of 2026-07].
+- Fact: the same developer Pocketpair's earlier Craftopia (early access release 2020-09) is the prototype of the same structure: creatures captured with Monster Prisms are assigned to generators to make batteries, whose power automates a conveyor-belt factory - Steam owners number roughly 1,000,000-2,000,000, while user reviews differ by aggregator: 79% positive of 7,497 and 77% positive of 17,547 [source: composite of SteamSpy·Steambase web searches, verified 2026-08] (which sample is the latest official count was not established).
+- [interpretation] The Pocketpair CEO said that placing creatures in each factory was itself central to Palworld's success [source: GameDeveloper.com interview report, verified 2026].
+- [interpretation] At present, Pocketpair (Craftopia → Palworld) is effectively the only studio to execute this trajectory at commercial scale, so it resembles one studio's repeated formula more than an independent genre.
 
 ## Conventions and Expectations
-- [interpretation] 관례는 "포획 → 생물별 적성(채집/제작/운반) 판별 → 생산 라인 배치"의 3단 순서로 굳어 있다(Craftopia → Palworld 양쪽 모두 이 순서를 따른다).
-- [interpretation] 노동 배치 UI·관리가 복잡해질수록 "생물을 부린다"는 톤 논쟁이 따라붙기 쉽다는 점이 ELEM-039 카드의 리스크 절에도 이미 기록돼 있다.
+- [interpretation] The convention has solidified into three steps: capture → assess each creature's aptitude (gathering/crafting/transport) → place it on the production line (both Craftopia and Palworld follow this order).
+- [interpretation] As labor-placement UI and management become more complex, debate over the tone of "using creatures" is likely to follow; this is already recorded in the risk section of the ELEM-039 card.
 
 ## Gaps
-[interpretation] ★ Pocketpair 외 다른 개발사가 "포획 → 노동 배치 → 자동화" 궤적을 코어로 삼아 출시한 사례는 조사 중 확인하지 못했다 - Palworld의 흥행에도 불구하고 직접적인 아류작이 아직 시장에 나타나지 않았다.
-- 확인 방법: Steam 신작 태그 "creature-collector" + "automation" 교차 검색, itch.io 유사 검색
-- 확인일: 2026-08-03 / 재확인 주기: 8주
+[interpretation] ★ The research found no release by another developer built around the "capture → labor placement → automation" trajectory - despite Palworld's success, no direct imitator has appeared on the market.
+- How to verify: cross-search the Steam tags "creature-collector" + "automation", and search for similar titles on itch.io
+- Verified on: 2026-08-03 / Re-check interval: 8 weeks

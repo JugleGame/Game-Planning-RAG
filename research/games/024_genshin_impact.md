@@ -2,7 +2,7 @@
 card_id = "GAME-024"
 type = "success"
 title = "Genshin Impact (2020, miHoYo/HoYoverse)"
-summary = "소프트/하드 천장과 50/50 보장을 결합한 캐릭터 가챠로 역대 최고 매출 모바일 게임 중 하나가 된 오픈월드 액션 RPG"
+summary = "An open-world action RPG that became one of the highest-grossing mobile games ever through character gacha combining soft/hard pity and a 50/50 guarantee"
 genres = ["GENRE-025"]
 elements = ["ELEM-017"]
 tags = ["gacha", "open-world", "action-rpg", "live-service", "mobile", "broad-appeal"]
@@ -10,23 +10,17 @@ updated = "2026-07-28"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-2025년 말 기준 누적 매출 100억 달러를 넘겨 역대 모바일 게임 중 가장 빠르게 이 기록을 달성함 [source:
-STG Research(Shane The Gamer) 집계, 2025년 말 기준]. 연간 매출은 2022년 19억 달러로 정점을 찍은 뒤
-2023년 13억 달러로 줄어드는 추세를 보임 [source: 업계 매출 집계 보도 종합, 2023년 기준].
+As of the end of 2025, cumulative revenue exceeded $10,000,000,000, reaching this milestone faster than any mobile game in history [source:
+STG Research (Shane The Gamer) aggregate, as of the end of 2025]. Annual revenue peaked at $1,900,000,000 in 2022 and then
+trended down to $1,300,000,000 in 2023 [source: aggregate of industry revenue reports, as of 2023].
 
 ## Elements Used
-- ELEM-017 (가챠 확률 & 천장 시스템) - 캐릭터 배너 기준 74회부터 확률이 급격히 오르는 소프트 천장,
-  90회에서 확정되는 하드 천장, 그리고 50/50에서 지면 다음 5성은 반드시 배너 캐릭터로 주는 보장 시스템을
-  결합함 [source: BitTopup/Game8 가챠 가이드 종합, 2026-07 확인].
+- ELEM-017 (gacha probability & pity system) - Combines a soft pity where probability rises sharply from pull 74 for character banners, a hard pity guaranteed at pull 90, and a guarantee that if the player loses the 50/50, the next 5-star is the banner character [source: BitTopup/Game8 gacha guide aggregate, 2026-07 check].
 
 ## Success/Failure Drivers
-- 사실: 최악의 경우에도 180회(50/50 패배 시 90회 + 보장 90회) 안에는 원하는 캐릭터를 확정적으로 얻을
-  수 있도록 설계됨 [source: 가챠 가이드 종합, 2026-07 확인].
-- [interpretation] "아무리 운이 없어도 최대 손실이 정해져 있다"는 확실성이 무제한 도박이라는 인상을 낮춰 대중적
-  수용도를 높인 것으로 보임.
-- [interpretation] 다만 2022년 이후 매출이 줄어드는 추세는 가챠 자체보다 신규 콘텐츠 공급 속도 등 다른 요인이
-  겹쳤을 가능성이 있어, 이 카드의 근거만으로는 원인을 단정할 수 없음.
+- Fact: Even in the worst case, it is designed to guarantee the desired character within 180 pulls (90 after losing the 50/50 + 90 guaranteed) [source: aggregate gacha guide, 2026-07 check].
+- [interpretation] The certainty that “even with terrible luck, the maximum loss is fixed” appears to reduce the impression of unlimited gambling and increase mass acceptance.
+- [interpretation] However, the revenue decline since 2022 may involve factors such as the pace of new-content supply rather than gacha itself, so this card’s evidence cannot establish the cause.
 
 ## Implications for Our Project
-확률 자체를 낮추기보다 "최대 몇 번 안에는 반드시 받는다"는 상한선을 명시하는 것이 과금 유저의 신뢰를
-지키는 핵심 장치로 보인다 [interpretation].
+Rather than lowering the probability itself, explicitly stating a cap—“you will definitely receive it within at most this many pulls”—appears to be a key device for maintaining paying users’ trust [interpretation].

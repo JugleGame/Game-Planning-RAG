@@ -1,60 +1,35 @@
 +++
 card_id = "ELEM-033"
 type = "mechanic"
-title = "동적 난이도 조절 (Dynamic Difficulty Adjustment, DDA)"
-summary = "플레이어의 실시간 성과(피격·정확도·순위)를 관찰해 적 강도나 자원 드롭을 자동으로 조절해, 겉으로 드러나지 않게 난이도를 항상 적당한 긴장 상태로 유지하는 기술"
+title = "Dynamic Difficulty Adjustment (Dynamic Difficulty Adjustment, DDA)"
+summary = "A technique that observes players' real-time performance (damage taken, accuracy, and rank) and automatically adjusts enemy strength or resource drops to keep difficulty in a suitably tense state without making the adjustment visible"
 tags = ["difficulty", "ai-director", "invisible-design", "balance", "broad-appeal"]
 updated = "2026-07-31"
 confidence = "high"
 +++
 ## Definition
-플레이어가 잘하고 있으면 몰래 더 어렵게, 못하고 있으면 몰래 더 쉽게 만들어서, 실력과
-상관없이 항상 "아슬아슬하게 재미있는" 상태를 유지하려는 기술입니다. 시험 난이도를
-학생의 답안지를 보면서 그 자리에서 조절하는 것과 비슷합니다 - 단, 학생은 조절되고
-있다는 사실을 모릅니다.
+This technique secretly makes the game harder when the player is doing well and easier when they are struggling, maintaining a state that is always just barely fun regardless of skill. It is like adjusting a test while watching a student's answer sheet, except the student does not know it is being adjusted.
 
 ## Success Cases
-- Mario Kart 시리즈 (Nintendo) - "고무줄(Rubber Banding)" 효과로 선두는 아이템이
-  약해지고 후위는 강력한 아이템을 받아, 순위와 상관없이 마지막까지 긴장을 유지한다
-  [source: 게임 디자인 분석 기사, 2026 확인].
-- Left 4 Dead (2008, Valve) - "AI 디렉터"가 팀의 스트레스 지표(피격 시간, 명중률,
-  대형 간격)를 관찰해 좀비 웨이브 강도를 실시간 조절한다. 힘들어하면 완화하고
-  회복하면 다시 강도를 올려 리듬을 만든다 [source: Medium 디자인 분석, 2026 확인].
-- Resident Evil 4 (2005, Capcom) - 적의 공격성·데미지·탄약 드롭률을 플레이어
-  성과에 맞춰 조절한다. 체력이 낮으면 회복 아이템 확률을 높이고, 탄약이 부족하면
-  탄약 확률을 높이는 식으로 초기 DDA 구현의 대표 사례로 꼽힌다 [source: 게임 디자인
-  분석 기사, 2026 확인].
+- Mario Kart series (Nintendo) - Through the "Rubber Banding" effect, leaders receive weaker items while players behind receive powerful ones, maintaining tension until the end regardless of rank [source: game-design analysis article, 2026 confirmation].
+- Left 4 Dead (2008, Valve) - The AI Director observes team stress indicators such as time since damage, accuracy, and spacing between groups, then adjusts zombie-wave intensity in real time. It eases up when players struggle and raises intensity again when they recover, creating a rhythm [source: Medium design analysis, 2026 confirmation].
+- Resident Evil 4 (2005, Capcom) - Enemy aggression, damage, and ammunition drop rates are adjusted to player performance. When health is low, healing-item probability rises; when ammunition is scarce, ammunition probability rises. It is cited as a representative early DDA implementation [source: game-design analysis article, 2026 confirmation].
 
 ## Failure Cases
-- <!-- 증거 부족: DDA 도입이 명시적으로 실패로 이어진 대형 사례는 조사에서
-  확인하지 못함. 대체로 "들켰을 때"의 반발로 남음 -->
+- <!-- Evidence insufficient: no large case in which introducing DDA explicitly led to failure was found. It generally remains as backlash when the system is discovered -->
 
 ## User Reaction Summary
-- 선호: "체감상 항상 딱 적당히 어렵다" - 눈치채지 못한 상태에서의 몰입감 유지
-- 불호: "내가 잘해도 똑같이 힘든 걸 보니 조작당한 기분" - DDA의 존재가 알려지거나
-  드러나는 순간 "내 실력이 무의미하다"는 반발이 나올 수 있음 [source: 커뮤니티
-  일반 담론, DDA 비판 맥락]
+- Preference: "It always feels just difficult enough" - maintaining immersion while the system goes unnoticed
+- Aversion: "It feels manipulated when it is still equally hard even though I played well" - once DDA becomes known or visible, players may object that their skill is meaningless [source: general community discourse, DDA-criticism context]
 
 ## Synergy
-- 좋음: ELEM-014 (처벌적 죽음 순환) - 죽음의 처벌이 강할수록, 티 안 나는 DDA가
-  좌절 이탈을 완화하는 안전판 역할을 한다.
-- 나쁨: ELEM-021 (친숙한 규칙 차용, 예: 포커) - 이미 정해진 확률표 기반 게임에
-  DDA를 얹으면 "공정한 규칙"이라는 신뢰 자체가 깨질 위험이 있다.
-- 나쁨: ELEM-019 (무작위 전리품 드롭) - [interpretation] 드롭 확률을 성과에 따라 몰래 조정하면
-  GAME-025(메이플스토리 큐브 사건)가 보여준 확률 신뢰 붕괴와 같은 범주의 문제가 된다.
-  Resident Evil 4식 아이템 배분 조정이 용인되는 이유는 그 확률이 상품이 아니기 때문이다.
-- 충돌: 자동진행/오토플레이 편의 기능 - [interpretation] 자동진행은 DDA가 읽어야 할 "플레이어의
-  실시간 성과"를 게임 자신의 조작으로 대체해, 조절의 근거 자체를 없앤다. 둘을 함께 두면
-  난이도가 플레이어 실력이 아니라 자동화 성능에 반응하게 된다.
-  (별도 요소 카드로 두었던 '자동화 진행 옵션'은 개별 타이틀 근거 부족으로 2026-07-31 삭제,
-  이 항목에 흡수함)
-- 구현 다리: ARCH-012 (Data/ 데이터 자산 규약) - 조절 곡선(임계값, 배율)은 반복 튜닝
-  대상이므로 코드가 아니라 데이터 자산에 두어야 한다.
-- 구현 다리: ARCH-010 (로그 규약) - 조절이 언제 어떤 근거로 발동했는지 로그에 남지
-  않으면, 밸런스 이상을 사후에 재현·검증할 수 없다.
+- Good: ELEM-014 (punitive death cycle) - The stronger the punishment for death, the more unobtrusive DDA acts as a safety net against frustration-driven churn.
+- Bad: ELEM-021 (borrowing familiar rules, e.g. poker) - Adding DDA to a game based on a fixed probability table risks breaking trust in its fair rules.
+- Bad: ELEM-019 (random loot drops) - [interpretation] Secretly adjusting drop probability by performance creates the same category of problem as the collapse of probability trust shown by GAME-025 (MapleStory Cube incident). Resident Evil 4-style item-allocation adjustment is tolerated because the probability itself is not the product.
+- Conflict: automated progression/auto-play convenience features - [interpretation] Automated progression replaces the "player's real-time performance" that DDA should read with the game's own operation, removing the basis for adjustment. If both are present, difficulty responds to automation performance rather than player skill. (The separate "automated progression option" element card was deleted on 2026-07-31 for lack of title-specific evidence and absorbed here.)
+- Implementation bridge: ARCH-012 (Data/ data asset convention) - Adjustment curves (thresholds and multipliers) are repeatedly tuned, so they belong in data assets rather than code.
+- Implementation bridge: ARCH-010 (logging convention) - If when and why an adjustment activated is not logged, balance issues cannot be reproduced and verified afterward.
 
 ## Risks
-- [interpretation] DDA의 존재가 노출되면(플레이어가 로그·데이터마이닝으로 확인) "노력의
-  가치가 없다"는 반발로 이어질 수 있어, 투명성과 은닉성 사이의 균형이 설계의
-  핵심 난제다.
-- [interpretation] 경쟁적 요소(랭킹, PvP)가 있는 게임에 DDA를 적용하면 공정성 시비가 생긴다.
+- [interpretation] If DDA is exposed through player investigation or data mining, it can trigger backlash that effort has no value. Balancing transparency and concealment is the central design difficulty.
+- [interpretation] Applying DDA to a game with competitive elements such as rankings or PvP creates disputes about fairness.

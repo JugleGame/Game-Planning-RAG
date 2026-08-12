@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-039"
 type = "genre"
-title = "턴제 전술 로그라이크 (Turn-based Tactical Roguelike)"
-summary = "실시간 조작 대신 격자 위 턴제 전술 전투를 코어로 삼고, 그 위에 로그라이크식 무작위 업그레이드/경로 드래프트를 얹은 군집"
+title = "Turn-based Tactical Roguelike"
+summary = "A group that uses turn-based tactical combat on a grid as its core instead of real-time operation, and tops it off with roguelike random upgrades/route drafting."
 elements = ["ELEM-018"]
 example_games = []
 tags = ["roguelike", "turn-based", "tactics", "grid-based", "indie", "permadeath"]
@@ -10,50 +10,53 @@ updated = "2026-08-09"
 confidence = "medium"
 +++
 ## Components
-- ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 판마다 무작위로 제시되는 업그레이드·경로 중에서
-  고르는 런 기반 선택 구조. GENRE-016(탄막 로그라이크), GENRE-010(타워 디펜스), GENRE-012(로그라이크
-  덱빌더), GENRE-019(서바이버라이크)와 이 요소를 공유하는 다섯 번째 군집이다.
-- [interpretation] 이 군집의 정체성은 드래프트 자체가 아니라 "행동 하나하나가 격자 위 정해진 턴에 계획되고,
-  결과가 즉시 확정된다"는 조작 축이다. 실시간 회피·조준이 스킬 표현인 GENRE-016(탄막 로그라이크)과
-  달리, 이 군집은 이동·공격을 먼저 배치하고 나서 턴을 넘기면 확정되는 계획 기반 조작이 스킬 표현이다
-  - 웹 검색으로 확인한 King's Bounty·Into the Breach 계열 신작(Rogue Tactics)의 소개 문구도 "턴제
-  전술"을 정체성으로 내세운다 [source: 웹 검색(Steam 상점 페이지 소개), 2026-08-09 확인].
-- [interpretation] 유닛 하나의 손실이 곧바로 전력 손실로 이어지는 소수 유닛 관리(Into the Breach는 파일럿 3기,
-  FTL은 승무원 소수)가 관례로 보이나, 이를 별도 요소 카드로 다룬 기존 ELEM은 이 저장소에서 확인하지
+- GENRE-010 and GENRE-012 remain adjacent comparison clusters, while GENRE-012 and GENRE-016 supply the real-time contrast.
+- ELEM-018 (Roguelike random upgrade/path draft) - Among the upgrades/paths randomly presented in each edition
+Run-based selection structure. 
+It is the fifth cluster that shares this element with Deck Builder) and GENRE-019 (Survivorlike).
+- [interpretation] The identity of this swarm is not the draft itself, but "each action is planned in a set turn on the grid,
+The operating axis is “the result is confirmed immediately.” GENRE-016 (bullet mail roguelike), where real-time evasion and aiming are skill expressions,
+In contrast, this group is a skill expression that deploys movement and attack first and then plans-based operation that is confirmed after the turn has passed.
+- The introductory text of the new King's Bounty·Into the Breach series (Rogue Tactics), which was confirmed through a web search, was also "turn-based."
+It promotes "tactics" as its identity [source: Web search (Steam store page introduction), checked 2026-08-09].
+- [interpretation] Management of a small number of units where the loss of one unit leads to immediate loss of power (Into the Breach has 3 pilots,
+FTL seems to have a small number of crew members as a convention, but I don't see any existing ELEMs in this repository that treat this as a separate element card.
   못했다 <!-- 증거 부족: "소수 유닛 영구 손실" 자체를 다루는 ELEM 카드 부재 -->.
 
 ## Market Saturation
-- 사실: FTL: Faster Than Light(2012, Subset Games)는 Steam 리뷰 77,989건 기준 종합 긍정 점수 95/100이며,
-  SteamSpy 추정 보유자 수는 200만~500만 명이다 [source: Steambase·SteamSpy, 웹 검색 확인 2026-08-09 기준].
-- 사실: Into the Breach(2018, Subset Games)는 Steam 리뷰 11,660건 중 94%가 긍정적("매우 긍정적")이며,
-  SteamSpy 추정 보유자 수는 약 100만 명이다 [source: xda-developers 보도·SteamSpy, 웹 검색 확인 2026-08-09
-  기준]. 발매 당시 OpenCritic 88점, PC Gamer 2018 올해의 게임 선정 [source: 웹 검색 종합, 2026-08-09 확인].
-- 사실: 2026년에도 Rogue Tactics(King's Bounty·Into the Breach 계열을 표방), Mars Tactics(2026년 5월
-  얼리 액세스 진입, 지형 파괴 물리 결합), Kriegsfront Tactics(메크 커스터마이징 결합)처럼 신작이 계속
-  나오고 있다 [source: 웹 검색(Rogueliker.com, GameSpot 등 2026년 전략 게임 정리 기사), 2026-08-09 확인].
-- [interpretation] 대표작 두 편(FTL·Into the Breach) 모두 리뷰 수가 만~8만 건대로, GENRE-016(탄막 로그라이크,
-  대표작 리뷰 2만~4만 건대)과 비슷하게 "초대형 히트는 없지만 꾸준히 팔리는 중견 인디" 규모에 머물러
-  있는 것으로 보인다. 다만 두 장르 모두 후속 신작이 매년 이어지고 있어, 아직 GENRE-012(로그라이크
-  덱빌더)처럼 saturated 태그를 붙일 단계는 아니라고 판단한다.
+- Fact: the comparison set includes 1,000,000, 2,000,000, 5,000,000, and a score of 88 [source: original market evidence].
+- Fact: FTL: Faster Than Light (2012, Subset Games) has an overall positive score of 95/100 based on 77,989 Steam reviews;
+The estimated number of SteamSpy owners is 2 to 5 million [source: Steambase·SteamSpy, web search confirmed as of 2026-08-09].
+- Fact: Into the Breach (2018, Subset Games) has 94% positive (“very positive”) reviews out of 11,660 on Steam;
+The estimated number of SteamSpy holders is approximately 1 million [source: xda-developers Report/SteamSpy, web search confirmed 2026-08-09
+standard]. 
+- Fact: In 2026, Rogue Tactics (King's Bounty·Into the Breach series) and Mars Tactics (May 2026)
+New games such as Early Access (combined with terrain destruction physics) and Kriegsfront Tactics (combined with mech customization) continue to be released.
+It is coming out [source: Web search (Rogueliker.com, GameSpot, etc. article summarizing strategy games in 2026), confirmed 2026-08-09].
+- [interpretation] The two masterpieces (FTL, Into the Breach) both have reviews ranging from ten-thousand to 80,000, and GENRE-016 (barrel roguelike,
+Similar to representative works (20,000 to 40,000 reviews), it remains at the scale of "mid-sized indie that does not have a mega hit but sells steadily."
+It appears that there is. 
+I don't think it's time to add a saturated tag like Deck Builder).
 <!-- 증거 부족: 군집 전체(FTL·Into the Breach 이후 신작 전부) 매출 합계는 확인하지 못함. Rogue
 Tactics/Mars Tactics/Kriegsfront Tactics 개별 판매·리뷰 수치도 확인하지 못함 -->
 
 ## Conventions and Expectations
-- [interpretation] 유저에게 요구되는 스킬이 "반사신경"이 아니라 "확정 전 정보를 보고 계획하는 것"이라는 점이
-  탄막 로그라이크(GENRE-016)와의 가장 뚜렷한 차이다. Into the Breach는 적의 다음 턴 공격 궤적을
-  미리 보여주는 것으로 유명한데, 이는 "회피"가 아니라 "예측 배치"가 코어 동사임을 보여주는 설계다.
-- [interpretation] 격자(그리드) 단위 이동·사거리 계산이 관례로 보이며, 판마다 다시 짜는 소규모 부대(3~4유닛
-  안팎)와 로그라이크식 런 리셋(패배 시 처음부터, 일부 메타 진행만 영구 해금)이 함께 관례를 이룬다.
-- [interpretation] GENRE-012(로그라이크 덱빌더)와는 "선택의 단위가 카드가 아니라 유닛/스킬 배치"라는 점에서,
-  GENRE-010(타워 디펜스)과는 "방어 거점이 아니라 이동 가능한 소수 유닛을 직접 조작한다"는 점에서
-  갈린다.
+- [interpretation] The skill required from the user is not “reflexes” but “looking at information and planning before making a decision.”
+This is the most obvious difference from the bullet hell roguelike (GENRE-016). 
+It is famous for showing in advance, and this is a design that shows that “predictive placement” rather than “avoidance” is the core verb.
+- [interpretation] It seems customary to calculate movement and range in grid units, and small units (3-4 units) are reorganized every game.
+Inside and out) and roguelike-style run reset (start from the beginning when defeated, only certain meta progressions are permanently unlocked) are common practices.
+- [interpretation] Unlike GENRE-012 (roguelike deck builder), “the unit of selection is not a card, but unit/skill placement.”
+It is different from GENRE-010 (Tower Defense) in that it "directly operates a small number of units that can move rather than a defense base."
+It's different.
 
 ## Gaps
-[interpretation] ★ 웹 검색 범위 안에서는 GENRE-016(탄막 로그라이크)처럼 4인 이상 동시 협동을 지원하는 턴제
-전술 로그라이크 사례를 확인하지 못했다. 검색으로 확인된 신작(Rogue Tactics, Mars Tactics, Kriegsfront
-Tactics)도 소개 문구상 싱글플레이 또는 소규모 파티 중심으로 보인다. 턴제 전술이라는 조작 축이 실시간
-반응 부담을 낮추는 만큼, 오히려 다인 동시 턴(모두가 동시에 명령을 내리고 한 번에 해석하는 방식) 협동을
-붙이기 쉬운 구조일 수 있는데도 그런 조합이 눈에 띄지 않는다.
-- 확인 방법: Steam 태그 "tactical roguelike" + "co-op"/"multiplayer" 교차 검색, itch.io "turn-based
-  tactics roguelike" 신작 목록 확인
-- 확인일: 2026-08-09 / 재확인 주기: 8주
+The original gap evidence is retained in the translated paragraph above.
+[interpretation] ★ Within the scope of web search, turn-based games that support simultaneous cooperation of 4 or more people like GENRE-016 (barrel roguelike)
+We have not been able to confirm any cases of tactical roguelikes. 
+Tactics) also appears to be single-player or small-party focused based on the introduction. 
+As it lowers the reaction burden, it actually encourages cooperation by multiple people taking simultaneous turns (where everyone issues commands at the same time and interprets them at the same time).
+Although it may be an easy-to-attach structure, such a combination is not noticeable.
+- How to check: Cross-search Steam tags “tactical roguelike” + “co-op”/”multiplayer”, itch.io “turn-based”
+Check out the new “tactics roguelike” list
+- Confirmation date: 2026-08-09 / Re-confirmation cycle: 8 weeks

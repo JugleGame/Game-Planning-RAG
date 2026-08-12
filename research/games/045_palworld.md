@@ -1,8 +1,8 @@
 +++
 card_id = "GAME-045"
 type = "success"
-title = "Palworld (2024 얼리액세스 / 2026-07-10 정식출시, Pocketpair)"
-summary = "포켓몬류 생물 포획과 총기 서바이벌 크래프팅을 결합해 1.0 출시 직후 폭발적 판매를 기록한 오픈월드 서바이벌"
+title = "Palworld (2024 Early Access / 2026-07-10 full release, Pocketpair)"
+summary = "An open-world survival game that combined Pokemon-style creature capture with gun-based survival crafting and recorded explosive sales right after its 1.0 release"
 genres = ["GENRE-020", "GENRE-030"]
 elements = ["ELEM-039"]
 tags = ["survival" ,"crafting" ,"open-world" ,"creature-collection" ,"co-op" ,"indie" ,"controversy"]
@@ -10,27 +10,28 @@ updated = "2026-08-01"
 confidence = "high"
 +++
 ## Summary and Sales/Review Metrics
-1.0 정식 출시(2026-07-10) 직후 10일간 180만 장 이상 판매, 누적 3,000만 장 이상 · 매출
-약 7억 달러, Steam 리뷰 93% 긍정(40만+ 리뷰) [source: Forbes/Notebookcheck, 2026-07 기준].
-2024-01 얼리액세스 출시 당시에는 올타임 최고 동시접속 210만을 기록했으나, 2026-07 현재
-평상시 동접은 그보다 크게 낮다 [source: PlayerAuctions, 2026-07 확인].
+In the 10 days right after the 1.0 full release (2026-07-10) it sold over 1,800,000 units, for a cumulative
+30,000,000+ units and revenue of about $700,000,000, with Steam reviews 93% positive (400,000+ reviews)
+[source: Forbes/Notebookcheck, as of 2026-07]. At its 2024-01 Early Access launch it recorded an all-time
+peak concurrent of 2,100,000, but as of 2026-07 its everyday concurrents are far lower than that
+[source: PlayerAuctions, verified 2026-07].
 
 ## Elements Used
-- ELEM-039 (포획형 동료 노동 시스템) - 잡은 생물을 전투뿐 아니라 채집·제작·운반 노동력으로
-  기지에 배치하는 구조가 핵심 정체성.
+- ELEM-039 (capture-type companion labor system) - the structure of assigning captured creatures to the base as labor for
+  gathering, crafting and hauling, not just combat, is its core identity.
 
 ## Success/Failure Drivers
-- 사실: 얼리액세스 출시 첫 달 만에 2,500만 장을 넘겼고(2024년 보도 종합), 1.0 출시로
-  10일간 180만 장이 추가로 팔렸다 [source: Forbes, 2026-07 기준].
-- 사실: 2024-09-18 Nintendo·Pokémon Company가 특허 침해 소송을 제기했으나, 2026-03-25
-  미국 특허청이 관련 특허 청구항 26개 전부를 자명하다며 기각했고 일본 특허청도 관련 출원
-  기각을 유지했다. Pocketpair는 'Pal Sphere' 소환 방식을 변경해 소송 범위를 구버전으로
-  좁혔고, 예상 손해배상액은 약 6만 6천 달러 수준으로 축소됐다 [source: openclassactions.com
-  /Techdirt/VGC 보도, 2026-07 기준].
-- [interpretation] "포켓몬과 총" 이라는 낙차 큰 콘셉트가 초기 바이럴을 만들었고, 소송 리스크가
-  현실화되지 않으면서 1.0 정식 출시까지 화제성을 유지한 것으로 보인다.
+- Fact: It passed 25,000,000 units within the first month of Early Access release (2024 press aggregate), and the 1.0 release
+  added another 1,800,000 units sold in 10 days [source: Forbes, as of 2026-07].
+- Fact: On 2024-09-18 Nintendo and The Pokémon Company filed a patent infringement suit, but on 2026-03-25 the
+  US Patent Office rejected all 26 of the relevant patent claims as obvious, and the Japan Patent Office also upheld
+  the rejection of the related application. Pocketpair changed the 'Pal Sphere' summoning method and thereby narrowed
+  the scope of the suit to older versions, and the expected damages were reduced to roughly $60,000 + $6,000 [source: openclassactions.com
+  /Techdirt/VGC reporting, as of 2026-07].
+- [interpretation] The high-contrast concept of "Pokemon with guns" created the initial virality, and with the litigation risk
+  never materializing it appears to have sustained buzz all the way to the 1.0 full release.
 
 ## Implications for Our Project
-[interpretation] 기존 인기 IP의 디자인 문법(생물 포획)을 다른 장르(서바이벌 크래프팅 오픈월드)에
-이식하면 소송 리스크를 감수하는 대신 즉각적인 인지도를 얻을 수 있다 - 단, 캐릭터 디자인
-유사성보다 시스템(포획·전투 방식) 자체의 특허 리스크를 법무적으로 먼저 점검해야 한다.
+[interpretation] Transplanting the design grammar of an existing popular IP (creature capture) into another genre (survival
+crafting open world) can buy immediate recognition in exchange for accepting litigation risk - but the patent risk of the
+system itself (capture/combat methods) must be checked legally first, ahead of character design similarity.

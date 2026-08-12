@@ -2,7 +2,7 @@
 card_id = "GAME-033"
 type = "mixed"
 title = "Little Nightmares III (2025, Supermassive Games / Bandai Namco)"
-summary = "분위기는 그대로였지만 반복된 공식과 겉도는 신규 메커닉으로 시리즈 최저 평가를 받은 후속작"
+summary = "The atmosphere remained intact, but repeated formulas and superficial new mechanics made this the lowest-rated sequel in the series"
 genres = ["GENRE-014"]
 elements = ["ELEM-016"]
 tags = ["horror", "side-scroller", "sequel", "divisive", "formula-fatigue"]
@@ -10,25 +10,26 @@ updated = "2026-07-30"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-Metascore 71점, 평론 75건 기준 "복합적 또는 평균" 등급이며 시리즈 최저 점수다
-[source: Metacritic, 2026-07 확인]. Steam 유저 리뷰 1만 1천 건 이상이 "복합적"으로 분류됐고,
-Google 리뷰는 2.8점이었다 [source: Tech Times, 2025-10-21 기준].
-같은 시리즈의 1편은 누적 300만 장을 넘겼고 시리즈 전체는 1200만 장을 넘겼다
-[source: Tarsier 공식 발표 및 KitGuru 보도, 2026-07 확인] — 즉 시장이 없어서 실패한 것이 아니다.
+Metascore 71, with 75 critic reviews counted, rated "Mixed or Average" and the lowest score in the series
+[source: Metacritic, verified 2026-07]. More than 10,000 plus 1,000 Steam user reviews were classified as "Mixed",
+and Google reviews stood at 2.8 [source: Tech Times, as of 2025-10-21].
+The first game in the same series exceeded 3,000,000 cumulative units, and the series as a whole exceeded
+12,000,000 units [source: official Tarsier announcement and KitGuru coverage, verified 2026-07]—so this was not
+a failure caused by a nonexistent market.
 
 ## Elements Used
-- ELEM-016 (그림다크 톤) - 분위기와 사운드트랙은 평론에서 호평받은 부분이다 [source: Metacritic 요약, 2026-07 확인].
+- ELEM-016 (grimdark tone) - the atmosphere and soundtrack were among the parts praised by critics [source: Metacritic summary, verified 2026-07].
 <!-- 증거 부족: 광원·시야 제한(ELEM-023)을 자원으로 다루는지는 조사에서 확인하지 못해 요소로 넣지 않았다 -->
 
 ## Success/Failure Drivers
-- 사실: 평론은 분위기와 비주얼을 호평하면서 게임플레이와 기술적 문제를 비판했다 [source: Metacritic 요약, 2026-07 확인].
-- 사실: 신규 메커닉이 충분히 활용되지 않았고 추격자와 환경의 창의성이 부족하다는 지적이 반복됐다 [source: Metacritic 유저 리뷰 요약, 2026-07 확인].
-- 사실: 다수 리뷰가 "반복적인 공식"을 문제로 짚었다 [source: Into Indie Games 리뷰 종합, 2026-07 확인].
-- 사실: 유저 불만은 분량과 가격 대비 콘텐츠, 그리고 전작 대비 변경된 게임플레이에 몰렸다 [source: Tech Times, 2025-10-21 기준].
-- [interpretation] 분위기는 그대로 유지됐는데 평가가 떨어졌다는 점이 핵심이다. 이 군집에서 분위기는 진입 조건이지 유지 조건이 아니다.
+- Fact: Critics praised the atmosphere and visuals while criticizing gameplay and technical problems [source: Metacritic summary, verified 2026-07].
+- Fact: The new mechanics were not used enough, and reviewers repeatedly pointed to a lack of creativity in the pursuers and environments [source: Metacritic user-review summary, verified 2026-07].
+- Fact: Many reviews identified the "repetitive formula" as a problem [source: Into Indie Games review roundup, verified 2026-07].
+- Fact: User complaints focused on length, content for the price, and gameplay changes from earlier entries [source: Tech Times, as of 2025-10-21].
+- [interpretation] The key point is that the atmosphere stayed intact while the reception fell. In this cluster, atmosphere is an entry condition, not a retention condition.
 
 ## Implications for Our Project
-횡스크롤 공포에서 "무섭고 예쁘다"는 것만으로는 두 번째 시간부터 통하지 않는다.
-GAME-005(Twelve Minutes)와 같은 실패 축이며, ELEM-004(반복 메커닉)의 교훈이 그대로 적용된다 —
-반복되는 구간마다 갱신되는 것이 최소 하나는 있어야 한다.
-런마다 카드가 새로 들어오는 구조(ELEM-020)는 바로 이 자리를 메우는 장치로 쓸 수 있다.
+In side-scrolling horror, "scary and beautiful" alone does not carry a second hour.
+This shares the failure axis of GAME-005 (Twelve Minutes), and the lesson of ELEM-004 (repetition mechanic)
+applies directly: at least one thing must be renewed in every repeated segment.
+A structure where new cards enter each run (ELEM-020) can fill precisely this role.

@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-034"
 type = "genre"
-title = "핵앤슬래시 던전크롤러 ARPG (시즌제 리그형)"
-summary = "좁은 던전형 맵을 빠르게 반복하며 빌드를 파밍하는 전투 위에, 정기적으로 리셋되는 시즌(리그)이 재플레이 동기를 새로 공급하는 액션 RPG 군집"
+title = "Hack-and-Slash Dungeon Crawler ARPG (Seasonal League)"
+summary = "An action-RPG cluster where combat repeatedly farms builds through narrow dungeon maps and regularly reset seasons (leagues) renew replay motivation"
 elements = ["ELEM-019"]
 example_games = ["GAME-023", "GAME-053"]
 tags = ["arpg", "hack-and-slash", "loot", "season", "league", "live-service", "saturated"]
@@ -10,24 +10,24 @@ updated = "2026-08-05"
 confidence = "medium"
 +++
 ## Components
-- ELEM-019 (무작위 전리품 드롭 & 루트 테이블) - 군집의 정의 그 자체. 좁은 던전·필드를 빠르게 반복하며 확률표에서 빌드 재료를 뽑아내는 것이 코어 루프다.
-- [interpretation] 오픈월드 다크 판타지(GENRE-009)와 겹치는 작품(GAME-023)도 있지만, 이 군집을 가르는 기준은 "맵이 넓은가"가 아니라 "정기적으로 리셋되는 시즌(리그)에 새 캐릭터로 처음부터 다시 파밍하는가"다.
-- [interpretation] 시즌마다 새 메커닉·아이템 세트를 한시적으로 추가했다가 인기 있는 것만 본편에 영구 편입하는 순환도 공통 정체성이다.
+- ELEM-019 (random loot drops & loot table) - the cluster's definition itself. The core loop is rapidly repeating narrow dungeons and fields to draw build materials from a probability table.
+- [interpretation] Some works overlap with open-world dark fantasy (GENRE-009), including GAME-023, but the dividing question is not whether the map is large; it is whether players start farming from scratch with a new character in a regularly reset season (league).
+- [interpretation] A shared identity is also the cycle of temporarily adding new mechanics and item sets each season, then permanently moving only popular ones into the main game.
 
 ## Market Saturation
-- 사실: GAME-023(Diablo IV)이 출시 5일 만에 매출 6억 6,600만 달러를 돌파해 블리자드 역대 최고 흥행 기록을 세웠다 [source: GAME-023 카드].
-- 사실: Path of Exile 2가 2024-12 출시 주말 Steam 동시접속 578,567명의 역대 최고 기록을 세워, Baldur's Gate 3·Cyberpunk 2077의 당시 최고 동시접속을 웃돌았다 [source: exitlag.com/tracker.gg 등 Steam 통계 집계, 2026 확인].
-- [interpretation] 다만 시즌 사이클 종료 후 관심이 크게 꺼지는 변동성도 뚜렷하다 - 2026년 8월 초 기준 Path of Exile 2의 24시간 최고 동시접속은 약 30,536명으로, 출시 주말 최고치 대비 크게 줄었다 [source: exitlag.com Steam 통계, 2026-08 확인].
-- 사실: Path of Exile의 시즌(리그) 주기는 2013년 이후 누적 통계로 중앙값 약 98일(약 14주)이다 [source: arpgseasons.com 리그 주기 집계].
-- 사실: Last Epoch는 2024년 2월 기준 누적 참여 플레이어 100만 명을 넘겼다고 공식 발표했다 [source: Last Epoch 공식 포럼 공지, 2024-02 기준].
+- Fact: GAME-023 (Diablo IV) exceeded $600,000,000 plus $66,000,000 in revenue five days after release, setting Blizzard's highest-grossing record at the time [source: GAME-023 card].
+- Fact: Path of Exile 2 set an all-time Steam concurrent-player record of 578,567 during its 2024-12 launch weekend, exceeding the then-record peaks of Baldur's Gate 3 and Cyberpunk 2077 [source: Steam statistics compiled by exitlag.com/tracker.gg and others, verified 2026].
+- [interpretation] However, volatility is clear in the sharp loss of interest after a season cycle ends - as of early August 2026, Path of Exile 2's 24-hour peak was about 30,536 concurrent players, far below its launch-weekend peak [source: exitlag.com Steam statistics, verified 2026-08].
+- Fact: Path of Exile's seasonal (league) cycle has a median of about 98 days (about 14 weeks) in cumulative statistics since 2013 [source: arpgseasons.com league-cycle compilation].
+- Fact: Last Epoch officially announced more than 1,000,000 cumulative participating players as of 2024-02 [source: Last Epoch official forum announcement, as of 2024-02].
 <!-- 증거 부족: Diablo IV·PoE 각 시즌별 참여율 하락폭을 직접 비교한 수치는 확인하지 못함 -->
 
 ## Conventions and Expectations
-- [interpretation] 새 시즌(리그) 시작 시 기존 캐릭터·경제를 그대로 이어가는 대신, 빈손에서 새로 시작해야 한다는 것이 이 군집의 핵심 관례다.
-- [interpretation] 시즌마다 최소 한 가지 이상의 새 메커닉·파밍 대상을 제공해야 한다는 기대치가 있다 - 인기 있었던 시즌 메커닉이 이후 본편(영구 모드)에 편입되는 순환이 표준으로 자리잡았다 [source: arpgseasons.com PoE 리그 주기 설명].
-- [interpretation] 빌드(스킬·아이템 조합) 자체가 콘텐츠로 소비된다 - 새 시즌마다 "이번엔 어떤 빌드가 강한가"가 커뮤니티 화제의 중심이 된다.
+- [interpretation] The central convention is that when a new season (league) starts, players begin empty-handed instead of carrying over existing characters and economies unchanged.
+- [interpretation] Each season is expected to provide at least one new mechanic or farming target - the cycle of popular seasonal mechanics entering the main permanent mode has become standard [source: arpgseasons.com explanation of PoE league cycles].
+- [interpretation] The build itself (skill and item combination) is consumed as content - each season's community conversation centers on "which build is strong this time."
 
 ## Gaps
-[interpretation] ★ Diablo IV·Path of Exile 2처럼 대형 예산 시즌형 ARPG는 출시 직후 동시접속이 폭발했다가 시즌 사이클을 거치며 크게 줄어드는 패턴이 반복되는데, 이 변동을 완화하는 데 성공한 구체 사례(예: 시즌 사이 공백을 메우는 장치)를 이번 조사에서 확인하지 못했다 - 시즌 간 리텐션 곡선 자체가 아직 미해결 설계 문제로 보인다.
-- 확인 방법: Diablo IV·PoE1/2·Last Epoch 각 시즌 종료 시점 동시접속 하락폭을 시즌별로 비교
-- 확인일: 2026-08-04 / 재확인 주기: 8주
+[interpretation] ★ Big-budget seasonal ARPGs such as Diablo IV and Path of Exile 2 repeatedly show an explosion of concurrent players immediately after launch followed by a major decline across season cycles. This research found no concrete case that successfully reduced the volatility, such as a device filling the gap between seasons - the between-season retention curve remains an unresolved design problem.
+- How to verify: compare the concurrent-player drop at the end of each season for Diablo IV, PoE1/2, and Last Epoch
+- Verified on: 2026-08-04 / Re-check interval: 8 weeks

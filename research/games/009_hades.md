@@ -2,7 +2,7 @@
 card_id = "GAME-009"
 type = "success"
 title = "Hades (2020, Supergiant Games)"
-summary = "\"죽음 = 서사 진행\"으로 반복을 보상으로 바꾼 내러티브 로그라이크의 정점"
+summary = "The peak of a narrative roguelike that turned repetition into a reward through \"death = narrative progression\""
 genres = ["GENRE-002"]
 elements = ["ELEM-004"]
 tags = ["roguelike", "narrative", "retention", "broad-appeal"]
@@ -10,19 +10,18 @@ updated = "2026-07-15"
 confidence = "high"              # 판매는 개발사 공식 발표
 +++
 ## Summary and Sales/Review Metrics
-지하세계 탈출 로그라이크. 정식 출시 며칠 만에 누적 100만 장(얼리액세스 70만
-+ 정식 30만) [source: Supergiant 발표/GameSpot, 2020-09]. Steam 리뷰 14만 건
-이상 중 98% 긍정 "압도적으로 긍정적" [source: Steam, 2026-07 확인]. Metacritic 92-93점.
+A roguelike about escaping the Underworld. It reached 1,000,000 cumulative copies within days of full release (700,000 early access
++ 300,000 full release) [source: Supergiant announcement/GameSpot, 2020-09]. More than 140,000 Steam reviews are
+98% positive, “Overwhelmingly Positive” [source: Steam, 2026-07 check]. Metacritic score: 92–93.
 
 ## Elements Used
-- ELEM-004 (반복 메커닉) - 죽어서 시작점으로 돌아갈 때마다 새 대사·새 관계·새 빌드가 해금. 실패가 벌이 아니라 이야기의 다음 장.
+- ELEM-004 (repetition mechanic) - Each death and return to the starting point unlocks new dialogue, relationships, and builds. Failure is not a punishment but the next chapter of the story.
 
 ## Success/Failure Drivers
-- 사실: 설계 의도가 문서화된 희귀 사례 - 개발사가 전작(Pyre)에서 "분기 서사를 만들었는데 유저가 반복 플레이를 안 해서 못 봤다"는 실패를 겪고, 반복이 전제인 로그라이크를 의도적으로 선택 [source: Wikipedia - Hades 개발 항목]
-- 사실: 얼리액세스 2년간 유저 피드백으로 루프 자체를 다듬은 뒤 정식 출시 [source: 동일]
-- [interpretation] 성공 공식은 "루프 구조 × 서사 보상"의 곱 - 어느 한쪽만으로는 이 평점이 안 나옴.
+- Fact: A rare documented case of design intent—the developer experienced a failure on its previous game (Pyre), where players did not repeat the game enough to see its branching story, and deliberately chose a roguelike built around repetition [source: Wikipedia - Hades development section]
+- Fact: After refining the loop through two years of early-access feedback, it received its full release [source: same]
+- [interpretation] The success formula is the product of “loop structure × narrative reward”—either side alone would not produce this rating.
 
 ## Implications for Our Project
-"반복하고 싶은 이유"를 시스템(빌드)과 서사(대사)에 이중으로 심는 것이 정석.
-우리의 AI 해설자는 이 "죽을 때마다 새 대사"를 대본 소진 없이 무한 공급할 수 있는
-잠재 수단 - Hades가 대본으로 한 것을 생성으로 [interpretation].
+The standard approach is to embed the “reason to repeat” twice, in the system (builds) and the narrative (dialogue).
+Our AI commentator could potentially supply this “new dialogue every death” indefinitely without exhausting a script—what Hades did with scripted content, through generation [interpretation].

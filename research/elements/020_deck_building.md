@@ -1,68 +1,39 @@
 +++
 card_id = "ELEM-020"
 type = "mechanic"
-title = "덱 구축 (Deck-building)"
-summary = "약한 시작 카드 묶음에서 출발해 플레이 도중 카드를 한 장씩 더하고 빼며 자기만의 덱을 만들어가는 구조"
+title = "Deck-building (Deck-building)"
+summary = "A structure in which the player starts with a weak group of cards and builds a personal deck by adding and removing cards during play"
 tags = ["deckbuilder", "roguelike", "randomness", "replayability", "indie", "strategy"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-카드를 모아 자기만의 카드 묶음을 만들고, 그 묶음으로 싸우는 방식입니다. 이 묶음을 '덱'이라고 부릅니다.
-게임을 시작할 때는 아주 약한 카드 몇 장만 가지고 있고, 싸움에서 이길 때마다 새 카드를 받아 덱에
-넣습니다. 그런데 여기에 함정이 하나 있습니다. 덱이 커질수록 정작 쓰고 싶은 카드가 손에 안 잡히게
-됩니다. 카드가 열 장일 때 좋은 카드 한 장을 뽑을 확률과, 카드가 마흔 장일 때 그 한 장을 뽑을 확률이
-다르기 때문입니다. 그래서 이 방식에서는 좋은 카드를 많이 넣는 것보다 **필요 없는 카드를 넣지 않고,
-이미 있는 카드를 빼는 것**이 더 중요한 전략이 됩니다. 얻는 것이 곧 강해지는 것이 아니라는 점이
-이 구조의 가장 큰 특징입니다.
+This method collects cards into a personal group and fights with that group, called a deck. The player starts with a few very weak cards and adds new cards after winning fights. But there is a trap: as the deck grows, the desired cards become harder to draw. The chance of drawing one good card differs between a ten-card deck and a forty-card deck. Therefore, **not adding unnecessary cards and removing cards already owned** can be more important than adding many good cards. The defining feature is that gaining something does not automatically make the player stronger.
 
 ## Success Cases
-- GAME-030 (Slay the Spire) - 전투마다 제시된 카드 중 하나만 골라 덱을 키우는 구조로 PC·콘솔 합산
-  1,000만 장을 넘겼고 [source: Alinea Analytics, 2026-03-20 기준], Steam 리뷰 194,000건 이상 중
-  97% 긍정을 유지하고 있다 [source: Notebookcheck 세일 보도, 2026-07 확인].
-- GAME-030의 속편 - 2026년 3월 5일 얼리액세스 출시 후 2주 만에 460만 장 / 9,200만 달러 이상,
-  최고 DAU 220만 명 [source: Alinea Analytics, 2026-03-20 기준]. 플레이어의 50% 이상이 20시간을
-  넘겼고 14%가 50시간 이상을 기록했다 [source: Alinea Analytics, 2026-03-20 기준].
-- GAME-031 (Balatro) - 포커 규칙 위에 덱 구축을 얹은 변형으로 전 플랫폼 누적 500만 장을 넘겼다
-  [source: Game Developer, 2024년 12월 기준].
-- GAME-034 (Wildfrost) - 카드 하나하나를 필드 위 타일에 배치해 인접 카드와 시너지를 내는 배치형
-  덱빌딩으로, 덱 구축의 축을 "무엇을 넣는가"에서 "어디에 두는가"로 옮긴 변형 사례 [source: GAME-034 카드].
+- GAME-030 (Slay the Spire) - Grew the deck by choosing one of the cards presented after each battle, exceeded 10,000,000 copies across PC and console [source: Alinea Analytics, as of 2026-03-20], and maintains 97% positive among more than 194,000 Steam reviews [source: Notebookcheck sales report, confirmed 2026-07].
+- GAME-030 sequel - Within two weeks of its early-access release on 2026-03-05, reached 4,600,000 copies / more than $92,000,000 and a peak DAU of 2,200,000 [source: Alinea Analytics, as of 2026-03-20]. More than 50% of players exceeded 20 hours and 14% recorded more than 50 hours [source: Alinea Analytics, as of 2026-03-20].
+- GAME-031 (Balatro) - A variation that builds a deck on poker rules and exceeded 5,000,000 copies across all platforms [source: Game Developer, as of 2024-12].
+- GAME-034 (Wildfrost) - A positional deckbuilder that places each card on a field tile to create synergy with adjacent cards, shifting the axis of deck-building from "what to add" to "where to place it" [source: GAME-034 card].
 
 ## Failure Cases
-- 사실: 2017년 말 GAME-030의 얼리액세스 성공 이후 이 장르는 포화 상태가 됐고, 원조와 플레이 루프가
-  거의 구분되지 않는 후발작이 계속 쏟아진다는 지적이 있다 [source: GameShub 장르 분석 기사,
-  2026-07 확인].
-  실패 지점: 덱 구축은 규칙이 단순해 모방 비용이 낮다. 그래서 요소를 그대로 가져오면 "또 그 게임"이
-  되고, 차별화는 덱 구축 자체가 아니라 그 위에 무엇을 얹었느냐에서만 나온다.
+- Fact: After GAME-030's early-access success at the end of 2017, the genre became saturated, with repeated criticism that later works have loops almost indistinguishable from the original [source: GameShub genre analysis article, confirmed 2026-07].
+  Failure point: Deck-building has simple rules and a low imitation cost. Copying the element directly produces "that game again"; differentiation comes only from what is built on top of it.
 <!-- 증거 부족: 실패한 개별 타이틀의 판매·리뷰 수치는 확인하지 못해 장르 수준 관찰만 기재함 -->
 
 ## User Reaction Summary
-- 선호: 매 판 덱이 달라져 같은 게임을 수십~수백 시간 반복하게 되는 점 - 속편 기준 50% 이상이
-  20시간 초과, 1%가 100시간 이상 [source: Alinea Analytics, 2026-03-20 기준]
-- 선호: 시드를 공유하는 데일리 모드에서 모두가 똑같은 지도·카드 보상·유물을 받고 겨룰 수 있다는 점
-  [source: Slay the Spire Wiki 'Daily Climb' 문서, 2026-07 확인]
-- 불호: 원조와 구분되지 않는 후발작에 대한 피로 [source: GameShub 장르 분석 기사, 2026-07 확인]
+- Preference: Each run's different deck makes players repeat the same game for dozens or hundreds of hours; for the sequel, more than 50% exceeded 20 hours and 1% exceeded 100 hours [source: Alinea Analytics, as of 2026-03-20]
+- Preference: In a shared-seed daily mode, everyone can compete with the same map, card rewards, and relics [source: Slay the Spire Wiki 'Daily Climb' article, confirmed 2026-07]
+- Dislike: Fatigue with later works indistinguishable from the original [source: GameShub genre analysis article, confirmed 2026-07]
 
 ## Synergy
-- 좋음: ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 무작위로 제시된 카드 중 택1하는 구조가
-  덱 구축의 입력을 그대로 만들어준다. 사실상 짝으로 쓰이는 요소다
-- 좋음: ELEM-004 (반복 메커닉) - 덱이 매번 다르게 짜여 같은 판을 반복해도 다른 게임이 된다
-- 충돌: ELEM-019 (무작위 전리품 드롭 & 루트 테이블) - [interpretation] 축적의 방향이 정반대다. 루트 드롭은
-  "많이 얻을수록 강해진다"를 전제로 하지만, 덱 구축은 많이 넣을수록 원하는 카드가 희석돼 약해질 수
-  있다. 두 요소를 한 게임에 같이 넣으면 플레이어가 "얻는 것이 좋은 것"이라는 학습을 잘못 적용해
-  스스로 덱을 망가뜨리기 쉽다
-- 장르 앵커: GENRE-012 (로그라이크 덱빌더), GENRE-013 (카지노 규칙 로그라이트), GENRE-028 (수집형 카드
-  대전 PvP) - 세 군집이 이 요소를 구성 요소로 지목한다. GENRE-028은 한 판만 유지되는 런 기반 덱이
-  아니라, 소유한 카드 수집 전체에서 미리 짜둔 고정 덱을 들고 상시 대전에 들어간다는 점에서 나머지
-  두 군집과 갈린다 [source: GENRE-028 카드].
-- 구체화: ELEM-047 (비대칭 시작덱 캐릭터 로스터) - 이 카드가 다루는 "단일 덱이 자라나는 구조" 위에
-  "캐릭터마다 다른 시작 덱을 부여"하는 로스터 축을 얹은 구체 사례다. Slay the Spire의 아이언클래드·
-  사일런트·디펙트·워처가 각각 다른 시작 덱을 갖는 것이 대표적이다 [source: ELEM-047 카드].
+- Good: ELEM-018 (Roguelike Random Upgrade/Path Draft) - Choosing one randomly presented card supplies the input for deck-building directly; the elements are practically paired.
+- Good: ELEM-004 (Repetition Mechanic) - A differently built deck makes the same run a different game.
+- Conflict: ELEM-019 (Random Loot Drop & Loot Table) - [interpretation] Their accumulation logic is opposite. Loot drops assume "more makes you stronger," while adding more cards can dilute desired cards and make a deck weaker. Combining them can make players wrongly learn that everything gained is good and damage their own deck.
+- Genre anchors: GENRE-012 (Roguelike Deckbuilder), GENRE-013 (Casino-rules Roguelite), GENRE-028 (Collectible Card PvP) - All three clusters identify this element as a component. GENRE-028 differs because it uses a fixed deck prepared from the whole owned collection for ongoing matches, not a run-based deck that lasts one game [source: GENRE-028 card].
+- Specification: ELEM-047 (Asymmetric Starting-Deck Character Roster) - A concrete case that adds a roster axis of "different starting decks for each character" on top of this card's "single deck grows" structure. Ironclad, Silent, Defect, and Watcher in Slay the Spire each have a different starting deck [source: ELEM-047 card].
 
 ## Risks
-- [interpretation] 덱이 커지면 약해질 수 있다는 규칙은 직관에 반한다. 이걸 게임이 명시적으로 가르치지 않으면
-  초보 플레이어는 보상 카드를 전부 받아 스스로 패배하고, 그 패배의 원인을 무작위 탓으로 돌린다.
-- [interpretation] 모방 비용이 낮아 요소 자체로는 차별화가 되지 않는다. GAME-030과 GAME-031(Balatro)의 차이는
-  덱 구축이 아니라 그 위에 얹은 규칙(승천 난이도 / 포커 족보)에서 나왔다.
-- [interpretation] 카드 종류가 늘수록 조합 검증 비용이 급격히 커진다. 밸런스 붕괴 조합 하나가 판 전체를
-  무의미하게 만들 수 있어, 카드 수를 늘리는 것이 곧 콘텐츠 증가는 아니다.
+- [interpretation] The rule that a larger deck can be weaker is counterintuitive. Without explicit teaching, beginners accept every reward card, defeat themselves, and blame randomness.
+- [interpretation] Low imitation cost means the element itself does not differentiate a game. The difference between GAME-030 and GAME-031 (Balatro) comes from the rules added on top (Ascension difficulty / poker hands), not deck-building.
+- [interpretation] As card types increase, combination-verification cost rises sharply. One balance-breaking combination can make an entire run meaningless, so more cards do not automatically mean more content.

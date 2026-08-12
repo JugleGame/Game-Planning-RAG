@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-017"
 type = "genre"
-title = "메트로배니아 (Metroidvania)"
-summary = "능력 해금으로 이전 지역을 다시 열어가는 비선형 탐험이 코어인, 향수 기반 구매 동기가 강한 인디 중심 군집"
+title = "Metroidvania"
+summary = "An indie-centered cluster whose core is non-linear exploration that reopens earlier areas through ability unlocks, with a strong nostalgia-based purchase motivation"
 elements = ["ELEM-012"]
 example_games = []
 tags = ["metroidvania", "exploration", "indie", "non-linear", "saturated"]
@@ -10,19 +10,19 @@ updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Components
-- ELEM-012 (랜드마크 기반 탐험) - 마커 대신 큰 지형지물과 능력 해금으로 "저기 가보고 싶다"를 만들고, 이전 지역 재방문이 진행도 자체가 된다.
-- [interpretation] 그림다크 톤(ELEM-016)과 결합한 사례(Blasphemous)가 있지만, 톤은 이 장르의 필수 조건이 아니라 선택적 결합이다.
+- ELEM-012 (landmark-based exploration) - instead of markers, large terrain features and ability unlocks create the feeling of "I want to go over there," and revisiting earlier areas becomes progression itself.
+- [interpretation] There are cases combined with a grimdark tone (ELEM-016), such as Blasphemous, but tone is not a requirement of this genre, only an optional combination.
 
 ## Market Saturation
-- 사실: Hollow Knight는 누적 판매 1,000만 장 이상으로 언급된다 [source: 업계 집계 보도(Accio 등), 웹 검색 종합 확인 - 1차 발표 자료는 확인하지 못함].
-- [interpretation] 여러 시장 조사 보고서가 "장르 포화"를 지적하며, Steam 주간 신작 다수가 이 장르에 몰려 발견성이 낮아지고 있다고 서술한다 [source: growthmarketreports.com/dataintelo.com 등 시장 리포트 종합, 2024-2025 기준].
-<!-- 증거 부족: 위 시장 리포트 사이트들은 상업 리서치 성격이라 방법론이 불투명하다. 개별 게임 Steam 리뷰 수치로 교차검증이 더 필요함 -->
+- Fact: Hollow Knight is cited as having cumulative sales of 10,000,000 units or more [source: industry tally reports (Accio and others), aggregated web-search verification - the primary announcement material could not be confirmed].
+- [interpretation] Several market research reports point to "genre saturation," describing how many of Steam's weekly new releases cluster into this genre, lowering discoverability [source: aggregated market reports from growthmarketreports.com / dataintelo.com and others, as of 2024-2025].
+<!-- Insufficient evidence: the market report sites above are commercial research in nature, so their methodology is opaque. Further cross-verification with individual games' Steam review figures is needed -->
 
 ## Conventions and Expectations
-- 사실: 한 소비자 설문에서 메트로이드배니아 구매자의 58% 이상이 "고전 게임 메카닉에 대한 향수"를 주요 구매 동기로 꼽았다고 보도됐다 [source: 시장 리포트 종합 보도, 2024 기준 - 원 설문 방법론 미확인].
-- [interpretation] "능력 해금 → 이전 지역 재방문"이라는 순환이 장르 관례로 굳어 있어, 이 구조가 없으면 정체성 자체가 흔들린다고 볼 수 있다.
+- Fact: One consumer survey was reported to find that 58% or more of Metroidvania buyers cited "nostalgia for classic game mechanics" as a main purchase motivation [source: aggregated market report coverage, as of 2024 - the original survey methodology is unverified].
+- [interpretation] The cycle of "ability unlock → revisit earlier areas" is set as a genre convention, so without this structure the identity itself can be seen as shaky.
 
 ## Gaps
-[interpretation] ★ 2인 이상이 동시에 같은 맵을 실시간으로 탐험하는 협동 메트로배니아는 조사 중 뚜렷한 흥행 사례를 확인하지 못했다.
-- 확인 방법: Steam 태그 "metroidvania" + "co-op" 교차 검색
-- 확인일: 2026-07-31 / 재확인 주기: 8주
+[interpretation] ★ For a co-op Metroidvania in which 2 or more players explore the same map simultaneously in real time, no clear commercial success case was confirmed during the investigation.
+- Verification method: cross-search of the Steam tags "metroidvania" + "co-op"
+- Verified on: 2026-07-31 / Re-verification cycle: 8 weeks

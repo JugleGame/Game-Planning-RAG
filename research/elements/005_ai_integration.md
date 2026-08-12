@@ -1,53 +1,55 @@
 +++
 card_id = "ELEM-005"
 type = "tech"
-title = "AI 통합 (AI Integration)"        # 오타 수정: intergration → Integration
-summary = "AI가 플레이어의 말과 행동을 보고 그 자리에서 반응을 생성하는 기술"
+title = "AI Integration" # Typo correction: integration → Integration
+summary = "Technology where AI sees the player's words and actions and generates a response on the spot"
 tags = ["requires-ai", "high-cost", "viral-hook", "fragile", "divisive"]
 updated = "2026-07-31"
 confidence = "medium"            # 사유: 시장 초기 단계 - 순수 성공 사례 부재, 신호 변동 큼. 분기별 재평가.
 +++
 ## Definition
-게임 캐릭터의 대사는 보통 미리 써둔 대본입니다. 그런데 이 기술을 쓰면
-캐릭터가 대본 없이, 플레이어가 방금 한 말과 행동을 보고 그 자리에서
-대답을 만들어냅니다. 녹음된 안내방송이 아니라, 진짜 사람과 대화하듯
-매번 다른 반응이 나오는 것입니다.
+A game character's dialogue is usually a pre-written script. However, if you use this technique
+Without a script, the character sees what the player just said and did and acts on the spot.
+generates an answer. As if talking to a real person, not a recorded announcement.
+There is a different reaction every time.
 
 ## Success Cases
-- GAME-010 (Suck Up!) - 뱀파이어가 되어 AI 주민을 말로 속여 집에 들어가는 게임. "내 진짜 목소리로 설득한다"는 체험이 스트리머 콘텐츠로 확산되며 AI가 코어 메커닉이 될 수 있음을 처음 입증 (2023~24 바이럴).
-- GAME-011 (inZOI) - NVIDIA ACE 기반 온디바이스 소형 언어모델로 NPC가 스스로 내면 생각·일정·행동을 생성(Smart Zoi). 얼리액세스 출시 후 100만 장 이상 판매 - AI NPC를 탑재한 대형 타이틀의 첫 상업적 성공 [source: inZOI 게임 개요/KRAFTON 발표, 2025-03 기준].
+- GAME-010 (Suck Up!) - A game where you become a vampire and trick AI residents into their houses. The experience of “persuading with my real voice” spread to streamer content, proving for the first time that AI can be a core mechanic (2023~24 viral).
+- GAME-011 (inZOI) - NVIDIA ACE-based on-device small language model that generates internal thoughts, schedules, and actions of NPCs (Smart Zoi). Sold over 1,000,000 copies since early access launch - first commercial success of a large title with AI NPC [source: inZOI game overview/KRAFTON announcement, based on 2025-03].
 
 ## Failure Cases
-- GAME-010 (Suck Up!) - 화제성 이후 유지 실패. Steam 정식 출시 평가 "복합적(Mixed)", 189건 중 60% 긍정. 불만 핵심: "좋은 프롬프트에도 AI 특유의 반복 말투", 환각(동의만 하면 풀리는 억지 상황 생성), 버그 [source: Steam 스토어/리뷰, 2026-07 확인].
-- GAME-011 (inZOI) - 출시 3개월 내 동시접속 약 98% 감소, 초기 86%였던 긍정 비율 하락. Smart Zoi는 최상급 GPU에서도 프레임 급락(120→45fps 보고)으로 "GPU 킬러" 별명 [source: inZOI 게임 개요 / 36Kr 보도, 2026-01].
-  실패 지점: 첫 화제성은 만들지만, 반복 말투·환각·성능 비용이 리텐션을 무너뜨림. 같은 게임이 성공과 실패 양쪽에 있는 것이 이 요소의 현주소.
+- GAME-010 (Suck Up!) - Failed to maintain after gaining popularity. Steam official release rating "Mixed", 60% positive out of 189. Core complaints: "AI's unique repetitive speech style even with good prompts", hallucinations (creating unreasonable situations that can be resolved only with agreement), bugs [source: Steam store/review, 2026-07 confirmed].
+- GAME-011 (inZOI) - Simultaneous connections decreased by approximately 98% within 3 months of launch, and the positive rate decreased from the initial 86%. Smart Zoi is nicknamed the "GPU killer" due to its frame rate plummets (120→45fps reported) even on top-end GPUs [source: inZOI Game Overview / 36Kr reports, 2026-01].
+Failure point: Creates initial buzz, but repetition, hallucination, and performance costs destroy retention. The current state of this factor is that the same game has both success and failure.
 
 ## User Reaction Summary
-- 선호: "말로 NPC를 속이는 게 진짜 웃기다" - 방송·클립용 순간을 만드는 힘 [source: GAME-010 스토어 인용 크리에이터 반응 및 유튜브 플레이 영상, 2023-12]
-- 선호: NPC의 돌발 행동이 이야깃거리가 됨 - "짝지어주려던 Zoi가 갑자기 퇴사하고 배낭여행을 떠났다" 류의 창발 서사 [source: 36Kr 유저 인터뷰 인용, 2026-01]
-- 불호: "AI 말투가 다 똑같다", 환각, 반응 지연, 프레임 저하 [source: GAME-010 Steam 리뷰 2025-12 / GAME-011 관련 보도]
-- 불호: 생성 AI 사용 자체에 대한 커뮤니티 반발 - 무단 학습 우려 논란 [source: GAME-011 출시 직후 커뮤니티 논의 기록]
+- Preferred: "It's really funny to deceive NPCs with words" - The power of creating moments for broadcasts and clips [source: GAME-010 Store quote Creator reaction and YouTube play video, 2023-12]
+- Preferred: NPC's unexpected behavior becomes a topic of conversation - Emergent narrative of the "Zoi, whom I was trying to mate with, suddenly quit the company and went on a backpacking trip" type [source: 36Kr user interview quote, 2026-01]
+- Dislike: “AI speech patterns are all the same”, hallucinations, delayed reactions, frame drops [source: GAME-010 Steam review 2025-12 / GAME-011 related reports]
+- Dislike: Community backlash against the use of generative AI itself - Controversy over concerns about unauthorized learning [source: GAME-011 Community discussion record immediately after release]
 
 ## Synergy
-- 좋음: ELEM-003 (제4의 벽 붕괴) - 실시간 반응이 포스 월의 "1회성 한계"를 반복 가능하게 만듦. ELEM-003 카드의 리스크 해소 조합.
-- 좋음: ELEM-002 (캠피) - AI의 어색한 말투·돌발 행동이 캠피 톤 안에서는 결함이 아니라 개그로 흡수됨 [interpretation]
-- 좋음[interpretation]: ELEM-004 (반복 메커닉) - 플레이어의 과거 루프를 AI가 실시간 언급하는 조합. 출시 사례 없음 - GENRE-001 빈칸 가설과 동일 지점.
-- 주의: 대본 기반 개성과 항상 비교당함 - 커뮤니티는 AI 해설을 GAME-013 (The Stanley Parable)의 각본 내레이터를 기준으로 평가함 [interpretation]
-- 대비: ELEM-007 (선택 반응형 비-LLM 내러티브) - 같은 목표를 대본으로 달성하는 대안. GAME-041이 LLM 없이도 최상급 성과에 도달할 수 있음을 보여주므로, AI 통합은 "대본으로 안 되는 것이 무엇인가"를 먼저 답해야 정당화된다 [interpretation]
-- 하위 갈래: ELEM-006 (AI 기반 심문) / ELEM-025 (온디바이스 SLM 실시간 음성 대화 NPC) - 각각 이 요소의 용도 특화판(심문)과 전달 방식 특화판(음성·온디바이스)이다. 셋을 함께 쓸 때 리스크는 합쳐지지 않고 곱해진다 [interpretation].
-- 장르 앵커: GENRE-003 (AI 네이티브 게임) - 이 군집이 이 요소를 구성 요소로 지목한다.
+- Good: ELEM-003 (Z4 Wall Collapse) - Real-time response makes Force Wall's "1 replay limit" repeatable. Risk-relieving combination of ELEM-003 cards.
+- Good: ELEM-002 (campy) - AI's awkward speech and unexpected behavior are absorbed as a joke rather than a defect in the campy tone [interpretation]
+- Good[interpretation]: ELEM-004 (repeat mechanic) - A combination of AI mentioning the player's past loops in real time. No launch cases - GENRE-001 Same point as the blank hypothesis.
+- Note: Always compared to script-based personality - Community rates AI commentary based on scripted narrator from GAME-013 (The Stanley Parable) [interpretation]
+- Contrast: ELEM-007 (Optional Responsive Non-LLM Narrative) - An alternative that achieves the same goal as a script. Since GAME-041 shows that top-tier performance can be achieved without an LLM, AI integration is justified by first answering “what can’t be scripted?” [interpretation]
+- Sub-branch: ELEM-006 (AI-based interrogation) / ELEM-025 (On-device SLM real-time voice conversation NPC) - Each is a version specialized for the purpose of this element (interrogation) and a version specialized for the delivery method (voice/on-device). When the three are used together, the risks are not combined but multiplied [interpretation].
+- Genre anchor: GENRE-003 (AI native game) - This cluster points to this element as a component.
 
 ## Risks
-- 사실: NPC 대화마다 서버 비용 발생 - GAME-010은 대화 1회당 AI 토큰을 소모하는 구조 [source: The Magic Rain 보도, 2024-04]. 운영비가 판매 후에도 계속 나감.
-- [interpretation] "AI가 들어갔다" 자체는 세일즈 포인트가 아님 - 캐릭터가 재미있어야 하고 AI는 수단. 대본으로 만든 개성 + AI가 채우는 반응 빈틈이 승리 공식.
-- [interpretation] 품질 하한선이 낮음 - 대본은 최악이 "밋밋함"이지만, AI는 최악이 "환각·헛소리"라 몰입 파괴의 낙폭이 큼.
-- [interpretation] AI 반감 여론 리스크 - 생성 AI 논란이 게임 본체 평가에 전이될 수 있음 (GAME-011 사례).
-- 사실: 기술적 완성도와 실제 게임플레이 재미는 별개 - Skyrim AI NPC 모드는
-  출시 초반 압도적 호평 이후 "이제 뭘 할 수 있어?"로 흥미가 식어, 2년 후엔
-  화제성 영상만 남고 실사용은 거의 소멸 [source: 다이제스트 2026-07-20 /
-  Frisson Labs 블로그, 2026-05-21].
-- [interpretation] NVIDIA ACE 기반 실시간 음성 NPC가 데모를 넘어 실제 출시 빌드로 확산되며
-  채택 스튜디오가 늘고 있다 [source: NVIDIA GeForce News/PCGamer, 2026-07 확인 /
-  다이제스트 2026-07-27] - 인프라가 성숙할수록 "AI가 들어갔다는 것 자체는
-  세일즈 포인트가 아니다"라는 기존 리스크가 더 빨리 시험대에 오를 것으로 보임.
-- 사실: AI 공개(disclosure) 표시 신작 비율이 2024-01 10.9%→2025년 19.9%→2026년 상반기 약 30%로 상승, 월간 표시 신작 수도 약 13건→약 530건으로 급증 [source: Steam AI 공개 데이터 분석(Substack "Three years of AI on Steam" 재인용 보도), 2026년 상반기 기준 / 다이제스트 2026-07-14(재조사 2026-07-27)]. [interpretation] 공개 자체가 흔해질수록 "AI 탑재"가 차별화 요소로서 갖는 힘은 오히려 약해질 수 있어, ELEM-005의 핵심 리스크("AI가 들어갔다는 것 자체는 세일즈 포인트가 아니다")가 시간이 갈수록 더 크게 작용할 것으로 보임.
+- Fact: Server costs are incurred for each NPC conversation - GAME-010 has a structure that consumes AI tokens per 1 conversation [source: The Magic Rain reports, 2024-04]. Operating expenses continue to accrue even after the sale.
+- [interpretation] “AI is included” itself is not a selling point - the characters should be fun and AI is a means. Personality created through script + gap in response filled by AI is a winning formula.
+- [interpretation] The lower limit of quality is low - The worst of the script is “flat,” but the worst of the AI ​​is “hallucinations and nonsense,” so the damage to immersion is high.
+- [interpretation] Risk of anti-AI public opinion - Controversy over generated AI may transfer to the evaluation of the game itself (GAME-011 case).
+- Fact: Technical perfection and actual gameplay fun are two separate things - Skyrim AI NPC mod
+After overwhelming positive reviews at the beginning of its release, interest waned as “What can I do now?”, 2 years later.
+Only topical videos remain and actual use has almost disappeared [source: Digest 2026-07-20 /
+Frisson Labs blog, 2026-05-21].
+- [interpretation] NVIDIA ACE-based real-time voice NPC is spreading beyond demos to actual release builds.
+More and more studios are adopting [source: NVIDIA GeForce News/PCGamer confirms 2026-07 /
+Digest 2026-07-27] - As the infrastructure matures, “the fact that AI has entered
+The existing risk that “it is not a selling point” is expected to be put to the test sooner.
+- Fact: The proportion of new works displayed as AI disclosures increased from 2024-01 10.9% → 19.9% in 2025 to about 30% in the first half of 2026, and the number of new works displayed monthly also increased from about 13 to about 530 [source: Steam AI disclosure data Analysis (Substack "Three years of AI on Steam" requote report), based on the first half of 2026 / digest 2026-07-14 (reinvestigation 2026-07-27)]. As [interpretation] disclosure itself becomes more common, the power of “AI-equipped” as a differentiating factor may weaken, and the core risk of ELEM-005 (“AI-included itself is not a selling point”) is expected to become more significant over time.
+
+

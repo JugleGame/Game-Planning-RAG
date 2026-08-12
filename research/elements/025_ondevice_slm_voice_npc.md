@@ -1,47 +1,30 @@
 +++
 card_id = "ELEM-025"
 type = "tech"
-title = "온디바이스 SLM 실시간 음성 대화 NPC (On-device SLM Real-time Voice NPC)"
-summary = "클라우드 서버 없이 플레이어의 기기 안에서 소형 언어모델이 바로 돌아가며 NPC가 실시간 음성으로 대화하게 만드는 기술"
+title = "On-device SLM Real-time Voice NPC (On-device SLM Real-time Voice NPC)"
+summary = "A technology that runs a small language model on the player’s device without a cloud server so NPCs can converse by voice in real time"
 tags = ["ai", "voice", "on-device", "npc", "requires-ai", "high-cost", "emerging"]
 updated = "2026-07-30"
 confidence = "medium"
 +++
 ## Definition
-클라우드 서버에 물어보러 가지 않고, 플레이어의 컴퓨터(그래픽카드) 안에서 작고 가벼운
-언어모델이 바로 돌아가면서 NPC가 실시간으로 목소리로 대답하게 만드는 기술입니다.
-사람 말을 듣고(음성인식) → 작은 AI가 대답을 생각하고(소형 언어모델) → 그 대답을
-다시 목소리로 바꿔서(음성합성) 들려주는 과정 전체가 게임을 켜둔 그 기기 안에서
-일어납니다.
+This technology lets a small, lightweight language model run on the player’s computer and graphics card, allowing NPCs to answer by voice in real time without contacting a cloud server. The whole process happens on the game device: hearing speech (speech recognition) → a small AI formulates a reply (small language model) → the reply becomes speech (speech synthesis).
 
 ## Success Cases
-- GAME-011 (inZOI) - 'Smart Zoi' NPC가 온디바이스 NVIDIA ACE 소형 언어모델(Mistral
-  NeMo Minitron, 약 0.5B 파라미터, VRAM 약 1GB)로 구동되며, 성격에 따라 길 잃은
-  캐릭터를 돕거나 배고픈 낯선 사람에게 음식을 건네는 등의 행동을 스스로 결정한다
-  [source: NVIDIA GeForce News, 2026-07 확인].
-- GAME-049 (NARAKA: BLADEPOINT) - 모바일 PC 버전에 온디바이스 NVIDIA ACE 기반 AI
-  팀원 'Viper'가 탑재돼 전투·파밍을 함께 수행한다. Steam 리뷰 약 30만 1,739건 중
-  73% 긍정 [source: GAME-049 카드].
+- GAME-011 (inZOI) - “Smart Zoi” NPCs run on the on-device NVIDIA ACE small language model (Mistral NeMo Minitron, about 0.5B parameters, about 1GB VRAM) and independently decide whether to help a lost character or give food to a hungry stranger according to personality [source: NVIDIA GeForce News, confirmed 2026-07].
+- GAME-049 (NARAKA: BLADEPOINT) - The mobile and PC versions include the on-device NVIDIA ACE-based AI teammate “Viper,” who fights and farms alongside the player. 73% positive among about 300,000 and 1,739 Steam reviews [source: GAME-049 card].
 
 ## Failure Cases
-<!-- 증거 부족: 이번 조사에서 이 온디바이스 음성 파이프라인 자체의 실패·혹평 사례는
-찾지 못함. GAME-011(inZOI)의 텍스트 기반 AI 통합(ELEM-005) 관련 유지·성능 리스크는
-해당 카드에 이미 기록되어 있어 중복 기재하지 않음 -->
+<!-- Evidence gap: this research found no failure or strong negative-review case for the on-device voice pipeline itself. Stability and performance risks for GAME-011 (inZOI)'s text-based AI integration (ELEM-005) are already recorded in that card and are not duplicated here. -->
 
 ## User Reaction Summary
-<!-- 증거 부족: 이 SLM 음성 파이프라인 자체에 대한 유저 리뷰 집계는 확인하지 못함
-(현재는 기술 발표·보도 수준) -->
-- [interpretation] 기술 보도는 "데모를 넘어 실제 출시 빌드 탑재"라는 상용화 단계 진입을
-  강조하고 있어, 아직 유저 반응보다는 업계 신호에 가깝다.
+<!-- Evidence gap: no user-review aggregation for this SLM voice pipeline itself was confirmed; current evidence is limited to technical announcements and reports. -->
+- [interpretation] Technology coverage emphasizes commercial deployment “beyond a demo and into an actual release build,” so this is still closer to an industry signal than user reaction.
 
 ## Synergy
-- 좋음: ELEM-005 (AI 통합) - 텍스트 기반 AI 통합의 음성 특화 버전. 입출력 채널(텍스트
-  vs 음성)이 다를 뿐 실시간 생성이라는 리스크 구조는 같다.
-- 좋음: ELEM-006 (AI 기반 심문) - 실시간 생성 대사에 음성까지 더하면 심문 같은
-  장면의 몰입도가 올라가지만, 응답 지연·발음 오류 같은 새 리스크도 함께 따라온다.
+- Good: ELEM-005 (AI Integration) - A voice-specialized version of text-based AI integration. Only the input/output channel differs (text versus voice); the risk structure of real-time generation is the same.
+- Good: ELEM-006 (AI-based Interrogation) - Adding voice to real-time generated dialogue increases immersion in interrogation-like scenes, but also introduces response delays and pronunciation errors.
 
 ## Risks
-- [interpretation] 온디바이스 실행이라 GPU 성능·VRAM 여유가 없는 사용자는 애초에 이 기능을
-  못 쓸 수 있다 - 접근성이 하드웨어 사양에 종속된다.
-- [interpretation] 생성 결과가 매번 달라지는 특성상, 음성까지 실시간 생성되면 검증(QA)이
-  텍스트 전용 AI보다 더 어려워진다.
+- [interpretation] Because it runs on-device, users without enough GPU performance or VRAM may be unable to use the feature - accessibility depends on hardware specifications.
+- [interpretation] Since generated results differ each time, real-time voice generation makes QA harder than for text-only AI.

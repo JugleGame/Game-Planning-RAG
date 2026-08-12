@@ -247,18 +247,17 @@ python scripts/eval_retrieval.py --mode vector  # 벡터 단독과 비교
 
 ### 카드 언어 전환 (한국어 → 영어)
 
-절 제목은 언어 중립 `section_key`로 다루므로 두 언어가 섞여 있어도 lint·검색이
-모두 동작합니다. 전환은 카드 단위로 점진적으로 합니다.
+절 제목은 언어 중립 `section_key`로 다룹니다. 2026-08-12에 카드 165장과 템플릿의
+절 제목·근거 표시·본문 산문을 모두 영어로 전환했습니다. 새 카드도 영어로 작성합니다.
 
 ```bash
 python scripts/migrate_card_lang.py research/games/*.md --out draft/en
 python scripts/migrate_card_lang.py --out draft/en --apply     # 확인 후
 ```
 
-번역 결과는 **수치 집합·카드 ID 집합·출처 태그 수·[해석] 수·절 구성·frontmatter가
-원본과 완전히 일치할 때만** 통과합니다. 하나라도 어긋나면 그 카드는 손대지 않고
-원문 그대로 남습니다. 전부 옮긴 뒤 `card_schema.py`의 `CARD_LANG`을 `"en"`으로
-바꾸면 새 카드가 영어 절 제목을 쓰기 시작합니다(템플릿도 같이 교체).
+번역 결과는 **수치 값·카드 ID·출처 태그 수·해석 표시 수·절 구성·frontmatter가
+원본과 일치하고 본문이 영어일 때만** 통과합니다. 현재 전환 상태를 재검사하려면
+`python scripts/migrate_card_lang.py --verify <카드들>`을 실행합니다.
 
 ## reference/ 폴더에 대해
 

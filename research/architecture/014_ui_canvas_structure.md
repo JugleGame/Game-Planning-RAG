@@ -1,76 +1,77 @@
 +++ 
 card_id = "ARCH-014"
 type = "structure"
-title = "UI 캔버스 구조 (World_Base 정적/동적 분리)"
-summary = "화면 UI를 한 덩어리로 두지 않고 '거의 안 변하는 것'과 '자주 변하는 것'으로 나눠 담아서, 체력바 한 칸 바뀔 때 화면 전체를 다시 그리지 않게 하는 배치"
+title = "UI Canvas Structure (World_Base Static/Dynamic Separation)"
+summary = "Instead of leaving the screen UI in one lump, it is divided into 'things that rarely change' and 'things that change frequently', so that the entire screen is not redrawn when one bar of health bar changes."
 tags = ["ui", "canvas", "performance", "world-base", "unity", "structure"]
 updated = "2026-07-30"
 confidence = "high" # reference/unity_project_baseline.md 기준 구조의 World_Base UI 명시 + Unity 공식 UI 최적화 지침(정적/동적 캔버스 분리, 리빌드 비용) 근거 + 안티패턴(단일 거대 캔버스) 실사례
 +++ 
 ## Problem
 
-UI는 눈에 잘 보이는 대신 비용이 조용히 숨는다. 캔버스 안의 그려지는 요소 하나만 바뀌어도 그 캔버스는 전체를 다시 묶어 그리는 작업(리빌드)을 하고, 이때 CPU 사용량이 순간적으로 튄다. 체력바처럼 매 프레임 변하는 요소가 메뉴·미니맵과 같은 캔버스에 있으면, 안 변한 것들까지 계속 다시 계산된다. 쉽게 말해: 게시판에 종이 한 장만 바꿔 붙이려는데 게시판 전체를 떼어내 다시 만드는 셈이다. 그래서 자주 바뀌는 종이는 작은 게시판에 따로 붙인다.
+The UI is clearly visible, but its costs are quietly hidden. Even if just one drawn element in the canvas changes, the entire canvas is redrawn (rebuild), and at this time, CPU usage suddenly jumps. If an element that changes every frame, such as a health bar, is on a canvas such as a menu or minimap, even the elements that have not changed are continuously recalculated. To put it simply: If you want to replace just one piece of paper on the bulletin board, you are essentially removing the entire bulletin board and rebuilding it. So, papers that change frequently are posted separately on a small bulletin board.
 
 ## Structure
 
-- UI 루트는 World_Base 씬에 있고 항상 켜져 있다. Chunk 씬에는 UI를 넣지 않는다. [source: reference/unity_project_baseline.md 기준 구조 — World_Base.unity "플레이어, 카메라, UI (항상 켜짐)"]
-- 캔버스를 성질에 따라 나눈다 — ① 정적 캔버스: 거의 안 변하는 것(메뉴 틀, 배경 패널, 고정 아이콘) ② 동적 캔버스: 자주 변하는 것(체력·자원 게이지, 상호작용 안내 문구, 해설자 반응 표시). 같은 타이밍에 함께 바뀌는 요소들을 같은 동적 캔버스에 모은다. [source: Unity 공식 UI 최적화 지침 — 정적 요소와 동적 요소를 별도 캔버스로 분리]
-- 나눈 이유는 리빌드 전파를 끊는 것이다. 캔버스는 소속된 그려지는 요소가 하나라도 바뀌면 다시 묶는다. 그래서 사소하지 않은 규모의 캔버스는 최소 둘로 쪼개는 것이 대체로 낫다. [source: Unity 공식 UI 최적화 지침 — 캔버스 리빌드 및 분할 권고]
-- 다만 무한히 쪼개면 안 된다. 캔버스를 나눌 때마다 그리기 호출(드로우 콜)이 따로 생겨 오히려 늘어난다. 리빌드 비용과 그리기 호출 사이의 균형점을 찾는 문제다. [source: Unity 공식 UI 최적화 지침 — 캔버스 분할이 드로우 콜을 증가시키는 트레이드오프]
-- UI는 데이터를 요청하지 않고 방송을 듣는다. 체력 변화, 아이템 획득, 대화 시작은 EventBus 방송을 구독해 갱신한다. UI가 플레이어나 매니저를 직접 참조하지 않는다. [source: reference/unity_project_baseline.md 방송 규칙]
-- 월드 위에 떠 있는 표시(상호작용 안내, NPC 말풍선)도 청크가 아니라 World_Base UI에 둔다. 대상의 위치만 따라가게 하고 UI 자체는 청크와 함께 꺼지지 않게 한다.
+- The UI root is in the World_Base scene and is always on. No UI is included in the chunk scene. [source: reference/unity_project_baseline.md Baseline Structure — World_Base.unity "Player, Camera, UI (Always On)"]
+- Divide the canvas according to its properties — ① Static canvas: Things that rarely change (menu frame, background panel, fixed icons) ② Dynamic canvas: Things that change frequently (health/resource gauges, interaction guide text, commentator reaction display). Elements that change together at the same time are gathered on the same dynamic canvas. [source: Unity Official UI Optimization Guidelines — Separate static and dynamic elements into separate canvases]
+- The reason for the division is to cut off the spread of rebuild. Canvases are re-grouped when any of the drawn elements they belong to change. So it is usually better to split a non-trivial canvas into at least two pieces. [source: Unity Official UI Optimization Guidelines — Canvas Rebuild and Split Recommendation]
+- However, it should not be split infinitely. Every time you divide the canvas, a separate drawing call is made, which actually increases the number. It's a matter of finding a balance between rebuild costs and draw calls. [source: Unity Official UI Optimization Guidelines — Canvas Splitting Increases Draw Calls Tradeoff]
+- The UI listens to the broadcast without requesting data. Changes in physical strength, acquisition of items, and starting conversations are updated by subscribing to EventBus broadcasts. The UI does not directly reference players or managers. [source: reference/unity_project_baseline.md broadcast rules]
+- Displays floating above the world (interaction guides, NPC speech bubbles) are also placed in the World_Base UI, not in chunks. Only the location of the target is followed and the UI itself is not turned off along with the chunk.
 
 ## Core Rules
 
-- UI 오브젝트는 World_Base 씬에만 둔다. Chunk 씬에 UI를 넣으면 청크가 꺼질 때 화면 일부가 사라진다. [source: reference/unity_project_baseline.md 청크 규칙]
-- 매 프레임 변하는 요소와 거의 안 변하는 요소를 같은 캔버스에 두지 않는다. [interpretation] 이 규칙 하나가 이 프로젝트 규모의 UI 성능 문제 대부분을 막는다.
-- 캔버스 분할은 성질 기준으로만 한다. 요소마다 캔버스를 하나씩 만드는 식의 과분할은 금지 — 드로우 콜이 늘어 이득이 사라진다. [source: Unity 공식 UI 최적화 지침 — 분할과 드로우 콜의 트레이드오프]
-- UI는 EventBus 구독으로만 갱신한다. 게임플레이 시스템을 매 프레임 들여다보는 방식(폴링)을 쓰지 않는다. [source: reference/unity_project_baseline.md 방송 규칙]
-- 해설자 반응을 화면에 띄우는 경우, UI는 해설자를 직접 참조하지 않고 해설자가 낸 방송을 구독한다. 로그 기록은 해설자의 책임이고 표시는 UI의 책임이다(ARCH-007).
-- 상호작용 안내 문구는 상호작용 대상이 아니라 UI가 소유한다. 대상은 "상호작용 가능해졌다"만 알리고 문구를 직접 만들지 않는다(ARCH-006).
-- 클릭을 받지 않는 표시용 요소는 광선 감지 대상에서 제외한다. 화면을 덮는 큰 이미지가 감지 대상으로 남으면 입력 판정이 매번 그것을 훑는다.
+- UI objects are placed only in the World_Base scene. If you put UI in a chunk scene, part of the screen disappears when the chunk is turned off. [source: reference/unity_project_baseline.md chunk rule]
+- Do not place elements that change every frame and elements that rarely change on the same canvas. [interpretation] This one rule prevents most UI performance issues at this scale.
+- Canvas division is done only based on properties. Avoid over-splitting, such as creating one canvas for each element — this increases draw calls and the benefit is lost. [source: Unity Official UI Optimization Guidelines — Tradeoffs between Splitting and Draw Calls]
+- The UI is updated only through EventBus subscription. It does not use a method of looking into the gameplay system every frame (polling). [source: reference/unity_project_baseline.md broadcast rules]
+- When displaying a commentator's reaction on the screen, the UI does not directly refer to the commentator but subscribes to the broadcast made by the commentator. Log recording is the responsibility of the commentator and display is the responsibility of the UI (ARCH-007).
+- Interaction guidance text is owned by the UI, not the object of interaction. The subject only announces that "interaction has become possible" and does not create the text itself (ARCH-006).
+- Display elements that do not receive clicks are excluded from light detection. If a large image covering the screen remains as a detection target, the input decision will scan through it each time.
 
 ## Unity Implementation Steps
 
-1. World_Base 씬에 UI 루트 오브젝트를 만들고 그 아래에 캔버스들을 둔다. 한 씬에 흩어놓지 않는다.
-2. 정적 캔버스를 하나 만든다. 메뉴 틀, 배경 패널처럼 열려 있는 동안 값이 바뀌지 않는 요소를 담는다.
-3. 동적 캔버스를 성질별로 만든다. 예: 게이지류 하나, 상호작용/대화 안내 하나. 같은 순간에 함께 바뀌는 것끼리 모은다.
-4. 각 캔버스의 화면 대응 방식(스케일 기준 해상도)을 하나로 통일한다. 캔버스마다 다르면 해상도가 바뀔 때 UI가 서로 어긋난다.
-5. UI 갱신 스크립트를 만들고 EventBus를 구독한다. 구독 해제를 오브젝트가 꺼질 때 반드시 함께 넣는다 — 빠뜨리면 구독이 쌓여 같은 갱신이 여러 번 실행된다(ARCH-001).
-6. 자주 바뀌는 텍스트는 값이 실제로 변했을 때만 갱신한다. 같은 값을 다시 넣는 것도 캔버스에는 변경으로 취급될 수 있다.
-7. 표시 전용 요소의 광선 감지를 끈다. 레이아웃 자동 배치는 자주 바뀌는 요소에 쓰지 않는다.
-8. 픽셀 아트 프로젝트라면 UI 배율 기준을 카메라 픽셀 설정과 함께 정한다(ARCH-013).
-9. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [source: reference/unity_project_baseline.md 자체 점검 기준]
+1. Create a UI root object in the World_Base scene and place canvases underneath it. Don't spread them out in one scene.
+2. Create a static canvas. Contains elements whose values ​​do not change while open, such as menu frames and background panels.
+3. Create dynamic canvases by property. Example: one gauge, one interaction/dialogue guide. Gather together things that change together at the same moment.
+4. Unify the screen response method (scale-based resolution) of each canvas into one. If each canvas is different, the UI will be misaligned when the resolution changes.
+5. Create a UI update script and subscribe to EventBus. Be sure to include unsubscription when the object is turned off — if you omit it, subscriptions will pile up and the same update will be executed multiple times (ARCH-001).
+6. Text that changes frequently is updated only when the value actually changes. Re-entering the same value can be treated as a change on the canvas.
+7. Turns off ray detection for display-only elements. Layout auto-placement is not used for elements that change frequently.
+8. If it is a pixel art project, the UI scale standard is set along with the camera pixel settings (ARCH-013).
+9. Self-check — Check 0 compilation errors and 0 console errors and commit. [source: reference/unity_project_baseline.md self-check standard]
 
 ## Anti-patterns
 
-- 모든 UI를 하나의 캔버스에 담기: 게이지가 매 프레임 변하면 메뉴·미니맵까지 계속 다시 묶인다. 프로파일러에서 UI 항목이 갑자기 튀어 오르는 전형적 원인이다. [source: Unity 공식 UI 최적화 지침 — 매 프레임 변하는 요소가 캔버스 전체 리빌드를 유발]
-- 반대로 요소마다 캔버스를 하나씩 두기: 리빌드는 줄지만 드로우 콜이 늘어 총 비용이 다시 올라간다. 분할은 성질 기준이다. [source: Unity 공식 UI 최적화 지침 — 분할이 드로우 콜을 증가시킨다는 트레이드오프]
-- UI가 플레이어·매니저를 직접 참조하기: 방송 규칙 위반이며, 청크 로딩으로 참조가 끊기거나 매니저 교체 시 조용히 갱신이 멈춘다. [source: reference/unity_project_baseline.md 방송 규칙]
-- 매 프레임 값을 다시 대입하기: 값이 안 변했는데 갱신하면 불필요한 리빌드를 스스로 만든다.
-- Chunk 씬에 UI를 넣기: 플레이어가 이동해 청크가 꺼지면 그 UI가 사라진다. 재현 조건이 "특정 위치에서만"이라 원인을 찾기 어렵다.
-- 구독만 하고 해제하지 않기: UI 오브젝트를 켜고 끄기 반복하면 구독이 누적돼 같은 반응이 여러 번 표시된다.
-- 화면 전체를 덮는 이미지를 광선 감지 대상으로 남기기: 입력 판정이 매번 그것을 통과해야 해서 반응이 무거워진다.
-- 자주 갱신되는 목록에 자동 레이아웃 배치를 쓰기: 배치 재계산이 리빌드와 겹쳐 비용이 배로 든다.
+- Containing all UI in one canvas: When the gauge changes every frame, even the menu and minimap are continuously re-packaged. This is a typical cause of UI items popping up unexpectedly in the profiler. [source: Unity Official UI Optimization Guidelines — Elements that change every frame cause the entire canvas to be rebuilt]
+- Conversely, having one canvas for each element: Rebuilds are reduced, but draw calls are increased, raising the total cost again. Division is based on nature. [source: Unity Official UI Optimization Guidelines — Tradeoff that splitting increases draw calls]
+- The UI directly references the player/manager: This is a violation of broadcasting rules, and the update stops quietly when the reference is lost due to chunk loading or the manager is replaced. [source: reference/unity_project_baseline.md broadcast rules]
+- Re-assigning the value every frame: If the value has not changed but is updated, unnecessary rebuilding is done.
+- Inserting UI into the Chunk scene: When the player moves and the chunk is turned off, the UI disappears. It is difficult to find the cause because the reproduction condition is “only in certain locations.”
+- Only subscribe and do not cancel: If you repeatedly turn UI objects on and off, subscriptions accumulate and the same response is displayed multiple times.
+- Leaving an image that covers the entire screen as a target for ray detection: the input judgment has to pass through it every time, making it less responsive.
+- Using auto-layout batches for frequently updated lists: recalculating batches overlaps with rebuilds, which doubles the cost.
 
 ## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [source: reference/unity_project_baseline.md 자체 점검 기준]
-- 씬 소속 검사: 모든 캔버스가 World_Base 씬에 속해야 한다. Chunk 씬에 캔버스가 하나도 없어야 한다.
-- 분리 검사: 매 프레임 갱신되는 요소와 정적 요소가 같은 캔버스에 함께 있지 않아야 한다(계층 구조로 확인 가능).
-- 참조 검사: UI 스크립트에 플레이어·매니저 직접 참조가 없어야 한다. 갱신 경로가 EventBus 구독뿐이어야 한다(검색으로 확인 가능).
-- 구독 누적 검사: UI 오브젝트를 여러 번 껐다 켠 뒤 이벤트 하나를 발생시켰을 때, 갱신이 한 번만 일어나고 `Logs/commentator.log`에 중복 줄이 없어야 한다. [source: reference/unity_project_baseline.md 로그 규칙]
-- 리빌드 검사: 프로파일러에서 UI 리빌드 항목을 볼 때, 정적 캔버스가 아무것도 변하지 않은 프레임에 리빌드되지 않아야 한다.
-- 해상도 검사: 창 크기를 바꿨을 때 캔버스들 사이에 위치·크기 어긋남이 없어야 한다.
-- 안내 문구 소유 검사: 상호작용 대상 스크립트가 UI 요소를 직접 들고 있지 않아야 한다(ARCH-006 경계 확인).
+- 0 compilation errors, 0 console errors. [source: reference/unity_project_baseline.md self-check standard]
+- Scene affiliation check: All canvases must belong to the World_Base scene. There must be no canvas in the Chunk scene.
+- Separation check: Elements updated every frame and static elements must not be together on the same canvas (can be checked in hierarchical structure).
+- Reference check: There should be no direct references to the player/manager in the UI script. The renewal path must be an EventBus subscription only (can be checked by searching).
+- Subscription cumulative check: When a UI object is turned on and off multiple times and an event is generated, update occurs only once and there should be no duplicate lines in `Logs/commentator.log`. [source: reference/unity_project_baseline.md log rule]
+- Rebuild check: When looking at UI rebuild items in the profiler, the static canvas should not be rebuilt on a frame where nothing has changed.
+- Resolution check: When changing the window size, there should be no discrepancy in position or size between canvases.
+- Instruction text ownership check: The interaction target script must not directly hold the UI element (ARCH-006 boundary check).
 
 ## Synergy
 
-- ARCH-006 (상호작용): 직접 맞물림 — 대상은 "가능해졌다"만 알리고 문구 표시는 UI가 한다. 이 경계가 흐려지면 프리팹마다 UI 참조가 박힌다.
-- ARCH-001 (이벤트 버스): 유일한 갱신 경로. 구독 해제 규칙도 그 카드의 규약을 따른다.
-- ARCH-007 (해설자 파이프라인): 반응 표시 담당. 로그 기록(해설자)과 화면 표시(UI)의 책임을 나눈다.
-- ARCH-002 (씬 스트리밍): UI가 항상 켜진 World_Base 소속이라는 배치 근거.
-- ARCH-013 (2D 카메라 추적): 픽셀 아트에서 UI 배율과 카메라 픽셀 설정을 함께 결정해야 한다.
-- ELEM-015 (스트레스/광기 시스템): 궁합 직결 — 수치를 실시간으로 보여주는 게이지가 대표적인 동적 캔버스 요소다. 이 게이지를 정적 캔버스에 두면 성능 문제가 바로 나타난다.
-- ELEM-003 (제 4의 벽 붕괴): 궁합 좋음 — UI는 게임 세계가 아니라 플레이어 쪽 표면이라, 화면 밖 플레이어에게 직접 말을 거는 연출의 자연스러운 무대가 된다.
-- ELEM-012 (랜드마크 기반 탐험): 궁합 주의 — 이 요소를 택하면 화살표·아이콘 마커를 UI에 두지 않는다는 결정이 따라온다. 마커를 추가하면 요소의 효과가 사라진다.
+- ARCH-006 (Interaction): Direct engagement — The target only reports that “it has become possible” and the UI displays the text. When this boundary is blurred, UI references are embedded in each prefab.
+- ARCH-001 (Event Bus): Unique update path. Subscription cancellation rules also follow the card's rules.
+- ARCH-007 (Commentator Pipeline): Responsible for displaying responses. Divide the responsibilities of log recording (commentator) and screen display (UI).
+- ARCH-002 (Scene Streaming): Placement rationale that the UI belongs to an always-on World_Base.
+- ARCH-013 (2D camera tracking): In pixel art, the UI scale and camera pixel settings must be determined together.
+- ELEM-015 (Stress/Insanity System): Directly related to compatibility — A gauge that shows numbers in real time is a representative dynamic canvas element. If you place this gauge on a static canvas, performance issues will immediately appear.
+- ELEM-003 (4's Wall Collapse): Good compatibility — The UI is a surface on the player's side, not the game world, so it becomes a natural stage for production that speaks directly to the player off-screen.
+- ELEM-012 (Landmark-Based Exploration): Compatibility Note — Choosing this element comes with the decision not to place arrow/icon markers in the UI. When you add a marker, the effect of the element disappears.
+

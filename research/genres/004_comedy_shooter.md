@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-004"
 type = "genre"
-title = "코미디 슈터 (Comedy Shooter)"
-summary = "견고한 슈팅 루프 위에 캠피 유머를 얹은 군집"
+title = "Comedy Shooter"
+summary = "A cluster that layers campy humor on top of a solid shooting loop"
 elements = ["ELEM-002"]
 example_games = ["GAME-012", "GAME-007"]
 tags = ["fps", "comedy", "divisive"]
@@ -10,23 +10,23 @@ updated = "2026-07-15"
 confidence = "high"
 +++
 ## Components
-- ELEM-002 (캠피) - 군집의 정체성. 단, 유머는 양념이고 본체는 슈팅 루프.
+- ELEM-002 (campy) - the cluster's identity. However, the humor is the seasoning and the body is the shooting loop.
 
 ## Market Saturation
-정점 검증작: GAME-012 (Borderlands 2, 3,000만 장 - 유머 게임의 상업적 천장을
-증명). 반면교사: GAME-007 (High on Life, 평단 65 vs 유저 8.2 분열). 프랜차이즈
-내부에서도 성패가 갈림(Borderlands 2 호평 vs 3의 유머 "과했다" 반응) - 군집은
-성숙했지만 톤 제어 실력이 곧 순위 [source: 각 GAME 카드].
+Peak verified work: GAME-012 (Borderlands 2, 30,000,000 units - proving the commercial ceiling
+of a humor game). Counterexample: GAME-007 (High on Life, critics 65 vs users 8.2, a split). Success and failure
+diverge even inside a franchise (Borderlands 2 praised vs the reaction that 3's humor was "too much") - the cluster is
+mature, but skill at tone control is the ranking itself [source: each GAME card].
 
 ## Conventions and Expectations
-- 유머 이전에 슈팅이 재미있을 것 - "농담은 좋은데 총이 재미없다"는 회복 불가 판정 [source: GAME-007 평단 비판 - "유머를 걷어내면 평균 이하 슈터"]
-- 유머는 캐릭터 단위로 - 흩뿌린 개그보다 "웃긴 악당/동료" 하나가 오래감 [source: GAME-012 핸섬 잭 평가]
-- 침묵 구간의 존재 - 쉼 없는 개그는 음소거 요구로 되돌아옴 [source: GAME-007 리뷰]
+- The shooting must be fun before the humor is - "the jokes are good but the guns aren't fun" is an unrecoverable verdict [source: GAME-007 critical criticism - "a below-average shooter once you strip the humor away"]
+- Humor at the character level - one "funny villain/companion" lasts longer than gags scattered around [source: GAME-012 Handsome Jack evaluation]
+- The existence of silent stretches - nonstop gags come back as demands to mute [source: GAME-007 reviews]
 
 ## Gaps
-[interpretation] ★ 이 군집의 유머는 전부 사전 녹음 대본 - 같은 상황에 같은 농담이
-반복 재생되어 2회차부터 늙음. 플레이어의 실제 플레이(방금 한 실수, 지난 판의
-선택)에 실시간으로 반응하는 유머(ELEM-002+005)는 미점유. 우리 해설자 콘셉트가
-이 군집의 관례("웃긴 동료 캐릭터")를 계승하며 대본 한계만 대체하는 그림.
-- 확인 방법: 코미디 태그 신작 + AI 태그 교차 확인
-- 확인일: 2026-07-15 / 재확인 주기: 월 1회
+[interpretation] ★ All the humor in this cluster is pre-recorded script - the same joke replays in the same
+situation, so it ages from the second playthrough. Humor that reacts in real time to the player's actual play (the mistake just made, the
+choice in the previous run) (ELEM-002+005) is unoccupied. Our commentator concept is a picture that
+inherits this cluster's convention ("funny companion character") while replacing only the script limitation.
+- Verification method: new releases under the comedy tag + cross check with the AI tag
+- Verified on: 2026-07-15 / Re-check cycle: once a month

@@ -1,63 +1,65 @@
 +++
 card_id = "ARCH-020"
 type = "pattern"
-title = "애니메이션 상태 머신 (Animator Controller / Animation State Machine)"
-summary = "캐릭터의 애니메이션 클립을 코드에서 직접 재생하지 않고, 상태(State)와 전환 조건(Transition)으로 미리 짜둔 그래프에 맡겨 파라미터만 바꾸면 알맞은 동작이 자동으로 이어지게 하는 구조"
+title = "Animation State Machine (Animator Controller / Animation State Machine)"
+summary = "A structure where a character's animation clips are not played directly from code, but delegated to a graph laid out in advance from States and Transitions, so that changing only a parameter automatically leads into the appropriate motion"
 tags = ["animation", "animator", "state-machine", "unity", "pattern", "player"]
 updated = "2026-07-31"
 confidence = "high"
 +++
 ## Problem
-캐릭터가 Idle, Walk, Attack, Hit 같은 여러 동작을 오갈 때, 코드에서
-"지금 이 애니메이션을 재생해라"를 매번 직접 지정하면 상태 전환 조건이 스크립트
-곳곳에 흩어지고, 어떤 상태에서 어떤 상태로 갈 수 있는지 한눈에 보기 어렵다.
-ARCH-005(NPC 상태머신)와 유사한 문제지만, 이건 "행동 로직"이 아니라 "화면에
-보이는 애니메이션 재생"에 특화된 문제다.
+When a character moves between several motions such as Idle, Walk, Attack, and Hit, directly
+specifying "play this animation now" from code every time scatters the state transition
+conditions all over the scripts, and makes it hard to see at a glance which state can go to
+which. It is a problem similar to ARCH-005 (NPC state machine), but this one is specialized to
+"playing the animation visible on screen" rather than "behavior logic".
 
 ## Structure
-- 기준 형식: Unity의 Animator Controller는 State(애니메이션 클립 하나)와
-  Transition(상태 간 전환 조건)으로 구성된 그래프다 [source: Unity 공식 매뉴얼,
-  Animation state machine, docs.unity3d.com, Unity 6 기준].
-- Parameter(Bool/Trigger/Float/Int)가 스크립트와 그래프 사이의 유일한 접점이다
-  - 코드는 파라미터 값만 바꾸고, 실제로 어떤 애니메이션이 재생될지는 그래프가
-  결정한다 [source: Unity 공식 매뉴얼, Animation Parameters, Unity 6 기준].
-- Transition은 조건이 없으면 Exit Time(재생 진행률)만으로 발동하고, 조건이 있으면
-  모든 조건이 충족돼야 발동한다 [source: Unity 공식 매뉴얼, State Machine Transitions].
+- Baseline form: Unity's Animator Controller is a graph made of States (one animation clip
+  each) and Transitions (conditions for moving between states) [source: Unity official manual,
+  Animation state machine, docs.unity3d.com, as of Unity 6].
+- Parameters (Bool/Trigger/Float/Int) are the sole contact point between the script and the
+  graph - code changes only parameter values, and the graph decides which animation actually
+  plays [source: Unity official manual, Animation Parameters, as of Unity 6].
+- A Transition with no conditions fires on Exit Time (playback progress) alone; with
+  conditions, it fires only when all conditions are met [source: Unity official manual, State
+  Machine Transitions].
 
 ## Core Rules
-- 스크립트는 상태 이름을 직접 다루지 않고 Parameter만 조작한다 - 상태 이름을
-  코드에 하드코딩하면 애니메이터 그래프 구조가 바뀔 때마다 스크립트도 고쳐야 한다.
-- Trigger 파라미터는 한 번 소비되면 자동 리셋된다는 것을 전제로 설계한다 - Bool과
-  혼동하면 "눌렀는데 씹히는" 버그가 생긴다.
-- 전환 조건이 겹치면(동시에 여러 조건 충족) 그래프 순서에 따라 예상 밖의 전환이
-  일어날 수 있으므로, 상호 배타적인 조건으로 설계한다.
+- Scripts do not handle state names directly, only manipulate Parameters - hardcoding state
+  names in code means the scripts must be fixed every time the animator graph structure
+  changes.
+- Design on the premise that a Trigger parameter auto-resets once consumed - confusing it with
+  Bool produces "I pressed it but it got eaten" bugs.
+- If transition conditions overlap (several conditions met at once), unexpected transitions can
+  occur depending on graph order, so design with mutually exclusive conditions.
 
 ## Unity Implementation Steps
-1. 캐릭터의 상태 목록(Idle/Walk/Attack/Hit/Die 등)을 스펙에서 먼저 확정한다.
-2. Animator Controller에 상태별 State를 만들고 각 State에 애니메이션 클립을 연결한다.
-3. 상태 간 Transition을 그래프로 연결하고, 각 Transition에 Parameter 조건을 건다.
-4. 스크립트에서는 `Animator.SetBool`/`SetTrigger`/`SetFloat`로 파라미터만 갱신한다.
-5. ARCH-005(NPC 상태머신)의 행동 상태와 애니메이션 상태를 1:1로 강제하지 않는다
-   - 행동은 "Patrol"이어도 애니메이션은 "Walk"/"Idle"을 오갈 수 있어, 두 계층을
-   분리해서 설계한다.
+1. Fix the character's state list (Idle/Walk/Attack/Hit/Die, etc.) in the spec first.
+2. Create a State per state in the Animator Controller and connect an animation clip to each State.
+3. Connect Transitions between states in the graph, and put Parameter conditions on each Transition.
+4. In scripts, update only the parameters with `Animator.SetBool`/`SetTrigger`/`SetFloat`.
+5. Do not force the behavior states of ARCH-005 (NPC state machine) and the animation states
+   into 1:1 correspondence - even when the behavior is "Patrol" the animation can move between
+   "Walk"/"Idle", so design the two layers separately.
 
 ## Anti-patterns
-- 스크립트에서 `Animator.Play("StateName")`으로 상태 이름을 직접 호출: 그래프의
-  전환 조건을 무시하고 강제 전환해 다른 Transition과 충돌할 수 있다.
-- 하나의 State에 너무 많은 조건 분기를 넣어 그래프가 거대해지는 것: 서브 상태머신
-  (Sub-State Machine)으로 쪼개는 것이 정석.
-- Bool 파라미터를 리셋하지 않고 방치: 다음 전환 시 의도치 않은 상태로 튐.
+- Calling state names directly from scripts with `Animator.Play("StateName")`: it ignores the
+  graph's transition conditions and forces a transition, which can conflict with other Transitions.
+- Putting too many conditional branches into one State so the graph grows huge: splitting into
+  Sub-State Machines is the standard practice.
+- Leaving a Bool parameter unreset: it jumps to an unintended state on the next transition.
 
 ## Verification
-- 상태 전환 검사: 각 상태 조합(Idle→Walk, Walk→Attack 등)을 1회씩 수행해 의도한
-  애니메이션이 재생되는지 확인.
-- 콘솔 청결: 존재하지 않는 파라미터를 `SetTrigger` 등으로 호출할 때 나는 경고가
-  정상 플레이 중 0건이어야 한다.
-- 회귀 검사: 애니메이터 그래프 수정 후, 기존에 동작하던 전환들이 여전히 동작하는지
-  재확인 (그래프 특성상 한 곳 수정이 다른 전환에 영향을 줄 수 있음).
+- State transition check: perform each state combination (Idle→Walk, Walk→Attack, etc.) once
+  and confirm the intended animation plays.
+- Console cleanliness: warnings raised when calling `SetTrigger` etc. with a nonexistent
+  parameter must be 0 during normal play.
+- Regression check: after modifying the animator graph, re-confirm that previously working
+  transitions still work (by the nature of graphs, one edit can affect other transitions).
 
 ## Synergy
-- ARCH-005 (NPC 상태머신): 행동 로직과 애니메이션 재생을 분리된 두 계층으로
-  연결하는 다리 역할.
-- ELEM-031 (시각 피드백 과장): 애니메이션 전환 시점에 파티클·화면 흔들림을
-  얹으면 반응성이 배가된다.
+- ARCH-005 (NPC state machine): acts as the bridge connecting behavior logic and animation
+  playback as two separated layers.
+- ELEM-031 (Exaggerated visual feedback): layering particles and screen shake at the moment of
+  an animation transition doubles the responsiveness.

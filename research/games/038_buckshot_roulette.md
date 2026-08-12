@@ -2,7 +2,7 @@
 card_id = "GAME-038"
 type = "success"
 title = "Buckshot Roulette (2024, Mike Klubnika / Critical Reflex)"
-summary = "실제 산탄총 러시안 룰렛 규칙을 그대로 빌려와 심리전 아이템만 얹은 초저가 1인 개발 공포 게임으로, 출시 2주 만에 100만 장을 판 바이럴 히트작"
+summary = "A low-cost solo-developed horror game that directly borrowed real shotgun Russian roulette and added only psychological-play items, a viral hit that sold 1,000,000 units in two weeks"
 genres = ["GENRE-013"]
 elements = ["ELEM-021"]
 tags = ["horror", "russian-roulette", "solo-dev", "indie", "viral", "low-cost"]
@@ -10,18 +10,18 @@ updated = "2026-07-31"
 confidence = "high"
 +++
 ## Summary and Sales/Review Metrics
-- 사실: 2024-04 Steam 출시, 개발 Mike Klubnika, 퍼블리셔 Critical Reflex [source: GamesRadar+ 보도, 2026-07 확인].
-- 사실: 출시 2주 만에 Steam 100만 장 판매 돌파 [source: WN Hub / ResetEra 보도, 2026-07 확인].
-- 사실: 2024-12 기준 Steam 누적 400만 장 판매 발표 [source: Steam 뉴스 공지, 2026-07 확인].
-- 사실: Steam 리뷰 약 1만 4천 건, 95% 긍정 [source: 판매 집계 보도, 2026-07 확인].
+- Fact: Released on Steam in 2024-04, developed by Mike Klubnika and published by Critical Reflex [source: GamesRadar+ coverage, verified 2026-07].
+- Fact: It surpassed 1,000,000 Steam units sold within two weeks of release [source: WN Hub / ResetEra coverage, verified 2026-07].
+- Fact: Steam cumulative sales were announced at 4,000,000 units as of 2024-12 [source: Steam news announcement, verified 2026-07].
+- Fact: It had about 10,000 + 4,000 Steam reviews, 95% positive [source: sales-statistics coverage, verified 2026-07].
 
 ## Elements Used
-- ELEM-021 (친숙한 규칙 차용) - 러시안 룰렛(실탄/공포탄이 섞인 산탄총을 번갈아 겨눔)이라는, 설명이 거의 필요 없는 규칙을 그대로 바탕으로 삼고 그 위에 아이템(수갑, 담배, 확대경 등) 심리전만 얹었다.
+- ELEM-021 (familiar rule borrowing) - it directly uses Russian roulette—alternately aiming a shotgun loaded with live and blank rounds—a rule needing almost no explanation, then adds only item-based psychological play (handcuffs, cigarettes, magnifying glass, and so on).
 
 ## Success/Failure Drivers
-- 사실: 출시 2주 만에 100만 장, 8개월 뒤 400만 장으로 판매가 계속 늘었다 [source: WN Hub / Steam 뉴스 공지, 2026-07 확인].
-- [interpretation] 규칙 설명 비용이 0에 가까웠던 점(누구나 아는 러시안 룰렛)이 짧은 SNS 클립만으로도 게임을 이해시킬 수 있게 해, 바이럴 확산과 초저가($2.99대) 전략이 맞물려 폭발적으로 팔렸을 가능성이 있다.
+- Fact: Sales continued to grow from 1,000,000 units in two weeks to 4,000,000 units eight months later [source: WN Hub / Steam news announcement, verified 2026-07].
+- [interpretation] The near-zero cost of explaining the rules (Russian roulette is universally familiar) may have made the game understandable through short social-media clips alone; viral spread and a very low price (around $2.99) likely combined to drive explosive sales.
 <!-- 증거 부족: 개발자가 직접 밝힌 마케팅/가격 전략 의도는 확인하지 못함 -->
 
 ## Implications for Our Project
-ELEM-021(친숙한 규칙 차용)이 카드 게임(GENRE-013 카지노 규칙 로그라이트)뿐 아니라 도박/심리전 규칙 전반으로 확장 가능함을 보여주는 사례. [interpretation] 규칙 학습 비용이 0인 소재를 고르면, 시연 클립 하나만으로 룰 설명 없이 바이럴이 가능해 마케팅 비용 자체를 줄일 수 있다 — ELEM-010(클립 기반 바이럴리티)과의 조합 궁합도 강해 보인다.
+This case shows that ELEM-021 (familiar rule borrowing) can extend beyond card games (GENRE-013 casino-rules roguelite) to gambling and psychological-play rules in general. [interpretation] Choosing a subject with zero rule-learning cost can make virality possible without explaining the rules, using a single demonstration clip, and can reduce marketing cost itself—its combination with ELEM-010 (clip-based virality) also appears strong.

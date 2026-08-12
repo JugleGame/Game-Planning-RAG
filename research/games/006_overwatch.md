@@ -1,8 +1,8 @@
 +++
 card_id = "GAME-006"
 type = "success"
-title = "Overwatch - 솜브라 ARG (2016, Blizzard)"
-summary = "커뮤니티 전체를 수사대로 만든 티저 마케팅의 대표 사례 (후반 피로 교훈 포함)"
+title = "Overwatch - Sombra ARG (2016, Blizzard)"
+summary = "A representative case of teaser marketing that turned an entire community into an investigation squad (including the lesson of late-stage fatigue)"
 genres = []                    # 히어로슈터 장르 카드는 미작성 - 우리 설계 공간 밖, 요소 증거 전용 카드
 elements = ["ELEM-001"]
 tags = ["arg", "marketing", "community", "live-service"]
@@ -10,20 +10,20 @@ updated = "2026-07-15"
 confidence = "high"
 +++
 ## Summary and Sales/Review Metrics
-신규 영웅 '솜브라' 공개 전 약 4개월(2016-07~11)간 게임 안팎에 암호·퍼즐을
-숨긴 ARG. 트레일러 속 16진수 코드, 웹사이트 소스, 위장 포럼 계정까지 동원돼
-Game Detectives 등 커뮤니티가 집단 해독에 나섬 - 관련 커뮤니티 서버가
-트래픽으로 다운될 정도의 동원력 [source: Game Detectives Wiki / PCGamesN,
+An ARG that hid ciphers and puzzles inside and outside the game for about 4 months (2016-07 to 11)
+before the reveal of the new hero 'Sombra'. Hexadecimal (base-16) codes in trailers, website source, and even
+disguised forum accounts were mobilized, and communities such as Game Detectives took up collective decoding -
+a mobilizing power strong enough to take related community servers down with traffic [source: Game Detectives Wiki / PCGamesN,
 2016-11].
 
 ## Elements Used
-- ELEM-001 (티저 기반 공개) - 성공 측 증거. "해커" 캐릭터 설정과 티저 형식(암호 해독)을 일치시켜, 마케팅 자체가 캐릭터 체험이 되게 함.
+- ELEM-001 (Teaser-Based Reveal) - evidence on the success side. By matching the "hacker" character concept with the teaser format (cipher decoding), the marketing itself became an experience of the character.
 
 ## Success/Failure Drivers
-- 사실: 참여 동원력은 역대급 - 바코드 분석, 아스키/카이사르 암호 해독을 커뮤니티가 자발 수행 [source: Game Detectives Wiki]
-- 사실(주의): 후반 페이싱 실패 - 수 주짜리 카운트다운이 끝나자 또 다른 카운트다운만 나와 커뮤니티가 집단 피로. 서브레딧에 솜브라 게시물 숨김 필터가 생기고, 개발 총괄이 이후 "ARG 피드백을 뼈아프게 받아들였다"고 공언 [source: Kotaku/PC Gamer 2016-10, Blizzard Watch 2017-02]
-- [interpretation] 티저의 성패는 "존재"가 아니라 "회수 리듬"에 있음 - 풀리는 속도가 기대 축적 속도를 못 따라가면, 가장 열성적인 팬부터 이탈함.
+- Fact: the participatory mobilization was all-time great - the community voluntarily carried out barcode analysis and ASCII/Caesar cipher decoding [source: Game Detectives Wiki]
+- Fact (caution): late-stage pacing failure - when a weeks-long countdown ended, only another countdown appeared, and the community fell into collective fatigue. A filter to hide Sombra posts appeared on the subreddit, and the game director later publicly stated that he "took the ARG feedback painfully to heart" [source: Kotaku/PC Gamer 2016-10, Blizzard Watch 2017-02]
+- [interpretation] The success or failure of a teaser lies not in its "existence" but in its "payoff rhythm" - if the pace of unraveling cannot keep up with the pace of accumulating expectation, the most enthusiastic fans are the first to leave.
 
 ## Implications for Our Project
-캐릭터 콘셉트와 티저 형식을 일치시키는 설계(해커=암호)는 그대로 훔칠 것.
-단, 회수 일정표 없는 티저는 시작하지 말 것 - 기대는 이자가 붙는다.
+Steal outright the design of matching the character concept to the teaser format (hacker = cipher).
+But never start a teaser without a payoff schedule - expectation accrues interest.

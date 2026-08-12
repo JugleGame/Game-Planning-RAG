@@ -1,56 +1,58 @@
 +++
 card_id = "ELEM-004"
 type = "mechanic"
-title = "반복 메커닉 (Loop Mechanic)"
-summary = "같은 상황을 반복하되 매번 변수가 달라져 결과가 바뀌는 구조"
+title = "Loop Mechanic"
+summary = "A structure in which the same situation is repeated, but the variables change each time and the results change."
 tags = ["retention", "high-cost", "puzzle", "roguelike", "divisive"]   # rougelike 오타 수정, divisive 추가(근거 =GAME-005 Mixed 평가)
 updated = "2026-07-31"
 confidence = "high"              # 기준 충족: 출처 있는 수치 + GAME 근거 3건
 +++
 ## Definition
-같은 시간이나 상황을 여러 번 반복하는 구조입니다. 단, 매번 똑같이 반복되는
-것이 아니라 플레이어가 "아는 것, 가진 것, 하는 것" 중 무엇인가가 달라져서
-결과가 바뀝니다. 어제와 똑같은 하루가 다시 시작되지만, 나는 어제 배운 것을
-기억하고 있어서 오늘은 다르게 행동할 수 있는 것과 같습니다.
+It is a structure that repeats the same time or situation multiple times. However, it repeats the same every time
+Rather, something about what the player “knows, has, or does” has changed.
+The results change. The same day as yesterday begins again, but what I learned yesterday
+It's like remembering something so you can act differently today.
 
 ## Success Cases
-- GAME-008 (Outer Wilds) - 22분마다 태양계가 리셋되지만 "지식"만은 남는 구조. 유일한 성장 요소가 플레이어의 앎이라는 설계로 Steam 리뷰 10만 건+ 중 96% 긍정, 2020 BAFTA 최우수 게임상 [source: Steam 스토어/Steambase, 2026-07 확인].
-- GAME-009 (Hades) - 죽어서 시작점으로 돌아갈 때마다 새 대사·새 관계가 해금되어 "죽음 = 서사 진행"이 됨. 개발사가 전작에서 분기 서사를 플레이어가 반복 플레이하지 않아 못 보여준 실패를 겪고, 반복이 전제인 로그라이크 구조를 의도적으로 선택 [source: Wikipedia - Hades 개발 항목]. 누적 100만 장(2020-09 기준, 얼리액세스 70만+정식 30만) [source: Supergiant 발표/GameSpot, 2020-09]. Steam 리뷰 14만 건+ 중 98% 긍정 [source: Steam, 2026-07 확인].
-- GAME-028 (Destiny 2) - 같은 게임 안에서 벌어진 A/B 사례. 2018년 9월 Forsaken 확장에서 무기 퍼크
-  무작위 롤이 되돌아오자, 이미 가진 무기가 또 나와도 "이번 건 어떤 롤일까"를 확인하게 만들어 반복의
-  이유가 다시 생겼고 플레이어 수가 약 3배로 늘었다 [source: PC Games Insider, 2018년 기준].
-- GAME-040 (Hades II) - 같은 "죽음 = 서사 진행" 구조를 속편에서 반복해 전작을 넘어섰다. 스팀 누적 약 520만 장, 리뷰 121,483건 중 96% 긍정 [source: GAME-040 카드].
-- GAME-026 (Bloons TD 6) - 무작위 드래프트나 가챠 없이 "라운드마다 강해지는 적 + 타워 업그레이드"라는 반복 루프만으로 성립한 사례. Steam 리뷰 39만 1,317건 중 97% 긍정 [source: GAME-026 카드].
-- GAME-055 (Loop Hero) - 캐릭터가 미리 깔아둔 루프 경로를 자동으로 걷기만 하고, 플레이어는 그 경로 위에 타일(적 스폰·자원 지형)을 배치하는 결정만 내려 위험과 보상의 균형을 맞추는 구조. 출시 첫 주 50만 장, 2021년 12월 누적 100만 장, Steam 리뷰 "매우 긍정적"(90%대) [source: GAME-055 카드].
+- GAME-008 (Outer Wilds) - The solar system resets every 22 minutes, but only “knowledge” remains. With a design where the only growth factor is player knowledge, 96% positive out of 100,000+ Steam reviews, 2020 BAFTA Best Game Award [source: Steam store/Steambase, 2026-07 confirmed].
+- GAME-009 (Hades) - Every time you die and return to the starting point, new dialogue and new relationships are unlocked, making “death = narrative progress”. The developer failed to show the branching narrative in the previous work because players did not play it repeatedly, and deliberately chose a roguelike structure based on repetition. [source: Wikipedia - Hades development article]. Cumulative 1,000,000 copies (based on 2020-09, early access 700,000+ + official 300,000) [source: Supergiant announced/GameSpot, 2020-09]. Of 140,000+ Steam reviews, 98% positive [source: Steam, confirmed 2026-07].
+- GAME-028 (Destiny 2) - A/B case that occurred within the same game. 2018 9 Weapon Percs from the Forsaken expansion
+When the random roll comes back, even if the weapon you already have appears again, it makes you check "What kind of roll is this?"
+The reason has come back and the number of players has roughly doubled [source: PC Games Insider, as of 2018].
+- GAME-040 (Hades II) - The same "death = narrative progression" structure was repeated in the sequel, surpassing the previous work. A total of about 5,200,000 copies on Steam, 96% positive [source: GAME-040 cards out of 121,483 reviews].
+- GAME-026 (Bloons TD 6) - A case that was established with only a repeating loop of “enemies getting stronger each round + tower upgrades” without random drafts or gacha. 97% positive [source: GAME-026 card among Steam reviews 390,000 + 1,317].
+- GAME-055 (Loop Hero) - A structure in which the character automatically walks a pre-set loop path, and the player only decides to place tiles (enemy spawns and resource terrain) on the path to balance risk and reward. 500,000 copies in the first week of release, 1,000,000 copies in month 2021 year 100, Steam reviews "very positive" (90% range) [source: GAME-055 cards].
 
 ## Failure Cases
-- GAME-005 (Twelve Minutes) - 12분 루프의 반전 콘셉트는 화제였으나, 스킵 불가한 동일 대사·동일 행동의 재수행이 누적되며 "반복 노동" 평가로 수렴. Steam 종합 "복합적(Mixed)", 68% 긍정 [source: Steam 스토어, 2026-07 확인].
-실패 지점: 반복 구간에 새 정보·새 보상이 없고, 반복을 건너뛸 수단도 없었음.
-- GAME-028 (Destiny 2) - 같은 게임의 반대쪽 절반. 출시 첫 해에는 무기 퍼크가 고정(static roll)이라
-  같은 이름의 무기는 누가 얻든 성능이 같았고, 갖고 싶은 무기 몇 종을 다 모으고 나면 반복해서 얻을
-  이유가 사라졌다 [source: GameRant 'Destiny 2 Weapons Won't Have Random Perk Rolls', 2017 기준].
-  실패 지점: 반복해서 얻는 결과물(퍼크)이 매번 똑같아 "갱신"이 없었음.
+- GAME-005 (Twelve Minutes) - The 12 minute loop's twisted concept was a hot topic, but the unskippable re-performance of the same lines and actions accumulated, leading to an evaluation of "repetitive labor." Steam Overall "Mixed", 68% positive [source: Steam store, confirmed 2026-07].
+Point of failure: There was no new information or new reward in the repeat section, and there was no way to skip the repeat.
+- GAME-028 (Destiny 2) - Opposite half of the same game. In the first year of release, weapon perc was a static roll.
+Weapons with the same name had the same performance no matter who got them, and once you have collected several types of weapons you want, you can get them repeatedly.
+The reason is gone [source: GameRant 'Destiny 2 Weapons Won't Have Random Perk Rolls', based on 2017].
+Point of Failure: There was no “update” as the result (Perc) was the same every time.
 
 ## User Reaction Summary
-- 선호: "죽을 때마다 이야기가 진행된다", "한 판만 더" - 반복이 손실이 아니라 축적으로 느껴질 때의 몰입 [source: GAME-009 Steam 리뷰 키워드 / Wikipedia 평가 항목]
-- 선호: "지식이 유일한 진행도"라는 구조 자체에 대한 찬사, 스포일러 금지 추천 문화 형성 [source: GAME-008 Steam 상위 리뷰, 2026-07 확인]
-- 불호: "같은 대사를 몇 번이고 다시 들어야 한다", "막히면 루프 전체를 재수행" [source: GAME-005 Metacritic 유저 리뷰 / Engadget 리뷰, 2021-08]
-- 불호(소수): 방향 제시가 없는 루프는 일부 유저에게 "목적 없음"으로 읽힘 [source: GAME-008 Metacritic 비판 리뷰]
+- Preference: "The story progresses with each death", "Just one more game" - Immersion when repetition feels like accumulation rather than loss [source: GAME-009 Steam review keywords / Wikipedia evaluation item]
+- Preference: Praise for the structure itself of “knowledge is the only way to progress,” creating a no-spoiler recommendation culture [source: GAME-008 Top reviews on Steam, check 2026-07]
+- Dislike: "You have to listen to the same lines over and over again", "If you get stuck, re-do the entire loop" [source: GAME-005 Metacritic user review / Engadget review, 2021-08]
+- Dislike (minority): Loops without direction are read as “purposeless” by some users. [source: GAME-008 Metacritic critical review]
 
 ## Synergy
-- 좋음: ELEM-001 (티저 기반 공개) - 반복이 "다음 떡밥을 확인하러 가는 왕복선" 역할을 함. 루프+티저 결합의 실증 사례가 GAME-008 [source: GAME-008 게임 구조]
-- 좋음: ELEM-003 (제4의 벽 붕괴) - 세이브/리셋이라는 반복 행위 자체를 캐릭터가 기억·언급하면 메타 장치가 반복 가능해짐. 실증 사례 GAME-002 [source: GAME-002 게임 구조]
-- 좋음[interpretation]: ELEM-005 (AI 통합) - 플레이어의 과거 루프를 AI가 실시간 언급하면 "매 반복이 새로움" 조건을 대본 없이 충족 가능. 단 출시된 실증 사례 없음 - GENRE-001 빈칸 가설과 동일 지점.
-- 주의: 대사 밀도가 높은 내러티브와 결합 시 스킵 수단 필수 - 없으면 반복이 피로로 전환된 실증 사례가 GAME-005 [source: GAME-005 리뷰 불만 키워드]
-- 좋음: ELEM-019 (무작위 전리품 드롭 & 루트 테이블) / ELEM-020 (덱 구축) / ELEM-022 (지수적 점수
-  스케일링) - [interpretation] 셋 다 "반복할 때마다 결과물을 갱신"하는 구체적 장치다. 반복 메커닉이 이 요소들
-  없이 홀로 쓰이면 GAME-005·GAME-028(고정 롤 시기)처럼 갱신 없는 반복이 되기 쉽다.
-- 장르 앵커: GENRE-002 (루프 내러티브), GENRE-010 (타워 디펜스), GENRE-011 (루트 슈터), GENRE-012
-  (로그라이크 덱빌더), GENRE-037 (솔로 PvE 로그라이크 오토배틀러) - 다섯 군집이 모두 이 요소를 구성
-  요소로 지목한다. 이 저장소에서 가장 많은 장르가 공유하는 요소다.
+- Good: ELEM-001 (teaser-based release) - Repetition acts as a “shuttle to check out the next piece of cake.” An empirical example of loop + teaser combination is GAME-008 [source: GAME-008 game structure]
+- Good: ELEM-003 (Z4's wall collapse) - If the character remembers and mentions the repetitive act of saving/resetting, the meta device becomes repeatable. [Empirical case GAME-002 [source: GAME-002 game structure]
+- Good[interpretation]: ELEM-005 (AI integration) - If the AI ​​mentions the player's past loop in real time, the "Every repetition is new" condition can be met without a script. However, there are no released empirical cases - GENRE-001 Same point as the blank hypothesis.
+- Caution: A skip method is required when combined with a narrative with high dialogue density - Without it, there are empirical cases where repetition turns into fatigue: GAME-005 [source: GAME-005 Review Complaint Keyword]
+- Good: ELEM-019 (Random Loot Drops & Loot Tables) / ELEM-020 (Deck Building) / ELEM-022 (Exponential Score
+Scaling) - [interpretation] All three are specific devices that "update the result every time it is repeated." The repetition mechanic uses these elements
+If used alone, it is easy to repeat without update, such as GAME-005·GAME-028 (fixed roll period).
+- Genre Anchor: GENRE-002 (Loop Narrative), GENRE-010 (Tower Defense), GENRE-011 (Root Shooter), GENRE-012
+(Roguelike Deckbuilder), GENRE-037 (Solo PvE Roguelike Autobattler) - All five clusters make up this element.
+Point out the element. This is the element shared by most genres in this repository.
 
 ## Risks
-- [interpretation] 반복 자체는 콘텐츠가 아님 - 매 루프마다 "새 정보, 새 대사, 새 빌드" 중 최소 하나가 갱신되어야 함. GAME-009(갱신 있음)와 GAME-005(갱신 없음)의 성패가 갈린 지점. GAME-028은 같은 게임 안에서
-  고정 롤(갱신 없음) → 무작위 롤(갱신 있음)로 바뀌며 이 명제를 한 번 더 확인해준다.
-- [interpretation] 구현 비용이 높음 - 과거 루프의 상태(플레이어가 무엇을 알고 무엇을 했는지)를 추적·저장하는 설계가 필요. tags의 high-cost 근거.
-- [interpretation] 진입 장벽 - "왜 같은 걸 반복하지?"가 첫 1시간 안에 납득되지 않으면 이탈. GAME-008조차 방향 부재 불만이 소수 존재.
+- [interpretation] repetition itself is not content - at least one of "new information, new dialogue, new build" must be updated in each loop. This is the difference between GAME-009 (with renewal) and GAME-005 (without renewal). GAME-028 is in the same game
+The change from fixed roll (no update) to random roll (with update) confirms this proposition once more.
+- [interpretation] High implementation cost - Requires a design that tracks and stores the state of the past loop (what the player knew and did). High-cost basis for tags.
+- [interpretation] barrier to entry - If “Why do we repeat the same thing?” is not understood within the first 1 time, they will leave. Even GAME-008 has a few complaints about lack of direction.
+
+

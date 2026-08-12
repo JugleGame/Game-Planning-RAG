@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-005"
 type = "genre"
-title = "오픈월드 (Open World)"
-summary = "정해진 경로 대신 넓게 이어진 하나의 세계를 자유롭게 돌아다니며 플레이어가 스스로 순서를 정하는 군집"
+title = "Open World"
+summary = "A cluster in which, instead of a fixed route, the player roams freely through one broadly connected world and sets the order themselves"
 elements = ["ELEM-011", "ELEM-012"]
 example_games = ["GAME-014", "GAME-015", "GAME-016", "GAME-017"]
 tags = ["open-world", "exploration", "sandbox", "aaa", "broad-appeal"]
@@ -10,18 +10,18 @@ updated = "2026-07-21"
 confidence = "medium"
 +++
 ## Components
-- ELEM-011 (창발적 시스템 상호작용) - 세계를 "미리 짜인 각본"이 아니라 "규칙들의 조합"으로 채워, 넓은 공간을 손으로 다 채우지 않고도 밀도를 만드는 역할.
-- ELEM-012 (랜드마크 기반 탐험) - 넓은 공간에서 플레이어가 방향을 잃지 않게 하면서도 마커 의존을 낮추는 안내 역할.
+- ELEM-011 (emergent system interaction) - fills the world with "combinations of rules" rather than a "pre-written script", creating density without hand-filling the entire wide space.
+- ELEM-012 (landmark-based exploration) - guidance that keeps the player from losing direction in a wide space while lowering dependence on markers.
 
 ## Market Saturation
-정점 검증작: GAME-014 (Breath of the Wild, 누적 3,432만 장), GAME-016 (Elden Ring, 누적 3,000만 장 돌파) [source: 각 GAME 카드]. 동시에 매년 다수의 오픈월드 대작이 출시되며 "오픈월드 피로(open world fatigue)"라는 표현이 업계 비평에서 반복적으로 쓰임 [source: 업계 비평 정리 기사(editorialge.com, 2026-07-11 게재 / jenesquegaming.uk, 2025-10-21 게재)]. 군집 자체는 매우 성숙했지만, 흥행·평단 모두 좋은 성적을 낸 작품(GAME-017)조차 설계 방식 때문에 반면교사로 인용될 만큼 "잘 팔림"과 "설계가 좋음"이 갈리는 군집이다 [interpretation].
+Peak verified works: GAME-014 (Breath of the Wild, 34,320,000 units cumulative), GAME-016 (Elden Ring, surpassed 30,000,000 units cumulative) [source: each GAME card]. At the same time, many open-world blockbusters release every year and the phrase "open world fatigue" is used repeatedly in industry criticism [source: articles summarizing industry criticism (editorialge.com, published 2026-07-11 / jenesquegaming.uk, published 2025-10-21)]. The cluster itself is very mature, but it is a cluster where "sells well" and "is well designed" diverge to the point that even a work with good results in both sales and critical reception (GAME-017) gets cited as a counterexample because of its design approach [interpretation].
 
 ## Conventions and Expectations
-- 유저는 "얼마나 큰가"보다 "가서 뭘 할 수 있는가"를 기대한다 - 콘텐츠 총량은 있는데 발견의 밀도가 낮으면 "체크리스트"라는 비판으로 이어짐 [source: GAME-017 카드 인용 비평].
-- 마커를 없애도 유저는 여전히 도움을 원한다 - 완전한 방임은 오히려 이탈을 부를 수 있음 [source: TheGamer, 2022-03-15 게재].
-- 탑에 올라 지도를 넓히는 관례 자체는 유지되지만, "그다음"(아이콘 범벅 vs 지형 유도)에서 평가가 갈린다 [interpretation].
+- Users expect "what can I do when I get there" more than "how big is it" - if the total content volume is there but the density of discovery is low, it leads to the criticism of being a "checklist" [source: criticism cited in the GAME-017 card].
+- Even if you remove markers, users still want help - complete laissez-faire can instead drive churn [source: TheGamer, published 2022-03-15].
+- The convention of climbing a tower to expand the map is itself maintained, but evaluations diverge on "what comes next" (icon clutter vs terrain-led guidance) [interpretation].
 
 ## Gaps
-[interpretation] ★ 이 군집의 대표작은 전부 "미리 설계된 규칙"(화학 엔진, 지형 배치) 안에서의 창발이다. 반면 이 저장소가 이미 다루는 GENRE-003(AI 네이티브 게임)/ELEM-005(AI 통합)처럼 "실시간 생성"이 오픈월드의 상호작용 규칙 자체에 들어간 대형 타이틀 사례는 아직 확인하지 못했다. NPC 반응이나 대화를 AI가 실시간 생성하는 시도(GAME-011 inZOI)는 있지만, "지형·오브젝트 상호작용 규칙"을 AI가 실시간으로 확장하는 오픈월드는 미점유로 보인다.
-- 확인 방법: "open world" + "generative AI" / "procedural interaction" 태그 교차 검색, GDC·개발자 인터뷰에서 화학 엔진에 생성형 AI를 결합한 사례 유무 확인
-- 확인일: 2026-07-21 / 재확인 주기: 분기 1회
+[interpretation] ★ The representative works of this cluster all show emergence within "pre-designed rules" (a chemistry engine, terrain placement). By contrast, no large title has yet been confirmed in which "real-time generation" enters the open world's interaction rules themselves, in the way of GENRE-003 (AI-native games) / ELEM-005 (AI integration) which this repository already covers. There are attempts where AI generates NPC reactions or dialogue in real time (GAME-011 inZOI), but an open world where AI expands the "terrain/object interaction rules" in real time appears to be unoccupied.
+- Verification method: cross search of "open world" + "generative AI" / "procedural interaction" tags; check whether any case combining generative AI with a chemistry engine appears at GDC or in developer interviews
+- Verified on: 2026-07-21 / Re-check cycle: once a quarter

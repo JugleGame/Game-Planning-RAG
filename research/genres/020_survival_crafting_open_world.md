@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-020"
 type = "genre"
-title = "서바이벌 크래프팅 오픈월드 (Survival Crafting Open World)"
-summary = "자원·환경·제작이 서로 맞물리는 개방형 시스템 위에서 굶주림·추위·부상을 관리하며 살아남는 것이 코어인 군집"
+title = "Survival Crafting Open World"
+summary = "A cluster whose core is surviving on an open system where resources, environment, and crafting interlock while managing hunger, cold, and injury"
 elements = ["ELEM-011", "ELEM-028", "ELEM-039"]
 example_games = ["GAME-045"]
 tags = ["survival", "crafting", "open-world", "co-op", "broad-appeal"]
@@ -10,20 +10,20 @@ updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Components
-- ELEM-011 (창발적 시스템 상호작용) - 자원·환경·제작 결과물이 서로 반응하는 개방형 시스템이 코어다 (추위·굶주림·부상 등).
-- ELEM-028 (재화 전환형 제작 마찰 완화) - 흩어진 채집 자원을 정해진 공식으로 합쳐 장비를 만드는 제작 구조가 성장 축이 된다.
-- ELEM-039 (포획형 동료 노동 시스템) - 잡은 생물을 채집·제작 노동력으로 부리는 변형 축이다 (GAME-045).
+- ELEM-011 (emergent system interaction) - An open system where resources, environment, and crafting outputs react to one another is core (cold, hunger, injury, etc.).
+- ELEM-028 (currency-conversion crafting friction reduction) - Crafting equipment by combining scattered gathered resources according to fixed recipes becomes the growth axis.
+- ELEM-039 (captured-companion labor system) - A variation that uses captured creatures as gathering and crafting labor (GAME-045).
 
 ## Market Saturation
-- 사실: Valheim은 Steam 리뷰 257,114건 중 94%가 긍정적이다 [source: Steam 스토어 페이지, 웹 검색 종합 확인 2026-07-31 기준].
-- 사실: Green Hell은 Steam 리뷰 26,804건 중 85%가 긍정적이다 [source: Steam 스토어 페이지, 웹 검색 종합 확인 2026-07-31 기준]. (다른 한 보도에서는 "7만 건 이상의 긍정 리뷰"라는 상충 수치도 확인됨 [source: Notebookcheck 기사, 시점 불명] - 어느 쪽이 최신 공식 수치인지 확정하지 못함)
-- [interpretation] Valheim은 대중적 대형 히트, Green Hell은 중견 니치 규모로, 같은 군집 안에서도 스케일 격차가 크다.
+- Fact: 94% of 257,114 Valheim Steam reviews are positive [source: Steam store page, web-search synthesis verified as of 2026-07-31].
+- Fact: 85% of 26,804 Green Hell Steam reviews are positive [source: Steam store page, web-search synthesis verified as of 2026-07-31]. (Another report gives the conflicting figure of "more than 70,000 positive reviews" [source: Notebookcheck article, date unclear] - which is the latest official figure was not confirmed.)
+- [interpretation] Valheim is a major popular hit while Green Hell is mid-sized niche-scale, so the scale gap is large even within the same cluster.
 
 ## Conventions and Expectations
-- 사실: GAME-045(Palworld)는 2024년 1월 출시 첫 달에 2,200만 장을 판매해 Steam 최고속 판매 기록을 세웠다 [source: 웹 검색 종합 보도, 2024-01 기준].
-- [interpretation] 장르 관례는 "혼자서도, 협동으로도" 진행 가능한 유연한 파티 규모 지원인 것으로 보인다 (Valheim 사례).
+- Fact: GAME-045 (Palworld) sold 22,000,000 copies in its first month after releasing in January 2024, setting Steam's fastest-sales record [source: web-search synthesis reporting, as of 2024-01].
+- [interpretation] The genre convention appears to be flexible party-size support that works both "alone and cooperatively" (the Valheim case).
 
 ## Gaps
-[interpretation] ★ 서바이벌 크래프팅에 온디바이스 AI NPC(ELEM-025)를 결합한 사례는 조사 중 확인하지 못했다.
-- 확인 방법: Steam 신작 태그 "survival" + "AI" 교차 검색
-- 확인일: 2026-07-31 / 재확인 주기: 8주
+[interpretation] ★ No case combining survival crafting with an on-device AI NPC (ELEM-025) was confirmed.
+- Verification method: cross-search the tags "survival" + "AI" among new Steam releases
+- Verified on: 2026-07-31 / Re-check cycle: 8 weeks

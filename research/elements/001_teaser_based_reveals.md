@@ -1,37 +1,40 @@
 +++ 
 card_id = "ELEM-001"
 type = "narrative-device"
-title = "티저 기반 공개 (Teaser-based reveals) "
-summary = "다음 단계가 있음을 간접적인 요소들로 나타냄"
+title = "Teaser-based reveals"
+summary = "Indirect elements indicate that there is a next step."
 tags = ["narrative", "viral-hook", "fragile" ]
 updated = "2026-07-31"
 confidence = "medium"
 +++ 
 ## Definition
-전체의 단계 및 흐름을 직접적으로 공개하지 않고, 다음 단계의 핵심 정보 일부(떡밥)만 
-단편적으로 노출하여 청중의 호기심을 극대화하는 기법입니다.
+Instead of directly disclosing the overall steps and flow, only some of the key information for the next step is provided.
+This is a technique that maximizes the audience’s curiosity by exposing them piecemeal.
 
 ## Success Cases
-- GAME-001 (Inscryption) - 게임 속 카드 게임은 단순한 프로그램이 아니라 이 '카르노펠 코드'가 주입되어 스스로 자아를 갖게 된 것이라는 떡밥들로 게이머들이 더욱 게임을 파고들게 만듦
-- GAME-006 (Overwatch) - '솜브라' 출시 전 게임과 인터넷상에 떡밥을 숨겨두어 커뮤니티에서 떡밥들을 풀어가며 게이머들의 몰입감을 극대화함.
-- GAME-003 (OneShot) - 창 밖 퍼즐이라는 규칙 자체를 조금씩만 알려줘 탐색 동기를 유지. Steam 리뷰 6만 건 이상 중 98% 긍정 [source: GAME-003 카드].
-- GAME-008 (Outer Wilds) - 모든 발견이 더 큰 진실의 떡밥이 되고, 선박 로그가 "다음에 갈 곳"을 계속 암시하는 구조. Steam 리뷰 10만 건 이상 중 96% 긍정 [source: GAME-008 카드].
+- GAME-001 (Inscryption) - The card game in the game is not just a program, but is injected with this 'Carnopfel Code' and has gained its own identity, making gamers dig deeper into the game.
+- GAME-006 (Overwatch) - Before the release of 'Sombra', secrets were hidden in the game and on the Internet, and gamers' sense of immersion was maximized by solving them in the community.
+- GAME-003 (OneShot) - Maintain exploration motivation by teaching the rules of the puzzle outside the window little by little. Of over 60,000 Steam reviews, 98% positive [source: GAME-003 card].
+- GAME-008 (Outer Wilds) - A structure where every discovery leads to a larger truth, and ship logs continually hint at "where to go next." Of over 100,000 Steam reviews, 96% positive [source: GAME-008 card].
 
 ## Failure Cases
-- GAME-004 (ANTHEM) - 떡밥 회수가 허무하게 끝나 몰입감이 떨어진다는 평가로 게임에 인입이 없어짐.
-실패 지점 : 떡밥 크기에 비례한 게이머의 기대감을 충족시켜야함.
+- GAME-004 (ANTHEM) - There was no interest in the game due to the evaluation that the collection of rice cakes ended in vain and lacked immersion.
+Point of failure: Must meet gamers’ expectations proportional to the size of the rice cake.
 
 ## User Reaction Summary
-- 선호: "이런 게임...내 인생 정말 처음이야...", 떡밥들을 정리하는 글들이 우후죽순 생겨날 정도로 커뮤니티의 반응이 좋음
-[ 출처 : GAME-001 블로그 리뷰 참조]
-- 불호: 핵심적인 세계관과 캐릭터의 행동 원리를 숨긴 채 떡밥만 던져대서 스토리에 몰입하기보다 사건의 본질을 이해하지 못해 스트레스만 받음
-[ 출처 : Naver-blog 게임 리뷰 참조 ]
+- Preferred: "This is my first time playing a game like this...", The community's response was so good that posts summarizing the facts were mushrooming.
+Source: See GAME-001 blog review
+- Dislike: It hides the core world view and the character's principles of action and only throws away a bunch of crap, so rather than immersing yourself in the story, you only get stressed because you don't understand the essence of the incident.
+Source: Naver-blog game review reference
 
 ## Synergy
-- 좋음: ELEM-002 (캠피) - 유쾌한 분위기 속 떡밥을 숨겨 익숙해진 상식이 떡밥이 풀리며 몰입감이 극대화됨
-- 좋음: ELEM-005 (AI 통합) - 실시간 반응을 통해 유저 상황에 맞는 떡밥을 풀어낼 수 있음
-- 장르 앵커: GENRE-001 (메타 내러티브 인디), GENRE-002 (루프 내러티브) - 두 군집 모두 이 요소를 구성 요소로 지목한다.
+- Good: ELEM-002 (campy) - By hiding a lot of things in a pleasant atmosphere, familiar knowledge is solved and immersion is maximized.
+- Good: ELEM-005 (AI integration) - Able to solve problems suited to the user's situation through real-time reactions
+- Genre anchor: GENRE-001 (meta-narrative indie), GENRE-002 (loop narrative) - Both clusters point to this element as a component.
 
 ## Risks
-- [interpretation] 떡밥으로만 스토리가 진행되면, 플레이어의 이해도에 따라 의도와 전혀 다른 결과를 도출해낼 수 있음
-- [interpretation] 게임의 완성도에 주요한 요소로 애매하게 들어갈 시 오히려 질타를 받을 수 있음
+- [interpretation] If the story progresses with nothing more than a piece of cake, the result may be completely different from what was intended depending on the player's level of understanding.
+- [interpretation] is a major element in the completeness of the game, so if you enter it vaguely, you may be criticized.
+
+
+

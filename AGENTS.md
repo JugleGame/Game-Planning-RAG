@@ -21,8 +21,8 @@
 | 두 접속 경로가 같은 결과를 주는지 확인 | `python tools/search_cards.py "<질의>" --check-transport` — 5432와 443이 둘 다 열린 곳에서만 의미가 있다(한쪽만 열렸으면 거짓 통과 대신 멈춘다). 검색 SQL의 자리표시자를 건드렸다면 반드시 |
 | 미러링 결과 확인 | `verify_db.py`의 `unresolved_refs`가 0이 아니면 없는 ID를 참조하는 카드가 있다는 뜻 → md 원본을 고치고 재실행 |
 | 절 제목은 표준 사전의 문자열 그대로 | 변형 제목 발견 시 lint로 잡아 수정 (임의 추측 금지). 사전은 card_schema.py의 `SECTION_TITLES` |
-| 카드 언어 (2026-08-12~) | 절 제목과 `[source:`/`[interpretation]` 표시는 **영어**, 본문 산문은 아직 한국어다. 이 혼재는 정상이며 `SECTION_KEY`가 두 언어를 모두 받는다. **새 카드는 templates/*.md 그대로 영어 절 제목을 쓸 것** — 한국어 제목으로 되돌리지 말 것 |
-| 카드를 영어로 옮길 때 | ① 기계 표면: `python scripts/migrate_card_lang.py --headings <카드들>` (LLM 불필요, 165장 완료). ② 산문: `--out draft/en` → 사람 확인 → `--apply`. 수치·ID·출처 태그가 어긋나면 통과 못 한다. 검사만: `--verify` |
+| 카드 언어 (2026-08-12~) | 카드 165장의 절 제목·`[source:`/`[interpretation]`·본문 산문은 **영어 전환 완료**. 새 카드도 `templates/*.md` 그대로 영어로 작성할 것 — 한국어로 되돌리지 말 것 |
+| 번역 무결성 재검사 | `python scripts/migrate_card_lang.py --verify <카드들>` — git HEAD와 대조해 수치·ID·출처·해석·절 구성·frontmatter와 영어 전환 여부를 검사. 한국어 중간 상태 허용은 이관 작업 중에만 `--allow-korean-prose` |
 
 ## 읽기 규율 (토큰 예산)
 1. 위 지도에 없는 파일은 열지 않는다. 단계당 프롬프트 1개만 읽는다.

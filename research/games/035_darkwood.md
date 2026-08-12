@@ -2,7 +2,7 @@
 card_id = "GAME-035"
 type = "success"
 title = "Darkwood (2017, Acid Wizard Studio)"
-summary = "손전등 없이 시야가 닿는 원 안에서만 세상이 보이는 탑다운 생존 공포로, 오랜 얼리액세스를 거쳐 흥행에 성공한 인디작"
+summary = "A top-down survival horror game where the world is visible only within a circle of flashlight vision, an indie success after a long early-access period"
 genres = ["GENRE-015"]
 elements = ["ELEM-023"]
 tags = ["horror", "survival", "top-down", "indie", "light-mechanic"]
@@ -10,18 +10,18 @@ updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-- 사실: 2017-08-17 출시, 개발 Acid Wizard Studio [source: Wikipedia, Darkwood, 2026-07 확인].
-- 사실: 추정 매출 약 610만 달러 [source: games-stats.com, 2026-07 확인].
-- 사실: Steam 리뷰 수는 출처마다 다르게 집계된다 — 영어 리뷰 기준 약 1만 건(94% 긍정) ~ 다른 집계 기준 약 2.1만 건(9/10) [source: Steambase, 2026-07 확인, 두 출처 수치 상충].
-<!-- 증거 부족: 판매 카피 수(장) 자체의 공식 발표치는 확인하지 못함 -->
+- Fact: Released on 2017-08-17, developed by Acid Wizard Studio [source: Wikipedia, Darkwood, verified 2026-07].
+- Fact: Estimated revenue was about $6,100,000 [source: games-stats.com, verified 2026-07].
+- Fact: Steam review counts vary by source—from about 10,000 English-language reviews (94% positive) to about 21,000 under another counting method (9/10) [source: Steambase, verified 2026-07, figures conflict].
+<!-- Evidence insufficient: an official announcement of the sales copy count itself could not be confirmed -->
 
 ## Elements Used
-- ELEM-023 (광원·시야 제한) - 낮 동안 이동해 준비하고, 밤이 되면 시야가 원형 광원 범위로 좁아지며 방어에 몰입해야 하는 낮/밤 순환의 중심 장치.
+- ELEM-023 (light source / vision restriction) - the central device of a day/night cycle in which the player moves and prepares during the day, then focuses on defense at night as vision narrows to a circular light radius.
 
 ## Success/Failure Drivers
-- 사실: 긍정 리뷰 비율이 94% 이상으로 장기간 유지되고 있다 [source: Steambase, 2026-07 확인].
-- [interpretation] 조명을 UI 게이지가 아니라 실제로 화면에서 보이는 것 자체를 줄이는 방식으로 표현해, 자원 관리와 공포감을 같은 장치 하나로 동시에 만든 점이 차별화 요인으로 보인다.
-<!-- 증거 부족: 개발사가 직접 밝힌 설계 의도(디자이너 코멘터리 등)는 확인하지 못함 -->
+- Fact: The positive-review rate has remained above 94% over a long period [source: Steambase, verified 2026-07].
+- [interpretation] Expressing lighting by reducing what is actually visible on screen rather than using a UI gauge appears to have made resource management and fear serve the same device at once.
+<!-- Evidence insufficient: the developer's directly stated design intent (such as designer commentary) could not be confirmed -->
 
 ## Implications for Our Project
-시야 제한이 그래픽 후처리(비네트 셰이더)만이 아니라 "무엇을 볼 수 있는가"라는 정보 자체를 게임플레이 자원으로 다룰 때 더 강한 긴장을 만든다는 사례. [interpretation] 2D 프로젝트에서도 조명 반경을 순수 연출이 아니라 상호작용 가능한 자원(배터리, 연료 등)으로 설계하면 같은 효과를 노릴 수 있다.
+This shows that vision restriction creates stronger tension when it treats the information of "what can be seen" as a gameplay resource, not merely as graphical post-processing (a vignette shader). [interpretation] A 2D project can pursue the same effect by designing light radius as an interactive resource (battery, fuel, and so on) rather than pure presentation.

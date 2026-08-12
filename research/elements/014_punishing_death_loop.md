@@ -1,33 +1,33 @@
 +++
 card_id = "ELEM-014"
 type = "mechanic"
-title = "처벌적 죽음 순환 (Punishing Death Loop)"
-summary = "죽으면 모아둔 자원을 잃고 정해진 지점에서 다시 시작하되, 죽은 자리로 돌아가면 한 번 더 되찾을 기회를 주는 긴장·반복 구조"
+title = "Punishing Death Loop (Punishing Death Loop)"
+summary = "A tension-and-repetition structure in which death loses collected resources and restarts the player at a set point, while returning to the death site offers one chance to recover them"
 tags = ["difficulty", "dark-fantasy", "soulslike", "retention", "divisive"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-플레이어가 죽으면 그동안 모은 자원(경험치·화폐 등)을 잃고, 세이브 지점에서 다시 시작하는 방식입니다. 대신 죽은 자리로 돌아가면 잃어버린 자원을 한 번 더 회수할 기회를 주고, 그사이 적들은 다시 리스폰됩니다. "실패하면 처음부터"가 아니라 "실패하면 되찾으러 가야 한다"는 목표를 하나 더 만들어 긴장을 유지하는 구조입니다.
+When the player dies, they lose resources collected so far, such as experience or currency, and restart at a save point. Returning to the death site offers one more chance to recover the lost resources, while enemies respawn in the meantime. Instead of “failure means starting over,” it adds the goal “failure means going back to recover it,” maintaining tension.
 
 ## Success Cases
-- GAME-021 (Dark Souls III) - 2020년 5월 기준 전 세계 1,000만 장 이상 판매, Metacritic 89점 [source: GAME-021 카드].
+- GAME-021 (Dark Souls III) - Sold more than 10,000,000 copies worldwide as of May 2020, with a Metacritic score of 89 [source: GAME-021 card].
 
 ## Failure Cases
 <!-- 증거 부족: 이 순환 구조 자체를 전면에 내세웠다가 명확히 실패한 특정 게임 사례를 아직 확인하지 못함. 후속 조사 필요 -->
-[interpretation] 소울라이크 태그를 단 게임이 매년 다수 출시되지만, 원작의 균형(회수 기회·리스폰 규칙)을 그대로 베끼기만 하고 자기 게임에 맞게 조정하지 않으면 "독창성 없는 클론"이라는 평가로 이어진다는 지적이 업계 분석에서 반복적으로 나온다 [source: Soulslike Game Market Report(Verified Market Research), 2026-07 확인].
+[interpretation] Industry analyses repeatedly note that many Soulslike-tagged games launch each year, but copying the original’s balance (recovery chance and respawn rules) without adapting it to the game leads to a “soulless clone” assessment [source: Soulslike Game Market Report (Verified Market Research), confirmed 2026-07].
 
 ## User Reaction Summary
-- 소울라이크 장르에서 죽음에 대한 처벌은 장르 정체성의 핵심 요소로 받아들여지며, 그 좌절감 자체가 "다시 도전해 실력을 늘려라"는 신호로 기능한다는 시각이 커뮤니티·개발자 논의에서 공통적으로 확인됨 [source: 커뮤니티/개발자 논의 종합(Steam·itch.io 포럼), 2026-07 확인].
-- 반면 회수 기회 없이 "죽으면 진행 전체를 다시 시작"하는 식으로 구현되면 과도하다는 불만이 반복적으로 제기됨 [source: 커뮤니티 포럼 논의 종합, 2026-07 확인].
+- In the Soulslike genre, death penalties are accepted as a core identity element, and community and developer discussions commonly view the frustration itself as a signal to “try again and improve” [source: community/developer discussion roundup (Steam and itch.io forums), confirmed 2026-07].
+- Conversely, repeated complaints say it becomes excessive when implemented as “restart all progress on death” without a recovery chance [source: community forum discussion roundup, confirmed 2026-07].
 
 ## Synergy
-- 좋음: ELEM-016 (그림다크 톤) - 세계 자체가 가혹하다는 분위기와 죽음의 대가가 서로를 강화함.
-- 좋음: ELEM-015 (스트레스/광기 시스템) - 자원 손실이라는 물리적 처벌과 정신적 압박이라는 심리적 처벌을 겹치면 긴장의 층이 늘어남 [interpretation] (직접 결합한 사례는 아직 확인하지 못함).
-- 좋음: ELEM-032 (뉴 게임 플러스) - [interpretation] 처벌로 익힌 숙련을 클리어 이후에 다시 쓰게 해주는 출구. 처벌적 순환만 남으면 이탈로 끝나지만, 회차 이월이 있으면 그 숙련이 보상으로 회수된다. ELEM-032 카드가 이 요소를 전제로 삼는다.
-- 완화 장치: ELEM-033 (동적 난이도 조절) - [interpretation] 죽음의 처벌이 강할수록 티 나지 않는 난이도 조절이 좌절 이탈을 막는 안전판이 된다. ELEM-033 카드가 같은 조합을 반대 방향에서 기록하고 있다.
-- 장르 앵커: GENRE-009 (다크 판타지), GENRE-016 (탄막 로그라이크) - 두 군집이 이 요소를 구성 요소로 지목한다.
+- Good: ELEM-016 (Grimdark Tone) - The harsh world and the cost of death reinforce each other.
+- Good: ELEM-015 (Stress/Sanity System) - Layering physical punishment through resource loss with psychological punishment through mental pressure adds tension [interpretation] (no directly combined case confirmed yet).
+- Good: ELEM-032 (New Game Plus) - [interpretation] An outlet that lets players reuse mastery learned through punishment after clearing. A punishing loop alone ends in churn, but carryover recovers that mastery as a reward. The ELEM-032 card assumes this element.
+- Mitigation: ELEM-033 (Dynamic Difficulty Adjustment) - [interpretation] The stronger the death penalty, the more unobtrusive difficulty adjustment can act as a safety net against frustration churn. The ELEM-033 card records the same combination from the opposite direction.
+- Genre anchors: GENRE-009 (Dark Fantasy), GENRE-016 (Bullet-hell Roguelike) - Both clusters identify this element as a component.
 
 ## Risks
-- [interpretation] 신규 유저의 초반 이탈을 부를 수 있다 - 회수 기회와 리스폰 규칙을 얼마나 명확히 가르치느냐가 진입 장벽을 좌우한다.
-- [interpretation] 장르가 성숙해질수록 "얼마나 가혹한가"보다 "이 가혹함이 이 게임만의 이유가 있는가"로 평가 기준이 옮겨가고 있어, 조정 없는 복제는 시장 포화 속에서 묻히기 쉽다.
+- [interpretation] It can cause early churn among new users - the entry barrier depends on how clearly recovery chances and respawn rules are taught.
+- [interpretation] As the genre matures, evaluation shifts from “how harsh is it?” to “does this harshness have a reason unique to this game?”, so unadjusted copies are easily buried in a saturated market.

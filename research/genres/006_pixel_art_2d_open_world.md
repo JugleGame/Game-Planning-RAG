@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-006"
 type = "genre"
-title = "도트 그래픽 2D 오픈월드/샌드박스 (Pixel-art 2D Open World / Sandbox)"
-summary = "픽셀 아트로 표현된 2D 세계를 채굴·건설·경작 등 자유도 높은 방식으로 탐험하게 하는 군집"
+title = "Pixel-art 2D Open World / Sandbox"
+summary = "A cluster that has players explore a 2D world rendered in pixel art through high-freedom means such as mining, building and farming"
 elements = ["ELEM-013"]
 example_games = ["GAME-018", "GAME-019", "GAME-020"]
 tags = ["pixel", "open-world", "sandbox", "2d", "indie", "exploration"]
@@ -10,17 +10,17 @@ updated = "2026-07-25"
 confidence = "medium"
 +++
 ## Components
-- ELEM-013 (도트 그래픽 아트 스타일) - 이 군집의 시각적 정체성이자 저비용 생산을 가능하게 하는 기반. 3D 오픈월드(GENRE-005)와 달리 소규모 팀도 넓은 세계를 감당할 수 있게 하는 핵심 조건 [interpretation].
+- ELEM-013 (pixel-art art style) - this cluster's visual identity and the foundation that makes low-cost production possible. Unlike 3D open worlds (GENRE-005), it is the key condition that lets even a small team handle a wide world [interpretation].
 
 ## Market Saturation
-대표작 3종의 누적 판매만도 Terraria 7,000만 장, Stardew Valley 5,000만 장 이상, Core Keeper 200만 장(1.0 출시 시점) [source: GAME-018/GAME-019/GAME-020 카드]. 픽셀 게임 시장은 2024~2031년 연평균 약 11.5% 성장할 것으로 전망됨 [source: 시장조사 자료 재인용 기사(game-oracle.com), 2026 기준]. 동시에 "2D 인디는 다 픽셀 아트"라는 피로감이 커뮤니티에서 반복 관측돼, 시각적으로는 이미 포화에 가깝다는 평가가 있음 [interpretation].
+The cumulative sales of the three representative works alone are Terraria 70,000,000 units, Stardew Valley 50,000,000+ units, and Core Keeper 2,000,000 units (at the time of the 1.0 release) [source: GAME-018/GAME-019/GAME-020 cards]. The pixel game market is projected to grow at an annual average of about 11.5% from 2024 to 2031 [source: article re-citing market research material (game-oracle.com), as of 2026]. At the same time, fatigue with "every 2D indie is pixel art" is repeatedly observed in the community, and there is an assessment that visually it is already close to saturation [interpretation].
 
 ## Conventions and Expectations
-- 유저는 낮은 사양 요구와 모드/커스터마이징 자유도를 당연하게 기대한다 [interpretation].
-- 진행 구조는 "장비/도구로 새 구역 해금"(GAME-018) 또는 "계절 순환"(GAME-019) 등 반복 가능한 진행 축을 최소 하나는 갖출 것을 기대받는다 [interpretation].
-- 시점(횡스크롤 vs 탑다운)은 장르 관례상 자유롭게 변주 가능하다는 것을 GAME-020 사례가 보여줌 [source: GAME-020 카드].
+- Users take low system requirements and freedom of mods/customization for granted [interpretation].
+- The progression structure is expected to have at least one repeatable progression axis, such as "unlocking new zones with equipment/tools" (GAME-018) or "seasonal cycles" (GAME-019) [interpretation].
+- The GAME-020 case shows that the viewpoint (side-scrolling vs top-down) can be varied freely by genre convention [source: GAME-020 card].
 
 ## Gaps
-[interpretation] ★ 대표작 3종 모두 "혼자 또는 소규모 팀이 정적으로 설계한 픽셀 세계"라는 공통점이 있다. 이 저장소가 이미 다루는 ELEM-005(AI 통합)/GENRE-003(AI 네이티브 게임)처럼, 실시간 생성 AI가 픽셀 세계의 지형·NPC·이벤트를 동적으로 확장하는 "도트 그래픽 오픈월드 + AI 네이티브" 조합 사례는 조사 중 확인하지 못했다. 3D 오픈월드(GENRE-005)의 빈칸과 같은 종류의 기회가, 자산 제작 비용이 낮은 2D/픽셀 쪽에서는 오히려 더 쉽게 실험될 수 있다는 가능성이 있다.
-- 확인 방법: "pixel art" + "generative AI" / "procedural NPC" 태그 교차 검색, itch.io·Steam 신작 태그에서 사례 유무 확인
-- 확인일: 2026-07-25 / 재확인 주기: 분기 1회
+[interpretation] ★ All three representative works share the trait of being "a pixel world statically designed by one person or a small team". As with ELEM-005 (AI integration) / GENRE-003 (AI-native games) which this repository already covers, no case of the "pixel-art open world + AI-native" combination, in which real-time generative AI dynamically expands the pixel world's terrain, NPCs and events, was confirmed during the investigation. There is a possibility that the same kind of opportunity as the gap in 3D open worlds (GENRE-005) could instead be experimented with more easily on the 2D/pixel side, where asset production costs are low.
+- Verification method: cross search of "pixel art" + "generative AI" / "procedural NPC" tags; check for cases in new-release tags on itch.io and Steam
+- Verified on: 2026-07-25 / Re-check cycle: once a quarter

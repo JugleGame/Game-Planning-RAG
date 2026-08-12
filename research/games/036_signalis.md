@@ -2,7 +2,7 @@
 card_id = "GAME-036"
 type = "success"
 title = "Signalis (2022, rose-engine / Humble Games)"
-summary = "제한된 손전등 시야와 그림다크 SF 톤을 결합한 도트 그래픽 생존 공포로, 소규모 독일 스튜디오의 원작임에도 압도적 긍정 평가를 받은 작품"
+summary = "A pixel-art survival horror game combining restricted flashlight vision with a grimdark SF tone, receiving overwhelmingly positive reviews despite being an original work from a small German studio"
 genres = ["GENRE-015"]
 elements = ["ELEM-016", "ELEM-023"]
 tags = ["horror", "survival", "grimdark", "indie", "pixel", "light-mechanic"]
@@ -10,19 +10,19 @@ updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-- 사실: 2022-10-27 PC(Steam)·Xbox One·PS4·Nintendo Switch 동시 출시, 개발 rose-engine, 퍼블리셔 Humble Games/Playism [source: Game Chronicles 보도, 2026-07 확인].
-- 사실: Steam 사용자 리뷰 약 2만 941건, "압도적으로 긍정적"(96% 긍정) [source: Steam 페이지 요약 보도, 2026-07 확인].
-- 사실: 출시 1주년 직후 Steam 리뷰 1만 건을 돌파했다는 보도가 있다 [source: rose-engine 관련 보도, 2026-07 확인].
-<!-- 증거 부족: 정확한 판매 카피 수(장)는 확인하지 못함 -->
+- Fact: Released simultaneously on PC (Steam), Xbox One, PS4, and Nintendo Switch on 2022-10-27; developed by rose-engine and published by Humble Games/Playism [source: Game Chronicles coverage, verified 2026-07].
+- Fact: It had about 20,000 + 941 Steam user reviews, "Overwhelmingly Positive" (96% positive) [source: Steam page summary coverage, verified 2026-07].
+- Fact: Reports say it surpassed 10,000 Steam reviews shortly after its first anniversary [source: rose-engine-related coverage, verified 2026-07].
+<!-- Evidence insufficient: the exact sales copy count could not be confirmed -->
 
 ## Elements Used
-- ELEM-016 (그림다크 톤) - 전체주의적 SF 세계관과 절망적인 서사 분위기를 시각·사운드 전반에 일관되게 깐다.
-- ELEM-023 (광원·시야 제한) - 어두운 시설을 손전등 빛이 닿는 범위로만 비춰가며 탐색하게 만드는 자원형 시야 장치.
+- ELEM-016 (grimdark tone) - consistently lays an authoritarian SF world and desperate narrative atmosphere across the visual and audio presentation.
+- ELEM-023 (light source / vision restriction) - a resource-like vision device that makes the player explore dark facilities by illuminating only the area reached by flashlight light.
 
 ## Success/Failure Drivers
-- 사실: 96%라는 높은 긍정 비율이 약 2만 건 규모의 리뷰에서 유지되고 있다 [source: Steam 페이지 요약 보도, 2026-07 확인].
-- [interpretation] 도트 그래픽(저비용 파이프라인)과 PS1 시대 카메라·조작감 오마주가 소규모 팀 리소스로도 톤을 완성도 있게 구현할 수 있게 한 요인일 가능성이 있다.
-<!-- 증거 부족: 개발 인원 규모와 개발 기간 등 제작 비용 관련 수치는 확인하지 못함 -->
+- Fact: The high positive rate of 96% has held across a review base of roughly 20,000 [source: Steam page summary coverage, verified 2026-07].
+- [interpretation] Pixel graphics (a low-cost pipeline) and homages to PS1-era camera and controls may have helped a small team realize the tone with high fidelity using limited resources.
+<!-- Evidence insufficient: production-cost figures such as team size and development period could not be confirmed -->
 
 ## Implications for Our Project
-그림다크 톤(ELEM-016)과 시야 제한(ELEM-023)을 동시에 쓴 두 번째 성공 사례(GAME-035 Darkwood에 이어)로, 두 요소의 조합 궁합이 반복적으로 검증되고 있다는 신호. [interpretation] 저해상도 도트 그래픽은 예산 제약뿐 아니라 "빛이 닿지 않는 곳은 정말 안 보이게" 만드는 시야 제한 연출과도 기술적으로 잘 맞는다.
+This is the second successful case after GAME-035 (Darkwood) to use grimdark tone (ELEM-016) and vision restriction (ELEM-023) together, signaling that the combination is repeatedly validating its compatibility. [interpretation] Low-resolution pixel graphics fit not only budget constraints but also the technical presentation of vision restriction that makes places untouched by light truly invisible.

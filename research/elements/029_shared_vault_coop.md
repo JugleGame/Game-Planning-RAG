@@ -1,42 +1,32 @@
 +++
 card_id = "ELEM-029"
 type = "mechanic"
-title = "협력 기반 자산 공유 메커닉 (Shared Vault Co-op Mechanic)"
-summary = "플레이어가 개인 보상을 포기하거나 일부를 넘겨 팀 공용 저장소에 축적하게 만들어, 협력 인센티브를 자원 관리 수준으로 끌어내리는 구조"
+title = "Shared Vault Co-op Mechanic"
+summary = "A structure that has players give up or transfer part of personal rewards into a shared team storage, bringing the co-op incentive down to the level of resource management"
 tags = ["co-op", "squad", "live-service", "retention", "incentive"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-협력 미션을 돌 때 자기가 얻은 아이템/자원 일부를 팀 공용 창고에 기부하거나 자동으로 들어가게 해서, 팀 레벨을 올리거나 팀 보상을 누적하는 구조입니다. 개인의 이익과 팀의 이익을 동시에 노린다는 뜻입니다.
+This is a structure in which players donate part of the items or resources they earn during a co-op mission to a shared team vault, or have them deposited automatically, raising the team level or accumulating team rewards. It aims at individual and team benefits simultaneously.
 
 ## Success Cases
-- GAME-029 (Warframe) - 클랜원으로 채운 분대는 인원당 자원 보너스 20%를 받고, 그 보너스분이
-  미션 종료 시 곧바로 클랜 볼트로 들어간다. 매주 무작위로 지정되는 행성에서는 이 기여가
-  2배가 된다 [source: WARFRAME Wiki / 공식 Support 문서, 2026-03 기준].
-- Helldivers 2 (2024, Arrowhead Game Studios) - 샘플·수퍼크레딧·훈장은 생존한 전원에게
-  동일하게 분배되는 반면, 탄약·무기·수류탄 같은 소모품은 먼저 집은 사람의 것이다
-  [source: Steam 커뮤니티 토론 / screenrant, 2026 확인]. 즉 같은 게임 안에서도 "공유 대상"과
-  "선점 대상"을 자원 종류별로 갈라놓았다.
-<!-- 증거 부족: Helldivers 2는 아직 GAME 카드가 없어 판매·리뷰 수치로 뒷받침되지 않았다 -->
+- GAME-029 (Warframe) - A squad filled with clan members receives a 20% resource bonus per member, and the bonus goes directly into the clan vault when the mission ends. On a planet designated randomly each week, this contribution is doubled [source: WARFRAME Wiki / official Support document, as of 2026-03].
+- Helldivers 2 (2024, Arrowhead Game Studios) - Samples, super credits, and medals are distributed equally to all survivors, while consumables such as ammunition, weapons, and grenades belong to whoever picks them up first [source: Steam community discussion / screenrant, 2026 confirmation]. Thus, even within one game, shared and claimable resources are separated by resource type.
+<!-- Evidence insufficient: Helldivers 2 has no GAME card yet, so this is not supported by sales or review figures -->
 
 ## Failure Cases
-<!-- 증거 부족: 자산 공유 구조가 원인으로 지목된 실패 사례는 이번 조사에서 확인하지 못함 -->
+<!-- Evidence insufficient: this investigation found no failure case attributed to the asset-sharing structure -->
 
 ## User Reaction Summary
-<!-- 증거 부족: 유저 리뷰 키워드 집계를 확보하지 못했다. 아래는 근거 문장이 아니라
-확인해야 할 축이다 -->
-- [interpretation] 갈림길은 "기여가 자동인가 수동인가"로 보인다. 위 두 사례는 모두 자동 분배·자동
-  기여여서 기부 여부를 플레이어가 결정하지 않는다. 수동 기부를 요구하는 설계에서 의무감
-  거부가 생기는지가 확인 대상이다.
+<!-- Evidence insufficient: a user-review keyword aggregation was not secured. The following is an axis to verify, not an evidence sentence -->
+- [interpretation] The dividing point appears to be whether contribution is automatic or manual. Both cases above use automatic distribution and contribution, so players do not decide whether to donate. Whether a sense of obligation emerges in designs requiring manual donation is the point to verify.
 
 ## Synergy
-- 좋음: ELEM-019 (무작위 전리품 드롭) - 개인 드롭이 일부 공용으로 이전될 때 무작위성이 팀 기여도의 스케일을 높인다.
-- 좋음: GENRE-011 (루트 슈터) - 이 요소의 사례가 몰려 있는 군집. 반복 파밍이 코어인 곳에서
-  "혼자 돌 것인가 같이 돌 것인가"를 자원 효율로 유도하는 장치로 쓰인다.
-- 주의: ELEM-008 (동반자 / 함께 플레이 가능한 캐릭터) - [interpretation] AI 동반자와 실제 플레이어를
-  같은 공유 규칙에 묶으면 기여의 의미가 흐려진다. 공유 대상이 사람인지 NPC인지 먼저 갈라야 한다.
+- Good: ELEM-019 (random loot drops) - When some personal drops move into a shared pool, randomness increases the scale of team contribution.
+- Good: GENRE-011 (looter shooter) - This is the cluster where examples of the element are concentrated. In a game whose core is repeated farming, it guides the choice between playing alone and together through resource efficiency.
+- Caution: ELEM-008 (companion / playable-together character) - [interpretation] If AI companions and real players are bound by the same sharing rules, the meaning of contribution becomes unclear. It must first be separated whether the sharing target is a person or an NPC.
 
 ## Risks
-- [interpretation] 강제 기여로 느껴지면 개인 플레이 자유도를 줄인다고 인식돼 이탈을 부를 수 있다.
-- [interpretation] 자산이 충분히 투명하지 않으면 "내가 기여한 게 누가 썼는지 모른다"는 불신으로 번진다.
+- [interpretation] If contribution feels forced, players may perceive it as reducing freedom in solo play and leave.
+- [interpretation] If assets are not sufficiently transparent, it can become distrust that players do not know who used what they contributed.

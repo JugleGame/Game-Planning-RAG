@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-011"
 type = "genre"
-title = "루트 슈터 (Looter Shooter)"
-summary = "총격 전투 위에 무작위로 굴려진 장비 파밍을 얹어, 더 좋은 총을 얻기 위해 같은 구간을 반복하게 만드는 것이 코어인 군집"
+title = "Looter Shooter"
+summary = "A cluster whose core is layering procedurally rolled gear drops over gunplay, making players repeat the same areas to obtain better guns"
 elements = ["ELEM-019", "ELEM-004"]
 example_games = ["GAME-028", "GAME-029", "GAME-012", "GAME-004"]
 tags = ["looter-shooter", "fps", "loot", "live-service", "grind", "aaa", "divisive"]
@@ -10,44 +10,25 @@ updated = "2026-07-29"
 confidence = "medium"
 +++
 ## Components
-- ELEM-019 (무작위 전리품 드롭 & 루트 테이블) - 이 군집의 정체성 자체다. 루트 슈터는 슈팅 게임에
-  절차적으로 생성된 무기·장비를 결합한 액션 RPG 하위 장르로 정의된다 [source: Wikipedia 'Looter shooter',
-  2026-07 확인].
-- ELEM-004 (반복 메커닉) - 같은 임무·던전을 반복하되 떨어지는 물건이 매번 달라지는 구조가 플레이
-  시간을 지탱한다. 장르의 주요 목표는 흔함부터 전설까지 등급이 매겨진 무작위 드롭을 파밍해 더 나은
-  장비를 얻는 것이다 [source: Wikipedia 'Looter shooter', 2026-07 확인].
-- [interpretation] 커스터마이즈의 초점이 캐릭터가 아니라 "총"에 있다는 점이 이 군집을 일반 ARPG와 가른다.
+- ELEM-019 (random loot drops & loot tables) - This is the cluster's identity. A looter shooter is defined as an action-RPG subgenre that combines shooting with procedurally generated weapons and equipment [source: Wikipedia 'Looter shooter', verified 2026-07].
+- ELEM-004 (repetition mechanic) - Repeating the same missions or dungeons while the items that drop change each time sustains playtime. The genre's main goal is farming random drops ranked from common to legendary to obtain better equipment [source: Wikipedia 'Looter shooter', verified 2026-07].
+- [interpretation] The focus of customization being the "gun" rather than the character is what separates this cluster from a general ARPG.
 
 ## Market Saturation
-- 사실: 초기작으로는 2007년 Hellgate: London이 꼽히지만 장르가 대중화된 계기는 2009년 Borderlands이며,
-  2014년 Destiny로 한 번 더 확산됐다 [source: Wikipedia 'Looter shooter' / Collider 장르사 정리,
-  2026-07 확인].
-- 사실: 현재 장르의 대표작으로는 Destiny 2, The Division 2, Warframe이 함께 묶여 거론된다
-  [source: 장르 정리 기사 종합(MMORPG.com·Eneba 등), 2026-07 확인].
-- 사실: GAME-029(Warframe)는 2026년 7월 기준 누적 등록 플레이어 8,500만 명 이상으로 14년째 서비스
-  중이다 [source: Digital Extremes TennoCon 보도자료(Business Wire), 2026-07-11 기준].
-- 사실: GAME-004(ANTHEM)처럼 대형 자본이 투입되고도 실패한 사례가 이 군집에 존재한다.
-- [interpretation] 포화도는 "높지만 좁다". 신규 진입은 계속 있으나 살아남은 상위작은 소수이고, 그 소수가
-  10년 단위로 자리를 지키고 있어 후발주자가 기존 유저의 파밍 누적치를 넘어서기 어렵다.
+- Fact: Hellgate: London in 2007 is cited as an early work, but the genre was popularized by Borderlands in 2009 and spread again through Destiny in 2014 [source: Wikipedia 'Looter shooter' / Collider genre-history summary, verified 2026-07].
+- Fact: The genre's representative works are currently discussed together as Destiny 2, The Division 2, and Warframe [source: synthesis of genre-summary articles (MMORPG.com, Eneba, etc.), verified 2026-07].
+- Fact: GAME-029 (Warframe) had more than 85,000,000 registered players cumulatively as of July 2026 and has been in service for 14 years [source: Digital Extremes TennoCon press release (Business Wire), as of 2026-07-11].
+- Fact: The cluster contains cases in which large capital investment still ended in failure, such as GAME-004 (ANTHEM).
+- [interpretation] Saturation is "high but narrow." New entrants continue to appear, but only a few upper-tier works survive for 10-year spans, making it difficult for later entrants to surpass existing players' accumulated farming progress.
 <!-- 증거 부족: 장르 단위 시장 규모·연간 신작 수 집계는 확인하지 못함 -->
 
 ## Conventions and Expectations
-- 사실: 흔함(common)부터 전설(legendary)까지의 희귀도 등급이 표준 문법이다 [source: Wikipedia
-  'Looter shooter', 2026-07 확인].
-- 사실: 같은 무기라도 성능 롤이 다르게 떨어지는 무작위 롤이 기대치가 됐다 - GAME-028은 이것 없이
-  출시했다가 첫 해에 파밍 동기 소진을 겪고 2018년 9월 Forsaken에서 되돌렸다 [source: Newsweek,
-  2018-08-07 기준 / PC Games Insider, 2018년 기준].
-- 사실: 확률 공개는 아직 관례가 아니라 선택이다. GAME-029는 2017년 7월 자발적으로 전체 드롭 테이블을
-  공개하며 "흐름을 만들고 싶다"고 밝혔다 [source: Massively Overpowered, 2017-07-04 기준].
-- [interpretation] 이 군집의 플레이어는 "운이 나쁜 것"은 받아들이지만 "숫자를 속인 것"은 받아들이지 않는다.
-  GAME-025(메이플스토리 큐브)가 다른 장르에서 보여준 신뢰 붕괴가 이 군집에도 그대로 적용된다.
+- Fact: Rarity tiers from common to legendary are standard vocabulary [source: Wikipedia 'Looter shooter', verified 2026-07].
+- Fact: Random rolls in which the same weapon can drop with different performance values became an expectation - GAME-028 launched without them, suffered depleted farming motivation in its first year, and restored them in Forsaken in September 2018 [source: Newsweek, as of 2018-08-07 / PC Games Insider, as of 2018].
+- Fact: Probability disclosure is still a choice rather than a convention. GAME-029 voluntarily disclosed its full drop table in July 2017, saying it wanted to "create a flow" [source: Massively Overpowered, as of 2017-07-04].
+- [interpretation] Players in this cluster accept "bad luck" but not "being lied to about the numbers." The trust collapse shown by GAME-025 (MapleStory Cube) in another genre applies here as well.
 
 ## Gaps
-[interpretation] ★ 드롭 테이블 전면 공개(GAME-029)와 천장(ELEM-017)을 **동시에** 채택한 루트 슈터는 조사 중
-확인하지 못했다. 현재 두 장치는 서로 다른 진영에 나뉘어 있다 - Warframe은 확률을 다 보여주지만
-"N회 안에는 반드시"라는 보장은 없고, 가챠 계열(GAME-024)은 천장은 주지만 게임 전체의 드롭 테이블을
-공개하지는 않는다. 둘을 합치면 "얼마나 걸리는지 계산할 수 있고, 최악의 경우도 정해져 있다"가 되어
-GAME-028의 대표 불만(978판을 돌고도 못 얻음)을 정면으로 없앨 수 있다.
-- 확인 방법: Steam 태그 "Looter Shooter" 상위작의 공식 사이트에 드롭 테이블 페이지가 있는지 확인하고,
-  같은 게임의 패치노트·상점 페이지에서 "pity"/"guaranteed"/"확정" 키워드를 교차 검색
-- 확인일: 2026-07-29 / 재확인 주기: 분기 1회
+[interpretation] ★ No looter shooter adopting full drop-table disclosure (GAME-029) and a pity ceiling (ELEM-017) **simultaneously** was confirmed during the investigation. The two devices are currently split between different camps - Warframe shows the probabilities but offers no guarantee that it will happen "within N attempts," while gacha games (GAME-024) offer a ceiling but do not disclose the entire game's drop table. Combining them would make it possible to calculate how long it takes while fixing the worst case, directly eliminating GAME-028's representative complaint (not obtaining the item after 978 runs).
+- Verification method: check whether the official sites of top Steam-tagged "Looter Shooter" works have drop-table pages, then cross-search the same games' patch notes and store pages for "pity"/"guaranteed"/"certain" keywords
+- Verified on: 2026-07-29 / Re-check cycle: once a quarter

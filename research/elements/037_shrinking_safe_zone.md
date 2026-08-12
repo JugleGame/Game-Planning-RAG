@@ -1,35 +1,33 @@
 +++
 card_id = "ELEM-037"
 type = "mechanic"
-title = "좁혀지는 세이프존 (Shrinking Safe Zone)"
-summary = "시간이 지날수록 플레이 가능 구역을 강제로 줄여 흩어진 플레이어들을 서로 충돌하게 만드는 구조"
+title = "Shrinking Safe Zone"
+summary = "A structure that forcibly reduces the playable area as time passes, making scattered players collide with each other"
 tags = ["battle-royale", "forced-encounter", "tension", "map-design", "pvp"]
 updated = "2026-08-01"
 confidence = "high"
 +++
 ## Definition
-시간이 지나면 놀 수 있는 땅(안전 구역)이 점점 좁아지는 장치입니다. 구역 밖에 있으면
-계속 피해를 입기 때문에, 숨어만 있으려던 플레이어도 결국 안으로 밀려 들어와 다른
-플레이어와 마주칠 수밖에 없습니다.
+A device by which the land you can play on (the safe zone) gradually narrows as time passes. Because you keep taking damage while outside the zone, even a player who intended only to hide is eventually pushed inward and cannot avoid running into other players.
 
 ## Success Cases
-- GAME-044 (PUBG: BATTLEGROUNDS) - 장르를 대중화시킨 원조 구현. 올타임 최고 동시접속 130만 이상(2018-01), 2026-07 기준 30일 평균 동접 약 40만 [source: Steambase/PlayTracker, 2026-07 확인].
+- GAME-044 (PUBG: BATTLEGROUNDS) - The original implementation that popularized the genre. All-time peak concurrent players of over 1,300,000 (2018-01), and a 30-day average concurrency of about 400,000 as of 2026-07 [source: Steambase/PlayTracker, verified 2026-07].
 
 ## Failure Cases
-- Hyper Scape (2020, Ubisoft) - 독자적 무기 밸런스와 관전층 축소 문제로 출시 18개월 만인 2022-04-28 서버 종료 [source: PC Gamer/GameDeveloper 보도, 2022-04 기준].
-- Spellbreak (Proletariat) - 마법 콘셉트로 차별화했으나 이용자 규모 부족으로 2023년 초 서버 종료 발표 [source: GamingBolt, 2022-11 기준].
-  실패 지점: 이미 포화된 배틀로얄 시장에서 콘셉트 차별점만으로는 유지 못함 - 원조 4강(PUBG/Fortnite/Warzone/Apex)의 장악력이 강함.
+- Hyper Scape (2020, Ubisoft) - Servers shut down on 2022-04-28, 18 months after release, due to its idiosyncratic weapon balance and a shrinking spectator base [source: PC Gamer/GameDeveloper coverage, as of 2022-04].
+- Spellbreak (Proletariat) - Differentiated itself with a magic concept, but announced a server shutdown in early 2023 due to insufficient user scale [source: GamingBolt, as of 2022-11].
+  Failure point: in an already saturated battle royale market, concept differentiation alone cannot sustain a title - the grip of the original top four (PUBG/Fortnite/Warzone/Apex) is strong.
 
 ## User Reaction Summary
-- 선호: [interpretation] 강제 조우 덕분에 숨기만 하다 끝나는 지루한 후반부가 사라진다는 평.
-- 불호: PUBG 자체는 리뷰 60%로 "복합적(Mixed)" 등급이며, 존 메커닉보다 핵/치팅과 최적화 문제가 더 큰 불만 축으로 지목된다 [source: Steambase/Raijin 리뷰 집계, 2026-07 확인].
+- Preferred: [interpretation] the assessment that forced encounters eliminate the boring late game that ends with nothing but hiding.
+- Disliked: PUBG itself sits at 60% reviews, a "Mixed" rating, and hacking/cheating and optimization problems are named as bigger axes of complaint than the zone mechanic [source: Steambase/Raijin review aggregation, verified 2026-07].
 
 ## Synergy
-- 장르 앵커: GENRE-022 (배틀로얄) - 이 군집이 이 요소를 구성 요소로 지목한다.
-- 장르 앵커: GENRE-031 (무협 근접 액션 배틀로얄) - 이 군집이 이 요소를 구성 요소로 지목한다.
-- 좋음: ELEM-019 (무작위 전리품 드롭) - 존이 좁아지며 이동해야 하는 압박이 "무엇을 챙길지"의 선택 부담을 키운다.
-- [interpretation] ELEM-027 (추출형 런 구조)과 "시간이 지날수록 위험이 강제로 커진다"는 압박 설계를 공유하지만, 세이프존은 전원 동시 참가·라운드 종료형이라는 점에서 다르다.
+- Genre anchor: GENRE-022 (Battle Royale) - this cluster names this element as a component.
+- Genre anchor: GENRE-031 (Wuxia Melee Action Battle Royale) - this cluster names this element as a component.
+- Good: ELEM-019 (Random Loot Drops) - the pressure to move as the zone narrows increases the burden of choosing "what to take".
+- [interpretation] It shares with ELEM-027 (Extraction Run Structure) the pressure design of "danger forcibly increasing as time passes", but the safe zone differs in that everyone participates simultaneously and it ends by round.
 
 ## Risks
-- [interpretation] 장르 자체가 최상위 3~4개 타이틀에 플레이어가 쏠려 신규 진입이 매우 어렵다(Hyper Scape, Spellbreak 사례).
-- [interpretation] 존이 좁아지는 속도·크기 곡선이 조금만 어긋나도 "운으로 갇혀 죽었다"는 불만으로 이어진다.
+- [interpretation] The genre itself concentrates players into the top 3-4 titles, making new entry very difficult (the Hyper Scape and Spellbreak cases).
+- [interpretation] Even a slight misalignment in the speed and size curve of the shrinking zone leads to complaints of "I got trapped and died to luck".

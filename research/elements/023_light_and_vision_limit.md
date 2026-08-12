@@ -1,42 +1,39 @@
 +++
 card_id = "ELEM-023"
 type = "mechanic"
-title = "광원·시야 제한 (Light Source & Vision Limit)"
-summary = "플레이어가 볼 수 있는 범위를 광원으로 좁혀두고 그 빛을 닳는 자원으로 만들어, '보는 것' 자체에 대가를 매기는 방식"
+title = "Light Source & Vision Limit (Light Source & Vision Limit)"
+summary = "A method that narrows the player's visible range with a light source and makes that light a depleting resource, putting a cost on seeing"
 tags = ["horror", "light", "vision", "resource", "tension", "divisive"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-화면 전체를 보여주지 않고, 손전등이나 랜턴이 비추는 좁은 범위만 보이게 만드는 방식입니다.
-그리고 그 빛은 공짜가 아닙니다 — 켜 두면 배터리가 닳고, 아끼면 앞이 안 보입니다.
-깜깜한 방에서 손전등 하나로 돌아다니는 것과 같습니다. 무서운 건 빛이 비추는 곳이 아니라
-빛이 닿지 않는 곳이고, 그래서 "어디를 비출지" 고르는 것이 곧 게임이 됩니다.
+This method shows only the narrow area illuminated by a flashlight or lantern rather than the whole screen. The light is not free: leaving it on drains the battery, while saving it leaves the player unable to see ahead. It is like moving through a dark room with one flashlight. The frightening area is not where the light reaches but where it does not, so choosing where to aim becomes the game.
 
 ## Success Cases
-- Half-Life 2: Episode 1 - 좁은 빛 원뿔에 빠르게 닳고 천천히 차는 배터리를 붙여, 배터리를 아끼는 행위 자체가 긴장을 만들었다 [source: Nomads Reviews "Horror Games 101 Part 3", 2026-07 확인].
-- 빛이 생존 도구인 동시에 적을 끌어들이는 위험이 되게 만든 구현이 호평받았다 — 켜는 것과 끄는 것 모두에 대가가 있을 때 선택이 생긴다 [source: Game Rant "Great Horror Games Featuring Immersive Flashlight Mechanics", 2026-07 확인].
-- GAME-032 (LIMBO) - 빛을 자원으로 쓰지는 않지만, 화면 대부분을 어둠에 두고 실루엣만 남기는 방식으로 "안 보이는 것"을 공포의 재료로 삼았다.
-- GAME-035 (Darkwood) - 낮에 이동해 준비하고 밤이 되면 시야가 원형 광원 범위로 좁아지는 낮/밤 순환의 중심 장치로 씀. 추정 매출 약 610만 달러 [source: GAME-035 카드].
-- GAME-036 (Signalis) - 어두운 시설을 손전등 빛이 닿는 범위로만 비춰가며 탐색하게 만드는 자원형 시야 장치. Steam 리뷰 약 2만 941건 중 96% 긍정 [source: GAME-036 카드].
+- Half-Life 2: Episode 1 - A battery that drains quickly in a narrow light cone and recharges slowly made conserving the battery itself create tension [source: Nomads Reviews "Horror Games 101 Part 3", confirmed 2026-07].
+- An implementation that made light both a survival tool and a danger that attracts enemies was praised; choice exists when both turning it on and off have costs [source: Game Rant "Great Horror Games Featuring Immersive Flashlight Mechanics", confirmed 2026-07].
+- GAME-032 (LIMBO) - Does not use light as a resource, but makes "what cannot be seen" a source of horror by leaving most of the screen dark and showing only silhouettes.
+- GAME-035 (Darkwood) - The central device of a day/night loop: move and prepare during the day, then restrict vision to a circular light-source range at night. Estimated revenue about $6,100,000 [source: GAME-035 card].
+- GAME-036 (Signalis) - A resource-like vision device that makes the player explore a dark facility only within the flashlight's reach. 96% positive among about 20,000 and 941 Steam reviews [source: GAME-036 card].
 
 ## Failure Cases
-- Doom 3 계열 구현 - 손전등을 켜면 빛 원뿔 밖이 더 어두워져 오히려 덜 보이게 되는 방식이 반복적으로 비판받았다. Daylight, Slender 가 같은 방식을 따랐다 [source: Rely On Horror, ResetEra 토론, 2026-07 확인].
-  실패 지점: 빛이 정보를 주는 대신 빼앗아, 플레이어가 얻는 것 없이 불편만 늘었다.
-- 손전등은 "이 장르에서 가장 잘못 쓰인 게임플레이 요소"로 지목된다 — 어둠을 긴장과 분위기의 대역으로만 쓰면 구현의 허술함이 그대로 드러난다 [source: Rely On Horror, 2026-07 확인].
+- Doom 3-style implementation - The method in which turning on the flashlight makes the area outside the cone darker and therefore reduces visibility was repeatedly criticized. Daylight and Slender used the same method [source: Rely On Horror, ResetEra discussion, confirmed 2026-07].
+  Failure point: Light took information away instead of providing it, increasing inconvenience without giving the player anything.
+- The flashlight was called "the most misused gameplay element in the genre"; when darkness serves only as a substitute for tension and atmosphere, weak implementation becomes obvious [source: Rely On Horror, confirmed 2026-07].
 
 ## User Reaction Summary
-- 선호: 배터리를 아끼려고 끄고 걷는 순간이 가장 무섭다 - 자원 관리가 곧 긴장이 될 때의 반응 [source: Nomads Reviews 분석, 2026-07 확인]
-- 불호: "켜면 오히려 덜 보인다" - 눈부심 시뮬레이션이 플레이어에게 손해로만 체감되는 경우 [source: ResetEra 토론, 2026-07 확인]
+- Preference: The most frightening moment is walking with the light off to conserve the battery - the response when resource management itself becomes tension [source: Nomads Reviews analysis, confirmed 2026-07]
+- Dislike: "Turning it on makes me see less" - when glare simulation feels only harmful to the player [source: ResetEra discussion, confirmed 2026-07]
 
 ## Synergy
-- 좋음: ELEM-015 (스트레스/광기 시스템) - 어둠에 머문 시간을 정신력에 연결하면 빛과 정신력이 하나의 압박으로 묶인다. 미터가 둘이어도 플레이어가 신경 쓸 것은 하나가 된다.
-- 좋음: ELEM-016 (그림다크 톤) - 보이지 않는 영역이 톤을 대신 그려주므로 미술 물량이 적어도 분위기가 선다.
-- 주의: ELEM-020 (덱 구축) - 카드로 빛을 늘리는 보상을 주면 후반에 어둠이 사라져 장르의 핵심이 증발한다. 빛을 늘리는 대신 "어둠에서 얻는 것"을 카드로 주는 편이 안전하다.
-- 좋음: ELEM-013 (도트 그래픽 아트 스타일) - 시야를 좁히면 그려야 할 화면 면적 자체가 줄어, 저해상도 표현의 저비용 이점과 겹쳐진다. GENRE-015가 두 요소를 함께 군집 구성 요소로 지목한다.
-- 장르 앵커: GENRE-014 (횡스크롤 공포), GENRE-015 (픽셀 2D 생존공포) - 두 군집이 이 요소를 구성 요소로 지목한다.
+- Good: ELEM-015 (Stress/Sanity System) - Connecting time spent in darkness to mental strength binds light and sanity into one pressure; even with two meters, the player has one concern.
+- Good: ELEM-016 (Grimdark Tone) - Invisible areas draw the tone, allowing atmosphere with less art production.
+- Caution: ELEM-020 (Deck-building) - If cards reward more light, darkness disappears late-game and the genre's core evaporates. It is safer for cards to reward "what is gained in darkness" instead.
+- Good: ELEM-013 (Pixel Art Style) - Narrowing vision reduces the screen area that must be drawn, overlapping with the low-cost benefit of low-resolution expression. GENRE-015 identifies both elements as cluster components.
+- Genre anchors: GENRE-014 (Side-scrolling Horror), GENRE-015 (Pixel 2D Survival Horror) - Both clusters identify this element as a component.
 
 ## Risks
-- [interpretation] 어둠은 콘텐츠가 아니라 액자다 - 안 보이게 만드는 것만으로는 공포가 생기지 않고, 어둠 속에 실제로 무언가가 있어야 한다.
-- [interpretation] 빛이 순수한 벌점이면 플레이어는 최적해로 "항상 켜기"를 고른다. 켜는 쪽에도 대가(적을 끌어들임)가 있어야 선택이 성립한다.
-- [interpretation] 시야 제한은 난이도를 올리는 가장 값싼 수단이라 남용되기 쉽다 - 실패 사례들이 공유하는 패턴이다.
+- [interpretation] Darkness is a frame, not content: hiding things alone does not create horror; something must actually exist in the dark.
+- [interpretation] If light is purely a penalty, the player chooses "always on" as the optimum. Turning it on must also have a cost, such as attracting enemies, for choice to exist.
+- [interpretation] Vision restriction is the cheapest way to raise difficulty and is easy to overuse - a pattern shared by the failure cases.

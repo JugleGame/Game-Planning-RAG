@@ -2,7 +2,7 @@
 card_id = "GAME-017"
 type = "mixed"
 title = "Assassin's Creed Valhalla (2020, Ubisoft)"
-summary = "출시 직후 흥행·평단 모두 좋은 성적을 냈지만, 지도 아이콘과 플레이 시간 과잉으로 '체크리스트형 오픈월드 피로'의 대표 사례로 자주 인용되는 작품"
+summary = "A work that performed well both commercially and critically right after launch, but is frequently cited as the representative case of 'checklist-style open-world fatigue' due to excessive map icons and playtime"
 genres = ["GENRE-005"]
 elements = ["ELEM-012"]
 tags = ["action-rpg", "open-world", "ubisoft", "map-icons", "divisive", "cautionary"]
@@ -10,15 +10,15 @@ updated = "2026-07-21"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-2020-11-10 출시 이후 일주일도 안 돼 180만 명 이상이 플레이해 시리즈 사상 최고 출시 성적을 기록 [source: Wikipedia(Ubisoft 발표 재인용), 2020-11-17 기준]. Metacritic PS5판 84점, PC판 82점 [source: Metacritic, 2026-07 확인]. 2022년 2월 기준 Ubisoft 전체 타이틀 중 두 번째로 수익성 높은 작품으로 집계됨(매출 10억 달러 이상) [source: Wikipedia(Ubisoft 실적 재인용), 2022-02 기준].
+After its 2020-11-10 release, more than 1,800,000 players played it in under a week, the best launch performance in the series' history [source: Wikipedia (re-citing Ubisoft's announcement), as of 2020-11-17]. Metacritic 84 for the PS5 version and 82 for the PC version [source: Metacritic, verified 2026-07]. As of February 2022, it was tallied as the second most profitable work among all Ubisoft titles (revenue of $1,000,000,000 or more) [source: Wikipedia (re-citing Ubisoft earnings), as of 2022-02].
 
 ## Elements Used
-- ELEM-012 (랜드마크 기반 탐험)의 반례 - 탑에 올라 동기화하면 지도 전체에 아이콘이 쏟아지는 방식으로, 발견을 아이콘 수집으로 바꿔놓았다는 비판을 받음 [source: 업계 비평 정리 기사(editorialge.com), 2026-07 확인].
+- A counterexample to ELEM-012 (Landmark-Based Exploration) - Climbing a tower and synchronizing dumps icons across the whole map, drawing criticism that it turned discovery into icon collection [source: article summarizing industry criticism (editorialge.com), verified 2026-07].
 
 ## Success/Failure Drivers
-- 전작 Odyssey가 "반복되는 장소로 가득 찬 비대한 세계"라는 비판을 받은 것을 의식해, Ubisoft는 공식 트윗으로 시리즈 "최대·최대 규모"를 노리지 않겠다고 밝혔음 [source: Ubisoft 공식 트윗(현재 삭제됨), Wikipedia 재인용, 2020년 기준].
-- 그러나 GameRevolution은 "불필요하게 부풀려진 플레이 시간"과 "압도적인 기시감"을 지적함 [source: GameRevolution 리뷰, Wikipedia 재인용, 2026-07 확인].
-- HowLongToBeat 기준 평균 클리어 100시간, 완결 플레이 150시간으로 집계됨 [source: HowLongToBeat 집계, editorialge.com 재인용, 2026-07 확인].
+- Conscious of the criticism that the previous game Odyssey was "a bloated world full of repeating places," Ubisoft stated in an official tweet that it would not aim for the series' "biggest and largest" scale [source: official Ubisoft tweet (now deleted), re-cited by Wikipedia, as of 2020].
+- However, GameRevolution pointed out "unnecessarily inflated playtime" and "overwhelming déjà vu" [source: GameRevolution review, re-cited by Wikipedia, verified 2026-07].
+- By HowLongToBeat's numbers, the average clear time is tallied at 100 hours and a completionist playthrough at 150 hours [source: HowLongToBeat tally, re-cited by editorialge.com, verified 2026-07].
 
 ## Implications for Our Project
-[interpretation] 아이콘·수집 요소는 초반 흥행에는 도움이 되지만, "발견"이 아니라 "숙제"로 읽히는 순간 장르 피로 사례로 회자된다 - 콘텐츠 총량보다 발견의 밀도(정말 궁금해서 가보는 비율)를 지표로 삼는 게 안전하다.
+[interpretation] Icons and collectibles help with early commercial performance, but the moment they read as "homework" rather than "discovery," they get talked about as a case of genre fatigue - it is safer to use the density of discovery (the share of trips made out of genuine curiosity) as the metric rather than total content volume.

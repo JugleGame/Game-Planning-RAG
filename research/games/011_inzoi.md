@@ -2,7 +2,7 @@
 card_id = "GAME-011"
 type = "mixed"
 title = "inZOI (2025 얼리액세스, inZOI Studio / KRAFTON)"
-summary = "AI NPC를 탑재한 첫 대형 타이틀 - 판매 성공, 유지·성능·여론 3중 과제"
+summary = "The first major title equipped with AI NPCs—sales success, but a threefold challenge of retention, performance, and public opinion"
 genres = ["GENRE-003"]
 elements = ["ELEM-005"]
 tags = ["life-sim", "ai-native", "aaa", "high-cost", "divisive"]
@@ -10,24 +10,18 @@ updated = "2026-07-27"
 confidence = "high"              # 판매·지표는 공식 발표 및 보도 집계
 +++
 ## Summary and Sales/Review Metrics
-심즈 대항마로 주목받은 인생 시뮬레이션. 얼리액세스 출시(2025-03) 직후 100만 장
-이상 판매 [source: KRAFTON 발표 집계, 2025-03 기준]. 그러나 3개월 내 동시접속
-약 98% 감소, 초기 86%였던 Steam 긍정 비율 하락 [source: inZOI 게임 개요 집계,
-2026-02 확인]. 이후 무료 확장 'Island Getaway'(스타듀밸리풍 섬 농사 콘텐츠)
-출시를 계기로 리뷰가 반등 - 누적 13,768건 중 79% 긍정, 최근 30일 598건 중
-83% 긍정 기록 [source: 다이제스트 2026-07-20 / GamesRadar·PCGamesN 보도 집계,
-2026-07 확인].
+A life simulation highlighted as a rival to The Sims. It sold more than 1,000,000 copies immediately after its early-access launch (2025-03) [source: KRAFTON announcement aggregate, as of 2025-03]. However, concurrent users fell by about 98% within three months, and the initial 86% Steam positive rate declined [source: inZOI game overview aggregate, 2026-02 check]. Reviews rebounded after the release of the free expansion ‘Island Getaway’ (Stardew Valley-style island farming content)—79% positive among 13,768 total reviews and 83% positive among 598 reviews from the last 30 days [source: digest 2026-07-20 / GamesRadar·PCGamesN reporting aggregate, 2026-07 check].
 
 ## Elements Used
-- ELEM-005 (AI 통합) - Smart Zoi: NVIDIA ACE 기반 온디바이스 소형 언어모델(약 0.5B)로 NPC가 내면 생각·일정·행동을 자율 생성 [source: NVIDIA/개발사 발표, 2025-03].
-- ELEM-005 후속 경과: 개발사가 2026-07-24 개발일지에서 자율성(autonomy) 시스템을 부분 수정이 아니라 의사결정 로직부터 전면 재설계 중이라고 발표 - "더 설득력 있는 시뮬레이션"이 목표이며 다음 업데이트는 8월 예정. 방치된 음식을 버리는 대신 냉장고에 넣는 등 일상 행동의 그럴듯함(plausibility) 개선도 함께 예고됨 [source: simscommunity.info, 2026-07-24 / 다이제스트 2026-07-25].
+- ELEM-005 (AI integration) - Smart Zoi: NPCs autonomously generate inner thoughts, schedules, and actions with an NVIDIA ACE-based on-device small language model (approximately 0.5B) [source: NVIDIA/developer announcement, 2025-03].
+- ELEM-005 follow-up: In a 2026-07-24 development diary, the developer announced a full redesign of the autonomy system from its decision-making logic rather than a partial fix—aiming for “more convincing simulation,” with the next update scheduled for August. It also previewed improved plausibility in everyday actions, such as putting abandoned food in the refrigerator instead of throwing it away [source: simscommunity.info, 2026-07-24 / digest 2026-07-25].
 
 ## Success/Failure Drivers
-- 사실: "대본 반복이 아닌 진짜 감정을 가진 NPC"라는 지향이 판매 견인 - 창발 서사("짝지어주려던 Zoi가 갑자기 퇴사하고 배낭여행을 떠났다")가 화제 [source: 36Kr 유저 인터뷰 인용, 2026-01]
-- 사실: Smart Zoi의 성능 비용이 극심 - 최상급 GPU에서도 프레임 급락(120→45fps 보고), "GPU 킬러" 별명 [source: 36Kr 보도, 2026-01]
-- 사실: 생성 AI 사용 자체에 대한 커뮤니티 반발(무단 학습 우려) 발생 [source: 출시 직후 커뮤니티 논의 집계]
-- [interpretation] "AI가 있다"와 "AI 때문에 재미있다" 사이의 간극 - 자율 행동이 관찰 재미는 주지만 플레이어의 목표와 묶이지 않으면 이탈을 못 막음.
+- Fact: The goal of “NPCs with real emotions rather than repeated scripts” helped drive sales—emergent stories (“the Zoi I was trying to pair up suddenly quit and went backpacking”) became talking points [source: 36Kr user interview quote, 2026-01]
+- Fact: Smart Zoi’s performance cost is extreme—even on a top-tier GPU, frame drops were reported (120→45fps), earning it the nickname “GPU killer” [source: 36Kr report, 2026-01]
+- Fact: The community pushed back against generative AI use itself, citing concerns about unauthorized training [source: aggregate of community discussions immediately after launch]
+- [interpretation] The gap between “AI is present” and “AI makes it fun”—autonomous behavior creates observational interest, but cannot prevent churn if it is not tied to the player’s goals.
 
 ## Implications for Our Project
-온디바이스 소형 모델 노선의 비용·성능 트레이드오프 실측 사례로 계속 추적할 것.
-우리 규모에서는 "모든 NPC에 AI"가 아니라 "해설자 1명에 AI 집중"이 성능·비용상 정답 [interpretation].
+Continue tracking this as a measured case of the cost–performance tradeoff of the on-device small-model approach.
+At our scale, concentrating AI on one commentator rather than putting “AI in every NPC” is the performance- and cost-effective answer [interpretation].

@@ -1,54 +1,34 @@
 +++
 card_id = "ELEM-032"
 type = "mechanic"
-title = "뉴 게임 플러스 (New Game+)"
-summary = "게임을 한 번 클리어한 뒤 유저가 자발적으로 진행도(장비·능력치)를 이어받아 처음부터 다시 도전하게 만드는 사후 재플레이 장치"
+title = "New Game+"
+summary = "A post-game replay device that lets users voluntarily carry progress (equipment and stats) forward and challenge the game again from the beginning after clearing it once"
 tags = ["replayability", "post-game", "difficulty", "narrative", "broad-appeal"]
 updated = "2026-07-31"
 confidence = "high"
 +++
 ## Definition
-게임을 한 번 끝까지 깬 뒤, "그때 모은 장비와 능력치를 그대로 들고 처음부터 다시
-시작할 수 있다"는 선택지를 주는 방식입니다. 이미 다 읽은 책을 다시 펼치되, 이번엔
-줄거리를 다 아는 상태에서 숨은 의미를 찾아내는 것과 비슷합니다.
+After finishing a game once, this gives the player the option to start again from the beginning while keeping the equipment and stats they collected. It is like opening a book already read, but looking for hidden meanings while knowing the plot.
 
 ## Success Cases
-- Dark Souls (2011, FromSoftware) - NG+에서 스토리·이벤트는 동일하되 캐릭터 스탯과
-  장비를 유지한 채 적 난이도만 올라가, "이번엔 진짜 실력으로 붙는다"는 도전을 제공
-  [source: Dark Souls Wiki, 2026 확인]. 같은 시리즈의 GAME-021(Dark Souls III)이
-  이 죽음·전투 공식의 완성형 사례다.
-- NieR: Automata (2017, PlatinumGames / Square Enix) - NG+가 선택 요소가 아니라
-  진엔딩을 보기 위한 필수 구조로 설계됐다. 2회차부터 조작 캐릭터(9S)가 바뀌어
-  완전히 다른 미니게임 장르(불릿헬 해킹)로 같은 사건을 재해석한다 [source:
-  dualshockers.com, 2026 확인].
-- Persona 5 Royal (2019/2020, Atlus) - 특정 캐릭터 이벤트와 대사가 NG+에서만
-  열려, 재플레이가 콘텐츠 소비의 일부로 편입된다 [source: g2a.com 뉴스, 2026 확인].
+- Dark Souls (2011, FromSoftware) - In NG+, the story and events remain the same, but enemy difficulty rises while character stats and equipment are retained, providing the challenge of facing it with genuine skill [source: Dark Souls Wiki, 2026 confirmation]. GAME-021 (Dark Souls III) in the same series is a completed example of this death-and-combat formula.
+- NieR: Automata (2017, PlatinumGames / Square Enix) - NG+ is designed as a required structure for seeing the true ending rather than an optional element. From the second playthrough, the controllable character changes to 9S, and the same events are reinterpreted through a completely different minigame genre, bullet-hell hacking [source: dualshockers.com, 2026 confirmation].
+- Persona 5 Royal (2019/2020, Atlus) - Certain character events and dialogue open only in NG+, incorporating replay into content consumption [source: g2a.com news, 2026 confirmation].
 
 ## Failure Cases
-- <!-- 증거 부족: NG+ 도입이 역효과를 낸 구체 실패 사례는 조사에서 확인하지 못함 -->
-- [interpretation] 스토리·이벤트가 1회차와 완전히 동일하면서 난이도만 올리는 방식(Dark Souls형)은
-  서사적 발견이 없어 "숫자만 커진 재탕"이라는 평가를 받기 쉽다는 게 커뮤니티의
-  일반적 지적이다.
+- <!-- Evidence insufficient: no specific failure case in which introducing NG+ produced the opposite effect was found in the investigation -->
+- [interpretation] A method that only raises difficulty while leaving the story and events exactly the same as the first playthrough, in the Dark Souls style, is easily criticized by the community as a retread with only bigger numbers because it offers no narrative discovery.
 
 ## User Reaction Summary
-- 선호: "1회차의 노력이 헛되지 않는다" - 진행도 이월에 대한 긍정 반응
-  [source: NG+ 디자인 칼럼, redharegames.wordpress.com, 2025 기준]
-- 불호: "스토리가 똑같으면 왜 다시 깨야 하나" - 서사 변주가 없는 NG+에 대한 회의
+- Preference: "The effort from the first playthrough is not wasted" - a positive reaction to carrying progress forward [source: NG+ design column, redharegames.wordpress.com, as of 2025]
+- Aversion: "Why clear it again if the story is the same?" - skepticism toward NG+ without narrative variation
 
 ## Synergy
-- 좋음: ELEM-009 (철학적 내러티브 로그라이크/로그라이크) - 죽음·반복의 철학적 주제와
-  NG+의 "이미 알면서도 다시 겪는다"는 구조가 자연스럽게 맞물린다.
-- 좋음: ELEM-014 (처벌적 죽음 순환) - GAME-021(Dark Souls III) 계열이 보여주듯, 죽음의
-  무게가 큰 게임에서 NG+는 1회차의 축적을 무효화하지 않는 보상으로 작동한다.
-- 나쁨: ELEM-004 (반복 메커닉) - 게임 내 실시간 루프와 NG+ 둘 다 쓰면 "반복"
-  개념이 두 겹으로 겹쳐 플레이어가 어느 쪽 반복이 의미 있는지 혼란스러워질 수 있다.
-  GAME-009(Hades)·GAME-040(Hades II)처럼 루프가 이미 코어인 게임은 NG+ 대신 난이도
-  상승 구조(승천 등)로 같은 목적을 달성한다.
-- 구현 다리: ARCH-004 (세이브 시스템) - NG+는 "클리어 여부"와 "이월 대상"을 세이브
-  데이터에 남겨야 성립한다. 어떤 필드를 이월하고 어떤 필드를 초기화할지가 곧 이 요소의
-  설계다.
+- Good: ELEM-009 (philosophical narrative roguelike/roguelike) - The philosophical themes of death and repetition naturally fit NG+'s structure of experiencing something again while already knowing it.
+- Good: ELEM-014 (punitive death cycle) - As the GAME-021 (Dark Souls III) line demonstrates, NG+ works in games where death carries weight as a reward that does not invalidate first-playthrough accumulation.
+- Bad: ELEM-004 (repetition mechanic) - Using both the in-game real-time loop and NG+ can layer the concept of repetition and confuse players about which repetition is meaningful. Games whose core is already a loop, such as GAME-009 (Hades) and GAME-040 (Hades II), achieve the same goal through escalating structures such as ascension instead of NG+.
+- Implementation bridge: ARCH-004 (save system) - NG+ requires the clear state and carryover targets to remain in save data. Which fields carry over and which reset is the design of this element.
 
 ## Risks
-- [interpretation] 콘텐츠 추가 없이 난이도만 올리는 NG+는 개발 비용 대비 체감 가치가 낮다.
-- [interpretation] 진엔딩을 NG+ 뒤에 감추면(NieR: Automata형) 일부 플레이어는 "강매된 재플레이"로
-  느낄 수 있어 설계 의도(서사적 필연성)를 명확히 전달해야 한다.
+- [interpretation] NG+ that only raises difficulty without adding content may have low perceived value relative to development cost.
+- [interpretation] If the true ending is hidden behind NG+, as in NieR: Automata, some players may feel forced into replay and the design intent, narrative necessity, must be communicated clearly.

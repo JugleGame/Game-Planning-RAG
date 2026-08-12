@@ -1,70 +1,78 @@
 +++
 card_id = "ARCH-026"
 type = "convention"
-title = "스프라이트 아틀라스 & 드로우콜 배칭 (Sprite Atlas)"
-summary = "흩어진 스프라이트를 큰 텍스처 한 장으로 묶어 GPU에 보내는 그리기 요청 횟수를 줄이는 자산 묶음 규약"
+title = "Sprite Atlas & Draw Call Batching (Sprite Atlas)"
+summary = "An asset bundling convention that packs scattered sprites into one large texture to reduce the number of drawing requests sent to the GPU"
 tags = ["sprite-atlas", "draw-call", "batching", "performance", "2d", "unity", "asset"]
 updated = "2026-08-02"
 confidence = "medium"
 +++
 ## Problem
-2D 게임은 화면에 스프라이트를 수백 장 그린다. 그런데 그림 파일이 서로 다르면 그릴 때마다
-CPU가 GPU에게 "이번엔 이 그림을 써라"라고 따로 말을 걸어야 한다. 이 말 거는 횟수가
-드로우콜이고, 화면이 화려해질수록 이것이 먼저 한계에 부딪힌다. 낱장으로 흩어진 스티커를
-한 장의 큰 스티커 시트로 묶어두면 한 번만 꺼내면 되는 것과 같다.
+A 2D game draws hundreds of sprites on screen. But if the image files are all different, the CPU
+has to separately tell the GPU "use this image this time" for each draw. That number of times you
+speak up is the draw call, and the flashier the screen gets, the sooner this hits its limit. It
+is like bundling stickers scattered as loose pieces into one large sticker sheet so you only have
+to take it out once.
 
 ## Structure
-- 아틀라스는 여러 스프라이트를 하나의 텍스처로 묶은 자산이다. 같은 아틀라스에 든 스프라이트는
-  하나의 그리기 요청으로 함께 처리될 수 있다 [source: Unity 매뉴얼 'Sprite atlases', 2026-08 확인].
-- 묶는 단위는 "함께 화면에 나오는 것"이다. 같은 장면에 같이 등장하지 않는 스프라이트를 한
-  아틀라스에 넣으면 쓰지 않는 텍스처까지 메모리에 올라온다. 반대로 함께 나오는 것들이 여러
-  아틀라스에 흩어지면 묶은 의미가 사라진다.
-- 이 프로젝트의 묶음 후보는 이미 나뉘어 있다. 정렬 레이어(ARCH-025)와 타일맵 겹(ARCH-024)이
-  곧 "같이 그려지는 것"의 경계이므로, 아틀라스도 그 선을 따라 나누는 것이 자연스럽다.
-- 기기 성능에 따라 해상도를 달리해야 하면 같은 아틀라스의 변형(variant)을 두고 실행 시점에
-  적절한 쪽을 고른다 [source: game-developers.org 'What Is Sprite Atlas in Unity', 2026-08 확인].
-- [interpretation] 아틀라스는 성능 도구이기 이전에 자산 묶음 규약이다. 새 스프라이트를 어느 아틀라스에
-  넣을지 정해져 있지 않으면, 넣는 사람마다 다른 판단을 해서 묶음이 서서히 무너진다.
+- An atlas is an asset that packs multiple sprites into a single texture. Sprites in the same atlas can be processed together in one drawing request [source: Unity manual 'Sprite atlases', verified 2026-08].
+- The bundling unit is "things that appear on screen together". Putting sprites that do not appear
+  in the same scene together into one atlas loads unused textures into memory too. Conversely, if
+  things that do appear together are scattered across several atlases, the point of bundling
+  disappears.
+- This project's bundle candidates are already divided. Sorting layers (ARCH-025) and tilemap
+  layers (ARCH-024) are precisely the boundaries of "what gets drawn together", so it is natural
+  to divide atlases along those lines.
+- If resolution must differ by device performance, keep variants of the same atlas and pick the appropriate one at runtime [source: game-developers.org 'What Is Sprite Atlas in Unity', verified 2026-08].
+- [interpretation] Before it is a performance tool, an atlas is an asset bundling convention. If it
+  is not settled which atlas a new sprite goes into, each person who adds one makes a different
+  judgment and the bundling slowly collapses.
 
 ## Core Rules
-- 아틀라스 하나에 여러 장면의 자산을 섞지 않는다. 묶음의 기준은 파일 종류가 아니라 함께
-  나오는 시점이다.
-- 그리기 순서를 넘나드는 묶음은 효과가 없다. 서로 다른 정렬 레이어의 스프라이트를 한 아틀라스에
-  넣어도, 사이에 다른 레이어가 끼면 요청은 다시 쪼개진다.
-- 아틀라스 자산과 원본 스프라이트의 자리는 폴더 규약(ARCH-008)을 따른다.
-- 아틀라스에 넣지 않은 스프라이트를 남기지 않는다. 예외를 허용하면 예외가 기본이 된다.
-- [interpretation] 최적화 판단은 측정 뒤에 한다. 아틀라스를 나눌지 합칠지는 프로파일러의 배칭 수치를
-  보고 정하는 것이지 감으로 정하는 것이 아니다.
+- Do not mix assets from several scenes into one atlas. The bundling criterion is not file type
+  but the moment they appear together.
+- Bundling that crosses drawing order has no effect. Even if you put sprites from different
+  sorting layers into one atlas, if another layer comes between them the request is split again.
+- The location of atlas assets and source sprites follows the folder convention (ARCH-008).
+- Do not leave sprites that are not in any atlas. Allow an exception and the exception becomes the
+  default.
+- [interpretation] Make optimization judgments after measuring. Whether to split or merge atlases is
+  decided by looking at the profiler's batching figures, not by gut feel.
 
 ## Unity Implementation Steps
-1. 묶음 목록을 먼저 정한다. 화면·정렬 레이어 단위로 이름을 붙인다.
-2. 각 묶음마다 스프라이트 아틀라스 자산을 만들고, 개별 스프라이트가 아니라 폴더를 등록한다.
-   폴더를 등록하면 새 자산이 자동으로 묶이므로 사람이 매번 추가하지 않아도 된다.
-3. 압축·필터·패딩 설정을 묶음 성격에 맞춘다. 픽셀 아트는 필터를 끄고 압축을 낮춰야 원본이
-   유지된다.
-4. 실행 후 프로파일러에서 드로우콜과 배칭 수치를 확인한다. 도입 전후 값을 비교하지 않으면
-   묶음이 실제로 효과를 냈는지 알 수 없다.
-5. 기기별 해상도 분기가 필요하면 변형 아틀라스를 만들고 실행 시점에 고른다.
-6. UI 스프라이트는 별도 묶음으로 둔다. 게임 화면과 UI는 그려지는 시점이 다르다(ARCH-014).
+1. Decide the bundle list first. Name them by screen and sorting layer unit.
+2. Create a sprite atlas asset per bundle, and register the folder rather than individual sprites.
+   Registering the folder means new assets are bundled automatically, so a person does not have to
+   add them each time.
+3. Match compression, filter, and padding settings to the bundle's character. Pixel art needs the
+   filter off and compression low to preserve the original.
+4. After running, check draw call and batching figures in the profiler. Without comparing values
+   before and after adoption you cannot know whether the bundling actually had an effect.
+5. If per-device resolution branching is needed, create variant atlases and pick at runtime.
+6. Keep UI sprites in a separate bundle. The game screen and the UI are drawn at different moments (ARCH-014).
 
 ## Anti-patterns
-- 프로젝트 전체를 아틀라스 하나에: 텍스처가 거대해져 로딩과 메모리가 함께 나빠진다.
-- 스프라이트마다 아틀라스: 묶지 않은 것과 결과가 같다.
-- 정렬 순서를 무시한 묶음: 배칭이 중간에 끊겨 수치가 개선되지 않는다.
-- 측정 없이 손대기: 어느 쪽이 나아졌는지 모른 채 설정만 바뀌어 되돌릴 수도 없다.
-- 픽셀 아트에 기본 압축 유지: 색이 뭉개지고 경계가 흐려진다. 성능을 얻고 그림을 잃는다.
+- The whole project in one atlas: the texture becomes huge and loading and memory worsen together.
+- An atlas per sprite: the result is the same as not bundling at all.
+- Bundling that ignores sorting order: batching breaks in the middle and the figures do not improve.
+- Touching things without measuring: settings change without knowing which side improved, and you
+  cannot even roll back.
+- Keeping default compression on pixel art: colors smear and edges blur. You gain performance and
+  lose the artwork.
 
 ## Verification
-- 등록 검사: 프로젝트의 스프라이트 중 어느 아틀라스에도 속하지 않은 것이 없어야 한다.
-- 수치 검사: 같은 장면에서 도입 전후의 드로우콜·배칭 수치를 비교하고 개선치를 기록한다.
-- 화질 검사: 픽셀 아트 스프라이트를 확대해 경계가 흐려지지 않았는지 확인한다.
-- 콘솔 검사: 아틀라스 적용 후 정상 플레이 중 콘솔 에러 0개 [source: reference/unity_project_baseline.md 4절 자체 점검].
+- Registration check: there must be no sprite in the project that belongs to no atlas.
+- Figure check: compare draw call and batching figures before and after adoption in the same scene
+  and record the improvement.
+- Image quality check: zoom into pixel art sprites and confirm the edges have not blurred.
+- Console check: 0 console errors during normal play after applying atlases [source: reference/unity_project_baseline.md section 4 self-check].
 
 ## Synergy
-- ARCH-025 (2D 정렬 순서 규약): 직접 맞물림. 배칭이 끊기는 자리를 정하는 것이 정렬 순서다.
-- ARCH-024 (타일맵 레벨 구조): 타일 자산은 겹 단위로 묶을 때 가장 잘 배칭된다.
-- ARCH-015 (오브젝트 풀링): 같은 목적의 다른 층. 풀링은 생성 비용, 아틀라스는 그리기 비용을 줄인다.
-- ARCH-008 (폴더·네이밍 규약): 폴더 등록 방식이 성립하려면 자산의 자리가 먼저 규약이어야 한다.
-- ARCH-014 (UI 캔버스 구조): UI 자산 묶음의 경계.
-- ELEM-013 (도트 그래픽 아트 스타일): 궁합 필수 — 픽셀 아트는 압축·필터 설정이 곧 그림의
-  훼손 여부이므로, 아틀라스 설정을 아트 담당자가 함께 정해야 한다.
+- ARCH-025 (2D sorting order convention): directly interlocking. What decides where batching breaks is sorting order.
+- ARCH-024 (Tilemap level structure): tile assets batch best when bundled per layer.
+- ARCH-015 (Object pooling): a different layer with the same purpose. Pooling reduces creation cost, atlases reduce drawing cost.
+- ARCH-008 (Folder & naming convention): for folder registration to hold, asset locations must be a convention first.
+- ARCH-014 (UI canvas structure): the boundary of the UI asset bundle.
+- ELEM-013 (Pixel art graphic style): synergy essential — for pixel art, compression and filter
+  settings are exactly the question of whether the artwork is damaged, so the art owner must help
+  decide atlas settings.

@@ -2,7 +2,7 @@
 card_id = "GENRE-024"
 type = "genre"
 title = "MOBA (Multiplayer Online Battle Arena)"
-summary = "영웅 픽/밴 드래프트로 시작해 라인·정글이 있는 대칭 맵에서 상대 거점을 파괴하는 것이 코어인 팀 대전 군집"
+summary = "A team-competition cluster that starts with a hero pick/ban draft and centers on destroying the opponent's base on a symmetrical map with lanes and a jungle"
 elements = ["ELEM-036"]
 example_games = ["GAME-043"]
 tags = ["moba", "esports", "lane-based", "pvp", "free-to-play"]
@@ -10,17 +10,17 @@ updated = "2026-08-01"
 confidence = "high"
 +++
 ## Components
-- ELEM-036 (영웅 픽/밴 드래프트) - 군집의 정체성. 실제 전투 전에 이미 승부의 절반이 갈리는 선택 단계다.
+- ELEM-036 (hero pick/ban draft) - The cluster's identity. It is a selection stage where half the match is already decided before actual combat.
 
 ## Market Saturation
-- 사실: GAME-043(Dota 2) 리뷰 81% 긍정(2.7M+ 리뷰), DAU 기준 Steam 상위권을 10년 넘게 유지 [source: Steambase/activeplayer.io, 2026-07 확인].
-- [interpretation] League of Legends 등 이 저장소에 미등재된 경쟁작을 포함하면 시장은 크지만, 승자독식 구조가 10년 이상 굳어 있어 신규 진입이 극히 드문 포화 군집이다.
+- Fact: GAME-043 (Dota 2) has 81% positive reviews (2.7M+ reviews) and has remained among Steam's top works by DAU for more than 10 years [source: Steambase/activeplayer.io, verified 2026-07].
+- [interpretation] Including unlisted competitors such as League of Legends makes the market large, but winner-take-all structure has solidified for more than 10 years, making new entry extremely rare.
 
 ## Conventions and Expectations
-- [interpretation] 5대5 대칭 맵, 3라인 + 정글, 타워·거점 파괴로 승리하는 구조가 관례다.
-- [interpretation] 영웅은 코스메틱 과금만 있고 파워 자체는 무료로 열려 있는 것이 장기 생존 타이틀의 공통점으로 보인다.
+- [interpretation] A 5v5 symmetrical map, 3 lanes plus a jungle, and victory through destroying towers and the base are conventional.
+- [interpretation] Long-lived titles commonly offer only cosmetic monetization for heroes while leaving the power itself freely available.
 
 ## Gaps
-[interpretation] ★ Steam 단일 플랫폼에서 신생 MOBA가 기존 강자(Dota 2)를 흔든 사례는 조사 중 확인하지 못했다.
-- 확인 방법: SteamDB 태그 "MOBA" 신작·동접 순위 추적
-- 확인일: 2026-08-01 / 재확인 주기: 8주
+[interpretation] ★ No case of a new MOBA disrupting the incumbent leader (Dota 2) on Steam alone was confirmed.
+- Verification method: track new releases and concurrent-player rankings under the SteamDB tag "MOBA"
+- Verified on: 2026-08-01 / Re-check cycle: 8 weeks

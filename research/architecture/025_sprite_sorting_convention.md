@@ -1,77 +1,86 @@
 +++
 card_id = "ARCH-025"
 type = "convention"
-title = "2D 정렬 순서 규약 (Sorting Layer / Order in Layer / Y축 정렬)"
-summary = "2D에서 무엇이 무엇 앞에 그려지는지를 개별 오브젝트의 좌표 조정이 아니라 프로젝트 전체가 공유하는 정렬 층과 축 규칙으로 정하는 약속"
+title = "2D Sorting Order Convention (Sorting Layer / Order in Layer / Y-Axis Sorting)"
+summary = "The agreement that what is drawn in front of what in 2D is decided not by adjusting individual object coordinates but by sorting layers and axis rules shared across the whole project"
 tags = ["sorting", "sprite", "render-order", "convention", "2d", "unity"]
 updated = "2026-08-02"
 confidence = "medium"
 +++
 ## Problem
-2D에는 깊이가 없다. 그래서 캐릭터가 나무 앞에 서야 하는지 뒤에 서야 하는지를 엔진이
-저절로 알 수 없고, 누군가 정해줘야 한다. 이 결정을 오브젝트마다 그때그때 z값을 조금씩
-바꾸는 식으로 하면, 나중에 왜 이 나무만 z가 -0.3인지 아무도 설명할 수 없게 된다.
-그림을 겹칠 때 "어느 종이가 위인가"를 미리 종이마다 번호로 정해두는 것이 이 규약이다.
+2D has no depth. So the engine cannot know by itself whether a character should stand in front
+of or behind a tree; someone has to decide. If that decision is made by nudging the z value a
+little per object as you go, nobody can later explain why only this tree has z = -0.3. This
+convention is deciding in advance, with a number per sheet, "which sheet is on top" when
+stacking drawings.
 
 ## Structure
-- 판단 순서는 세 단계다. 먼저 정렬 레이어(Sorting Layer), 같으면 레이어 안의 순서
-  (Order in Layer), 그래도 같으면 정렬 축을 따른 거리 순이다.
-- 기본값은 모두 같다. 별도로 지정하지 않은 2D 오브젝트는 전부 Default 레이어에 속하고
-  레이어 안의 순서 값도 동일하다 [source: Unity 매뉴얼 '2D renderer sorting', 2026-08 확인].
-- 정렬 레이어 목록은 프로젝트 설정에 한 번 정의하고 모두가 그 목록만 쓴다. 배경, 지면,
-  캐릭터, 지면 위 장식, 화면 효과처럼 화면의 층에 대응한다.
-- 같은 층 안에서 위아래로 겹치는 캐릭터·사물은 순서를 손으로 주지 않고 축 정렬에 맡긴다.
-  투명 오브젝트 정렬 방식을 Custom Axis로 두고 정렬 축의 y 성분을 켜면, y가 위에 있는
-  스프라이트가 아래에 있는 스프라이트보다 뒤로 간다 [source: Unity 매뉴얼 'Sort sprites' / shootingdux.co.uk 'Unity 2D Sprite Sorting – Y Sorting', 2026-08 확인].
-- UI는 이 체계와 별개다. 캔버스의 순서 규칙을 따르므로 정렬 레이어로 UI를 끼워 넣지 않는다
-  (ARCH-014).
-- [interpretation] 이 규약의 값어치는 "정해졌다"가 아니라 "한 곳에만 정해졌다"에 있다. 목록이
-  프로젝트 설정 한 곳에 있으니 새 오브젝트를 만드는 사람이 매번 판단하지 않아도 된다.
+- Judgment proceeds in three steps. First the Sorting Layer, then if equal the Order in Layer,
+  and if still equal, distance along the sorting axis.
+- The defaults are all the same. Any 2D object not otherwise specified belongs to the Default layer and has the same order-in-layer value [source: Unity manual '2D renderer sorting', verified 2026-08].
+- The sorting layer list is defined once in project settings and everyone uses only that list. It
+  corresponds to the layers of the screen, like background, ground, characters, decoration above
+  ground, and screen effects.
+- For characters and objects that overlap vertically within the same layer, do not give order by
+  hand; leave it to axis sorting. Set the transparency sort mode to Custom Axis and turn on the y component of the sorting axis, and a sprite higher in y goes behind a sprite lower down [source: Unity manual 'Sort sprites' / shootingdux.co.uk 'Unity 2D Sprite Sorting – Y Sorting', verified 2026-08].
+- UI is separate from this system. It follows the canvas ordering rules, so do not wedge UI in
+  with sorting layers (ARCH-014).
+- [interpretation] The worth of this convention lies not in "it is decided" but in "it is decided
+  in only one place". Because the list is in one place in project settings, whoever creates a new
+  object does not have to judge it every time.
 
 ## Core Rules
-- 정렬 레이어 목록은 임의로 늘리지 않는다. 늘리는 순간 기존 오브젝트의 상대 순서가 바뀔 수 있다.
-- 앞뒤를 z 좌표로 조절하지 않는다. z는 카메라와 물리에 쓰이는 값이지 그리기 순서의 손잡이가 아니다.
-- 캐릭터끼리의 앞뒤는 축 정렬에 맡기고, 레이어 안의 순서 값은 축 정렬로 해결되지 않는
-  예외에만 쓴다.
-- 스프라이트의 기준점(pivot)은 발밑에 둔다. 축 정렬이 보는 값이 기준점의 y이므로, 기준점이
-  가슴이나 중앙에 있으면 서 있는 위치와 그려지는 순서가 어긋난다.
-- 타일맵의 겹도 같은 목록을 쓴다(ARCH-024). 겹마다 다른 체계를 쓰면 캐릭터가 어느 겹 앞에
-  서는지 예측할 수 없다.
+- Do not grow the sorting layer list arbitrarily. The moment you grow it, the relative order of
+  existing objects can change.
+- Do not adjust front-to-back with the z coordinate. z is a value used by the camera and physics,
+  not a handle for drawing order.
+- Leave front-to-back between characters to axis sorting, and use the order-in-layer value only
+  for exceptions that axis sorting does not resolve.
+- Put the sprite's pivot at the feet. What axis sorting looks at is the pivot's y, so if the
+  pivot is at the chest or the center, the standing position and the drawing order disagree.
+- Tilemap layers use the same list too (ARCH-024). Using a different system per layer makes it
+  impossible to predict which layer a character stands in front of.
 
 ## Unity Implementation Steps
-1. 프로젝트 설정에서 정렬 레이어 목록을 화면의 층 순서대로 정의한다. 목록의 순서가 곧 앞뒤다.
-2. 타일맵의 각 겹과 프리팹의 스프라이트 렌더러에 해당 레이어를 지정한다.
-3. 캐릭터·사물이 서로 겹치는 층에 대해 투명 오브젝트 정렬 방식을 Custom Axis로 바꾸고
-   정렬 축의 y를 켠다.
-4. 스프라이트 자산의 기준점을 발밑으로 통일한다. 이 작업을 뒤로 미루면 나중에 프리팹 전체의
-   위치를 다시 잡아야 한다.
-5. 예외가 필요한 오브젝트만 레이어 안의 순서 값을 준다. 예외에는 이유를 남긴다.
-6. 카메라가 직교(Orthographic)인지 확인한다. 정렬 축 설정은 카메라 투영 방식과 함께 동작한다
-   (ARCH-013).
+1. Define the sorting layer list in project settings in screen-layer order. The order of the list
+   is the front-to-back order.
+2. Assign the corresponding layer to each tilemap layer and to prefabs' sprite renderers.
+3. For layers where characters and objects overlap each other, change the transparency sort mode
+   to Custom Axis and turn on y on the sorting axis.
+4. Unify sprite assets' pivots at the feet. Postponing this work means having to re-place the
+   positions of all prefabs later.
+5. Give an order-in-layer value only to objects that need an exception. Leave the reason with the
+   exception.
+6. Check that the camera is Orthographic. The sorting axis setting works together with the camera
+   projection mode (ARCH-013).
 
 ## Anti-patterns
-- z 좌표로 앞뒤 맞추기: 당장은 되지만 물리·카메라 설정을 건드리는 순간 무너지고, 값의 의미를
-  아무도 설명할 수 없다.
-- 오브젝트마다 순서 값을 손으로 부여: 새 오브젝트가 추가될 때마다 기존 값들 사이에 끼워 넣어야
-  하며, 결국 번호 재배치 작업이 주기적으로 발생한다.
-- 정렬 레이어를 오브젝트 종류별로 만들기: 층이 아니라 분류가 되어 목록이 무한히 늘어난다.
-- 기준점 제각각: 축 정렬이 켜져 있어도 캐릭터마다 겹치는 결과가 달라져 규칙이 있으나 마나가 된다.
-- UI를 정렬 레이어로 앞에 세우기: 캔버스 체계와 두 개의 진실이 생긴다.
+- Fixing front-to-back with z coordinates: it works for now but collapses the moment you touch
+  physics or camera settings, and nobody can explain what the values mean.
+- Assigning order values by hand per object: every time a new object is added it must be wedged in
+  between existing values, and eventually renumbering work occurs periodically.
+- Creating a sorting layer per object type: it becomes a classification rather than a layer, and
+  the list grows without limit.
+- Inconsistent pivots: even with axis sorting on, the overlap result differs per character, making
+  the rule pointless.
+- Bringing UI to the front with sorting layers: two truths arise alongside the canvas system.
 
 ## Verification
-- 목록 검사: 정렬 레이어 목록이 정해둔 층 이름과 정확히 일치하고 그 외 값이 없어야 한다.
-- 겹침 검사: 캐릭터가 같은 사물의 아래쪽에 설 때 사물 앞에, 위쪽에 설 때 사물 뒤에 그려져야 한다.
-- z 검사: 스프라이트 오브젝트들의 z 좌표가 전부 동일해야 한다. 서로 다르면 z로 순서를 맞춘
-  흔적이다.
-- 기준점 검사: 캐릭터 스프라이트의 기준점 y가 스프라이트 하단에 있어야 한다.
-- 콘솔 검사: 정렬 설정 변경 후 정상 플레이 중 콘솔 에러 0개 [source: reference/unity_project_baseline.md 4절 자체 점검].
+- List check: the sorting layer list must exactly match the decided layer names, with no other
+  values.
+- Overlap check: a character standing below the same object must be drawn in front of it, and
+  standing above must be drawn behind it.
+- z check: the z coordinates of sprite objects must all be identical. Differing values are traces
+  of having fixed order with z.
+- Pivot check: the y of a character sprite's pivot must be at the bottom of the sprite.
+- Console check: 0 console errors during normal play after changing sorting settings [source: reference/unity_project_baseline.md section 4 self-check].
 
 ## Synergy
-- ARCH-024 (타일맵 레벨 구조): 직접 맞물림. 그 카드가 겹을 나누고 이 카드가 겹의 앞뒤를 준다.
-- ARCH-013 (2D 카메라 추적): 직교 카메라와 픽셀 퍼펙트 설정이 정렬 결과의 전제 조건이다.
-- ARCH-014 (UI 캔버스 구조): 경계 카드. UI는 이 규약이 아니라 캔버스 순서를 따른다.
-- ARCH-026 (스프라이트 아틀라스 & 드로우콜 배칭): 정렬 순서가 배칭이 끊기는 자리를 정하므로, 아틀라스 묶음 단위는 이 레이어 목록을 따라간다.
-- ARCH-027 (URP 2D 라이팅): 조명의 영향 범위 단위가 정렬 레이어다. 레이어 목록이 흔들리면 조명 설정 전체가 흔들린다.
-- ARCH-008 (폴더·네이밍 규약): 레이어 이름도 규약의 대상이다.
-- ELEM-013 (도트 그래픽 아트 스타일): 궁합 필수 — 픽셀 아트는 한 픽셀 차이로 겹침이 눈에 띄므로,
-  기준점과 정렬 축 규칙이 곧 아트의 완성도로 직결된다.
+- ARCH-024 (Tilemap level structure): directly interlocking. That card divides the layers and this card gives the layers front-to-back order.
+- ARCH-013 (2D camera follow): the orthographic camera and pixel perfect settings are preconditions of the sorting result.
+- ARCH-014 (UI canvas structure): a boundary card. UI follows canvas order, not this convention.
+- ARCH-026 (Sprite atlas & draw call batching): sorting order decides where batching breaks, so the atlas bundling unit follows this layer list.
+- ARCH-027 (URP 2D lighting): the unit of a light's range of influence is the sorting layer. If the layer list wobbles, the whole lighting setup wobbles.
+- ARCH-008 (Folder & naming convention): layer names are subject to the convention too.
+- ELEM-013 (Pixel art graphic style): synergy essential — in pixel art a one pixel difference makes
+  overlap noticeable, so the pivot and sorting axis rules directly determine the polish of the art.

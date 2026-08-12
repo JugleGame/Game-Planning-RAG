@@ -1,8 +1,8 @@
 +++
 card_id = "GAME-040"
 type = "success"
-title = "Hades II (2024 얼리액세스 / 2025 정식출시, Supergiant Games)"
-summary = "전작을 뛰어넘는 평가와 판매로 2025년 최고 평점 게임에 오른 로그라이크 내러티브 속편"
+title = "Hades II (2024 Early Access / 2025 full release, Supergiant Games)"
+summary = "A roguelike narrative sequel that surpassed its predecessor in reception and sales to become the highest-rated game of 2025"
 genres = ["GENRE-002"]
 elements = ["ELEM-004", "ELEM-009"]
 tags = ["roguelike", "narrative", "sequel", "early-access", "indie", "broad-appeal"]
@@ -10,24 +10,15 @@ updated = "2026-07-31"
 confidence = "high"
 +++
 ## Summary and Sales/Review Metrics
-2026-07 기준 스팀 누적 약 520만 장, 매출 약 9,360만 달러로 추산 [source: games-stats.com,
-2026-07 확인]. 정식 출시(2025-09-25) 전 얼리액세스 단계에서 이미 200만 장 이상, 매출
-5,000만 달러 이상을 기록했다 [source: 업계 보도, 2025 기준]. Steam 리뷰 121,483건 중 96%
-긍정, Metacritic 94점으로 2025년 최고 평점 게임에 올랐다 [source: gamingamigos.com, 2025
-기준]. 최고 동시접속 11만 명 이상으로 전작을 능가했다.
+As of 2026-07, Steam cumulative sales were estimated at about 5,200,000 units and revenue at about $93,600,000 [source: games-stats.com, verified 2026-07]. Before the full release (2025-09-25), Early Access had already reached more than 2,000,000 units and more than $50,000,000 in revenue [source: industry coverage, as of 2025]. Of 121,483 Steam reviews, 96% were positive, and its Metacritic score of 94 made it the highest-rated game of 2025 [source: gamingamigos.com, as of 2025]. Its peak concurrent players exceeded 110,000, surpassing its predecessor.
 
 ## Elements Used
-- ELEM-004 (반복 메커닉) - 죽을 때마다 새 대사·관계가 갱신되는 로그라이크 구조
-- ELEM-009 (철학적 내러티브 로그라이크/로그라이크) - 삶과 죽음, 가족 관계를 다루는
-  서사 깊이
+- ELEM-004 (repetition mechanic) - a roguelike structure where dialogue and relationships update with each death
+- ELEM-009 (philosophical narrative roguelike/roguelike) - narrative depth dealing with life and death and family relationships
 
 ## Success/Failure Drivers
-- 사실: 얼리액세스 기간 동안 플레이어 피드백을 받아 스토리·밸런스·엔딩을 다듬은 뒤
-  1.0 출시를 진행했다 [source: indiegame.com 보도, 2026 기준].
-- [interpretation] 전작(Hades)의 성공 공식(반복+서사 갱신)을 유지하면서도, 캐릭터·전투 시스템을
-  새롭게 짜 "우려먹기"라는 인상을 피했다.
+- Fact: During Early Access, player feedback was used to refine the story, balance, and ending before the 1.0 release [source: indiegame.com coverage, as of 2026].
+- [interpretation] It kept the predecessor's success formula (repetition plus narrative updates) while redesigning the characters and combat system to avoid an impression of rehashing.
 
 ## Implications for Our Project
-검증된 반복 메커닉 위에 서사를 얹는 공식은 속편에서도 유효하다. 단, 얼리액세스 기간의
-피드백 반영이 정식 출시 평가를 크게 좌우한 것으로 보인다 - 공식이 같아도 완성도를
-높이는 과정이 반복돼야 성공이 재현된다.
+The formula of placing narrative on top of a validated repetition mechanic remains effective in a sequel. However, incorporating Early Access feedback appears to have strongly influenced the full-release reception— even with the same formula, the process of raising polish must be repeated for success to recur.

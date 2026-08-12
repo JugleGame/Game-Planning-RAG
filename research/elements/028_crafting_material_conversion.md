@@ -1,49 +1,36 @@
 +++
 card_id = "ELEM-028"
 type = "mechanic"
-title = "재화 전환형 제작 마찰 완화 (Craft Material Conversion Friction Reduction)"
-summary = "무작위 루트의 흩어진 자원을 정해진 공식으로 합쳐 원하는 아이템을 만들 수 있게 해, 랜덤 드롭의 좌절감을 제작의 성취감으로 바꾸는 구조"
+title = "Craft Material Conversion Friction Reduction"
+summary = "A structure that combines scattered resources from random loot through fixed recipes to make desired items, turning random-drop frustration into crafting satisfaction"
 tags = ["crafting", "live-service", "rng-mitigation", "grind", "itemization"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-게임에서 얻는 무작위 재료를 모아 원하는 결과물로 바꿀 수 있는 공식(레시피)을 제공하는 방식입니다. "필요한 파란 포션 20개를 모으면 검은 포션 1개로 만들 수 있다"처럼, 운에 맡기던 것을 노력(수집)으로 돌린다는 뜻입니다.
+This is a system that lets players collect randomly obtained materials and convert them into a desired result through a fixed recipe. It turns something left to luck into effort through collection, as in converting 20 blue potions into one black potion.
 
 ## Success Cases
-- GAME-023 (Diablo IV) - 3.1.1 패치에서 신화 아이템 제작 요구 조각(Pandemonium Fragment)을
-  5 → 4로 낮추고, 드롭 소스 Corrupted Reaper의 획득량을 2배로 늘려 제작 진입장벽을 완화했다
-  [source: Mobalytics / games.gg 패치 분석, 2026-07 기준]. 커뮤니티는 마찰 완화를 환영했으나,
-  여전히 엔드게임 설계 기대치 대비 부족하다는 지적도 남아있다 [source: Blizzard 포럼 피드백,
-  2026-07 기준].
-<!-- 증거 부족: 위 조치가 실제로 이탈률·복귀율을 바꿨는지 보여주는 지표는 확인하지 못함 -->
-- GAME-028 (Destiny 2) - 무작위 퍼크 롤을 되살리면서도 플레이어가 아이템을 의도적으로
-  키울 수 있는 경로를 함께 제공한 사례로 참조 가능하다 [source: GAME-028 카드].
+- GAME-023 (Diablo IV) - In patch 3.1.1, the Mythic item crafting requirement, Pandemonium Fragment, was reduced from 5 → 4, and the drop amount from Corrupted Reaper was doubled, lowering the barrier to crafting
+  [source: Mobalytics / games.gg patch analysis, as of 2026-07]. The community welcomed the friction reduction, but some still said it was insufficient relative to endgame design expectations [source: Blizzard forum feedback, as of 2026-07].
+<!-- Evidence insufficient: no metrics were found showing whether these measures actually changed churn or return rates -->
+- GAME-028 (Destiny 2) - A reference case in which random perk rolls were restored while also providing a path for players to intentionally develop an item [source: GAME-028 card].
 
 ## Failure Cases
-<!-- 증거 부족: 재화 전환형 제작을 도입한 뒤 그것이 원인으로 지목된 실패 사례는
-이번 조사에서 확인하지 못함 -->
+<!-- Evidence insufficient: this investigation found no failure case explicitly attributed to introducing material-conversion crafting -->
 
 ## User Reaction Summary
-<!-- 증거 부족: 유저 리뷰 키워드 집계를 확보하지 못했다. 아래는 근거 문장이 아니라
-확인해야 할 축이다 -->
-- [interpretation] 갈릴 지점은 "수집 진행도가 눈에 보이는가"와 "요구량이 감당 가능한가"
-  두 축이다. Diablo IV 3.1.1이 요구량을 낮추는 동시에 획득량을 늘린 것은 두 축을
-  함께 건드린 조치로 읽힌다 [source: GAME-023 참조 / Mobalytics 패치 분석, 2026-07 기준].
+<!-- Evidence insufficient: a user-review keyword aggregation was not secured. The following is an axis to verify, not an evidence sentence -->
+- [interpretation] The dividing points appear to be whether collection progress is visible and whether the required quantity is manageable. Diablo IV 3.1.1 touched both axes by lowering the requirement while increasing acquisition [source: GAME-023 reference / Mobalytics patch analysis, as of 2026-07].
 
 ## Synergy
-- 좋음: ELEM-019 (무작위 전리품 드롭) - 드롭 자체는 무작위이되, 모은 것의 가치를 보장한다.
-- 같은 계열: ELEM-017 (가챠 확률 & 천장 시스템) - [interpretation] 천장도 이 요소와 동일한 문제를
-  풀고 있다. "운에 맡긴 결과를 누적 노력으로 보장한다"는 구조가 같고, 다른 점은 대가를
-  시간(수집)으로 받는가 돈(뽑기 횟수)으로 받는가다. 같은 게임에 둘을 함께 두면 보장 장치가
-  이중으로 겹치므로, 어느 쪽이 주된 완화 경로인지 정해야 한다.
-- 구현 다리: ARCH-012 (Data/ 데이터 자산 규약) - 레시피 요구량은 밸런스 조정이 잦은
-  수치이므로 코드가 아니라 데이터 자산에 두어야 한다. Diablo IV의 5 → 4 조정처럼 숫자
-  하나를 바꾸는 일이 재컴파일을 요구하면 안 된다.
-- 장르 앵커: GENRE-020 (서바이벌 크래프팅 오픈월드) - 이 군집이 이 요소를 구성 요소로 지목한다.
-- 장르 앵커: GENRE-030 (크리처 노동 자동화 서바이벌) - 이 군집이 이 요소를 구성 요소로 지목한다.
+- Good: ELEM-019 (random loot drops) - The drop remains random, but the value of what is collected is guaranteed.
+- Same family: ELEM-017 (gacha probability & pity system) - [interpretation] A pity system solves the same problem. Both guarantee a result that was left to luck through accumulated effort; the difference is whether the cost is paid in time (collection) or money (pull count). Placing both in one game can create overlapping guarantee systems, so the primary mitigation path must be defined.
+- Implementation bridge: ARCH-012 (Data/ data asset convention) - Recipe requirements change often for balance, so they belong in data assets rather than code. A change such as Diablo IV's 5 → 4 should not require recompilation.
+- Genre anchor: GENRE-020 (survival crafting open world) - This cluster names the element as a component.
+- Genre anchor: GENRE-030 (creature-labor automation survival) - This cluster names the element as a component.
 
 ## Risks
-- [interpretation] 공식의 진입 비용(필요한 자재 수)이 체감할 수 있는 수준을 벗어나면, 오히려 더 큰 좌절감을 만든다.
-- [interpretation] 제작이 필수 경로가 되면 의무 그라인드로 변해 이탈률을 높일 수 있다.
-<!-- 증거 부족: 제작 난이도와 이탈률의 직접적 상관관계 통계 -->
+- [interpretation] If the entry cost of the recipe, meaning the number of required materials, exceeds what players can reasonably feel is manageable, it can create greater frustration instead.
+- [interpretation] If crafting becomes mandatory, it can turn into compulsory grinding and raise churn.
+<!-- Evidence insufficient: direct statistics on the correlation between crafting difficulty and churn -->

@@ -2,7 +2,7 @@
 card_id = "GAME-050"
 type = "success"
 title = "Towerful Defense: A Rogue TD (2024, Mini Fun Games)"
-summary = "단일 타워를 스킬로 직접 조작하며 방어하는 로그라이크 타워 디펜스 - Brotato식 조작을 TD 시점으로 옮긴 하이브리드"
+summary = "A roguelike tower defense game where the player directly controls a single tower with skills - a hybrid that moves Brotato-style control into a TD perspective"
 genres = ["GENRE-010"]
 elements = ["ELEM-018", "ELEM-042"]
 tags = ["tower-defense", "roguelite", "indie", "single-tower", "skill-based"]
@@ -10,19 +10,19 @@ updated = "2026-08-01"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-- 사실: Mini Fun Games가 개발해 2024-08-01 itch.io에 먼저 출시했고, 이후 Steam(앱ID 2453610)에도 출시됐다 [source: itch.io 페이지/Steam 페이지, 2026-08 확인].
-- 사실: Steam 유저 리뷰 207건 중 70% 긍정("대체로 긍정적"), 최근 30일 11건 중 100% 긍정 [source: Steam 페이지, 2026-08 확인].
-<!-- 증거 부족: 누적 판매량·매출 수치는 확인하지 못함 -->
+- Fact: Developed by Mini Fun Games, it first launched on itch.io on 2024-08-01 and was later released on Steam (App ID 2453610) [source: itch.io page/Steam page, verified 2026-08].
+- Fact: 70% positive ("Mostly Positive") among 207 Steam user reviews, and 100% positive among 11 reviews in the last 30 days [source: Steam page, verified 2026-08].
+<!-- Insufficient evidence: cumulative sales and revenue figures could not be verified -->
 
 ## Elements Used
-- ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 매판 스킬 최대 4개와 특성(trait)·아이템을 무작위로 골라 빌드를 짜는 구조다 [source: itch.io/Steam 페이지, 2026-08 확인].
-- GENRE-010 (타워 디펜스) - 사방에서 오는 적 웨이브를 하나의 타워로 막는다는 점에서 장르 코어는 지키지만, GAME-027(Rogue Tower)의 "여러 타워를 배치"하는 방식과 달리 이 게임은 플레이어가 타워 하나를 스킬로 직접 조작(이동 없이 스킬 사용으로만 대응)하는 구조다 [source: itch.io 페이지 설명, 2026-08 확인].
-- ELEM-042 (단일 타워 직접 조작형 방어) - 위 GENRE-010 서술이 가리키는 "타워 하나를 스킬로 직접 조작"하는 조작 방식 자체를 다루는 요소 카드다.
+- ELEM-018 (roguelike random upgrade/path draft) - Each run builds a setup by randomly choosing up to 4 skills plus traits and items [source: itch.io/Steam page, verified 2026-08].
+- GENRE-010 (tower defense) - It preserves the genre core of stopping enemy waves from all directions with one tower, but unlike GAME-027 (Rogue Tower)'s "placing multiple towers," the player directly controls one tower with skills (responding only through skill use, without movement) [source: itch.io page description, verified 2026-08].
+- ELEM-042 (single-tower direct-control defense) - This element card covers the control method described by GENRE-010 above: "directly controlling one tower with skills."
 
 ## Success/Failure Drivers
-- 사실: 리뷰에서 "Brotato를 타워 디펜스 시점으로 옮긴 듯한, 이상하지만 영리한" 게임이라는 평가가 있다 [source: Steam 유저 리뷰 인용, 2026-08 확인].
-- [interpretation] GAME-027(Rogue Tower)이 "여러 타워 배치 + 무작위 경로"였다면, 이 게임은 "단일 타워 + 능동 스킬 사용"으로 같은 로그라이크 드래프트(ELEM-018) 위에서 조작 층위 자체를 바꿔 차별화한 사례로 보인다.
-<!-- 증거 부족: 낮은 표본(207건) 대비 구체적 불호 사유(밸런스, 특정 빌드 사기 등)를 다룬 리뷰 원문은 확인하지 못함 -->
+- Fact: A review called it "like moving Brotato into a tower-defense perspective, strange but clever" [source: quoted Steam user review, verified 2026-08].
+- [interpretation] If GAME-027 (Rogue Tower) uses "multiple tower placement + random paths," this game appears to differentiate itself by changing the control layer itself on the same roguelike draft (ELEM-018) foundation through "single tower + active skill use."
+<!-- Insufficient evidence: the original reviews covering specific complaints (balance, overpowered builds, and similar issues) could not be verified against the small sample of 207 reviews -->
 
 ## Implications for Our Project
-[interpretation] 같은 요소(ELEM-018 무작위 드래프트)라도 "무엇을 조작하게 하는가"(다수 타워 배치 vs 단일 타워 스킬 사용)를 바꾸면 같은 장르 안에서도 체감이 달라질 수 있다 - GENRE-010의 관례(정적 배치)에서 벗어난 변주로 참고할 만하다.
+[interpretation] Even with the same element (ELEM-018 random draft), changing "what the player controls" (multiple tower placement versus single-tower skill use) can change the feel within the same genre - it is a useful variation that departs from GENRE-010's convention of static placement.

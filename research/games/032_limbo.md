@@ -2,7 +2,7 @@
 card_id = "GAME-032"
 type = "success"
 title = "LIMBO (2010, Playdead)"
-summary = "흑백 실루엣과 침묵만으로 공포를 만든 횡스크롤 퍼즐 플랫포머의 원형작"
+summary = "The originator of the side-scrolling puzzle platformer, which built horror out of nothing but black-and-white silhouettes and silence"
 genres = ["GENRE-014"]
 elements = ["ELEM-023", "ELEM-016"]
 tags = ["horror", "side-scroller", "puzzle-platformer", "indie", "atmosphere", "monochrome"]
@@ -10,22 +10,22 @@ updated = "2026-07-30"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-전 세계 누적 100만 장 [source: Game Informer 보도, 2011-11 기준]. 2010년 말 시점 58만 장으로,
-출시 후 1년여에 걸쳐 나머지가 팔렸다 [source: Game Developer / VGChartz 보도, 2011 확인].
-Steam 리뷰 약 3만 6천 건 중 92% 긍정 [source: Steam 집계 요약, 2026-07 확인].
-2010년 7월 Xbox Live Arcade 의 'Summer of Arcade' 로 처음 나왔다 [source: 웹 검색 종합, 2026-07 확인].
+1,000,000 units cumulative worldwide [source: Game Informer coverage, as of 2011-11]. It stood at 580,000 units as of the end of 2010,
+with the remainder selling over the year or so after release [source: Game Developer / VGChartz coverage, verified 2011].
+92% positive out of about 30,000 Steam reviews, with 6,000 additional reviews in the cited aggregate [source: Steam aggregate summary, verified 2026-07].
+It first appeared in July 2010 through Xbox Live Arcade's 'Summer of Arcade' [source: web search composite, verified 2026-07].
 
 ## Elements Used
-- ELEM-023 (광원·시야 제한) - 다만 절반만 쓴다. 빛을 닳는 자원으로 관리하게 하지는 않고, 화면 대부분을 어둠에 두어 실루엣만 남기는 "시야 제한" 쪽만 가져갔다.
-- ELEM-016 (그림다크 톤) - 흑백과 침묵으로 희망이 옅은 분위기를 시각 전반에 깔았다.
+- ELEM-023 (Light Source / Vision Restriction) - though it uses only half of it. It does not make you manage light as a depleting resource; it took only the "vision restriction" side, leaving most of the screen in darkness so that only silhouettes remain.
+- ELEM-016 (Grimdark Tone) - it laid an atmosphere thin on hope across the whole visual presentation through black-and-white and silence.
 
 ## Success/Failure Drivers
-- 사실: 출시 시점에 58만 장, 이후 100만 장까지 늘었다 [source: Game Developer 보도 2011 확인, Game Informer 2011-11 기준].
-- [interpretation] 텍스트와 튜토리얼 없이 시각만으로 규칙을 가르쳐 언어 장벽이 없었고, 그만큼 넓은 시장에 그대로 나갈 수 있었다.
-- [interpretation] 어둠이 미술 물량을 대신했다 - 실루엣은 디테일을 그리지 않아도 성립하므로, 적은 인원이 만들 수 있는 표현 전략이었다.
+- Fact: 580,000 units at the time of release, rising afterwards to 1,000,000 units [source: Game Developer coverage verified 2011, Game Informer as of 2011-11].
+- [interpretation] It taught its rules through visuals alone, without text or tutorials, so there was no language barrier, and it could go out to that much wider a market as-is.
+- [interpretation] Darkness stood in for art volume - a silhouette holds up without drawing detail, so it was an expressive strategy a small team could make.
 
 ## Implications for Our Project
-어둠은 "아직 안 그린 것"을 공포로 바꿔주는 장치다. 프로토타입처럼 에셋이 부족한 단계에서
-특히 유리하며, 실루엣 한 장으로 적을 표현할 수 있으면 자산 생성 부담이 줄어든다.
-다만 이 작품은 빛을 자원으로 쓰지 않았다는 점을 함께 기억해야 한다 — 어둠으로 분위기를
-만드는 것과, 광원을 관리하게 만드는 것은 서로 다른 설계 결정이다.
+Darkness is a device that turns "what has not been drawn yet" into horror. It is especially advantageous at a stage like a prototype where
+assets are scarce, and if an enemy can be expressed with a single silhouette the burden of asset creation drops.
+That said, we should also remember that this work did not use light as a resource—creating atmosphere with darkness
+and making the player manage a light source are two different design decisions.

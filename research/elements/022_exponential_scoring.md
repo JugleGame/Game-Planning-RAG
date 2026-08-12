@@ -1,68 +1,37 @@
 +++
 card_id = "ELEM-022"
 type = "mechanic"
-title = "지수적 점수 스케일링 (Exponential Scoring)"
-summary = "개별 강화 효과들이 서로 곱해지고 중첩되게 만들어, 판이 진행될수록 점수가 선형이 아니라 폭발적으로 불어나게 하는 설계"
+title = "Exponential Scoring (Exponential Scoring)"
+summary = "A design where individual upgrade effects multiply and stack, causing scores to grow explosively rather than linearly as a run progresses"
 tags = ["scoring", "power-fantasy", "roguelike", "numbers-go-up", "combo", "balance-risk"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-점수를 더하기만 하는 게 아니라 곱하게 만드는 설계입니다. 카드나 효과 하나하나는 작은 보너스를 주지만,
-그것들이 서로를 강화하도록 순서를 짜면 나중에는 처음과 비교도 안 되는 큰 숫자가 나옵니다. 예를 들어
-효과 A가 점수를 2배로 만들고 효과 B가 그 A를 한 번 더 실행시켜준다면, 둘을 같이 쓰는 순간 점수는
-두 배가 아니라 훨씬 크게 뜁니다. 이런 카드를 여러 장 동시에 맞추면 처음엔 몇 십 점이던 것이 나중엔
-수백만 점까지 치솟습니다. 사람은 이렇게 숫자가 눈덩이처럼 불어나는 모습 자체에서 쾌감을 느낍니다.
-다만 이 곱셈 구조는 밸런스를 맞추기가 매우 까다롭습니다. 곱하는 값 하나만 잘못 설계해도 게임 전체가
-너무 쉬워지거나, 반대로 그 조합을 못 찾은 플레이어만 불리해질 수 있습니다.
+This design multiplies scores instead of merely adding them. Each card or effect gives a small bonus, but ordering them so they reinforce one another produces numbers far beyond the starting value. If effect A doubles the score and effect B executes A once more, using both raises the score far beyond double. Several such cards can send a score from dozens to millions. The snowballing number itself creates pleasure. However, multiplication is difficult to balance: one poorly designed multiplier can make the whole game too easy or disadvantage players who fail to find the combination.
 
 ## Success Cases
-- GAME-031 (Balatro) - 150종의 조커 카드가 각자 다른 방식으로 점수 계산에 개입하고
-  [source: PCGamesN, 2026-07 확인], 같은 효과를 한 번 더 실행시키는 리트리거가 중첩되는 구조를 통해
-  점수가 수백만 점 단위까지 폭발한다 [source: kokutech 디자인 분석, 2026-07 확인]. 이 방식으로 전
-  플랫폼 누적 500만 장을 넘겼다 [source: Game Developer, 2024년 12월 기준].
-- GAME-037 (Vampire Survivors) - 무기·패시브 강화 효과가 서로 곱해져 후반에는 화면 전체가 이펙트로
-  뒤덮일 만큼 수치가 폭발한다. 추정 누적 약 600만 장, Steam 리뷰 약 24만 9,855건 중 98% 긍정
-  [source: GAME-037 카드]. 카드 게임이 아닌 실시간 액션에서도 같은 곱셈 구조가 성립한 근거다.
-- GAME-051 (Yet Another Zombie Survivors) - GAME-037과 같은 곱연산 스케일링 구조를 공유하되,
-  단일 캐릭터가 아니라 최대 3인 스쿼드 단위로 강화 효과가 겹친다. Steam 리뷰 1만 3,000건 이상 중
-  91% 긍정 [source: GAME-051 카드].
+- GAME-031 (Balatro) - 150 Joker cards intervene in scoring in different ways, and stacked retriggers that execute the same effect again make scores explode into the millions [source: PCGamesN, confirmed 2026-07; kokutech design analysis, confirmed 2026-07]. It exceeded 5,000,000 cumulative copies across platforms [source: Game Developer, as of 2024-12].
+- GAME-037 (Vampire Survivors) - Weapon and passive upgrades multiply one another until the late game fills the screen with effects. Estimated cumulative sales are about 6,000,000, with 98% positive among about 240,000 and 9,855 Steam reviews [source: GAME-037 card]. This shows the same multiplication structure in real-time action rather than a card game.
+- GAME-051 (Yet Another Zombie Survivors) - Shares GAME-037’s multiplicative scaling, but stacks upgrades across a squad of up to three rather than a single character. 91% positive among more than 10,000 and 3,000 Steam reviews [source: GAME-051 card].
 
 ## Failure Cases
-- 사실: 개발자 본인이 게임 밸런스를 직접 바꿔가며 극단적으로 높은 점수를 낸 사례가 보도됐다
-  [source: GameRant, 2026-07 확인].
-  실패 지점: [interpretation] 곱셈이 겹겹이 쌓이는 구조는 설계자조차 상한선을 정확히 예측하기 어렵게 만든다.
-  일반 플레이어가 우연히 같은 조합을 발견하면 나머지 콘텐츠가 통째로 의미 없어질 위험이 있다.
-<!-- 증거 부족: 지수적 스케일링이 밸런스 붕괴로 이어져 혹평을 받은 다른 게임의 구체적 사례는
-     확인하지 못함 -->
+ - Fact: A case was reported in which the developer directly changed the game balance to produce an extremely high score [source: GameRant, confirmed 2026-07].
+  Failure point: [interpretation] Layered multiplication makes even the designer’s ceiling difficult to predict. If ordinary players accidentally find the same combination, the rest of the content may become meaningless [source: GameRant, confirmed 2026-07].
+<!-- Evidence gap: no specific case was confirmed of another game receiving strong negative reviews because exponential scaling led to balance collapse. -->
 
 ## User Reaction Summary
-- 선호: 조커 조합이 서로 어떻게 상호작용하는지 패턴을 익히면서, 게임이 운이 아니라 통제된 최적화처럼
-  느껴지고 이것이 장기 재플레이성으로 이어진다 [source: kokutech 디자인 분석, 2026-07 확인]
-- 선호: 단순한 포커 족보에서 시작해 캐스케이딩 배율과 정교하게 맞춘 조커들을 통해 수백만 점을
-  만들어내는 과정 자체가 "숫자가 불어나는 것을 보는 단순한 즐거움"에 뿌리를 둔 파워 판타지가 된다
-  [source: kokutech 디자인 분석, 2026-07 확인]
+- Preference: Learning how Joker combinations interact makes the game feel like controlled optimization rather than luck, leading to long-term replayability [source: kokutech design analysis, confirmed 2026-07]
+- Preference: Starting from simple poker hands and using cascading multipliers and carefully matched Jokers to create millions becomes a power fantasy rooted in “the simple pleasure of watching numbers grow” [source: kokutech design analysis, confirmed 2026-07]
 
 ## Synergy
-- 좋음: ELEM-021 (친숙한 규칙 차용) - 원래 규칙에서 통상적인 점수 감각을 공짜로 제공받기 때문에, 그
-  감각을 초과하는 지수적 증가가 더 극적으로 체감된다
-- 좋음: ELEM-020 (덱 구축) - 곱셈 효과를 주는 카드를 언제 넣고 언제 뺄지가 곧 덱 구축의 핵심 판단이
-  된다
-- 충돌: ELEM-017 (가챠 확률 & 천장 시스템) - [interpretation] 가챠의 천장은 "예측 가능한 상한"을 약속하는
-  장치인데, 지수적 스케일링은 반대로 상한이 어디인지 설계자도 모르는 것이 특징이다. 같은 시스템 안에
-  섞으면 한쪽의 약속(예측 가능성)을 다른 쪽이 계속 깨뜨리게 된다
-- 좋음: ELEM-031 (시각 피드백 과장) - 수치 폭발은 화면 밀도로 번역돼야 체감된다. GAME-037이 이
-  조합의 실증 사례이고, GENRE-019는 두 요소를 함께 군집 구성 요소로 지목한다.
-- 장르 앵커: GENRE-013 (카지노 규칙 로그라이트), GENRE-019 (서바이버라이크), GENRE-027 (오토배틀러),
-  GENRE-037 (솔로 PvE 로그라이크 오토배틀러), GENRE-038 (방치형/증분형 게임) - 다섯 군집이 이 요소를
-  구성 요소로 지목한다. GENRE-027에서는 라운드가 진행될수록 시너지·강화가 곱해지며 전투력이 폭발적으로
-  불어나는 후반 스노우볼을 만든다 [source: GENRE-027 카드]. GENRE-038에서는 방치 시간에 비례해 재화가
-  기하급수적으로 불어나는 것이 장르의 핵심 동력이다 [source: GENRE-038 카드].
+- Good: ELEM-021 (Familiar Ruleset Appropriation) - Familiar score intuition comes for free from the original rules, making exponential growth beyond it feel more dramatic.
+- Good: ELEM-020 (Deck-building) - Deciding when to add or remove multiplicative cards becomes the core deck-building judgment.
+- Conflict: ELEM-017 (Gacha Probability & Pity System) - [interpretation] A gacha pity system promises a predictable ceiling, while exponential scaling is characterized by a ceiling even the designer may not know. Mixing them makes one promise continually break the other.
+- Good: ELEM-031 (Exaggerated Visual Feedback) - Numerical explosions must become screen density to be felt. GAME-037 demonstrates this combination, and GENRE-019 identifies both as cluster components.
+- Genre anchors: GENRE-013 (Casino-rules Roguelite), GENRE-019 (Survivorlike), GENRE-027 (Auto-battler), GENRE-037 (Solo PvE Roguelike Auto-battler), GENRE-038 (Idle/Incremental Game) - All five clusters identify this element as a component. GENRE-027 creates a late-game snowball as synergies and upgrades multiply [source: GENRE-027 card]. In GENRE-038, resources growing exponentially with idle time are a core genre driver [source: GENRE-038 card].
 
 ## Risks
-- [interpretation] 곱셈 구조는 설계자가 상한선을 사전에 정확히 계산하기 어렵다. GAME-031에서 개발자 본인이
-  밸런스를 바꿔 극단적 점수를 낸 사례가 이를 보여준다.
-- [interpretation] 좋은 조합을 우연히 발견한 플레이어와 그렇지 못한 플레이어 사이의 체감 난이도 격차가 매우
-  커질 수 있어, "실력"과 "발견 운"의 경계가 흐려진다.
-- [interpretation] 지수적으로 늘어나는 숫자는 화면 표시·UI 설계에도 부담을 준다. 숫자 자릿수가 계속 늘어나는
-  것을 시각적으로 어떻게 보여줄지 별도 설계가 필요하다.
+- [interpretation] Multiplication makes it difficult for designers to calculate the ceiling in advance. GAME-031’s developer-produced extreme score illustrates this.
+- [interpretation] The perceived difficulty gap between players who discover a strong combination by chance and those who do not can become very large, blurring the line between skill and discovery luck.
+- [interpretation] Exponentially growing numbers burden screen display and UI design. A separate design is needed for showing ever-increasing digit counts.

@@ -2,7 +2,7 @@
 card_id = "GAME-010"
 type = "mixed"
 title = "Suck Up! (2023, Proxima Enterprises)"
-summary = "AI 설득이 코어 루프인 첫 바이럴 사례 - 화제성 입증, 유지 실패"
+summary = "The first viral case with AI persuasion as its core loop—proving buzz, but failing at retention"
 genres = ["GENRE-003"]
 elements = ["ELEM-005", "ELEM-002"]
 tags = ["ai-native", "comedy", "voice", "viral-hook", "fragile"]
@@ -10,21 +10,20 @@ updated = "2026-07-15"
 confidence = "medium"            # 판매량 비공개, 평가 표본 작음(리뷰 189건)
 +++
 ## Summary and Sales/Review Metrics
-뱀파이어가 되어 AI 주민을 "말로" 속여 집에 초대받는 코미디 게임. 2023~24년
-스트리머·유튜브 플레이 영상으로 바이럴 [source: 공식 사이트 크리에이터 인용
-/유튜브, 2023-12]. 이후 Steam 정식 출시 평가는 "복합적(Mixed)" - 189건 중
-60% 긍정 [source: Steam 스토어, 2026-07 확인].
+A comedy game in which you become a vampire and trick AI residents “with words” into inviting you into their homes. It went viral through
+streamer and YouTube gameplay videos in 2023–24 [source: official site creator quote
+/YouTube, 2023-12]. Its later Steam full-release rating was “Mixed”—60% positive out of
+189 reviews [source: Steam store, 2026-07 check].
 
 ## Elements Used
-- ELEM-005 (AI 통합) - 성패 양면 증거. 음성 입력 → LLM 응답이 게임의 코어 루프 그 자체.
-- ELEM-002 (캠피) - 뱀파이어 클리셰를 능청스럽게 비트는 톤이 AI의 어색함을 개그로 흡수.
+- ELEM-005 (AI integration) - Evidence on both sides of success and failure. Voice input → LLM responses are the game’s core loop itself.
+- ELEM-002 (camp) - A deliberately cheeky twist on vampire clichés absorbs AI awkwardness into the comedy.
 
 ## Success/Failure Drivers
-- 사실: "내 진짜 목소리로 설득"이라는 체험이 방송·클립용 순간을 대량 생산 - AI가 코어 메커닉이 될 수 있음을 최초로 입증
-- 사실: 유지 실패의 불만이 구체적 - "좋은 프롬프트에도 AI 특유의 반복 말투", 환각(동의만 하면 풀리는 억지 상황), 버그 [source: Steam 리뷰, 2025-12~2026-01]
-- 사실: 대화 1회당 AI 토큰(서버 비용)을 소모하는 구조 - 운영비가 계속 발생 [source: The Magic Rain, 2024-04]
-- [interpretation] AI의 신선함은 감가상각이 빠름 - 첫 2시간의 마법이 20시간의 콘텐츠가 되려면 AI 위에 게임 구조(목표·변주·진행)가 얹혀야 함.
+- Fact: The experience of “persuading with my real voice” produced many broadcast- and clip-friendly moments—an early proof that AI can be a core mechanic
+- Fact: Retention complaints were specific: “AI’s characteristic repetitive speech even with good prompts,” hallucinations (contrived situations solved by mere agreement), and bugs [source: Steam reviews, 2025-12~2026-01]
+- Fact: Each conversation consumes AI tokens (server costs), creating ongoing operating expenses [source: The Magic Rain, 2024-04]
+- [interpretation] AI novelty depreciates quickly—the magic of the first two hours must be supported by game structure (goals, variation, progression) to become 20 hours of content.
 
 ## Implications for Our Project
-"AI와 말하기" 단독으로는 화제까지만 간다. 우리 해설자는 대화가 아니라
-게임 진행(루프 관찰·언급)에 묶여 있어야 소모되지 않는다 [interpretation].
+“Talking to AI” alone only goes as far as buzz. Our commentator must be tied to game progression (observing and mentioning the loop), not conversation, to avoid becoming disposable [interpretation].

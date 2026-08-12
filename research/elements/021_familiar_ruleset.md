@@ -1,73 +1,40 @@
 +++
 card_id = "ELEM-021"
 type = "mechanic"
-title = "친숙한 규칙 차용 (Familiar Ruleset Appropriation)"
-summary = "포커·블랙잭처럼 이미 대부분이 아는 규칙을 게임의 바탕으로 그대로 빌려와, 가르치는 비용 없이 그 위에 새 시스템만 얹는 방식"
+title = "Familiar Ruleset Appropriation (Familiar Ruleset Appropriation)"
+summary = "A method that borrows widely known rules such as poker or blackjack as the game's foundation and adds new systems without teaching costs"
 tags = ["onboarding", "low-cost", "indie", "solo-dev", "card-game", "regulation", "broad-appeal"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-게임의 규칙을 새로 발명하지 않고, 이미 세상 사람들이 다 아는 규칙을 그대로 빌려오는 방식입니다.
-포커의 족보, 블랙잭의 21 맞추기, 슬롯머신의 그림 맞추기 같은 것들입니다. 이렇게 하면 게임을 켜자마자
-플레이어가 무엇을 해야 하는지 이미 알고 있어서, 길고 지루한 튜토리얼이 거의 필요 없습니다. 만드는
-사람 입장에서는 설명하는 데 쓸 시간과 돈을 아낄 수 있습니다. 대신 빌려온 규칙만으로는 그냥 원래
-게임이 되기 때문에, 그 위에 원래 게임에는 없던 새 규칙을 얹어 완전히 다른 게임으로 비틀어야 합니다.
-빌린 것은 바탕일 뿐이고, 진짜 차별화는 얹은 것에서만 나옵니다. 그리고 한 가지 더 - 규칙을 빌리면
-그 규칙이 사회에서 어떻게 취급받는지도 같이 딸려 옵니다.
+This method borrows rules everyone already knows instead of inventing new ones: poker hand rankings, blackjack's target of 21, or matching pictures on a slot machine. Players already know what to do when they start, so a long tutorial is rarely needed, saving development time and money. But borrowed rules alone simply reproduce the original game, so new rules must twist them into something different. The borrowed rule is only the foundation; true differentiation comes from what is added. Borrowing a rule also imports the way society treats that rule.
 
 ## Success Cases
-- GAME-031 (Balatro) - 포커의 시각 언어를 쓰되 사람을 밀어낼 수 있는 실제 포커·텍사스 홀덤 규칙에는
-  의존하지 않는 방식으로 익명 1인 개발작이 전 플랫폼 누적 500만 장을 넘겼다 [source: Game Developer,
-  2024년 12월 기준]. 개발자는 표준 트럼프 카드가 거의 모든 문화권에 퍼져 있고 사람들이 카드를
-  정렬·배치하며 전략을 생각하기 좋아한다는 점을 근거로 들었다 [source: Rogueliker 인터뷰,
-  2026-07 확인].
-- Dungeons & Degenerate Gamblers - 같은 접근을 블랙잭에 적용해, 모든 전투가 21에 가깝게 맞추는
-  블랙잭 대결로 진행되고 그 규칙을 비트는 카드로 덱을 짠다 [source: PC Gamer, 2026-07 확인].
-  <!-- 증거 부족: 판매 수치 미확인. 필요 시 GAME 카드로 별도 발급 -->
-- GAME-038 (Buckshot Roulette) - 러시안 룰렛이라는 설명이 거의 필요 없는 규칙을 그대로 바탕으로 삼고
-  그 위에 아이템 심리전만 얹은 초저가 1인 개발작. 출시 2주 만에 100만 장, 2024-12 기준 누적 400만
-  장 [source: GAME-038 카드]. 카드 게임이 아닌 규칙에도 이 요소가 그대로 적용된다는 근거다.
-- GAME-054 (Dominocalypse) - 도미노 타일 매칭이라는 이미 널리 알려진 보드게임 규칙을 그대로 바탕으로
-  삼고 그 위에 로그라이크 아티팩트 시스템만 얹은 출시 예정작. 매체(GamingOnLinux)가 Balatro 이후
-  유행한 로그라이크-퍼즐 공식을 잇는 사례로 우호적으로 소개했으나, 아직 미출시라 판매·리뷰로
-  검증되지는 않았다 [source: GAME-054 카드]. 카드류를 넘어 도미노 같은 순수 보드게임 규칙까지
-  대상이 확장된 사례다.
+- GAME-031 (Balatro) - An anonymous solo-developed game that uses poker's visual language without relying on actual poker or Texas Hold'em rules that could alienate players exceeded 5,000,000 copies across all platforms [source: Game Developer, as of December 2024]. The developer cited the spread of standard playing cards across cultures and people's enjoyment of arranging cards and thinking strategically [source: Rogueliker interview, confirmed 2026-07].
+- Dungeons & Degenerate Gamblers - Applies the same approach to blackjack: every battle is a blackjack contest to get close to 21, and the deck is built from cards that twist those rules [source: PC Gamer, confirmed 2026-07].
+  <!-- Evidence gap: sales figures unconfirmed. Issue a separate GAME card if needed. -->
+- GAME-038 (Buckshot Roulette) - A very low-cost solo-developed game that takes the nearly self-explanatory Russian roulette rule as its foundation and adds only item mind games. It sold 1,000,000 copies within two weeks and 4,000,000 cumulatively as of 2024-12 [source: GAME-038 card]. This shows that the element applies to non-card rules as well.
+- GAME-054 (Dominocalypse) - An upcoming title based on the widely known board-game rule of matching domino tiles, with only a roguelike artifact system added on top. GamingOnLinux favorably introduced it as a continuation of the roguelike-puzzle formula popularized after Balatro, but it is unreleased and has not been validated by sales or reviews [source: GAME-054 card]. The scope extends beyond cards to pure board-game rules such as dominoes.
 
 ## Failure Cases
-- GAME-031 (Balatro) - 같은 요소의 대가. 2024년 3월 PEGI가 "두드러진 도박 이미지와 도박을 가르치는
-  내용"을 이유로 등급을 3+에서 18+로 올렸고, 그 여파로 유럽 여러 나라의 콘솔 디지털 스토어에서
-  한동안 판매가 중단됐다 [source: 검색 결과 종합(GameSpot·TheGamer 등 보도), 2024 기준]. 게임에는
-  마이크로트랜잭션도 페이투윈 요소도 없었다 [source: 같은 보도 종합, 2024 기준]. 이후 이의신청이
-  받아들여져 12+로 재분류됐다 [source: BBC News / focusgn 보도, 2024 기준].
-  실패 지점: 빌린 규칙의 사회적 맥락은 게임의 실제 설계와 무관하게 따라온다. 심의는 시스템이 아니라
-  화면에 보이는 것으로 판단했고, 판정이 뒤집히기까지의 기간 동안 매출 경로가 끊겼다.
-<!-- 증거 부족: 규칙 차용 자체가 실패 원인이 된 개별 타이틀은 확인하지 못해, 성공작에서 발생한
-     구조적 비용 사례로 대신함 -->
+- GAME-031 (Balatro) - The cost of the same element. In March 2024, PEGI raised its rating from 3+ to 18+ for "prominent gambling imagery and content that teaches gambling," temporarily stopping sales in console digital stores across several European countries [source: synthesis of reports from GameSpot, TheGamer, and others, as of 2024]. The game had neither microtransactions nor pay-to-win elements [source: synthesis of the same reports, as of 2024]. After an appeal, it was reclassified as 12+ [source: BBC News / focusgn report, as of 2024].
+  Failure point: The social context of a borrowed rule follows regardless of the game's actual design. The rating judged what appeared on screen rather than the system, cutting off sales channels until the decision was reversed.
+<!-- Evidence gap: no individual title was confirmed in which borrowing a rule itself caused failure; a structural-cost case from a successful title is used instead. -->
 
 ## User Reaction Summary
-- 선호: 규칙을 이미 알고 있어 바로 시작할 수 있다는 점 - 카드의 시각 언어만으로 무엇을 해야 하는지
-  파악된다 [source: GameSpace 분석 기사, 2026-07 확인]
-- 선호: 아는 규칙이 예상 밖으로 비틀릴 때의 놀라움 - 블랙잭 규칙을 비트는 카드로 덱을 짜는 식
-  [source: PC Gamer, 2026-07 확인]
-- 불호: 도박 규칙을 빌린 게임을 두고 사행성 논란이 반복적으로 제기됨 [source: PEGI 등급 논란 보도 종합,
-  2024 기준]
+- Preference: Players can start immediately because they already know the rules; the card visual language alone communicates what to do [source: GameSpace analysis article, confirmed 2026-07]
+- Preference: Surprise when a familiar rule is twisted unexpectedly, such as building a deck from cards that bend blackjack rules [source: PC Gamer, confirmed 2026-07]
+- Dislike: Repeated gambling-related controversy around games that borrow gambling rules [source: synthesis of PEGI-rating controversy reports, as of 2024]
 
 ## Synergy
-- 좋음: ELEM-020 (덱 구축) - 빌려온 규칙이 "무엇이 좋은 패인가"의 기준을 공짜로 제공하므로, 덱을
-  어떻게 짜야 하는지도 자동으로 설명된다
-- 좋음: ELEM-022 (지수적 점수 스케일링) - [interpretation] 원래 규칙에서 점수가 어느 정도인지 감이 있는 상태라,
-  그 감을 뛰어넘는 숫자가 나올 때 쾌감이 커진다. 기준선을 무료로 얻는 셈이다
-- 충돌: ELEM-005 (AI 통합) - [interpretation] 친숙한 규칙의 이점은 "결과를 예측할 수 있다"는 데 있는데, 실시간
-  생성 AI는 예측 불가능성을 늘리는 방향이라 도입 이유가 서로를 상쇄한다
-- 좋음: ELEM-010 (클립 기반 바이럴리티) - 규칙 설명 비용이 0에 가까우면 짧은 클립만으로도 게임이
-  이해되므로 확산 효율이 올라간다. GAME-038이 이 조합의 실증 사례다.
-- 장르 앵커: GENRE-013 (카지노 규칙 로그라이트), GENRE-035 (타일매칭 로그라이크 덱빌더) - 두 군집 모두 이 요소를 구성 요소로 지목한다. GENRE-013은 포커·블랙잭 같은 카드 규칙을, GENRE-035는 도미노·마작 같은 타일 배치 규칙을 빌린다는 점만 다르다.
+- Good: ELEM-020 (Deck-building) - The borrowed rule supplies the standard for "what is a good hand" for free, automatically explaining how to build the deck.
+- Good: ELEM-022 (Exponential Scoring) - [interpretation] Because players have an intuition for the score under the original rule, numbers beyond that baseline feel more pleasurable.
+- Conflict: ELEM-005 (AI Integration) - [interpretation] Familiar rules are valuable because outcomes are predictable, while real-time generative AI increases unpredictability; their reasons for adoption offset each other.
+- Good: ELEM-010 (Clip-based Virality) - With almost no rule-explanation cost, a short clip can communicate the game, improving spread efficiency. GAME-038 is an observed case.
+- Genre anchors: GENRE-013 (Casino-rules Roguelite), GENRE-035 (Tile-matching Roguelike Deckbuilder) - Both clusters identify this element as a component; GENRE-013 borrows card rules such as poker and blackjack, while GENRE-035 borrows tile-placement rules such as dominoes and mahjong.
 
 ## Risks
-- [interpretation] 규칙과 함께 규제·심의 맥락이 딸려 온다. 도박 계열 규칙은 특히 그렇고, GAME-031의 사례는
-  실제 도박 요소가 없어도 이 비용이 발생한다는 것을 보여준다.
-- [interpretation] 빌린 규칙은 경쟁자도 똑같이 빌릴 수 있다. 진입 장벽이 아니라 진입로를 여는 요소라, 차별화를
-  전적으로 "얹은 것"에 의존해야 한다.
-- [interpretation] 지역별로 친숙도가 다르다. 트럼프처럼 문화권을 넘는 규칙이 아니면 특정 시장에서만 통하는
-  이점이 되어, 글로벌 출시에서는 오히려 학습 비용이 생긴다.
+- [interpretation] Regulation and rating context arrive with the rule. Gambling-related rules are especially exposed; GAME-031 shows that this cost occurs even without actual gambling.
+- [interpretation] Competitors can borrow the same rule. It opens an entry route rather than creating an entry barrier, so differentiation depends entirely on what is added.
+- [interpretation] Familiarity varies by region. Unless the rule crosses cultures like playing cards, its benefit may work only in specific markets and create learning costs in a global launch.

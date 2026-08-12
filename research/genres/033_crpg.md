@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-033"
 type = "genre"
-title = "CRPG (선택 기반 파티 롤플레잉)"
-summary = "테이블탑 RPG 규칙을 충실히 재현한 파티 단위 롤플레잉 위에, 선택이 실제 서사 분기를 바꾸는 것이 코어인 군집"
+title = "CRPG (Choice-driven Party Role-playing)"
+summary = "A cluster built on party role-playing that faithfully reproduces tabletop RPG rules, with choices that actually change narrative branches as its core"
 elements = ["ELEM-007"]
 example_games = ["GAME-041"]
 tags = ["crpg", "narrative", "branching", "party-based", "tabletop", "co-op", "resurgent"]
@@ -10,23 +10,23 @@ updated = "2026-08-04"
 confidence = "medium"
 +++
 ## Components
-- ELEM-007 (선택 반응형 비-LLM 내러티브) - 군집의 정의 그 자체. 대사 선택이 실제 결과(동료 반응·퀘스트 분기)를 바꾸는, 미리 쓰인 분기 구조가 핵심이다.
-- [interpretation] 테이블탑 RPG(TRPG) 규칙을 소프트웨어로 충실히 재현하는 것도 공통 정체성이다 - 주사위 굴림, 클래스·특성 시스템을 그대로 들여온다.
-- [interpretation] 파티 단위 전투와 다인원 캐릭터 육성이 함께 따라붙는 구성 요소다.
+- ELEM-007 (choice-reactive non-LLM narrative) - the cluster's definition itself. The core is a pre-written branching structure in which dialogue choices change actual outcomes such as companion reactions and quest branches.
+- [interpretation] Faithfully reproducing tabletop RPG (TRPG) rules in software is also a shared identity - dice rolls and class/trait systems are brought over directly.
+- [interpretation] Party-based combat and development of multiple characters are accompanying components.
 
 ## Market Saturation
-- 사실: GAME-041(Baldur's Gate 3)이 2023-08 출시 후 Steam 누적 매출 약 6억 5,700만 달러, 이후 2년 누적 판매량 2,000만 장을 넘기며 CRPG를 주류 화제로 끌어올렸다 [source: GAME-041 카드].
-- 사실: Divinity: Original Sin 2(2017, Larian Studios)는 출시 두 달 만에 50만 장을 돌파했고 같은 해 11월 100만 장을 넘겼다 [source: TechSpot/Dualshockers 보도, 2017-09~11 기준].
-- [interpretation] BG3 흥행 이후 개발사들이 더 큰 예산과 자신감을 갖고 장르로 복귀하는 신호가 뚜렷하다 - Pathfinder: Wrath of the Righteous, Pillars of Eternity 같은 선배작의 성공이 이 흐름의 토대가 됐다는 평가가 있다 [source: Turn Based Lovers 등 업계 매체 종합, 2026 확인].
-- 사실: 2026년 한 해에만 Starfinder: Afterlight, Hollow Home, Guild Saga: Vanished Worlds 등 다수의 신작 아이소메트릭 CRPG가 개발 중으로 집계됐다 [source: RPGWatch/Turn Based Lovers 신작 목록, 2026 확인].
+- Fact: GAME-041 (Baldur's Gate 3) brought CRPGs into mainstream discussion after its 2023-08 release, with about $600,000,000 plus $57,000,000 in cumulative Steam revenue and more than 20,000,000 copies sold cumulatively over the following two years [source: GAME-041 card].
+- Fact: Divinity: Original Sin 2 (2017, Larian Studios) passed 500,000 copies two months after release and exceeded 1,000,000 in November of the same year [source: TechSpot/Dualshockers reporting, 2017-09 to 11].
+- [interpretation] After BG3's success, clear signs show developers returning to the genre with larger budgets and confidence - the success of predecessors such as Pathfinder: Wrath of the Righteous and Pillars of Eternity is considered a foundation for this trend [source: composite of industry media including Turn Based Lovers, verified 2026].
+- Fact: in 2026 alone, many new isometric CRPGs, including Starfinder: Afterlight, Hollow Home, and Guild Saga: Vanished Worlds, were counted as in development [source: RPGWatch/Turn Based Lovers new-release lists, verified 2026].
 <!-- 증거 부족: Disco Elysium 등 다른 대표작의 구체 판매량은 이번 조사에서 확인하지 못함 -->
 
 ## Conventions and Expectations
-- [interpretation] TRPG 규칙(주사위·클래스·특성)을 소프트웨어 규칙으로 그대로 옮기는 것이 기본 기대치다.
-- [interpretation] 선택이 대사 몇 줄이 아니라 퀘스트 분기·동료 관계·엔딩까지 바꿔야 한다는 기준이 BG3 이후 높아졌다는 평가가 있다 [source: Magic Game World 등 업계 매체 종합, 2026 확인].
-- [interpretation] 파티 구성원 각각의 개별 서사·특성을 갖추는 것도 관례로 자리잡았다.
+- [interpretation] The basic expectation is to carry TRPG rules (dice, classes, traits) directly into software rules.
+- [interpretation] The standard that choices must change not just a few lines of dialogue but quest branches, companion relationships, and endings is considered to have risen after BG3 [source: composite of industry media including Magic Game World, verified 2026].
+- [interpretation] Giving each party member an individual story and traits has also become conventional.
 
 ## Gaps
-[interpretation] ★ BG3 흥행 이후 몰려드는 신작 아이소메트릭 CRPG 대다수는 서사·전투 재현에 집중하지만, BG3가 결합했던 "완전 협동 플레이(최대 4인 동시 진행)"까지 갖춘 후속 사례는 이번 조사에서 확인하지 못했다 - 협동 CRPG는 여전히 사실상 BG3 단독 사례로 보인다.
-- 확인 방법: 위에서 확인한 2026년 신작 CRPG 목록 각각의 협동 플레이 지원 여부 개별 확인
-- 확인일: 2026-08-04 / 재확인 주기: 8주
+[interpretation] ★ Most new isometric CRPGs arriving after BG3's success focus on reproducing narrative and combat, but this research found no follow-up case with BG3's "full co-op play (up to 4 players progressing simultaneously)" - co-op CRPGs still appear effectively represented by BG3 alone.
+- How to verify: individually confirm co-op support for each new CRPG in the 2026 list checked above
+- Verified on: 2026-08-04 / Re-check interval: 8 weeks

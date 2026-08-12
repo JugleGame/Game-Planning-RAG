@@ -2,7 +2,7 @@
 card_id = "GAME-023"
 type = "mixed"
 title = "Diablo IV (2023, Blizzard Entertainment)"
-summary = "출시 직후 블리자드 역대 최고 흥행 기록을 세웠으나, 아이템화·엔드게임 설계에 대한 커뮤니티 반발이 이어진 다크 판타지 오픈월드 ARPG"
+summary = "A dark-fantasy open-world ARPG that set Blizzard's best launch record, while community backlash continued over itemization and endgame design"
 genres = ["GENRE-009", "GENRE-034"]
 elements = ["ELEM-016"]
 tags = ["arpg", "dark-fantasy", "open-world", "live-service", "itemization", "divisive", "aaa"]
@@ -10,20 +10,20 @@ updated = "2026-08-09"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-2023년 6월 6일 출시. 출시 5일 만에 매출 6억 6,600만 달러를 돌파해 블리자드 역대 최고 흥행 기록을 세움 [source: Activision Blizzard 공식 발표, 2023-06 기준]. Metacritic PC 88점, 반면 Metacritic 유저 스코어는 10점 만점에 2.2점으로 부정적 [source: Metacritic, 2026-07 확인].
+Released on 2023-06-06. It surpassed $600,000,000 + $66,000,000 in revenue within five days, setting Blizzard’s best launch record [source: Activision Blizzard official announcement, as of 2023-06]. Metacritic PC score: 88, while its Metacritic user score was negative at 2.2 out of 10 [source: Metacritic, 2026-07 check].
 
 ## Elements Used
-- ELEM-016 (그림다크 톤) - 시리즈 전통의 절망적·부패한 세계관을 오픈월드 규모로 확장. 다른 플레이어와 필드에서 마주치는 공유 월드 구조.
-- 조건부 발동 어픽스를 가진 전설(Legendary)/특별(Unique) 아이템 기반 빌드 시스템, 시즌제 엔드게임 콘텐츠.
+- ELEM-016 (grimdark tone) - Expands the series’ traditional despairing, corrupted world to open-world scale. A shared-world structure where players encounter others in the field.
+- A build system based on Legendary/Unique items with conditional affixes, plus seasonal endgame content.
 <!-- 증거 부족: 죽음 순환(ELEM-014)·스트레스 시스템(ELEM-015)에 해당하는 메커닉은 이 작품에서 확인되지 않아 연결하지 않음 -->
 
 ## Success/Failure Drivers
-- [interpretation] 시리즈 전통의 어두운 톤과 오픈월드를 결합해 초기 화제성과 매출을 동시에 잡았다.
-- 아이템 어픽스가 "적이 슬로우 상태일 때만 치명타 확률 증가" 같은 조건부 수식으로 복잡하게 설계돼, 캐릭터 파워의 82.6%가 장비에서 나오고 스킬트리·패시브의 영향력은 17% 수준에 그친다는 커뮤니티 분석이 나오며 "Damage on Tuesdays"라는 조롱성 밈이 확산됨 [source: dotesports / GameRant 커뮤니티 반응 종합 기사, 2023~2024 게재].
-- 개발진은 2023-11-30 캠프파이어 챗에서 해당 밈을 직접 언급하며 아이템화 개편을 예고함 [source: dotesports, 2023-11-30 게재 기사 재인용].
-- 2026-07-14~17 배포된 3.1.1/3.1.1a 패치에서 신화(Mythic) 아이템 관련 마찰을 추가로 완화함 - 호라드릭 큐브 신화 등급 강화 비용을 판데모니움 조각 5개→4개로 인하, "신화 아이템 1회 제작" 제한을 철폐 [source: Diablo IV 공식 패치노트(Blizzard News), 2026-07-14·07-17 기준 / 다이제스트 2026-07-27].
-- 2026-07-28 배포된 3.1.2 빌드(#73020) 패치는 Pit 종료 시 무적버블의 Whisper Ambush 보스 판정 오류, Whisper 아이콘 오인식 등을 고친 순수 버그 수정으로, 아이템화·마찰 관련 수치 변경은 없었다 - 07-14~17 마찰 완화 패치 이후 안정화 단계로 넘어간 신호로 보인다 [source: Blizzard 공식 패치노트/MP1st, 2026-07-28 기준 / 다이제스트 2026-07-31].
-- 2026-08-04~08-11 진행 중인 3.2.0 PTR(시즌 15 사전 테스트)은 신규 레거시 유니크·Soul Splinters·캐릭터 Rebirth·Horadric Post와 함께, 힘(Strength) 10당 대미지 증가율을 1.1%에서 0.8%로 낮추는 코어 스탯 스케일러 조정을 포함한다 - 07월의 아이템화 마찰 완화(재료 요구량 인하, 1회 제작 제한 철폐)와는 반대로, 이번엔 능력치 자체의 수치 스케일링을 낮추는 밸런스 조정 방향이다 [source: Blizzard 공식 뉴스, 2026-08-04 기준 / 다이제스트 2026-08-07].
+- [interpretation] Combining the series’ traditional dark tone with an open world captured both early buzz and sales.
+- Item affixes were complex conditional formulas such as “increased critical chance only when the enemy is slowed”; a community analysis said 82.6% of character power came from gear while skill trees and passives contributed about 17%, spreading the mocking meme “Damage on Tuesdays” [source: dotesports / GameRant aggregate article on community reactions, published 2023~2024].
+- In a 2023-11-30 campfire chat, the developers directly mentioned the meme and previewed an itemization overhaul [source: quoted dotesports article, published 2023-11-30].
+- The 3.1.1/3.1.1a patches released 2026-07-14~17 further reduced friction around Mythic items—lowering Horadric Cube Mythic upgrade cost from 5 to 4 Pandemonium Shards and removing the “craft a Mythic item once” limit [source: Diablo IV official patch notes (Blizzard News), as of 2026-07-14·07-17 / digest 2026-07-27].
+- The 3.1.2 build (#73020) released 2026-07-28 was a pure bug-fix patch for issues such as the Whisper Ambush boss judgment of the invulnerability bubble at Pit completion and misread Whisper icons, with no itemization or friction-number changes—it appears to signal stabilization after the 07-14~17 friction-reduction patches [source: Blizzard official patch notes/MP1st, as of 2026-07-28 / digest 2026-07-31].
+- The 3.2.0 PTR in progress 2026-08-04~08-11 (Season 15 pre-release test) includes new Legacy Uniques, Soul Splinters, character Rebirth, and Horadric Post, plus a core-stat scaler adjustment reducing damage growth per 10 Strength from 1.1% to 0.8%—unlike July’s itemization-friction reduction, this is a balance direction that lowers the numerical scaling of the stats themselves [source: Blizzard official news, as of 2026-08-04 / digest 2026-08-07].
 
 ## Implications for Our Project
-[interpretation] 다크 판타지의 톤(비주얼·서사)과 엔드게임 루프(아이템화·빌드 설계)는 서로 다른 설계 축이다 — 톤과 초기 화제성이 성공해도 루프 설계가 플레이어 기대를 못 따라가면 장기 리텐션에서 반발이 생긴다.
+[interpretation] Dark-fantasy tone (visuals and narrative) and the endgame loop (itemization and build design) are separate design axes—even if tone and early buzz succeed, backlash emerges in long-term retention when loop design fails to meet player expectations.

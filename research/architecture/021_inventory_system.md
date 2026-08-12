@@ -1,62 +1,68 @@
 +++
 card_id = "ARCH-021"
 type = "pattern"
-title = "인벤토리 시스템 (Inventory / Item Database, ScriptableObject 기반)"
-summary = "아이템의 '정의'(이름, 아이콘, 능력치)와 '보유 상태'(개수, 내구도)를 분리해, 데이터 자산 하나로 여러 캐릭터·슬롯이 같은 아이템 정보를 공유하게 만드는 구조"
+title = "Inventory System (Inventory / Item Database, ScriptableObject Based)"
+summary = "A structure that separates an item's 'definition' (name, icon, stats) from its 'held state' (count, durability), so that a single data asset lets multiple characters and slots share the same item information"
 tags = ["inventory", "item", "scriptableobject", "rpg", "unity", "pattern"]
 updated = "2026-07-31"
 confidence = "high"
 +++
 ## Problem
-아이템마다 이름·아이콘·설명·능력치를 클래스에 하드코딩하면, 아이템이 100개만
-넘어가도 수치 하나 바꾸려고 코드를 재컴파일해야 한다. 또한 "포션 3개를 들고
-있다"는 상태와 "포션이란 무엇인가"라는 정의를 같은 곳에 뒤섞으면, 같은 포션을
-여러 캐릭터가 들고 있을 때 정의가 중복 저장된다.
+If each item's name, icon, description, and stats are hardcoded into a class, then once there
+are just over 100 items you must recompile the code to change a single number. Moreover, if the
+state "I am holding 3 potions" and the definition "what a potion is" are mixed together in the
+same place, the definition gets stored redundantly whenever multiple characters hold the same
+potion.
 
 ## Structure
-- 기준 형식: 아이템 정의는 ScriptableObject 자산(ItemData)으로 만들어 프로젝트에
-  저장하고, 실제 인벤토리 슬롯은 그 자산을 참조하는 ID/개수 쌍만 들고 있는다
-  [source: gamedevbeginner.com, generalistprogrammer.com 튜토리얼 종합, 2026 확인].
-  ARCH-012(Data/ 데이터 자산 규약)의 원칙을 아이템에 적용한 구체 사례다.
-- 계층 분리: (1) 아이템 정의 자산 (2) 인벤토리 슬롯 데이터(어떤 정의를 몇 개
-  들고 있는지) (3) UI 표시 - 세 계층을 분리하면 UI를 갈아엎어도 데이터 구조가
-  안 흔들린다 [source: pavcreations.com 장비 시스템 아키텍처 분석].
+- Baseline form: item definitions are made as ScriptableObject assets (ItemData) stored in the
+  project, and the actual inventory slots hold only an ID/count pair referencing that asset
+  [source: gamedevbeginner.com, generalistprogrammer.com tutorials combined, verified 2026].
+  It is a concrete case of applying the principle of ARCH-012 (Data/ data asset convention) to
+  items.
+- Layer separation: (1) item definition asset (2) inventory slot data (which definition is held
+  and how many) (3) UI display - separating the three layers means the data structure does not
+  wobble even if you tear up the UI [source: pavcreations.com equipment system architecture
+  analysis].
 
 ## Core Rules
-- ScriptableObject 자산은 "정의"만 담고 "상태"(현재 개수, 내구도)는 담지 않는다
-  - 자산은 에디터에 저장된 공유 데이터라, 런타임에 상태를 직접 자산에 쓰면 모든
-  캐릭터가 그 상태를 공유하는 버그가 생긴다.
-- 인벤토리 슬롯은 아이템 정의를 참조(ID 또는 SO 레퍼런스)만 하고, 수량·내구도
-  같은 가변 데이터는 별도의 런타임 클래스에 둔다.
-- 저장(ARCH-004 세이브 시스템)과 연동 시, 아이템은 자산 자체가 아니라 "아이템 ID +
-  수량"만 JSON으로 직렬화한다 - ScriptableObject는 직접 직렬화 대상이 아니다.
+- A ScriptableObject asset holds only the "definition", not the "state" (current count,
+  durability) - the asset is shared data saved in the editor, so writing state directly into
+  the asset at runtime produces a bug where all characters share that state.
+- An inventory slot only references the item definition (by ID or SO reference), and mutable
+  data such as quantity and durability lives in a separate runtime class.
+- When integrating with saving (ARCH-004 save system), serialize only "item ID + quantity" to
+  JSON, not the asset itself - ScriptableObjects are not direct serialization targets.
 
 ## Unity Implementation Steps
-1. `ItemData : ScriptableObject`에 이름, 아이콘, 설명, 스택 가능 여부, 타입을 정의.
-2. 아이템별 `.asset` 파일을 `Data/Items/`에 생성 (ARCH-008 폴더 규약 준수).
-3. 인벤토리는 `List<InventorySlot>`으로 관리하며, 각 슬롯은 `ItemData` 참조와
-   현재 수량만 가진다.
-4. UI는 인벤토리 리스트를 순회하며 슬롯이 참조하는 `ItemData`의 아이콘·이름을
-   표시한다 - UI가 직접 아이템 속성을 하드코딩하지 않는다.
-5. 세이브 시 슬롯을 `{itemId, count}` 배열로 직렬화하고, 로드 시 ID로 `ItemData`
-   자산을 다시 찾아 연결한다.
+1. Define name, icon, description, stackability, and type on `ItemData : ScriptableObject`.
+2. Create a `.asset` file per item in `Data/Items/` (following the ARCH-008 folder convention).
+3. Manage the inventory as a `List<InventorySlot>`, where each slot holds only an `ItemData`
+   reference and the current quantity.
+4. The UI iterates the inventory list and displays the icon and name of the `ItemData` each
+   slot references - the UI does not hardcode item attributes itself.
+5. On save, serialize slots as a `{itemId, count}` array; on load, look the `ItemData` asset up
+   again by ID and reconnect it.
 
 ## Anti-patterns
-- 아이템 하나마다 별도 클래스를 만드는 것: 아이템 수가 늘어날 때마다 새 클래스가
-  필요해 확장성이 떨어진다.
-- ScriptableObject 자산 필드에 런타임 중 수량을 직접 덮어쓰는 것: 자산은 프로젝트
-  전역에서 공유되므로, 한 캐릭터의 사용이 다른 모든 캐릭터의 값을 바꿔버린다.
-- 인벤토리 UI 코드에 아이템 종류별 `if/switch` 분기를 넣는 것: 새 아이템 추가마다
-  UI 코드를 고쳐야 해 데이터 주도 설계의 이점이 사라진다.
+- Making a separate class for every single item: every increase in item count requires a new
+  class, hurting extensibility.
+- Overwriting quantity directly onto ScriptableObject asset fields at runtime: the asset is
+  shared project-wide, so one character's usage changes the value for all other characters.
+- Putting per-item-type `if/switch` branches into the inventory UI code: every new item
+  requires fixing the UI code, losing the benefit of data-driven design.
 
 ## Verification
-- 상태 격리 검사: 캐릭터 A가 아이템을 사용해도 캐릭터 B의 동일 아이템 수량이
-  변하지 않아야 한다.
-- 세이브/로드 검사: 인벤토리 저장 후 재시작 시 수량과 종류가 정확히 복원돼야 한다.
-- 콘솔 청결: 존재하지 않는 ID를 로드 시도할 때만 경고가 뜨고, 정상 플레이 중에는
-  0건이어야 한다.
+- State isolation check: even if character A uses an item, the quantity of the same item for
+  character B must not change.
+- Save/load check: after saving the inventory and restarting, quantities and types must be
+  restored exactly.
+- Console cleanliness: warnings should appear only when attempting to load a nonexistent ID,
+  and must be 0 during normal play.
 
 ## Synergy
-- ARCH-012 (Data/ 데이터 자산 규약): 이 패턴이 그 규약의 구체 적용 사례.
-- ARCH-004 (세이브 시스템, JSON 직렬화): 인벤토리 상태를 저장·복원하는 직접적 소비자.
-- ELEM-019 (무작위 전리품 드롭): 드롭된 아이템이 인벤토리에 들어갈 때 이 구조를 통한다.
+- ARCH-012 (Data/ data asset convention): this pattern is a concrete application case of that
+  convention.
+- ARCH-004 (Save system, JSON serialization): the direct consumer that saves and restores
+  inventory state.
+- ELEM-019 (Random loot drops): dropped items go through this structure when entering the inventory.

@@ -1,81 +1,82 @@
 +++
 card_id = "ARCH-027"
 type = "structure"
-title = "URP 2D 라이팅 (2D Renderer + Light 2D + Shadow Caster 2D)"
-summary = "2D 화면의 밝기와 분위기를 스프라이트에 그려 넣지 않고 조명 오브젝트와 정렬 레이어별 영향 범위로 조립하는 렌더링 구조"
+title = "URP 2D Lighting (2D Renderer + Light 2D + Shadow Caster 2D)"
+summary = "2D A rendering structure that assembles the brightness and atmosphere of the screen into the range of influence for each lighting object and alignment layer, rather than drawing it into a sprite."
 tags = ["lighting", "urp", "light2d", "rendering", "2d", "unity", "atmosphere"]
 updated = "2026-08-02"
 confidence = "medium"
 +++
 ## Problem
-2D에서 밤·동굴·횃불 같은 분위기를 내려면, 스프라이트마다 어두운 버전을 따로 그리거나 검은
-반투명 판을 덮는 방법을 쓰게 된다. 전자는 그림 작업이 배로 늘고, 후자는 화면 전체가 똑같이
-어두워져 "여기만 밝다"를 표현할 수 없다. 그림은 그대로 두고 조명을 따로 두는 것이 이 구조다.
-무대 위 배우는 그대로인데 조명이 바뀌면 장면이 바뀌는 것과 같다.
+To create a night, cave, or torch-like atmosphere in 2D, draw a dark version of each sprite separately or use a black
+A method of covering a translucent plate is used. In the former, the drawing work is doubled, and in the latter, the entire screen is the same.
+It's getting dark so I can't express "it's only bright here." This structure leaves the picture as is and sets the lighting separately.
+It's like the actors on stage remain the same, but when the lighting changes, the scene changes.
 
 ## Structure
-- 렌더 파이프라인을 URP로 두고 2D 렌더러를 쓰는 것이 전제다. 이 설정이 없으면 아래 부품들이
-  동작하지 않는다.
-- 조명은 종류로 나뉜다. 화면 전체를 고르게 밝히는 전역(Global), 원하는 모양을 직접 그리는
-  자유형(Freeform), 스프라이트 모양을 그대로 쓰는 스프라이트형, 방향과 각도를 가진 스팟형이
-  있다 [source: Unity 매뉴얼 'Introduction to 2D lighting in URP', 2026-08 확인].
-- 전역 조명은 감쇠 없이 대상 스프라이트를 균일하게 밝히며, 블렌드 스타일과 정렬 레이어
-  조합당 하나만 쓸 수 있다 [source: Unity 매뉴얼 'Introduction to 2D lighting in URP', 2026-08 확인].
-- **조명의 영향 범위는 정렬 레이어 단위로 지정한다.** 그래서 이 구조는 정렬 규약(ARCH-025)
-  위에 얹히며, 레이어 목록이 정리돼 있지 않으면 조명 설정이 곧바로 혼란해진다.
-- 그림자가 필요하면 그림자를 던질 오브젝트에 Shadow Caster 2D를 붙여 모양을 정의한다.
-  그림자 세기는 없음에서 최대까지 조절한다 [source: Unity 매뉴얼 'Light 2D component reference for URP', 2026-08 확인].
-- 스프라이트에 노멀 맵을 붙이면 조명이 그 요철 정보를 읽어 입체감 있는 음영을 만든다 [source: Unity 매뉴얼 'Introduction to 2D lighting in URP', 2026-08 확인].
-- [interpretation] 이 구조에서 아트 자산은 "밝은 상태 하나"만 있으면 된다. 어두운 상태는 자산이 아니라
-  씬 설정이 된다.
+- The premise is to set the render pipeline to URP and use the 2D renderer. Without this setting, the parts below
+It doesn't work.
+- Lighting is divided into types. Global, which illuminates the entire screen evenly, allows you to directly draw the desired shape
+Freeform, sprite type that uses the sprite shape as is, and spot type with direction and angle.
+There is [source: Unity manual 'Introduction to 2D lighting in URP', check 2026-08].
+- Global illumination illuminates the target sprite evenly without attenuation, blend styles and alignment layers
+Only one can be used per combination. [source: Check Unity manual 'Introduction to 2D lighting in URP', 2026-08].
+- **The range of influence of lighting is specified in units of sorting layers.** So this structure follows the sorting convention (ARCH-025)
+It's on top, and if the layer list isn't organized, your lighting setup will quickly become confusing.
+- If a shadow is needed, define the shape by attaching Shadow Caster 2D to the object that will cast the shadow.
+Adjust the shadow intensity from none to maximum. [source: Check Unity manual 'Light 2D component reference for URP', 2026-08].
+- If you attach a normal map to a sprite, the lighting reads the irregularity information to create three-dimensional shading. [source: Unity manual 'Introduction to 2D lighting in URP', check 2026-08].
+- [interpretation] In this structure, the art asset only needs to have "one bright state". Darkness is not an asset
+The scene is set.
 
 ## Core Rules
-- 조명 설계는 정렬 레이어 목록이 확정된 뒤에 시작한다. 레이어가 늘어나면 모든 조명의 영향
-  범위를 다시 손봐야 한다.
-- 기본 밝기는 전역 조명 하나로 잡는다. 전역 조명 없이 국소 조명만 두면 나머지 화면이 완전히
-  검게 남는다.
-- 자유형 조명의 외곽선은 스스로 교차하지 않게 그린다. 교차하거나 감쇠 영역이 겹치면 의도하지
-  않은 결과가 나온다 [source: Unity 매뉴얼 'Light 2D component reference for URP', 2026-08 확인].
-- 조명 오브젝트는 월드에 속하므로 청크 씬에 넣는다. World_Base에 두지 않는다 [source: reference/unity_project_baseline.md 3절 청크 규칙].
-- UI는 이 조명의 대상이 아니다. UI가 어두워지면 읽을 수 없게 된다(ARCH-014).
-- 게임플레이 판정을 밝기로 대신하지 않는다. 시야·은신 같은 규칙이 필요하면 그 판정은 별도
-  로직이어야 하며, 조명은 그 결과를 보여줄 뿐이다.
+- Lighting design begins after the sorting layer list is confirmed. As layers increase, all lights are affected.
+The scope needs to be revisited.
+- The basic brightness is set to one global illumination. With only local lighting and no global illumination, the rest of the screen is completely
+It remains black.
+- Draw the outline of the free-form light so that it does not cross itself. If intersecting or overlapping attenuation areas occur,
+[source: Unity manual 'Light 2D component reference for URP', check 2026-08].
+- Lighting objects belong to the world, so put them in the chunk scene. Do not place in World_Base [source: reference/unity_project_baseline.md 3 clause chunk rule].
+- The UI is not subject to this lighting. When the UI becomes dark, it becomes unreadable (ARCH-014).
+- Gameplay judgment is not replaced by brightness. If rules such as vision or stealth are needed, those decisions are made separately.
+It has to be logic, and lighting just shows the result.
 
 ## Unity Implementation Steps
-1. 프로젝트를 URP로 설정하고 렌더러를 2D 렌더러로 지정한다. 기존 자재(머티리얼)가 분홍색으로
-   보이면 이 단계에서 변환이 필요하다는 신호다.
-2. 전역 조명을 하나 두고 기본 밝기를 잡는다. 낮·밤처럼 상태가 여럿이면 값만 바꿔 비교한다.
-3. 조명이 영향을 줄 정렬 레이어를 조명마다 지정한다. 여기서 배경만 밝히기, 캐릭터만 밝히기가
-   갈린다.
-4. 횃불·창문처럼 국소 광원은 자유형이나 스프라이트형으로 만들어 해당 청크 씬에 배치한다.
-5. 그림자가 필요한 벽·기둥에 Shadow Caster 2D를 붙이고 모양을 실루엣에 맞춘다.
-6. 입체감이 필요한 스프라이트에만 노멀 맵을 만든다. 전부에 붙이면 자산 작업량과 메모리가 함께 는다.
-7. 조명 상태 변화(낮→밤, 정전)는 조명 오브젝트를 직접 부르지 말고 방송을 통해 반영한다(ARCH-001).
+1. Set the project to URP and specify the renderer as 2D renderer. Existing materials are colored pink.
+If you see it, it is a sign that conversion is needed at this stage.
+2. Set one global light and set the default brightness. If there are multiple states, such as day and night, only the values ​​are changed and compared.
+3. Specify for each light the alignment layer that the light will affect. Here, only the background and the characters are revealed.
+It's different.
+4. Local light sources, such as torches and windows, are created as freehand or sprite types and placed in the corresponding chunk scene.
+5. Attach Shadow Caster 2D to walls and pillars that require shadows and match the shape to the silhouette.
+6. Create a normal map only for sprites that require a three-dimensional effect. If you attach it to all, both asset workload and memory increase.
+7. Changes in lighting status (day → night, power outage) are reflected through broadcasting rather than calling the lighting object directly (ARCH-001).
 
 ## Anti-patterns
-- 스프라이트마다 밝은 버전·어두운 버전 따로 그리기: 자산이 두 배가 되고 중간 밝기는 표현할 수 없다.
-- 반투명 검은 판으로 밤 표현: 국소 광원을 만들 수 없고, UI까지 함께 어두워지기 쉽다.
-- 조명마다 영향 레이어를 다르게 즉흥 지정: 어느 조명이 어디에 닿는지 아무도 추적할 수 없게 된다.
-- 전역 조명 없이 시작: 조명 밖 영역이 새까매져 레벨 작업 자체가 불가능해진다.
-- 조명 오브젝트를 상시 씬에 두기: 청크가 바뀌어도 남아 엉뚱한 곳을 밝힌다.
-- 성능 확인 없이 광원 남발: 2D 조명은 공짜가 아니며 저사양 기기에서 먼저 문제가 드러난다.
+- Drawing separate light and dark versions of each sprite: the assets are doubled and medium brightness cannot be expressed.
+- Representing night with a translucent black plate: It is not possible to create a local light source, and it is easy for the UI to become dark as well.
+- Improvise different influence layers for each light: no one will be able to keep track of which light hits where.
+- Starting without global lighting: Areas outside the lighting become completely black, making level work impossible.
+- Keep a lighting object in the scene at all times: Even if the chunk changes, it remains and lights up the wrong place.
+- Overuse of light sources without checking performance: 2D Lighting is not free, and problems first appear in low-end devices.
 
 ## Verification
-- 설정 검사: 렌더 파이프라인이 URP이고 렌더러가 2D 렌더러여야 한다. 분홍색으로 보이는
-  오브젝트가 없어야 한다.
-- 범위 검사: 각 조명의 대상 정렬 레이어 목록이 문서화된 의도와 일치해야 한다.
-- 밝기 검사: 전역 조명을 끄면 국소 광원 주변만 밝고 나머지는 어두워져야 한다. 변화가 없으면
-  조명이 실제로 적용되지 않은 것이다.
-- 그림자 검사: 그림자 캐스터를 가진 오브젝트 뒤로 그림자가 생기고, 세기를 없음으로 두면
-  사라져야 한다.
-- 성능 검사: 광원이 가장 많은 청크에서 프레임 수치를 기록하고 기준을 초과하지 않는지 확인한다.
-- 콘솔 검사: 청크 진입·이탈 반복 중 콘솔 에러 0개 [source: reference/unity_project_baseline.md 4절 자체 점검].
+- Configuration check: The render pipeline must be URP and the renderer must be the 2D renderer. looks pink
+There must be no object.
+- Range check: The target alignment layer list for each light must match the documented intent.
+- Brightness check: When global lighting is turned off, only the area around the local light source should be bright and the rest should be dark. If there is no change
+The lighting is not actually applied.
+- Shadow check: A shadow appears behind an object with a shadow caster, and if the intensity is set to none,
+It must disappear.
+- Performance check: Record the frame number in the chunk with the most light sources and check that it does not exceed the standard.
+- Console inspection: Console error 0 while repeating chunk entry/exit [source: reference/unity_project_baseline.md 4 section self-check].
 
 ## Synergy
-- ARCH-025 (2D 정렬 순서 규약): 전제 조건. 조명의 영향 범위 단위가 정렬 레이어다.
-- ARCH-024 (타일맵 레벨 구조): 조명을 받는 대상. 겹 구분이 곧 밝힐 대상 구분이 된다.
-- ARCH-002 (씬 스트리밍) / ARCH-003 (청크 로더): 조명 오브젝트의 수명 경계.
-- ARCH-013 (2D 카메라 추적): 카메라 설정과 함께 최종 화면을 결정한다.
-- ARCH-014 (UI 캔버스 구조): 조명 대상에서 제외되는 경계.
-- ELEM-013 (도트 그래픽 아트 스타일): 궁합 주의 — 픽셀 아트는 부드러운 감쇠와 노멀 맵 음영이
-  도트의 경계를 흐릴 수 있어, 아트 스타일 쪽에서 조명 강도의 상한을 정해두는 편이 안전하다.
+- ARCH-025 (2D sort order convention): Prerequisite. The unit of influence of lighting is the alignment layer.
+- ARCH-024 (tile map level structure): The object receiving the light. The division of layers becomes the division of objects that will soon be revealed.
+- ARCH-002 (Scene Streaming) / ARCH-003 (Chunk Loader): Lifetime bounds for lighting objects.
+- ARCH-013 (2D camera tracking): Determines the final screen along with the camera settings.
+- ARCH-014 (UI Canvas Structure): Border excluded from lighting.
+- ELEM-013 (Dot Graphic Art Style): Be careful about compatibility — pixel art has smooth falloff and normal map shading.
+Since the boundaries of the dots can be blurred, it is safer to set an upper limit on the lighting intensity in terms of the art style.
+

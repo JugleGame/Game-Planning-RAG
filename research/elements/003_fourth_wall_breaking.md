@@ -1,36 +1,39 @@
 +++
 card_id = "ELEM-003"
 type = "narrative-device"        # 허용값: mechanic | narrative-device | tone | tech
-title = "제 4의 벽 붕괴 (Fourth Wall Breaking)"
-summary = "게임 속 존재가 화면 밖의 플레이어를 알아보고 직접 말을 거는 장치"
+title = "Fourth Wall Breaking"
+summary = "A device that allows in-game entities to recognize players off-screen and speak directly to them"
 tags = ["meta", "narrative", "viral-hook", "overuse-risk"]
 updated = "2026-07-31"
 confidence = "high"              # 기준: 출처 있는 수치 + GAME 근거 3건 이상
 +++
 ## Definition
-게임 캐릭터는 보통 게임 세계 안의 일만 압니다. 그런데 어떤 캐릭터가 갑자기
-"너, 지금 화면 앞에 앉아 있는 사람 맞지?"라고 말을 겁니다. 게임과 현실
-사이의 보이지 않는 벽(제4의 벽)을 캐릭터가 스스로 깨고 나오는 장치입니다.
+Game characters usually only know what's going on within the game world. But suddenly a certain character
+“You’re the one sitting in front of the screen right now, right?” they say. games and reality
+It is a device that allows the character to break through the invisible wall between them (4 wall) on their own.
 
 ## Success Cases
-- GAME-001 (Inscryption) - 평범한 카드 게임인 척하다 저장 파일과 현실로 이야기를 확장. "장르를 배신하는 순간"이 입소문의 핵.
-- GAME-002 (Undertale) - 플레이어의 과거 선택(죽인 기록)을 캐릭터가 기억하고 언급. 세이브/리셋조차 이야기의 일부.
-- GAME-003 (OneShot) - 게임이 OS 창과 바탕화면까지 개입. "게임이 나를 안다"는 감각의 극단.
-- GAME-013 (The Stanley Parable) - 내레이터가 플레이어의 실시간 선택을 그 자리에서 코멘트하고 "불복종" 자체를 서사의 재료로 삼음. 원작은 1년 내 누적 100만 장, Ultra Deluxe는 리뷰 24,119건 중 94% 긍정 [source: GAME-013 카드].
+- GAME-001 (Inscryption) - Pretends to be an ordinary card game, then expands the story with save files and reality. “The moment that betrays the genre” is the key to word of mouth.
+- GAME-002 (Undertale) - The character remembers and comments on the player's past choices (kills). Even save/reset is part of the story.
+- GAME-003 (OneShot) - The game intervenes in the OS window and desktop. The extreme of the feeling that “the game knows me.”
+- GAME-013 (The Stanley Parable) - The narrator comments on the player's real-time choices on the spot and uses "disobedience" itself as material for the narrative. The original has 1,000,000 copies in the past year, and the Ultra Deluxe has 94% positive [source: GAME-013 cards out of 24,119 reviews].
 
 ## Failure Cases
-- GAME-005 (Twelve Minutes) - 벽을 깨는 반전은 있으나 기본 루프가 노동이 되어 장치가 힘을 잃음. 실패 지점: 메타 장치는 밑바탕 루프가 재미있어야만 작동.
+- GAME-005 (Twelve Minutes) - There is a twist that breaks the wall, but the basic loop becomes labor and the device loses power. Point of Failure: Meta devices only work if the underlying loop is interesting.
 
 ## User Reaction Summary
-- 선호: "스포일러 없이 친구에게 추천하고 싶다", "게임이 나를 지켜보고 있었다" 계열의 충격 후기 [source: GAME-001~003 카드의 Steam 리뷰 키워드 참조]
-- 불호: 두 번째 플레이에서는 충격이 재현되지 않음 - 1회성 한계 [source: Reddit r/Games 관련 스레드, 2026-07 확인]
+- Preference: “I want to recommend it to a friend without spoilers”, “The game was watching me” type of shock review [source: GAME-001~003 (see Steam review keywords for cards)]
+- Unfavorable: Impact not reproduced on second play - 1 replay limit [source: Reddit r/Games related thread, check 2026-07]
 
 ## Synergy
-- 좋음: ELEM-002 (캠피) - 벽을 깨는 캐릭터가 능청스러우면 공포가 아닌 유쾌함으로 착지함
-- 좋음: ELEM-005 (AI 통합) - 실시간 반응이 "정말 나를 본다"는 감각을 대본 없이 재현 가능하게 함
-- 충돌[interpretation]: ELEM-001 (티저 기반 공개) - 정보를 숨기는 장치와 직접 말 거는 장치를 같은 장면에 쓰면 긴장이 서로 상쇄됨
-- 장르 앵커: GENRE-001 (메타 내러티브 인디) - 이 군집이 이 요소를 구성 요소로 지목한다. 
+- Good: ELEM-002 (campy) - If the character breaking the wall is clever, it will land with cheerfulness rather than fear.
+- Good: ELEM-005 (AI integration) - Real-time reactions allow you to recreate the feeling of “really seeing me” without a script
+- Conflict [interpretation]: ELEM-001 (teaser-based release) - When a device that hides information and a device that speaks directly are used in the same scene, the tension cancels out each other.
+- Genre Anchor: GENRE-001 (Meta Narrative Indie) - This cluster points to this element as a component.
 
 ## Risks
-- [interpretation] 본질적으로 1회성 장치 - 화제성(확산)에는 강하나 리텐션(유지)에는 기여 낮음. 반복 가능한 형태(AI 실시간 반응)로 변형 필요.
-- [interpretation] 남용 시 "억지 밈" 취급 위험 - 쉼 없는 메타 개그가 피로가 된 GAME-007 (High on Life) 참조.
+- [interpretation] Essentially a 1 disposable device - Strong in topicality (spreading) but low in retention (maintenance). Requires transformation into a repeatable form (AI real-time response).
+- Risk of treating [interpretation] as a "forced meme" when overused - See GAME-007 (High on Life), where endless meta gags become fatigue.
+
+
+

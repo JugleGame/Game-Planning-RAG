@@ -2,7 +2,7 @@
 card_id = "GAME-004"
 type = "failure"
 title = "ANTHEM (2019, BioWare / EA)"
-summary = "티저와 약속의 크기를 결과물이 못 따라간 과대약속 실패의 대표 사례"
+summary = "The representative case of overpromise failure, where the deliverable could not match the size of the teasers and promises"
 genres = ["GENRE-011"]         # GENRE-011(루트 슈터) 카드가 2026-07-29 작성되며 이 게임을 실패 사례로 지목
 elements = ["ELEM-001"]
 tags = ["looter-shooter", "live-service", "aaa", "cautionary"]
@@ -10,19 +10,19 @@ updated = "2026-07-31"
 confidence = "high"              # 수치는 공식 발표·집계 기반
 +++
 ## Summary and Sales/Review Metrics
-BioWare의 라이브서비스 루터슈터. 누적 500만 장을 팔고도 기대 미달로 판정,
-Metacritic 54~59점 - 스튜디오 역사상 최저 평점 [source: Wikipedia/GamesRadar
-집계, 2026-01]. 2021-02 개발 전면 중단, 2026-01-12 서버 종료로 플레이 자체가
-불가능해짐 [source: EA 발표/보도, 2026-01].
+BioWare's live-service looter shooter. Despite selling a cumulative 5,000,000 units, it was judged to have missed expectations,
+with Metacritic 54-59 - the lowest rating in the studio's history [source: Wikipedia/GamesRadar
+aggregate, 2026-01]. Development was fully halted in 2021-02, and with the server shutdown on 2026-01-12 playing it became
+impossible altogether [source: EA announcement/press coverage, 2026-01].
 
 ## Elements Used
-- ELEM-001 (티저 기반 공개) - 실패 측 증거. 공개 시연과 마케팅이 심어준 기대(비행, 광활한 세계, BioWare 서사)에 비해 콘텐츠·미션 다양성·서사가 크게 미달.
+- ELEM-001 (Teaser-Based Reveal) - evidence on the failure side. Compared to the expectations planted by the reveal demo and marketing (flight, a vast world, BioWare narrative), the content, mission variety, and narrative fell far short.
 
 ## Success/Failure Drivers
-- 사실: 판매 500만 장은 확보 - "떡밥"의 견인력 자체는 실재했음 [source: Wikipedia]
-- 사실: 평단·유저 공통 비판이 "반복적 그라인드, 콘텐츠 부족, 미완성" - 회수 실패로 수렴 [source: 출시 리뷰 집계]
-- [interpretation] 티저는 부채다 - 기대를 심은 만큼 갚아야 하며, 회수가 허무하면 판매 이후의 모든 것(평판, 라이브서비스 지속성, 스튜디오 신뢰)이 무너짐. "잠재력이 아까웠다"는 종료일의 애도가 그 증거.
+- Fact: sales of 5,000,000 units were secured - the pulling power of the "hook" itself was real [source: Wikipedia]
+- Fact: the common criticism from both critics and users was "repetitive grind, lack of content, unfinished" - converging on a failure of payoff [source: launch review aggregate]
+- [interpretation] A teaser is debt - it must be repaid in proportion to the expectations it plants, and if the payoff is hollow, everything after the sale (reputation, live-service longevity, studio trust) collapses. The mourning on shutdown day that "the potential was such a waste" is the evidence.
 
 ## Implications for Our Project
-ELEM-001 카드의 실패 지점("떡밥 크기에 비례한 기대 충족") 원칙의 AAA급 실증.
-우리 티저 설계는 "회수 가능한 크기"로만 - 보여준 것은 반드시 플레이로 갚는다.
+An AAA-scale demonstration of the failure point principle on the ELEM-001 card ("satisfying expectations in proportion to the size of the hook").
+Our teaser design must stay only at a "payable size" - what we show, we must repay through play.

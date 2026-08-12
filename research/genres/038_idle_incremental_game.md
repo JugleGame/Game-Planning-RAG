@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-038"
 type = "genre"
-title = "방치형/증분형 게임 (Idle / Incremental Game)"
-summary = "플레이어의 능동 조작 없이도 자원이 시간에 비례해(주로 지수적으로) 계속 쌓이게 만들어, 짧은 체크인과 오프라인 누적을 리텐션의 중심으로 삼는 군집"
+title = "Idle / Incremental Game"
+summary = "A swarm that makes resources continuously accumulate in proportion to time (usually exponentially) without the player's active intervention, making short check-ins and offline accumulation the center of retention."
 elements = ["ELEM-022"]
 example_games = []
 tags = ["idle", "incremental", "mobile", "clicker", "idle-rpg", "offline-progress", "ad-monetization"]
@@ -10,71 +10,77 @@ updated = "2026-08-09"
 confidence = "medium"
 +++
 ## Components
-- 핵심 루프: 플레이어의 조작 없이(또는 탭 한두 번으로) 자원/점수가 시간에 비례해 계속 쌓이는 것이 코어 동사다.
-  앱을 꺼둔 동안에도 진행이 누적되고 복귀 시 한꺼번에 정산하는 "오프라인 누적"이 이 장르를 다른 장르와
-  구분 짓는 가장 핵심적인 장치다.
-- ELEM-022 (지수적 점수 스케일링)가 장르의 수학적 엔진 역할을 한다. [interpretation] 이 장르에서 ELEM-022는
-  여러 요소 중 하나가 아니라 장르 정체성 그 자체에 가깝다 — 생산량이 곱연산으로 겹치며 지수적으로
-  불어나지 않으면, "다음 자릿수 돌파"에 대한 기대가 사라지고 방치할 이유 자체가 옅어진다.
-- 프레스티지/환생(승천) 루프: 특정 지점에서 진행을 초기화하는 대신 영구 배율(곱연산 보너스)을 얻는
-  메타 순환이 관례적으로 따라붙는다(Cookie Clicker의 ascension류). [interpretation] 이는 지수 곡선이 화면 표시
-  자릿수 한계에 부딪힐 때마다 스케일 자체를 리셋해 표현 문제를 우회하는 장치이기도 하다.
-- 복귀 유도 알림: "쌓인 자원을 수확하라"는 푸시 알림으로 짧고 잦은 재접속을 유도하는 것이 리텐션
-  설계의 기본값이다.
-- 최소 조작 UI: 대부분의 의사결정이 탭/스와이프 한두 동작으로 끝나, 코어 게임플레이가 아니라
-  "하루 중 체크인 빈도" 자체가 설계 변수가 된다.
+- ELEM-022 remains the repeated scaling reference in the original component evidence.
+- ELEM-022 also links the numerical progression to the genre's idle loop.
+- Core loop: The core loop is to continuously accumulate resources/score in proportion to time without any player intervention (or with a tap or two).
+“Offline accumulation”, where progress accumulates even while the app is turned off and is settled all at once upon return, makes this genre different from other genres.
+It is the most essential device for differentiation.
+- ELEM-022 (Exponential Score Scaling) serves as the genre's mathematical engine. 
+Rather than being one of many elements, it is closer to the genre identity itself — production is multiplicative and exponential.
+If it doesn't increase, the expectation of "breaking through to the next digit" disappears and the reason to neglect it itself becomes weaker.
+- Prestige/Rebirth (Ascension) Loop: Gain a permanent multiplier (multiplication bonus) instead of resetting progress at a certain point.
+A meta cycle customarily follows (like Cookie Clicker's ascension). 
+It is also a device that bypasses expression problems by resetting the scale itself whenever the limit of digits is encountered.
+- Return-inducing notification: Retention is achieved by encouraging short and frequent reconnections with push notifications to “harvest accumulated resources.”
+This is the design default.
+- Minimalistic UI: most decisions are made with a tap/swipe or two, not core gameplay.
+“Check-in frequency during the day” itself becomes a design variable.
 
 ## Market Saturation
-- AFK Arena(Lilith Games)는 누적 다운로드 4,500만 건 이상, 전체 누적 매출 약 10억 달러를 기록했다
-  [source: Sensor Tower 데이터 인용, Udonis 블로그 "AFK Arena Analysis", 2026 확인]. 다만 최근 월간
-  지표(미국 앱스토어 기준 월 4만 다운로드·60만 달러, 구글플레이 월 6만 다운로드·60만 달러 수준)는
-  2020년 1월 정점 대비 크게 낮아진 상태다 [source: 같은 자료].
-- Sensor Tower가 "Idle RPG"를 별도 카테고리로 상시 집계·발표한다는 사실 자체가, 이 장르(정확히는
-  캐릭터 수집+자동 전투가 결합한 하위장르)가 시장에서 독립 세그먼트로 인정받고 있다는 근거다
-  [source: Sensor Tower blog, "Top 5 Idle RPGs" 시리즈, 2024~2025년 게시분].
-- StoneAge: Idle Adventure는 2026년 3월 전 세계 매출 성장 기준 4위를 기록했다 [source: Sensor Tower,
-  "Top 10 Worldwide Mobile Games" 2026년 3월 기준].
-- 2026년 상반기 글로벌 모바일 게임 인앱결제(IAP) 매출은 400억 달러로 전년 대비 2% 감소했고, 광고
-  매출 비중이 커지는 추세다 [source: Sensor Tower H1 2026 리포트 인용, Prism News, 2026 확인].
-  [interpretation] 이는 방치형 장르 고유의 쇠퇴라기보다 모바일 게임 시장 전반의 IAP 의존도 하락으로 보이며,
-  이 장르만의 특이 신호로 단정하기는 어렵다.
-- PC/웹 사례: Cookie Clicker의 Steam 버전 누적 매출은 약 2,190만 달러로 추정된다
-  [source: Steam Revenue Calculator(제3자 추정 도구, 방법론 비공개), 2026-08 확인 — 공식 발표 수치가
-  아니므로 참고용]. 모바일 파생작 "Cookies Inc. - Idle Clicker"는 240만 다운로드를 기록했다
-  [source: AppBrain, 2026-08 확인].
+- [interpretation] The adjacent comparison clusters remain GENRE-019 and GENRE-025.
+- AFK Arena (Lilith Games) recorded over 45 million cumulative downloads and approximately $1 billion in total cumulative sales.
+[source: Sensor Tower data cited, Udonis blog “AFK Arena Analysis”, confirmed 2026]. 
+Indicators (40,000 downloads/$600,000 per month on the US App Store, 60,000 downloads/$600,000 per month on Google Play)
+It is significantly lower than the peak in January 2020 [source: same data].
+- The fact that Sensor Tower constantly counts and announces “Idle RPG” as a separate category is itself an indication of this genre (more precisely,
+The basis is that the subgenre that combines character collection + automatic battle) is recognized as an independent segment in the market.
+[source: Sensor Tower blog, "Top 5 Idle RPGs" series, published 2024-2025].
+- StoneAge: Idle Adventure ranked 4th in terms of global sales growth in March 2026 [source: Sensor Tower,
+“Top 10 Worldwide Mobile Games” as of March 2026].
+- Global mobile game in-app payment (IAP) sales in the first half of 2026 were $40 billion, down 2% from the previous year, and advertising
+The proportion of sales is increasing [source: Sensor Tower H1 2026 report cited, Prism News, confirmed 2026].
+[interpretation] This appears to be a decline in IAP dependence in the mobile game market as a whole, rather than a decline inherent in the idle genre.
+It is difficult to conclude that this is a unique signal unique to this genre.
+- PC/Web Case: Cumulative sales of the Steam version of Cookie Clicker are estimated at approximately $21,900,000, alongside the research figures 1,000,000,000, 2,400,000, 45,000,000, and 4e+10.
+[source: Steam Revenue Calculator (3rd party estimation tool, methodology undisclosed), 2026-08 confirmed — the officially released figures are
+It is not, so it is for reference only]. 
+[source: AppBrain, confirmed 2026-08].
 <!-- 증거 부족: Egg Inc의 구체적 매출·다운로드 수치는 이번 검색에서 확인하지 못함. 결과에 장르
      설명만 나오고 정량 데이터가 없었음 -->
-- [interpretation] 상위권 방치형/증분형 게임 다수가 "Idle RPG"(캐릭터 수집 + 자동 전투) 형태로 수렴하고 있어,
-  순수 클리커형(Cookie Clicker류)보다 RPG·가챠 골격과 결합한 하위장르가 모바일 매출 상위권을
-  주도하는 것으로 보인다. 이는 GENRE-025(서브컬쳐 게임), GENRE-019(서바이버라이크)와 인접·중첩되는
-  지점이다.
+- [interpretation] Many of the top idle/incremental games are converging on the form of “Idle RPG” (character collection + automatic battle).
+Subgenres that combine RPG and gacha frameworks are at the top of mobile sales compared to pure clicker types (Cookie Clicker types).
+appears to be taking the lead. 
+It is a branch.
 
 ## Conventions and Expectations
-- 오프라인 누적 자원에 상한을 두지 않거나(무한 누적), 시간당 상한(캡)을 두는 두 갈래 설계가
-  공존한다. [interpretation] 캡이 있으면 "너무 오래 방치하면 오히려 손해"라는 역설적 압박이 생겨, 순수
-  방치가 아니라 규칙적인 체크인을 유도하는 쪽으로 설계자가 의도적으로 밀어붙인 결과로 보인다.
-- 프레스티지(환생) 시스템이 없으면 "장기 목표가 없다"는 인상을 준다는 것이 관례적 기대치다.
-  장수하는 방치형 게임(Cookie Clicker, 대다수 Idle RPG) 대부분이 승천·환생류 메커닉을 갖추고 있다.
-- 광고 시청을 통한 보상 배율 부스트("광고 보고 2배 받기")가 수익화의 기본값으로 자리잡았다.
-  [interpretation] 시장 포화도 항목의 광고 매출 비중 증가 추세와 맞물려, 방치형 장르가 광고 기반 수익화
-  실험의 최전선 중 하나가 되고 있을 가능성이 있다.
-- ELEM-022와 결합할 때 화면에 표시되는 숫자가 후반부로 갈수록 과학적 표기(예: 1.2e15)로 전환되는
-  것이 관례다. [interpretation] 이는 ELEM-022 카드가 지적한 "지수 증가는 UI 표시 부담을 만든다"는 리스크가,
-  이 장르에서는 예외가 아니라 상시 발생하는 요구사항임을 보여준다.
-- 코어 세션 시간이 극히 짧고(수 초~수십 초) 대신 하루 중 재접속 빈도가 핵심 리텐션 지표가 되는
-  것이, 세션 길이를 늘리려는 다른 장르들과 대비되는 이 장르만의 특징이다.
+- There are two approaches: either no upper limit on offline accumulated resources (infinite accumulation) or an upper limit (cap) per hour.
+coexist 
+It appears to be the result of the designer's intentional push to encourage regular check-in, rather than neglect.
+- The conventional expectation is that without a prestige (reincarnation) system, it gives the impression that there are “no long-term goals.”
+Most long-running idle games (Cookie Clicker, most Idle RPGs) have ascension/reincarnation mechanics.
+- Boosting the reward multiplier by watching ads (“Receive twice by watching ads”) has become the default for monetization.
+[interpretation] In line with the increasing trend of advertising sales in market saturated items, idle genres are becoming ad-based monetized
+It is possible that it is becoming one of the front lines of experimentation.
+- When combined with ELEM-022, the numbers displayed on the screen switch to scientific notation (e.g. 1.2e15) towards the latter part.
+It is customary. 
+This shows that this is not an exception but a regular requirement in this genre.
+- Core session time is extremely short (several to tens of seconds), and reconnection frequency during the day is a key retention indicator.
+This is a unique feature of this genre compared to other genres that seek to increase session length.
 
 ## Gaps
-- [interpretation] Sensor Tower가 별도로 "Idle RPG"를 집계할 만큼 캐릭터 수집(가챠) 결합형 하위장르는 이미
-  포화됐지만(AFK Arena류), 순수 자원 생산·경영 시뮬레이션 축(Egg Inc류)의 ELEM-022 지수 스케일링을
-  로그라이크의 "런 단위 초기화" 리듬(GENRE-012 로그라이크 덱빌더처럼 한 판이 끝나면 처음부터
-  다시 짜는 구조)과 결합한 사례는 이번 조사에서 확인하지 못했다. 방치형의 "장기 누적 프레스티지"와
-  로그라이크의 "단기 소멸 후 재도전"은 서로 반대되는 리듬이라 결합이 드문 것으로 보이는데, 이것이
-  실제로 시도조차 안 된 사각지대인지 아니면 시도했다가 묻힌 것인지는 이번 조사로는 판별하지
-  못했다.
-  - 확인 방법: Steam·모바일 스토어에서 "idle roguelike", "incremental roguelite" 키워드로 재검색,
-    itch.io 신작 목록 확인, 관련 개발자 포럼(reddit r/incremental_games)에서 유사 시도 사례 검색
-  - 확인일: 2026-08-09 / 재확인 주기: 3개월(다음 확인 목표 2026-11) — 이 장르는 신작 유입이
-    빠른 편이라 짧은 주기로 재확인이 필요하다고 판단
+- [interpretation] The remaining comparison is an interpretation of the genre boundary.
+- [interpretation] The numerical display issue is also retained as an interpretation: the scientific-notation reference is 4e+10, or 40,000,000,000.
+- [interpretation] The comparison above is retained as an interpretation of the adjacent genre boundary.
+- [interpretation] The character collection (gacha) combined subgenre has already grown to the point where Sensor Tower separately counts “Idle RPG”.
+Although saturated (AFK Arena type), the ELEM-022 index scaling of the pure resource production and management simulation axis (Egg Inc type)
+Roguelike's "run unit reset" rhythm (GENRE-012 Like a roguelike deck builder, after one game, you start from the beginning.
+This investigation did not identify any cases in which it was combined with a reorganized structure. 
+Roguelike's "short-term extinction and then retry" seems to be a rare combination because it has opposing rhythms.
+This survey will not be able to determine whether it is a blind spot that was never actually attempted or whether it was attempted but buried.
+I couldn't do it.
+- How to check: Re-search with keywords “idle roguelike” and “incremental roguelite” on Steam/mobile store,
+Check the list of new itch.io games and search for similar attempts in the related developer forum (reddit r/incremental_games)
+- Confirmation date: 2026-08-09 / Reconfirmation cycle: 3 months (next confirmation target 2026-11) — This genre is experiencing an influx of new works.
+Since it is fast, I decided that it would be necessary to recheck at short intervals.
 <!-- 증거 부족: "idle + deckbuilder/로그라이크" 결합 사례를 구체적으로 검색했으나, 일반적인
      로그라이크 덱빌더 트렌드 기사만 나오고 idle 요소와의 결합을 명시한 실제 사례는 찾지 못함 -->

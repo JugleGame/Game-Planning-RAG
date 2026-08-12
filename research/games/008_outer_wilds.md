@@ -2,7 +2,7 @@
 card_id = "GAME-008"
 type = "success"
 title = "Outer Wilds (2019, Mobius Digital / Annapurna Interactive)"
-summary = "\"지식이 유일한 진행도\"인 타임루프 탐험 - 루프+티저 결합의 정점"
+summary = "A time-loop exploration game where \"knowledge is the only progression\"—the peak of combining loops and teasers"
 genres = ["GENRE-002"]
 elements = ["ELEM-001", "ELEM-004"]
 tags = ["time-loop", "exploration", "mystery", "divisive", "retention"]
@@ -10,20 +10,20 @@ updated = "2026-07-15"
 confidence = "high"             # 리뷰·수상은 공식 표기 기반
 +++
 ## Summary and Sales/Review Metrics
-22분마다 초신성으로 리셋되는 태양계에서 지식만으로 진실에 다가가는 탐험 게임.
-Steam 리뷰 10만 건 이상 중 96% 긍정 "압도적으로 긍정적" [source: Steam/Steambase,
-2026-07 확인]. 2020 BAFTA 최우수 게임상, 2019 GOTY 다수 매체 선정
-[source: Steam 스토어 표기].
+A discovery game about approaching the truth using only knowledge in a solar system reset by a supernova every 22 minutes.
+More than 100,000 Steam reviews are 96% positive, “Overwhelmingly Positive” [source: Steam/Steambase,
+2026-07 check]. Winner of the 2020 BAFTA Best Game award and named a 2019 GOTY by multiple outlets
+[source: Steam store listing].
 
 ## Elements Used
-- ELEM-004 (반복 메커닉) - 세계는 리셋돼도 "플레이어가 아는 것"만은 남는 구조. 성장 시스템이 곧 지식.
-- ELEM-001 (티저 기반 공개) - 모든 발견이 더 큰 진실의 떡밥. 선박 로그가 "다음에 갈 곳"을 계속 암시.
+- ELEM-004 (repetition mechanic) - The world resets, but “what the player knows” remains. The progression system is knowledge itself.
+- ELEM-001 (teaser-based revelation) - Every discovery is a thread leading to a larger truth. The ship log continually hints at “where to go next.”
 
 ## Success/Failure Drivers
-- 사실: "스포일러 없이 가라"는 리뷰 문화가 형성됨 - 상위 리뷰들이 내용 대신 "그냥 믿고 해보라"로 수렴 [source: Steam 상위 리뷰, 2026-07 확인]
-- 사실(주의): 소수의 일관된 불호 - 전투·방향 제시·물질 보상의 부재를 의도적 선택으로 인정하면서도 "차갑고 불친절하다"는 비판 존재 [source: Metacritic 비판 리뷰]
-- [interpretation] 같은 설계(정보 숨김)가 다수에겐 목적의식, 소수에겐 막막함으로 읽힘 - 티저 기반 설계의 본질적 분산.
+- Fact: A “go in without spoilers” review culture formed—top reviews converged on “just trust it and try” instead of describing content [source: Steam top reviews, 2026-07 check]
+- Fact (caution): A consistent minority disliked it—while accepting the absence of combat, direction, and material rewards as intentional, they still called it “cold and unwelcoming” [source: Metacritic critical reviews]
+- [interpretation] The same design (withholding information) reads as purpose to most players and aimlessness to a minority—the inherent variance of teaser-based design.
 
 ## Implications for Our Project
-루프 게임의 리텐션 공식: 반복마다 잃는 것(자원)과 남는 것(지식)을 명확히 분리.
-단, 방향 제시 부재의 이탈층이 반드시 생김 - 우리는 AI 해설자가 그 안내자 역할을 겸할 수 있음 [interpretation].
+Retention formula for a loop game: clearly separate what is lost on each repetition (resources) from what remains (knowledge).
+However, a churn segment caused by the lack of direction is inevitable—we can have the AI commentator also serve as that guide [interpretation].

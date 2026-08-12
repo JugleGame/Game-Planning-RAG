@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-016"
 type = "genre"
-title = "탄막 로그라이크 (Bullet Hell Roguelike)"
-summary = "실시간 회피·조준 조작 위에 매 층 무작위 드래프트와 처벌적 죽음 순환을 얹은 액션 로그라이크 군집"
+title = "Bullet Hell Roguelike"
+summary = "An action roguelike cluster that layers per-floor random drafting and a punitive death cycle on top of real-time dodging and aiming controls"
 elements = ["ELEM-018", "ELEM-014"]
 example_games = []
 tags = ["roguelike", "bullet-hell", "action", "indie", "replayability"]
@@ -10,24 +10,24 @@ updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Components
-- ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 무기·아이템을 매 층마다 무작위로 제시받아 고르는 드래프트가 코어다.
-- ELEM-014 (처벌적 죽음 순환) - 죽으면 처음부터 다시 시작하되, 장비·화폐 일부는 영구 해금으로 남겨 완화하는 경우가 많다.
-- [interpretation] 로그라이크 덱빌더(GENRE-012)와 다른 점은 카드를 고르는 것이 아니라 실시간 회피·조준 조작이 스킬 표현의 핵심이라는 것이다.
-- GENRE-039 (턴제 전술 로그라이크) - [interpretation] ELEM-018(로그라이크 무작위 업그레이드/경로 드래프트)을
-  공유하는 인접 군집이다. 다만 이 군집이 실시간 회피·조준을 스킬 표현으로 쓰는 것과 달리, GENRE-039는
-  격자 위에서 행동을 먼저 계획하고 턴을 넘겨 결과를 확정하는 조작 축을 쓴다 [source: GENRE-039 카드].
+- ELEM-018 (roguelike random upgrade / path draft) - the core is a draft in which weapons and items are randomly offered and picked on every floor.
+- ELEM-014 (punitive death cycle) - dying sends you back to the start, though in many cases it is softened by leaving part of the equipment and currency as permanent unlocks.
+- [interpretation] What differs from the roguelike deckbuilder (GENRE-012) is that the heart of skill expression is not picking cards but real-time dodging and aiming controls.
+- GENRE-039 (turn-based tactical roguelike) - [interpretation] an adjacent cluster that shares ELEM-018 (roguelike random upgrade / path draft).
+  However, unlike this cluster, which uses real-time dodging and aiming as skill expression, GENRE-039 uses a control axis in which
+  actions are planned first on a grid and the outcome is settled by passing the turn [source: GENRE-039 card].
 
 ## Market Saturation
-- 사실: Enter the Gungeon은 Steam 리뷰 39,072건 중 95%가 긍정적이다 [source: Steam 스토어 페이지, 웹 검색 확인 2026-07-31 기준].
-- 사실: Nuclear Throne은 Steam 250 집계 기준 리뷰 19,709건 중 96%가 긍정적이다 [source: Steam250, 웹 검색 확인 2026-07-31 기준].
-- [interpretation] 개별 타이틀 리뷰 수가 2만~4만 대에 머물러 있어, 서바이버라이크(GENRE-019)만큼의 초대형 히트는 아직 없는 중견 인디 군집으로 보인다.
-<!-- 증거 부족: 군집 전체 매출 합계와 최신 신작 목록은 확인하지 못함 -->
+- Fact: Enter the Gungeon is 95% positive out of 39,072 Steam reviews [source: Steam store page, web-search verified as of 2026-07-31].
+- Fact: Nuclear Throne is 96% positive out of 19,709 reviews by the Steam 250 tally [source: Steam250, web-search verified as of 2026-07-31].
+- [interpretation] With individual title review counts staying in the 20,000-40,000 range, this looks like a mid-tier indie cluster that has yet to see a mega-hit on the scale of survivors-likes (GENRE-019).
+<!-- Insufficient evidence: the aggregate revenue of the cluster as a whole and the list of the latest new releases could not be confirmed -->
 
 ## Conventions and Expectations
-- 사실: 커뮤니티 비교글에서 유저들은 Nuclear Throne을 "가장 순수하고 빠른 속도감", Gunfire Reborn을 "1인칭 총기 다양성·빌드", Enter the Gungeon을 "디테일과 반복 동기부여"로 구분해 언급한다 [source: 웹 검색 종합 커뮤니티 비교 글, 2026-07-31 확인].
-- [interpretation] 장르 관례상 "탄 피하기(회피)"가 1차 스킬 표현이고, 무기·아이템 시너지 발견이 2차 동기부여로 자리잡은 것으로 보인다.
+- Fact: In community comparison posts, users distinguish Nuclear Throne as "the purest and fastest sense of speed," Gunfire Reborn as "first-person gun variety and builds," and Enter the Gungeon as "detail and repeat motivation" [source: aggregated community comparison posts from web search, verified 2026-07-31].
+- [interpretation] By genre convention, "dodging bullets (evasion)" appears to be the primary skill expression, with discovering weapon and item synergies established as the secondary motivation.
 
 ## Gaps
-[interpretation] ★ 쿼터뷰·1인칭이 아닌 관점 실험이나, Gunfire Reborn 같은 1인칭 결합은 있지만 4인 이상 대규모 협동을 지원하는 탄막 로그라이크 사례는 조사 중 확인하지 못했다.
-- 확인 방법: Steam 태그 "bullet hell" + "co-op" 교차 검색
-- 확인일: 2026-07-31 / 재확인 주기: 8주
+[interpretation] ★ There are perspective experiments other than isometric or first-person, and first-person combinations such as Gunfire Reborn, but a bullet hell roguelike supporting large-scale co-op for 4 or more players was not confirmed during the investigation.
+- Verification method: cross-search of the Steam tags "bullet hell" + "co-op"
+- Verified on: 2026-07-31 / Re-verification cycle: 8 weeks

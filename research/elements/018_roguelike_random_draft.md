@@ -1,72 +1,41 @@
 +++
 card_id = "ELEM-018"
 type = "mechanic"
-title = "로그라이크 무작위 업그레이드/경로 드래프트 (Roguelike Random Upgrade & Path Draft)"
-summary = "매 판·매 라운드마다 무작위로 제시되는 카드/타일 중에서 골라 쓰는 런 기반 선택 구조"
+title = "Roguelike Random Upgrade/Path Draft (Roguelike Random Upgrade & Path Draft)"
+summary = "A run-based choice structure in which the player selects from randomly presented cards or tiles each run and round"
 tags = ["roguelike", "randomness", "draft", "run-based", "tower-defense", "divisive"]
 updated = "2026-08-05"
 confidence = "medium"
 +++
 ## Definition
-게임을 할 때마다 미리 정해둔 하나의 방법이 아니라, 그때그때 무작위로 몇 개의 카드나 선택지를 보여주고
-그중 하나를 고르게 하는 방식입니다. 뽑기 기계에서 나온 걸 그대로 받는 가챠와 달리, 여기서는 무작위로
-나온 후보들 중에서 플레이어가 직접 하나를 "선택"할 수 있다는 점이 다릅니다. 그래서 매번 다른 조합이
-만들어지고, 같은 판이 두 번 나오지 않습니다.
+Rather than following one predetermined approach every time, the game shows several random cards or choices and lets the player choose one. Unlike gacha, where the player simply receives what comes out of the machine, this structure lets the player directly select one of the random candidates. Each run therefore produces a different combination, and no two runs are identical.
 
 ## Success Cases
-- GAME-027 (Rogue Tower) - 400장 넘는 카드 풀에서 매 라운드 무작위로 몇 장을 제시해 타워를 새로 짓거나
-  강화하게 하고, 갈라지는 경로 타일도 무작위로 배치함 [source: Rogue Tower Steam 상점 페이지·공략 사이트
-  종합, 2026-07 확인]. Steam 유저 리뷰 4,356건 중 80%가 긍정 [source: 리뷰 집계 사이트, 2026-07 확인].
-- GAME-030 (Slay the Spire) - 전투가 끝날 때마다 무작위로 제시된 카드 보상 중 하나만 골라 덱에
-  더하는 구조로 이 요소의 정석을 세웠고 [source: Eneba 리뷰 기사, 2026-07 확인], PC·콘솔 합산 1,000만
-  장을 넘겼다 [source: Alinea Analytics, 2026-03-20 기준].
-- GAME-034 (Wildfrost) - 매 전투 후 무작위로 제시되는 카드·유물 중 택1로 팀을 꾸리는 런 기반 구조.
-  SteamSpy 추정 보유자 수 50만~100만 명 [source: GAME-034 카드].
-- GAME-050 (Towerful Defense: A Rogue TD) - 매판 스킬 최대 4개와 특성·아이템을 무작위로 골라
-  단일 타워 빌드를 짜는 구조. Steam 리뷰 207건 중 70% 긍정 [source: GAME-050 카드].
-- GAME-051 (Yet Another Zombie Survivors) - 레벨업 시 무기·능력 중 하나를 고르는 드래프트 구조를
-  서바이버라이크 스쿼드 변주에 그대로 이어받았다. Steam 리뷰 1만 3,000건 이상 중 91% 긍정
-  [source: GAME-051 카드].
-- GAME-052 (Rogue Defense: Hybrid Tower TD) - 절차적으로 생성되는 적 웨이브에 맞서 무기와 가디언
-  스킬 조합을 무작위로 골라 짜는 구조. Google Play 누적 다운로드 100만 회 이상, 평점 4.2/5
-  [source: GAME-052 카드].
+- GAME-027 (Rogue Tower) - Presents several random cards each round from a pool of more than 400 cards, letting players build or upgrade towers; branching path tiles are also placed randomly [source: Rogue Tower Steam store page and strategy-site synthesis, confirmed 2026-07]. 80% of 4,356 Steam user reviews are positive [source: review aggregation site, confirmed 2026-07].
+- GAME-030 (Slay the Spire) - Established the classic form of this element by letting players add exactly one card from randomly presented rewards after each battle [source: Eneba review article, confirmed 2026-07], and exceeded 10,000,000 copies across PC and console [source: Alinea Analytics, as of 2026-03-20].
+- GAME-034 (Wildfrost) - A run-based structure in which the player chooses one card or relic from random post-battle options to build a team. SteamSpy estimates 500,000-1,000,000 owners [source: GAME-034 card].
+- GAME-050 (Towerful Defense: A Rogue TD) - A structure in which each run randomly selects up to 4 skills, traits, and items to build a single-tower setup. 70% of 207 Steam reviews are positive [source: GAME-050 card].
+- GAME-051 (Yet Another Zombie Survivors) - Carries the draft structure of choosing one weapon or ability on level-up into a survivorlike squad variation. 91% positive among more than 10,000 and 3,000 Steam reviews [source: GAME-051 card].
+- GAME-052 (Rogue Defense: Hybrid Tower TD) - Randomly builds weapon and guardian-skill combinations against procedurally generated enemy waves. More than 1,000,000 cumulative Google Play downloads and a 4.2/5 rating [source: GAME-052 card].
 
 ## Failure Cases
-- GAME-027 (Rogue Tower) - 같은 게임 안에서 일부 유저는 "다음 타일이 뭔지 안 보이는 무작위 경로가
-  결과의 대부분을 좌우해 불공평한 도박처럼 느껴진다"고 불만을 제기함 [source: Steam 유저 리뷰 종합,
-  2026-07 확인].
-  실패 지점: 드래프트·경로의 무작위성이 실력보다 운에 더 크게 좌우된다고 느껴지는 순간 불만으로 바뀜.
+- GAME-027 (Rogue Tower) - Some users complained that a random path in which the next tile is hidden determines most of the outcome and feels like an unfair gamble [source: Steam user-review synthesis, confirmed 2026-07].
+  Failure point: Draft and path randomness becomes frustrating when it feels more decisive than skill.
 
 ## User Reaction Summary
-- 선호: 매판 다른 조합이 나와 "같은 게임이 반복되지 않는다"는 재플레이성, 20~30분의 짧은 런 길이도
-  긍정적으로 언급됨 [source: Rogue Tower 리뷰 종합, 2026-07 확인]
-- 불호: 무작위 경로·드래프트가 승패를 결정할 만큼 크면 "실력이 아니라 운"이라는 반발 [source: Steam
-  유저 리뷰 종합, 2026-07 확인]
+- Preference: Replayability from a different combination every run and the short 20-30 minute run length are both mentioned positively [source: Rogue Tower review synthesis, confirmed 2026-07]
+- Dislike: When random paths and drafts are decisive enough to determine victory or defeat, users object that it is "luck, not skill" [source: Steam user-review synthesis, confirmed 2026-07]
 
 ## Synergy
-- 좋음: ELEM-004 (반복 메커닉) - 런을 반복할수록 다른 드래프트 결과가 나와 반복 자체에 재미를 더함
-- 좋음: ELEM-020 (덱 구축) - 드래프트로 제시된 카드가 그대로 덱에 편입되는 구조라, 실질적으로 짝을
-  이뤄 쓰인다. 실증 사례 GAME-030
-- 좋음: ELEM-017 (가챠 확률 & 천장 시스템) - [interpretation] 둘 다 "무작위이되 완전히 무자비하지는 않게"
-  만드는 장치라, 드래프트에 최소 보장·천장 규칙을 얹으면 GAME-027류의 "불공평하다"는 불만을 줄일
-  여지가 있음 (아직 실증 사례 없는 가설 - GENRE-010 빈칸 참조)
-- 장르 앵커: GENRE-010 (타워 디펜스), GENRE-012 (로그라이크 덱빌더), GENRE-019 (서바이버라이크),
-  GENRE-016 (탄막 로그라이크), GENRE-039 (턴제 전술 로그라이크), GENRE-037 (솔로 PvE 로그라이크
-  오토배틀러) - 여섯 군집이 모두 이 요소를 구성 요소로 지목한다. GENRE-039는 실시간 조작인 GENRE-016과
-  달리 격자 위 턴제 계획으로, GENRE-037은 배치 후 자동 진행되는 PvE 전투로 이 드래프트를 소비한다는
-  점만 다르다.
-- 좋음: ELEM-042 (단일 타워 직접 조작형 방어) - GAME-050이 실증하듯, 이 드래프트 구조가 제시하는
-  스킬·아이템 선택이 단일 타워를 직접 조작하는 빌드의 재료가 된다.
+- Good: ELEM-004 (Repetition Mechanic) - Different draft results on repeated runs add enjoyment to repetition itself.
+- Good: ELEM-020 (Deck-building) - Drafted cards enter the deck directly, so the two elements are practically used together. GAME-030 is an observed case.
+- Good: ELEM-017 (Gacha Probability & Pity System) - [interpretation] Both make randomness "not completely merciless"; adding minimum-guarantee or pity rules to a draft could reduce GAME-027-like complaints of unfairness (a hypothesis without an observed case; see the GENRE-010 gap).
+- Genre anchors: GENRE-010 (Tower Defense), GENRE-012 (Roguelike Deckbuilder), GENRE-019 (Survivorlike), GENRE-016 (Bullet-Hell Roguelike), GENRE-039 (Turn-based Tactical Roguelike), GENRE-037 (Solo PvE Roguelike Auto-battler) - All six clusters identify this element as a component. GENRE-039 consumes this draft through turn-based planning on a grid rather than GENRE-016's real-time control, while GENRE-037 consumes it through automatically progressing PvE combat after placement.
+- Good: ELEM-042 (Direct-Control Single-Tower Defense) - As GAME-050 demonstrates, the skill and item choices presented by this draft structure become materials for a build in which the player directly controls one tower.
 
 ## Risks
-- [interpretation] 무작위 요소가 승패를 크게 좌우할수록 "운게임"이라는 반발이 커짐 - GAME-027이 실제로 이
-  불만을 받은 사례
-- [interpretation] 카드·타일 풀이 400장 넘게 크면 신규 유저가 학습해야 할 정보량이 늘어나 진입장벽이 될 수 있음
-- 사실: GAME-030(Slay the Spire)은 천장을 얹는 대신 다른 해법을 실제로 검증했다 - 판마다 생성되는
-  시드를 전 플레이어가 공유하는 데일리 클라임 모드에서는 지도 배치·카드 보상·유물 드롭·이벤트 결과가
-  모두 동일해, 같은 패를 받고도 결과가 다르면 그 차이는 실력으로만 설명된다 [source: Slay the Spire
-  Wiki 'Daily Climb' 문서, 2026-07 확인].
-  [interpretation] 확률을 손보는 천장보다 "모두에게 같은 무작위를 준다"는 시드 공유 쪽이 구현이 더 간단하고
-  "운 탓" 논란을 원천적으로 막는다는 점에서, GAME-027류의 불공평 불만에는 이 접근이 더 검증된
-  대안일 수 있다.
+- [interpretation] The stronger the random element's influence on victory or defeat, the stronger the objection that it is a "luck game"; GAME-027 actually received this complaint.
+- [interpretation] If the card and tile pool exceeds 400 entries, the amount of information new users must learn can become an onboarding barrier.
+- Fact: GAME-030 (Slay the Spire) validated another solution instead of adding pity - in Daily Climb, every player shares the seed, so map layout, card rewards, relic drops, and event results are identical; if results differ despite receiving the same hand, the difference can be explained only by skill [source: Slay the Spire Wiki 'Daily Climb' article, confirmed 2026-07].
+  [interpretation] Shared seeds may be a more validated alternative for GAME-027-like unfairness complaints because implementation is simpler than probability-adjusting pity and it prevents "blame luck" disputes at the source.
 <!-- 증거 부족: 성공 사례가 GAME-027·GAME-030 2건이라 GAME 근거 3건 이상이라는 high 기준을 못 채움 -->

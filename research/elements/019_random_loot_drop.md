@@ -1,80 +1,46 @@
 +++
 card_id = "ELEM-019"
 type = "mechanic"
-title = "무작위 전리품 드롭 & 루트 테이블 (Random Loot Drop & Loot Table)"
-summary = "적을 처치하거나 임무를 끝냈을 때 무엇이 나올지를 확률표로 정해두어, 같은 행동을 반복해도 결과가 매번 달라지게 만드는 보상 구조"
+title = "Random Loot Drop & Loot Table (Random Loot Drop & Loot Table)"
+summary = "A reward structure that uses a probability table to vary the result each time the player repeats an action such as defeating an enemy or completing a mission"
 tags = ["loot", "randomness", "looter-shooter", "arpg", "retention", "grind", "transparency", "divisive"]
 updated = "2026-08-05"
 confidence = "medium"
 +++
 ## Definition
-적을 쓰러뜨렸을 때 무엇이 떨어질지 미리 정해두지 않고, 확률이 적힌 표를 하나 만들어 두는 방식입니다.
-이 표를 '루트 테이블(전리품 표)'이라고 부릅니다. 예를 들어 "이 보스를 잡으면 흔한 검이 나올 가능성은
-아주 높게, 아주 좋은 검이 나올 가능성은 아주 낮게" 적어두는 것입니다. 그래서 똑같은 보스를 열 번
-잡아도 매번 다른 것이 나옵니다. 여기서 한 걸음 더 나가면, 나온 아이템의 성능까지 무작위로 굴립니다. 같은 이름의 총이라도
-어떤 건 재장전이 빠르고 어떤 건 사거리가 길게 나오는 식입니다. 덕분에 "이미 가진 것"이 또 나와도
-버릴 이유가 없고, 플레이어는 계속 같은 곳을 돌게 됩니다. 반대로 원하는 게 끝내 안 나오면
-"내 시간을 낭비했다"는 기분이 들기 쉽다는 것이 이 방식의 대가입니다.
+Rather than deciding in advance what drops when an enemy is defeated, this method uses a table of probabilities called a loot table. For example, it may assign a very high chance to a common sword and a very low chance to an excellent sword when a boss is defeated. The same boss can therefore produce a different result each time. The item’s performance can also be randomized: guns with the same name may differ in reload speed or range. Even a duplicate item can then remain worth checking, keeping players farming the same location. The cost is that failing to receive the desired item can feel like wasted time.
 
 ## Success Cases
-- GAME-028 (Destiny 2) - 무기 퍼크가 고정이던 첫 해에는 갖고 싶은 무기를 다 모으면 파밍할 이유가
-  사라졌지만, 2018년 9월 4일 Forsaken에서 무작위 롤을 되살린 뒤 플레이어 수가 약 3배로 늘었다
-  [source: PC Games Insider, 2018년 기준]. 중복 드롭조차 "이번 건 어떤 롤일까"를 확인하게 만들어
-  반복의 이유가 다시 생겼다 [source: Kotaku, 2018년 기준].
-- GAME-029 (Warframe) - 확률 테이블 자체를 공식 사이트에 전부 공개해 무작위성을 감추지 않는 쪽을
-  택했고, 2026년 7월 기준 누적 등록 플레이어 8,500만 명 이상 규모로 14년째 서비스 중이다
-  [source: Digital Extremes TennoCon 보도자료(Business Wire), 2026-07-11 기준].
-- GAME-053 (Last Epoch) - 좁은 던전·필드를 반복하며 확률표 기반 장비를 파밍하는 것이 코어 루프다.
-  출시 직후 Steam 동시접속 16만 2,000명 이상, 종합 리뷰 77% 긍정(11만 8,270건)
-  [source: GAME-053 카드].
+- GAME-028 (Destiny 2) - In the first year, when weapon perks were fixed, farming lost its purpose once players collected the weapons they wanted; after Forsaken restored random rolls on 2018-09-04, the player count grew about threefold [source: PC Games Insider, as of 2018]. Even duplicate drops gave players a reason to check "what roll is this one?" [source: Kotaku, as of 2018].
+- GAME-029 (Warframe) - Chose not to hide randomness by publishing the entire probability table on its official site, and had more than 85,000,000 registered players while operating for its 14th year as of July 2026 [source: Digital Extremes TennoCon press release (Business Wire), as of 2026-07-11].
+- GAME-053 (Last Epoch) - Its core loop is farming probability-table-based equipment by repeating narrow dungeons and fields. More than 160,000 and 2,000 peak concurrent Steam users immediately after launch, with 77% positive among 110,000 and 8,270 reviews [source: GAME-053 card].
 
 ## Failure Cases
-- GAME-028 (Destiny 2) - 같은 요소의 반대편. 상한선 없는 무작위 롤 때문에 한 플레이어가 트라이얼
-  978판을 치르고도 목표 롤을 얻지 못한 사례가 커뮤니티에서 화제가 됐고, 특정 엑소틱·로스트 섹터의
-  낮은 드롭률에 대한 불만이 반복적으로 제기됐다 [source: Sportskeeda 커뮤니티 반응 보도, 2026-07 확인].
-  실패 지점: 보장 없는 확률은 플레이 시간이 길어질수록 "재미"가 아니라 "존중받지 못함"으로 해석이 뒤집힌다.
-- GAME-025 (메이플스토리) - 확률형 강화 아이템의 확률을 몰래 낮추고 고지하지 않아 2024년 1월
-  공정거래위원회로부터 116억 4,200만 원의 과징금을 부과받음 [source: 공정거래위원회 제재 발표 보도,
-  2024-01 기준].
-  실패 지점: 루트 테이블은 플레이어가 직접 확인할 수 없는 숫자다. 그래서 조작이 드러나면 해당 아이템
-  하나가 아니라 게임 전체의 확률에 대한 신뢰가 무너진다.
-- GAME-023 (Diablo IV) - 아이템화·엔드게임 보상 설계를 두고 커뮤니티 반발이 이어진 사례로, 드롭
-  구조가 게임 수명 후반의 만족도를 좌우한다는 점을 보여준다.
+- GAME-028 (Destiny 2) - The opposite side of the same element. Because random rolls had no upper bound, a community case involved a player completing 978 Trials matches without obtaining the target roll; complaints about low drop rates for specific exotics and Lost Sectors continued [source: Sportskeeda community-reaction report, confirmed 2026-07].
+  Failure point: Without a guarantee, probability can be reinterpreted as "disrespect" rather than fun as play time grows.
+- GAME-025 (MapleStory) - Secretly lowered and failed to disclose the probabilities of randomized enhancement items, receiving fines of 11,600,000,000 won and 42,000,000 won from the Fair Trade Commission in January 2024 [source: Fair Trade Commission sanction announcement report, as of 2024-01].
+  Failure point: A loot table is a number players cannot directly inspect. Once manipulation is exposed, trust in the probabilities of the whole game collapses, not just in one item.
+- GAME-023 (Diablo IV) - A case with sustained community backlash over itemization and endgame rewards, showing that drop structure determines satisfaction late in a game's life.
 
 ## User Reaction Summary
-- 선호: 같은 아이템이 또 나와도 내용물이 달라 목표가 닫히지 않는다는 점 - 좋은 롤이 나오면 파티
-  채팅에 공유하는 식의 반응 [source: Kotaku, 2018년 기준]
-- 선호: 확률이 공개되어 있어 얼마나 걸릴지 스스로 계산할 수 있다는 점 [source: Massively Overpowered
-  (Warframe 드롭 테이블 공개 보도), 2017-07-04 기준]
-- 불호: 아무리 반복해도 목표가 나오지 않을 수 있다는 무한 루프 - "내 시간을 존중해달라"는 형태의
-  불만 [source: Sportskeeda 커뮤니티 반응 보도, 2026-07 확인]
-- 불호: 공개된 확률과 실제 확률이 다를 수 있다는 의심 [source: 메이플스토리 큐브 확률조작 사건 보도,
-  2024-01 기준]
+- Preference: Even a duplicate item can contain a different roll, so the goal does not close; players share good rolls in party chat [source: Kotaku, as of 2018]
+- Preference: Public probabilities let players calculate how long the pursuit may take [source: Massively Overpowered (Warframe drop-table disclosure report), as of 2017-07-04]
+- Dislike: An endless loop in which the target may never appear, expressed as a demand to respect the player's time [source: Sportskeeda community-reaction report, confirmed 2026-07]
+- Dislike: Suspicion that disclosed and actual probabilities may differ [source: MapleStory cube-probability manipulation report, as of 2024-01]
 
 ## Synergy
-- 장르 앵커: GENRE-022 (배틀로얄) - 이 군집이 이 요소를 구성 요소로 지목한다.
-- 좋음: ELEM-004 (반복 메커닉) - 매번 결과가 달라지는 드롭이 반복 플레이의 보상 사이클을 직접 채워준다
-- 좋음: ELEM-017 (가챠 확률 & 천장 시스템) - [interpretation] 천장은 "최대 몇 번 안에는 반드시"라는 상한선을
-  주는 장치라, 상한선이 없어서 생기는 루트 드롭의 대표 불만을 그대로 덮을 수 있다
-- 비슷하지만 다름: ELEM-018 (로그라이크 무작위 드래프트) - 드래프트는 무작위로 제시된 것 중 플레이어가
-  고르지만, 루트 드롭은 고를 여지 없이 주어진 것을 받는다. [interpretation] 선택권이 있느냐가 "운이 나쁨"을
-  받아들이는 감정을 크게 바꾼다
-- 충돌: GENRE-007 (코지 시뮬) - [interpretation] 실패 없는 저스트레스 루틴과, 원하는 걸 못 얻는 상태가 기본값인
-  루트 드롭은 스트레스 곡선이 정면으로 부딪힌다
-- 완화: ELEM-028 (재화 전환형 제작 마찰 완화) - 흩어진 무작위 자원을 정해진 공식으로 합치게 해주면,
-  "원하는 게 안 나온다"는 좌절이 제작 목표로 전환된다. ELEM-028 카드가 이 요소를 전제로 삼는다.
-- 구현 다리: ARCH-021 (인벤토리 시스템) - 드롭된 아이템이 실제로 담기는 자료 구조. 확률표(ARCH-012)와
-  보유 상태를 분리해두지 않으면 드롭 튜닝마다 코드를 고쳐야 한다.
-- 장르 앵커: GENRE-011 (루트 슈터) - 이 군집이 이 요소를 구성 요소로 지목한다.
-- 장르 앵커: GENRE-034 (핵앤슬래시 던전크롤러 ARPG) - 이 군집이 이 요소를 구성 요소로 지목한다.
+- Genre anchor: GENRE-022 (Battle Royale) - This cluster identifies the element as a component.
+- Good: ELEM-004 (Repetition Mechanic) - Drops whose results differ each time directly fill the reward cycle of repeated play.
+- Good: ELEM-017 (Gacha Probability & Pity System) - [interpretation] Pity supplies an upper bound of "guaranteed within at most this many attempts," covering the representative complaint about loot drops without an upper bound.
+- Similar but different: ELEM-018 (Roguelike Random Draft) - A draft lets the player choose from random options, while a loot drop gives the result without choice. [interpretation] Whether the player has agency greatly changes how bad luck feels.
+- Conflict: GENRE-007 (Cozy Sim) - [interpretation] A failure-free, low-stress routine directly conflicts with loot drops whose default state is not receiving what the player wants.
+- Mitigation: ELEM-028 (Currency-Conversion Crafting Friction Relief) - Converting scattered random resources through a fixed recipe turns frustration over not receiving the desired item into a crafting goal. The ELEM-028 card assumes this element.
+- Implementation bridge: ARCH-021 (Inventory System) - The data structure that actually stores dropped items. If the probability table (ARCH-012) and ownership state are not separated, every drop-tuning change requires code edits.
+- Genre anchor: GENRE-011 (Looter Shooter) - This cluster identifies the element as a component.
+- Genre anchor: GENRE-034 (Hack-and-Slash Dungeon-Crawler ARPG) - This cluster identifies the element as a component.
 
 ## Risks
-- [interpretation] 상한선(천장·확정 드롭) 없이 확률만 두면 플레이 시간이 길어질수록 이탈 사유가 누적된다.
-  GAME-028이 지표는 살렸지만 불만이 계속 재생산된 지점이 여기다.
-- [interpretation] 확률을 비공개로 두면 나중에 공개를 강제당했을 때 "들켜서 공개했다"가 된다. 먼저 공개한
-  GAME-029와 숨겼다가 제재받은 GAME-025의 차이가 그것이다. 한국은 2024년 3월부터 확률형 아이템의
-  확률 정보 공개가 게임산업법 개정으로 의무화됐다 [source: 게임산업법 개정, 2024년 3월 시행].
-- [interpretation] 불운 완화 장치를 넣더라도 플레이어에게 알리지 않으면 효과가 반감된다. 예를 들어 Diablo 3의
-  스마트 루트는 드롭의 약 85%를 획득한 캐릭터의 직업에 맞게 굴리지만 [source: Diablo Wiki 'Smart Loot'
-  문서, 2026-07 확인], 이런 보정은 눈에 보이지 않아 체감 신뢰로 잘 이어지지 않는다.
-<!-- 증거 부족: 드롭률 공개 여부가 매출·유지율에 미친 영향을 직접 비교한 수치는 확인하지 못함 -->
+- [interpretation] Without an upper bound such as pity or a guaranteed drop, reasons to leave accumulate as play time grows. GAME-028 preserved its metrics but continued reproducing complaints at this point.
+- [interpretation] Keeping probabilities private means disclosure later looks like "they were exposed." That is the difference between GAME-029, which disclosed first, and GAME-025, which hid them and was sanctioned. South Korea made disclosure of randomized-item probabilities mandatory through a Game Industry Act amendment effective March 2024 [source: Game Industry Act amendment, effective 2024-03].
+- [interpretation] Even when bad-luck mitigation exists, its effect is weakened if players are not told. Diablo 3's Smart Loot rolls about 85% of drops to match the receiving character's class [source: Diablo Wiki 'Smart Loot' article, confirmed 2026-07], but invisible correction does not readily become felt trust.
+<!-- Evidence gap: no directly comparable figures were confirmed for the effect of drop-rate disclosure on sales or retention. -->

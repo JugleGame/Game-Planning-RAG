@@ -1,37 +1,37 @@
 +++
 card_id = "ELEM-015"
 type = "mechanic"
-title = "스트레스/광기 시스템 (Sanity / Stress Meter)"
-summary = "캐릭터에게 정신적 압박(스트레스·공포·광기) 수치를 부여해, 임계치를 넘으면 환각·행동 이상 같은 부정적 상태를 발생시키는 방식"
+title = "Stress/Sanity System (Sanity / Stress Meter)"
+summary = "A system that assigns characters a mental-pressure value (stress, fear, or madness) and triggers negative states such as hallucinations or abnormal behavior when it exceeds a threshold"
 tags = ["horror", "dark-fantasy", "psychological", "punishing", "divisive"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-캐릭터의 체력(HP)과는 별도로 "정신적 압박" 수치를 두는 방식입니다. 이 수치가 임계치를 넘으면 환각을 보거나, 판단력이 흐려지거나, 성격이 변하는 등 부정적인 상태에 빠집니다. 몸이 아니라 마음이 먼저 무너지는 공포를 표현하는 데 쓰입니다.
+This method tracks a “mental pressure” value separately from character health (HP). When it exceeds a threshold, the character enters a negative state such as hallucinating, losing judgment, or changing personality. It expresses horror in which the mind collapses before the body.
 
 ## Success Cases
-- GAME-022 (Darkest Dungeon) - 스트레스 미터가 100에 도달하면 발작(Affliction) 판정을 거쳐 이기적·비관적·편집증적 상태 등을 부여. 2022년 12월 기준 전 세계 600만 장 판매, Metacritic 84점 [source: GAME-022 카드].
-- Red Hook Studios가 정식 출시 10주년(2026)을 맞아 발표한 DLC 'The Fire's Edge'(2026-08-18 출시)에 발작(derangement) 관련 신규 콘텐츠를 포함시킴 - 출시 10년이 지난 시점에도 이 메커닉을 확장 대상으로 계속 투자하고 있음을 보여주는 신호 [source: GAME-022 카드 / 다이제스트 2026-07-27].
-- 확장 방향(발표 단계) - 같은 DLC는 발작을 무작위 페널티로만 두지 않고 "의도적으로 유도·활용하는 도구"와 신규 능동 전투 메커닉 'Burn'을 함께 추가한다고 밝힘. 신규 히어로 '러너웨이'는 화상 자국을 지닌 발작 성향 캐릭터로 설계됨 [source: RPG Site/Worthplaying 보도, 2026-07-21 기준].
-<!-- 증거 부족: 위 확장(발작의 능동 자원화)은 2026-08-18 출시 예정이라 반응 데이터가 없음. 출시 후 재확인 필요 -->
+- GAME-022 (Darkest Dungeon) - When the stress meter reaches 100, an Affliction judgment assigns selfish, pessimistic, or paranoid states. Sold 6,000,000 copies worldwide as of 2022-12, with a Metacritic score of 84 [source: GAME-022 card].
+- Red Hook Studios included new derangement content in the DLC “The Fire's Edge” (released 2026-08-18), announced for the 10th anniversary (2026) - a signal that it continues investing in expanding this mechanic 10 years after launch [source: GAME-022 card / digest 2026-07-27].
+- Expansion direction (announced) - The same DLC says Affliction will become a tool to “intentionally induce and use,” rather than only a random penalty, alongside the active combat mechanic “Burn.” The new hero Runaway is designed as an Affliction-prone character with burn scars [source: RPG Site/Worthplaying report, as of 2026-07-21].
+<!-- Evidence gap: the expansion's active use of Affliction is scheduled for release on 2026-08-18, so reaction data is unavailable. Recheck after release. -->
 
 
 ## Failure Cases
-<!-- 증거 부족: 이 스킬 도메인(DB) 안에 등록된 GAME 카드 중 이 요소로 명확히 실패한 사례가 아직 없음. 후속 조사 필요 -->
-[interpretation] 발작·광기 상태가 플레이어의 조작권을 일시적으로 빼앗는 방식으로 설계되면, "전략적으로 다룰 수 있다는 착각을 줄 뿐 실제로는 피하는 게 최선"이라는 비판으로 이어질 수 있다 [source: GAME-022 카드 인용 비평(The Gemsbok)].
+<!-- Evidence gap: no GAME card registered in this skill domain (DB) is yet a clear failure case for this element. Follow-up research is needed. -->
+[interpretation] If Affliction or madness temporarily removes player control, it may draw the criticism that it only creates the illusion of strategic management while avoiding it is actually best [source: criticism citing GAME-022 card (The Gemsbok)].
 
 ## User Reaction Summary
-- 장르 밖 사례로 Bloodborne의 Insight(통찰) 수치는 오르면 오를수록 세계가 더 많이 보이고 적도 강해지는 방식으로 "앎의 대가"를 표현했고, Amnesia: The Dark Descent의 정신력(Sanity) 수치는 어둠 속에 있으면 환각이 심해지고 램프를 켜면 괴물을 끌어들이는 딜레마로 설계돼 "공포에 스스로 가담하게 만든다"는 평가를 받음 [source: Game Developer 디자인 딥다이브 / CBR 정리 기사, 2026-07 확인].
-- Darkest Dungeon에 대해서는 "스트레스와 긴장을 만들어내는 방식이 거의 완벽한 걸작"이라는 호평이 있는 한편, 발작 상태가 플레이어의 주도권을 빼앗는다는 비판도 공존함 [source: GAME-022 카드].
+- In Bloodborne, rising Insight reveals more of the world and strengthens enemies, expressing “the price of knowledge”; Amnesia: The Dark Descent makes Sanity deteriorate in darkness while lighting a lamp attracts monsters, a dilemma praised for making players participate in their own fear [source: Game Developer design deep dive / CBR roundup, confirmed 2026-07].
+- Darkest Dungeon is praised as “nearly a perfect masterpiece” in creating stress and tension, while also criticized because Affliction removes player agency [source: GAME-022 card].
 
 ## Synergy
-- 좋음: ELEM-016 (그림다크 톤) - 절망적인 세계관 설정이 정신력 소모라는 메커닉에 설득력을 더함.
-- 좋음: ELEM-014 (처벌적 죽음 순환) - 자원 손실(몸)과 정신 붕괴(마음)를 함께 두면 처벌의 층위가 늘어남 [interpretation] (직접 결합한 사례는 아직 확인하지 못함).
-- 좋음: ELEM-023 (광원·시야 제한) - 볼 수 있는 범위를 좁히는 장치와 함께 두면, 정신력 소모의 원인(보이지 않는 것에 대한 공포)이 메커닉으로 드러난다. GENRE-014(횡스크롤 공포)가 이 조합을 군집 구성 요소로 지목한다.
-- 장르 앵커: GENRE-009 (다크 판타지), GENRE-014 (횡스크롤 공포) - 두 군집 모두 이 요소를 구성 요소로 지목한다.
+- Good: ELEM-016 (Grimdark Tone) - A desperate setting makes mental depletion more convincing.
+- Good: ELEM-014 (Punishing Death Loop) - Combining resource loss (body) and mental collapse (mind) adds layers of punishment [interpretation] (no directly combined case confirmed yet).
+- Good: ELEM-023 (Light Source & Vision Limit) - Pairing it with restricted vision makes the source of mental depletion, fear of what cannot be seen, into a mechanic. GENRE-014 (Side-scrolling Horror) identifies this combination as a cluster component.
+- Genre anchors: GENRE-009 (Dark Fantasy), GENRE-014 (Side-scrolling Horror) - Both clusters identify this element as a component.
 
 ## Risks
-- [interpretation] 상태 이상이 플레이어의 입력을 가로채는 방식(강제 행동 등)으로 구현되면 "내가 진 게 아니라 게임이 내 캐릭터를 빼앗아갔다"는 억울함으로 번질 수 있다.
-- [interpretation] 발작을 능동 자원으로 전환하는 설계(위 확장 방향)에서는 "차라리 계속 미쳐 있는 편이 유리한" 상태가 나올 수 있어, 스트레스 관리라는 원래의 긴장감이 무의미해질 위험이 있다.
-- [interpretation] 수치가 자주 UI에 노출되지 않으면 플레이어가 임계치를 예측하지 못해 "불공정하다"는 인식을 줄 위험이 있다.
+- [interpretation] If a status effect hijacks player input through forced actions, players may feel “the game took my character away rather than me losing.”
+- [interpretation] If Affliction becomes an active resource as proposed above, states where “staying insane is advantageous” may appear, making the original tension of stress management meaningless.
+- [interpretation] If the value is not frequently shown in the UI, players may be unable to predict the threshold and perceive the system as unfair.

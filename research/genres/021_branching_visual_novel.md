@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-021"
 type = "genre"
-title = "분기형 비주얼노벨 (Branching Visual Novel)"
-summary = "대사 선택이 아니라 행동의 결과(무엇을 내주는가)로 이야기가 갈리는, 정적인 2D 대화 중심의 니치 군집"
+title = "Branching Visual Novel"
+summary = "A niche cluster centered on static 2D dialogue where the story branches through action results (what is served), not dialogue choices"
 elements = ["ELEM-007"]
 example_games = []
 tags = ["visual-novel", "narrative", "niche-appeal", "indie", "low-stress"]
@@ -10,18 +10,18 @@ updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Components
-- ELEM-007 (선택 반응형 비-LLM 내러티브) - 이 군집에서는 대사 선택지가 아니라 행동 결과(음료 제조, 서빙 등)로 분기가 갈리는 간접 선택 구조로 나타난다.
+- ELEM-007 (choice-reactive non-LLM narrative) - In this cluster it appears as an indirect-choice structure where branches depend on action results (making and serving drinks, etc.), not dialogue options.
 
 ## Market Saturation
-- 사실: VA-11 Hall-A는 Steam 리뷰 38,514건, "압도적으로 긍정적" 평가를 받는다 [source: Steam 스토어 페이지, 웹 검색 종합 확인 2026-07-31 기준].
-- [interpretation] 감정 서사 어드벤처(GENRE-008)보다 규모가 작고, 대화·서빙 중심의 미니멀 게임플레이에 집중하는 좁은 니치로 보인다.
+- Fact: VA-11 Hall-A has 38,514 Steam reviews and an "overwhelmingly positive" rating [source: Steam store page, web-search synthesis verified as of 2026-07-31].
+- [interpretation] It appears to be a narrow niche, smaller than emotional narrative adventures (GENRE-008) and focused on minimal dialogue-and-serving gameplay.
 <!-- 증거 부족: Coffee Talk의 정확한 리뷰 수·긍정 비율은 확인하지 못함 -->
 
 ## Conventions and Expectations
-- 사실: Coffee Talk는 "선택지를 고르는 것이 아니라 손님에게 무엇을 내주는가"로 분기가 갈리는 구조를 VA-11 Hall-A에서 이어받았다고 평가된다 [source: 웹 검색 종합 리뷰 비교, 2026-07-31 확인].
-- [interpretation] 이 군집의 관례는 "행동이 곧 선택"이라는 간접 분기이며, 전통적인 선택지 트리 UI를 일부러 피하는 경향이 있다.
+- Fact: Coffee Talk is assessed as inheriting from VA-11 Hall-A a structure branching on "what is served to the customer rather than which option is chosen" [source: web-search synthesis of review comparisons, verified 2026-07-31].
+- [interpretation] The convention is indirect branching in which "action is choice," with a tendency to deliberately avoid traditional choice-tree UI.
 
 ## Gaps
-[interpretation] ★ 이 "행동 기반 간접 분기" 구조를 3D나 실시간 액션과 결합한 사례는 조사 중 확인하지 못했다 (현재 확인된 사례는 모두 2D 정적 비주얼노벨).
-- 확인 방법: itch.io/Steam "visual novel" + "3D" 교차 검색
-- 확인일: 2026-07-31 / 재확인 주기: 8주
+[interpretation] ★ No case combining this "action-based indirect branching" structure with 3D or real-time action was confirmed (all currently confirmed cases are static 2D visual novels).
+- Verification method: cross-search itch.io/Steam for "visual novel" + "3D"
+- Verified on: 2026-07-31 / Re-check cycle: 8 weeks

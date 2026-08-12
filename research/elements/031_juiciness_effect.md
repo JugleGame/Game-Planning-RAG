@@ -1,50 +1,33 @@
 +++
 card_id = "ELEM-031"
 type = "tech"
-title = "시각 피드백 과장 (Juiciness / Game Feel / Screenshake)"
-summary = "화면 흔들림, 파티클 폭발, 숫자 띄우기 등 시각 피드백을 과장되게 쌓아 버튼 입력이 즉각 반응하는 착각을 주는 기술"
+title = "Exaggerated Visual Feedback (Juiciness / Game Feel / Screenshake)"
+summary = "A technique that layers exaggerated visual feedback such as screen shake, particle explosions, and floating numbers to create the illusion of an immediate response to button input"
 tags = ["visual-feedback", "feel", "indie", "game-feel", "polish"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-게임이 "반응한다"는 느낌을 주기 위해 한 액션마다 화면 떨림, 파티클 효과, 색 변화,
-음향 효과 등을 여러 개 겹친다는 뜻입니다. 클릭 한 번에 화면이 흔들리고, 숫자가
-튀어나오고, 파티클이 터지는 식으로 "이 게임은 내 입력에 반응한다"는 착각을 줍니다.
+This means layering screen shake, particle effects, color changes, sound effects, and other effects onto every action to make the game feel responsive. A single click shakes the screen, numbers pop out, and particles burst, creating the illusion that the game responds to the player's input.
 
 ## Success Cases
-- GAME-037 (Vampire Survivors) - 무기 강화가 곱연산으로 불어나면서 화면 전체가
-  이펙트로 뒤덮이는 시각적 쾌감이 게임의 정체성으로 평가된다. Steam 리뷰 약
-  24만 9,855건 중 98% 긍정 [source: GAME-037 카드의 Steam 리뷰 집계 인용,
-  2026-07 확인].
-<!-- 증거 부족: 시각 피드백 자체를 독립 변수로 분리해 효과를 측정한 자료(A/B 결과,
-개발사가 밝힌 연출 설계 원칙)는 확인하지 못함. 위 사례도 게임 전체의 평가이지
-연출만의 기여도가 아니다 -->
+- GAME-037 (Vampire Survivors) - As weapon upgrades grow multiplicatively and cover the entire screen with effects, the visual pleasure is regarded as part of the game's identity. 98% positive among approximately 240,000 reviews and 9,855 Steam reviews [source: GAME-037 card's cited Steam review aggregation, verified 2026-07].
+<!-- Evidence insufficient: no material was found measuring the effect of visual feedback as an independent variable (A/B results or development-stated presentation principles). This case is also an evaluation of the whole game, not the contribution of presentation alone -->
 
 ## Failure Cases
-<!-- 증거 부족: 시각 피드백 과다가 원인으로 지목된 상업적 실패 사례는 이번 조사에서
-확인하지 못함 -->
+<!-- Evidence insufficient: this investigation found no commercial failure explicitly attributed to excessive visual feedback -->
 
 ## User Reaction Summary
-<!-- 증거 부족: 이 요소만을 대상으로 한 유저 리뷰 키워드 집계를 확보하지 못했다.
-아래는 근거 문장이 아니라 추가 조사 방향이다 -->
-- [interpretation] 확인해야 할 축은 둘이다 - 즉각 반응에 대한 선호와, 화면 흔들림·섬광에
-  대한 접근성 거부감(멀미, 광과민성). 후자는 옵션 제공 여부와 직결된다.
+<!-- Evidence insufficient: no user-review keyword aggregation targeting only this element was secured. The following is a direction for further investigation, not an evidence sentence -->
+- [interpretation] The two axes to verify are preference for immediate response and accessibility aversion to screen shake and flashes (motion sickness and photosensitivity). The latter is directly connected to whether options are provided.
 
 ## Synergy
-- 장르 앵커: GENRE-029 (리듬 액션) - 이 군집이 이 요소를 구성 요소로 지목한다. 입력이 박자와
-  맞아떨어질 때마다 화면 흔들림·파티클·타격감 있는 사운드가 즉각 반응해, 성공 자체가 보상처럼
-  느껴지게 만든다 [source: GENRE-029 카드].
-- 좋음: ELEM-022 (지수적 점수 스케일링) - 숫자가 폭발적으로 커질 때 시각 피드백이
-  쾌감을 배가한다. GENRE-019(서바이버라이크)가 이 조합을 장르 문법으로 굳혔다.
-- 좋음: ELEM-010 (클립 기반 바이럴리티) - 화면이 화려할수록 짧은 클립으로 인상적이다.
-- 구현 전제: ARCH-015 (오브젝트 풀링) - 파티클·이펙트를 대량으로 쏟아내려면 매번
-  생성·파괴하지 않는 재사용 구조가 먼저 있어야 한다. 이 다리가 없으면 연출을 올릴
-  때마다 프레임이 떨어진다.
-- 구현 전제: ARCH-020 (애니메이션 상태 머신) - 연출을 얹을 지점(상태 전환 시점)을
-  코드에 흩지 않고 한곳에서 관리할 수 있다.
+- Genre anchor: GENRE-029 (rhythm action) - This cluster names the element as a component. Whenever input matches the beat, screen shake, particles, and hard-hitting sound respond immediately, making success itself feel like a reward [source: GENRE-029 card].
+- Good: ELEM-022 (exponential score scaling) - Visual feedback multiplies the pleasure when numbers grow explosively. GENRE-019 (survivor-like) established this combination as genre grammar.
+- Good: ELEM-010 (clip-based virality) - The more spectacular the screen, the more memorable it is as a short clip.
+- Implementation prerequisite: ARCH-015 (object pooling) - To pour out large quantities of particles and effects, a reusable structure that avoids creating and destroying them each time must come first. Without this bridge, frames drop whenever presentation is increased.
+- Implementation prerequisite: ARCH-020 (animation state machine) - The points where presentation is added, such as state transitions, can be managed in one place instead of being scattered through code.
 
 ## Risks
-- [interpretation] 과다 효과는 접근성 문제(멀미, 청각 과부하)를 초래한다. 끄기 옵션 필수.
-- [interpretation] 효과가 게임플레이의 실제 반응(정확히 맞은 것, 놓친 것)과 맞지 않으면
-  혼란만 가중된다.
+- [interpretation] Excessive effects cause accessibility problems such as motion sickness and auditory overload. An off option is essential.
+- [interpretation] If effects do not match the actual gameplay response, such as a hit that was accurate or missed, they only increase confusion.

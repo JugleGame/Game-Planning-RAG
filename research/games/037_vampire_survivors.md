@@ -2,7 +2,7 @@
 card_id = "GAME-037"
 type = "success"
 title = "Vampire Survivors (2022, poncle)"
-summary = "무기 조합이 곱해지며 화면을 뒤덮는 폭발적 스케일링을 코어로 삼아, 1인 개발 원형에서 새 장르(서바이버라이크)를 만든 초저가 인디 대히트작"
+summary = "A low-cost indie megahit whose core is explosive scaling that blankets the screen as weapon combinations multiply, creating a new genre (survivors-like) from a solo-developed prototype"
 genres = ["GENRE-019"]
 elements = ["ELEM-022", "ELEM-031"]
 tags = ["survivors-like", "roguelite", "indie", "solo-dev-origin", "power-scaling", "broad-appeal"]
@@ -10,20 +10,20 @@ updated = "2026-07-31"
 confidence = "high"
 +++
 ## Summary and Sales/Review Metrics
-- 사실: 개발사는 poncle이며, Vampire Survivors가 이 스튜디오의 Steam 첫 출시작이다 [source: 업계 통계 정리 보도, 2026-07 확인].
-- 사실: 추정 누적 판매 약 600만 장, 정식 출시 첫 달에만 약 200만 장·매출 약 700만 달러를 기록했다는 보도가 있다 [source: 업계 통계 정리 보도 / GameSensor 보도, 2026-07 확인].
-- 사실: Steam 사용자 리뷰 약 24만 9,855건, 98% 긍정("압도적으로 긍정적") [source: Steam 리뷰 집계 보도, 2026-07 확인].
-<!-- 증거 부족: poncle의 공식 IR/보도자료 원문은 확인하지 못했고, 위 판매 수치는 3자 집계 사이트 기준이다 -->
+- Fact: The developer is poncle, and Vampire Survivors was the studio's first Steam release [source: industry-statistics roundup coverage, verified 2026-07].
+- Fact: Reports estimate cumulative sales at about 6,000,000 units, with about 2,000,000 units and about $7,000,000 in revenue in the first month of full release alone [source: industry-statistics roundup coverage / GameSensor coverage, verified 2026-07].
+- Fact: It had about 240,000 + 9,855 Steam user reviews, 98% positive ("Overwhelmingly Positive") [source: Steam review-count coverage, verified 2026-07].
+<!-- Evidence insufficient: poncle's original official IR/press materials could not be confirmed, and the sales figures above come from third-party aggregators -->
 
 ## Elements Used
-- ELEM-022 (지수적 점수 스케일링) - 개별 무기·패시브 강화 효과가 서로 곱해지며 후반부에 화면 전체가 이펙트로 뒤덮일 만큼 수치가 폭발적으로 불어나는 설계가 이 게임의 정체성 자체다.
-- ELEM-031 (시각 피드백 과장) - 위 수치 폭발이 화면을 뒤덮는 이펙트로 표현되어, 강해졌다는 사실을 숫자가 아니라 화면 밀도로 체감하게 만든다.
-- GENRE-019 (서바이버라이크) - 이 게임이 군집의 원형작이다. 자동 공격 + 이동만 조작하는 문법이 이후 후속작들의 관례가 됐다.
+- ELEM-022 (exponential score scaling) - the game's identity is a design where individual weapon and passive upgrades multiply one another, causing numbers to explode until effects blanket the entire screen late in a run.
+- ELEM-031 (exaggerated visual feedback) - the numerical explosion is expressed as effects covering the screen, making power feel like screen density rather than a number.
+- GENRE-019 (survivors-like) - this game is the cluster's prototype. The grammar of controlling only automatic attacks and movement became a convention for later successors.
 
 ## Success/Failure Drivers
-- 사실: 24만 건 이상 규모의 리뷰에서 98%라는 극히 높은 긍정 비율이 유지되고 있다 [source: Steam 리뷰 집계 보도, 2026-07 확인].
-- [interpretation] 조작이 "이동만" 하면 되는 극단적으로 낮은 입력 난이도와, 무기 조합이 기하급수적으로 불어나는 시각적 쾌감을 결합해 "보기만 해도 재미있는" 배리어를 낮췄을 가능성이 있다.
-<!-- 증거 부족: 개발자가 직접 밝힌 밸런스 설계 원칙(수치 공식 등)은 확인하지 못함 -->
+- Fact: An exceptionally high positive rate of 98% has held across more than 240,000 reviews [source: Steam review-count coverage, verified 2026-07].
+- [interpretation] Combining an extremely low input burden—only "movement"—with the visual pleasure of weapon combinations growing geometrically may have lowered the barrier to something that is "fun just to watch."
+<!-- Evidence insufficient: the developer's directly stated balance-design principles (such as numerical formulas) could not be confirmed -->
 
 ## Implications for Our Project
-ELEM-022(지수적 점수 스케일링)를 게임의 부가 요소가 아니라 유일한 코어 루프로 두어도 하나의 장르를 만들 수 있음을 보여준 원형 사례. [interpretation] 2D 프로젝트에서 전투 시스템에 소소한 파워업 대신 "곱연산으로 불어나는" 강화를 넣으면 적은 콘텐츠 양으로도 후반부 쾌감을 만들 수 있으나, 밸런스 붕괴(치트급 조합)를 의도된 재미로 받아들일지 사전에 정해야 한다.
+This prototype shows that ELEM-022 (exponential score scaling) can form a genre even as the sole core loop rather than a secondary game element. [interpretation] In a 2D project, replacing small power-ups with upgrades that "grow through multiplication" can create late-run pleasure with little content, but the team must decide in advance whether balance collapse (cheat-level combinations) is intended fun.

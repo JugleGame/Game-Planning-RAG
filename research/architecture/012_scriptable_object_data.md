@@ -1,68 +1,68 @@
 +++ 
 card_id = "ARCH-012"
 type = "convention"
-title = "Data/ 데이터 자산 규약 (ScriptableObject 테이블)"
-summary = "아이템 능력치나 확률표 같은 설정값을 코드 안에 박아넣지 않고 프로젝트의 데이터 파일로 따로 빼서, 코드를 안 고치고도 수치를 바꿀 수 있게 하는 규칙"
+title = "Data/ Data Asset Convention (ScriptableObject Tables)"
+summary = "A rule that keeps configuration values such as item stats or probability tables out of the code and in separate project data files, so numbers can be changed without touching the code"
 tags = ["data", "scriptableobject", "convention", "balance", "unity", "authoring"]
 updated = "2026-07-30"
 confidence = "high" # reference/unity_project_baseline.md 기준 구조의 Data/ 폴더 명시 + Unity 공식 매뉴얼(ScriptableObject) 근거 + 안티패턴(런타임 변경이 에디터에만 남는 문제) 실사례
 +++ 
 ## Problem
 
-수치를 코드나 프리팹 안에 흩뿌려두면 밸런스를 한 번 조정할 때마다 코드를 고치고 다시 컴파일해야 하고, 같은 아이템이 씬마다 다른 값을 갖는 사고가 생긴다. 더 나쁜 것은 값이 어디에 있는지 아무도 모르게 되는 것이다. 쉽게 말해: 요리 재료의 양을 요리사 머릿속에만 두면 요리사가 바뀔 때마다 맛이 달라진다. 레시피 카드를 따로 두면 누구든 같은 요리를 만들고, 양을 고칠 때 카드 한 장만 고치면 된다. 데이터 자산이 그 레시피 카드다.
+If you scatter numbers inside code or prefabs, every single balance adjustment requires editing and recompiling code, and accidents happen where the same item has different values in different scenes. Worse is that nobody knows where the values are. Put simply: if the amounts of cooking ingredients live only in the cook's head, the taste changes whenever the cook changes. Keep a recipe card separately and anyone can make the same dish, and to change an amount you fix just that one card. The data asset is that recipe card.
 
 ## Structure
 
-- 위치: `Assets/Data/` — 프로젝트 기준 구조의 데이터 전용 폴더다. [source: reference/unity_project_baseline.md 기준 구조 — Prefabs/ , Tilemaps/ , Data/]
-- 종류별로 하위 폴더를 나눈다(예: 아이템, NPC 대화, 드롭 확률표). 폴더·파일 이름은 명명 규약을 따른다(ARCH-008).
-- 데이터는 ScriptableObject 자산으로 만든다. ScriptableObject는 클래스 인스턴스마다 값을 복사해 들고 있는 대신, 프로젝트에 저장된 자산 하나를 여러 곳이 함께 참조하는 데이터 컨테이너다. [source: Unity 공식 매뉴얼 — ScriptableObject]
-- 자산은 씬에 속하지 않는다. 그래서 World_Base와 어떤 Chunk 씬이든 같은 데이터 자산을 참조할 수 있다. 이것이 청크 스트리밍(ARCH-002, ARCH-003) 구조에서 데이터를 공유하는 유일하게 안전한 방법이다.
-- 데이터와 상태의 소유자가 다르다 — 설정값(변하지 않는 것)은 Data/의 자산이 갖고, 플레이 중 변하는 상태(현재 체력, 소지품, 진행도)는 세이브 시스템이 JSON으로 갖는다. [source: reference/unity_project_baseline.md 기준 구조 — Core/SaveSystem(JSON)]
-- 데이터 자산은 문자열 ID를 갖는다. 세이브 JSON은 자산을 직접 가리킬 수 없으므로 이 ID로 되찾는다(ARCH-004).
+- Location: `Assets/Data/` — the data-only folder of the baseline project structure. [source: reference/unity_project_baseline.md baseline structure — Prefabs/ , Tilemaps/ , Data/]
+- Split subfolders by kind (e.g. items, NPC dialogue, drop probability tables). Folder and file names follow the naming convention (ARCH-008).
+- Make the data as ScriptableObject assets. Instead of each class instance holding its own copy of the values, a ScriptableObject is a data container where many places jointly reference a single asset stored in the project. [source: Unity official manual — ScriptableObject]
+- Assets do not belong to a scene. That is why World_Base and any Chunk scene can reference the same data asset. This is the only safe way to share data in the chunk streaming (ARCH-002, ARCH-003) structure.
+- Data and state have different owners — configuration values (things that do not change) are held by assets in Data/, and state that changes during play (current health, belongings, progress) is held by the save system as JSON. [source: reference/unity_project_baseline.md baseline structure — Core/SaveSystem (JSON)]
+- Data assets have a string ID. Save JSON cannot point at an asset directly, so it recovers it by this ID (ARCH-004).
 
 ## Core Rules
 
-- Data/의 자산은 읽기 전용 설정값만 담는다. 플레이 중 변하는 값을 여기에 쓰지 않는다. 에디터에서는 변경이 남고 빌드에서는 남지 않아, 개발자 컴퓨터에서만 재현되는 버그가 된다. [source: Unity 공식 매뉴얼 — ScriptableObject 및 빌드된 플레이어가 자산 파일을 수정할 수 없다는 점]
-- 데이터 자산 안에 씬 오브젝트 참조를 넣지 않는다. 프로젝트 자산은 씬 안의 오브젝트를 가리켜 저장할 수 없고, 청크가 꺼지면 그 대상은 존재하지도 않는다.
-- 같은 수치를 두 곳에 두지 않는다. 데이터 자산이 유일한 원본이고 프리팹·코드는 그것을 참조한다. 수치가 두 곳에 있으면 반드시 언젠가 어긋난다.
-- 데이터 자산끼리는 ID로 참조한다. 카드끼리 ID로만 연결하는 것과 같은 이유다 — 복사한 값은 갱신되지 않는다.
-- 확률·드롭·보상 같은 표는 코드에 조건문으로 쓰지 않고 표 형태 자산으로 만든다. 밸런스 담당이 코드를 만지지 않고 조정할 수 있어야 한다.
-- 데이터가 바뀌었다는 사실을 시스템에 알릴 필요가 있으면 EventBus로 방송한다. 데이터 자산이 시스템을 직접 부르지 않는다. [source: reference/unity_project_baseline.md 방송 규칙]
+- Assets in Data/ hold only read-only configuration values. Do not write values that change during play here. Changes persist in the editor but not in a build, making it a bug that reproduces only on the developer's machine. [source: Unity official manual — ScriptableObject, and the point that a built player cannot modify asset files]
+- Do not put scene object references inside a data asset. A project asset cannot save a pointer to an object inside a scene, and once the chunk is turned off that target does not even exist.
+- Do not keep the same number in two places. The data asset is the single original, and prefabs and code reference it. If a number lives in two places, it will surely diverge someday.
+- Data assets reference each other by ID. It is the same reason cards are linked only by ID — copied values do not get updated.
+- Tables such as probabilities, drops, and rewards are not written as conditionals in code but made as table-shaped assets. The person in charge of balance must be able to adjust them without touching code.
+- If a system needs to be told that data changed, broadcast it on the EventBus. A data asset does not call a system directly. [source: reference/unity_project_baseline.md broadcast rules]
 
 ## Unity Implementation Steps
 
-1. `Assets/Data/` 아래 종류별 폴더를 만든다. 이름은 명명 규약에 맞춘다(ARCH-008).
-2. 데이터 종류마다 ScriptableObject 정의를 `Scripts/` 안 해당 시스템 폴더에 둔다(예: NPC 대화 데이터 정의는 `Scripts/NPC/`). 정의는 코드, 자산은 Data/다.
-3. 에디터 생성 메뉴 항목을 붙여 사람이 자산을 만들 수 있게 한다. 자산 파일은 Data/ 밖에 만들지 않는다.
-4. 각 데이터 자산에 문자열 ID 항목을 넣는다. ID는 파일 이름과 일치시켜 사람이 눈으로 대조할 수 있게 한다.
-5. ID로 자산을 찾아주는 조회용 목록 자산을 종류별로 하나 만든다. 코드가 폴더를 훑는 방식은 쓰지 않는다 — 빌드에서 동작이 달라진다.
-6. 세이브 연동 — JSON에는 ID와 변한 상태만 저장하고, 불러올 때 ID로 자산을 되찾는다(ARCH-004).
-7. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [source: reference/unity_project_baseline.md 자체 점검 기준]
+1. Create per-kind folders under `Assets/Data/`. Match the names to the naming convention (ARCH-008).
+2. For each data kind, put the ScriptableObject definition in the corresponding system folder inside `Scripts/` (e.g. the NPC dialogue data definition in `Scripts/NPC/`). The definition is code, the asset is in Data/.
+3. Attach an editor creation menu item so people can create assets. Do not create asset files outside Data/.
+4. Put a string ID field in each data asset. Match the ID to the file name so people can cross-check by eye.
+5. Create one lookup list asset per kind that finds assets by ID. Do not use an approach where code scans folders — behavior differs in a build.
+6. Save integration — store only IDs and changed state in JSON, and recover the assets by ID on load (ARCH-004).
+7. Self-check — confirm 0 compile errors and 0 console errors, then commit. [source: reference/unity_project_baseline.md self-check criteria]
 
 ## Anti-patterns
 
-- 데이터 자산을 세이브 저장소로 쓰기: [interpretation] 이 규약을 어겼을 때 가장 비싼 실수다. 에디터에서는 값이 남아 "저장이 되네"라고 착각하지만, 빌드된 게임은 자기 자산 파일을 고칠 수 없어 플레이어의 진행이 전부 사라진다. [source: Unity 공식 매뉴얼 — ScriptableObject]
-- 에디터에서 플레이 중 값을 조정하고 그대로 두기: 그 변경이 자산에 남아 다음 플레이의 시작값이 조용히 바뀐다. 밸런스 테스트 결과가 오염된다.
-- 데이터 자산에 프리팹 인스턴스나 씬 오브젝트를 연결하기: 저장되지 않거나 청크 언로드 후 끊긴 참조가 된다.
-- 수치를 코드 상수와 데이터 자산에 이중으로 두기: 한쪽만 고쳐진 상태로 배포되고, 어느 쪽이 진짜인지 판별하는 데 시간이 든다.
-- 하나의 거대한 데이터 자산에 모든 종류를 몰아넣기: 여러 사람이 동시에 고치면 병합 충돌이 파일 하나에 집중된다.
-- 폴더를 실행 중에 훑어 자산을 모으기: 에디터에서는 되지만 빌드에서 결과가 달라진다. 조회는 명시적인 목록 자산으로 한다.
+- Using data assets as save storage: [interpretation] this is the most expensive mistake when this convention is broken. In the editor the values persist and you mistakenly think "saving works", but a built game cannot modify its own asset files, so all of the player's progress disappears. [source: Unity official manual — ScriptableObject]
+- Adjusting values during play in the editor and leaving them: that change persists in the asset and the starting value of the next play quietly changes. Balance test results become contaminated.
+- Linking prefab instances or scene objects into a data asset: it either does not get saved or becomes a severed reference after chunk unload.
+- Keeping a number in duplicate in a code constant and a data asset: it ships with only one side fixed, and it takes time to determine which is the real one.
+- Cramming every kind into one giant data asset: when several people edit at once, merge conflicts concentrate on a single file.
+- Scanning folders at runtime to gather assets: it works in the editor but produces different results in a build. Do lookups with an explicit list asset.
 
 ## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [source: reference/unity_project_baseline.md 자체 점검 기준]
-- 위치 검사: 데이터 자산 파일이 `Assets/Data/` 밖에 하나도 없어야 한다(파일 검색으로 확인 가능).
-- 빌드 지속성 검사: 빌드에서 값을 변화시키는 플레이를 한 뒤 재실행했을 때, 시작값이 원래 설정값과 같아야 한다(달라지면 데이터 자산에 상태를 쓰고 있다는 뜻).
-- 상태 소유 검사: 세이브 JSON에 진행 상태가 들어 있고, 데이터 자산 파일의 내용은 플레이 전후로 동일해야 한다(파일 변경 여부로 확인).
-- ID 무결성 검사: 세이브 JSON의 모든 ID가 조회 목록에서 해결돼야 한다. 해결 실패는 콘솔 에러로 남긴다.
-- 중복 ID 검사: 같은 종류 안에 동일 ID를 가진 자산이 둘 이상 없어야 한다.
+- 0 compile errors, 0 console errors. [source: reference/unity_project_baseline.md self-check criteria]
+- Location check: there must be no data asset file outside `Assets/Data/` (verifiable by file search).
+- Build persistence check: after playing in a build in a way that changes values and then restarting, the starting values must be the same as the original configuration values (if they differ, it means state is being written into data assets).
+- State ownership check: progress state must be in the save JSON, and the contents of the data asset files must be identical before and after play (verified by whether the files changed).
+- ID integrity check: every ID in the save JSON must resolve in the lookup list. Resolution failures are left as console errors.
+- Duplicate ID check: within the same kind, there must not be two or more assets with an identical ID.
 
 ## Synergy
 
-- ARCH-004 (세이브 시스템): 역할 분담이 핵심 — 설정값은 데이터 자산, 변하는 상태는 JSON. 이 선이 흐려지면 세이브가 깨진다.
-- ARCH-008 (폴더·네이밍 규약): 파일 이름과 ID를 일치시키는 규칙의 근거가 그 카드다.
-- ARCH-005 (NPC 상태머신): 순찰 속도·대화 조건 같은 값을 상태머신 코드에서 빼내 데이터 자산으로 옮기는 대상.
-- ARCH-001 (이벤트 버스): 데이터 변경 통지 경로. 데이터 자산이 시스템을 직접 부르지 않는다.
-- ELEM-019 (무작위 전리품 드롭 & 루트 테이블): 궁합 직결 — 루트 테이블은 이 규약의 대표적인 표 자산이다. 확률을 코드에 박으면 조정 비용이 폭증한다.
-- ELEM-017 (가챠 확률 & 천장 시스템): 확률과 천장 횟수가 데이터 자산에 있어야 밸런스 조정과 감사(수치 검증)가 가능하다.
-- ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트): 판마다 제시되는 후보 풀이 표 자산으로 관리된다.
+- ARCH-004 (Save System): the division of roles is the crux — configuration values in data assets, changing state in JSON. Blur this line and saving breaks.
+- ARCH-008 (Folder and Naming Convention): that card is the basis for the rule of matching file names to IDs.
+- ARCH-005 (NPC State Machine): the target for pulling values such as patrol speed and conversation conditions out of the state machine code and into data assets.
+- ARCH-001 (Event Bus): the notification path for data changes. A data asset does not call a system directly.
+- ELEM-019 (Random Loot Drops & Loot Tables): directly connected compatibility — a loot table is the representative table asset of this convention. Hard-coding probabilities makes adjustment costs explode.
+- ELEM-017 (Gacha Rates & Pity System): rates and the pity count must be in data assets for balance adjustment and auditing (numeric verification) to be possible.
+- ELEM-018 (Roguelike Random Upgrade/Path Draft): the candidate pool presented each run is managed as a table asset.

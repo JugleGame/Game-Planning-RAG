@@ -1,52 +1,29 @@
 +++
 card_id = "ELEM-045"
 type = "mechanic"
-title = "신격/후원자 선택형 소환 로스터 고정 (Deity/Patron Selection Locking Summonable Roster)"
-summary = "런 시작 시 고른 신·후원자에 따라 이후 소환할 수 있는 유닛 풀이 그 신에게 속한 것으로 정해지는 구조"
+title = "Deity/Patron Selection Locking Summonable Roster"
+summary = "A structure in which the unit pool that can be summoned afterward is determined by the deity or patron chosen at the start of a run"
 tags = ["tower-defense", "roguelite", "greek-mythology", "draft", "emerging"]
 updated = "2026-08-11"
 confidence = "medium"
 +++
 ## Definition
-판을 시작할 때 신이나 후원자 하나를 고르면, 그 이후 소환할 수 있는 유닛(생물)이 그
-신에게 속한 것들로 정해지는 방식입니다. 어떤 반 편성 게임에서 처음 고른 팀 색깔에
-따라 그 뒤로 그 팀 선수만 쓸 수 있게 되는 것과 비슷하게, "누구를 섬길지"를 고르는
-순간이 그 판 전체에서 쓸 수 있는 병력의 정체성 자체를 정해버립니다.
+At the start of a run, the player chooses one deity or patron, and the creatures that can be summoned afterward are restricted to those belonging to that deity. Like a team-selection game where choosing a team's color first lets you use only that team's players afterward, the moment of choosing whom to serve determines the identity of the forces available for the entire run.
 
 ## Success Cases
-- Gods & Gore (2026, Early Access) - 그리스 신화 소재 로그라이트 타워 디펜스. 신을
-  골라 신화 속 생물을 모으고 도시를 방어하는 구조로, 제우스를 고르면 황금독수리·
-  미노타우로스 같은 그 신에게 속한 생물을 소환해 웨이브를 막는다 [source: Steam 상점
-  페이지 요약, 2026-08 기준]. Steam 사용자 리뷰 13건 중 69% 긍정 [source: Metacritic
-  집계, 2026-08 확인]. 표본 수가 매우 작아 해석에 주의가 필요함.
-<!-- 증거 부족: "고른 신에 속하지 않은 생물은 그 판 내내 완전히 볼 수 없다"는 잠금
-자체를 명시적으로 확인해주는 1차 출처는 찾지 못함 - 신-생물 소속 관계(제우스=독수리·
-미노타우로스)만 확인됨. 전면 잠금인지 부분 가중치(다른 신 생물도 희귀하게 섞이는 방식)
-인지는 재확인 필요 -->
+- Gods & Gore (2026, Early Access) - A Greek-mythology roguelite tower defense. The structure collects mythological creatures and defends a city after choosing a god; choosing Zeus lets the player summon creatures belonging to him, such as golden eagles and the Minotaur, to stop waves [source: Steam store-page summary, as of 2026-08]. 69% positive among 13 Steam user reviews [source: Metacritic aggregation, verified 2026-08]. The sample is very small, so interpretation requires caution.
+<!-- Evidence insufficient: no primary source explicitly confirming that creatures not belonging to the chosen god are completely unavailable for the entire run was found - only the god-creature relationships (Zeus = eagle and Minotaur) were confirmed. Whether this is a full lock or partial weighting, where creatures of other gods appear rarely, requires rechecking -->
 
 ## Failure Cases
-<!-- 증거 부족: 이 구체적 로스터 고정 메커닉 자체가 실패 사례로 다뤄진 근거를 찾지
-못함. 같은 소재(그리스 신화 로그라이트 TD)의 대비 사례로 Atlanta TD가 언급되나
-(2026-08-07 다이제스트 근거), Atlanta TD가 이 잠금 메커닉을 실제로 쓰는지는 확인되지
-않아 이 절에 넣지 않음 -->
+<!-- Evidence insufficient: no evidence was found treating this specific roster-locking mechanic as a failure case. Atlanta TD is mentioned as a contrast case with the same subject (Greek-mythology roguelite TD), based on a 2026-08-07 digest, but whether Atlanta TD actually uses this locking mechanic was not confirmed, so it is not included here -->
 
 ## User Reaction Summary
-<!-- 증거 부족: Gods & Gore의 Steam 사용자 리뷰가 13건뿐이라 반응 패턴(선호/불호
-키워드)을 요약할 만한 표본이 되지 못함. 얼리액세스 초기 단계라 재확인 주기를 짧게
-둘 필요가 있음 -->
+<!-- Evidence insufficient: Gods & Gore has only 13 Steam user reviews, too small a sample to summarize preference/aversion keywords. As it is in early access, the recheck interval should remain short -->
 
 ## Synergy
-- 장르 앵커[interpretation]: GENRE-010 (타워 디펜스) - 이 요소는 최근 관찰되는 그리스 신화
-  소재 로그라이트 TD 밀집(Gods & Gore, Atlanta TD)의 구체적 잠금 메커닉 후보 중
-  하나로, GENRE-010의 시장 포화도 서술과 이어진다.
-- 구분[interpretation]: ELEM-036 (영웅 픽/밴 드래프트) - ELEM-036은 경쟁 매치 시작 전 영웅
-  개체 하나를 고르는 절차만 다루는 반면, 이 요소는 PvE에서 "고른 후원자가 이후
-  유닛 풀 전체를 제한"하는 구조라는 점에서 다르다. 두 카드가 혼동되지 않도록
-  여기서 구분을 명시한다.
+- Genre anchor[interpretation]: GENRE-010 (tower defense) - This element is one candidate for a specific locking mechanic in the recently observed concentration of Greek-mythology roguelite TDs (Gods & Gore and Atlanta TD), connecting to GENRE-010's description of market saturation.
+- Distinction[interpretation]: ELEM-036 (hero pick/ban draft) - ELEM-036 covers only choosing one hero before a competitive match, while this element differs in restricting the entire later unit pool to the chosen patron in PvE. The distinction is stated here to prevent the cards from being confused.
 
 ## Risks
-- [interpretation] "고른 신의 유닛만 쓸 수 있다"는 제약이 지나치게 좁으면, 재도전할 때마다
-  체감되는 다양성이 줄어들 수 있음 - 표본이 작아 실제 유저 반응으로는 아직 검증되지
-  않았다.
-- [interpretation] 신마다 유닛 밸런스가 다르면 특정 신이 메타를 독점해 다른 신 선택이
-  무의미해지는 문제가 생길 수 있음.
+- [interpretation] If the restriction to units of the chosen god is too narrow, perceived variety on each retry may shrink. Because the sample is small, this has not yet been verified through actual user reactions.
+- [interpretation] If unit balance differs by god, one god may monopolize the meta and make choosing others meaningless.

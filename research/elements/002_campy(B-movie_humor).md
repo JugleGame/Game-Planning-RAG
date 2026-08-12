@@ -1,41 +1,44 @@
 +++
 card_id = "ELEM-002"
 type = "tone"
-title = "캠피 (B급/B-movie 유머, Campy)"
-summary = "일부러 과장되고 싼티 나게 만들어 웃음을 유도하는 능청스러운 톤"
+title = "Campy (B grade/B-movie humor, Campy)"
+summary = "A sly tone that induces laughter by intentionally making it exaggerated and cheap."
 tags = ["comedy", "divisive", "viral-hook", "scriptable"]
 updated = "2026-07-31"
 confidence = "high"              # 기준 충족: 출처 있는 수치 + GAME 근거 3건
 +++
 ## Definition
-일부러 과장되고, 유치하고, 싼티 나게 만들어서 웃기는 스타일입니다.
-중요한 것은 "알고 그런다"는 점입니다 - 실력이 없어서 어설픈 게 아니라,
-어설픈 척을 능청스럽게 연기하는 것입니다. 심야에 하는 B급 괴수 영화를
-보며 낄낄대는 재미와 같은 종류입니다.
+It is a style that is intentionally exaggerated, childish, and cheap, making it laughable.
+The important thing is to “know and do it” - not to be clumsy due to lack of skills,
+It's a clumsy act of acting cleverly. Late night B-level monster movies
+It's kind of fun to watch and giggle about.
 
 ## Success Cases
-- GAME-012 (Borderlands 2) - 시리즈 최다 판매 3,000만 장, 퍼블리셔 역사상 최다 판매 타이틀 [source: Take-Two/2K 투자자 자료, 2025-05 기준]. 성공 요인: 유머가 개그 나열이 아니라 핸섬 잭이라는 "웃기면서 진짜 위협적인" 악당 캐릭터에 집중됨 - 평론이 "Portal 2 이후 가장 웃기고 영리한 각본"으로 평가 [source: Metacritic 집계 89~91점 및 평론 인용].
-- GAME-002 (Undertale) - 개그 캐릭터(파피루스 등)가 웃음을 담당하면서 동시에 감정 서사의 축이 됨. 유머와 진심 사이의 완급이 톤의 교과서.
-- GAME-010 (Suck Up!) - 뱀파이어 클리셰를 능청스럽게 비트는 톤이 AI의 어색함을 개그로 흡수한 사례. 다만 정식 출시 평가는 189건 중 60% 긍정 "복합적"에 그쳐, 캠피 톤이 화제성은 만들어도 유지까지 책임지지는 못함을 보여준다 [source: GAME-010 카드].
+- GAME-012 (Borderlands 2) - series best-selling 30,000,000 copies, best-selling title in publisher history [source: Take-Two/2K investor data, based on 2025-05]. Success factors: Humor centered on a "funny yet genuinely menacing" villain character named Handsome Jack rather than a list of gags - reviews called it "the funniest and smartest screenplay since Portal 2" (89~91 points) [source: Metacritic aggregate score and critic quote].
+- GAME-002 (Undertale) - Comedy characters (Papyrus, etc.) are responsible for laughter and at the same time become the axis of the emotional narrative. A textbook with a tone that balances humor and sincerity.
+- GAME-010 (Suck Up!) - An example of a tone that cleverly twists vampire clichés and absorbs the awkwardness of AI into a gag. However, the official release evaluation was only “mixed” with 60% positive out of 189 cases, showing that even though Campy Tone creates buzz, it is not responsible for maintaining it [source: GAME-010 card].
 
 ## Failure Cases
-- GAME-007 (High on Life) - 평단 65점(XSX 기준)으로 혹평 우세. 비판 핵심: "쉼 없는 농담 폭격", "같은 문장을 무한 반복하는 헛소리가 듣기에 지친다, 구조도 재치도 없이 소란만" [source: Metacritic 평단/유저 리뷰, 2022-12].
-  실패 지점: 농담의 밀도 조절 실패 - 쉬는 구간 없는 유머는 개그가 아니라 소음이 됨. 캐릭터 음소거 옵션이 요구될 정도.
+- GAME-007 (High on Life) - Predominantly criticized with a score of 65 (based on XSX). Core criticism: "Non-stop bombardment of jokes", "It's tiring to listen to nonsense that repeats the same sentence endlessly, no structure or wit, just noise." [source: Metacritic critic/user review, 2022-12].
+Point of failure: Failure to control the density of jokes - Humor without a break becomes noise, not a gag. To the point where a character mute option is required.
 
 ## User Reaction Summary
-- 선호: "악당이 웃기면서 무섭다" - 캐릭터 단위로 뭉친 유머에 대한 애정 [source: GAME-012 평론·리뷰 경향]
-- 선호: 개그와 진지함의 낙차 - 웃기다가 갑자기 진심을 찌를 때 반응이 가장 큼 [source: GAME-002 리뷰 경향, ELEM-003 카드 교차 참조]
-- 불호: "매 순간 누가 옆에서 웃기려 든다" - 밀도 피로 [source: GAME-007 유저 리뷰 / 후속작 Borderlands 3의 유머에 대한 "과했다" 커뮤니티 반응, 2019~]
-- 특이 신호: 같은 게임에 평단 65점 vs 유저 8.2점 - 호불호 분열이 극단적으로 나타나는 톤 [source: GAME-007 Metacritic 집계 보도, 2022-12]
+- Preference: “The villain is both funny and scary” - Love for humor united by each character [source: GAME-012 Criticism/Review Trend]
+- Preference: The gap between comedy and seriousness - The reaction is greatest when it is funny and then suddenly becomes serious [source: GAME-002 review tendency, ELEM-003 card cross-reference]
+- Dislike: "Someone is trying to make you laugh at every moment" - Density Fatigue [source: GAME-007 user review / community reaction to Borderlands 3 humor, 2019~]
+- Unique signal: Critics' 65 points vs. users' 8.2 points for the same game - Tone with extreme division of likes and dislikes [source: GAME-007 Metacritic aggregate report, 2022-12]
 
 ## Synergy
-- 좋음: ELEM-003 (제4의 벽 붕괴) - 벽을 깨는 캐릭터가 능청스러우면 공포가 아닌 유쾌함으로 착지. ELEM-003 카드와 상호 참조 일치.
-- 좋음: ELEM-005 (AI 통합) - AI의 어색함이 캠피 톤에서는 개그로 흡수됨. 완벽하지 않아도 되는 톤이라 AI의 품질 리스크를 가장 잘 감당 [interpretation]
-- 좋음(조건부): ELEM-001 (티저 기반 공개) - 유쾌한 분위기에 떡밥을 숨기면 반전의 낙차가 커짐 (ELEM-001 카드와 일치). 단, 미스터리의 긴장 구간에서는 농담 밀도를 낮추는 완급 설계가 전제 [interpretation]
-- 주의: ELEM-004 (반복 메커닉) - 같은 농담을 루프마다 다시 듣게 되면 피로가 배로 누적됨. 반복 구간의 대사는 회차별 변형 필수 [interpretation]
-- 장르 앵커: GENRE-004 (코미디 슈터), GENRE-018 (소셜 디덕션) - 두 군집이 이 요소를 구성 요소로 지목한다.
+- Good: ELEM-003 (Z4's Wall Collapse) - If the character breaking the wall is clever, the landing will be pleasant rather than scary. Cross-reference matching with ELEM-003 card.
+- Good: ELEM-005 (AI integration) - AI's awkwardness is absorbed into a gag in a campy tone. It is a tone that does not have to be perfect, so it best handles the quality risk of AI. [interpretation]
+- Good (conditional): ELEM-001 (teaser-based release) - If you hide the rice cake in a pleasant atmosphere, the risk of a twist increases (matches the ELEM-001 card). However, in the tense section of the mystery, a gradual design that lowers the density of jokes is premised. [interpretation]
+- Caution: ELEM-004 (repetition mechanic) - Listening to the same joke in loop after loop will double the fatigue. Dialogue in repetitive sections must be modified for each episode [interpretation]
+- Genre anchor: GENRE-004 (Comedy Shooter), GENRE-018 (Social Deduction) - Two groups point out this element as a component.
 
 ## Risks
-- [interpretation] 유머는 가장 분열적인 톤 - 잘돼도 "취향 탐" 꼬리표가 붙고, 평가 점수의 분산이 큼 (GAME-007의 평단·유저 괴리가 직접 증거).
-- 사실: 밀도 조절 실패는 "음소거 요구"라는 정량적 신호로 나타남 [source: GAME-007 리뷰].
-- [interpretation] 유머의 유통기한 - 시사·밈 기반 개그는 빨리 늙음. 캐릭터에 뿌리내린 유머(핸섬 잭 유형)가 레퍼런스 나열형 유머보다 수명이 긺.
+- [interpretation] humor has the most divisive tone - even if it is good, it is labeled as “taste-seeking” and the evaluation scores have a large dispersion (GAME-007’s gap between critics and users is direct evidence).
+- FACT: Density control failure is indicated by a quantitative signal called “Mute Required” [source: GAME-007 review].
+- [interpretation] Shelf life of humor - Gags based on current events and memes age quickly. Humor that is rooted in the character (Handsome Jack type) has a longer lifespan than humor that is based on a list of references.
+
+
+

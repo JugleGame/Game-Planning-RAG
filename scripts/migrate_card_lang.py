@@ -409,8 +409,7 @@ def apply(outdir):
     print("다음: python scripts/lint_card.py research/*/*.md --index research/_index.md")
     print("      python scripts/check_sections.py")
     print("      python tools/build_index.py && python tools/sync_db.py && python tools/embed_cards.py")
-    print("전부 옮겼다면 card_schema.py의 CARD_LANG을 'en'으로 바꿀 것 "
-          "(새로 쓰는 카드가 영어 절 제목을 쓰게 된다)")
+    print("반영 후 전체 --verify와 M단계까지 완료할 것")
     return n
 
 

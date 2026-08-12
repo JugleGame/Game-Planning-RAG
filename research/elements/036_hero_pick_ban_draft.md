@@ -1,34 +1,30 @@
 +++
 card_id = "ELEM-036"
 type = "mechanic"
-title = "영웅 픽/밴 드래프트 (Hero Pick/Ban Draft)"
-summary = "시합 시작 전 양 팀이 번갈아 상대가 못 쓸 영웅을 막고(밴), 자기 편이 쓸 영웅을 고르는(픽) 절차"
+title = "Hero Pick/Ban Draft"
+summary = "A procedure in which, before the match starts, the two teams alternately block heroes the opponent cannot use (ban) and choose heroes their own side will use (pick)"
 tags = ["moba", "draft", "esports", "strategy", "pvp"]
 updated = "2026-08-01"
 confidence = "high"
 +++
 ## Definition
-실제 전투가 시작되기 전, 양 팀이 번갈아 가며 상대가 못 쓰게 막을 영웅을 고르고(밴), 남은
-영웅 중에서 자기 편이 쓸 영웅을 고르는(픽) 단계입니다. 게임이 로비 화면에서부터 이미
-시작되는 셈입니다.
+Before actual combat begins, the two teams take turns choosing heroes to block the opponent from using (ban) and choosing heroes their own side will use (pick) from among those remaining. In effect, the game already starts at the lobby screen.
 
 ## Success Cases
-- GAME-043 (Dota 2) - 리뷰 81% 긍정(2.7M+ 리뷰), DAU 기준 Steam 상위권을 10년 넘게 유지 [source: Steambase/activeplayer.io, 2026-07 확인].
+- GAME-043 (Dota 2) - 81% positive reviews (2.7M+ reviews), holding a top position on Steam by DAU for over 10 years [source: Steambase/activeplayer.io, verified 2026-07].
 
 ## Failure Cases
-<!-- 증거 부족: carded 실패 사례를 확인하지 못함 -->
+<!-- Insufficient evidence: no carded failure case could be confirmed -->
 
 ## User Reaction Summary
-- 선호: [interpretation] "게임이 로비 화면에서부터 시작된다"는 전략 깊이가 자주 호평받는다.
-- 불호: [interpretation] 신규 유저에게는 100개가 넘는 영웅을 숙지하는 것 자체가 진입장벽이 된다.
+- Preferred: [interpretation] the strategic depth of "the game starts at the lobby screen" is frequently praised.
+- Disliked: [interpretation] for new users, mastering more than 100 heroes is itself a barrier to entry.
 
 ## Synergy
-- 장르 앵커: GENRE-024 (MOBA), GENRE-026 (히어로 슈터) - 두 군집이 이 요소를 구성 요소로 지목한다. 다만 GENRE-026의 대표작 중 하나인 Overwatch 2는 밴 없는 자유 스왑을 쓰고, Marvel Rivals만 밴 페이즈를 둬 같은 장르 안에서도 적용이 갈린다 [source: GENRE-026 카드].
-- [interpretation] 좋음: ELEM-038 (라운드제 경제 시스템) - 둘 다 판 시작 전·라운드 사이의 결정이 실제 전투만큼 중요해지는 설계 철학을 공유한다.
-- 구분: ELEM-045 (신격/후원자 선택형 소환 로스터 고정) - 이 요소는 경쟁 매치 시작 전 영웅 개체
-  하나를 고르는 절차만 다루는 반면, ELEM-045는 PvE에서 "고른 후원자가 이후 유닛 풀 전체를
-  제한"하는 구조를 가리켜 서로 구분된다 [source: ELEM-045 카드].
+- Genre anchors: GENRE-024 (MOBA), GENRE-026 (Hero Shooter) - both clusters name this element as a component. That said, Overwatch 2, one of GENRE-026's representative titles, uses free swapping with no bans, and only Marvel Rivals has a ban phase, so application differs even within the same genre [source: GENRE-026 card].
+- [interpretation] Good: ELEM-038 (Round-Based Economy System) - both share the design philosophy of making decisions before the match and between rounds as important as the actual combat.
+- Distinction: ELEM-045 (Deity/Patron Selection Locking the Summon Roster) - this element covers only the procedure of choosing a single hero unit before a competitive match, whereas ELEM-045 refers to a structure in PvE where "the chosen patron thereafter restricts the entire unit pool", so the two are distinct [source: ELEM-045 card].
 
 ## Risks
-- [interpretation] 밴 단계부터 실력 차가 드러나 초보자는 드래프트 단계에서 이미 진다는 느낌을 받기 쉽다.
-- [interpretation] 영웅 폭이 넓을수록 밸런스 유지 비용이 기하급수적으로 커진다.
+- [interpretation] Since skill gaps show from the ban phase onward, beginners easily feel they have already lost at the draft stage.
+- [interpretation] The wider the hero pool, the more exponentially the cost of maintaining balance grows.

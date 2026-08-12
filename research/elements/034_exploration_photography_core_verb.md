@@ -1,34 +1,34 @@
 +++
 card_id = "ELEM-034"
 type = "mechanic"
-title = "탐사형 포토그래피 목표 동사 (Exploration Photography as Core Verb)"
-summary = "이동이나 전투 대신, 눈앞의 대상을 사진으로 찍어 증거·기록으로 남기는 행위 자체를 탐험의 핵심 목표로 삼는 설계 방식"
+title = "Exploration Photography as Core Verb"
+summary = "A design approach that makes the act of photographing what is in front of you — leaving it behind as evidence or a record — the core goal of exploration, instead of movement or combat"
 tags = ["exploration", "photography", "core-verb", "no-combat", "cozy", "indie"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
 ## Definition
-이동하거나 싸우는 대신, 눈앞에 있는 대상을 사진으로 찍어서 "증거"나 "기록"으로 남기는 행동 자체를 게임의 핵심 목표로 삼는 방식입니다. 어디를 가느냐보다 "무엇을 찍었느냐"가 진행도가 됩니다.
+Instead of moving or fighting, the act of photographing the object in front of you and leaving it behind as "evidence" or a "record" is itself the core goal of the game. Rather than where you go, "what you photographed" becomes the progression.
 
 ## Success Cases
-- ROVA (2026, FreeRangeDevs) - 우주 콜로니의 조사를 위해 로버가 외계 행성의 요소들을 사진으로 기록하는 것이 핵심 동사인 코지 탐험 게임. Steam 출시(2026-05-08, 얼리액세스) 이후 확인 시점 기준 16개 리뷰 중 100% 긍정 [source: Steam 상점 페이지(store.steampowered.com/app/2930130), 2026 기준]. (표본 수가 매우 작아 해석에 주의 필요)
-- TOEM: A Photo Adventure (2021, Something We Made) - 사진으로 마을 사람들의 문제를 풀고 이야기를 진행시키는 손그림풍 어드벤처. 누적 3,181개 리뷰 중 99% 긍정 [source: Steam 상점 페이지(store.steampowered.com/app/1307580)].
-- Umurangi Generation (2020, Naphtali Faulkner / Origame Digital) - 1인칭 사진 촬영이 핵심 동사인 배경 서사 어드벤처. 1,123개 리뷰 중 91% 긍정, Steam 소유자 10만~20만 명 추정 [source: Steam 상점 페이지, SteamSpy].
-- New Pokémon Snap (2021, Nintendo / HAL Laboratory) - "사진 점수"로 탐험 성과를 매기는 콘솔급 성공 사례. 일본 외 지역 기준 2022-03-31 시점 240만 장 판매, Metacritic 79점(비평가 116건 집계), Famitsu 34/40, IGN 8.0/10 [source: Nintendo Life, Metacritic, Famitsu·IGN 리뷰 집계].
+- ROVA (2026, FreeRangeDevs) - A cozy exploration game whose core verb is a rover photographing elements of an alien planet to survey it for a space colony. Since its Steam release (2026-05-08, Early Access), 100% positive out of 16 reviews as of the verification point [source: Steam store page (store.steampowered.com/app/2930130), as of 2026]. (The sample size is very small, so interpretation requires caution.)
+- TOEM: A Photo Adventure (2021, Something We Made) - A hand-drawn adventure where you solve townspeople's problems and advance the story through photographs. 99% positive out of a cumulative 3,181 reviews [source: Steam store page (store.steampowered.com/app/1307580)].
+- Umurangi Generation (2020, Naphtali Faulkner / Origame Digital) - A background-narrative adventure whose core verb is first-person photography. 91% positive out of 1,123 reviews, with an estimated 100,000-200,000 Steam owners [source: Steam store page, SteamSpy].
+- New Pokémon Snap (2021, Nintendo / HAL Laboratory) - A console-scale success case that grades exploration performance by "photo score". 2,400,000 units sold outside Japan as of 2022-03-31, Metacritic 79 (aggregating 116 critics), Famitsu 34/40, IGN 8.0/10 [source: Nintendo Life, Metacritic, Famitsu and IGN review aggregations].
 
 ## Failure Cases
-- Season: A letter to the future (2023, Scavengers Studio) - 사진을 점수화된 목표가 아니라 이야기 기록 도구로 다뤄 평단 호평을 받았으나, 조작감이 뻑뻑하고 지형을 자유롭게 오르내리며 구도를 짤 수 없어 "사진 촬영 자체의 재미"가 제한된다는 비판을 받음 [source: PetaPixel 리뷰(2023-02-06)].
-  실패 지점: 사진 찍기를 목표 동사로 세웠지만, 카메라·이동 자유도가 낮으면 "발견하고 구도를 짜는" 재미 자체가 줄어든다.
+- Season: A letter to the future (2023, Scavengers Studio) - Treating photography as a story-recording tool rather than a scored objective earned critical praise, but it was criticized for stiff controls and the inability to freely climb up and down terrain to compose shots, which limited "the fun of photography itself" [source: PetaPixel review (2023-02-06)].
+  Failure point: even when photography is set up as the core verb, low camera and movement freedom shrinks the very fun of "discovering and composing".
 
 ## User Reaction Summary
-- 선호: "느긋한 탐색과 발견"이라는 소개 문구에 대한 긍정 반응(ROVA), "사진 찍는 눈으로 문제를 푼다"는 구조에 대한 높은 평가(TOEM) [source: 각 게임 Steam 상점 소개문].
-- 한계: 카메라 이동·구도 자유도가 제한되면 사진이라는 행위 자체가 밋밋해진다는 비판(Season) [source: PetaPixel 리뷰].
+- Preferred: positive response to the pitch of "leisurely exploration and discovery" (ROVA), and high praise for the structure of "solving problems with a photographer's eye" (TOEM) [source: each game's Steam store description].
+- Limits: criticism that the act of photography itself becomes flat when camera movement and composition freedom are restricted (Season) [source: PetaPixel review].
 
 ## Synergy
-- ELEM-012 (랜드마크 기반 탐험) - [interpretation] 멀리서 보이는 지형지물로 "가보고 싶다"는 마음을 이끄는 설계와, 그 지형지물에 도달했을 때 "사진으로 증거를 남긴다"는 목표 동사가 결합하면 탐험의 보상이 완료 표시가 아니라 공유 가능한 결과물(사진)로 남는다.
-- GENRE-007 (코지 시뮬) - [interpretation] 실패 상태 없는 저스트레스 진행과 사진 촬영형 목표가 궁합이 좋다. ROVA·TOEM 모두 전투 없는 저스트레스 진행을 택했다.
+- ELEM-012 (Landmark-Based Exploration) - [interpretation] When a design that draws out the urge to "go there" via terrain features visible from afar is combined with the core verb of "leaving photographic evidence" upon reaching that feature, the reward for exploration is not a completion marker but a shareable artifact (the photo).
+- GENRE-007 (Cozy Sim) - [interpretation] Low-stress progression without fail states pairs well with photography-based objectives. Both ROVA and TOEM chose low-stress progression without combat.
 
 ## Risks
-- [interpretation] New Pokémon Snap처럼 정해진 레일 위에서만 사진을 찍게 하면 "탐험"이 아니라 "타이밍 맞추기"로 좁아질 위험이 있다.
-- [interpretation] Season 사례처럼 카메라·이동 자유도를 낮게 설계하면 사진이라는 행위 자체의 재미(구도 짜기)가 사라지고 상호작용 없는 컷신에 가까워진다.
-- [interpretation] ROVA의 리뷰 수(16건 [source: Steam 상점 페이지(store.steampowered.com/app/2930130), 2026 기준])가 매우 작아 이 항목의 "성공" 판정은 잠정적이다 - 표본이 늘어난 뒤 재확인이 필요하다.
+- [interpretation] If photography is confined to a fixed rail as in New Pokémon Snap, there is a risk of narrowing from "exploration" into "timing matching".
+- [interpretation] As in the Season case, designing camera and movement freedom low removes the fun of the act of photography itself (composing shots) and moves it closer to a non-interactive cutscene.
+- [interpretation] ROVA's review count (16 [source: Steam store page (store.steampowered.com/app/2930130), as of 2026]) is very small, so the "success" verdict for this entry is provisional - it needs re-confirmation once the sample grows.

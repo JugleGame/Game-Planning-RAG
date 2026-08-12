@@ -1,36 +1,40 @@
 +++
 card_id = "ELEM-010"
 type = "mechanic"
-title = "클립 기반 바이럴리티 (Clip-driven virality)"
-summary = "짧고 강렬한 장면이 SNS 클립으로 잘 퍼지도록 설계해 게임을 널리 알리는 방식"
+title = "Clip-driven virality"
+summary = "A way to publicize the game by designing short, intense scenes to spread well through SNS clips."
 tags = ["virality", "clip", "spectacle", "expectation-mismatch"]
 updated = "2026-07-31"
 confidence = "medium"       # 조합 궁합에 GAME-038 근거 확보(2026-07-31) + 대표 사례 판매량은 여전히 단일 출처 의존
 +++
 ## Definition
-게임 속 순간이 짧은 영상(클립)으로 잘라져 SNS에서 쉽게 퍼질 수 있도록 만드는 방식입니다. 짧고 강렬한 장면이 많은 사람에게 공유되면서 게임이 유명해집니다. 이 카드는 5.99달러짜리 숨바꼭질 게임인 MECCHA CHAMELEON을 대표 사례로 삼아 작성되었습니다 [source: 인디게임닷컴 (IndieGame.com)].
+This is a method in which moments in the game are cut into short videos (clips) that can be easily spread on social media. The game becomes popular as the short, intense scenes are shared by many people. This card was created using the 5.99 dollar hide and seek game MECCHA CHAMELEON as a representative example [source: IndieGame.com].
 
 ## Success Cases
-- MECCHA CHAMELEON - 출시 10일 만에 500만 장(5 million) 판매를 기록했고, 동시 접속자는 244,731명까지 치솟았으며, Steam 글로벌 판매 차트 1위에 올랐다고 보도됨 [source: 인디게임닷컴 (IndieGame.com)].
-- MECCHA CHAMELEON - 출시 약 10일 시점 기준 6,000건이 넘는 리뷰 중 85% 긍정으로 '매우 긍정적' Steam 평가를 받음 [source: 인디게임닷컴 (IndieGame.com)].
-- GAME-038 (Buckshot Roulette) - 초저가 1인 개발작이 출시 2주 만에 100만 장, 8개월 뒤 400만 장까지 판매가 이어짐. 누구나 아는 규칙이라 클립만 봐도 이해되는 구조가 확산의 조건이었다 [source: GAME-038 카드].
-- 한 게임 개발 분석 글은 15초짜리 클립에서 인상적으로 보이도록 설계된 짧고 공유하기 좋은 '스펙터클 순간'을 만드는 것이 업계의 명시적 설계 권고라고 설명하며, Lethal Company를 시스템 기반의 절차적으로 다양한 게임 루프가 세션마다 다른 스트리밍용 결과를 만들어내는 사례로 인용함 [source: Game-developers.org].
+- MECCHA CHAMELEON - It was reported that it sold 5,000,000 copies (5 million) in just 10 days after release, the number of concurrent users soared to 244,731, and ranked 1 on the Steam global sales chart [source: IndieGame.com].
+- MECCHA CHAMELEON - Received a 'very positive' Steam rating with 85% positive out of over 6,000 reviews as of approximately 10 day of release [source: IndieGame.com].
+- GAME-038 (Buckshot Roulette) - A developed work with an ultra-low price of 1 sold 1,000,000 copies within 2 weeks of release, and 4,000,000 copies 8 months later. Since it is a rule that everyone knows, a structure that can be understood just by looking at the clip was a condition for its spread [source: GAME-038 card].
+- One game development analysis piece explains that the industry's explicit design recommendation is to create short, shareable 'spectacle moments' designed to look impressive in 15 second clips, citing Lethal Company as an example of how a system-based, procedurally diverse game loop can produce different results for streaming from session to session [source: Game-developers.org].
 
 ## Failure Cases
-- MECCHA CHAMELEON - 클립을 통해 게임을 접한 플레이어들은 클립이 보통 가장 좋은 순간만 보여주고 준비·로비 시간을 생략하기 때문에, 기대와 실제 경험이 어긋나는 경험을 할 수 있다고 지적됨 [source: 인디게임닷컴 (IndieGame.com)].
-- 같은 분석 글은 플레이테스터들에게는 호평받은 방대한 튜토리얼을 갖춘 어느 게임이 오히려 스트리머들을 핵심 게임플레이에 도달하기 전에 이탈하게 만든 사례를 인용하며, 클립·스트리머 지향 설계의 실패 사례로 제시함 [source: Game-developers.org].
+- MECCHA CHAMELEON - It has been pointed out that players who have accessed the game through clips may experience discrepancies between expectations and actual experience because clips usually show only the best moments and omit preparation and lobbying time. [source: IndieGame.com].
+- The same analysis article cites the case of a game with an extensive tutorial that was well-received by playtesters, but instead caused streamers to abandon it before reaching the core gameplay, presenting it as an example of a failure in clip/streamer-oriented design [source: Game-developers.org].
 
 ## User Reaction Summary
-- 선호: 즉시 공유하고 싶은 컨셉, 친구와 하면 재미있다 (MECCHA CHAMELEON) [source: 조사 자료 유저 반응 요약]
-- 불호: 클립과 실제 플레이 사이의 기대 불일치 (MECCHA CHAMELEON) [source: 조사 자료 유저 반응 요약]
-- 소재 단위 관측: 고양이 콘텐츠가 참여도·SNS 공유에서 일관되게 우위라는 분석이 보도됨 - 단일 매체의 분석이라 교차 확인이 필요함 [source: GAMES.GG "July 2026 Cozy Game Launches", 2026-07 확인 / 다이제스트 2026-07-25].
+- Preference: Concept that you want to share immediately, fun to do with friends (MECCHA CHAMELEON) [source: Summary of user reactions from survey data]
+- Unfavorable: Mismatch of expectations between clip and actual play (MECCHA CHAMELEON) [source: Summary of user reactions from survey data]
+- Material unit observation: Analysis reported that cat content is consistently superior in participation and social media sharing - Cross-checking is required as it is a single media analysis [source: GAMES.GG, "July 2026 Cozy Game Launches", 2026-07 confirmed / Digest 2026-07-25].
 
 ## Synergy
-- 좋음: ELEM-021 (친숙한 규칙 차용) - GAME-038(Buckshot Roulette)이 근거. 규칙 설명 비용이 0에 가까우면 짧은 클립 하나로도 게임을 이해시킬 수 있어, 클립 확산의 전환율이 올라간다 [source: GAME-038 카드].
-- 소재 축: 시스템이 아니라 다루는 소재(동물 등) 선택 자체가 확산 정도를 가르기도 한다 - 위 '소재 단위 관측'(고양이 테마) 참고. GENRE-007(코지 시뮬)처럼 시스템이 포화된 군집에서는 소재 선택이 사실상 유일한 차별화 축이 된다 [source: GENRE-007 카드 / 다이제스트 2026-07-25].
+- Good: ELEM-021 (borrows familiar rules) - Based on GAME-038 (Buckshot Roulette). If the rule explanation cost is close to 0, you can understand the game with just one short clip, and the conversion rate of clip spread increases [source: GAME-038 card].
+- Material axis: Rather than the system, the choice of material (animals, etc.) being handled may determine the degree of spread - Refer to ‘Material Unit Observation’ (cat theme) above. In a saturated system like GENRE-007 (Cozy Simulation), material selection becomes virtually the only axis of differentiation [source: GENRE-007 Card / Digest 2026-07-25].
 <!-- 증거 부족: 위 두 항목 외에 요소 간 조합을 직접 다룬 서술은 이번 조사에서도 확인하지 못함 -->
 
 ## Risks
-- [interpretation] 클립에 잘 담기는 장면 위주로 설계하면, 실제 플레이 경험(대기·준비 시간 등)과의 괴리로 실망을 유발할 수 있음 (MECCHA CHAMELEON 사례 근거).
-- 플레이테스터에게는 좋은 평가를 받는 요소(예: 튜토리얼)라도 스트리머의 이탈을 유발한다면 클립 기반 바이럴리티 목표와 상충할 수 있음 [source: Game-developers.org].
-- MECCHA CHAMELEON의 개발사·스튜디오 명이 확인되지 않았고, 판매량·동시 접속자 수치를 뒷받침하는 두 번째 독립 출처가 확인되지 않아 단일 출처 의존 위험이 있음 [source: 인디게임닷컴 (IndieGame.com)].
+- [interpretation] If the design focuses on scenes that are well captured in the clip, it may cause disappointment due to the gap with the actual play experience (waiting, preparation time, etc.) (based on the MECCHA CHAMELEON case).
+- Even elements that are well-received by playtesters (e.g. tutorials) may conflict with clip-based virality goals if they drive streamers away [source: Game-developers.org].
+- The name of the developer/studio of MECCHA CHAMELEON has not been confirmed, and a second independent source supporting the sales and concurrent player figures has not been confirmed, so there is a risk of relying on a single source [source: IndieGame.com].
+
+
+
+

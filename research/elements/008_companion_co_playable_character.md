@@ -1,41 +1,42 @@
 +++
 card_id = "ELEM-008"
 type = "mechanic"
-title = "동반자 / 함께 플레이 가능한 캐릭터 (Companion / co-playable character)"
-summary = "플레이어와 함께 게임을 하거나 곁에서 반응해주는 또 다른 캐릭터를 두는 방식"
+title = "Companion / co-playable character"
+summary = "A method of having another character who plays the game with the player or reacts next to the player."
 tags = ["co-op", "companion", "AI-controversy", "divisive"]
 updated = "2026-07-31"
 confidence = "medium-low"   # 2026-07-31 조합 궁합 보강했으나 [해석]·장르 앵커 수준 - 요소 간 조합을 다룬 출처 서술은 여전히 없음
 +++
 ## Definition
-플레이어와 함께 게임을 하거나, 플레이어 곁에서 반응해주는 또 다른 캐릭터를 두는 방식입니다. 혼자가 아니라 누군가와 함께하는 느낌을 줍니다. 이 카드는 서로 다른 두 게임, Party Animals와 CielChan: Anime Desktop AI Companion을 대표 사례로 삼아 작성되었습니다 [source: Steam].
+This is a method of playing the game together with the player or having another character next to the player to react. It makes you feel like you are with someone, not alone. This card was created using two different games as representative examples: Party Animals and CielChan: Anime Desktop AI Companion [[source: Steam].
 
 ## Success Cases
-- Party Animals - 영어 리뷰 기준 17,016건 중 89% 긍정으로 '매우 긍정적' 상태를 기록했고, 최근 리뷰 560건 중에서도 86% 긍정으로 '매우 긍정적'을 유지함(다만 특정 기간의 비정상 리뷰 활동은 점수 산정에서 제외됨). 전체 언어 합산 리뷰 수는 80,663건임 [source: Steam].
-- CielChan: Anime Desktop AI Companion - 로컬 우선 설계로 핵심 기능은 완전히 오프라인으로 실행 가능하며, 기본으로 내장된 로컬 모델과 음성합성 엔진을 사용하고, 필요할 경우 OpenAI, OpenRouter, Anthropic, ElevenLabs 같은 외부 클라우드 AI·음성 제공자도 고급 설정으로 선택할 수 있음 [source: Steam (developer description)].
+- Party Animals - Based on English reviews, it recorded a 'very positive' status with 89% positive out of 17,016 reviews, and maintained a 'very positive' status with 86% positive among 560 recent reviews (however, abnormal review activity during a certain period is excluded from the score calculation). The total number of reviews in all languages ​​is 80,663 [[source: Steam].
+- CielChan: Anime Desktop AI Companion - With a local-first design, core functions can be run completely offline, and it uses the built-in local model and speech synthesis engine by default, and if necessary, external cloud AI/voice providers such as OpenAI, OpenRouter, Anthropic, and ElevenLabs can be selected through advanced settings. [source: Steam (developer description)].
 
 ## Failure Cases
-- Party Animals - 2026년 5월, 개발사 Recreate Games가 AI로 생성한 영상·콘텐츠를 '핵심 창작 도구'로 요구하는 상금 75,000달러 규모의 공모전을 진행하면서 리뷰 폭탄이 발생했고, 최근 리뷰 1,200건이 '대체로 부정적(73% 부정)'으로 바뀌었으며 이후 스튜디오가 사과함 [source: GamesRadar+].
-- Party Animals - 2023년 9월 콘솔·글로벌 출시 당시 비평가 평은 '대체로 호의적'(PC 메타스코어 77)이었지만, 공격적인 코스메틱 수익화, 10분 넘는 서버 대기열, 실제로는 없는 오프라인 모드를 암시한 번역 오류로 인해 Steam 유저 평가는 '대체로 부정적'으로 출시됨. 이후 평가는 전체 57% 긍정의 '복합적(Mixed)'으로 회복되었으며, 중국 간체 리뷰 약 4,000건 중 29%만 긍정인 반면 영어 리뷰는 86% 긍정으로 지역별 격차가 컸음 [source: Game World Observer].
-- CielChan: Anime Desktop AI Companion - 유저 리뷰 12건 중 66% 긍정으로 '복합적(Mixed)' 평가를 받음 [source: Steam].
+- Party Animals - In January 2026, developer Recreate Games ran a contest worth $75,000 dollars in prize money asking for AI-generated videos and content as 'core creative tools', and a review bomb broke out. The most recent reviews 1,200 changed to 'generally negative (73% negative)' and the studio later apologized. [source: GamesRadar+].
+- Party Animals - At the time of console and global release in January 2023, critic reviews were 'generally favorable' (PC metascore 77), but Steam user reviews were 'generally negative' due to aggressive cosmetic monetization, server queues exceeding 10 minutes, and a translation error that implied an offline mode that did not actually exist. Afterwards, the evaluation recovered to 'Mixed' with an overall 57% positive, and while only 29% of the approximately 4,000 Simplified Chinese reviews were positive, the English reviews were 86% positive, showing a large regional gap [[source: Game World Observer].
+- CielChan: Anime Desktop AI Companion - Rated ‘Mixed’ with 66% positive out of 12 user reviews [[source: Steam].
 
-※ Party Animals와 CielChan 모두 성공·실패 근거가 함께 확인되므로 복합적(Mixed) 사례로 분류함 [interpretation].
+※ Both Party Animals and CielChan are classified as mixed cases because the grounds for success and failure are confirmed together. [interpretation].
 
 ## User Reaction Summary
-- 선호: 혼돈스럽지만 재미있는 협동 물리 게임플레이(컨트로버시 이전의 Party Animals) [source: 조사 자료 유저 반응 요약]
-- 불호: 'AI 슬롭(AI slop)'·'변절' 비난과 AI 콘텐츠 사용에 결부된 리뷰 폭탄 (Party Animals) [source: 조사 자료 유저 반응 요약]
-- 불호: 공격적인 코스메틱 수익화, 서버 대기열, 오프라인 모드 관련 오해를 부른 설명 (2023년 Party Animals 출시 당시) [source: Game World Observer]
-- 참고: 한 데이터 분석 결과는 Steam에서의 'AI 낙인'이 게임이 받는 리뷰 수를 약 53% 줄일 수 있고, 받는 리뷰조차 더 부정적인 경향을 보이며, 상업적 잠재력이 높았을 게임일수록 타격이 크다고 보고함 [source: PC Gamer]
+- Favorite: Chaotic but fun cooperative physics gameplay (Party Animals before Controversy) [source: Summary of user reactions from survey data]
+- Unfavorable: Review bomb linked to criticism of ‘AI slop’ and ‘defection’ and use of AI content (Party Animals) [source: Summary of user reactions from survey data]
+- Unfavorable: Aggressive cosmetic monetization, server queues, and misleading description of offline mode (at the time of Party Animals release in 2023) [source: Game World Observer]
+- Note: A data analysis found that 'AI stigma' on Steam can reduce the number of reviews a game receives by about 53%, and even the reviews it receives tend to be more negative, with games that would otherwise have had higher commercial potential taking a bigger hit [[source: PC Gamer]
 
 ## Synergy
-- 좋음[interpretation]: ELEM-029 (협력 기반 자산 공유 메커닉) - 동반자가 "곁에 있는 존재"에 그치지 않고 자원을 주고받는 대상이 되면, 협력 동기가 감정이 아니라 시스템 수준에서 유지된다. ELEM-029 카드가 이 요소를 전제로 삼는다.
-- 장르 앵커: GENRE-007 (코지 시뮬), GENRE-008 (감정 서사 어드벤처), GENRE-018 (소셜 디덕션) - 세 군집이 이 요소를 구성 요소로 지목한다. 특히 GENRE-008에서는 동반자가 감정 아크의 운반체 그 자체다 [source: GENRE-008 카드].
-- 구분: ELEM-046 (전투 참여형 동물 동료 자동 보조) - 이 카드는 곁에서 서사적으로 반응해주는
-  동반자 일반을 다루며 전투 참여 여부는 핵심이 아니다. ELEM-046은 그중에서도 "별도 조작 없이
-  전투 화력·보조를 자동으로 맡는다"는 좁은 하위 유형을 가리켜 서로 구분된다 [source: ELEM-046 카드].
+- Good[interpretation]: ELEM-029 (Cooperation-based asset sharing mechanic) - When a companion is not just a "besides" but also an object of exchanging resources, the motivation for cooperation is maintained at a system level rather than an emotional one. The ELEM-029 card assumes this element.
+- Genre Anchor: GENRE-007 (Cozy Simulation), GENRE-008 (Emotional Narrative Adventure), GENRE-018 (Social Deduction) - Three clusters point to this element as a component. Especially in GENRE-008, the companion is the carrier of the emotional arc itself [[source: GENRE-008 card].
+- Category: ELEM-046 (Automatically assists animal companions participating in battle) - This card provides a narrative response from the side.
+It deals with companions in general, and whether or not they participate in battle is not the key. Among them, ELEM-046 is “without any special manipulation.”
+"Automatically assumes combat firepower and support" refers to a narrow subtype and is distinguished from each other [[source: ELEM-046 card].
 <!-- 증거 부족: 위 두 항목 외에 요소 간 조합을 직접 다룬 출처 서술은 이번 정리에서도 확인하지 못함 -->
 
 ## Risks
-- Party Animals 사례처럼, AI 관련 마케팅·공모전이 오히려 커뮤니티 리뷰 폭탄으로 이어질 수 있음 [source: GamesRadar+].
-- [interpretation] 동반자 캐릭터를 갖춘 게임은 언어권·지역별 반응 격차가 클 수 있어, 특정 지역에서 평판 위험이 커질 수 있음 (Party Animals 중국어권 vs 영어권 리뷰 격차 근거).
-- 'AI 낙인' 자체가 리뷰 수와 긍정률에 부정적 영향을 미칠 수 있음 [source: PC Gamer].
+- As in the Party Animals case, AI-related marketing and contests can actually lead to community review bombs [[source: GamesRadar+].
+- Games with [interpretation] companion characters may have large response gaps by language and region, which may increase reputational risk in certain regions (based on the gap in Party Animals Chinese-language vs. English-language reviews).
+- The ‘AI stigma’ itself can have a negative impact on the number of reviews and positivity rate [source: PC Gamer].
+

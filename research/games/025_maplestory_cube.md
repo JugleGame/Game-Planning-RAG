@@ -1,8 +1,8 @@
 +++
 card_id = "GAME-025"
 type = "mixed"
-title = "메이플스토리 - 큐브 확률조작 사건 (2003 출시, Nexon / 2024 공정위 제재)"
-summary = "확률형 강화 아이템 '큐브'의 확률을 몰래 낮추고 알리지 않아 사상 최대 과징금을 받은 확률 신뢰 붕괴 사례"
+title = "MapleStory - Cube Probability Manipulation Case (2003 launch, Nexon / 2024 KFTC sanction)"
+summary = "A collapse of probability trust in which the odds of the probability-based enhancement item 'Cube' were secretly lowered and undisclosed, resulting in the largest fine on record"
 genres = []
 elements = ["ELEM-017"]
 tags = ["probability-item", "mmorpg", "regulation", "trust-failure", "korea", "cautionary"]
@@ -10,26 +10,16 @@ updated = "2026-07-28"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-2003년 4월 29일 출시된 넥슨의 2D 횡스크롤 MMORPG로 [source: 위키백과, 2026-07 확인], 확률형 강화
-아이템 '큐브'의 확률 조작이 드러나 2024년 1월 공정거래위원회로부터 시정명령과 과징금 116억 4,200만
-원을 부과받음 - 국내 게임업계 사상 최고액으로 보도됨 [source: 공정거래위원회 제재 발표 보도, 2024-01
-기준].
+Nexon’s 2D side-scrolling MMORPG launched on 2003-04-29 [source: Wikipedia, 2026-07 check]. Manipulation of the probability-based enhancement item 'Cube' was revealed, and in January 2024 the Korea Fair Trade Commission imposed a corrective order and a fine of 11,600,000,000 + 42,000,000 won—the largest amount ever reported in Korea’s game industry [source: Korea Fair Trade Commission sanction announcement report, as of 2024-01].
 
 ## Elements Used
-- ELEM-017 (가챠 확률 & 천장 시스템) - 다만 캐릭터를 뽑는 가챠가 아니라, 장착한 아이템의 옵션을
-  무작위로 재부여하는 확률형 강화 아이템(큐브)이라는 변형 형태로 같은 요소를 씀 [interpretation].
+- ELEM-017 (gacha probability & pity system) - It uses the same element in a variant form: not character-drawing gacha, but a probability-based enhancement item (Cube) that randomly rerolls the options of an equipped item [interpretation].
 
 ## Success/Failure Drivers
-- 사실: 공정위는 넥슨이 2010년부터 큐브 확률을 조정하고, 2011년부터는 이용자가 선호하는 중복 옵션이
-  덜 나오도록 확률을 바꿨으며, 2013년 출시된 블랙큐브의 등급 상승 확률도 단계적으로 낮췄다고 판단함
-  [source: 공정거래위원회 제재 발표 보도, 2024-01 기준].
-- 사실: 확률을 바꾼 사실 자체를 알리지 않았고, 오히려 "기능 변경 없음" 취지의 공지로 이용자를 오인하게
-  한 점이 제재 사유에 포함됨 [source: 공정거래위원회 제재 발표 보도, 2024-01 기준].
-- [interpretation] 확률 수치 자체보다 "회사가 몰래 바꿀 수 있다"는 사실이 드러난 것이 신뢰를 무너뜨린 핵심
-  지점으로 보임.
+- Fact: The KFTC determined that Nexon adjusted Cube probabilities from 2010, changed them from 2011 so user-preferred duplicate options would appear less often, and gradually lowered the tier-up probability of the Black Cube launched in 2013 [source: Korea Fair Trade Commission sanction announcement report, as of 2024-01].
+- Fact: It did not disclose that the probabilities had changed; instead, it misled users with notices implying “no functional changes,” which was included among the reasons for the sanction [source: Korea Fair Trade Commission sanction announcement report, as of 2024-01].
+- [interpretation] The core trust-breaking point appears to have been discovering that “the company can secretly change it,” rather than the probability figures themselves.
 <!-- 증거 부족: 사건 이후 매출/리텐션 변화를 보여주는 공식 수치를 찾지 못함 -->
 
 ## Implications for Our Project
-확률을 사후에 조용히 바꿀 수 있는 구조 자체를 만들지 말고, 바꾸면 반드시 고지하는 절차를 시스템에
-못 박아 두는 것이 낫다 [interpretation]. 이 사건 이후 한국은 확률형 아이템의 확률 정보 공개를 게임산업법
-개정으로 의무화했다 [source: 게임산업법 개정, 2024년 3월 시행].
+Do not build a structure that allows probabilities to be quietly changed afterward; hard-code a procedure requiring disclosure whenever they change [interpretation]. After this case, South Korea made disclosure of probability information for probability-based items mandatory through an amendment to the Game Industry Act [source: Game Industry Act amendment, effective March 2024].

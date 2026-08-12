@@ -1,35 +1,38 @@
 +++
 card_id = "ELEM-009"
 type = "narrative-device"
-title = "철학적 내러티브 로그라이트/로그라이크 (Philosophical narrative roguelite/roguelike)"
-summary = "죽거나 다시 시작해도 이야기가 이어지는 구조에 삶과 죽음, 의미 같은 철학적 질문을 담는 방식"
+title = "Philosophical narrative roguelite/roguelike"
+summary = "A way to include philosophical questions such as life, death, and meaning in a structure that continues the story even if you die or start over."
 tags = ["philosophy", "roguelike", "metafiction", "conflicting-data"]
 updated = "2026-07-31"
 confidence = "medium-low"   # 2026-07-31 GAME-040 근거·조합 궁합 추가. 구체적 실패 사례 부재와 리뷰 수치 출처 간 불일치는 미해결
 +++
 ## Definition
-죽거나 다시 시작해도 이야기가 계속 이어지는 게임 구조에, 삶과 죽음, 의미 같은 철학적인 질문을 담아내는 방식입니다. 이 카드는 카드 기반 로그라이크·로그라이트 게임인 Inscryption(GAME-001)을 대표 사례로 삼아 작성되었습니다 [source: Steam].
+It is a game structure that continues the story even if you die or start over, and incorporates philosophical questions such as life, death, and meaning. This card was created using the card-based roguelike/roguelite game Inscryption (GAME-001) as a representative example [source: Steam].
 
 ## Success Cases
-- Inscryption (GAME-001) - Steam 스토어 페이지 기준 리뷰 75,974건 중 96% 긍정으로 '압도적으로 긍정적' 상태이며, 최근 리뷰 1,437건 중에서도 94% 긍정으로 '매우 긍정적'을 기록함 [source: Steam].
-- Inscryption (GAME-001) - 제3자 트래커 SteamDB는 약 142,000건 리뷰 중 95.55% 긍정을, 또 다른 트래커 Raijin은 2026년 7월 15일 기준 146,833건 중 97% 긍정을 각각 보고하여, Steam 자체 스토어 페이지보다 더 많은 리뷰 수를 제시함 [source: SteamDB].
-- Inscryption (GAME-001) - 비평가 평은 약 85/100의 메타크리틱 점수로 보도됨 [source: GameSensor].
-- GAME-040 (Hades II) - 삶과 죽음, 가족 관계를 다루는 서사 깊이를 로그라이크 반복 구조 위에 얹어 Metacritic 94점으로 2025년 최고 평점 게임에 올랐다 [source: GAME-040 카드].
-- 철학·게임 비평 글들은 실존주의·부조리주의 주제(까뮈의 시지프 신화, 죽음과 재탄생의 순환, 무의미함)를 내러티브 중심 게임의 핵심 요소로 분류하며, Inscryption과 인접한 장르로 흔히 언급되는 사례로 Dark Souls, NieR: Automata, The Stanley Parable을 꼽음 [source: PCGamesN].
+- Inscryption (GAME-001) - Based on the Steam store page, it is 'overwhelmingly positive' with 96% positive out of 75,974 reviews, and 'very positive' with 94% positive among recent reviews 1,437 [source: Steam].
+- Inscryption (GAME-001) - The Z3 tracker SteamDB reported 95.55% positive out of approximately 142,000 reviews, and another tracker Raijin reported 97% positive out of 146,833 reviews as of 15 month 7, 2026, respectively, resulting in more reviews than Steam's own store page. gives number [source: SteamDB].
+- Inscryption (GAME-001) - Critic reviews are reported with a Metacritic score of approximately 85/100 [source: GameSensor].
+- GAME-040 (Hades II) - It was the highest-rated game of the year 2025 with a score of 94 on Metacritic, adding depth of narrative dealing with life, death, and family relationships on top of a roguelike repetitive structure. [source: GAME-040 Card].
+- Philosophy and game criticism articles classify existentialist and absurdist themes (Camus's Sisyphus myth, cycle of death and rebirth, meaninglessness) as core elements of narrative-oriented games, and Dark Souls, NieR: Automata, and The Stanley Parable are cited as examples of genres adjacent to Inscryption. [source: PCGamesN].
 
 ## Failure Cases
-<!-- No evidence: JSON 근거 자료에 Inscryption에 대한 부정적 유저 반응이나 게임플레이 실패 사례가 없음. 단, 아래 리스크 항목에 수치 출처 간 불일치 문제를 별도로 기록함 -->
+<!-- No evidence: JSON evidence contains no negative user reactions or gameplay failure cases for Inscryption. However, the discrepancy among numeric sources is recorded separately in the risks section. -->
 
 ## User Reaction Summary
-- 선호: 심리적 깊이·메타픽션 (Inscryption) [source: 조사 자료 유저 반응 요약]
-- 불호: <!-- No evidence: Inscryption에 대한 구체적인 불호 키워드가 JSON에 없음 -->
+- Preference: Psychological depth/metafiction (Inscryption) [source: Summary of user reactions from survey data]
+- Dislike: <!-- No evidence: JSON contains no specific dislike keywords for Inscryption. -->
 
 ## Synergy
-- 좋음[interpretation]: ELEM-004 (반복 메커닉) - 반복 구조가 없으면 "죽음과 재시작"이라는 소재를 실행할 그릇 자체가 없다. GAME-009와 그 속편 GAME-040이 같은 조합을 연속으로 성립시킨 사례다.
-- 좋음[interpretation]: ELEM-032 (뉴 게임 플러스) - 클리어 후 이어서 다시 시작하는 구조는 "끝나도 끝나지 않는다"는 이 요소의 주제를 시스템 수준에서 되풀이한다.
-<!-- 증거 부족: 위 두 항목 외에 요소 간 조합을 직접 다룬 출처 서술은 이번 정리에서도 확인하지 못함 -->
+- Good[interpretation]: ELEM-004 (repetition mechanic) - Without a repetition structure, there is no vessel to execute the material called “death and restart.” GAME-009 and its sequel GAME-040 are examples of successively establishing the same combination.
+- Good[interpretation]: ELEM-032 (New Game Plus) - The structure of restarting after clearing repeats the theme of this element, “It doesn’t end even when it ends,” at the system level.
+<!-- Insufficient evidence: No source narrative directly addressing combinations beyond the two items above was found in this review. -->
 
 ## Risks
-- Inscryption(GAME-001)의 판매량·매출 추정치는 출처마다 크게 다름: 데볼버 디지털이 2022년 9월 보고 기준 146만 장(1.46 million units) 판매를 밝혔다는 보조 집계가 있는가 하면, 별도 커뮤니티 추정치는 2021년 출시 첫 달 기준 약 100만 장·매출 약 1,200만 달러로 추산하고, 2026년 제3자 추정 기관 Raijin은 2026년 7월 15일 기준 약 280만 장·매출 약 3,320만 달러로 추정하며, 또 다른 계산기는 평생 누적 매출을 약 1억 1,860만 달러로 추정함. 이 수치들은 공식 재무 공시가 아니라 추정치이므로 인용 시 반드시 출처를 함께 밝혀야 함 [source: LEVVVEL (secondary aggregator, citing Game World Observer's 2022 report on Devolver Digital figures)].
-- 리뷰 수·긍정률 역시 Steam 자체 페이지, SteamDB, Raijin 세 출처 간에 서로 다르게 집계되어 있어, 동일 시점 기준으로도 정확한 값을 하나로 확정하기 어려움 [source: SteamDB].
-- [interpretation] 철학적 주제(실존주의 등)를 다루는 게임은 대중적 이해도에 따라 몰입도가 크게 갈릴 수 있음.
+- Sales and revenue estimates for Inscryption (GAME-001) vary greatly depending on the source: There is a supplementary tally that Devolver Digital announced sales of 1,460,000 units (1.46 million units) as of the 9 month of 2022, while separate community estimates show sales of approximately 1,000,000 units as of the first month of release in 2021. It is estimated at $12,000,000 dollars, and Raijin, an estimated agency of 2026 year 3, estimates sales at about 2,800,000 units and $33,200,000 revenue as of 15 month 7 year 2026 at about 2,800,000 units and $33,200,000 revenue, and another calculator estimates lifetime cumulative sales at about $100,000,000 + $18,600,000. Estimated to be $100,000,000 + $18,600,000. Since these figures are estimates and not official financial disclosures, the source must be cited when citing [source: LEVVVEL (secondary aggregator, citing Game World Observer's 2022 report on Devolver Digital figures)].
+- The number of reviews and positivity rate are also calculated differently among the three sources: Steam's own page, SteamDB, and Raijin, so it is difficult to determine the exact value as one even based on the same point in time [source: SteamDB].
+- [interpretation] Games that deal with philosophical topics (existentialism, etc.) can vary greatly in immersion depending on public understanding.
+
+
+

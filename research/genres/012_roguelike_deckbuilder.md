@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-012"
 type = "genre"
-title = "로그라이크 덱빌더 (Roguelike Deckbuilder)"
-summary = "한 판 동안만 유지되는 덱을 무작위 카드 보상 중 택1로 키워가며, 죽으면 처음부터 다시 짜게 만드는 군집"
+title = "Roguelike Deckbuilder"
+summary = "A cluster that builds a deck lasting only for one run by choosing from random card rewards, then makes the player rebuild from the beginning after death"
 elements = ["ELEM-020", "ELEM-018", "ELEM-004", "ELEM-047"]
 example_games = ["GAME-030", "GAME-001", "GAME-031", "GAME-034"]
 tags = ["roguelike", "deckbuilder", "randomness", "indie", "replayability", "saturated"]
@@ -10,61 +10,33 @@ updated = "2026-08-09"
 confidence = "medium"
 +++
 ## Components
-- ELEM-020 (덱 구축) - 군집의 정체성. 약한 시작 덱에서 출발해 판이 진행되는 동안에만 유효한 덱을
-  만들어간다 [source: Eneba 리뷰 기사, 2026-07 확인].
-- ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 지도상의 도전 순서, 무작위 카드 보상 중의
-  선택, 예측 불가능한 유물이 매 판을 다르게 만든다 [source: Eneba 리뷰 기사, 2026-07 확인].
-- ELEM-004 (반복 메커닉) - 죽으면 덱이 사라지고 처음부터 다시 짜는 구조가 반복의 축이다.
-- [interpretation] 이 군집을 일반 카드 게임과 가르는 것은 "덱이 영구 자산이 아니라 한 판짜리 소모품"이라는
-  점이다. 그래서 수집 요소(강한 카드를 사 모으기)가 아니라 그때그때의 판단이 실력이 된다.
-- GENRE-035 (타일매칭 로그라이크 덱빌더) - [interpretation] 이 군집과 런 구조(아티팩트 획득, 라운드제 목표
-  점수, 라운드형 상점)를 공유하는 인접 군집이다. 다만 이 군집은 규칙을 개발자가 새로 발명하는 반면,
-  GENRE-035는 도미노·마작처럼 이미 존재하는 타일 배치 규칙을 그대로 빌려온다는 점에서 갈린다
-  [source: GENRE-035 카드].
-- ELEM-047 (비대칭 시작덱 캐릭터 로스터) - Slay the Spire류 원조작부터 이어지는 관례로, 플레이어블
-  캐릭터마다 서로 다른 시작 덱·카드 풀을 부여해 재플레이 가치를 만든다. 신생 사례 Talespinner(요괴
-  신화 소재)도 3명의 캐릭터에 각각 고유 메커닉을 부여하며 이 관례를 따른다 [source: ELEM-047 카드].
+- ELEM-020 (deckbuilding) - The cluster's identity. It starts from a weak starting deck and builds a deck valid only during the run [source: Eneba review article, verified 2026-07].
+- ELEM-018 (roguelike random upgrade/path draft) - The map's challenge order, choices among random card rewards, and unpredictable relics make every run different [source: Eneba review article, verified 2026-07].
+- ELEM-004 (repetition mechanic) - The deck disappearing on death and being rebuilt from the beginning is the axis of repetition.
+- [interpretation] What separates this cluster from ordinary card games is that the deck is "a one-run consumable, not a permanent asset." Skill therefore lies in moment-to-moment judgment, not collection (buying powerful cards).
+- GENRE-035 (tile-matching roguelike deckbuilder) - [interpretation] An adjacent cluster sharing this cluster's run structure (artifact acquisition, round-based goals, and round-based shops). This cluster invents its rules anew, while GENRE-035 borrows existing tile-placement rules such as dominoes and mahjong [source: GENRE-035 card].
+- ELEM-047 (asymmetric starting-deck character roster) - A convention inherited from early Slay the Spire-like works: each playable character receives a different starting deck and card pool to create replay value. The new case Talespinner (yokai-mythology theme) follows it by giving each of 3 characters unique mechanics [source: ELEM-047 card].
 
 ## Market Saturation
-- 사실: 2017년 말 GAME-030의 얼리액세스 성공 이후 장르는 포화 상태가 됐고, 원조와 플레이 루프가
-  거의 구분되지 않는 후발작이 계속 나온다는 지적이 있다 [source: GameShub 장르 분석 기사, 2026-07 확인].
-- 사실: 그럼에도 상위작의 규모는 계속 커지고 있다 - GAME-031(Balatro) 500만 장 [source: Game Developer,
-  2024년 12월 기준], GAME-030의 속편은 2026년 3월 5일 얼리액세스 출시 2주 만에 460만 장 / 9,200만
-  달러 이상 [source: Alinea Analytics, 2026-03-20 기준].
-- 사실: 같은 시기 이 속편의 2주 매출은 Hollow Knight: Silksong(8,300만 달러)과 Hades II(8,200만
-  달러)의 Steam 누적 매출을 넘어섰다 [source: Alinea Analytics, 2026-03-20 기준].
-- [interpretation] 포화의 의미가 다른 군집과 다르다. 설계가 실제로 다르면 시장이 여러 편을 동시에 흡수하고,
-  같으면 즉시 묻힌다. 진입 장벽이 낮은 대신 "왜 이걸 해야 하는가"의 답이 없으면 노출조차 안 되는
-  구조다.
+- Fact: After GAME-030's late-2017 early-access success, the genre became saturated, and later works whose play loops are barely distinguishable from the original continue to appear [source: GameShub genre-analysis article, verified 2026-07].
+- Fact: Even so, the scale of top works keeps growing - GAME-031 (Balatro) sold 5,000,000 copies [source: Game Developer, as of 2024-12], while GAME-030's sequel sold 4,600,000 copies / more than $92,000,000 within 2 weeks of its 2026-03-05 early-access launch [source: Alinea Analytics, as of 2026-03-20].
+- Fact: The sequel's 2-week revenue at the same time exceeded the cumulative Steam revenue of Hollow Knight: Silksong ($83,000,000) and Hades II ($82,000,000) [source: Alinea Analytics, as of 2026-03-20].
+- [interpretation] Saturation means something different here. If the design is genuinely different, the market absorbs several works at once; if it is the same, the work is immediately buried. Entry barriers are low, but without an answer to "why play this?" it cannot even gain exposure.
 <!-- 증거 부족: 연간 신작 수 등 장르 단위 출시 규모 집계는 확인하지 못함 -->
-- 사실: Balatro(GAME-031)는 2026-07-31 기준 버전 1.0.1o-FULL "Friends of Jimbo 4"까지 갱신됐고 무료 1.1 콘텐츠 업데이트가 예고돼, 출시 후 2년 넘게 라이브 지원이 이어지고 있다 [source: Balatro Wiki, 2026-07-31 기준 / 다이제스트 2026-07-31].
-- 사실: 2026년 8월 첫 주 다이제스트는 ELEM-021(친숙한 규칙 차용)의 대상이 포커·카드류를 넘어 도미노(Dominocalypse)·일본 신화 소재 신작으로 다변화되는 흐름을 포착했다 [source: 다이제스트 2026-08-07]. 조사 결과 도미노·마작 같은 타일 배치 규칙을 빌린 갈래는 카드 규칙을 빌리는 이 군집과 별도의 인접 군집(GENRE-035, 타일매칭 로그라이크 덱빌더)으로 분리해 다룬다 - 두 군집은 런 구조(아티팩트·라운드제 상점)는 공유하되 빌리는 바탕 규칙의 종류(카드 vs 타일)가 다르다 [source: GENRE-035 카드].
+- Fact: As of 2026-07-31, Balatro (GAME-031) had updated through version 1.0.1o-FULL "Friends of Jimbo 4" and announced a free 1.1 content update, continuing live support for more than 2 years after launch [source: Balatro Wiki, as of 2026-07-31 / digest 2026-07-31].
+- Fact: The first-week August 2026 digest captured ELEM-021 (borrowing familiar rules) diversifying beyond poker and cards into new works based on dominoes (Dominocalypse) and Japanese mythology [source: digest 2026-08-07]. The investigation treats branches borrowing tile-placement rules such as dominoes and mahjong as a separate adjacent cluster (GENRE-035, tile-matching roguelike deckbuilder) - both share run structure (artifacts and round-based shops), but differ in the borrowed base rule (cards vs. tiles) [source: GENRE-035 card].
 
 ## Conventions and Expectations
-- 사실: 전투가 끝날 때마다 무작위로 제시된 카드 중 하나만 고르는 보상 방식이 표준 문법이다
-  [source: Eneba 리뷰 기사, 2026-07 확인].
-- 사실: 판마다 고유한 시드가 생성되고, 이를 공유하는 데일리 모드에서 모든 플레이어가 동일한 지도
-  배치·카드 보상·유물 드롭·이벤트 결과를 받는다 [source: Slay the Spire Wiki 'Daily Climb' 문서,
-  2026-07 확인].
-- 사실: 클리어 후 다음 난이도가 해금되는 상승 구조(승천)가 기대치가 됐다 - 단계마다 적 강화, 엘리트
-  증가, 물약 슬롯 감소, 상점 가격 상승 같은 변형이 하나씩 얹힌다 [source: Eneba 리뷰 기사,
-  2026-07 확인].
-- [interpretation] 이 군집의 플레이어는 "운이 나빠서 졌다"는 설명을 잘 받아들이지 않는다. 시드 공유와 승천
-  구조가 모두 "패배는 선택의 결과"라는 프레임을 유지하기 위한 장치다.
+- Fact: Choosing exactly one card from randomly presented rewards after each battle is standard vocabulary [source: Eneba review article, verified 2026-07].
+- Fact: Each run generates a unique seed, and in a shared-seed daily mode every player receives the same map layout, card rewards, relic drops, and event results [source: Slay the Spire Wiki 'Daily Climb' page, verified 2026-07].
+- Fact: A progression structure that unlocks the next difficulty after clearing (Ascension) is expected - each level adds a modifier such as stronger enemies, more elites, fewer potion slots, or higher shop prices [source: Eneba review article, verified 2026-07].
+- [interpretation] Players in this cluster do not readily accept "I lost because of bad luck." Shared seeds and Ascension are both devices for maintaining the frame that "defeat is the result of a choice."
 
 ## Gaps
-[interpretation] ★ 시드 공유 데일리를 **부가 모드가 아니라 게임의 코어 경쟁 구조**로 삼은 덱빌더는 조사 중
-확인하지 못했다. GAME-030에서도 데일리 클라임은 본편 옆에 붙은 별도 모드다. 모두가 같은 패를 받는
-구조는 무작위성을 유지한 채 "운 탓"을 원천 차단하는 거의 유일한 장치인데, 이것을 메인 루프로 올려
-순위·시즌과 묶은 사례가 비어 있다.
-- 확인 방법: Steam 태그 "Deckbuilding"+"Roguelike" 상위작의 상점 페이지에서 daily/seed/leaderboard
-  키워드를 확인하고, 데일리가 메인 모드인지 부가 모드인지 구분
-- 확인일: 2026-07-29 / 재확인 주기: 분기 1회
+[interpretation] ★ No deckbuilder making a shared-seed daily the **core competitive structure rather than an auxiliary mode** was confirmed. In GAME-030 too, Daily Climb is a separate mode beside the main game. Everyone receiving the same hand is almost the only device that preserves randomness while eliminating "blame luck," yet no case was found that elevates it to the main loop and binds it to rankings and seasons.
+- Verification method: check daily/seed/leaderboard keywords on store pages of top Steam-tagged "Deckbuilding"+"Roguelike" works and distinguish whether daily is the main or auxiliary mode
+- Verified on: 2026-07-29 / Re-check cycle: once a quarter
 
-[interpretation] ★ ELEM-019(무작위 전리품 드롭)와 ELEM-020(덱 구축)의 축적 방향 충돌을 정면으로 설계에 쓴
-사례도 확인하지 못했다. 루트 드롭은 "많이 얻을수록 강해짐", 덱 구축은 "많이 넣을수록 희석됨"이라
-전제가 반대인데, 이 모순 자체를 플레이어에게 선택지로 제시하는 게임(예: 전리품을 얻되 덱에 넣을지
-말지를 매번 결정)은 비어 있다.
-- 확인 방법: GENRE-011(루트 슈터) 상위작과 본 군집의 교차 태그 검색 후, 획득과 덱 편입이 분리된
-  구조인지 상점 페이지·가이드로 확인
-- 확인일: 2026-07-29 / 재확인 주기: 분기 1회
+[interpretation] ★ No case was confirmed that directly designs around the conflict between ELEM-019 (random loot drops) and ELEM-020 (deckbuilding). Loot drops assume "the more you obtain, the stronger you become," while deckbuilding assumes "the more you add, the more diluted you become"; no game presents this contradiction itself as a player choice (for example, deciding each time whether to add acquired loot to the deck).
+- Verification method: cross-search top GENRE-011 (looter shooter) works with this cluster, then verify through store pages and guides whether acquisition and deck inclusion are separate
+- Verified on: 2026-07-29 / Re-check cycle: once a quarter

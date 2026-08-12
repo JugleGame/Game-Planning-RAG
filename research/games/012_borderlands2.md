@@ -2,7 +2,7 @@
 card_id = "GAME-012"
 type = "success"
 title = "Borderlands 2 (2012, Gearbox / 2K)"
-summary = "유머를 캐릭터(악당)에 집중시켜 3,000만 장을 판 캠피 톤의 상업적 정점"
+summary = "The commercial peak of campy tone, selling 30 million copies by concentrating humor in a character (the villain)"
 genres = ["GENRE-004", "GENRE-011"]   # GENRE-011이 이 게임을 대표작으로 지목 (역참조 보강 2026-07-31)
 elements = ["ELEM-002"]
 tags = ["fps", "looter-shooter", "comedy", "broad-appeal"]
@@ -10,18 +10,17 @@ updated = "2026-07-31"
 confidence = "high"              # 판매는 퍼블리셔 투자자 자료
 +++
 ## Summary and Sales/Review Metrics
-캠피 유머의 루터슈터. 누적 3,000만 장 이상 - 시리즈 최다이자 퍼블리셔
-역사상 최다 판매 타이틀 [source: Take-Two/2K 투자자 자료, 2025-05 기준].
-Metacritic 89~91점(플랫폼별) [source: Metacritic 집계].
+A looter-shooter built around campy humor. More than 30,000,000 cumulative copies—the most in the series and the publisher’s best-selling title in its history [source: Take-Two/2K investor materials, as of 2025-05].
+Metacritic score: 89–91 by platform [source: Metacritic aggregate].
 
 ## Elements Used
-- ELEM-002 (캠피) - 성공 측 증거의 정점. 유머가 사방에 흩뿌려지지 않고 핸섬 잭이라는 "웃기면서 진짜 위협적인" 악당 캐릭터에 집중됨.
+- ELEM-002 (camp) - The strongest evidence on the success side. Humor is not scattered everywhere; it is concentrated in the “funny but genuinely threatening” villain character Handsome Jack.
 
 ## Success/Failure Drivers
-- 사실: 평론이 각본을 "Portal 2 이후 가장 웃기고 영리하다"고 평가, 악당 핸섬 잭은 역대급 빌런으로 회자 [source: Metacritic 평론 인용/커뮤니티 평가]
-- 사실(주의): 같은 프랜차이즈의 후속작(Borderlands 3)은 "유머가 과했다/cringe"는 반응이 커뮤니티에 광범위 - 같은 IP 안에서 밀도 조절 성패가 갈림 [source: 커뮤니티 스레드 반응, 2019~2025]
-- [interpretation] 캠피의 수명은 레퍼런스가 아니라 캐릭터에서 나옴 - 시사 개그는 늙지만 "핸섬 잭이 웃긴 것"은 늙지 않음. 그리고 유머 아래에 견고한 루프(루팅·슈팅)가 있었기에 유머가 양념으로 작동.
+- Fact: Critics called the writing “the funniest and smartest since Portal 2,” and villain Handsome Jack is remembered as an all-time great [source: Metacritic critic quotations/community evaluations]
+- Fact (caution): The sequel Borderlands 3 drew widespread community reactions that its “humor was excessive/cringe”—density control determines success even within the same IP [source: community thread reactions, 2019~2025]
+- [interpretation] Camp’s longevity comes from characters, not references—topical jokes age, but “Handsome Jack being funny” does not. Humor also worked as seasoning because a sturdy loop (looting and shooting) supported it.
 
 ## Implications for Our Project
-우리 해설자 유머의 원칙: ① 캐릭터에 뿌리내린 개그(레퍼런스 나열 금지)
-② 유머는 루프의 양념이지 본체가 아님 - Inscryption 시사점과 동일 결론.
+Principles for our commentator’s humor: ① jokes rooted in character (no lists of references)
+② humor is seasoning for the loop, not the main body—the same conclusion as the Inscryption implication.

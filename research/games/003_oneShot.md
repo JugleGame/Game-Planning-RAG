@@ -2,7 +2,7 @@
 card_id = "GAME-003"
 type = "success"
 title = "OneShot (2016, Future Cat / Degica)"
-summary = "게임이 플레이어의 OS까지 개입하는 포스 월 브레이킹의 극단 사례"
+summary = "An extreme case of forced wall breaking in which the game reaches into the player's OS"
 genres = ["GENRE-001"]
 elements = ["ELEM-003", "ELEM-001"]
 tags = ["puzzle", "adventure", "meta", "indie", "niche-appeal"]
@@ -10,19 +10,19 @@ updated = "2026-07-15"
 confidence = "high"              # 리뷰 수치는 Steam 공식 표기
 +++
 ## Summary and Sales/Review Metrics
-플레이어 자신이 "이 세계의 신"으로 등장하는 퍼즐 어드벤처. Steam 리뷰
-6만 건 이상 중 98% 긍정 "압도적으로 긍정적" - Steam 최상위권 유저 평점
-[source: Steam 스토어/Steambase, 2026-07 확인]. Metacritic 80점(평단).
+A puzzle adventure in which the player themselves appears as "the god of this world". Of over
+60,000 Steam reviews, 98% positive, "Overwhelmingly Positive" - a top-tier user rating on Steam
+[source: Steam store/Steambase, verified 2026-07]. Metacritic 80 (critics).
 
 ## Elements Used
-- ELEM-003 (제4의 벽 붕괴) - 게임이 OS 사용자명을 부르고, 게임 창 밖(바탕화면, 파일)에 단서를 심음. "게임이 나를 안다"는 감각의 극단.
-- ELEM-001 (티저 기반 공개) - 창 밖 퍼즐이라는 규칙 자체를 조금씩만 알려줘 탐색 동기를 유지.
+- ELEM-003 (Fourth Wall Break) - the game calls the player by their OS username and plants clues outside the game window (desktop, files). The extreme of the "the game knows me" sensation.
+- ELEM-001 (Teaser-Based Reveal) - the very rule that puzzles exist outside the window is revealed only bit by bit, sustaining the motivation to explore.
 
 ## Success/Failure Drivers
-- 사실: 평단 80점 vs 유저 98% - 유저 평가가 평단을 크게 상회하는 팬덤형 성공 [source: Metacritic/Steam]
-- [interpretation] 메타 장치를 공포가 아니라 "캐릭터와의 유대"에 쓴 희소 사례 - 유저 리뷰들이 "내가 직접 이야기에 참여한 유일한 게임"이라는 정서적 반응으로 수렴.
-- [interpretation] 단, 게임플레이 자체는 평범하다는 비판이 공존 - 메타 장치가 본편 재미를 대체하지는 못함.
+- Fact: critics 80 vs users 98% - a fandom-type success in which user evaluation far exceeds critical evaluation [source: Metacritic/Steam]
+- [interpretation] A rare case of using meta devices for "bonding with a character" rather than for horror - user reviews converge on the emotional reaction that "this is the only game I personally took part in the story of".
+- [interpretation] However, criticism that the gameplay itself is ordinary coexists with this - meta devices cannot substitute for the fun of the main game.
 
 ## Implications for Our Project
-포스 월은 공포 연출용만이 아니다 - "관계 형성"에 쓰면 팬덤이 생긴다.
-우리 해설자 캐릭터도 놀래키는 존재가 아니라 관계 맺는 존재로 설계할 것.
+The forced wall is not only for horror staging - use it for "relationship building" and a fandom forms.
+Our narrator character should likewise be designed as a being that forms a relationship, not one that startles.

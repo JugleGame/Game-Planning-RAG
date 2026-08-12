@@ -1,63 +1,63 @@
 +++
 card_id = "ELEM-017"
 type = "mechanic"
-title = "가챠 확률 & 천장 시스템 (Gacha Probability & Pity System)"
-summary = "확률로 캐릭터/아이템을 뽑게 하되, 일정 횟수를 넘기면 반드시 원하는 결과를 보장하는 이중 장치"
+title = "Gacha Probability & Pity System"
+summary = "A dual device that makes players draw characters/items by probability while guaranteeing the desired outcome once a set number of draws is exceeded"
 tags = ["gacha", "monetization", "randomness", "live-service", "mobile", "regulation", "divisive"]
 updated = "2026-08-01"
 confidence = "high"
 +++
 ## Definition
-가챠는 돈을 내고 무작위로 캐릭터나 아이템을 뽑는 방식입니다. 뽑기 기계에 동전을 넣는 것과 비슷합니다.
-운이 나쁘면 원하는 게 계속 안 나올 수도 있는데, 그러면 "돈만 쓰고 아무것도 못 얻었다"는 화가 나겠죠.
-그래서 많은 게임은 '천장'이라는 안전장치를 둡니다. 예를 들어 90번을 뽑았는데도 원하는 게 안 나왔다면
-90번째에는 무조건 준다는 약속입니다. 이러면 완전히 운에만 맡기는 게 아니라, 아무리 재수가 없어도
-최대 몇 번 안에는 반드시 받는다는 믿음을 줄 수 있습니다.
+Gacha is a method where you pay money and randomly draw a character or item. It is similar to putting a coin into a capsule machine.
+If your luck is bad, the thing you want may keep failing to appear, and then you would be angry that "I only spent money and got nothing."
+So many games put in a safety device called a "pity." For example, it is a promise that if you have drawn 90 times and the thing you want still has not appeared,
+the 90th draw will give it to you unconditionally. This way it is not left entirely to luck, and it can give the belief that no matter how unlucky you are,
+you will definitely receive it within at most a certain number of draws.
 
 ## Success Cases
-- GAME-024 (Genshin Impact) - 90회를 채우면 반드시 5성이 나오는 하드 천장과, 74회부터 확률이 급격히
-  오르는 소프트 천장을 함께 둬 "운이 없어도 결국은 받는다"는 신뢰를 만듦 [source: BitTopup/Game8 등
-  가챠 가이드 종합, 2026-07 확인]. 이 신뢰를 바탕으로 2025년 말 기준 누적 매출 100억 달러를 넘겨
-  역대 모바일 게임 중 가장 빠르게 이 기록을 세움 [source: STG Research(Shane The Gamer) 집계, 2025년
-  말 기준].
-- GAME-046 (Wuthering Waves) - 캐릭터·무기 배너 순환에 천장을 결합해 Steam 진출 후
-  리뷰 88/100(52,627건, 매우 긍정적)을 기록함 [source: Steambase, 2026-07 확인].
-- GAME-047 (Zenless Zone Zero) - 같은 방식의 배너 순환으로 Steam 출시 직후 리뷰
-  87/100(8,194건, 매우 긍정적)을 기록함 [source: Steambase, 2026-07 확인].
-- GAME-048 (NIKKE) - 같은 방식의 캐릭터 배너로 모바일 서브컬쳐 매출 3개월 연속 1위를
-  기록함 [source: 게이머스크롤 순위 보도, 2026-05 기준]. 단, 이 매출 성공은 모바일 한정이며
-  Steam 버전에서는 반복되지 않았음(GAME-048 카드 참고).
+- GAME-024 (Genshin Impact) - Built the trust that "even if you are unlucky, you will get it in the end" by combining a hard pity that guarantees a 5-star once you fill 90 draws with
+  a soft pity where the rate rises sharply from draw 74 [source: composite of gacha guides such as BitTopup/Game8,
+  verified 2026-07]. On the basis of that trust, it passed $10,000,000,000 in cumulative revenue as of the end of 2025,
+  setting that record faster than any mobile game in history [source: STG Research (Shane The Gamer) tally, as of the end of
+  2025].
+- GAME-046 (Wuthering Waves) - Combined pity with character/weapon banner rotation and recorded
+  a review score of 88/100 (52,627 reviews, Very Positive) after entering Steam [source: Steambase, verified 2026-07].
+- GAME-047 (Zenless Zone Zero) - With the same style of banner rotation, recorded a review score of
+  87/100 (8,194 reviews, Very Positive) immediately after its Steam release [source: Steambase, verified 2026-07].
+- GAME-048 (NIKKE) - With the same style of character banners, recorded 1st place in mobile subculture revenue for 3 consecutive
+  months [source: Gamers Scroll ranking coverage, as of 2026-05]. However, this revenue success is limited to mobile and
+  was not repeated on the Steam version (see the GAME-048 card).
 
 ## Failure Cases
-- GAME-025 (메이플스토리) - 확률형 강화 아이템 '큐브'의 등급 상승 확률을 회사가 몰래 낮추고도 알리지
-  않아, 2024년 1월 공정거래위원회로부터 116억 4,200만 원의 과징금을 부과받음 [source: 공정거래위원회
-  제재 발표 보도, 2024-01 기준].
-  실패 지점: 확률을 바꾸면서도 이용자에게 고지하지 않고 "변경 없음" 취지로 공지해, "확률이 조작됐다"는
-  신뢰 붕괴로 번짐.
+- GAME-025 (MapleStory) - The company secretly lowered the tier-up probability of the probabilistic enhancement item "Cube" and did not
+  disclose it, and was fined 11,600,000,000 + 42,000,000 KRW by the Fair Trade Commission in January 2024 [source: reporting on the Fair Trade Commission
+  sanction announcement, as of 2024-01].
+  Failure point: it changed the probabilities without notifying users and posted a notice to the effect of "no change," which spread into
+  a collapse of trust with claims that "the rates were manipulated."
 
 ## User Reaction Summary
-- 선호: "90번 안에는 무조건 나온다"는 확실성 - 완전한 무한 도박이 아니라 "최대 손실"이 정해져 있다는
-  안도감 [source: Genshin Impact 가챠 가이드 커뮤니티 설명 종합, 2026-07 확인]
-- 불호: "확률을 회사가 마음대로, 몰래 바꿀 수 있다"는 의심 - 공개된 확률과 실제 확률이 다를 수 있다는
-  불신 [source: 메이플스토리 큐브 확률조작 사건 보도, 2024-01 기준]
+- Liked: the certainty that "it will definitely come out within 90 draws" - the reassurance that the "maximum loss" is fixed rather than
+  it being complete unlimited gambling [source: composite of community explanations in Genshin Impact gacha guides, verified 2026-07]
+- Disliked: the suspicion that "the company can change the probabilities at will, in secret" - the distrust that the published rates and
+  the actual rates may differ [source: reporting on the MapleStory Cube probability manipulation case, as of 2024-01]
 
 ## Synergy
-- 장르 앵커: GENRE-025 (서브컬쳐 게임) - 이 군집이 이 요소를 구성 요소로 지목한다.
-- 좋음: ELEM-004 (반복 메커닉) - 매번 확률에 다시 도전하는 것 자체가 반복 루프의 보상 사이클이 됨
-- 좋음: ELEM-019 (무작위 전리품 드롭 & 루트 테이블) - [interpretation] 둘 다 확률형 보상이지만 루트 드롭에는
-  보통 없는 상한선(천장)을 가챠가 갖고 있다. GAME-028(Destiny 2)이 겪은 "978판을 돌고도 목표를
-  못 얻는" 불만은 루트 드롭에 천장 개념을 얹으면 줄어들 여지가 있음
-- 충돌: ELEM-022 (지수적 점수 스케일링) - [interpretation] 천장은 "최대 몇 번 안에는 반드시"라는 예측 가능한
-  상한을 약속하는 장치인데, 지수적 스케일링은 반대로 상한 자체가 설계자도 모르는 것이 특징이라 같은
-  시스템에 섞으면 한쪽의 약속을 다른 쪽이 계속 깨뜨림
-- 충돌: GENRE-007 (코지 시뮬) - [interpretation] 실패 상태 없는 저스트레스 설계와, 확률에 따라 손실이 날 수
-  있는 가챠는 긴장감의 톤이 정면으로 부딪힘
+- Genre anchor: GENRE-025 (Subculture Games) - this cluster names this element as a constituent.
+- Good: ELEM-004 (Repetition Mechanic) - challenging the probability again each time itself becomes the reward cycle of the repetition loop
+- Good: ELEM-019 (Random Loot Drop & Loot Table) - [interpretation] both are probabilistic rewards, but gacha has an upper bound (pity)
+  that loot drops usually lack. The complaint GAME-028 (Destiny 2) faced of "running 978 matches and still
+  not getting the target" has room to be reduced by layering the pity concept onto loot drops
+- Conflict: ELEM-022 (Exponential Score Scaling) - [interpretation] pity is a device that promises a predictable
+  upper bound of "definitely within at most N draws," whereas exponential scaling is by nature something whose upper bound even the designer does not know, so mixing them in the same
+  system means one side keeps breaking the other's promise
+- Conflict: GENRE-007 (Cozy Sim) - [interpretation] a low-stress design with no failure state and gacha, where loss can occur
+  by probability, collide head-on in the tone of tension
 
 ## Risks
-- [interpretation] 확률을 바꾸면서 고지하지 않으면 GAME-025처럼 법적 제재와 신뢰 붕괴로 이어질 수 있음 - 한국은
-  이 사건 이후 확률형 아이템의 확률 정보 공개를 게임산업법 개정으로 의무화했음 [source: 게임산업법 개정,
-  2024년 3월 시행]. 대조적으로 GAME-029(Warframe)는 규제가 강제하기 전인 2017년 7월 드롭 테이블
-  전체를 자발적으로 공개해 신뢰를 브랜드로 만든 사례로 [source: Massively Overpowered, 2017-07-04
-  기준], 확률을 숨기다 들키는 것과 먼저 여는 것의 결과가 정반대임을 보여준다 [interpretation].
-- [interpretation] 천장 횟수를 지나치게 길게 설계하면 저과금 유저에게는 사실상 도달 불가능해, 안전장치가 아니라
-  "체감상 순수 도박"으로 인식될 위험이 있음.
+- [interpretation] Changing probabilities without disclosure can lead to legal sanctions and a collapse of trust as in GAME-025 - after this case, Korea
+  made disclosure of probability information for probabilistic items mandatory through an amendment to the Game Industry Act [source: Game Industry Act amendment,
+  effective March 2024]. In contrast, GAME-029 (Warframe) voluntarily published its entire drop table in July 2017, before
+  regulation compelled it, as a case of turning trust into a brand [source: Massively Overpowered, as of 2017-07-04
+  ], showing that hiding probabilities and being caught versus opening them first produce opposite outcomes [interpretation].
+- [interpretation] If the pity count is designed excessively long, it becomes effectively unreachable for low-spending users, so there is a risk of the safety device being perceived not as a safety device but as
+  "pure gambling in practice."

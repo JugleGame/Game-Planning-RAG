@@ -2,7 +2,7 @@
 card_id = "GAME-019"
 type = "success"
 title = "Stardew Valley (2016, ConcernedApe / Chucklefish)"
-summary = "1인 개발 도트 그래픽 농장 시뮬레이션으로 Steam 최고 평점 게임 자리까지 오른 오픈월드형 생활 시뮬레이터"
+summary = "An open-world-style life simulator that rose to the top-rated game on Steam as a solo-developed pixel-art farming simulation"
 genres = ["GENRE-006", "GENRE-007"]   # GENRE-007(코지 시뮬)의 단일 대표작이기도 함 (역참조 보강 2026-07-31)
 elements = ["ELEM-013"]
 tags = ["farming-sim", "open-world", "pixel", "solo-dev", "broad-appeal"]
@@ -10,14 +10,14 @@ updated = "2026-07-31"
 confidence = "high"
 +++
 ## Summary and Sales/Review Metrics
-2016년 출시된 Eric Barone(ConcernedApe)의 1인 개발 도트 그래픽 농장 시뮬레이션. 2026-02 기준 누적 판매 5,000만 장 이상 [source: ConcernedApe 공식 발표 정리 기사(icon-era.com), 2026-02 기준]. Steam 리뷰 약 95만 건 중 98% 긍정으로 Portal 2를 제치고 Steam 역대 최고 평점 게임 자리에 오름 [source: TheGamer/Steambase, 2026-07 확인]. Metacritic 89점 [source: Metacritic, 2026-07 확인].
+Eric Barone's (ConcernedApe) solo-developed pixel-art farming simulation released in 2016. Cumulative sales of more than 50,000,000 units as of 2026-02 [source: article summarizing ConcernedApe's official announcement (icon-era.com), as of 2026-02]. With 98% positive out of about 950,000 Steam reviews, it beat Portal 2 to become the highest-rated game in Steam's history [source: TheGamer/Steambase, verified 2026-07]. Metacritic 89 [source: Metacritic, verified 2026-07].
 
 ## Elements Used
-- ELEM-013 (도트 그래픽 아트 스타일) - Harvest Moon 시리즈의 향수를 불러일으키는 도트 그래픽을 개발자 본인이 직접 익혀 전담 제작 [source: 개발 배경 정리 기사(gamerant.com/screenrant.com) 재인용].
+- ELEM-013 (Pixel-Art Style) - The developer himself learned and single-handedly produced pixel art that evokes nostalgia for the Harvest Moon series [source: re-cited from articles summarizing the development background (gamerant.com/screenrant.com)].
 
 ## Success/Failure Drivers
-- Eric Barone은 Harvest Moon 시리즈를 좋아했지만 후속작들의 완성도가 떨어졌다고 느껴 직접 만들기로 했다고 밝힘 [source: 개발 배경 정리 기사(gamerant.com) 재인용].
-- [interpretation] 프로그래밍·아트·음악·기획을 혼자 4년 넘게 전담하며 상업 스튜디오라면 타협했을 디테일(계절별 이벤트, NPC 개인사)까지 밀어붙인 것이 장기 입소문의 핵심으로 보인다.
+- Eric Barone said he loved the Harvest Moon series but felt the quality of its sequels had declined, so he decided to make one himself [source: re-cited from an article summarizing the development background (gamerant.com)].
+- [interpretation] Handling programming, art, music, and design alone for more than 4 years and pushing through details a commercial studio would have compromised on (seasonal events, NPC personal histories) appears to be the core of the long-term word of mouth.
 
 ## Implications for Our Project
-[interpretation] 도트 그래픽은 1인/소규모 팀이 방대한 콘텐츠(계절 순환, NPC 관계망)를 감당 가능한 비용으로 채우는 수단이 될 수 있다 - GENRE-006 군집에서 반복 확인되는 패턴.
+[interpretation] Pixel art can be the means by which a solo or small team fills vast content (seasonal cycles, NPC relationship networks) at a manageable cost - a pattern repeatedly confirmed in the GENRE-006 cluster.

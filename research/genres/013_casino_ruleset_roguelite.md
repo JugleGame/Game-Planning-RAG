@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-013"
 type = "genre"
-title = "카지노 규칙 로그라이트 (Casino-ruleset Roguelite)"
-summary = "포커·블랙잭·슬롯머신처럼 이미 존재하는 카지노 게임 규칙을 바탕으로 삼고, 그 위에 로그라이트 성장 구조를 얹은 신생 군집"
+title = "Casino-ruleset Roguelite"
+summary = "An emerging cluster that uses existing casino-game rules such as poker, blackjack, and slot machines as its base, then layers a roguelite progression structure on top"
 elements = ["ELEM-021", "ELEM-022", "ELEM-020"]
 example_games = ["GAME-031", "GAME-038"]
 tags = ["roguelite", "poker", "casino", "indie", "emerging", "regulation"]
@@ -10,51 +10,30 @@ updated = "2026-08-02"
 confidence = "medium"
 +++
 ## Components
-- ELEM-021 (친숙한 규칙 차용) - 군집의 정체성. 포커·블랙잭·슬롯머신처럼 세계적으로 통용되는 카지노
-  규칙을 그대로 게임의 바탕으로 쓴다.
-- ELEM-022 (지수적 점수 스케일링) - 빌려온 규칙 위에 조커·카드 효과를 겹쳐 점수가 폭발적으로
-  불어나게 만드는 것이 이 군집의 공통된 성장 축이다.
-- ELEM-020 (덱 구축) - 한 판 동안 카드·조커를 모아 자신만의 조합을 완성해 가는 구조.
-- 대표작 확장: GAME-038 (Buckshot Roulette)은 카드가 아닌 러시안 룰렛 규칙을 차용한 사례로,
-  이 군집의 바탕 규칙이 카드 게임에 한정되지 않음을 보여준다 - 다만 덱 구축(ELEM-020)은 쓰지 않아
-  군집의 세 구성 요소 중 둘만 공유한다 [source: GAME-038 카드].
-- [interpretation] 이 군집을 GENRE-012(로그라이크 덱빌더)와 가르는 것은 "바탕 규칙이 이미 세상에 존재하는가"이다.
-  덱빌더는 규칙 자체를 새로 만들지만, 이 군집은 포커·블랙잭이라는 기성 규칙 위에 시스템만 얹는다.
+- ELEM-021 (borrowing familiar rules) - The cluster's identity. It uses globally familiar casino rules such as poker, blackjack, and slot machines as the game's foundation.
+- ELEM-022 (exponential score scaling) - Its common growth axis is layering jokers and card effects over borrowed rules so that scores grow explosively.
+- ELEM-020 (deckbuilding) - A structure that collects cards and jokers during one run to complete a personal combination.
+- Representative expansion: GAME-038 (Buckshot Roulette) borrows Russian roulette rules rather than cards, showing that the cluster's base rules are not limited to card games - it does not use deckbuilding (ELEM-020), so it shares only two of the cluster's three elements [source: GAME-038 card].
+- [interpretation] What separates this cluster from GENRE-012 (roguelike deckbuilder) is whether the base rules already exist in the world. Deckbuilders create the rules themselves, while this cluster only layers systems onto established rules such as poker and blackjack.
 
 ## Market Saturation
-- 사실: GAME-031(Balatro)이 2024년 2월 20일 출시돼 전 플랫폼 누적 500만 장을 넘기며 이 군집을
-  대중적으로 각인시켰다 [source: Game Developer, 2024년 12월 기준].
-- 사실: 뒤이어 블랙잭을 바탕으로 한 Dungeons & Degenerate Gamblers가 나왔고, Balatro 창작자
-  LocalThunk가 직접 홍보에 나서기도 했다 [source: GamesRadar+, 2026-07 확인]. 세 게임(Balatro, Luck
-  Be a Landlord, Dungeons & Degenerate Gamblers)이 함께 묶인 번들로 판매되기도 했다 [source: 검색
-  결과 종합(장르 정리 기사), 2026-07 확인].
-- 사실: 슬롯머신 규칙을 빌린 Luck Be a Landlord는 Balatro 개발자가 스트리머 Northernlion의 방송으로
-  접해 직접적 영감을 받았다고 밝힌 선행작이다 [source: 검색 결과 종합, 2026-07 확인].
-- [interpretation] 아직 몇 개 타이틀 수준의 신생 군집이다. 포커·블랙잭·슬롯머신이 이미 채워졌으니, 다음은
-  마작·화투·바카라 등 지역별로 친숙한 다른 카지노·전통 카드 규칙으로 확장될 여지가 남아 있다.
+- Fact: GAME-031 (Balatro), released on 2024-02-20, popularized this cluster after passing 5,000,000 copies across all platforms [source: Game Developer, as of 2024-12].
+- Fact: It was followed by blackjack-based Dungeons & Degenerate Gamblers, which Balatro creator LocalThunk also promoted directly [source: GamesRadar+, verified 2026-07]. The three games (Balatro, Luck Be a Landlord, Dungeons & Degenerate Gamblers) have also been sold as a bundle [source: synthesis of search results (genre-summary articles), verified 2026-07].
+- Fact: Luck Be a Landlord, which borrows slot-machine rules, is an earlier work that the Balatro developer said directly inspired him after seeing streamer Northernlion's broadcast [source: synthesis of search results, verified 2026-07].
+- [interpretation] This is still an emerging cluster at the scale of only a few titles. Poker, blackjack, and slot machines are occupied, leaving room to expand into other locally familiar casino and traditional card rules such as mahjong, Hanafuda, and baccarat.
 <!-- 증거 부족: 이 군집 전체의 게임 수·매출 총합 집계는 확인하지 못함 -->
 - 사실: Balatro(GAME-031)의 라이브 지원이 2026-07-31 기준으로도 이어지고("Friends of Jimbo 4" 갱신, 무료 1.1 예고), "Balatro-like"라는 하위장르 명칭이 이미 통용어로 정착했다 [source: Balatro Wiki, 2026-07-31 기준 / 다이제스트 2026-07-31].
 
 ## Conventions and Expectations
-- 사실: 규칙의 시각 언어는 그대로 두되 실제 승부 규칙(예: 실제 포커·홀덤의 배팅·블러핑)에는 의존하지
-  않는 것이 관례로 자리잡았다 [source: GameSpace 분석 기사, 2026-07 확인].
-- 사실: 도박 규칙을 빌린 게임이라도 마이크로트랜잭션이나 실제 베팅 요소는 넣지 않는 것이 이 군집의
-  암묵적 규범이다 - GAME-031은 그런 요소가 전혀 없었지만 규칙의 시각적 유사성만으로 PEGI 18+ 판정을
-  받았다 [source: 검색 결과 종합(GameSpot·TheGamer 등 보도), 2024 기준].
-- [interpretation] 이 군집은 항상 "실제 도박이 아니다"를 증명해야 하는 위치에서 출발한다. 다른 로그라이트
-  군집에는 없는, 규칙을 빌린 대가로 따라오는 특수한 부담이다.
+- Fact: The convention is to retain the visual language of the rules without relying on real contest rules such as betting or bluffing in actual poker or hold'em [source: GameSpace analysis article, verified 2026-07].
+- Fact: Even games borrowing gambling rules do not add microtransactions or real betting; GAME-031 had none of these elements but received a PEGI 18+ rating solely because of visual similarity to the rules [source: synthesis of search results (GameSpot, TheGamer, etc.), as of 2024].
+- [interpretation] This cluster starts from the position of always having to prove that it is "not real gambling." It is a special burden that follows from borrowing the rules and is absent from other roguelite clusters.
 
 ## Gaps
-[interpretation] ★ 포커·블랙잭·슬롯머신 외의 카지노·전통 카드 규칙(마작, 바카라, 화투, 브릿지 등)을 바탕으로
-한 로그라이트는 조사 중 확인하지 못했다. 이 군집이 성립한 지 얼마 안 됐고 서구권 카지노 게임에
-집중돼 있어, 지역별로 친숙한 다른 전통 규칙으로 확장하면 서구권과 다른 시장에서 같은 "친숙함의
-이점"을 새로 얻을 수 있는 여지가 있다.
-- 확인 방법: Steam 태그 "Roguelite"+"Card Game" 교차 검색 후 상점 페이지 설명에서 마작·화투·바카라
-  등 키워드 확인
-- 확인일: 2026-07-29 / 재확인 주기: 분기 1회
+[interpretation] ★ No roguelite based on casino or traditional card rules beyond poker, blackjack, and slot machines (mahjong, baccarat, Hanafuda, bridge, etc.) was confirmed. The cluster is young and focused on Western casino games, so expanding into other locally familiar traditions could create the same "familiarity advantage" in markets different from the West.
+- Verification method: cross-search Steam tags "Roguelite"+"Card Game" and check store descriptions for mahjong, Hanafuda, baccarat, and similar keywords
+- Verified on: 2026-07-29 / Re-check cycle: once a quarter
 
-[interpretation] ★ 도박 규칙을 빌리면서도 사전에 등급 심의 리스크를 설계 단계에서 회피한(예: 확률·베팅 요소를
-아예 제거한 것을 심의 기관에 먼저 소명한) 사례는 확인하지 못했다. GAME-031은 사후에 이의신청으로
-등급을 뒤집었을 뿐이다.
-- 확인 방법: PEGI/ESRB 공개 판정 사례에서 카지노 규칙 기반 로그라이트의 사전 등급 협의 기록 확인
-- 확인일: 2026-07-29 / 재확인 주기: 반기 1회
+[interpretation] ★ No case was confirmed that borrowed gambling rules while avoiding rating-review risk in advance at the design stage (for example, explaining to the rating body beforehand that probability and betting elements had been removed). GAME-031 only overturned its rating afterward through an appeal.
+- Verification method: check public PEGI/ESRB rating cases for records of advance rating consultation for casino-ruleset roguelites
+- Verified on: 2026-07-29 / Re-check cycle: once every half-year

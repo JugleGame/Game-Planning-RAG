@@ -1,77 +1,78 @@
 +++
 card_id = "ARCH-028"
 type = "pattern"
-title = "피격·대미지 인터페이스 (IDamageable + 체력 컴포넌트)"
-summary = "때리는 쪽이 맞는 쪽의 정체를 모르게 '피해를 받을 수 있다'는 하나의 약속으로 묶어, 적·플레이어·상자를 같은 방식으로 다루는 전투 구조"
+title = "Hit/Damage Interface (IDamageable + Health Component)"
+summary = "A combat structure that treats enemies, players, and boxes in the same way by binding them together with one promise that 'the hitting side can take damage' without knowing the identity of the hitting side."
 tags = ["combat", "damage", "interface", "health", "pattern", "unity", "2d"]
 updated = "2026-08-02"
 confidence = "medium"
 +++
 ## Problem
-공격이 적에게도, 나무 상자에도, 플레이어 자신에게도 닿을 수 있다. 이때 때리는 쪽 코드가
-"이건 적인가? 상자인가? 플레이어인가?"를 하나씩 검사하기 시작하면, 맞을 수 있는 것이
-하나 늘 때마다 공격 코드를 전부 고쳐야 한다. 맞는 쪽에게 "나는 맞을 수 있다"는 팻말을
-달게 하고, 때리는 쪽은 그 팻말만 보게 하는 것이 이 구조다.
+The attack can reach enemies, crates, and the player himself. At this time, the code on the hitting side is
+If you start checking one by one, "Is this an enemy? Is this a box? Is this a player?", what can be hit?
+Every time there is an increase, the entire attack code must be modified. A sign saying "I can get hit" is given to the person who gets hit.
+This structure is to sweeten and have the person hitting only see the sign.
 
 ## Structure
-- 약속은 하나다. "피해를 받을 수 있다"는 인터페이스가 피해를 적용하는 창구를 정의하고,
-  맞을 수 있는 모든 대상이 이를 구현한다. 대상은 적·플레이어·상자·문 무엇이든 될 수 있다 [source: Medium 'IDamagable Interface in Unity'(James Lafritz), 2026-08 확인].
-- 때리는 쪽은 충돌한 상대가 이 약속을 가졌는지만 확인하고, 가졌다면 피해를 넘긴다. 상대가
-  무엇인지는 알지 않는다 [source: Medium 'IDamageable Interface in Unity'(tmaurodot), 2026-08 확인].
-- 체력은 인터페이스가 아니라 컴포넌트가 들고 있다. 약속은 "받는 방법"이고, 얼마나 견디는지·
-  죽으면 어떻게 되는지는 대상마다 다른 구현이다.
-- 죽음·피격은 결과를 방송한다(ARCH-001). 체력바·효과음·해설자는 이 방송만 듣고 반응하므로
-  전투 코드가 UI나 오디오를 직접 부르지 않는다.
-- [interpretation] 이 카드는 ARCH-006(상호작용)과 같은 모양의 다른 축이다. 상호작용이 "플레이어가
-  의도적으로 다가가 다루는 것"이라면, 이 카드는 "의도와 무관하게 피해가 전달되는 것"이다.
-  둘을 한 인터페이스로 합치면 상자를 때려야 열리는지 눌러야 열리는지가 뒤섞인다.
+- There is only one promise. The "can take damage" interface defines the window through which damage is applied,
+Any target that can be hit implements this. The target can be anything: an enemy, a player, a box, or a door. [source: Medium 'IDamagable Interface in Unity' (James Lafritz), check 2026-08].
+- The hitting party only checks whether the person it collided with had this promise, and if so, passes on the damage. The opponent
+I don't know what it is. [source: Medium 'IDamageable Interface in Unity' (tmaurodot), check 2026-08].
+- Stamina is held by the component, not the interface. A promise is a "how to receive" and how to endure...
+What happens when you die is implemented differently for each subject.
+- Death/hit broadcasts the result (ARCH-001). The health bar, sound effects, and commentator only listen to this broadcast and react.
+The combat code does not call UI or audio directly.
+- [interpretation] This card is another axis with the same shape as ARCH-006 (interaction). Interaction is "the player
+If it is "intentionally approached and dealt with," then this card is "damage is delivered regardless of intention."
+If you combine the two into one interface, it becomes confusing whether you have to hit or press the box to open it.
 
 ## Core Rules
-- 피해를 주는 쪽은 상대의 구체적인 종류를 검사하지 않는다. 종류 검사가 등장하는 순간 이 구조를
-  쓰는 이유가 사라진다.
-- 체력 값은 밖에서 직접 고치지 않는다. 변경은 항상 피해·회복 창구를 통한다. 그래야 음수 체력,
-  죽은 뒤 추가 피해 같은 상태를 한 곳에서 막을 수 있다 [source: Medium 'IDamageable Interface in Unity'(tmaurodot), 2026-08 확인].
-- 죽음 처리는 한 번만 일어나야 한다. 같은 프레임에 여러 발이 닿아도 죽음 방송은 하나다.
-- 피해량과 체력 기본값은 코드에 박지 않고 데이터 자산에 둔다(ARCH-012).
-- 무적 시간·팀 구분처럼 "맞을지 말지"의 판단은 맞는 쪽이 한다. 때리는 쪽이 예외를 알기
-  시작하면 다시 종류 검사로 돌아간다.
-- [interpretation] 발사체·장판·낙사처럼 출처가 달라도 창구는 같아야 한다. 창구가 여럿이면 무적 처리와
-  로그가 각각 갈라진다.
+- The party doing the damage does not check the specific type of the opponent. The moment a type test appears, this structure
+The reason for writing disappears.
+- Stamina values ​​are not directly modified from the outside. Change always goes through the damage/recovery window. Then, negative stamina,
+Conditions such as additional damage after death can be prevented in one place [source: Medium 'IDamageable Interface in Unity' (tmaurodot), check 2026-08].
+- Death processing must occur only once. Even if multiple feet hit the same frame, there is only one death broadcast.
+- The default values ​​for damage and health are placed in the data asset rather than in the code (ARCH-012).
+- Like invincibility time and team division, the decision of “whether to hit or not” is made by the side that gets hit. The person hitting knows the exception.
+When you start, it goes back to the type check.
+- [interpretation] Even if the sources are different, such as projectiles, floors, or falling missiles, the window must be the same. If there are multiple windows, you are treated as invincible.
+Each log is split.
 
 ## Unity Implementation Steps
-1. 피해를 받는 약속을 하나 정의한다. 최소한 피해량과, 필요하다면 누가 가했는지를 함께 받는다.
-2. 체력 컴포넌트를 만들고 이 약속을 구현하게 한다. 체력의 하한 처리와 죽음 판정을 여기 둔다.
-3. 적·플레이어·파괴 가능한 사물 프리팹에 이 컴포넌트를 붙인다. 붙이는 것만으로 맞을 수 있게
-   되어야 한다.
-4. 공격 쪽(근접 판정, 발사체, 함정 트리거)은 충돌 상대에서 이 약속을 찾고, 있으면 피해를 넘긴다.
-5. 피격·사망 시점에 사건을 방송한다. 체력바·효과음·이펙트는 그 구독자로 붙인다(ARCH-014, ARCH-017).
-6. 사망한 대상의 정리는 파괴가 아니라 반납으로 처리한다. 자주 죽고 자주 생기는 적은 풀에서
-   빌려온 것이다(ARCH-015).
-7. 피격 한 건마다 로그를 남긴다(ARCH-010). 전투는 순간에 지나가므로 눈으로는 검증할 수 없다.
+1. Define one promise to be harmed. At the very least, you receive the amount of damage and, if necessary, who did it.
+2. Let's create a fitness component and implement this promise. The lower limit of physical strength and death judgment are placed here.
+3. Attach this component to the enemy, player, and destructible object prefabs. So you can fit it just by sticking it on
+It has to be.
+4. The attacking side (proximity checks, projectiles, trap triggers) looks for this promise in the collision opponent and passes the damage if it is found.
+5. The incident is broadcast at the time of attack or death. Health bars, sound effects, and effects are attached to that subscriber (ARCH-014, ARCH-017).
+6. Dead objects are disposed of by return, not destruction. In the small grass that dies and grows frequently,
+It was borrowed (ARCH-015).
+7. A log is left for each hit (ARCH-010). The battle passes in an instant and cannot be verified with the eyes.
 
 ## Anti-patterns
-- 대상 종류를 하나씩 검사: 맞을 수 있는 것이 늘 때마다 공격 코드가 함께 자란다.
-- 체력을 공용 변수로 열어두기: 어디서 깎였는지 추적할 수 없고, 무적·사망 처리가 곳곳으로 흩어진다.
-- 죽음 처리 중복: 같은 적이 두 번 죽어 보상이 두 번 지급되는 전형적인 결함이다.
-- 공격 코드가 UI·사운드를 직접 호출: 전투와 표현이 붙어버려 둘 중 하나만 바꾸는 일이 불가능해진다.
-- 상호작용 인터페이스에 피해를 얹기: 두 축이 뒤섞여 "말을 걸면 피해를 입는" 종류의 사고가 난다.
-- 피해량을 스크립트에 상수로 박기: 밸런스 조정이 코드 수정이 되고, 데이터 규약(ARCH-012)이 무력해진다.
+- Check each type of target one by one: As the number of targets that can be hit increases, the attack code grows together.
+- Keep stamina open as a public variable: It is impossible to track where it was cut, and invincibility and death processing are scattered all over the place.
+- Duplicate death processing: This is a typical glitch where the same enemy dies twice and rewards are paid twice.
+- Attack code directly calls UI/sound: Combat and expression become attached, making it impossible to change just one of them.
+- Adding damage to interactive interfaces: The two axes are mixed up, resulting in “talk to and take damage” kind of thinking.
+- Putting the damage amount as a constant in the script: Balance adjustments become code modifications, and the data protocol (ARCH-012) becomes ineffective.
 
 ## Verification
-- 적용 검사: 맞을 수 있는 프리팹 전부가 체력 컴포넌트를 가지고 있어야 한다. 누락된 프리팹은
-  공격이 통과한다.
-- 종류 무관 검사: 새로 만든 파괴 가능 오브젝트가 공격 코드를 고치지 않고도 피해를 받아야 한다.
-- 하한 검사: 체력이 음수로 내려가지 않아야 한다.
-- 중복 사망 검사: 여러 발이 동시에 닿아도 사망 방송이 한 번만 남아야 한다 — 로그 줄 수로 확인한다 [source: reference/unity_project_baseline.md 3절 로그 규칙].
-- 로그 검사: 전투를 1회 수행하면 해당 이벤트ID의 줄이 남아야 한다.
-- 콘솔 검사: 전투를 반복하는 동안 콘솔 에러 0개 [source: reference/unity_project_baseline.md 4절 자체 점검].
+- Application check: All prefabs that can be hit must have a health component. The missing prefab is
+The attack passes.
+- Type-independent check: Newly created destructible objects must take damage without modifying the attack code.
+- Lower limit test: Stamina must not fall to negative numbers.
+- Redundant death check: Even if multiple shots hit at the same time, only one death broadcast must remain — check by number of log lines [source: reference/unity_project_baseline.md Section 3 log rules].
+- Log check: If the battle is performed 1 times, a line with the corresponding event ID should remain.
+- Console check: Console error 0 while repeating battle [source: reference/unity_project_baseline.md 4 self-check].
 
 ## Synergy
-- ARCH-006 (상호작용): 짝 카드이자 경계선. 의도적 접촉은 그쪽, 피해 전달은 이쪽이다.
-- ARCH-001 (이벤트 버스): 피격·사망 방송 경로. 전투가 표현과 분리되는 지점.
-- ARCH-012 (Data/ 데이터 자산 규약): 피해량·체력의 보관처.
-- ARCH-015 (오브젝트 풀링): 사망 처리와 발사체 생성 양쪽에서 맞물린다.
-- ARCH-010 (로그 규약): 전투 검증의 유일한 증거.
-- ARCH-005 (NPC 상태머신): 피격 방송을 받아 상태를 갈아타는 대표 소비자.
-- ELEM-014 (처벌적 죽음 순환): 궁합 필수 — 죽음이 무엇을 앗아가는지가 게임의 성격을 정하므로,
-  사망 방송의 구독자 목록이 곧 그 처벌의 설계도다.
+- ARCH-006 (Interaction): Partner card and borderline. Intentional contact is on that side, and damage delivery is on this side.
+- ARCH-001 (Event Bus): Attack/death broadcast route. The point where combat separates from expression.
+- ARCH-012 (Data/Data Asset Protocol): Storage location for damage and health.
+- ARCH-015 (Object Pooling): Engages in both death handling and projectile creation.
+- ARCH-010 (Rogue Protocol): The only evidence of combat verification.
+- ARCH-005 (NPC State Machine): A representative consumer who changes states by receiving a broadcast of being hit.
+- ELEM-014 (Punitive Death Cycle): Compatibility required — what death takes away determines the nature of the game,
+The list of subscribers to the death broadcast is the blueprint for that punishment.
+

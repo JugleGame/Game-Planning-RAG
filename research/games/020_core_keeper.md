@@ -1,8 +1,8 @@
 +++
 card_id = "GAME-020"
 type = "success"
-title = "Core Keeper (2022 얼리액세스 / 2024 정식출시, Pugstorm / Fireshine Games)"
-summary = "탑다운 도트 그래픽으로 Terraria식 샌드박스를 지하 채굴 중심으로 재구성한 최근 세대 사례"
+title = "Core Keeper (2022 Early Access / 2024 full release, Pugstorm / Fireshine Games)"
+summary = "A recent-generation case that reconstructed the Terraria-style sandbox around underground mining with top-down pixel art"
 genres = ["GENRE-006"]
 elements = ["ELEM-013"]
 tags = ["sandbox", "survival", "pixel", "mining", "early-access", "co-op"]
@@ -10,14 +10,14 @@ updated = "2026-07-25"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-2022년 3월 Steam 얼리액세스로 출시, 2024-08-27 정식 1.0 출시된 Pugstorm 개발/Fireshine Games 퍼블리싱 탑다운 도트 그래픽 채굴 샌드박스. 1.0 출시 시점 누적 판매 200만 장 돌파, 이후 한 달 내 누적 플레이어 300만 명 이상으로 증가 [source: Game World Observer/WN Hub(Steam 데이터 인용), 2024-08~09 기준]. Steam 리뷰 "매우 긍정적" 92.8%(리뷰 약 4.8만 건) [source: Steambase, 2026-07 확인]. Metacritic 85점 [source: Metacritic, 2026-07 확인].
+A top-down pixel-art mining sandbox developed by Pugstorm and published by Fireshine Games, released into Steam Early Access in March 2022 and fully released as 1.0 on 2024-08-27. Cumulative sales passed 2,000,000 units at the 1.0 release, then grew to more than 3,000,000 cumulative players within a month [source: Game World Observer/WN Hub (citing Steam data), as of 2024-08 to 09]. Steam reviews "Very Positive" at 92.8% (about 48,000 reviews) [source: Steambase, verified 2026-07]. Metacritic 85 [source: Metacritic, verified 2026-07].
 
 ## Elements Used
-- ELEM-013 (도트 그래픽 아트 스타일) - Terraria와 자주 비교되는 탑다운 시점의 도트 그래픽으로 지하 세계 전체를 채굴 가능하게 표현 [interpretation].
+- ELEM-013 (Pixel-Art Style) - Renders the entire underground world as minable using top-down pixel art that is frequently compared to Terraria [interpretation].
 
 ## Success/Failure Drivers
-- [interpretation] 언론 다수가 "Terraria류(Terraria-like)"로 소개했는데, 이는 옆에서 보는 시점 대신 위에서 내려다보는(top-down) 시점과 원형(circular) 코어 중심 구조로 차별화한 것으로 보인다.
-<!-- 증거 부족: 개발사(Pugstorm)가 직접 밝힌 도트 그래픽·탑다운 시점 채택 이유에 대한 1차 출처를 찾지 못함 -->
+- [interpretation] Much of the press introduced it as a "Terraria-like," which appears to be because it differentiated itself with a top-down viewpoint instead of a side view and a circular core-centered structure.
+<!-- Insufficient evidence: could not find a primary source in which the developer (Pugstorm) directly stated the reason for adopting pixel art and the top-down viewpoint -->
 
 ## Implications for Our Project
-[interpretation] Terraria식 문법(채굴+건설+보스전)을 그대로 계승해도 시점(횡스크롤 → 탑다운)만 바꾸면 아류가 아닌 별도의 상업적 성과를 낼 수 있다는 근거 - GENRE-006 군집 내 관례 변주 여지를 보여줌.
+[interpretation] Evidence that even when inheriting the Terraria-style grammar (mining + building + boss fights) as is, changing only the viewpoint (side-scrolling → top-down) can produce a separate commercial result rather than a knockoff - showing the room for varying convention within the GENRE-006 cluster.

@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-009"
 type = "genre"
-title = "다크 판타지 (Dark Fantasy)"
-summary = "절망적이고 도덕적으로 모호한 세계관 위에 처벌적인 죽음·정신력 소모 순환을 얹어, 공포와 성취감을 동시에 주는 군집"
+title = "Dark Fantasy"
+summary = "A cluster that layers a punishing cycle of death and mental-strength drain on top of a hopeless, morally ambiguous world, delivering dread and a sense of achievement at once"
 elements = ["ELEM-014", "ELEM-015", "ELEM-016"]
 example_games = ["GAME-021", "GAME-022", "GAME-023"]
 tags = ["dark-fantasy", "grimdark", "difficulty", "horror", "soulslike", "aaa", "indie"]
@@ -10,20 +10,20 @@ updated = "2026-07-27"
 confidence = "medium"
 +++
 ## Components
-- ELEM-016 (그림다크 톤) - 세계관·비주얼·서사 전반에 절망과 도덕적 모호함을 깔아 군집 전체의 정체성을 규정하는 역할.
-- ELEM-014 (처벌적 죽음 순환) - 죽음에 실질적 대가를 부여해 톤이 말로만 어두운 게 아니라 시스템으로도 가혹하다는 것을 체감시키는 역할.
-- ELEM-015 (스트레스/광기 시스템) - 체력과 별개로 정신력 축을 둬, 몸이 아니라 마음이 먼저 무너지는 공포를 표현하는 역할.
+- ELEM-016 (grimdark tone) - lays hopelessness and moral ambiguity across the world, visuals and narrative, defining the identity of the entire cluster.
+- ELEM-014 (punishing death cycle) - gives death a real cost, making the player feel that the tone is not merely dark in words but harsh as a system too.
+- ELEM-015 (stress/madness system) - puts a mental-strength axis separate from health, expressing the dread of the mind, not the body, collapsing first.
 
 ## Market Saturation
-소울라이크 태그 기준으로 2024년 Steam에 371개 프로젝트가 출시(전년 대비 +41%)됐고, 2025년에는 10월까지 207개로 2022~2023년 수준으로 되돌아옴 [source: VG Insights 데이터 재인용(Substack/Games.gg), 2025 기준]. 상위권은 Black Myth: Wukong(Steam 누적 2,030만 장), Elden Ring(1,560만 장), Monster Hunter: World(1,300만 장)가 차지해 소수 대작에 판매가 집중된 군집이다 [source: VG Insights 데이터 재인용, 2025 기준]. [interpretation] 신규 진입은 계속 늘고 있지만 "원작을 베끼기만 한 클론"이라는 평가가 반복돼, 양적 포화 대비 질적 차별화는 아직 부족한 상태로 보인다.
-2026년 7월 마지막 주에만 다크 판타지/소울라이크 태그 신작이 다수 밀집 출시됨 - Mistfall Hunter(다크 판타지 추출형 ARPG, 2026-06-14~22 오픈베타에 약 43만 명 참여, 정식 출시 07-29, Xbox Game Pass 무료 포함), Forsaken Realms: Vahrin's Call(07-27), Beast of Reincarnation(07-31) [source: TechTimes/GameGrin 신작 집계 보도, 2026-07-26 기준 / 다이제스트 2026-07-27]. [interpretation] 소수 대작 집중과 별개로, 인디 규모 신작의 출시 빈도 자체는 여전히 높은 상태로 이어지고 있음을 보여주는 신호.
+By the soulslike tag, 371 projects released on Steam in 2024 (+41% year over year), and in 2025 the count was 207 through October, returning to the 2022 to 2023 level [source: VG Insights data re-cited (Substack/Games.gg), as of 2025]. The top ranks are taken by Black Myth: Wukong (20,300,000 units cumulative on Steam), Elden Ring (15,600,000 units) and Monster Hunter: World (13,000,000 units), making it a cluster where sales concentrate in a few blockbusters [source: VG Insights data re-cited, as of 2025]. [interpretation] New entries keep increasing, but the assessment of "clones that only copy the original" recurs, so relative to quantitative saturation, qualitative differentiation still appears insufficient.
+In the last week of July 2026 alone, many new dark fantasy/soulslike-tagged titles released in a dense cluster - Mistfall Hunter (a dark fantasy extraction ARPG, about 430,000 participants in the 2026-06-14 to 22 open beta, full release on 07-29, included free with Xbox Game Pass), Forsaken Realms: Vahrin's Call (07-27), Beast of Reincarnation (07-31) [source: TechTimes/GameGrin new-release tally coverage, as of 2026-07-26 / digest 2026-07-27]. [interpretation] A signal showing that, separate from the concentration in a few blockbusters, the release frequency of indie-scale new titles itself continues at a high level.
 
 ## Conventions and Expectations
-- 유저는 높은 난이도를 "불공정"이 아니라 "성취의 대가"로 받아들이는 경향이 있다 - 회수 기회 등 명확한 규칙이 갖춰졌을 때 그렇다 [source: ELEM-014 카드].
-- 세계관의 어두움과 시스템의 가혹함이 같은 방향을 가리켜야 한다는 기대가 있다 - GAME-023(Diablo IV)처럼 톤은 좋아도 루프(아이템화)가 기대에 못 미치면 반발이 생긴다 [source: GAME-023 카드].
-- 정신력/광기 계열 시스템에서는 "전략적으로 다룰 수 있다"는 느낌을 주는 것이 관례로 자리잡고 있으며, 이를 어기고 조작권을 완전히 빼앗으면 불만으로 이어진다 [source: ELEM-015 카드].
+- Users tend to accept high difficulty as "the price of achievement" rather than "unfairness" - this holds when clear rules such as a recovery chance are in place [source: ELEM-014 card].
+- There is an expectation that the darkness of the world and the harshness of the system must point in the same direction - as with GAME-023 (Diablo IV), even when the tone is good, backlash arises if the loop (itemization) falls short of expectations [source: GAME-023 card].
+- In mental-strength/madness-family systems, giving the feeling that it "can be handled strategically" is settling in as a convention, and breaking this by taking control away entirely leads to complaints [source: ELEM-015 card].
 
 ## Gaps
-[interpretation] ★ 이 군집의 대표 사례(GAME-021, GAME-022)는 모두 좁은 던전형 공간이거나 챕터 구조 안에서 죽음·스트레스 순환을 다룬다. 반면 이 저장소가 이미 다루는 GENRE-005(오픈월드)만큼 넓은 규모에서 ELEM-015(스트레스/광기 시스템)를 코어 루프로 삼은 AAA급 다크 판타지 사례는 아직 확인하지 못했다. GAME-023(Diablo IV)이 오픈월드+다크 판타지 톤을 갖췄지만, 정신력 소모 메커닉 대신 전통적 HP·아이템화 루프를 쓴다는 점에서 이 조합은 비어 있는 것으로 보인다.
-- 확인 방법: "open world" + "sanity/stress mechanic" + "dark fantasy" 태그 교차 검색, 대형 스튜디오 GDC 발표에서 광기 시스템을 오픈월드 규모로 확장한 사례 유무 확인
-- 확인일: 2026-07-27 / 재확인 주기: 분기 1회
+[interpretation] ★ The representative cases of this cluster (GAME-021, GAME-022) all handle the death and stress cycle within narrow dungeon-type spaces or a chapter structure. By contrast, no AAA-class dark fantasy case has yet been confirmed that makes ELEM-015 (stress/madness system) the core loop at a scale as wide as GENRE-005 (open world), which this repository already covers. GAME-023 (Diablo IV) has an open world plus a dark fantasy tone, but since it uses a traditional HP/itemization loop instead of a mental-strength drain mechanic, this combination appears to be empty.
+- Verification method: cross search of "open world" + "sanity/stress mechanic" + "dark fantasy" tags; check whether any case in large-studio GDC talks scales a madness system to open-world size
+- Verified on: 2026-07-27 / Re-check cycle: once a quarter; 10-year context retained

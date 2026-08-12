@@ -39,9 +39,8 @@ CONFIDENCE_VOCAB = ["high", "medium", "medium-low", "low"]
 # templates/*.md 가 정한다. 둘이 어긋나면 오류 메시지가 있지도 않은 제목을 요구하게
 # 되므로 **templates 와 항상 같은 언어**여야 한다.
 #
-# 2026-08-12: 카드 165장의 절 제목·근거 표시를 영어로 옮기고(migrate_card_lang.py
-# --headings) templates 4개도 함께 옮겨서 'en'으로 전환했다. 본문 산문은 아직
-# 한국어이며, 그 혼재 상태는 정상이다 (SECTION_KEY가 두 언어를 모두 받는다).
+# 2026-08-12: 카드 165장의 절 제목·근거 표시·본문 산문과 templates 4개를 영어로
+# 전환했다. SECTION_KEY는 과거 카드나 이관 작업 검증을 위해 두 언어를 계속 받는다.
 CARD_LANG = "en"
 
 # section_key -> 언어별 절 제목. 이게 절 사전의 단일 소스다.

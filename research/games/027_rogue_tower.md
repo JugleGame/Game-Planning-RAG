@@ -2,7 +2,7 @@
 card_id = "GAME-027"
 type = "mixed"
 title = "Rogue Tower (2022, Die of Death Games)"
-summary = "무작위 갈래 경로와 400장 이상의 카드 드래프트로 로그라이크와 타워 디펜스를 결합한 인디작"
+summary = "An indie title combining roguelike and tower defense through random branching paths and a draft of more than 400 cards"
 genres = ["GENRE-010"]
 elements = ["ELEM-018"]
 tags = ["tower-defense", "roguelike", "randomness", "indie", "divisive"]
@@ -10,26 +10,20 @@ updated = "2026-07-29"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-2022년 1월 28일 Die of Death Games가 Steam에 출시 [source: 검색 결과 종합(스토어·공략 사이트),
-2026-07 확인]. Steam 유저 리뷰 4,356건 중 80% 긍정 [source: 리뷰 집계 사이트, 2026-07 확인].
+Released on Steam by Die of Death Games on 2022-01-28 [source: aggregate search results (store·guide sites),
+2026-07 check]. 80% positive among 4,356 Steam user reviews [source: review aggregation site, 2026-07 check].
 
 ## Elements Used
-- ELEM-018 (로그라이크 무작위 업그레이드/경로 드래프트) - 400장 넘는 카드 풀에서 매 라운드 무작위로
-  일부를 뽑아 타워를 새로 짓거나 강화하고, 갈라지는 경로도 무작위로 확장됨 [source: 검색 결과 종합,
-  2026-07 확인].
+- ELEM-018 (roguelike random upgrade/path draft) - Each round randomly draws from a card pool of more than 400 to build or upgrade towers, while branching paths also expand randomly [source: aggregate search results,
+  2026-07 check].
 
 ## Success/Failure Drivers
-- 사실: 리뷰 4,356건 중 80% 긍정 [source: 리뷰 집계 사이트, 2026-07 확인]. 한 판 길이가 20~30분으로
-  짧아 반복 플레이에 적합하다는 평가가 있음 [source: 리뷰 집계 종합, 2026-07 확인].
-- [interpretation] 짧은 런 길이와 매판 달라지는 드래프트가 재플레이성을 만든 것으로 보인다.
-- 사실: 일부 유저는 다음 타일이 안 보이는 무작위 경로가 결과를 지나치게 좌우해 "불공평한 도박"처럼
-  느껴진다고 불만을 제기함 [source: Steam 유저 리뷰 종합, 2026-07 확인].
-  실패 지점: 무작위성이 실력보다 크게 작용한다고 느껴지는 지점에서 "운게임"이라는 반발로 바뀜.
+- Fact: 80% positive among 4,356 reviews [source: review aggregation site, 2026-07 check]. Some evaluations say its 20–30 minute run length is short and suited to repeated play [source: aggregate review results, 2026-07 check].
+- [interpretation] Short runs and a draft that changes each game appear to create replayability.
+- Fact: Some users complained that random paths with the next tile hidden let randomness determine outcomes too strongly, making it feel like “an unfair gamble” [source: aggregate Steam user reviews, 2026-07 check].
+  Failure point: when randomness feels more influential than skill, it turns into backlash calling it a “luck game.”
 
 ## Implications for Our Project
-무작위 드래프트·경로를 쓸 때는 "최소 이 정도는 보장된다"는 하한선(천장)을 명시하지 않으면 ELEM-018
-같은 불공평 논란으로 이어지기 쉽다 [interpretation]. ELEM-017의 천장 개념을 참고할 만하다.
-다만 확률 자체를 손보는 천장 말고도 대안이 있다 - GAME-030(Slay the Spire)은 판마다 생성되는 시드를
-전 플레이어가 공유하는 데일리 모드로 "운 탓" 논란 자체를 없앴다 [source: Slay the Spire Wiki 'Daily
-Climb' 문서, 2026-07 확인]. [interpretation] 이쪽이 확률 밸런스를 새로 짜지 않아도 되는 만큼 구현 부담이 더
-가벼울 수 있다.
+When using random drafts and paths, failing to specify a lower bound (“at least this much is guaranteed”) makes controversy over unfairness like ELEM-018 likely [interpretation]. ELEM-017’s pity concept is worth consulting.
+There are alternatives to a pity system that changes the probabilities themselves—GAME-030 (Slay the Spire) eliminated “blame luck” controversy through a daily mode in which all players share the seed generated for each game [source: Slay the Spire Wiki 'Daily
+Climb' document, 2026-07 check]. [interpretation] This may be lighter to implement because it does not require redesigning probability balance.

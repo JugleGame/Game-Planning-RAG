@@ -1,63 +1,63 @@
 +++ 
 card_id = "ARCH-009"
 type = "pattern"
-title = "2D 물리 이동 (Rigidbody2D)"
-summary = "캐릭터를 좌표로 순간이동시키지 않고 물리 엔진에 '이렇게 움직여 달라'고 부탁해서, 벽과 충돌이 제대로 동작하게 만드는 이동 방식"
+title = "2D Physics Movement (Rigidbody2D)"
+summary = "A movement approach that does not teleport the character by coordinates but asks the physics engine to 'please move it this way', so that walls and collisions work properly"
 tags = ["physics", "rigidbody2d", "movement", "player", "unity", "2d"]
 updated = "2026-07-29"
 confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 Rigidbody2D 명시 + Unity 공식 Scripting API 근거
 +++ 
 ## Problem
 
-캐릭터를 움직이는 가장 쉬운 방법은 좌표에 값을 더하는 것이다. 그런데 그렇게 하면 물리 엔진이 모르는 사이에 캐릭터가 옮겨져 벽을 뚫고 지나가거나, 충돌 처리가 이상하게 튄다. 쉽게 말해: 체스판 위 말을 손으로 들어 옮기면 규칙을 무시하고 아무 데나 놓을 수 있다. 규칙대로 두려면 심판에게 "여기로 가겠다"고 말하고 옮겨야 한다. 물리 엔진이 그 심판이다.
+The easiest way to move a character is to add a value to its coordinates. But doing that moves the character without the physics engine knowing, so it passes through walls or collision handling bounces strangely. Put simply: if you pick up a chess piece by hand and move it, you can ignore the rules and put it anywhere. To keep to the rules you have to tell the referee "I am going here" and then move. The physics engine is that referee.
 
 ## Structure
 
-- 위치: `Assets/Scripts/Player/` — PlayerController(Rigidbody2D), PlayerInput. [source: reference/unity_project_baseline.md 기준 구조]
-- 역할 분리 — 입력을 읽는 쪽(PlayerInput)과 물리로 움직이는 쪽(PlayerController)을 나눈다. 입력은 매 프레임, 물리는 고정 주기로 돌기 때문이다.
-- 물리 갱신은 FixedUpdate에서 한다. 이동 코드는 물리 주기에 맞춰야 결과가 일정하다. [source: Unity 공식 Scripting API — Rigidbody2D.MovePosition 문서의 FixedUpdate 권고]
-- 이동 방식 2종 — ① Dynamic Rigidbody2D + 속도 지정: 충돌·밀림 같은 물리 반응이 필요한 플레이어에 적합 ② Kinematic Rigidbody2D + MovePosition: 순찰 NPC나 움직이는 발판처럼 정해진 대로 움직이는 대상에 적합. [source: Unity 공식 Scripting API 및 Rigidbody2D 이동 방식 정리]
-- Dynamic Rigidbody2D의 위치·회전을 Transform으로 직접 설정하지 않는다. 물리 시뮬레이션이 속도에 따라 위치를 다시 계산하기 때문이다. [source: Unity 공식 문서의 Transform 직접 조작 금지 안내]
+- Location: `Assets/Scripts/Player/` — PlayerController (Rigidbody2D), PlayerInput. [source: reference/unity_project_baseline.md baseline structure]
+- Role separation — separate the side that reads input (PlayerInput) from the side that moves with physics (PlayerController). This is because input runs every frame while physics runs on a fixed cycle.
+- Physics updates are done in FixedUpdate. Movement code must match the physics cycle for consistent results. [source: Unity official Scripting API — the FixedUpdate recommendation in the Rigidbody2D.MovePosition documentation]
+- Two movement methods — (1) Dynamic Rigidbody2D + setting velocity: suited to a player that needs physical reactions such as collisions and being pushed, (2) Kinematic Rigidbody2D + MovePosition: suited to targets that move as prescribed, such as patrolling NPCs or moving platforms. [source: Unity official Scripting API and the summary of Rigidbody2D movement methods]
+- Do not set a Dynamic Rigidbody2D's position or rotation directly through Transform. This is because the physics simulation recomputes the position based on velocity. [source: the Unity official documentation's guidance against directly manipulating Transform]
 
 ## Core Rules
 
-- 이동은 FixedUpdate에서, 입력 읽기는 Update에서. 이 둘을 섞으면 입력을 놓치거나 이동이 프레임률에 흔들린다.
-- Dynamic 바디에 transform.position 대입 금지. 필요한 것은 "순간이동"이 아니라 이동이며, 진짜 순간이동이 필요하면 물리 상태를 함께 정리해야 한다.
-- 이동 값에 프레임 시간(delta)을 곱하는 규칙을 한곳에서 통일한다. 속도 지정 방식과 위치 이동 방식은 시간 처리 방식이 다르므로 섞어 쓰면 속도가 미묘하게 달라진다.
-- NPC 순찰 이동(ARCH-005의 Patrol)도 이 규칙을 따른다. NPC만 좌표를 직접 바꾸면 충돌이 어긋난다.
-- 중력이 필요 없는 탑다운 2D라면 중력 크기를 0으로 두되, 그 결정을 카드나 스펙에 남긴다. 나중에 "왜 안 떨어지지?"로 시간을 낭비하지 않게 한다.
+- Movement in FixedUpdate, input reading in Update. Mixing the two makes you miss input or makes movement waver with the frame rate.
+- No assigning transform.position on a Dynamic body. What you need is movement, not "teleportation"; and if you really need teleportation, you must clean up the physics state along with it.
+- Unify in one place the rule for multiplying movement values by frame time (delta). Setting velocity and moving position handle time differently, so mixing them makes speeds subtly differ.
+- NPC patrol movement (the Patrol of ARCH-005) follows this rule too. If only NPCs change coordinates directly, collisions go out of alignment.
+- For top-down 2D that needs no gravity, set the gravity scale to 0, but record that decision in a card or spec. Keep people from wasting time later on "why doesn't it fall?".
 
 ## Unity Implementation Steps
 
-1. 플레이어 오브젝트에 Rigidbody2D와 2D 콜라이더를 붙인다. 탑다운이면 중력 크기 0, 회전 고정(Freeze Rotation Z)을 확인한다.
-2. `Scripts/Player/PlayerInput.cs` — Update에서 입력 방향만 읽어 보관한다. 여기서 이동시키지 않는다.
-3. `Scripts/Player/PlayerController.cs` — FixedUpdate에서 보관된 방향과 속도로 Rigidbody2D를 움직인다.
-4. 이동 방식 결정 — 플레이어는 Dynamic + 속도 지정을 기본으로 한다. 밀림·반동이 필요 없는 대상은 Kinematic + MovePosition.
-5. 충돌 확인 — 벽 콜라이더를 두고 밀어붙였을 때 뚫리지 않는지 본다.
-6. 전투·피격 사건은 이벤트 버스로 방송한다. [source: reference/unity_project_baseline.md 방송 규칙]
-7. 자체 점검 — 컴파일·콘솔 에러 0 확인 후 커밋.
+1. Attach a Rigidbody2D and a 2D collider to the player object. For top-down, confirm gravity scale 0 and rotation locked (Freeze Rotation Z).
+2. `Scripts/Player/PlayerInput.cs` — in Update, only read and hold the input direction. Do not move anything here.
+3. `Scripts/Player/PlayerController.cs` — in FixedUpdate, move the Rigidbody2D with the held direction and speed.
+4. Decide the movement method — the player uses Dynamic + setting velocity by default. Targets that need no pushing or recoil use Kinematic + MovePosition.
+5. Check collisions — place a wall collider and see that pushing against it does not go through.
+6. Combat and hit events are broadcast on the event bus. [source: reference/unity_project_baseline.md broadcast rules]
+7. Self-check — confirm 0 compile and console errors, then commit.
 
 ## Anti-patterns
 
-- transform.position 직접 대입: 가장 흔한 실수. 벽 뚫림(터널링)과 충돌 이상 반응의 주된 원인이며, 물리 엔진과 코드가 서로 다른 위치를 진실이라고 믿게 만든다.
-- Update에서 물리 이동: 프레임률이 높은 기기에서 더 빨리 움직이는 현상이 생긴다. 물리는 반드시 고정 주기에서.
-- 콜라이더 없는 이동: 콜라이더 없이 Rigidbody2D만 붙이면 충돌이 아예 감지되지 않는다.
-- 두 방식 혼용: 같은 오브젝트에 속도 지정과 위치 이동을 섞어 쓰는 것. 서로의 결과를 덮어써 예측 불가능해진다.
-- 매우 빠른 이동체를 기본 충돌 감지로 두기: 빠른 물체는 한 물리 스텝 사이에 벽을 건너뛴다. 연속 충돌 감지 설정이 필요하다.
-- 스케일로 캐릭터 뒤집기 남용: 좌우 반전을 음수 스케일로 처리하면 자식 콜라이더가 뒤틀릴 수 있다. 스프라이트 뒤집기 옵션을 쓴다.
+- Assigning transform.position directly: the most common mistake. It is the main cause of passing through walls (tunneling) and abnormal collision responses, and it makes the physics engine and the code believe different positions are the truth.
+- Physics movement in Update: it causes the character to move faster on high-frame-rate devices. Physics must be on the fixed cycle.
+- Movement without a collider: attaching only a Rigidbody2D without a collider means collisions are not detected at all.
+- Mixing the two methods: using both setting velocity and moving position on the same object. They overwrite each other's results and become unpredictable.
+- Leaving very fast movers on default collision detection: a fast object skips over a wall between physics steps. Continuous collision detection must be set.
+- Overusing scale to flip a character: handling left-right flipping with a negative scale can distort child colliders. Use the sprite flip option.
 
 ## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [source: reference/unity_project_baseline.md 자체 점검 기준]
-- 벽 뚫림 검사: 벽에 계속 밀어붙였을 때 통과하지 못해야 한다.
-- 프레임 독립성 검사: 프레임률 상한을 다르게 설정해도 같은 시간 동안 이동 거리가 같아야 한다.
-- 방식 일관성 검사: 코드에서 Dynamic 바디에 대한 transform.position 대입이 하나도 없어야 한다(검색으로 확인 가능).
-- 방송 검사: 전투 관련 행동 시 `Logs/commentator.log`에 이벤트 줄이 남아야 한다. [source: reference/unity_project_baseline.md 로그 규칙]
-- 입력 유실 검사: 짧게 누른 입력이 무시되지 않아야 한다(Update에서 읽고 FixedUpdate에서 소비하는 구조가 지켜지는지).
+- 0 compile errors, 0 console errors. [source: reference/unity_project_baseline.md self-check criteria]
+- Wall penetration check: continually pushing against a wall must not pass through it.
+- Frame independence check: even with different frame rate caps, the distance moved over the same amount of time must be the same.
+- Method consistency check: the code must contain no assignment of transform.position on a Dynamic body (verifiable by search).
+- Broadcast check: on combat-related actions, an event line must remain in `Logs/commentator.log`. [source: reference/unity_project_baseline.md logging rules]
+- Input loss check: a briefly pressed input must not be ignored (whether the structure of reading in Update and consuming in FixedUpdate is kept).
 
 ## Synergy
 
-- ARCH-005 (NPC 상태머신): Patrol 상태의 실제 이동이 이 규칙을 따른다.
-- ARCH-002 (씬 스트리밍): 궁합 주의 — 청크가 로딩되는 순간 콜라이더가 아직 없을 수 있어, 그 틈에 캐릭터가 지형 아래로 빠질 수 있다. 로딩 완료 전 이동 제한 또는 안전 위치 처리가 필요하다.
-- ARCH-001 (이벤트 버스): 전투·피격 사건의 방송 경로. 단, 넉백 같은 즉시 물리 반응은 버스를 거치지 말고 해당 컴포넌트에서 직접 처리한다.
-- ELEM-011 (창발적 시스템 상호작용): 궁합 좋음 — 물리 규칙에 제대로 올라탄 이동은 예상 못한 상호작용의 토대가 된다. 반대로 좌표 대입 방식이면 이런 창발이 아예 불가능하다.
+- ARCH-005 (NPC State Machine): the actual movement of the Patrol state follows this rule.
+- ARCH-002 (Scene Streaming): compatibility caution — the moment a chunk is loading, colliders may not exist yet, and in that gap the character can fall below the terrain. Restricting movement before loading completes or handling a safe position is needed.
+- ARCH-001 (Event Bus): the broadcast path for combat and hit events. However, immediate physical reactions such as knockback should be handled directly in the relevant component rather than going through the bus.
+- ELEM-011 (Emergent System Interaction): good compatibility — movement properly riding on the physics rules becomes the foundation for unexpected interactions. Conversely, with a coordinate-assignment approach such emergence is impossible altogether.

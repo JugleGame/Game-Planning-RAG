@@ -2,7 +2,7 @@
 card_id = "GAME-022"
 type = "mixed"
 title = "Darkest Dungeon (2016, Red Hook Studios)"
-summary = "스트레스·발작(Affliction) 시스템으로 다크 판타지 로그라이크에 심리적 공포를 결합했으나, 그 처벌적 설계 자체가 호불호를 가른 사례"
+summary = "A case that combined psychological horror with a dark-fantasy roguelike through a stress·Affliction system, while the punishing design itself divided players"
 genres = ["GENRE-009"]
 elements = ["ELEM-015", "ELEM-016"]
 tags = ["roguelike", "dark-fantasy", "stress-system", "punishing", "divisive", "indie"]
@@ -10,18 +10,18 @@ updated = "2026-07-27"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-2015년 얼리액세스로 시작해 2016년 1월 정식 출시. 2022년 12월 기준 전 세계 600만 장 판매(DLC 포함 누적 1,600만 장) [source: Red Hook Studios 발표 재인용(Game World Observer), 2022-12 기준]. Metacritic 84점, Steam 사용자 평가 91% 긍정 [source: Metacritic/Steam 페이지, 2026-07 확인].
-Red Hook Studios가 2026-07-21, 정식 출시 10주년을 맞아 2020년 이후 6년 만의 첫 대형 DLC 'The Fire's Edge'(2026-08-18 PC/Mac/PS/Switch 출시, Xbox는 추후)를 발표 - 신규 히어로 2종(듀얼리스트·러너웨이), 신규 전투 메커닉 'Burn', 발작(derangement) 관련 신규 콘텐츠 포함 [source: RPG Site/Worthplaying 보도, 2026-07-21 기준 / 다이제스트 2026-07-27].
+Started in early access in 2015 and fully released in January 2016. As of December 2022, it had sold 6,000,000 copies worldwide (16,000,000 cumulative including DLC) [source: Red Hook Studios announcement quoted by Game World Observer, as of 2022-12]. Metacritic 84, with 91% positive Steam user ratings [source: Metacritic/Steam pages, 2026-07 check].
+On 2026-07-21, Red Hook Studios announced its first major DLC in six years since 2020, ‘The Fire’s Edge,’ for the 10th anniversary of full release (PC/Mac/PS/Switch on 2026-08-18, Xbox later)—including two new heroes (Duelist·Runaway), the new combat mechanic ‘Burn,’ and new content related to Affliction [source: RPG Site/Worthplaying report, as of 2026-07-21 / digest 2026-07-27].
 
 ## Elements Used
-- ELEM-015 (스트레스/광기 시스템) - 던전 탐험 중 히어로별 스트레스가 100에 도달하면 판정을 거쳐 이기적·비관적·편집증적 등 부정 상태이상을 확률적으로 얻음 [source: Game Developer 디자인 분석 기사, 2026-07 확인].
-- ELEM-016 (그림다크 톤) - 몰락한 가문의 광기와 죄악을 배경으로 한 절망적 세계관이 스트레스 시스템의 설득력을 뒷받침함.
-- 조명(빛) 관리와 파티 대형(포지션) 전투를 스트레스 시스템과 결합해 "인간이 압박에 무너지는 방식"을 재현하려 함.
+- ELEM-015 (stress/madness system) - When a hero’s stress reaches 100 during a dungeon expedition, a check can grant negative status effects such as selfish, pessimistic, or paranoid [source: Game Developer design analysis article, 2026-07 check].
+- ELEM-016 (grimdark tone) - A despairing world built around the madness and sins of a fallen family supports the credibility of the stress system.
+- Combines light management and party-formation (positioning) combat with the stress system to reproduce “how humans break under pressure.”
 
 ## Success/Failure Drivers
-- [interpretation] 개발진이 목표한 "스트레스에 대한 인간의 반응을 포착"하겠다는 의도가 사운드·랜덤성·인카운터 설계 전반에 일관되게 구현되어, 다른 로그라이크와 차별화된 심리적 공포를 만들어냈다.
-- 리뷰에서는 스트레스와 긴장을 만들어내는 방식이 "거의 완벽한 걸작"이라는 호평이 나왔다 [source: Shacknews 리뷰, 2026-07 확인].
-- 반대로 일부 메커닉 비평은 "발작 상태가 플레이어의 주도권을 통째로 앗아가며, 전략적으로 다룰 수 있는 척만 할 뿐 사실상 피하는 것이 최선"이라고 지적했다 [source: The Gemsbok 메커닉 비평, 2026-07 확인].
+- [interpretation] The developers’ intention to “capture human responses to stress” was implemented consistently across sound, randomness, and encounter design, creating psychological horror distinct from other roguelikes.
+- Reviews praised its method of creating stress and tension as “an almost perfect masterpiece” [source: Shacknews review, 2026-07 check].
+- Conversely, some mechanic critiques said “Affliction states take away the player’s agency entirely; they only pretend to be strategically manageable, while avoiding them is effectively the best option” [source: The Gemsbok mechanics critique, 2026-07 check].
 
 ## Implications for Our Project
-[interpretation] 처벌적 시스템이 게임의 정체성으로 받아들여지려면, 그 처벌이 우연한 불편함이 아니라 "이 게임만의 공포 표현 방식"이라는 확신을 플레이어에게 줘야 한다 — 다크 판타지의 공포를 체력(HP) 대신 심리(스트레스)라는 별도 축으로 표현한 선택 자체가 차별화 지점이었다.
+[interpretation] For a punishing system to be accepted as a game’s identity, players must believe the punishment is not arbitrary inconvenience but “this game’s way of expressing horror”—expressing dark-fantasy horror on a separate psychological (stress) axis instead of health (HP) was itself the differentiating point.

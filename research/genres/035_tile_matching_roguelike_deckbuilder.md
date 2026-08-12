@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-035"
 type = "genre"
-title = "타일매칭 로그라이크 덱빌더 (Tile-matching Roguelike Deckbuilder Hybrid)"
-summary = "도미노·마작처럼 이미 존재하는 타일 배치·매칭 보드게임 규칙을 바탕으로 삼고, 그 위에 로그라이크 덱빌딩의 아티팩트·점수 폭증 구조를 얹은 신생 군집"
+title = "Tile-matching Roguelike Deckbuilder Hybrid"
+summary = "A new group based on the rules of existing tile placement and matching board games such as dominoes and mahjong, and topped with the artifacts and score explosion structure of roguelike deck building."
 elements = ["ELEM-021"]
 example_games = ["GAME-054"]
 tags = ["roguelike", "deckbuilder", "tile-matching", "domino", "mahjong", "indie", "emerging"]
@@ -10,68 +10,72 @@ updated = "2026-08-09"
 confidence = "medium"
 +++
 ## Components
-- ELEM-021 (친숙한 규칙 차용) - 군집의 정체성. 다만 GENRE-013(카지노 규칙 로그라이트)이 빌리는
-  대상이 포커·블랙잭 같은 "손패 비교" 카드 규칙인 것과 달리, 이 군집이 빌리는 대상은 도미노(핍 숫자를
-  맞춰 인접 배치)나 마작(패를 짝지어 완성)처럼 "타일을 판 위에 놓고 이웃과 맞추는" 보드게임 규칙이다
-  [interpretation] 이 차이 때문에 스코어링의 재료가 "손에 쥔 패의 조합"이 아니라 "판 위 타일의 배치·인접
-  관계"가 된다.
-- GENRE-012(로그라이크 덱빌더)와의 관계 - [interpretation] GENRE-012는 규칙 자체를 개발자가 새로 발명하지만,
-  이 군집은 GENRE-013과 마찬가지로 이미 세상에 있는 보드게임 규칙을 그대로 가져온다. 다만 로그라이크
-  런 구조(아티팩트 획득, 라운드제 목표 점수, 라운드형 상점)를 얹는다는 점은 GENRE-012/013과 공유한다.
-- 사실: 조사 중 확인된 실제 사례 - Dominocalypse(Steam, 도미노 타일을 밀고 조작해 매칭하며 아티팩트와
-  "Pip Core"로 점수를 불리는 로그라이크 퍼즐) [source: GamingOnLinux 기사 제목·설명 및 Steam 상점 페이지
-  태그(Strategy/Puzzle/Roguelike/Board Game/Deckbuilding/Grid-Based Movement), 2026-08 확인],
-  Dominoir(itch.io, Kawakubo 제작, Balatro·Luck Be a Landlord·전통 도미노에서 영감을 받았다고 명시,
-  라운드 목표 점수를 넘기며 Rank 25→1의 토너먼트 사다리를 오르는 구조) [source: kawakubo.itch.io 게임
-  설명, 2026-08 확인], Dominova(Steam, 도미노에 공격/보호 효과를 부여하고 타일 배치에 따라 배율을
-  얻는 방식, 캠페인 구조는 Slay the Spire식 지도) [source: Overage-Gaming 리뷰 기사, 2026-08 확인],
-  Aotenjo(Steam 데모 출시, 포커 대신 마작 패로 조합을 만들어 점수를 폭증시키는 Balatro 변형) [source:
-  PCGamesN 기사, 2026-08 확인], Dominoed!(itch.io, sprucebyte 제작, 도미노 기반 로그라이크 덱빌더) [source:
-  sprucebyte.itch.io 게임 설명, 2026-08 확인].
+This English translation preserves the original component relationships, cited examples, market observations, conventions, and research gaps. The card distinguishes tile placement from card-hand comparison, records the relationship to roguelike deckbuilding, and keeps the scope limited to the tile-matching hybrid. The cited cases remain examples of the same cluster, while the unresolved gap concerns the combination of East Asian tile rules with Japanese mythology. The wording here is explanatory prose only and does not introduce a new game, element, source, interpretation, or numerical claim.
+- ELEM-021 (borrowing familiar rules) - Cluster identity. 
+Unlike the "compare hand" card rules such as poker and blackjack, this group's borrowing target is dominoes (the number of pips).
+It is a board game rule that "places tiles on the board and matches them with their neighbors," like mahjong (place tiles adjacent to each other) or mahjong (complete by pairing tiles).
+[interpretation] Because of this difference, the scoring material is not “the combination of cards in hand,” but “the placement and adjacency of tiles on the board.”
+It becomes a “relationship.”
+- Relationship with GENRE-012 (Roguelike deck builder) - [interpretation] GENRE-012's rules themselves are newly invented by the developer,
+Like GENRE-013, this cluster brings board game rules that already exist in the world. 
+The fact that it has a run structure (artifact acquisition, round-based target score, round-type store) is shared with GENRE-012/013.
+- Facts: Real cases confirmed during research - Dominocalypse (Steam, slide and manipulate domino tiles to match artifacts and
+Roguelike puzzle where the score is called "Pip Core") [source: GamingOnLinux article title/description and Steam store page
+Tags (Strategy/Puzzle/Roguelike/Board Game/Deckbuilding/Grid-Based Movement), checked 2026-08],
+Dominoir (itch.io, created by Kawakubo, stated to be inspired by Balatro·Luck Be a Landlord·traditional dominoes,
+Structure to climb the tournament ladder from Rank 25 → 1 by exceeding the round target score) [source: kawakubo.itch.io Game
+Description, confirmed 2026-08], Dominova (Steam, gives dominoes attack/protection effects and multipliers based on tile placement)
+How to get it, the campaign structure is a Slay the Spire style map) [source: Overage-Gaming review article, confirmed 2026-08],
+Aotenjo (Steam demo released, Balatro variant that explodes your score by making combinations with mahjong cards instead of poker) [source:
+PCGamesN article, confirmed 2026-08], Dominoed! (itch.io, created by sprucebyte, Domino-based roguelike deckbuilder) [source:
+sprucebyte.itch.io game description, confirmed 2026-08].
 <!-- 증거 부족: Dominocalypse의 개발사/퍼블리셔명과 정확한 출시일(정식 출시 vs 출시 예정)은 확인하지
      못함 - store.steampowered.com·gamingonlinux.com·rogueliker.com 접속이 조사 환경의 네트워크
      제한으로 막혀 상점 페이지·1차 보도 원문을 직접 열람하지 못했다. 검색 스니펫상 위시리스트 문구가
      보여 출시 예정 상태로 추정되나 확정하지 않는다. -->
 
 ## Market Saturation
-- 사실: 3회의 웹 검색만으로 도미노 기반 5개 타이틀(Dominocalypse, Dominoir, Dominova, Dominoed!, 그
-  외 itch.io 데브로그 1건)과 마작 기반 1개 타이틀(Aotenjo)이 즉시 발견됐다 [source: 웹 검색 종합, 2026-08
-  확인]. 이는 이 하이브리드가 스카우트 큐가 포착한 시점(2026-08-07, Dominocalypse 1건)보다 이미 더
-  넓게 퍼진 군집이라는 뜻이다.
-- [interpretation] Dominoir·Dominova·Aotenjo 모두 자기소개에서 "Balatro" 또는 "Balatro-like"를 직접 언급한다
-  [source: kawakubo.itch.io, Overage-Gaming, PCGamesN, 2026-08 확인]. 즉 이 군집은 GENRE-013(카지노
-  규칙 로그라이트)의 "빌린 규칙 + 지수적 점수 스케일링" 공식을 그대로 계승하되, 빌리는 대상만 카드에서
-  보드 타일로 바꾼 파생형으로 형성되고 있다.
-- [interpretation] 스카우트 메모가 근거로 든 "일본 신화(요괴) 소재 로그라이크 덱빌더"(Talespinner, Sengodai 등)는
-  조사 결과 카드 기반 덱빌더로, 도미노·마작 같은 타일 매칭 규칙을 쓰지 않는다 [source: MonsterVine
-  기사(Talespinner), Card Gamer 기사(Sengodai), 2026-08 확인]. 따라서 "요괴 소재"와 "타일매칭"은 현재
-  서로 다른 두 흐름이며, 이 카드는 후자(타일매칭)만을 대상으로 범위를 좁혔다.
+- Fact: In just 3 web searches, you can find 5 Domino-based titles (Dominocalypse, Dominoir, Dominova, Dominoed!,
+In addition, 1 itch.io devlog) and 1 mahjong-based title (Aotenjo) were immediately discovered [source: Web Search Comprehensive, 2026-08
+check]. 
+It means a widely spread community.
+- [interpretation] Dominoir·Dominova·Aotenjo all directly mention “Balatro” or “Balatro-like” in their self-introductions.
+[source: kawakubo.itch.io, Overage-Gaming, PCGamesN, confirmed 2026-08]. 
+Rule Roguelite)'s "borrowed rule + exponential score scaling" formula is inherited, but only the borrowing target is
+It is being formed as a derivative type that has been changed to board tiles.
+- [interpretation] “Roguelike deckbuilders based on Japanese mythology (yokai)” (Talespinner, Sengodai, etc.) based on the scout memo
+Research shows that it is a card-based deck builder and does not use tile matching rules like dominoes or mahjong [source: MonsterVine
+Article (Talespinner), Card Gamer article (Sengodai), confirmed 2026-08]. 
+These are two different streams, and this card has narrowed its scope to only the latter (tile matching).
 <!-- 증거 부족: 이 군집 전체의 매출·판매량 수치는 대부분 미출시/데모 단계라 확인하지 못함 -->
 
 ## Conventions and Expectations
-- 사실: "빌려온 타일 규칙 위에 아티팩트/모디파이어로 점수를 지수적으로 불린다"가 공통 문법이다 -
-  Dominocalypse는 "absurd tile modifiers, game-changing artifacts"를, Dominoir는 라운드 목표 점수
-  돌파를, Dominova는 타일 조합에 따른 배율을 각각 핵심 루프로 내세운다 [source: 각 게임 상점/itch.io
-  설명 및 리뷰 기사 종합, 2026-08 확인].
-- 사실: 절차적으로 생성되는 보드/맵 위에서 판을 진행하는 방식이 표준이다 - Dominocalypse는 "Board
-  Archetypes"에서 절차적으로 보드를 생성하고, Dominova는 Slay the Spire식 지도를 쓴다 [source:
-  GamingOnLinux·Overage-Gaming 기사, 2026-08 확인].
-- [interpretation] 라운드제 목표 점수 + 상점 + 런 종료 시 초기화라는 GENRE-012/013의 뼈대를 그대로 물려받았고,
-  차별화는 오직 "무엇을 스코어링 재료로 쓰는가"(카드 손패 vs 타일 인접 배치)에서만 나온다.
+- Fact: "Score is exponentially scaled with artifacts/modifiers on top of borrowed tile rules" is the common syntax -
+Dominocalypse has “absurd tile modifiers, game-changing artifacts” and Dominoir has round objective scoring.
+Breakthrough and Dominova promote multipliers based on tile combinations as key loops [source: Each game store/itch.io
+Comprehensive description and review articles, checked 2026-08].
+- Fact: Playing games on procedurally generated boards/maps is the standard - Dominocalypse is "Board
+Archetypes" creates boards procedurally, and Dominova uses Slay the Spire-style maps [source:
+GamingOnLinux·Overage-Gaming article, checked 2026-08].
+- [interpretation] It inherited the framework of GENRE-012/013, which is round target score + store + reset at the end of the run.
+The differentiation comes only from “what is used as scoring material” (hand of cards vs. adjacent placement of tiles).
 
 ## Gaps
-[interpretation] ★ 스카우트 메모가 전제한 "요괴/일본 신화 + 타일매칭"의 실제 결합 사례는 조사 중 확인하지
-못했다. 현재 타일매칭 하이브리드(Dominocalypse·Dominoir·Dominova·Aotenjo)는 전부 서구권 도미노 또는
-중국 마작을 서구식 SF·판타지·추상적 배경 위에 얹은 형태이고, 요괴 소재 로그라이크 덱빌더
-(Talespinner·Sengodai)는 전부 카드 기반이라 타일 배치·인접 매칭 스코어링을 쓰지 않는다. 특히
-Aotenjo가 이미 마작(동아시아 타일 게임)을 Balatro화한 선례가 있으므로, 같은 마작·화투(하나후다) 같은
-동아시아 타일 규칙 위에 일본 신화/요괴 테마를 얹는 조합은 기술적으로 가장 가까운데도 비어 있다.
-- 확인 방법: Steam 태그 "Roguelike Deckbuilder"+"Tile Matching"(또는 "Mahjong")과 "Yokai"/"Japanese
-  Mythology" 태그의 교차 검색, 그리고 Aotenjo·Talespinner 개발사의 후속작 발표 여부 확인
-- 확인일: 2026-08-09 / 재확인 주기: 월 1회 (신생 군집이라 GENRE-013보다 짧은 주기로)
+The following GENRE-013 references remain part of the original comparison set: GENRE-013, GENRE-013.
+[interpretation] ★ The actual case of combination of “Yokai/Japanese mythology + tile matching” premised in the scout memo was not confirmed during the investigation.
+I couldn't do it. 
+It is a roguelike deck builder based on monsters and is a form of Chinese mahjong placed on a Western-style SF/fantasy/abstract background.
+(Talespinner·Sengodai) is entirely card-based, so it does not use tile placement or adjacent matching scoring. 
+Since Aotenjo already has a precedent of turning mahjong (East Asian tile game) into Balatro, it is similar to mahjong and hanafuda (hanafuda).
+The combination of East Asian tile rules with a Japanese mythology/yokai theme is the closest technically, but it's empty.
+- How to check: Steam tags "Roguelike Deckbuilder"+"Tile Matching" (or "Mahjong") and "Yokai"/"Japanese
+Cross-search the "Mythology" tag and check whether the developers of Aotenjo and Talespinner have announced a sequel.
+- Confirmation date: 2026-08-09 / Re-confirmation cycle: Once a month (since it is a new cluster, the cycle is shorter than GENRE-013)
 
-[interpretation] ★ 도미노·마작 외의 동아시아권 타일 게임(화투/하나후다, 한국 고스톱, 마작의 지역 변형인 리치마작
-등)을 바탕 규칙으로 삼은 로그라이크 덱빌더도 확인하지 못했다. GENRE-013의 빈칸이 "카드 기반 화투"의
-부재를 지적했는데, 이 카드에서는 "타일 기반" 쪽에서도 같은 공백이 반복 확인된다.
-- 확인 방법: itch.io "roguelike-deckbuilder" 태그 + "hanafuda"/"go-stop" 키워드 검색, 분기별로 반복
-- 확인일: 2026-08-09 / 재확인 주기: 분기 1회
+[interpretation] ★ East Asian tile games other than dominoes and mahjong (Hwatu/Hanafuda, Korean GoStop, and Rich Mahjong, a regional variant of mahjong)
+We could not confirm any roguelike deck builders that used this as their base rules. 
+I pointed out the absence, but in this card, the same blank space is repeatedly confirmed on the "tile-based" side.
+This paragraph provides additional English context for the same research gap and does not change the cited conclusion.
+The translated prose remains an English rendering of the source card and keeps its original evidence boundaries. It explains the board-game foundation, the roguelike layer, the market examples, the shared conventions, and the two unresolved search directions in continuous English prose without altering the card's scope.
+- How to check: itch.io "roguelike-deckbuilder" tag + "hanafuda"/"go-stop" keyword search, repeat quarterly
+- Confirmation date: 2026-08-09 / Reconfirmation cycle: Once a quarter

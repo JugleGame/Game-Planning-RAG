@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-026"
 type = "genre"
-title = "히어로 슈터 (Hero Shooter)"
-summary = "고유 능력을 가진 영웅을 골라 탱커/딜러/서포터 역할로 팀을 짜고 오브젝티브를 두고 싸우는 대전 슈터 군집"
+title = "Hero Shooter"
+summary = "A competitive shooter cluster where players choose heroes with unique abilities, form teams of tank/dealer/support roles, and fight over objectives"
 elements = ["ELEM-036"]
 example_games = []
 tags = ["hero-shooter", "pvp", "team-based", "esports", "live-service", "saturated"]
@@ -10,21 +10,21 @@ updated = "2026-08-02"
 confidence = "medium"
 +++
 ## Components
-- 역할 기반 팀 구성 - 탱커·딜러(딜러)·서포터로 캐릭터를 분류하고 한 팀이 이 역할을 나눠 맡는 것이 장르 정체성이다. Overwatch 2의 역할 큐(Role Queue)는 탱커 1·딜러 2·서포터 2의 5v5 조합을 강제한다 [source: Sportskeeda 장르 정리, 2026 확인].
-- ELEM-036 (영웅 픽/밴 드래프트) - Marvel Rivals의 경쟁전은 다이아몬드 이상부터 팀당 영웅 2체를 밴하는 페이즈를 둔다 [source: Turtle Beach/Eloking 가이드, 2026 확인]. 다만 같은 장르 대표작인 Overwatch 2는 밴 없이 자유 스왑을 관례로 삼아, 드래프트 적용 여부가 작품마다 갈린다.
-- 궁극기(Ultimate) 충전-발동 사이클 - 전투 중 축적한 자원을 한 번에 터뜨려 판세를 뒤집는 장치가 대표작 다수에 공통으로 있다 [source: Sportskeeda 장르 정리, 2026 확인].
+- Role-based team composition - Classifying characters as tank, dealer, and support and dividing these roles across a team is the genre's identity. Overwatch 2's Role Queue forces a 5v5 composition of 1 tank, 2 dealers, and 2 supports [source: Sportskeeda genre summary, verified 2026].
+- ELEM-036 (hero pick/ban draft) - Marvel Rivals competitive play has a phase banning 2 heroes per team from Diamond rank upward [source: Turtle Beach/Eloking guide, verified 2026]. However, Overwatch 2, another representative work, conventionally allows free swapping without bans, so draft application varies by work.
+- Ultimate charge-activation cycle - Many representative works share a device that bursts accumulated combat resources at once to reverse the battle's momentum [source: Sportskeeda genre summary, verified 2026].
 
 ## Market Saturation
-- 사실: Concord(2024, Firewalk Studios/Sony)는 출시 약 2주 만에 서비스를 종료했고, "이미 포화·쇠퇴 국면인 장르에 진입해 Overwatch 대비 독자적 가치를 보여주지 못했다"는 진단이 반복적으로 보도됐다 [source: ofzenandcomputing 보도, 2026-06 기준].
-- 사실: Marvel Rivals(2024, NetEase)는 출시 직후 동시접속 최고 약 44만 명까지 급증했으나 이후 하락했고, "2"를 뗀 Overwatch가 2026-02월 Xbox 플레이어 39.4% 증가 등 반등하며 24시간 피크 기준 Overwatch 약 16.5만 vs Marvel Rivals 약 11.2만으로 재역전했다 [source: 다수 매체(Gamerant/FRVR/osiztechnologies) 종합, 2026-02 기준].
-- [interpretation] "장르가 이미 포화됐다"는 진단이 반복되지만 IP 힘을 업은 신규 진입(Marvel Rivals)이 여전히 초기 급성장을 만들어낸다 - 다만 장기 유지력은 별개 문제로, 소수 강자(Overwatch 계열)로 수렴하는 흐름이 강하다.
+- Fact: Concord (2024, Firewalk Studios/Sony) ended service about 2 weeks after launch, and reports repeatedly diagnosed that it entered an already saturated, declining genre without showing distinct value against Overwatch [source: ofzenandcomputing report, as of 2026-06].
+- Fact: Marvel Rivals (2024, NetEase) surged to about 440,000 peak concurrent players immediately after launch but later declined; Overwatch, having dropped the "2," rebounded with a 39.4% increase in Xbox players in 2026-02 and reversed the 24-hour peak comparison at about 165,000 vs. Marvel Rivals' 112,000 [source: synthesis of multiple media (Gamerant/FRVR/osiztechnologies), as of 2026-02].
+- [interpretation] The diagnosis that "the genre is already saturated" repeats, but an IP-backed entrant (Marvel Rivals) can still create rapid initial growth - long-term retention is separate, and convergence toward a few leaders (the Overwatch family) remains strong.
 
 ## Conventions and Expectations
-- 사실: 순수 데스매치가 아니라 점령·호위 같은 팀 오브젝티브 기반 플레이가 장르 관례다 [source: 장르 정의 종합(Wikipedia/TV Tropes), 2026 확인].
-- 사실: 대표작들이 같은 장르 안에서도 드래프트 관례가 다르다 - Overwatch 2는 밴 없는 자유 스왑, Marvel Rivals는 밴 페이즈가 있는 6v6 [source: Turtle Beach 비교 가이드, 2026 확인].
-- [interpretation] 신규 영웅을 시즌 단위로 정기 투입하는 라이브 서비스 캐던스가 사실상 참가 비용이 됐다 - Marvel Rivals는 2026-02 기준 45종 이상의 캐릭터를 보유했다 [source: 위 종합 보도, 2026-02 기준].
+- Fact: Team-objective play such as capture and escort, rather than pure deathmatch, is conventional [source: synthesis of genre definitions (Wikipedia/TV Tropes), verified 2026].
+- Fact: Representative works differ in draft conventions within the same genre - Overwatch 2 allows free swapping without bans, while Marvel Rivals is 6v6 with a ban phase [source: Turtle Beach comparison guide, verified 2026].
+- [interpretation] A live-service cadence of regularly adding new heroes by season has effectively become the cost of entry - Marvel Rivals had more than 45 character types as of 2026-02 [source: above synthesis report, as of 2026-02].
 
 ## Gaps
-[interpretation] ★ 이 저장소에는 히어로 슈터의 핵심 메커닉(역할 조합·궁극기·드래프트)을 사례로 다루는 GAME 카드가 아직 없다 - GAME-006(Overwatch)이 있지만 그 카드는 "솜브라 ARG 마케팅" 사례로 한정된 요소 증거 전용 카드(frontmatter 주석에 명시)라 전투·역할 설계 자체는 미조사 상태다.
-- 확인 방법: Overwatch(코어 설계 관점) 또는 Marvel Rivals를 GAME 카드 후보로 스카우트
-- 확인일: 2026-08-02 / 재확인 주기: 8주
+[interpretation] ★ This repository still has no GAME card covering hero-shooter's core mechanics (role composition, ultimates, and drafts) as a case - GAME-006 (Overwatch) exists, but it is an element-evidence-only card limited to "Sombra ARG marketing" (as stated in its frontmatter comment), so combat and role design remain unresearched.
+- Verification method: scout Overwatch (from a core-design perspective) or Marvel Rivals as a GAME-card candidate
+- Verified on: 2026-08-02 / Re-check cycle: 8 weeks

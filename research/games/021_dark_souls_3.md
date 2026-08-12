@@ -2,7 +2,7 @@
 card_id = "GAME-021"
 type = "success"
 title = "Dark Souls III (2016, FromSoftware / Bandai Namco)"
-summary = "소울류 시리즈가 확립한 전투·죽음 순환 공식을 완성도로 밀어붙여 시리즈 최다 판매를 기록한 완결편"
+summary = "A finale that pushed the combat-and-death-cycle formula established by the Souls series to a level of polish, achieving the series' highest sales"
 genres = ["GENRE-009"]
 elements = ["ELEM-014", "ELEM-016"]
 tags = ["action-rpg", "dark-fantasy", "soulslike", "difficulty", "broad-appeal"]
@@ -10,18 +10,18 @@ updated = "2026-07-27"
 confidence = "medium"
 +++
 ## Summary and Sales/Review Metrics
-FromSoftware "소울" 3부작의 완결편. 2020년 5월 기준 전 세계 1,000만 장 이상 판매되며 시리즈 누적 2,700만 장을 견인 [source: FromSoftware 공식 보도자료 재인용(Windows Central), 2020-05 기준]. Metacritic 스코어 89점 [source: Metacritic, 2026-07 확인].
+The finale of FromSoftware’s “Souls” trilogy. It sold more than 10,000,000 copies worldwide as of May 2020, driving the series to 27,000,000 cumulative copies [source: FromSoftware official press release quoted by Windows Central, as of 2020-05]. Metacritic score: 89 [source: Metacritic, 2026-07 check].
 
 ## Elements Used
-- ELEM-014 (처벌적 죽음 순환) - 죽으면 소지 소울을 잃고 마지막 화톳불에서 재시작, 죽은 자리로 돌아가면 한 번 더 회수할 기회를 주는 긴장·반복 구조.
-- ELEM-016 (그림다크 톤) - 붕괴해가는 왕국과 파편화된 환경 스토리텔링으로, 대사 대신 아이템 설명과 지형 배치가 절망적 서사를 암시함.
-- 기존 두 작품의 지역·보스·무기 콘셉트를 재구성해 시리즈 완결감을 강조.
+- ELEM-014 (punishing death cycle) - Death causes the player to lose carried souls and restart at the last bonfire; returning to the death site gives one more chance to recover them, creating a tense repetition structure.
+- ELEM-016 (grimdark tone) - A collapsing kingdom and fragmented environmental storytelling imply a despairing narrative through item descriptions and terrain placement instead of dialogue.
+- Reconstructs locations, bosses, and weapon concepts from the previous two games to emphasize a sense of series closure.
 
 ## Success/Failure Drivers
-- [interpretation] 시리즈가 이미 검증한 전투 리듬과 보스전 설계를 완성도 있게 다듬어 팬 기대치에 정확히 부응했다.
-- 크리틱 리뷰 종합에서는 "가장 흥미진진하고 영화적이며 도전적인 보스전"이라는 호평이 다수였다 [source: Metacritic 크리틱 리뷰 종합, 2026-07 확인].
-- 동시에 일부 리뷰는 "새로운 분위기·서사적 대담함이 부족하고 기존 요소에 대한 팬서비스에 치우쳤다"고 지적했다 [source: Metacritic 크리틱 리뷰 종합, 2026-07 확인].
+- [interpretation] It precisely met fan expectations by polishing the series’ already-proven combat rhythm and boss design.
+- Critical review aggregations included many favorable comments calling it “the most exciting, cinematic, and challenging boss design” [source: Metacritic critical review aggregate, 2026-07 check].
+- At the same time, some reviews said it “lacked a new atmosphere and narrative boldness and leaned toward fan service for existing elements” [source: Metacritic critical review aggregate, 2026-07 check].
 
 ## Implications for Our Project
-[interpretation] 완결편으로서 "새로움"보다 "완성도"를 택한 선택이 상업적으로는 성공했지만, 비평 일부에서는 혁신 부족을 리스크로 짚었다 — 프랜차이즈 후반작에서 완성도와 혁신 사이의 균형점을 미리 정해두는 것이 중요하다.
-- 복수 매체가 2026년 중(10주년) 다크 소울 3 리마스터 출시를 유출 정보로 보도했으나, Bandai Namco/FromSoftware의 공식 발표는 아직 없음 [source: Dexerto/Tech4Gamers 등 유출 보도 종합, 2026-07 확인 / 다이제스트 2026-07-27]. [interpretation] 사실이라면 이미 검증된 ELEM-014(처벌적 죽음 순환)·ELEM-016(그림다크 톤)이 새 플랫폼 세대에 재노출되는 사례가 되므로, 공식 발표 여부를 다음 다이제스트에서 재확인 필요.
+[interpretation] Choosing “polish” over “newness” as a finale succeeded commercially, but some critics identified a lack of innovation as a risk—franchises should define their balance between polish and innovation before their later entries.
+- Multiple outlets reported a Dark Souls 3 remaster for 2026 (the 10th anniversary) based on leaks, but Bandai Namco/FromSoftware have not officially announced it [source: aggregate of leak reports from Dexerto/Tech4Gamers and others, 2026-07 check / digest 2026-07-27]. [interpretation] If true, it would re-expose the already-proven ELEM-014 (punishing death cycle) and ELEM-016 (grimdark tone) to a new platform generation, so its official announcement status should be rechecked in the next digest.

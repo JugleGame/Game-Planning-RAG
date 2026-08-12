@@ -1,32 +1,32 @@
 +++
 card_id = "ELEM-011"
 type = "mechanic"
-title = "창발적 시스템 상호작용 (Emergent Systemic Interaction, \"화학 엔진\")"
-summary = "불/물/바람 같은 기본 규칙 몇 개만 만들어두고, 그 규칙들이 서로 부딪히며 개발자도 예상 못한 해법이 나오게 하는 설계"
+title = "Emergent Systemic Interaction (Emergent Systemic Interaction, \"Chemical Engine\")"
+summary = "A design in which a few basic rules such as fire, water, and wind collide to produce solutions even the developers did not anticipate"
 tags = ["exploration", "physics", "sandbox", "open-world", "high-cost"]
 updated = "2026-08-04"
 confidence = "medium"
 +++
 ## Definition
-게임 속 물, 불, 바람, 전기 같은 요소들이 정해진 규칙에 따라 서로 영향을 주고받게 설계하는 방식입니다. 개발자가 "이 상황엔 이 결과가 나온다"고 하나하나 정해두는 게 아니라, "불은 나무를 태운다", "바람은 물체를 민다" 같은 기본 규칙 몇 개만 만들어두면, 플레이어가 그 규칙들을 이것저것 조합해보다가 개발자도 미처 생각 못 한 해법을 스스로 찾아냅니다.
+This design makes elements such as water, fire, wind, and electricity affect one another according to defined rules. Instead of specifying every result, developers define a few basic rules such as “fire burns wood” and “wind pushes objects”; players combine them and discover solutions the developers did not anticipate.
 
 ## Success Cases
-- GAME-014 (Breath of the Wild) - "화학 엔진"이라는 원소 반응 규칙으로 오브젝트끼리 서로 반응하게 만듦. Metacritic 98점 [source: GAME-014 카드].
-- GAME-015 (Tears of the Kingdom) - 울트라핸드로 "원소 반응"을 "구조물 조립"까지 확장. 출시 3일 만에 1,000만 장 판매 [source: GAME-015 카드].
+- GAME-014 (Breath of the Wild) - Made objects react through elemental reaction rules called a “chemical engine.” Metacritic 98 [source: GAME-014 card].
+- GAME-015 (Tears of the Kingdom) - Expanded “elemental reactions” into “structure assembly” through Ultrahand. Sold 10,000,000 copies in three days after release [source: GAME-015 card].
 
 ## Failure Cases
-<!-- 증거 부족: 이 요소를 전면에 내세웠다가 명확히 실패한 오픈월드 사례를 아직 조사하지 못함. 후속 조사 필요 -->
-[interpretation] 규칙이 서로 얽히는 시스템은 버그·밸런스 예측이 어려워, 세계 규모가 커질수록 QA 비용이 기하급수적으로 늘어날 위험이 있다.
+<!-- Evidence gap: no open-world case clearly failed after putting this element front and center has been researched yet. Follow-up research is needed. -->
+[interpretation] Interlocking systems make bugs and balance difficult to predict, creating a risk that QA costs grow exponentially as the world expands.
 
 ## User Reaction Summary
-- 선호: 실험 자체가 콘텐츠가 됨 - "정해진 길로 밀어붙이는 대신 실험과 즉흥을 장려한다" [source: The New Yorker 평, GAME-015 카드 재인용]
-- 선호: 현실 물리 법칙을 그대로 규칙으로 써서 직관적으로 퍼즐을 풀 수 있음 [source: GDC 2017 강연, GAME-014 카드 재인용]
+- Preference: Experimentation itself becomes content - “It encourages experimentation and improvisation instead of forcing a set path” [source: The New Yorker review, re-cited by GAME-015 card]
+- Preference: Real-world physics can be used as rules to solve puzzles intuitively [source: GDC 2017 talk, re-cited by GAME-014 card]
 
 ## Synergy
-- 좋음: ELEM-012 (랜드마크 기반 탐험) - "가서 확인하고 싶은 지형"과 "가서 뭘 할 수 있는지 모르는 자유"가 합쳐지면 탐험 동기가 배가됨
-- 좋음: ELEM-005 (AI 통합) - [interpretation] 규칙 기반 반응을 AI가 실시간으로 설명·확장해주면 학습 곡선을 낮출 여지가 있음 (아직 사례 없음)
-- 장르 앵커: GENRE-005 (오픈월드), GENRE-020 (서바이벌 크래프팅 오픈월드), GENRE-032 (이머시브 심) - 세 군집이 이 요소를 구성 요소로 지목한다.
+- Good: ELEM-012 (Landmark-based Exploration) - Combining terrain players want to inspect with freedom to discover what can be done there multiplies exploration motivation.
+- Good: ELEM-005 (AI Integration) - [interpretation] AI could explain and extend rule-based reactions in real time, potentially lowering the learning curve (no case yet).
+- Genre anchors: GENRE-005 (Open World), GENRE-020 (Survival Crafting Open World), GENRE-032 (Immersive Sim) - All three clusters identify this element as a component.
 
 ## Risks
-- [interpretation] 초기 개발 비용이 매우 높다 - 오브젝트 하나를 추가할 때마다 기존 모든 규칙과의 상호작용을 검증해야 한다.
-- [interpretation] 버그가 재미로 소비되기도 하지만(예: 물리 버그를 이용한 스피드런), 반대로 진행 불가 버그로 이어지면 치명적이다.
+- [interpretation] Initial development costs are very high - every added object must be tested against all existing rules.
+- [interpretation] Bugs can become entertainment (for example, physics-bug speedruns), but they are fatal when they instead prevent progress.

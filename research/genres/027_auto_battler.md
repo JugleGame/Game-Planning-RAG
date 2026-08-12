@@ -1,8 +1,8 @@
 +++
 card_id = "GENRE-027"
 type = "genre"
-title = "오토배틀러 (Auto Battler / Auto Chess)"
-summary = "매 라운드 상점에서 유닛을 사고 배치만 하면 전투 자체는 자동으로 진행되는, 경제 관리와 시너지 조합이 코어인 PvP 군집"
+title = "Auto Battler (Auto Battler / Auto Chess)"
+summary = "A PvP cluster whose core is economy management and synergy combinations, where each round you buy units in a shop and only position them while the combat itself resolves automatically"
 elements = ["ELEM-022"]
 example_games = []
 tags = ["auto-battler", "auto-chess", "pvp", "economy", "synergy", "esports"]
@@ -10,26 +10,27 @@ updated = "2026-08-02"
 confidence = "medium"
 +++
 ## Components
-- 상점(Shop) 페이즈 + 자동 전투 페이즈의 2단 루프 - 유닛을 뽑고 배치하는 준비 구간과, 배치가 끝나면 조작 없이 전투가 자동 진행되는 구간이 번갈아 반복된다 [source: 장르 정리 종합(Switchblade Gaming 외), 2026 확인].
-- 시너지 조합 - 종족·직업·속성별로 유닛을 모으면 피해량 증가, 방어 버프 등 추가 효과가 붙는 조합 보너스 시스템이 대표작 대부분에 공통이다 [source: 장르 정리 종합, 2026 확인].
-- 포지셔닝 - 탱커를 앞줄에, 딜러·서포터를 뒷줄에 배치하는 대형 설계가 전투 결과를 좌우하는 핵심 결정으로 취급된다 [source: 장르 정리 종합, 2026 확인].
-- ELEM-022 (지수적 점수 스케일링) - 라운드가 진행될수록 시너지·강화가 곱해지며 전투력이 선형이 아니라 폭발적으로 불어나는 설계가 이 장르의 후반 스노우볼을 만든다.
-<!-- 증거 부족: 경제 관리(이자/롤/레벨업 자원 배분) 자체를 다루는 ELEM 카드가 아직 이 저장소에 없어 개념만 서술함 -->
-- GENRE-037 (솔로 PvE 로그라이크 오토배틀러) - [interpretation] 상점-배치-자동전투 2단 루프를 공유하는 인접
-  군집이다. 다만 이 군집은 상대가 다른 플레이어(또는 그 스냅샷)인 PvP인 반면, GENRE-037은 상대가
-  AI가 짠 몬스터·웨이브인 1인 PvE라는 점에서 갈린다 [source: GENRE-037 카드].
+- A two-stage loop of shop phase + automatic combat phase - a preparation segment where you draw and position units, and a segment where, once positioning is done, combat proceeds automatically without any input, alternate repeatedly [source: composite of genre overviews (Switchblade Gaming and others), verified 2026].
+- Synergy combinations - a combination bonus system where gathering units by race, class, or trait attaches extra effects such as increased damage or defensive buffs is common to most representative titles [source: composite of genre overviews, verified 2026].
+- Positioning - formation design that places tanks in the front row and damage dealers/supports in the back row is treated as the core decision that determines combat outcomes [source: composite of genre overviews, verified 2026].
+- ELEM-022 (exponential score scaling) - as rounds progress, synergies and upgrades multiply so that combat power swells explosively rather than linearly, and this design creates the late-game snowball of this genre.
+<!-- Insufficient evidence: there is not yet an ELEM card in this repository covering economy management (interest/rolling/level-up resource allocation) itself, so only the concept is described -->
+- GENRE-037 (solo PvE roguelike auto battler) - [interpretation] it is an adjacent cluster that shares the
+  two-stage shop-positioning-auto-combat loop. However, this cluster is PvP where the opponent is another player (or a snapshot of one), whereas GENRE-037
+  diverges in that the opponent is monsters/waves assembled by AI in single-player PvE [source: GENRE-037 card].
 
 ## Market Saturation
-- 사실: Teamfight Tactics(Riot Games)는 2026년 기준 월간 활성 이용자 약 3,300만 명으로, 작년 일일 최고 접속자 1,000만 명을 기록했다 [source: 업계 통계 종합(PC Gamer 계열 보도), 2026 확인].
-- 사실: Dota Underlords(Valve)는 2020년 12월 업데이트 중단 이후 Teamfight Tactics를 넘어서지 못한 채 사실상 정리됐다 [source: PC Gamer 'What happened to autobattlers?', 2026 확인].
-- [interpretation] 장르가 태동한 지 몇 년 만에 소수 강자(Teamfight Tactics, 기존 IP에 얹은 Hearthstone Battlegrounds)로 수렴하는 흐름이 뚜렷하다 - 독립 신작이 파고들 자리가 좁아졌다.
+- Fact: Teamfight Tactics (Riot Games) has approximately 33,000,000 monthly active users as of 2026, and recorded a peak of 10,000,000 daily players last year [source: composite of industry statistics (PC Gamer-affiliated reporting), verified 2026].
+- Fact: Dota Underlords (Valve) never surpassed Teamfight Tactics after updates stopped in December 2020 and was effectively wound down [source: PC Gamer 'What happened to autobattlers?', verified 2026].
+- [interpretation] Only a few years after the genre emerged, there is a clear trend of convergence onto a small number of strong players (Teamfight Tactics, and Hearthstone Battlegrounds which was layered onto an existing IP) - the room for an independent new title to break in has narrowed.
+- The adjacent reference point 12 remains distinct because its deck is rebuilt during each run rather than maintained as a standing competitive collection.
 
 ## Conventions and Expectations
-- 사실: 초반 라운드는 학습 여유를 주고, 후반으로 갈수록 자원 배분(밀어붙이기 vs 이자 관리)에 대한 정교한 판단을 요구하는 난이도 곡선이 관례다 [source: 장르 정리 종합, 2026 확인].
-- 사실: Hearthstone Battlegrounds는 기존 Hearthstone의 세계관과 기존 플레이어 기반에 얹혀, "관심 있는 사람을 몰입시키는" 진입 장벽 완화 전략을 썼다 [source: PC Gamer 계열 보도, 2026 확인].
-- [interpretation] PvP 오토배틀러는 단독 신규 IP보다 기존 인기 IP(Dota, Hearthstone, Riot 챔피언 풀)에 얹혀 시작하는 쪽이 살아남는 경향이 있다 - Dota Auto Chess가 Dota 2 커스텀 모드로 시작한 것이 원형이다.
+- Fact: it is conventional for early rounds to allow room for learning, with the difficulty curve demanding increasingly sophisticated judgment about resource allocation (pushing vs. managing interest) as the game moves into its later stages [source: composite of genre overviews, verified 2026].
+- Fact: Hearthstone Battlegrounds layered itself onto the existing Hearthstone setting and existing player base, using a strategy of lowering the entry barrier that "immerses people who are already interested" [source: PC Gamer-affiliated reporting, verified 2026].
+- [interpretation] PvP auto battlers tend to survive better when they start out layered onto an existing popular IP (Dota, Hearthstone, the Riot champion pool) rather than as a standalone new IP - Dota Auto Chess starting as a Dota 2 custom mode is the archetype.
 
 ## Gaps
-[interpretation] ★ 이 저장소에는 오토배틀러 대표작(Teamfight Tactics, Hearthstone Battlegrounds, Dota Underlords 등)을 다루는 GAME 카드가 아직 없다 - GENRE-019(서바이버라이크)의 #auto-battler 태그는 단일 캐릭터 자동전투(실시간 조작 없는 전투)를 가리킬 뿐, 이 카드가 다루는 상점-배치-자동전투 PvP 루프와는 다른 개념이라 혼선 소지가 있다.
-- 확인 방법: Teamfight Tactics 또는 Hearthstone Battlegrounds를 GAME 카드 후보로 스카우트, GENRE-019 태그 표현을 재검토
-- 확인일: 2026-08-02 / 재확인 주기: 8주
+[interpretation] ★ This repository does not yet have a GAME card covering a representative auto battler (Teamfight Tactics, Hearthstone Battlegrounds, Dota Underlords, etc.) - the #auto-battler tag on GENRE-019 (survivor-like) only points to single-character automatic combat (combat without real-time input), which is a different concept from the shop-positioning-auto-combat PvP loop this card covers, so there is room for confusion.
+- How to verify: scout Teamfight Tactics or Hearthstone Battlegrounds as a GAME card candidate, and re-examine the wording of the GENRE-019 tag
+- Verified on: 2026-08-02 / Re-check interval: 8 weeks
