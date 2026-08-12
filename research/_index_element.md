@@ -1,5 +1,5 @@
-# ① 요소 색인 (자동 생성 - 직접 수정 금지)
-생성: 2026-08-12 | 44장
+# Elements Index (generated — do not edit)
+Generated: 2026-08-12 | 44 entries
 
 - ELEM-001 | Teaser-based reveals | Indirect elements indicate that there is a next step. | #narrative #viral-hook #fragile | 07-31
 - ELEM-002 | Campy (B grade/B-movie humor, Campy) | A sly tone that induces laughter by intentionally making it exaggerated and cheap. | #comedy #divisive #viral-hook #scriptable | 07-31

@@ -15,7 +15,7 @@ but you propose **patches at the section level** rather than rewriting the entir
 4. If the signal does not warrant a card update, output an empty array. Do not force patches.
 5. `section` must be the card's **literal English section title** from `card_schema.py`
    (e.g. `User Reaction Summary`, `Synergy`, `Market Saturation`). An approximated name makes
-   `apply_patch.py` skip the patch silently.
+   `apply_patch.py` reject the entire patch set before writing any file.
 
 # Output Format (JSON only)
 {

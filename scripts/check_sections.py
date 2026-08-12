@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""check_sections.py - 절 청킹이 저장소 전체에서 성립하는지 확인한다 (DB 불필요).
+"""Verify that every card splits into schema-recognized sections without using the DB.
 
-sync_db.py가 카드를 절로 쪼개 DB에 넣기 전에, 그 분할이 실제 카드 168장에서
-빠짐없이 동작하는지 여기서 먼저 깨진다. 실패하면 DB에 '절이 하나도 없는 카드'가
-조용히 들어가는 대신 여기서 멈춘다.
+Run this before sync_db.py. It stops a card with no recognized sections from silently entering
+the database mirror.
 
-사용법:
+Usage:
   python scripts/check_sections.py
-종료코드: 0=통과, 1=실패
+Exit status: 0=pass, 1=fail
 """
 import pathlib
 import re
@@ -24,11 +23,11 @@ FM_PAT = re.compile(r"^\+\+\+\s*\n(.*?)\n\+\+\+\s*\n(.*)$", re.S)
 def unit_checks():
     """사전 자체의 무결성 + 분할 함수의 동작."""
     for kind, keys in KIND_SECTIONS.items():
-        assert len(set(keys)) == len(keys), f"{kind}: 필수 절 key 중복"
+        assert len(set(keys)) == len(keys), f"{kind}: duplicate required section key"
         for k in keys:
-            assert k in SECTION_TITLES, f"{kind}: 사전에 없는 key {k}"
+            assert k in SECTION_TITLES, f"{kind}: section key absent from schema: {k}"
 
-    # 두 언어 제목이 같은 key로 해석돼야 한다 (전환 기간에 섞여 있어도 동작)
+    # 과거 한국어 제목과 현재 영어 제목은 같은 key로 해석돼야 한다.
     for key, langs in SECTION_TITLES.items():
         for title in langs.values():
             assert SECTION_KEY[title] == key, f"{title} -> {SECTION_KEY[title]} != {key}"
@@ -70,17 +69,17 @@ def repo_checks():
         rel = path.relative_to(BASE).as_posix()
 
         if not secs:
-            problems.append(f"{rel}: 표준 절을 하나도 못 찾음")
+            problems.append(f"{rel}: no schema-recognized sections found")
             continue
         keys = [k for _, k, _, _ in secs]
         if len(keys) != len(set(keys)):
-            problems.append(f"{rel}: 절 중복 {[k for k in keys if keys.count(k) > 1]}")
+            problems.append(f"{rel}: duplicate sections {[k for k in keys if keys.count(k) > 1]}")
         missing = [section_title(k) for k in KIND_SECTIONS.get(kind, []) if k not in keys]
         if missing:
-            problems.append(f"{rel}: 필수 절 누락 {missing}")
+            problems.append(f"{rel}: missing required sections {missing}")
         empty = [k for _, k, _, b in secs if not b.strip()]
         if empty:
-            problems.append(f"{rel}: 빈 절 {empty}")
+            problems.append(f"{rel}: empty sections {empty}")
 
     return total_cards, total_sections, problems
 
@@ -89,12 +88,12 @@ def main():
     unit_checks()
     n_cards, n_sections, problems = repo_checks()
     if problems:
-        print(f"[FAIL] 카드 {n_cards}장 중 {len(problems)}건 문제")
+        print(f"[FAIL] {len(problems)} problems across {n_cards} cards")
         for p in problems:
             print("   -", p)
         sys.exit(1)
     avg = n_sections / n_cards if n_cards else 0
-    print(f"[PASS] 카드 {n_cards}장 → 절 {n_sections}개 (카드당 평균 {avg:.1f})")
+    print(f"[PASS] {n_cards} cards → {n_sections} sections (average {avg:.1f} per card)")
 
 
 if __name__ == "__main__":

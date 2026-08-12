@@ -1,37 +1,21 @@
 #!/usr/bin/env python3
-"""embed_cards.py - 카드와 절에서 좌표(임베딩)를 뽑아 DB에 저장한다.
+"""Embed RAG cards and sections into the mirror database.
 
-핵심 설계:
-1) 지문(hash)이 안 바뀐 행은 재계산을 건너뛴다 - 매번 전량 임베딩은 낭비.
-2) 임베딩 모델은 '설정 한 곳'에서만 지정. 모델을 바꾸면 지문 규칙도 따라 바뀌어
-   자동으로 전량 재계산이 걸린다(모델 혼용으로 좌표 체계가 어긋나는 사고 방지).
-3) API 키 불필요 - 로컬 sentence-transformers 사용.
+Rows whose content fingerprint has not changed are skipped. The selected model
+is part of that fingerprint, so a model switch forces a complete, consistent
+re-embedding rather than mixing vector spaces. Embeddings run locally through
+sentence-transformers and require no API key.
 
-## 무엇을 임베딩하는가 (2026-08-12 개편)
+``card_sections.embedding`` (card title + section title + section body) drives
+retrieval. ``cards.embedding`` (title + summary + tags) supports card-level
+similarity checks. The prior 128-token ko-sroberta default truncated all card
+inputs; bge-m3 supports the current section chunks without that loss.
 
-**절(card_sections)이 주력, 카드(cards)는 요지용.**
-
-  - card_sections.embedding : 카드 제목 + 절 제목 + 절 본문. 검색은 여기서 일어난다.
-  - cards.embedding         : 카드 제목 + 요약 + 태그. 카드끼리의 요지 비교
-                              (verify_db --like, 중복 탐지)용.
-
-## 왜 모델을 바꿨나 (중요)
-
-이전 기본값 `jhgan/ko-sroberta-multitask`는 **입력 창이 128토큰**이다
-(모델의 sentence_bert_config.json). 그런데 카드 임베딩 텍스트는 중앙값 811토큰이라
-**168장 전부가 잘렸고, 실제 벡터에 들어간 건 카드의 15.8%뿐이었다.**
-title+summary(중앙값 50토큰)를 빼면 본문에서 살아남는 건 약 78토큰.
-
-즉 `## 실패 사례`, `## 리스크`, `## 안티패턴` 같은 절은 벡터 공간에 아예 존재한 적이
-없다. 반례 검색이 구조적으로 불가능했다.
-
-`BAAI/bge-m3`는 창 8192, 1024차원, 한/영 교차언어를 지원한다. 절 청크의 토큰
-중앙값이 163, p90이 327이므로 잘림이 사라진다. 첫 실행 시 모델 약 2.2GB를 내려받는다.
-
-사용법:
+Examples:
   python tools/embed_cards.py [--dsn postgresql://...] [--model BAAI/bge-m3]
-  python tools/embed_cards.py --scope sections   # 절만 갱신
-  (--dsn 생략 시 DATABASE_URL 환경변수 또는 .env 파일 사용)
+  python tools/embed_cards.py --scope sections
+
+When --dsn is omitted, DATABASE_URL or the local .env value is used.
 """
 import argparse
 import hashlib
@@ -149,9 +133,9 @@ def load_model(name, device, fp16, max_seq, batch_size):
         device = "cuda" if torch.cuda.is_available() else "cpu"
     if device == "cuda" and not torch.cuda.is_available():
         raise SystemExit(
-            "CUDA를 쓸 수 없다. torch가 CPU 빌드일 가능성이 크다 - 확인:\n"
+            "CUDA is unavailable. torch may be a CPU-only build. Check:\n"
             "  python -c \"import torch; print(torch.__version__, torch.version.cuda)\"\n"
-            "CUDA 빌드 설치: pip install --upgrade torch "
+            "Install a CUDA build: pip install --upgrade torch "
             "--index-url https://download.pytorch.org/whl/cu130")
 
     use_fp16 = fp16 if fp16 is not None else (device == "cuda")
@@ -164,14 +148,14 @@ def load_model(name, device, fp16, max_seq, batch_size):
 
     if device == "cuda":
         gb = torch.cuda.get_device_properties(0).total_memory / 1024**3
-        print(f"장치: cuda ({torch.cuda.get_device_name(0)}, {gb:.1f}GB) "
+        print(f"Device: cuda ({torch.cuda.get_device_name(0)}, {gb:.1f}GB) "
               f"| dtype {'fp16' if use_fp16 else 'fp32'} | max_seq {model.max_seq_length} "
               f"| batch {batch_size}")
         if gb < 6 and batch_size > 8:
             batch_size = 8
-            print(f"  VRAM {gb:.1f}GB - 배치를 {batch_size}로 낮춤 (OOM 방지)")
+            print(f"  VRAM {gb:.1f}GB — reduced batch size to {batch_size} to avoid OOM")
     else:
-        print(f"장치: cpu | max_seq {model.max_seq_length} | batch {batch_size}")
+        print(f"Device: cpu | max_seq {model.max_seq_length} | batch {batch_size}")
     return model, batch_size
 
 
@@ -193,11 +177,11 @@ def run(scope, rows, model, model_name, dsn, used, batch_size=16):
         if h != old_hash:
             todo.append((ident, text, h))
 
-    label = "카드" if scope == "cards" else "절"
+    label = "cards" if scope == "cards" else "sections"
     if not todo:
-        print(f"[{used}] {label}: 변경 없음 - 임베딩 갱신 생략")
+        print(f"[{used}] {label}: no changes; embedding update skipped")
         return 0
-    print(f"[{used}] {label} 임베딩 갱신 대상: {len(todo)}개")
+    print(f"[{used}] {label} to embed: {len(todo)}")
 
     vecs = model.encode([t for _, t, _ in todo], show_progress_bar=len(todo) > 50,
                         normalize_embeddings=True, batch_size=batch_size)
@@ -213,9 +197,9 @@ def run(scope, rows, model, model_name, dsn, used, batch_size=16):
     if bad.any():
         ids = [todo[i][0] for i in np.nonzero(bad)[0][:5]]
         raise SystemExit(
-            f"임베딩에 NaN/Inf가 {int(bad.sum())}개 나왔다 (예: {ids}). "
-            "저장하지 않았다. --fp32로 다시 실행할 것 "
-            "(VRAM이 모자라면 --device cpu --fp32).")
+            f"Embedding contains {int(bad.sum())} NaN/Inf values (for example: {ids}). "
+            "Nothing was written. Retry with --fp32 "
+            "(or --device cpu --fp32 if VRAM is insufficient).")
 
     if used == "5432":
         sql = CARD_WRITE_PG if scope == "cards" else SECTION_WRITE_PG
@@ -225,27 +209,27 @@ def run(scope, rows, model, model_name, dsn, used, batch_size=16):
         stmt = CARD_UPDATE_HTTPS if scope == "cards" else SECTION_UPDATE_HTTPS
         _https().transaction([(stmt, [vec_literal(v.tolist()), h, *ident])
                               for (ident, _, h), v in zip(todo, vecs)])
-    print(f"완료 - {label} {len(todo)}개 좌표 저장")
+    print(f"Complete - stored embeddings for {len(todo)} {label}")
     return len(todo)
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dsn", default=None, help="생략 시 DATABASE_URL 환경변수 또는 .env 사용")
+    ap.add_argument("--dsn", default=None, help="defaults to DATABASE_URL from the environment or .env")
     ap.add_argument("--model", default="BAAI/bge-m3",
-                    help="창 8192 / 1024차원 / 한영 교차언어. 바꾸면 전량 재계산된다")
+                    help="8192-token window, 1024 dimensions, Korean/English cross-lingual; changing it re-embeds all rows")
     ap.add_argument("--scope", choices=["all", "cards", "sections"], default="all")
     ap.add_argument("--device", choices=["auto", "cuda", "cpu"], default="auto",
-                    help="auto=GPU 있으면 GPU (기본값)")
+                    help="auto uses GPU when available (default)")
     ap.add_argument("--fp16", dest="fp16", action="store_true", default=None,
-                    help="반정밀도 강제 (GPU면 기본으로 켜진다)")
+                    help="force fp16 (enabled by default on GPU)")
     ap.add_argument("--fp32", dest="fp16", action="store_false",
-                    help="단정밀도 강제 - VRAM이 넉넉할 때만")
+                    help="force fp32; use only when VRAM is sufficient")
     ap.add_argument("--max-seq", type=int, default=1024,
-                    help="입력 토큰 상한. 절 청크 최대가 759라 1024면 잘리지 않는다")
+                    help="input-token cap; 1024 covers the current largest section chunk")
     ap.add_argument("--batch-size", type=int, default=16)
     ap.add_argument("--transport", choices=["auto", "pg", "https"], default="auto",
-                    help="auto=5432 먼저 시도 후 실패 시 443/HTTPS 폴백 (기본값)")
+                    help="auto tries 5432 first, then falls back to 443/HTTPS (default)")
     a = ap.parse_args()
     dsn = resolve_dsn(a.dsn)
 
@@ -265,7 +249,7 @@ def main():
         except psycopg2.OperationalError as e:
             if a.transport == "pg":
                 raise
-            print(f"5432 접속 실패 -> 443/HTTPS 브리지로 폴백합니다 "
+            print(f"5432 connection failed; falling back to the 443/HTTPS bridge "
                   f"({str(e).strip().splitlines()[0][:100]})", file=sys.stderr)
             used = "443/HTTPS"
     else:
@@ -276,13 +260,13 @@ def main():
                    for s in scopes}
 
     if not any(fetched.values()):
-        print("대상 행이 없음 - tools/sync_db.py를 먼저 실행할 것", file=sys.stderr)
+        print("No target rows; run tools/sync_db.py first", file=sys.stderr)
         sys.exit(1)
 
     model, batch = load_model(a.model, a.device, a.fp16, a.max_seq, a.batch_size)
     total = sum(run(s, fetched[s], model, a.model, dsn, used, batch) for s in scopes)
     if total == 0:
-        print("갱신할 좌표 없음 (전부 최신)")
+        print("No embeddings to update (all current)")
 
 
 if __name__ == "__main__":

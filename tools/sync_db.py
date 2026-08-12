@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
-"""sync_db.py - research/*.md (원본) -> Postgres cards/card_sections/card_refs/digests (거울) 동기화.
+"""Synchronize research Markdown into Postgres mirror tables.
 
-원칙: md 파일이 원본, DB는 거울. 이 스크립트만이 거울 테이블에 쓴다.
-- ELEM/GAME/GENRE/ARCH-### 카드 -> cards (+ 본문에서 스캔한 ID 언급 -> card_refs)
-- 카드 본문을 '## ' 절 단위로 쪼개 -> card_sections (검색의 실제 작업 단위)
-- signals/YYYY-MM-DD_*.md (type = "digest") -> digests (digest_date = 파일명 날짜)
-- 파일에서 사라진 카드/다이제스트는 DB에서도 삭제한다 (완전 거울). 단, frontmatter
-  파싱에 실패한 파일은 '성공적으로 확인된 상태'가 아니므로 기존 DB 행을 보존한다
-  (알 수 없는 상태에서 데이터를 지우지 않는다).
-- embedding/body_hash 컬럼은 건드리지 않는다 - 그건 embed_cards.py의 책임.
-  단 절 본문이 바뀌면 embed_cards가 지문 불일치로 알아서 다시 계산한다.
+Markdown is authoritative. This script is the only writer to cards, card_sections, card_refs,
+and digests. It preserves existing DB rows for files whose frontmatter cannot be parsed.
+Embedding and body_hash updates belong to embed_cards.py.
 
-사용법:
+Usage:
   python tools/sync_db.py [--dsn postgresql://...] [--dry-run]
 """
 import argparse
@@ -49,7 +43,7 @@ def load_frontmatter(path: pathlib.Path):
     raw = path.read_text(encoding="utf-8")
     m = FM_PAT.match(raw)
     if not m:
-        raise ValueError("frontmatter(+++ 블록)를 찾을 수 없음")
+        raise ValueError("frontmatter (+++ block) not found")
     fm = tomllib.loads(m.group(1))
     body = m.group(2).strip()
     return fm, body
@@ -75,14 +69,14 @@ def collect():
             if is_digest:
                 missing = [k for k in DIGEST_REQUIRED if not fm.get(k)]
                 if missing:
-                    raise ValueError(f"digest 필수 필드 누락: {missing}")
+                    raise ValueError(f"digest required fields missing: {missing}")
                 m = DATE_PREFIX.match(path.name)
                 if m:
                     digest_date = datetime.date.fromisoformat(m.group(1))
                 elif fm.get("period_end"):
                     digest_date = parse_date(fm["period_end"])
                 else:
-                    raise ValueError("파일명에 YYYY-MM-DD 접두어가 없고 period_end도 없음")
+                    raise ValueError("filename has no YYYY-MM-DD prefix and period_end is missing")
                 digest_rows.append({
                     "digest_date": digest_date,
                     "period": str(fm["period"]),
@@ -94,18 +88,18 @@ def collect():
             else:
                 missing = [k for k in CARD_REQUIRED if not fm.get(k)]
                 if missing:
-                    raise ValueError(f"카드 필수 필드 누락: {missing}")
+                    raise ValueError(f"card required fields missing: {missing}")
                 card_id = str(fm["card_id"])
                 if not re.match(r"^(ELEM|GAME|GENRE|ARCH)-\d{3}$", card_id):
-                    raise ValueError(f"card_id 형식 불일치: {card_id}")
+                    raise ValueError(f"invalid card_id format: {card_id}")
 
                 refs = {r for r in ID_PAT.findall(body) if r != card_id}
                 refs |= {g for g in fm.get("example_games", []) if g != card_id}
 
                 sections = split_sections(body)
                 if not sections:
-                    raise ValueError("표준 사전에 있는 '## ' 절을 하나도 찾지 못함 "
-                                     "(lint_card.py로 절 제목 확인 필요)")
+                    raise ValueError("no schema-recognized '## ' sections found "
+                                     "(check section titles with lint_card.py)")
 
                 card_rows.append({
                     "card_id": card_id,
@@ -201,7 +195,7 @@ def build_plan(card_rows, digest_rows):
     seen = set()
     for d in digest_rows:
         if d["digest_date"] in seen:
-            raise ValueError(f"digest_date 충돌: {d['digest_date']} 이 둘 이상의 signal 파일에서 나옴")
+            raise ValueError(f"digest_date conflict: {d['digest_date']} appears in multiple signal files")
         seen.add(d["digest_date"])
         plan.append((DIGEST_UPSERT, [d["digest_date"], d["period"], d["sources"],
                                      d["status"], d["body"]], None))
@@ -283,8 +277,8 @@ def execute_https(plan, dry_run=False):
                     for sql, params, _ in plan) / 1_000_000
     if approx_mb > 4:
         raise RuntimeError(
-            f"HTTPS 경로로 보내기엔 계획이 너무 큼(약 {approx_mb:.1f}MB). "
-            "5432(psycopg2) 경로를 쓰거나(--transport pg), 카드를 나눠 동기화할 것.")
+            f"plan is too large for HTTPS (about {approx_mb:.1f}MB). "
+            "Use 5432 (--transport pg) or synchronize smaller batches.")
 
     results = https_transaction([(sql, params) for sql, params, _ in plan])
     counts = {}
@@ -297,22 +291,22 @@ def execute_https(plan, dry_run=False):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dsn", default=None)
-    ap.add_argument("--dry-run", action="store_true", help="DB에 커밋하지 않고 계획만 확인")
+    ap.add_argument("--dry-run", action="store_true", help="show the plan without committing to the DB")
     ap.add_argument("--transport", choices=["auto", "pg", "https"], default="auto",
-                    help="auto=5432 먼저 시도 후 실패 시 443/HTTPS 폴백 (기본값)")
+                    help="auto tries 5432 first, then falls back to 443/HTTPS (default)")
     a = ap.parse_args()
     dsn = resolve_dsn(a.dsn)
 
     card_rows, digest_rows, errors = collect()
     if errors:
-        print(f"스킵된 파일 {len(errors)}건 (기존 DB 행은 보존됨):", file=sys.stderr)
+        print(f"Skipped files: {len(errors)} (existing DB rows preserved):", file=sys.stderr)
         for rel, msg in errors:
             print(f"  - {rel}: {msg}", file=sys.stderr)
 
     try:
         plan = build_plan(card_rows, digest_rows)
     except ValueError as e:
-        print(f"계획 생성 실패: {e}", file=sys.stderr)
+        print(f"Plan generation failed: {e}", file=sys.stderr)
         sys.exit(1)
 
     used = None
@@ -325,26 +319,26 @@ def main():
                 if a.transport == "pg":
                     raise
                 first = str(e).strip().splitlines()[0][:120]
-                print(f"5432 접속 실패 -> 443/HTTPS 브리지로 폴백합니다 ({first})", file=sys.stderr)
+                print(f"5432 connection failed; falling back to the 443/HTTPS bridge ({first})", file=sys.stderr)
                 counts = execute_https(plan, dry_run=a.dry_run)
                 used = "443/HTTPS"
         else:
             counts = execute_https(plan, dry_run=a.dry_run)
             used = "443/HTTPS"
     except Exception as e:
-        print(f"동기화 실패(롤백됨): {e}", file=sys.stderr)
+        print(f"Synchronization failed (rolled back): {e}", file=sys.stderr)
         sys.exit(1)
 
     if a.dry_run:
-        mode = "[DRY-RUN, 롤백됨] " if used == "5432" else "[DRY-RUN, 실행 안 함] "
+        mode = "[DRY-RUN, rolled back] " if used == "5432" else "[DRY-RUN, not executed] "
     else:
         mode = ""
     n_sections = sum(len(c["sections"]) for c in card_rows)
-    print(f"{mode}[{used}] cards upsert {len(card_rows)}장 "
-          f"(삭제 {counts.get('deleted_cards', 0)}장) | "
-          f"sections upsert {n_sections}개 | "
-          f"digests upsert {len(digest_rows)}건 "
-          f"(삭제 {counts.get('deleted_digests', 0)}건)")
+    print(f"{mode}[{used}] cards upserted: {len(card_rows)} "
+          f"(deleted: {counts.get('deleted_cards', 0)}) | "
+          f"sections upserted: {n_sections} | "
+          f"digests upserted: {len(digest_rows)} "
+          f"(deleted: {counts.get('deleted_digests', 0)})")
     if errors:
         sys.exit(1)
 

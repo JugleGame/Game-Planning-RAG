@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""verify_db.py - 미러링 상태 점검: 행 수, 참조 무결성, pgvector 유사도 샘플.
+"""Verify mirror status: row counts, reference integrity, and a pgvector similarity sample.
 
-사용법:
+Usage:
   python tools/verify_db.py [--dsn postgresql://...] [--like ELEM-001]
 """
 import argparse
@@ -35,7 +35,7 @@ class Runner:
             except psycopg2.OperationalError as e:
                 if transport == "pg":
                     raise
-                print(f"5432 접속 실패 -> 443/HTTPS 브리지로 폴백합니다 "
+                print(f"5432 connection failed; falling back to the 443/HTTPS bridge "
                       f"({str(e).strip().splitlines()[0][:100]})", file=sys.stderr)
         sys.path.insert(0, str(BASE / "db"))
         import neon_https
@@ -59,9 +59,9 @@ class Runner:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dsn", default=None)
-    ap.add_argument("--like", default=None, help="이 card_id와 임베딩 코사인 유사 카드 top-5 조회")
+    ap.add_argument("--like", default=None, help="show the top five cards by embedding cosine similarity")
     ap.add_argument("--transport", choices=["auto", "pg", "https"], default="auto",
-                    help="auto=5432 먼저 시도 후 실패 시 443/HTTPS 폴백 (기본값)")
+                    help="auto tries 5432 first, then falls back to 443/HTTPS (default)")
     a = ap.parse_args()
     r = Runner(resolve_dsn(a.dsn), a.transport)
     print(f"[{r.used}]")
@@ -76,7 +76,7 @@ def main():
 
     unresolved = r.q("SELECT missing_card, referenced_by FROM unresolved_refs",
                      ["missing_card", "referenced_by"])
-    print(f"unresolved_refs: {len(unresolved)}건")
+    print(f"unresolved_refs: {len(unresolved)}")
     for missing, refs in unresolved:
         print(f"  - {missing} <- {refs}")
 
@@ -84,10 +84,10 @@ def main():
     n_sec_emb = r.q("SELECT count(*) AS n FROM card_sections WHERE embedding IS NOT NULL",
                     ["n"])[0][0]
     n_sec = r.q("SELECT count(*) AS n FROM card_sections", ["n"])[0][0]
-    print(f"embedding 채워진 카드: {n_embedded}")
-    print(f"embedding 채워진 절: {n_sec_emb} / {n_sec}")
+    print(f"cards with embeddings: {n_embedded}")
+    print(f"sections with embeddings: {n_sec_emb} / {n_sec}")
     if n_sec_emb < n_sec:
-        print("  ! 좌표 없는 절이 있다 - tools/embed_cards.py 실행 필요", file=sys.stderr)
+        print("  ! Some sections lack embeddings — run tools/embed_cards.py", file=sys.stderr)
 
     if a.like:
         rows = r.q(
@@ -100,9 +100,9 @@ def main():
             ["card_id", "title", "cosine_sim"], [a.like],
         )
         if not rows:
-            print(f"{a.like}: 비교 가능한 임베딩 없음 (embed_cards.py 먼저 실행)")
+            print(f"{a.like}: no comparable embeddings (run embed_cards.py first)")
         else:
-            print(f"\n{a.like}와 가장 유사한 카드 (pgvector 코사인 유사도):")
+            print(f"\nCards most similar to {a.like} (pgvector cosine similarity):")
             for cid, title, sim in rows:
                 print(f"  {float(sim):.4f}  {cid}  {title}")
 

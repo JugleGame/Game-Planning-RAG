@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Research Card Maker"
+  short_description: "Create and maintain game-design RAG cards"
+  default_prompt: "Use $game-research-card-maker and the repository AGENTS.md to complete this research-card task."

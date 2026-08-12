@@ -1,11 +1,11 @@
 +++
 card_id = "ELEM-000"
-type = ""  # 허용값: mechanic | narrative-device | tone | tech
+type = ""  # allowed: mechanic | narrative-device | tone | tech
 title = ""
 summary = ""
 tags = []
 updated = "2026-07-15"
-confidence = "medium" # 기준 충족: 출처 있는 수치 + GAME 근거 3건 # low / medium / high
+confidence = "medium" # high requires sourced metrics and three GAME evidence cases # low / medium / high
 +++
 ## Definition
 

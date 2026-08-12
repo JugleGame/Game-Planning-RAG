@@ -1,11 +1,7 @@
-"""_db.py - DSN 해석 + 접속 경로(5432 / 443 HTTPS) 공통 헬퍼.
+"""Shared DSN resolution and 5432/443 HTTPS transport helpers.
 
-우선순위: --dsn CLI 인자 > DATABASE_URL 환경변수 > .env 파일의 DATABASE_URL > 로컬 기본값.
-python-dotenv 등 추가 의존성 없이 .env를 직접 파싱한다 (KEY=VALUE, # 주석, 따옴표 지원).
-
-읽기 경로(search_cards.py, eval_retrieval.py)는 psycopg2 커서를 그대로 쓰도록 짜여
-있었다. 5432가 막힌 망에서 이 둘만 통째로 죽던 것이 open_cursor()가 생긴 이유다 -
-쓰기·점검 경로(sync_db/embed_cards/verify_db)에는 이미 폴백이 있었다.
+Precedence: CLI --dsn, DATABASE_URL environment variable, DATABASE_URL in .env, then the
+local default. Parse .env directly to avoid an extra dependency.
 """
 import os
 import pathlib
@@ -113,7 +109,7 @@ def open_cursor(dsn: str, transport: str = "auto"):
         except psycopg2.OperationalError as e:
             if transport == "pg":
                 raise
-            print(f"5432 접속 실패 -> 443/HTTPS 브리지로 폴백합니다 "
+            print(f"5432 connection failed; falling back to the 443/HTTPS bridge "
                   f"({str(e).strip().splitlines()[0][:100]})", file=sys.stderr)
     sys.path.insert(0, str(BASE / "db"))
     import neon_https

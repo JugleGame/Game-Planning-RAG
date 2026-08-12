@@ -1,28 +1,19 @@
 #!/usr/bin/env python3
-"""audit_links.py - 카드 사이 '한쪽만 생긴 링크'를 기계적으로 찾아낸다.
+"""Find one-sided links and other referential gaps between RAG cards.
 
-카드를 새로 쓰면 새 카드 → 기존 카드 방향의 링크는 생기지만, 기존 카드 → 새 카드
-방향은 사람이 일일이 찾아 고쳐야 한다. 이 스크립트가 그 간극만 전담한다.
-lint_card.py가 '카드 한 장이 규격에 맞는가'를 본다면, 여기는 '카드 사이가 맞물리는가'를 본다.
+New cards normally add outbound links, but existing cards still need explicit
+backlinks. This complements ``lint_card.py``: lint validates one card's schema;
+this command validates cross-card relationships.
 
-사용법:
-  python scripts/audit_links.py                      # 저장소 전체 감사 (사람이 읽는 표)
-  python scripts/audit_links.py --for GAME-042       # 이 카드 때문에 고쳐야 할 곳만
-  python scripts/audit_links.py --json               # prompts/5_linker.md에 넣을 기계 출력
+Examples:
+  python scripts/audit_links.py
+  python scripts/audit_links.py --for GAME-042
+  python scripts/audit_links.py --json
   python scripts/audit_links.py --only backlink_missing,orphan
-종료코드: 0=간극 없음, 1=간극 있음 (CI/훅에 걸 수 있게)
 
-검사 항목:
-  broken_ref            카드가 참조하는 ID가 _index.md에 없다 (오타 또는 삭제된 카드)
-  missing_card          _index.md에는 있는데 카드 파일이 없다
-  backlink_missing      GAME.elements가 지목한 ELEM 카드 본문에 그 GAME이 없다
-  genre_example_missing GAME.genres ↔ GENRE.example_games 가 한쪽만 있다 (양방향 검사)
-  genre_anchor_missing  GENRE.elements가 지목한 ELEM 카드 본문에 그 GENRE가 없다
-  fm_body_drift         GAME 본문이 언급하는 ELEM이 frontmatter elements에 없다
-  orphan                아무 카드도 참조하지 않는 카드 (검색으로 도달 불가)
-
-주의: HTML 주석(<!-- ... -->) 안의 ID는 '언급'으로 치지 않는다. 카드가 "이 요소는
-쓰지 않았다"고 명시적으로 배제한 기록(증거 부족 주석)을 간극으로 오인하지 않기 위함이다.
+Exit code: 0 = no relevant gaps; 1 = gap found (usable in CI/hooks).
+HTML comments are excluded from reference detection, so deliberate comparison or
+exclusion notes do not become false link findings.
 """
 import re, json, argparse, pathlib, sys, tomllib
 
@@ -34,25 +25,24 @@ COMMENT_PAT = re.compile(r"<!--.*?-->", re.S)
 CHECKS = ["broken_ref", "missing_card", "backlink_missing", "genre_example_missing",
           "genre_anchor_missing", "fm_body_drift", "orphan"]
 
-# hard = 기계적으로 확실한 간극 (기본 종료코드 1의 근거)
-# soft = 사람 판단이 필요한 신호. 카드가 "이 요소는 쓰지 않았다"고 비교·배제한 경우가 섞인다.
-#        --strict 를 줘야 종료코드에 반영된다.
+# hard = mechanically certain gap (causes exit code 1 by default)
+# soft = signal requiring judgment; a card may deliberately compare or exclude it.
 HARD = {"broken_ref", "missing_card", "backlink_missing", "genre_example_missing"}
 
-# 간극별 기본 처방 - 5_linker 프롬프트와 사람이 같은 지침을 보게 한다
+# Default remediation guidance, shared by people and prompts/5_linker.md.
 FIX = {
-    "backlink_missing":      ("성공 사례", "그 게임을 사례 한 줄로 추가. 수치는 GAME 카드에서 인용하고 [출처: GAME-### 카드] 표기"),
-    "genre_example_missing": (None, "frontmatter의 example_games / genres 배열에 상대 ID 추가 (본문 아님)"),
-    "genre_anchor_missing":  ("조합 궁합", "'장르 앵커: GENRE-### (제목) - 이 군집이 이 요소를 구성 요소로 지목한다' 한 줄 추가"),
-    "fm_body_drift":         (None, "본문이 실제 사용을 서술하면 frontmatter elements에 추가, 비교·배제 언급이면 그 문장을 주석으로 옮길 것"),
-    "orphan":                ("조합 궁합", "이 카드를 참조해야 마땅한 인접 카드를 찾아 그쪽에 링크 추가 (반대 방향)"),
-    "broken_ref":            (None, "오타면 ID 수정, 삭제된 카드면 문장에서 ID 제거 후 서술로 대체"),
-    "missing_card":          (None, "카드를 새로 쓰거나 _index.md 예약 행을 제거"),
+    "backlink_missing":      ("Success Cases", "Add one line naming the game. Cite metrics from the GAME card as [source: GAME-### card]."),
+    "genre_example_missing": (None, "Add the counterpart ID to the frontmatter example_games / genres array (not the body)."),
+    "genre_anchor_missing":  ("Synergy", "Add: 'Genre anchor: GENRE-### (title) — this cluster names this element as a component.'"),
+    "fm_body_drift":         (None, "Add it to frontmatter elements when the body describes actual use; move comparison/exclusion mentions into a comment."),
+    "orphan":                ("Synergy", "Find an adjacent card that should reference this card and add the reverse-direction link there."),
+    "broken_ref":            (None, "Correct an ID typo; if the target was deleted, remove the ID and replace it with prose."),
+    "missing_card":          (None, "Check whether the generated index is stale, then rerun tools/build_index.py."),
 }
 
 
 def load_cards(root):
-    """research/ 아래 카드를 읽어 frontmatter/본문/참조를 정리한다. digest는 refs만 쓴다."""
+    """Load card frontmatter, body, and references; digests supply refs only."""
     cards, digests = {}, {}
     for f in sorted(pathlib.Path(root).rglob("*.md")):
         if f.name.startswith("_"):
@@ -64,7 +54,7 @@ def load_cards(root):
         try:
             fm = tomllib.loads(m.group(1))
         except tomllib.TOMLDecodeError:
-            print(f"[경고] TOML 파싱 실패로 건너뜀: {f}", file=sys.stderr)
+            print(f"[warning] skipped after TOML parse failure: {f}", file=sys.stderr)
             continue
         body = m.group(2)
         visible = COMMENT_PAT.sub("", body)          # 주석 밖에서만 '언급'으로 인정
@@ -89,7 +79,7 @@ def index_ids(index_path):
 
 
 def audit(cards, digests, idx_ids):
-    """간극 목록을 반환한다. 각 항목은 '어느 카드를 고쳐야 하는가'(card)를 기준으로 적는다."""
+    """Return gaps, each targeting the card that requires a change."""
     out = []
 
     def add(kind, card, other, detail):
@@ -107,11 +97,11 @@ def audit(cards, digests, idx_ids):
             if r == cid:
                 continue
             if r not in known:
-                add("broken_ref", cid, r, f"{r} 카드가 존재하지 않음")
+                add("broken_ref", cid, r, f"{r} card does not exist")
             elif idx_ids and r not in idx_ids:
-                add("broken_ref", cid, r, f"{r}가 _index.md에 없음 (build_index.py 재실행 필요)")
+                add("broken_ref", cid, r, f"{r} is absent from _index.md (rerun build_index.py)")
     for rid in sorted(idx_ids - known):
-        add("missing_card", rid, None, f"_index.md에 있으나 카드 파일 없음")
+        add("missing_card", rid, None, "listed in _index.md but card file is missing")
 
     # 2) GAME → ELEM 역링크
     for cid, c in cards.items():
@@ -119,18 +109,18 @@ def audit(cards, digests, idx_ids):
             continue
         for e in c["elements"]:
             if e in cards and cid not in cards[e]["refs"]:
-                add("backlink_missing", e, cid, f"{cid}가 {e}를 사용 요소로 지목하는데 {e} 본문에 {cid}가 없음")
+                add("backlink_missing", e, cid, f"{cid} names {e} as an element, but {e} does not mention {cid}")
 
     # 3) GAME.genres ↔ GENRE.example_games (양방향)
     for cid, c in cards.items():
         if cid.startswith("GAME"):
             for g in c["genres"]:
                 if g in cards and cid not in cards[g]["examples"]:
-                    add("genre_example_missing", g, cid, f"{cid}.genres에 {g}가 있는데 {g}.example_games에 {cid}가 없음")
+                    add("genre_example_missing", g, cid, f"{cid}.genres contains {g}, but {g}.example_games lacks {cid}")
         elif cid.startswith("GENRE"):
             for g in c["examples"]:
                 if g in cards and cid not in cards[g]["genres"]:
-                    add("genre_example_missing", g, cid, f"{cid}.example_games에 {g}가 있는데 {g}.genres에 {cid}가 없음")
+                    add("genre_example_missing", g, cid, f"{cid}.example_games contains {g}, but {g}.genres lacks {cid}")
 
     # 4) GENRE → ELEM 장르 앵커
     for cid, c in cards.items():
@@ -138,7 +128,7 @@ def audit(cards, digests, idx_ids):
             continue
         for e in c["elements"]:
             if e in cards and cid not in cards[e]["refs"]:
-                add("genre_anchor_missing", e, cid, f"{cid}가 {e}를 구성 요소로 지목하는데 {e} 본문에 {cid}가 없음")
+                add("genre_anchor_missing", e, cid, f"{cid} names {e} as a component, but {e} does not mention {cid}")
 
     # 5) 본문 ↔ frontmatter 어긋남 (주석 밖 언급만)
     for cid, c in cards.items():
@@ -146,7 +136,7 @@ def audit(cards, digests, idx_ids):
             continue
         drift = sorted(r for r in c["refs"] if r.startswith("ELEM") and r not in c["elements"])
         if drift:
-            add("fm_body_drift", cid, ",".join(drift), f"본문은 {', '.join(drift)}를 언급하는데 frontmatter elements={c['elements']}")
+            add("fm_body_drift", cid, ",".join(drift), f"body mentions {', '.join(drift)}, but frontmatter elements={c['elements']}")
 
     # 6) 고아 카드
     inbound = {i: 0 for i in cards}
@@ -156,7 +146,7 @@ def audit(cards, digests, idx_ids):
                 inbound[r] += 1
     for cid, n in sorted(inbound.items()):
         if n == 0:
-            add("orphan", cid, None, "이 카드를 참조하는 카드가 하나도 없음 - 검색으로 도달할 수 없다")
+            add("orphan", cid, None, "no card references this card; retrieval cannot reach it")
     return out
 
 
@@ -165,11 +155,11 @@ def main():
     ap.add_argument("--cards-dir", default="research")
     ap.add_argument("--index", default="research/_index.md")
     ap.add_argument("--for", dest="focus", default=None,
-                    help="이 카드와 얽힌 간극만 (예: GAME-042). 새 카드를 쓴 직후에 쓴다")
-    ap.add_argument("--only", default=None, help=f"검사 항목 제한, 쉼표 구분: {','.join(CHECKS)}")
-    ap.add_argument("--json", action="store_true", help="기계 출력 (prompts/5_linker.md 입력용)")
+                    help="Only gaps involving this card (for example, GAME-042); use after adding a card.")
+    ap.add_argument("--only", default=None, help=f"Limit checks (comma-separated): {','.join(CHECKS)}")
+    ap.add_argument("--json", action="store_true", help="Machine-readable output for prompts/5_linker.md")
     ap.add_argument("--strict", action="store_true",
-                    help="soft 항목(장르 앵커·본문 어긋남·고아)도 종료코드 1에 반영")
+                    help="Include soft findings (genre anchors, body drift, orphans) in exit code 1.")
     a = ap.parse_args()
 
     cards, digests = load_cards(a.cards_dir)
@@ -179,12 +169,12 @@ def main():
         keep = {s.strip() for s in a.only.split(",")}
         bad = keep - set(CHECKS)
         if bad:
-            sys.exit(f"알 수 없는 검사 항목: {', '.join(sorted(bad))}")
+            sys.exit(f"Unknown check name: {', '.join(sorted(bad))}")
         findings = [f for f in findings if f["kind"] in keep]
     if a.focus:
         fid = a.focus.upper()
         if fid not in cards:
-            sys.exit(f"{fid} 카드를 찾을 수 없음")
+            sys.exit(f"Card not found: {fid}")
         findings = [f for f in findings if fid in (f["card"], f["other"]) or (f["other"] or "").find(fid) >= 0]
 
     hard_n = sum(1 for f in findings if f["severity"] == "hard")
@@ -195,26 +185,26 @@ def main():
                           "findings": findings}, ensure_ascii=False, indent=2))
         sys.exit(1 if fail else 0)
 
-    scope = f" (기준: {a.focus})" if a.focus else ""
+    scope = f" (focus: {a.focus})" if a.focus else ""
     if not findings:
-        print(f"[깨끗함] 카드 {len(cards)}장 사이에 한쪽만 생긴 링크 없음{scope}")
+        print(f"[clean] no one-sided links across {len(cards)} cards{scope}")
         sys.exit(0)
 
-    print(f"[간극 {len(findings)}건 / 확실 {hard_n}건] 카드 {len(cards)}장 감사{scope}\n")
+    print(f"[gaps: {len(findings)} / hard: {hard_n}] audited {len(cards)} cards{scope}\n")
     for kind in CHECKS:
         group = [f for f in findings if f["kind"] == kind]
         if not group:
             continue
         section, how = FIX[kind]
-        where = f"'## {section}' 절에 " if section else ""
-        mark = "확실" if kind in HARD else "확인 필요"
-        print(f"── [{mark}] {kind} ({len(group)}건) → 고칠 카드에서 {where}{how}")
+        where = f"in '## {section}', " if section else ""
+        mark = "hard" if kind in HARD else "review"
+        print(f"── [{mark}] {kind} ({len(group)}) → in the target card, {where}{how}")
         for f in group:
             print(f"   {f['card']:<10} {f['detail']}")
         print()
     if hard_n < len(findings):
-        print("'확인 필요' 항목은 카드가 일부러 비교·배제한 경우일 수 있다 - 본문을 보고 판단할 것.\n")
-    print("다음 단계: prompts/5_linker.md에 아래 출력을 넣어 patch.json을 만들고, 사람이 승인 후")
+        print("'review' findings may be deliberate comparisons or exclusions; inspect the card body before editing.\n")
+    print("Next: provide this output to prompts/5_linker.md to produce patch.json, then obtain human approval before running:")
     print("  python scripts/apply_patch.py patch.json --cards-dir research")
     sys.exit(1 if fail else 0)
 

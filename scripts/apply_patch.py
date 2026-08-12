@@ -1,71 +1,140 @@
 #!/usr/bin/env python3
-"""apply_patch.py - U(갱신) 공정의 patch 제안을 카드에 적용 (섹션 단위, 전체 재작성 금지)
-사용법: python scripts/apply_patch.py patch.json --cards-dir . [--digest digests/2026-07-14.md]
-patch.json 형식: {"patches":[{"card_id","section","action"(append|replace),"text","reason"}]}
-적용 전 사람이 patch.json을 눈으로 승인했다는 전제. updated/status 필드 자동 갱신.
+"""Preflight and apply a human-approved section-patch JSON file.
 
-프론트매터는 TOML(+++...+++)이 표준이며, 구버전 YAML(---...---) 카드도 최소 지원한다.
+Usage:
+  python scripts/apply_patch.py patch.json --cards-dir research
+  python scripts/apply_patch.py patch.json --cards-dir research --digest research/signals/<file>.md
+
+Validate every target, action, and section before writing. If any patch is invalid, write nothing.
 """
-import sys, re, json, argparse, pathlib, datetime, tomllib
+
+import argparse
+import datetime
+import json
+import pathlib
+import re
+import sys
+import tomllib
 
 FM_TOML = re.compile(r"^\+\+\+\s*\n(.*?)\n\+\+\+\s*\n", re.S)
-FM_YAML = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.S)
+
 
 def card_id_of(text):
-    m = FM_TOML.match(text)
-    if m:
-        try:
-            return str(tomllib.loads(m.group(1)).get("card_id", ""))
-        except tomllib.TOMLDecodeError:
-            return None
-    m = FM_YAML.match(text)
-    if m:
-        mm = re.search(r'^card_id\s*:\s*"?([\w-]+)"?\s*$', m.group(1), re.M)
-        return mm.group(1) if mm else None
-    return None
+    match = FM_TOML.match(text)
+    if not match:
+        return None
+    try:
+        return str(tomllib.loads(match.group(1)).get("card_id", "")) or None
+    except tomllib.TOMLDecodeError:
+        return None
 
-def find_card(cards_dir, card_id):
-    for p in pathlib.Path(cards_dir).rglob("*.md"):
-        if card_id_of(p.read_text(encoding="utf-8")) == card_id:
-            return p
-    return None
 
-def bump_field(src, field, value):
-    """TOML(field = "x", 뒤에 # 주석이 붙어도 됨)과 YAML(field: x) 두 형식을 모두 시도, 매치된 것만 갱신."""
-    new_src, n = re.subn(rf'(?m)^({field}\s*=\s*)".*?"', rf'\g<1>"{value}"', src, count=1)
-    if n:
-        return new_src
-    return re.sub(rf"^{field}\s*:.*$", f"{field}: {value}", src, count=1, flags=re.M)
+def card_paths(cards_dir):
+    paths = {}
+    for path in pathlib.Path(cards_dir).rglob("*.md"):
+        card_id = card_id_of(path.read_text(encoding="utf-8"))
+        if card_id:
+            if card_id in paths:
+                raise ValueError(f"duplicate card_id: {card_id}")
+            paths[card_id] = path
+    return paths
 
-def apply_one(path, section, action, text):
-    src = path.read_text(encoding="utf-8")
-    pat = re.compile(rf"(^## {re.escape(section)}.*?$)(.*?)(?=^## |\Z)", re.S | re.M)
-    m = pat.search(src)
-    if not m: return None, f"섹션 '## {section}' 없음"
-    body = m.group(2).rstrip()
-    # 뒤에 다른 절이 이어지면 빈 줄 하나를 남겨 절 사이 간격을 보존한다
-    tail = "\n\n" if m.end(2) < len(src) else "\n"
-    new_body = (body + "\n" + text + tail) if action == "append" else ("\n" + text + tail)
-    src = src[:m.start(2)] + new_body + src[m.end(2):]
-    src = bump_field(src, "updated", datetime.date.today().isoformat())
-    path.write_text(src, encoding="utf-8")
-    return True, "ok"
+
+def bump_field(source, field, value):
+    updated, count = re.subn(
+        rf'(?m)^({re.escape(field)}\s*=\s*)".*?"',
+        rf'\g<1>"{value}"',
+        source,
+        count=1,
+    )
+    if not count:
+        raise ValueError(f"frontmatter field missing: {field}")
+    return updated
+
+
+def render_patch(source, patch):
+    missing = [key for key in ("card_id", "section", "action", "text") if key not in patch]
+    if missing:
+        raise ValueError(f"required keys missing: {', '.join(missing)}")
+    if patch["action"] not in {"append", "replace"}:
+        raise ValueError(f"unsupported action: {patch['action']}")
+    if not isinstance(patch["text"], str) or not patch["text"].strip():
+        raise ValueError("text is empty")
+
+    pattern = re.compile(
+        rf"(^## {re.escape(str(patch['section']))}.*?$)(.*?)(?=^## |\Z)",
+        re.S | re.M,
+    )
+    match = pattern.search(source)
+    if not match:
+        raise ValueError(f"section not found: ## {patch['section']}")
+
+    old_body = match.group(2).rstrip()
+    tail = "\n\n" if match.end(2) < len(source) else "\n"
+    if patch["action"] == "append":
+        new_body = old_body + "\n" + patch["text"].strip() + tail
+    else:
+        new_body = "\n" + patch["text"].strip() + tail
+
+    rendered = source[:match.start(2)] + new_body + source[match.end(2):]
+    return bump_field(rendered, "updated", datetime.date.today().isoformat())
+
+
+def load_patches(path):
+    payload = json.loads(pathlib.Path(path).read_text(encoding="utf-8"))
+    patches = payload.get("patches") if isinstance(payload, dict) else None
+    if not isinstance(patches, list):
+        raise ValueError("top-level patches array is required")
+    return patches
+
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("patch_file"); ap.add_argument("--cards-dir", default=".")
-    ap.add_argument("--digest", default=None)
-    a = ap.parse_args()
-    patches = json.loads(pathlib.Path(a.patch_file).read_text(encoding="utf-8"))["patches"]
-    for p in patches:
-        card = find_card(a.cards_dir, p["card_id"])
-        if not card:
-            print(f"[SKIP] {p['card_id']} 카드 파일을 못 찾음"); continue
-        ok, msg = apply_one(card, p["section"], p["action"], p["text"])
-        print(f"[{'OK' if ok else 'FAIL'}] {p['card_id']} / ## {p['section']} / {p['action']} - {msg}")
-    if a.digest:  # 다이제스트 처리 상태 자동 갱신 (파이프라인 완료 표시)
-        d = pathlib.Path(a.digest)
-        s = bump_field(d.read_text(encoding="utf-8"), "status", f"반영({datetime.date.today().isoformat()})")
-        d.write_text(s, encoding="utf-8"); print(f"[OK] {d.name} status -> 반영")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("patch_file")
+    parser.add_argument("--cards-dir", default="research")
+    parser.add_argument("--digest")
+    args = parser.parse_args()
 
-if __name__ == "__main__": main()
+    try:
+        patches = load_patches(args.patch_file)
+        paths = card_paths(args.cards_dir)
+        rendered = {}
+
+        for index, patch in enumerate(patches, start=1):
+            if not isinstance(patch, dict):
+                raise ValueError(f"patch #{index}: expected an object")
+            card_id = patch.get("card_id")
+            path = paths.get(card_id)
+            if path is None:
+                raise ValueError(f"patch #{index}: card not found: {card_id}")
+            source = rendered.get(path, path.read_text(encoding="utf-8"))
+            try:
+                rendered[path] = render_patch(source, patch)
+            except ValueError as error:
+                raise ValueError(f"patch #{index} ({card_id}): {error}") from error
+
+        digest_path = pathlib.Path(args.digest) if args.digest else None
+        digest_source = None
+        if digest_path:
+            digest_source = bump_field(
+                digest_path.read_text(encoding="utf-8"),
+                "status",
+                f"반영({datetime.date.today().isoformat()})",
+            )
+    except (OSError, json.JSONDecodeError, ValueError) as error:
+        print(f"[FAIL] preflight failed — no changes written: {error}", file=sys.stderr)
+        return 1
+
+    for path, source in rendered.items():
+        path.write_text(source, encoding="utf-8")
+        print(f"[OK] {path.as_posix()}")
+    if digest_path and digest_source is not None:
+        digest_path.write_text(digest_source, encoding="utf-8")
+        print(f"[OK] updated status in {digest_path.as_posix()}")
+    if not rendered and not digest_path:
+        print("[OK] no patches to apply")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

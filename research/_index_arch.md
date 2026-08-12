@@ -1,5 +1,5 @@
-# ⑤ 아키텍처 색인 (자동 생성 - 직접 수정 금지)
-생성: 2026-08-12 | 27장
+# Architecture Index (generated — do not edit)
+Generated: 2026-08-12 | 27 entries
 
 - ARCH-001 | Event Bus (EventBus / Pub-Sub) | A loose coupling structure where systems never call each other directly: senders broadcast events to a central station (EventBus), and only the parties that want to listen subscribe and react | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-31
 - ARCH-002 | Scene Streaming (Boot / World_Base / Chunk Additive Structure) | A world composition approach that never builds the game as one monolithic scene, splitting it into startup, always-on and fragment scenes, then adding only the fragments needed and switching them on and off | #scene #streaming #additive #open-world #core #unity #2d | 07-29

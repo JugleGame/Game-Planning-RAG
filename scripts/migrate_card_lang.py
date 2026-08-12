@@ -1,64 +1,24 @@
 #!/usr/bin/env python3
-"""migrate_card_lang.py - 카드를 한국어에서 영어로 옮긴다 (검증 게이트 포함).
+"""Migrate Korean RAG cards to English and verify that factual assets survive.
 
-## 왜 스크립트인가
+An LLM performs translation; this gate proves the result preserves numeric
+values, card-ID links, source and interpretation marker counts, section order,
+and non-translated frontmatter. It additionally confirms that the resulting
+section titles, markers, and prose are English. Values, rather than numeric
+token spellings, are compared so ``500만`` and ``5,000,000`` are equivalent.
 
-번역 자체는 LLM이 한다. 이 스크립트가 하는 일은 **번역이 카드의 사실 자산을
-훼손하지 않았음을 기계적으로 증명하는 것**이다. 카드의 가치는 문장이 아니라
-[출처]가 붙은 수치와 카드 사이의 ID 링크에 있고, 그 둘은 번역에서 가장 잘 깨진다.
+``--headings`` deterministically translates only the fixed machine-facing
+surface (section titles and markers). The LLM is then responsible for prose.
+It never overwrites the source during translation: verified output is written
+to ``--out`` and is copied into research only through ``--apply``.
 
-번역 결과가 아래를 하나라도 어기면 그 카드는 **쓰지 않는다**:
-
-  1. 수치 유실 없음     원문의 지표가 번역본에 같은 **값**으로 남아 있는가
-  2. 수치 환각 없음     원문에 없던 큰 수가 번역본에 생기지 않았는가
-  3. 카드 ID 집합 동일  ELEM-021 같은 참조가 하나도 늘거나 줄지 않았는가
-  4. 출처 태그 수 동일  [출처: ...] 개수가 같은가 - 근거가 슬쩍 사라지지 않았는가
-  5. 해석 표시 수 동일  [해석] 개수가 같은가 - 사실과 해석의 경계가 유지됐는가
-  6. 절 구성 동일       section_key 목록이 순서까지 같은가
-  7. frontmatter 동일   card_id/type/tags/updated/confidence/링크 배열이 그대로인가
-                        (title/summary만 번역 대상)
-  8. 실제로 영어가 됐음 절 제목·근거 표시·본문이 번역됐는가 (1~7은 '아무것도 잃지
-                        않았음'만 증명한다 - 원문을 그대로 돌려줘도 전부 통과한다)
-
-수치는 **글자가 아니라 값**으로 본다. "500만" -> "5,000,000" 은 올바른 번역인데
-토큰 대조로는 불일치라서, 예전 게이트는 한국어 단위 수치를 가진 카드 113장을
-무조건 떨어뜨렸다. `test_migrate_gate.py` 가 이 불변식들을 못박아 둔다.
-
-## 두 단계로 나눈다
-
-절 제목(21종)과 `[출처]`/`[해석]` 표시는 고정 문자열이다. 이건 `--headings` 로
-결정론적으로 끝내고, LLM 에는 산문만 맡긴다 - 실패할 수 있는 일을 굳이 실패할 수
-있게 만들 이유가 없다.
-
-## 안전 장치
-
-- 원본을 덮어쓰지 않는다. 결과는 --out 디렉터리에 쓰고, 사람이 확인한 뒤
-  `--apply`로 옮긴다.
-- 실패한 카드는 보고서에 사유와 함께 남고 출력되지 않는다.
-- 카드 한 장씩 독립이므로 중간에 멈춰도 안전하다. 섞여 있는 상태는 정상이다
-  (lint_card.py가 두 언어 절 제목을 모두 받는다).
-
-## 사용법
-
-  # 1단계 - 기계 표면 (번역기 불필요, 2026-08-12 완료)
-  # signals/ 는 제외한다. 신호 파일은 **추가 전용·수정 금지**다 (README 3곳에 명시).
-  python scripts/migrate_card_lang.py --headings \
-      research/architecture/*.md research/elements/*.md \
-      research/games/*.md research/genres/*.md templates/*.md
-
-  # 2단계 - 산문
-  export ANTHROPIC_API_KEY=...
-  python scripts/migrate_card_lang.py research/games/031_balatro.md --out draft/en
-  python scripts/migrate_card_lang.py research/games/*.md --out draft/en
-  python scripts/migrate_card_lang.py --out draft/en --apply      # 검증 통과분 반영
-
-  # 남이 직접 번역한 카드를 검사만
+Examples:
   python scripts/migrate_card_lang.py --verify research/games/*.md
+  python scripts/migrate_card_lang.py research/games/031_balatro.md --out draft/en
+  python scripts/migrate_card_lang.py --out draft/en --apply
 
-마지막에 반드시:
-  python scripts/lint_card.py research/*/*.md --index research/_index.md
-  python scripts/check_sections.py
-  python tools/build_index.py && python tools/sync_db.py && python tools/embed_cards.py
+After applying cards, run lint, section validation, then the M stage. Do not
+include append-only ``signals/`` digest files in a migration.
 """
 import argparse
 import pathlib
@@ -163,7 +123,7 @@ def load(path):
     raw = path.read_text(encoding="utf-8")
     m = FM_PAT.match(raw)
     if not m:
-        raise ValueError("frontmatter(+++ 블록) 없음")
+        raise ValueError("frontmatter (+++ block) not found")
     return m.group(1), m.group(2)
 
 
@@ -196,60 +156,51 @@ def show(vals, n=5):
 
 
 def diff(before, after, expect_en=False):
-    """어긋난 항목만 사람이 읽을 수 있게.
-
-    수치는 방향을 나눠 본다. 원문의 지표는 번역본에 **남아 있어야** 하고(유실),
-    번역본의 큰 수는 원문에 **있어야** 한다(날조). 양쪽을 같은 집합으로 맞추라고
-    요구하면 "5개 부문 -> 5 categories" 같은 무해한 차이까지 실패로 잡힌다.
-    """
+    """Return human-readable invariant failures only."""
     out = []
     lost = significant(before["values"], LOSS_FLOOR) - after["values"]
     if lost:
-        out.append(f"원문 수치가 번역본에서 사라짐: {show(lost)}")
+        out.append(f"Source values missing after translation: {show(lost)}")
     invented = significant(after["values"], INVENT_FLOOR) - before["values"]
     if invented:
-        out.append(f"원문에 없는 수치가 번역본에 생김: {show(invented)}")
+        out.append(f"Values invented by translation: {show(invented)}")
     if before["ids"] != after["ids"]:
-        out.append(f"카드 ID 불일치 - 전 {before['ids']} / 후 {after['ids']}")
+        out.append(f"Card-ID mismatch: before {before['ids']} / after {after['ids']}")
     if before["sources"] != after["sources"]:
-        out.append(f"출처 태그 수 {before['sources']} -> {after['sources']}")
+        out.append(f"Source-marker count: {before['sources']} -> {after['sources']}")
     if before["interps"] != after["interps"]:
-        out.append(f"[해석] 표시 수 {before['interps']} -> {after['interps']}")
+        out.append(f"Interpretation-marker count: {before['interps']} -> {after['interps']}")
     if before["sections"] != after["sections"]:
-        out.append(f"절 구성 {before['sections']} -> {after['sections']}")
+        out.append(f"Section layout: {before['sections']} -> {after['sections']}")
     for k, v in before["fm"].items():
         if after["fm"].get(k) != v:
             out.append(f"frontmatter '{k}' 변경: {v!r} -> {after['fm'].get(k)!r}")
     for k in after["fm"]:
         if k not in before["fm"]:
-            out.append(f"frontmatter에 없던 키 추가: '{k}'")
+            out.append(f"New frontmatter key: '{k}'")
     if expect_en:
         out += english_gaps(after)
     return out
 
 
 def english_gaps(after):
-    """번역이 실제로 일어났는지 본다.
-
-    위의 불변식 검사는 '무엇도 잃지 않았음'만 증명한다. 모델이 원문을 그대로
-    돌려줘도 전부 통과한다 - 그래서 '영어가 됐는가'를 따로 물어야 한다.
-    """
+    """Return evidence that translation did not actually produce English."""
     out = []
     wrong = [t for t, k in zip(after["titles"], after["sections"])
              if t != SECTION_TITLES[k]["en"]]
     if wrong:
-        out.append(f"절 제목이 아직 영어가 아님: {wrong[:3]}")
+        out.append(f"Section titles are still not English: {wrong[:3]}")
     if after["ko_markers"]:
-        out.append(f"[출처/해석] 표시가 {after['ko_markers']}개 한국어로 남음 "
+        out.append(f"{after['ko_markers']} source/interpretation markers remain Korean "
                    "([source: ...] / [interpretation])")
     ratio = after["hangul"] / after["chars"]
     if ratio > 0.02:
-        out.append(f"본문이 아직 한국어 (한글 비중 {ratio:.0%}) - 번역되지 않았다")
+        out.append(f"Body remains Korean (Hangul share {ratio:.0%}); not translated")
     return out
 
 
 def heading_map_for(body):
-    """이 카드에 실제로 있는 절만, ko -> en 매핑으로."""
+    """Return only this card's section-title mappings from Korean to English."""
     lines = []
     for _, key, title, _ in split_sections(body):
         lines.append(f"   ## {title}  ->  ## {SECTION_TITLES[key]['en']}")
@@ -277,12 +228,12 @@ def process(path, outdir, model):
     fm_raw, body = load(path)
     before = fingerprint(fm_raw, body)
     if not before["sections"]:
-        return None, ["표준 절을 찾지 못함 - check_sections.py 먼저"]
+        return None, ["No standard section found; run check_sections.py first"]
 
     translated = translate(path.read_text(encoding="utf-8"), body, model)
     m = FM_PAT.match(translated)
     if not m:
-        return None, ["번역 결과에 frontmatter가 없음"]
+        return None, ["Translation output has no frontmatter"]
     after = fingerprint(m.group(1), m.group(2))
 
     problems = diff(before, after, expect_en=True)
@@ -314,7 +265,7 @@ def convert_headings(paths):
         raw = path.read_text(encoding="utf-8")
         m = FM_PAT.match(raw)
         if not m:
-            failed.append((path.name, ["frontmatter 없음"]))
+            failed.append((path.name, ["frontmatter missing"]))
             continue
         fm_raw, body = m.group(1), m.group(2)
         # 다이제스트(신호 파일)는 **추가 전용·수정 금지**다 (README 3곳에 명시).
@@ -342,10 +293,10 @@ def convert_headings(paths):
         path.write_text(f"+++\n{fm_raw}\n+++\n{new_body}", encoding="utf-8")
         changed.append(path.name)
 
-    print(f"절 제목·근거 표시 영어화: {len(changed)}장 변경 / {len(failed)}장 실패"
-          + (f" / 다이제스트 {len(skipped)}장 건너뜀(추가 전용)" if skipped else ""))
+    print(f"English section titles/source markers: {len(changed)} changed / {len(failed)} failed"
+          + (f" / {len(skipped)} append-only digests skipped" if skipped else ""))
     if changed:
-        print("다음: python scripts/check_sections.py && "
+        print("Next: python scripts/check_sections.py && "
               "python scripts/lint_card.py research/*/*.md --index research/_index.md")
     return failed
 
@@ -369,18 +320,18 @@ def verify_against_head(paths, expect_en=True):
             raw = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=BASE,
                                  capture_output=True, check=True).stdout.decode("utf-8")
         except subprocess.CalledProcessError:
-            failed.append((rel, ["HEAD 에 없는 파일 - 새 카드는 이 검사 대상이 아니다"]))
+            failed.append((rel, ["File is not in HEAD; new cards are outside this check"]))
             continue
 
         m = FM_PAT.match(raw)
         if not m:
-            failed.append((rel, ["HEAD 판본에 frontmatter 가 없음"]))
+            failed.append((rel, ["HEAD version has no frontmatter"]))
             continue
         before = fingerprint(m.group(1), m.group(2))
 
         m2 = FM_PAT.match(path.read_text(encoding="utf-8"))
         if not m2:
-            failed.append((rel, ["현재 파일에 frontmatter 가 없음"]))
+            failed.append((rel, ["Current file has no frontmatter"]))
             continue
         after = fingerprint(m2.group(1), m2.group(2))
 
@@ -394,7 +345,7 @@ def verify_against_head(paths, expect_en=True):
             ok.append(rel)
             print(f"[PASS] {rel}")
 
-    print(f"\n통과 {len(ok)}장 / 실패 {len(failed)}장")
+    print(f"\nPassed {len(ok)} / failed {len(failed)}")
     return failed
 
 
@@ -405,46 +356,46 @@ def apply(outdir):
         dest = BASE / "research" / src.relative_to(outdir)
         shutil.copyfile(src, dest)
         n += 1
-    print(f"{n}장 반영 완료 -> research/")
-    print("다음: python scripts/lint_card.py research/*/*.md --index research/_index.md")
+    print(f"Applied {n} cards -> research/")
+    print("Next: python scripts/lint_card.py research/*/*.md --index research/_index.md")
     print("      python scripts/check_sections.py")
     print("      python tools/build_index.py && python tools/sync_db.py && python tools/embed_cards.py")
-    print("반영 후 전체 --verify와 M단계까지 완료할 것")
+    print("After applying, run full --verify and the M stage.")
     return n
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cards", nargs="*", help="번역할 카드 경로 (생략하고 --apply만도 가능)")
-    ap.add_argument("--out", default="draft/en", help="검증 통과분을 쌓을 디렉터리")
+    ap.add_argument("cards", nargs="*", help="Card paths to translate (may omit only with --apply).")
+    ap.add_argument("--out", default="draft/en", help="Directory for verified translation output.")
     ap.add_argument("--model", default="claude-opus-5")
-    ap.add_argument("--apply", action="store_true", help="--out의 내용을 research/에 반영")
+    ap.add_argument("--apply", action="store_true", help="Apply --out contents into research/.")
     ap.add_argument("--verify", action="store_true",
-                    help="번역기를 부르지 않고, 이미 바뀐 카드를 git HEAD 판본과 대조만 한다")
+                    help="Compare already changed cards with git HEAD without invoking a translator.")
     ap.add_argument("--headings", action="store_true",
-                    help="번역기 없이 절 제목과 [출처]/[해석] 표시만 제자리에서 영어로 바꾼다")
+                    help="Convert only section titles and markers to English in place, without a translator.")
     ap.add_argument("--allow-korean-prose", action="store_true",
-                    help="--verify 에서 '아직 영어가 아님' 검사를 끈다 (제목만 바꾼 중간 상태 점검용)")
+                    help="Disable the English-prose check in --verify (for an intermediate headings-only state).")
     a = ap.parse_args()
 
     if a.headings:
         if not a.cards:
-            sys.exit("바꿀 카드 경로를 지정할 것 (예: --headings research/*/*.md)")
+            sys.exit("Specify card paths to change (for example, --headings research/*/*.md)")
         sys.exit(1 if convert_headings(a.cards) else 0)
 
     if a.verify:
         if not a.cards:
-            sys.exit("검사할 카드 경로를 지정할 것 (예: --verify research/games/*.md)")
+            sys.exit("Specify card paths to verify (for example, --verify research/games/*.md)")
         sys.exit(1 if verify_against_head(a.cards, not a.allow_korean_prose) else 0)
 
     outdir = BASE / a.out
     if a.apply and not a.cards:
         if not outdir.exists():
-            sys.exit(f"{outdir} 가 없음 - 먼저 번역할 것")
+            sys.exit(f"{outdir} does not exist; translate cards first")
         apply(outdir)
         return
     if not a.cards:
-        sys.exit("번역할 카드를 지정하거나 --apply 를 쓸 것")
+        sys.exit("Specify cards to translate or use --apply")
 
     outdir.mkdir(parents=True, exist_ok=True)
     ok, failed = [], []
@@ -463,11 +414,11 @@ def main():
             for pr in problems:
                 print("   -", pr)
 
-    print(f"\n통과 {len(ok)}장 / 실패 {len(failed)}장 -> {outdir}")
+    print(f"\nPassed {len(ok)} / failed {len(failed)} -> {outdir}")
     if ok:
-        print(f"내용을 확인한 뒤: python scripts/migrate_card_lang.py --out {a.out} --apply")
+        print(f"Review the output, then run: python scripts/migrate_card_lang.py --out {a.out} --apply")
     if failed:
-        print("실패한 카드는 손대지 않았다. 원문 그대로 남아 있다.")
+        print("Failed cards were not modified; their source remains unchanged.")
         sys.exit(1)
 
 

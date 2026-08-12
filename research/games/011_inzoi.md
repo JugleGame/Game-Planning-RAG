@@ -1,13 +1,13 @@
 +++
 card_id = "GAME-011"
 type = "mixed"
-title = "inZOI (2025 얼리액세스, inZOI Studio / KRAFTON)"
+title = "inZOI (2025 Early Access, inZOI Studio / KRAFTON)"
 summary = "The first major title equipped with AI NPCs—sales success, but a threefold challenge of retention, performance, and public opinion"
 genres = ["GENRE-003"]
 elements = ["ELEM-005"]
 tags = ["life-sim", "ai-native", "aaa", "high-cost", "divisive"]
 updated = "2026-07-27"
-confidence = "high"              # 판매·지표는 공식 발표 및 보도 집계
+confidence = "high"              # Sales and metrics use official announcements and reporting aggregates.
 +++
 ## Summary and Sales/Review Metrics
 A life simulation highlighted as a rival to The Sims. It sold more than 1,000,000 copies immediately after its early-access launch (2025-03) [source: KRAFTON announcement aggregate, as of 2025-03]. However, concurrent users fell by about 98% within three months, and the initial 86% Steam positive rate declined [source: inZOI game overview aggregate, 2026-02 check]. Reviews rebounded after the release of the free expansion ‘Island Getaway’ (Stardew Valley-style island farming content)—79% positive among 13,768 total reviews and 83% positive among 598 reviews from the last 30 days [source: digest 2026-07-20 / GamesRadar·PCGamesN reporting aggregate, 2026-07 check].

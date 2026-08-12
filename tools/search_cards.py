@@ -1,49 +1,23 @@
 #!/usr/bin/env python3
-"""search_cards.py - 자유 텍스트 질의에 가장 관련 있는 **절**을 하이브리드로 검색한다.
+"""Hybrid-search the most relevant RAG-card sections for a free-text query.
 
-## 회수 단위가 카드에서 절로 바뀌었다 (2026-08-12)
+Retrieval is section-based (``card_sections``), not card-based: it preserves
+signals such as failure cases and returns only the body that the consumer needs,
+reducing injected context substantially. Retrieval blends dense vectors with
+trigram search by Reciprocal Rank Fusion: vectors cover paraphrases and
+trigrams preserve proper nouns.
 
-예전에는 카드 한 장이 검색 단위였다. 두 가지가 동시에 망가져 있었다:
+The earlier card-level vector-only benchmark is historical. Re-measure current
+section-level bge-m3 retrieval with the gold set before tuning this system.
+The consumer repository duplicates this SQL, so schema/model/query changes
+require a coordinated consumer update.
 
-1. **정밀도** - "실패 사례"를 물어도 카드 전체의 평균 벡터와 비교했다. 성공 서사가
-   대부분인 카드에서 실패 문단의 신호는 묻힌다.
-2. **토큰** - 소비 측(기획 AI)이 카드 전문을 주입한다. 평균 2,075자 × 8장 ≈ 16,600자.
-   실제로 필요한 건 보통 절 한둘(평균 340자)이다.
-
-이제 `card_sections`에서 검색하고 절 본문을 그대로 돌려준다. 같은 회수 폭에서
-주입량이 약 85% 준다.
-
-## 왜 하이브리드인가 (2026-07-29 실측, 카드 단위 시절)
-
-의미 임베딩 하나만 쓰면 **고유명사를 뭉갠다.** 게임 제목은 의미가 아니라 글자이기
-때문이다. 실측(카드 55장, 고유명사 질의 17개):
-
-  "Undertale 불살 루트"          → 벡터 19위 / 트라이그램 1위
-  "Genshin Impact 원소 반응"     → 벡터 20위 / 트라이그램 1위
-  recall@6:  벡터 단독 12/17  →  하이브리드 17/17
-
-반대로 "죽을 때마다 무작위 업그레이드를 뽑는" 같은 의역 질의는 벡터가 잡고
-트라이그램이 놓친다. 그래서 둘을 섞는다.
-
-융합은 Reciprocal Rank Fusion — 점수가 아니라 **순위**를 더한다. 코사인 유사도
-(0~1)와 트라이그램 유사도(0.03 대)는 척도가 달라 점수를 직접 섞으면 한쪽이 항상 이긴다.
-
-주의: 위 실측의 '벡터 단독 12/17'은 임베딩 모델(ko-sroberta)의 입력 창이 128토큰이라
-카드의 15.8%만 벡터에 들어가던 시절의 숫자다. 창 8192짜리 bge-m3 + 절 단위 청킹으로
-바꾼 지금은 벡터 팔의 성능이 달라졌을 것이다 — **골드셋으로 다시 재야 한다.**
-
-## 하위 호환 경고
-
-**Game-Developer-AI 의 strategic/research_repo.py 가 이 SQL을 복제하고 있다.**
-테이블(card_sections), 차원(1024), 모델(bge-m3)이 전부 바뀌었으므로 그쪽도 같이
-고치지 않으면 같은 질의에 다른 근거가 나온다.
-
-사용법:
-  python tools/search_cards.py "AI가 실시간으로 심문하는 게임" [-k 5]
-  python tools/search_cards.py "..." --kind ELEM,GENRE       # 종류 제한
-  python tools/search_cards.py "..." --section-key gaps      # 특정 절만
-  python tools/search_cards.py "..." --show-body             # 주입될 실제 본문 확인
-  python tools/search_cards.py "..." --expand 3              # 인접 카드까지 넓히기
+Examples:
+  python tools/search_cards.py "an AI that interrogates the player in real time" -k 5
+  python tools/search_cards.py "..." --kind ELEM,GENRE
+  python tools/search_cards.py "..." --section-key gaps
+  python tools/search_cards.py "..." --show-body
+  python tools/search_cards.py "..." --expand 3
 """
 import argparse
 import pathlib
@@ -203,58 +177,58 @@ def check_transport(dsn, vec, query, k, mode, window):
         used_pg, pg_rows = rows_via("pg")
     except psycopg2.OperationalError as e:
         # auto로 폴백해서 https끼리 비교하면 '통과'가 나온다 - 그건 거짓 통과다.
-        sys.exit(f"5432에 붙을 수 없어 대조할 수 없다 (막힌 망에서는 이 점검을 돌릴 수 "
-                 f"없다): {str(e).strip().splitlines()[0][:120]}")
+        sys.exit(f"Cannot compare transports because 5432 is unavailable "
+                 f"(this check cannot run on a blocked network): {str(e).strip().splitlines()[0][:120]}")
     used_https, https_rows = rows_via("https")
-    print(f"[{used_pg}] {len(pg_rows)}행  vs  [{used_https}] {len(https_rows)}행")
+    print(f"[{used_pg}] {len(pg_rows)} rows  vs  [{used_https}] {len(https_rows)} rows")
 
     def key(r):
         return (r["card_id"], int(r["ord"]), r["section_key"], r["matched_by"])
 
     diffs = []
     if len(pg_rows) != len(https_rows):
-        diffs.append(f"행 수가 다르다: {len(pg_rows)} vs {len(https_rows)}")
+        diffs.append(f"row count differs: {len(pg_rows)} vs {len(https_rows)}")
     for i, (p, h) in enumerate(zip(pg_rows, https_rows)):
         if key(p) != key(h):
-            diffs.append(f"{i + 1}위: {key(p)} vs {key(h)}")
+            diffs.append(f"rank {i + 1}: {key(p)} vs {key(h)}")
         elif abs(float(p["cosine_sim"] or 0) - float(h["cosine_sim"] or 0)) > 1e-9:
-            diffs.append(f"{i + 1}위 {p['card_id']} 코사인: "
+            diffs.append(f"rank {i + 1} {p['card_id']} cosine: "
                          f"{p['cosine_sim']} vs {h['cosine_sim']}")
         elif p["body"] != h["body"]:
-            diffs.append(f"{i + 1}위 {p['card_id']} 본문이 다르다")
+            diffs.append(f"rank {i + 1} {p['card_id']} body differs")
     if diffs:
-        print("불일치:")
+        print("Mismatch:")
         for d in diffs:
             print(f"  - {d}")
         sys.exit(1)
-    print(f"일치 - 두 경로가 같은 절을 같은 순서로 돌려준다 ({len(pg_rows)}행)")
+    print(f"Match — both transports returned the same sections in the same order ({len(pg_rows)} rows)")
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("query", help="검색할 자유 텍스트")
+    ap.add_argument("query", help="free-text query")
     ap.add_argument("--dsn", default=None)
     ap.add_argument("--model", default="BAAI/bge-m3",
-                    help="embed_cards.py와 반드시 같아야 좌표계가 맞는다")
-    ap.add_argument("-k", type=int, default=5, help="전체 유사도 결과 수")
-    ap.add_argument("--counter-k", type=int, default=3, help="반례 절 결과 수")
-    ap.add_argument("--no-counter", action="store_true", help="반례 조회 생략")
+                    help="must match embed_cards.py to use the same embedding space")
+    ap.add_argument("-k", type=int, default=5, help="number of primary results")
+    ap.add_argument("--counter-k", type=int, default=3, help="number of counterexample-section results")
+    ap.add_argument("--no-counter", action="store_true", help="skip counterexample retrieval")
     ap.add_argument("--kind", default=None,
-                    help=f"쉼표 구분 종류 제한: {','.join(sorted(TYPE_VOCAB))}")
+                    help=f"comma-separated type filter: {','.join(sorted(TYPE_VOCAB))}")
     ap.add_argument("--section-key", default=None,
-                    help=f"쉼표 구분 절 제한: {','.join(ALL_SECTION_KEYS)}")
+                    help=f"comma-separated section filter: {','.join(ALL_SECTION_KEYS)}")
     ap.add_argument("--show-body", action="store_true",
-                    help="절 본문까지 출력 (소비 측에 실제로 주입될 내용)")
+                    help="include section bodies (the text delivered to consumers)")
     ap.add_argument("--expand", type=int, default=0,
-                    help="상위 결과 카드의 인접 카드(card_refs 1홉)를 N개까지 덧붙임")
+                    help="include up to N one-hop card_refs neighbors of top results")
     ap.add_argument("--window", type=int, default=CANDIDATE_WINDOW,
-                   help="각 검색기의 후보 창 (골드셋으로 재튜닝 필요)")
+                   help="candidate window per retriever; retune against the gold set")
     ap.add_argument("--mode", choices=("hybrid", "vector"), default="hybrid",
-                    help="hybrid(기본) 또는 비교용 vector 단독")
+                    help="hybrid (default) or vector-only comparison")
     ap.add_argument("--transport", choices=["auto", "pg", "https"], default="auto",
-                    help="auto=5432 먼저 시도 후 실패 시 443/HTTPS 폴백 (기본값)")
+                    help="auto tries 5432 first, then falls back to 443/HTTPS (default)")
     ap.add_argument("--check-transport", action="store_true",
-                    help="5432와 443/HTTPS가 같은 결과를 주는지 대조 (양쪽 다 열려야 함)")
+                    help="compare 5432 and 443/HTTPS results; both transports must be reachable")
     a = ap.parse_args()
     dsn = resolve_dsn(a.dsn)
 
@@ -262,12 +236,12 @@ def main():
     if kinds:
         bad = set(kinds) - set(TYPE_VOCAB)
         if bad:
-            sys.exit(f"알 수 없는 종류: {', '.join(sorted(bad))}")
+            sys.exit(f"Unknown type: {', '.join(sorted(bad))}")
     keys = [s.strip() for s in a.section_key.split(",")] if a.section_key else None
     if keys:
         bad = set(keys) - set(ALL_SECTION_KEYS)
         if bad:
-            sys.exit(f"알 수 없는 section_key: {', '.join(sorted(bad))}")
+            sys.exit(f"Unknown section_key: {', '.join(sorted(bad))}")
 
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer(a.model)
@@ -281,11 +255,11 @@ def main():
     rows = query_sections(cur, vec, a.query, a.k, a.mode, kinds, keys, window=a.window)
 
     if not rows:
-        print("검색 가능한 임베딩 없음 (sync_db.py → embed_cards.py 먼저 실행)")
+        print("No searchable embeddings; run sync_db.py then embed_cards.py")
         close()
         return
 
-    print(f"[{used}] '{a.query}'와 가장 관련 있는 절 ({a.mode}):")
+    print(f"[{used}] Sections most relevant to '{a.query}' ({a.mode}):")
     print_rows(rows, a.show_body)
 
     if not a.no_counter:
@@ -299,25 +273,25 @@ def main():
         counter = query_sections(cur, vec, a.query, a.counter_k, a.mode, kinds,
                                  COUNTER_SECTION_KEYS, window=a.window,
                                  exclude_refs=[section_ref(r) for r in rows])
-        print("\n반례·위험 절 (위 결과와 중복 제외):")
+        print("\nCounterexample/risk sections (excluding duplicates above):")
         if counter:
             print_rows(counter, a.show_body)
             # Game-Developer-AI 쪽은 여기에 유사도 하한선을 걸어 미달이면 비운다.
             # 이 CLI 는 사람이 눈으로 보는 도구라 자르지 않고 점수를 그대로 보인다.
-            print("  (참고: 파이프라인은 코사인 0.45 미만을 반례로 인정하지 않는다)")
+            print("  (Note: the pipeline does not accept cosine similarity below 0.45 as a counterexample.)")
         else:
-            print('  없음 - planner 프롬프트 규칙대로 "반례 조사 부족"으로 명시할 것')
+            print('  None — report "insufficient counterexample research" in the planner output.')
 
     if a.expand:
         seeds = sorted({r["card_id"] for r in rows})
         cur.execute(NEIGHBOR_SQL, {"seeds": seeds, "k": a.expand})
         neighbors = cur.fetchall()
-        print(f"\n인접 카드 (card_refs 1홉, 씨앗 {', '.join(seeds)}):")
+        print(f"\nNeighbor cards (one-hop card_refs; seeds: {', '.join(seeds)}):")
         if neighbors:
             for cid, title, kind in neighbors:
                 print(f"  {cid}  {title}")
         else:
-            print("  없음")
+            print("  None")
 
     close()
 

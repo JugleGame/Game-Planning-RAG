@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
-"""lint.py v3 - 카드 형식/근거 검사기 (TOML frontmatter 방식)
+"""Validate card format and evidence using TOML frontmatter.
 
-프론트매터를 +++ ... +++ 구분선 안의 TOML로 읽는다.
-tomllib는 Python 3.11+ 표준 내장(읽기 전용)이라 별도 설치 불필요.
-
-사용법:
-  python scripts/lint.py <카드.md> [<카드2.md> ...] [--index _index.md] [--evidence evidence.json]
-종료코드: 0=통과, 1=오류
+Usage:
+  python scripts/lint_card.py <card.md> [<card2.md> ...] [--index research/_index.md]
+Exit status: 0=pass, 1=error
 """
 import sys, re, argparse, pathlib, datetime
 import tomllib   # Python 3.11+ 표준 내장. 3.10 이하면: pip install tomli 후 'import tomli as tomllib'
@@ -25,13 +22,13 @@ def load_card(path):
     text = pathlib.Path(path).read_text(encoding="utf-8")
     m = FM_PAT.match(text)
     if not m:
-        return None, text, ["frontmatter(+++ 블록)를 찾을 수 없음"]
+        return None, text, ["frontmatter (+++ block) not found"]
     try:
         fm = tomllib.loads(m.group(1))
     except tomllib.TOMLDecodeError as e:
         return None, m.group(2), [
-            f"TOML 파싱 실패: {e}",
-            "  힌트: 문자열 값엔 큰따옴표, 날짜도 \"2026-07-15\"처럼 따옴표로 감쌀 것",
+            f"TOML parse failed: {e}",
+            "  Hint: quote string values and dates, for example \"2026-07-15\".",
         ]
     return fm, m.group(2), []
 
@@ -47,20 +44,20 @@ def present(fm, field):
 
 def check_frontmatter(fm):
     if str((fm or {}).get("type", "")).strip() == "digest":
-        return [f"다이제스트 필수 필드 누락 또는 빈 값: {f}" for f in DIGEST_REQUIRED
+        return [f"digest required field missing or empty: {f}" for f in DIGEST_REQUIRED
                 if not present(fm, f)]
-    errs = [f"필수 필드 누락 또는 빈 값: {f}" for f in REQUIRED if not present(fm, f)]
+    errs = [f"required field missing or empty: {f}" for f in REQUIRED if not present(fm, f)]
     if fm and "tags" in fm and not isinstance(fm["tags"], list):
-        errs.append("tags는 TOML 배열이어야 함 (예: tags = [\"a\", \"b\"])")
+        errs.append("tags must be a TOML array, for example tags = [\"a\", \"b\"]")
     cid = str((fm or {}).get("card_id", ""))
     typ = str((fm or {}).get("type", "")).strip()
     vocab = TYPE_VOCAB.get(cid.split("-")[0])
     if vocab and typ and typ not in vocab:
-        errs.append(f"type '{typ}'은 {cid.split('-')[0]} 허용값 {sorted(vocab)}에 없음")
+        errs.append(f"type '{typ}' is not valid for {cid.split('-')[0]}; allowed: {sorted(vocab)}")
     upd = (fm or {}).get("updated")
     if upd is not None and not isinstance(upd, datetime.date):
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", str(upd)):
-            errs.append(f"updated 형식 오류: '{upd}' (YYYY-MM-DD)")
+            errs.append(f"invalid updated date: '{upd}' (expected YYYY-MM-DD)")
     return errs
 
 def blocks(body):
@@ -87,7 +84,7 @@ def check_numbers(body):
         marked = (any(o in blk for o in SOURCE_OPENERS)
                   or any(m in blk for m in INTERP_MARKS))
         if nums and not marked:
-            errs.append(f"출처/해석 없는 지표 {nums[:3]}  <- \"{blk[:40]}...\"")
+            errs.append(f"metric without source or interpretation marker {nums[:3]}  <- \"{blk[:40]}...\"")
     return errs
 
 # 다이제스트(신호)의 '연결' 절은 구조상 전부 제안이다.
@@ -119,7 +116,7 @@ def facts_only(body: str) -> str:
 def check_refs(fm, body, index_ids):
     self_id = str((fm or {}).get("card_id", ""))
     found = {m.group(0) for m in ID_PAT.finditer(body)}
-    return [f"미등록 ID 참조: {r} (_index.md에 없음)"
+    return [f"unregistered ID reference: {r} (absent from _index.md)"
             for r in sorted(found) if r != self_id and r not in index_ids]
 
 def check_grounding(body, evidence_path):
@@ -127,7 +124,7 @@ def check_grounding(body, evidence_path):
     errs = []
     for n in {m for m in METRIC.findall(ID_PAT.sub("", body)) if not DATEISH.match(m)}:
         if n.replace(",", "") not in ev.replace(",", ""):
-            errs.append(f"근거 대조 실패: '{n}' 이 evidence.json에 없음")
+            errs.append(f"evidence mismatch: '{n}' is absent from evidence.json")
     return errs
 
 def load_index_ids(index_path):
@@ -139,9 +136,8 @@ def load_index_ids(index_path):
 def check_sections(card_id, body):
     """절 검사는 제목이 아니라 section_key로 한다.
 
-    제목은 한국어/영어 둘 다 받는다 - 카드 168장을 한 번에 번역할 수 없으므로
-    전환 기간에는 언어가 섞이고, 그 상태에서도 검사가 돌아야 한다.
-    다만 **한 카드 안에서** 섞이는 건 반쯤 옮기다 만 것이므로 오류로 잡는다.
+    과거 한국어 제목과 현재 영어 제목을 모두 해석한다.
+    다만 **한 카드 안에서** 섞이는 건 이관이 중단된 상태이므로 오류로 잡는다.
     """
     found_titles = [l[3:].rstrip() for l in body.splitlines() if l.startswith("## ")]
     need = KIND_SECTIONS.get(card_id.split("-")[0], [])
@@ -150,24 +146,24 @@ def check_sections(card_id, body):
     for t in found_titles:
         key = SECTION_KEY.get(t)
         if key is None:
-            errs.append(f"사전에 없는 절 제목: ## {t}")   # 오타·변형 탐지
+            errs.append(f"section title absent from schema: ## {t}")
             continue
         found_keys.append(key)
         langs |= {lang for lang, title in SECTION_TITLES[key].items() if title == t}
 
-    errs += [f"필수 절 누락: ## {section_title(k)}" for k in need if k not in found_keys]
-    errs += [f"이 종류({card_id.split('-')[0]})에 없는 절: ## {section_title(k)}"
+    errs += [f"required section missing: ## {section_title(k)}" for k in need if k not in found_keys]
+    errs += [f"section not allowed for type {card_id.split('-')[0]}: ## {section_title(k)}"
              for k in found_keys if k not in need]
     # 같은 절이 두 번 나오면 card_sections에서 같은 section_key가 중복된다.
     # (card_id, ord) 기본키라 저장은 되지만, 절 단위 필터가 어느 쪽을 뜻하는지
     # 모호해진다 - 카드 안에서 절은 유일해야 한다.
-    errs += [f"절 중복: ## {section_title(k)}"
+    errs += [f"duplicate section: ## {section_title(k)}"
              for k in sorted(set(found_keys)) if found_keys.count(k) > 1]
     if len(langs) > 1:
-        errs.append(f"한 카드 안에서 절 제목 언어가 섞임: {sorted(langs)} "
-                    "(번역이 중단된 카드일 수 있음)")
+        errs.append(f"mixed section-title languages in one card: {sorted(langs)} "
+                    "(translation may be incomplete)")
     # 뒤 공백 탐지 (정확 일치를 깨뜨리는 주범)
-    errs += [f"절 제목 뒤 공백: '## {l[3:]}'" for l in body.splitlines()
+    errs += [f"trailing whitespace in section title: '## {l[3:]}'" for l in body.splitlines()
              if l.startswith("## ") and l != l.rstrip()]
     return errs
 

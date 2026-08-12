@@ -1,5 +1,5 @@
-# ③ 게임 색인 (자동 생성 - 직접 수정 금지)
-생성: 2026-08-12 | 55장
+# Games Index (generated — do not edit)
+Generated: 2026-08-12 | 55 entries
 
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | A meta-narrative hit that starts as a card game and then betrays the genre itself | #deckbuilder #horror #meta #indie | 07-31
 - GAME-002 | Undertale (2015, Toby Fox) | The archetype of the meta-narrative RPG in which the game remembers every choice the player makes | #rpg #indie #meta #comedy #pixel | 07-15
@@ -11,7 +11,7 @@
 - GAME-008 | Outer Wilds (2019, Mobius Digital / Annapurna Interactive) | A time-loop exploration game where "knowledge is the only progression"—the peak of combining loops and teasers | #time-loop #exploration #mystery #divisive #retention | 07-15
 - GAME-009 | Hades (2020, Supergiant Games) | The peak of a narrative roguelike that turned repetition into a reward through "death = narrative progression" | #roguelike #narrative #retention #broad-appeal | 07-15
 - GAME-010 | Suck Up! (2023, Proxima Enterprises) | The first viral case with AI persuasion as its core loop—proving buzz, but failing at retention | #ai-native #comedy #voice #viral-hook #fragile | 07-15
-- GAME-011 | inZOI (2025 얼리액세스, inZOI Studio / KRAFTON) | The first major title equipped with AI NPCs—sales success, but a threefold challenge of retention, performance, and public opinion | #life-sim #ai-native #aaa #high-cost #divisive | 07-27
+- GAME-011 | inZOI (2025 Early Access, inZOI Studio / KRAFTON) | The first major title equipped with AI NPCs—sales success, but a threefold challenge of retention, performance, and public opinion | #life-sim #ai-native #aaa #high-cost #divisive | 07-27
 - GAME-012 | Borderlands 2 (2012, Gearbox / 2K) | The commercial peak of campy tone, selling 30 million copies by concentrating humor in a character (the villain) | #fps #looter-shooter #comedy #broad-appeal | 07-31
 - GAME-013 | The Stanley Parable (2013, Galactic Cafe) / Ultra Deluxe (2022, Crows Crows Crows) | A prototype of meta-narrative about the 'illusion of choice,' using a narrator who addresses the player's choices in real time | #walking-sim #narrative #meta #indie #comedy #broad-appeal | 07-20
 - GAME-014 | The Legend of Zelda: Breath of the Wild (2017, Nintendo EPD) | A work that reset the standard for open-world exploration by making every element of the world react through a "chemistry engine" | #action-adventure #open-world #physics #exploration #broad-appeal | 07-21

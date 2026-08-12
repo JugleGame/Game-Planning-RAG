@@ -36,7 +36,7 @@ propose must already exist, sourced, in one of the two cards involved in the gap
    GENRE → `Components` `Market Saturation` `Conventions and Expectations` `Gaps`
    GAME → `Summary and Sales/Review Metrics` `Elements Used` `Success/Failure Drivers` `Implications for Our Project`
    ARCH → `Problem` `Structure` `Core Rules` `Unity Implementation Steps` `Anti-patterns` `Verification` `Synergy`
-   A wrong section name makes `apply_patch.py` skip the patch silently.
+   A wrong section name makes `apply_patch.py` reject the entire patch set before writing any file.
 4. **A gap is not always a defect.** Before patching a `fm_body_drift` or `genre_anchor_missing`,
    read the sentence that triggered it. If the card mentions the ID to say it *deliberately did
    not* use that element (comparison, exclusion, counter-example), the card is right and the
@@ -72,8 +72,8 @@ propose must already exist, sourced, in one of the two cards involved in the gap
 The human reviews the JSON, then:
 
 ```bash
-python scripts/apply_patch.py patch.json --cards-dir research   # patches 만 적용
-# manual 항목은 사람이 직접 편집
+python scripts/apply_patch.py patch.json --cards-dir research   # applies patches only
+# A human edits manual items directly.
 python scripts/lint_card.py research/*/*.md --index research/_index.md
-python scripts/audit_links.py --for {CARD_ID}                   # 간극이 닫혔는지 재확인
+python scripts/audit_links.py --for {CARD_ID}                   # confirm that the gap closed
 ```

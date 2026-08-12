@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""init_db.py - db/00_init_all.sql을 대상 Postgres(Neon 포함)에 실행한다.
+"""Run db/00_init_all.sql against the target Postgres database (including Neon).
 
-사용법:
+Usage:
   python tools/init_db.py [--dsn postgresql://...]
-DSN 생략 시 .env의 DATABASE_URL을 사용한다 (_db.resolve_dsn 참조).
+Without a DSN, use DATABASE_URL from .env (see _db.resolve_dsn).
 """
 import argparse
 import pathlib
@@ -31,12 +31,12 @@ def main():
     try:
         cur.execute(sql)
     except Exception as e:
-        print(f"초기화 실패: {e}", file=sys.stderr)
+        print(f"Initialization failed: {e}", file=sys.stderr)
         sys.exit(1)
     finally:
         cur.close()
         conn.close()
-    print(f"{INIT_SQL.relative_to(BASE)} 실행 완료 -> {dsn.split('@')[-1] if '@' in dsn else dsn}")
+    print(f"Executed {INIT_SQL.relative_to(BASE)} -> {dsn.split('@')[-1] if '@' in dsn else dsn}")
 
 
 if __name__ == "__main__":

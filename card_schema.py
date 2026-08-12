@@ -7,17 +7,13 @@ scripts/lint_card.py, tools/build_index.py, tools/sync_db.py, tools/search_cards
 TYPE_VOCAB은 db/00_init_all.sql의 `type_vocab` CHECK 제약과 같은 값을
 유지해야 한다 (SQL 쪽은 Python 상수를 직접 참조할 수 없어 수동 동기화 필요).
 
-## 절 제목과 section_key (2026-08-12)
+## 절 제목과 section_key
 
-절 제목은 사람이 읽는 한국어 문자열이고, `section_key`는 기계가 거는 언어 중립
-식별자다. 둘을 나눈 이유:
+절 제목은 사람이 읽는 표시 문자열이고, `section_key`는 기계가 거는 언어 중립
+식별자다. 둘을 나누면 표시 언어가 바뀌어도 검색 필터와 DB 키를 유지할 수 있다.
 
-- 검색 필터가 `WHERE section_key = 'failure_cases'`로 걸린다. 이 키가 한국어면
-  오케스트레이션 프롬프트(영어 예정)와 데이터 사이에 번역 매핑이 영구히 남는다.
-- 절 제목을 영어로 바꾸는 날, DISPLAY만 갈아끼우면 DB·검색기·프롬프트가 그대로 산다.
-  카드 168장의 `## ` 헤더 치환과 이 사전 수정이 전부다.
-- 같은 뜻의 절은 종류가 달라도 같은 키를 쓴다 (ELEM '조합 궁합' == ARCH '조합 궁합'
-  == synergy). 종류를 가로지르는 절 단위 검색이 이것 때문에 가능하다.
+같은 뜻의 절은 종류가 달라도 같은 키를 쓴다. 과거 한국어 제목은 번역 검증과
+이전 데이터 판독을 위해 계속 인식하지만 새 카드는 영어 제목만 쓴다.
 """
 
 CARD_REQUIRED = ["card_id", "type", "title", "summary", "tags", "updated", "confidence"]
@@ -39,8 +35,7 @@ CONFIDENCE_VOCAB = ["high", "medium", "medium-low", "low"]
 # templates/*.md 가 정한다. 둘이 어긋나면 오류 메시지가 있지도 않은 제목을 요구하게
 # 되므로 **templates 와 항상 같은 언어**여야 한다.
 #
-# 2026-08-12: 카드 165장의 절 제목·근거 표시·본문 산문과 templates 4개를 영어로
-# 전환했다. SECTION_KEY는 과거 카드나 이관 작업 검증을 위해 두 언어를 계속 받는다.
+# SECTION_KEY는 과거 카드와 이관 작업 검증을 위해 두 언어를 계속 받는다.
 CARD_LANG = "en"
 
 # section_key -> 언어별 절 제목. 이게 절 사전의 단일 소스다.
@@ -82,7 +77,7 @@ KIND_SECTIONS = {
 
 ALL_SECTION_KEYS = sorted(SECTION_TITLES)
 
-# 제목 -> 키. **두 언어를 모두 받는다** - 전환 기간에 섞여 있어도 둘 다 해석된다.
+# 제목 -> 키. 과거 데이터 검증을 위해 두 언어를 모두 받는다.
 SECTION_KEY = {}
 for _key, _langs in SECTION_TITLES.items():
     for _title in _langs.values():
@@ -93,14 +88,6 @@ for _key, _langs in SECTION_TITLES.items():
 def section_title(key: str, lang: str = None) -> str:
     return SECTION_TITLES[key][lang or CARD_LANG]
 
-
-# 하위 호환 + 템플릿·오류 메시지용: 현재 언어의 '필수 절 제목 리스트'
-REQUIRED_SECTIONS = {kind: [section_title(k) for k in keys]
-                     for kind, keys in KIND_SECTIONS.items()}
-
-# 예전 이름. (제목 -> 키) 형태를 기대하던 코드용.
-SECTIONS = {kind: {section_title(k): k for k in keys}
-            for kind, keys in KIND_SECTIONS.items()}
 
 import re as _re
 

@@ -1,6 +1,6 @@
 +++
 card_id = "GAME-000"
-type = ""            # 허용값 = success | failure | mixed
+type = ""            # allowed: success | failure | mixed
 title = ""
 summary = ""
 genres = ["GENRE-000"]

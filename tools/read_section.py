@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""read_section.py - 카드/프롬프트에서 필요한 절만 잘라 읽는다 (부분 읽기).
-사용법:
-  python read_section.py <파일.md> "<절 제목>"          # 예: "조합 궁합"
-  python read_section.py <파일1> <파일2> ... "<절 제목>"  # 여러 카드에서 같은 절만
-전제: 절 제목이 표준 사전과 글자까지 일치 (lint의 check_sections가 보장)
+"""Read one named section from one or more cards.
+
+Usage:
+  python tools/read_section.py <card.md> "<section title>"
+  python tools/read_section.py <card1> <card2> ... "<section title>"
+
+The title must exactly match the schema; `lint_card.py` enforces it.
 """
 import sys, re, pathlib
 
@@ -15,12 +17,12 @@ def extract(path, section):
 def main():
     *files, section = sys.argv[1:]
     if not files:
-        sys.exit("사용법: read_section.py <파일...> \"<절 제목>\"")
+        sys.exit("Usage: read_section.py <files...> \"<section title>\"")
     for f in files:
         got = extract(f, section)
         name = pathlib.Path(f).stem
         if got is None:
-            print(f"[{name}] (절 '## {section}' 없음 - lint로 제목 확인 필요)")
+            print(f"[{name}] (section '## {section}' not found — check the title with lint)")
         else:
             print(f"[{name}] ## {section}\n{got}\n")
 
