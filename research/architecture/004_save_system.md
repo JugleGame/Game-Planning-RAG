@@ -1,63 +1,63 @@
-+++ 
++++
 card_id = "ARCH-004"
 type = "pattern"
-title = "세이브 시스템 (JSON 직렬화)"
-summary = "게임 상태를 사람이 읽을 수 있는 JSON 문서로 바꿔 플랫폼별 저장 경로에 안전하게 기록하고 되살리는 구조"
+title = "Save System (JSON Serialization)"
+summary = "A structure that turns game state into a human-readable JSON document, writes it safely to the per-platform save path, and restores it"
 tags = ["save", "persistence", "json", "core", "unity", "data"]
 updated = "2026-07-29"
 confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 SaveSystem(JSON) 명시 + Unity 공식 API 근거
-+++ 
-## 문제
++++
+## Problem
 
-게임을 껐다 켜면 플레이어가 한 일이 전부 사라진다. 오픈월드처럼 오래 플레이하는 게임에서 이것은 치명적이다. 게다가 청크가 수시로 꺼지는 구조(ARCH-003)에서는 "게임 종료 시"뿐 아니라 "청크가 꺼질 때"도 상태를 어딘가 남겨야 한다. 쉽게 말해: 공책에 적어두지 않으면 방을 나가는 순간 잊어버리는 것과 같다. 세이브 시스템이 그 공책이고, JSON은 공책에 쓰는 글씨체다.
+Close the game and reopen it, and everything the player did is gone. In a game played over long sessions, like an open world, that is fatal. On top of that, in a structure where chunks are switched off constantly (ARCH-003), state has to be left somewhere not only "on quit" but also "when a chunk unloads". Put simply: it is like forgetting the moment you leave the room because you never wrote it in a notebook. The save system is that notebook, and JSON is the handwriting you use in it.
 
-## 구조
+## Structure
 
-- 위치: `Assets/Scripts/Core/SaveSystem` — 저장 형식은 JSON. [출처: reference/unity_project_baseline.md 기준 구조]
-- 계층: 게임 상태 객체(순수 데이터 클래스) → 직렬화 → 문자열 → 파일. 되돌릴 때는 역순.
-- 저장 위치는 `Application.persistentDataPath` 하위. 이 경로는 플랫폼마다 알아서 올바른 위치를 가리키므로 직접 경로를 적지 않는다. [출처: Unity 저장 시스템 정리 문서들의 공통 권고]
-- 저장 단위 2종 — 전역 상태(플레이어 위치·인벤토리·진행도)와 청크 상태(청크별 변경 사항). 청크 상태는 청크 좌표를 키로 분리 보관해 필요한 것만 읽는다.
-- 직렬화 도구는 Unity 내장 JsonUtility 또는 외부 라이브러리 중 택1. 내장은 의존성이 없는 대신 Dictionary 같은 일부 타입을 직접 직렬화하지 못해 감싸는 클래스가 필요하다. [출처: Unity JsonUtility 관련 정리 문서] 외부 라이브러리 추가는 사람 승인 사항이다. [출처: reference/unity_project_baseline.md 금지 목록]
+- Location: `Assets/Scripts/Core/SaveSystem` — the save format is JSON. [source: reference/unity_project_baseline.md baseline structure]
+- Layers: game state object (a plain data class) → serialize → string → file. Reverse the order to restore.
+- The save location sits under `Application.persistentDataPath`. That path resolves to the correct location per platform on its own, so never write a path by hand. [source: common recommendation across Unity save-system write-ups]
+- Two save granularities — global state (player position, inventory, progression) and chunk state (per-chunk changes). Chunk state is stored separately keyed by chunk coordinate so only what is needed gets read.
+- The serializer is either Unity's built-in JsonUtility or an external library — pick one. The built-in one has no dependencies but cannot serialize some types such as Dictionary directly, so it needs wrapper classes. [source: write-ups on Unity JsonUtility] Adding an external library is subject to human approval. [source: reference/unity_project_baseline.md prohibited list]
 
-## 핵심 규칙
+## Core Rules
 
-- 저장 데이터 클래스는 게임플레이 클래스와 분리한다. MonoBehaviour를 그대로 저장하려 하지 않는다. "저장용 데이터"는 별도의 순수 클래스로 둔다.
-- 모든 세이브 파일에 버전 번호를 넣는다. 버전이 없으면 나중에 구조를 바꿨을 때 옛 세이브를 읽다 터지고, 어떻게 고칠지도 알 수 없다.
-- 쓰기는 원자적으로 한다: 임시 파일에 먼저 쓰고 → 성공하면 실제 파일로 교체. 쓰는 도중 게임이 꺼져도 기존 세이브가 살아남는다. [출처: Unity 세이브 모범사례 정리 — temp 파일 후 교체 방식]
-- 하드코딩 경로 금지. 반드시 `Application.persistentDataPath`를 기준으로 조합한다.
-- 저장/불러오기 자체는 이벤트 버스(ARCH-001)를 거치지 않고 직접 호출해도 된다. 단, "무엇이 일어났는가"의 수집은 버스 구독으로 하는 편이 게임플레이 코드를 깨끗하게 유지한다.
+- Keep save data classes separate from gameplay classes. Do not try to save a MonoBehaviour as-is. "Data for saving" lives in its own plain class.
+- Put a version number in every save file. Without one, changing the structure later means blowing up while reading an old save with no way to know how to fix it.
+- Write atomically: write to a temporary file first → on success, swap it into place. If the game dies mid-write, the existing save survives. [source: Unity save best-practice write-ups — the write-temp-then-swap approach]
+- No hardcoded paths. Always compose them relative to `Application.persistentDataPath`.
+- Saving and loading themselves may be called directly without going through the event bus (ARCH-001). Collecting "what happened", though, is cleaner done by subscribing to the bus, which keeps gameplay code uncluttered.
 
-## Unity 구현 절차
+## Unity Implementation Steps
 
-1. `Scripts/Core/SaveData.cs` 생성 — 버전 필드, 전역 상태 필드, 청크 상태 목록을 가진 순수 데이터 클래스. 직렬화 가능하도록 표시한다.
-2. `Scripts/Core/SaveSystem.cs` 생성 — Save(데이터), Load() 두 개의 공개 함수만 노출한다.
-3. 경로 결정 — persistentDataPath 하위에 세이브 폴더를 만들고, 슬롯별 파일명 규칙을 정한다.
-4. 원자적 쓰기 구현 — 임시 파일 쓰기 → 기존 파일 백업 → 교체. 각 단계 실패 시 되돌린다.
-5. 불러오기 구현 — 파일이 없으면 새 게임 기본값을 돌려준다(예외를 던져 게임이 멈추게 하지 않는다). 버전이 다르면 변환 함수를 태운다.
-6. 청크 연동 — ARCH-003 로더가 청크를 언로드하기 직전 그 청크의 변경 상태를 넘기고, 로딩 직후 되살린다.
-7. 자체 점검 — 저장 후 게임 재시작, 상태 복원 확인.
+1. Create `Scripts/Core/SaveData.cs` — a plain data class holding a version field, global state fields and a list of chunk states. Mark it serializable.
+2. Create `Scripts/Core/SaveSystem.cs` — expose only two public functions, Save(data) and Load().
+3. Decide the path — create a save folder under persistentDataPath and settle a per-slot filename rule.
+4. Implement atomic writing — write temp file → back up the existing file → swap. Roll back if any step fails.
+5. Implement loading — if the file is absent, return new-game defaults (do not throw an exception and stall the game). If the version differs, run it through a conversion function.
+6. Wire up chunks — the ARCH-003 loader hands over a chunk's changed state just before unloading it, and restores it right after loading.
+7. Self-check — save, restart the game, confirm the state was restored.
 
-## 안티패턴
+## Anti-patterns
 
-- PlayerPrefs로 게임 진행 저장: PlayerPrefs는 설정값(음량, 해상도)용이다. 진행 상황을 여기 담으면 구조화가 안 되고 이식·백업이 어렵다.
-- 저장 도중 덮어쓰기: 임시 파일 없이 실제 파일에 바로 쓰는 방식. 쓰는 중 종료되면 세이브가 깨져 플레이어의 모든 진행이 사라진다. 이 실수의 피해는 되돌릴 수 없다.
-- 버전 없는 세이브: 나중에 필드 하나만 추가해도 옛 세이브를 읽을 방법이 없어진다.
-- 게임 오브젝트 참조 저장: 씬의 오브젝트 참조를 저장하려는 시도. 참조는 실행마다 달라지므로 반드시 ID나 좌표 같은 값으로 바꿔 저장한다.
-- 매 프레임 저장: 안전해 보이지만 파일 쓰기는 비싸다. 저장 시점을 정해두고(구역 이동, 종료, 일정 간격) 그때만 쓴다.
-- 절대 경로 하드코딩: 개발 PC에서는 되고 다른 플랫폼에서는 파일을 못 찾는 대표적 원인이다.
+- Saving progression in PlayerPrefs: PlayerPrefs is for settings (volume, resolution). Putting progression there leaves it unstructured and hard to port or back up.
+- Overwriting during a save: writing straight to the real file with no temp file. Quit mid-write and the save is corrupted, taking all of the player's progress with it. The damage from this mistake cannot be undone.
+- Versionless saves: adding even a single field later leaves no way to read old saves.
+- Saving GameObject references: trying to persist references to scene objects. References differ on every run, so always convert them to values such as an ID or a coordinate.
+- Saving every frame: it looks safe, but file writes are expensive. Fix the save points (area transition, quit, fixed interval) and write only then.
+- Hardcoding absolute paths: the classic reason something works on the development PC and cannot find the file on any other platform.
 
-## 검증 방법
+## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
-- 왕복 검사: 상태 변경 → 저장 → 게임 종료 → 재실행 → 불러오기 후 값이 동일한지 확인.
-- 파일 없음 검사: 세이브 파일을 지운 상태로 실행했을 때 에러 없이 새 게임이 시작되어야 한다.
-- 깨진 파일 검사: 세이브 파일 내용을 일부러 훼손한 뒤 실행했을 때 게임이 죽지 않고 복구 또는 새 게임으로 넘어가야 한다.
-- 원자성 검사: 저장 직후 임시 파일이 남아 있지 않아야 한다.
-- 청크 왕복 검사: ARCH-003의 상태 보존 검사와 동일 시나리오를 세이브 파일 기준으로도 확인.
+- 0 compile errors, 0 console errors. [source: reference/unity_project_baseline.md self-check criteria]
+- Round-trip check: change state → save → quit the game → relaunch → load, and confirm the values match.
+- Missing-file check: launching with the save file deleted must start a new game without errors.
+- Corrupt-file check: launching after deliberately damaging the save file must not kill the game — it recovers or falls through to a new game.
+- Atomicity check: no temporary file may remain right after a save.
+- Chunk round-trip check: run the same scenario as ARCH-003's state-persistence check, verified against the save file as well.
 
-## 조합 궁합
+## Synergy
 
-- ARCH-003 (청크 로더): 청크 언로드 시 상태를 넘겨받는 관계. 두 카드의 규칙이 어긋나면 세계가 되돌아간다.
-- ARCH-001 (이벤트 버스): 무슨 일이 있었는지를 구독으로 모으면 저장 로직이 게임플레이 코드에 침투하지 않는다.
-- ELEM-014 (처벌적 죽음 순환): 궁합 주의 — 죽음의 무게를 주는 설계는 저장 시점 규칙과 직결된다. 어디서 저장되는지가 곧 난이도이므로, 저장 시점은 기술 결정이 아니라 설계 결정이다.
-- 충돌 주의 — 실시간 자동 저장과 처벌적 죽음 설계는 서로를 무력화할 수 있다. 둘을 함께 쓰려면 저장 대상과 시점을 명확히 나눠야 한다.
+- ARCH-003 (chunk loader): the relationship that hands state over on chunk unload. If the two cards' rules disagree, the world reverts.
+- ARCH-001 (event bus): gathering what happened via subscriptions keeps save logic from bleeding into gameplay code.
+- ELEM-014 (punishing death loop): fit warning — a design that gives death weight is directly tied to the save-point rule. Where the game saves *is* the difficulty, so save timing is a design decision, not a technical one.
+- Conflict warning — real-time autosave and a punishing death design can cancel each other out. Using both means drawing a clear line between what is saved and when.

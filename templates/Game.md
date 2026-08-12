@@ -9,10 +9,10 @@ tags = []
 updated = "2026-07-15"
 confidence = "medium"     # low / medium / high
 +++
-## 한 줄 요약 + 판매·리뷰 수치
+## Summary and Sales/Review Metrics
 
-## 사용한 요소
+## Elements Used
 
-## 성공/실패 원인
+## Success/Failure Drivers
 
-## 우리 프로젝트 시사점
+## Implications for Our Project

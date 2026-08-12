@@ -199,7 +199,8 @@ python tools/search_cards.py "AI가 실시간으로 심문하는 게임"
 ```
 
 - DSN 해석 우선순위(`tools/_db.py`): `--dsn` > `DATABASE_URL` 환경변수 > `.env` > 로컬 기본값.
-- **5432가 막힌 망**: `sync_db.py`·`embed_cards.py`·`verify_db.py`는 `--transport auto`(기본값)로 `bridge/neon_bridge.mjs`를 경유한 443/HTTPS 브리지에 자동 폴백합니다. 출력의 `[5432]` / `[443/HTTPS]` 표시로 어느 경로를 탔는지 확인하세요. HTTPS 경로에서는 `--dry-run`이 실행 없이 예정 건수만 보고합니다.
+- **5432가 막힌 망**: `sync_db.py`·`embed_cards.py`·`verify_db.py`·`search_cards.py`·`eval_retrieval.py`는 `--transport auto`(기본값)로 `bridge/neon_bridge.mjs`를 경유한 443/HTTPS 브리지에 자동 폴백합니다. 출력의 `[5432]` / `[443/HTTPS]` 표시로 어느 경로를 탔는지 확인하세요. 쓰기 계열의 HTTPS 경로에서는 `--dry-run`이 실행 없이 예정 건수만 보고합니다.
+- 두 경로가 **같은 결과를 주는지**는 `python tools/search_cards.py "<질의>" --check-transport`로 대조합니다(5432와 443이 둘 다 열려 있어야 하며, 한쪽만 열렸으면 거짓 통과 대신 그 사실을 알리고 멈춥니다). 검색 SQL은 psycopg2식 `%(이름)s`로 적혀 있고 브리지는 `$1,$2…`만 받기 때문에, `tools/_db.py`가 자리표시자를 바꿔 끼웁니다 — 이 대조는 그 변환이 결과를 조용히 바꾸지 않았음을 확인하는 안전장치입니다.
 - 검색은 **하이브리드**입니다. 의미 임베딩만 쓰면 고유명사(게임 제목)를 뭉개기 때문에, 벡터 검색과 트라이그램 검색의 **순위**를 Reciprocal Rank Fusion으로 합칩니다.
 - `strategy_ai` 롤은 읽기 전용(`SELECT`만) — 이 저장소를 소비하는 외부 에이전트가 쓸 계정입니다.
 
@@ -235,7 +236,7 @@ python tools/search_cards.py "타워 디펜스 시장 포화" --section-key mark
 ### 검색기를 건드리기 전에 재세요
 
 ```bash
-python scripts/eval_retrieval.py              # recall@6, 골드셋 eval/queries.json
+python scripts/eval_retrieval.py              # recall@6, 골드셋 eval/retrieval.jsonl
 python scripts/eval_retrieval.py --mode vector  # 벡터 단독과 비교
 ```
 

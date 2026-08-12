@@ -6,7 +6,7 @@
 - ② 장르: `research/_index_genre.md` (39장, 11,346B)
 - ③ 게임: `research/_index_game.md` (55장, 15,081B)
 - ④ 신호: `research/_index_signal.md` (6장, 2,258B)
-- ⑤ 아키텍처: `research/_index_arch.md` (27장, 8,820B)
+- ⑤ 아키텍처: `research/_index_arch.md` (27장, 8,884B)
 
 특정 카드를 찾는 게 아니라 '무엇이 있나'를 훑는 중이라면 색인 통독보다
 `python tools/search_cards.py "<질문>"` 이 싸고 정확하다.

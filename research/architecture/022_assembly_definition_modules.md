@@ -7,37 +7,37 @@ tags = ["asmdef", "module", "dependency", "compile-time", "convention", "unity",
 updated = "2026-08-02"
 confidence = "medium"
 +++
-## 문제
+## Problem
 스크립트가 전부 한 덩어리에 들어 있으면 두 가지가 동시에 무너진다. 첫째, 파일 하나를 고쳐도
 프로젝트 전체가 다시 컴파일되어 수정-확인 사이의 대기가 길어진다. 둘째, 아무 코드나 아무
 코드를 부를 수 있어서 "누가 누구에게 의존하는가"를 사람의 기억과 자제력에만 맡기게 된다.
 방 사이에 벽이 없으면 아무나 지나다니는 것과 같다. 벽을 세우고 문을 낸 자리로만 다니게
 만드는 것이 어셈블리 정의 파일(asmdef)이다.
 
-## 구조
+## Structure
 - 어셈블리 정의 파일은 폴더 하나를 독립된 컴파일 단위로 만든다. Unity 문서는 이를 "코드의
-  구조를 명확히 생각하고 의존성을 관리하는 데 도움이 된다"는 목적으로 설명한다 [출처: Unity 매뉴얼 Assembly definition files, 2026-08 확인].
+  구조를 명확히 생각하고 의존성을 관리하는 데 도움이 된다"는 목적으로 설명한다 [source: Unity 매뉴얼 Assembly definition files, 2026-08 확인].
 - 이 프로젝트의 모듈 후보는 새로 만드는 것이 아니라 이미 있다. 기준 구조의 `Scripts/` 하위
-  Core / World / Player / Interaction / NPC / Commentator 폴더가 그대로 경계선이다 [출처: reference/unity_project_baseline.md 3절 기준 구조].
+  Core / World / Player / Interaction / NPC / Commentator 폴더가 그대로 경계선이다 [source: reference/unity_project_baseline.md 3절 기준 구조].
 - 의존 방향은 아래에서 위로 한 방향이다. Core(EventBus·SaveSystem·GameManager)가 가장 아래,
   Commentator·NPC·Player 같은 기능 모듈이 그 위다. 기능 모듈은 Core를 참조하지만 Core는
   기능 모듈을 참조하지 않는다.
-- [해석] 이 방향은 새 규칙이 아니라 방송 규칙(해설자는 EventBus 방송에만 의존, 직접 참조
-  금지)을 컴파일러가 강제하게 옮겨 적은 것이다 [출처: reference/unity_project_baseline.md 3절 핵심 규칙].
+- [interpretation] 이 방향은 새 규칙이 아니라 방송 규칙(해설자는 EventBus 방송에만 의존, 직접 참조
+  금지)을 컴파일러가 강제하게 옮겨 적은 것이다 [source: reference/unity_project_baseline.md 3절 핵심 규칙].
 
-## 핵심 규칙
+## Core Rules
 - 참조는 명시적으로만 생긴다. 어셈블리 정의에 적지 않은 다른 모듈의 코드는 아예 보이지 않는다.
 - 순환 참조는 금지다. A가 B를 참조하면서 B가 A를 참조하는 구성은 컴파일이 성립하지 않는다.
   경계를 세울 때 가장 먼저 드러나는 것이 기존 코드의 순환이다.
 - 기본 어셈블리(Assembly-CSharp)에 남은 코드는 asmdef로 분리된 코드를 참조할 수 있지만,
-  분리된 코드는 기본 어셈블리를 참조할 수 없다 [출처: Unity 매뉴얼 Predefined assemblies reference, 2026-08 확인]. 그래서 이행은 항상 "가장 안쪽부터" 진행한다.
+  분리된 코드는 기본 어셈블리를 참조할 수 없다 [source: Unity 매뉴얼 Predefined assemblies reference, 2026-08 확인]. 그래서 이행은 항상 "가장 안쪽부터" 진행한다.
 - 에디터 전용 코드는 런타임 어셈블리에 섞지 않는다. 별도 어셈블리로 두고 플랫폼 포함 조건을
   에디터로 제한한다.
-- [해석] 경계를 나눌 단위는 폴더가 아니라 교체 가능성이다. 통째로 들어내도 나머지가 컴파일되는
+- [interpretation] 경계를 나눌 단위는 폴더가 아니라 교체 가능성이다. 통째로 들어내도 나머지가 컴파일되는
   덩어리가 하나의 어셈블리다.
 
-## Unity 구현 절차
-1. 가장 고립된 코드부터 시작한다. 다른 모듈을 거의 부르지 않는 UI나 에디터 도구가 첫 후보다 [출처: wallstop Unity Tips 'Assembly Definitions - Best Practices', 2026-08 확인].
+## Unity Implementation Steps
+1. 가장 고립된 코드부터 시작한다. 다른 모듈을 거의 부르지 않는 UI나 에디터 도구가 첫 후보다 [source: wallstop Unity Tips 'Assembly Definitions - Best Practices', 2026-08 확인].
 2. 해당 폴더 최상단에 어셈블리 정의 파일을 하나 만든다. 이름은 폴더의 역할을 그대로 쓴다
    (네이밍은 ARCH-008 규약을 따른다).
 3. 컴파일 에러 목록을 그대로 읽는다. 여기서 터지는 에러가 곧 그 모듈이 몰래 쓰고 있던
@@ -48,7 +48,7 @@ confidence = "medium"
 5. 한 번에 전부 나누지 않는다. 모듈 하나를 분리하고 콘솔 에러 0개를 확인한 뒤 다음으로 간다.
 6. 테스트 코드용 어셈블리는 대상 모듈을 참조하되, 대상 모듈이 테스트를 참조하지 않게 둔다.
 
-## 안티패턴
+## Anti-patterns
 - 프로젝트 후반에 한꺼번에 도입: 순환 참조가 무더기로 드러나 되돌리기도 진행하기도 어려운
   상태가 된다. 경계는 코드가 적을 때 세우는 것이 싸다.
 - 모든 모듈이 서로를 참조: 파일만 늘고 경계는 사라진다. 참조 목록이 전체 목록과 같아지는
@@ -57,8 +57,8 @@ confidence = "medium"
 - Core가 기능 모듈을 참조: 방향이 뒤집히면 Core를 고칠 때마다 전부가 다시 컴파일되어 도입
   이유 자체가 사라진다.
 
-## 검증 방법
-- 콘솔 에러 검사: 모듈 분리 직후 정상 재생 중 콘솔 에러 0개 [출처: reference/unity_project_baseline.md 4절 자체 점검].
+## Verification
+- 콘솔 에러 검사: 모듈 분리 직후 정상 재생 중 콘솔 에러 0개 [source: reference/unity_project_baseline.md 4절 자체 점검].
 - 방향 검사: Core 어셈블리의 참조 목록이 비어 있거나 Unity 기본 모듈만 있는지 확인한다.
   기능 모듈 이름이 들어 있으면 위반이다.
 - 순환 검사: 두 모듈이 서로를 참조하도록 지정하면 컴파일이 실패해야 한다. 실패하지 않으면
@@ -66,7 +66,7 @@ confidence = "medium"
 - 빌드 검사: 에디터가 아닌 실제 빌드가 성공해야 한다. 에디터 전용 코드 혼입은 이 지점에서만
   드러난다.
 
-## 조합 궁합
+## Synergy
 - ARCH-001 (이벤트 버스): 필수 짝. 경계를 세우면 끊기는 직접 호출을 대체하는 통로가 방송이다.
 - ARCH-008 (폴더·네이밍 규약): 경계선의 근거. 폴더 규약이 먼저 정해져 있어야 어셈블리를 어디서
   자를지가 논쟁이 아니다.

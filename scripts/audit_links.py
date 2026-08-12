@@ -26,7 +26,8 @@ lint_card.py가 '카드 한 장이 규격에 맞는가'를 본다면, 여기는 
 """
 import re, json, argparse, pathlib, sys, tomllib
 
-ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE|ARCH)-\d{3}\b")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+from card_schema import CARD_ID_RE as ID_PAT
 FM_PAT = re.compile(r"^\+\+\+\s*\n(.*?)\n\+\+\+\s*\n(.*)$", re.S)
 COMMENT_PAT = re.compile(r"<!--.*?-->", re.S)
 

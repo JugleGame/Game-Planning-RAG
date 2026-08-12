@@ -30,12 +30,12 @@ BASE = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 sys.path.insert(0, str(BASE))
 from _db import resolve_dsn
-from card_schema import CARD_REQUIRED, DIGEST_REQUIRED, split_sections
+from card_schema import (CARD_ID_RE as ID_PAT, CARD_REQUIRED, DIGEST_REQUIRED,
+                         split_sections)
 
 RESEARCH = BASE / "research"
 
 FM_PAT = re.compile(r"^\+\+\+\s*\n(.*?)\n\+\+\+\s*\n(.*)$", re.S)
-ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE|ARCH)-\d{3}\b")
 DATE_PREFIX = re.compile(r"^(\d{4}-\d{2}-\d{2})_")
 
 

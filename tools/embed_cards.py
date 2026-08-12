@@ -46,7 +46,7 @@ from sentence_transformers import SentenceTransformer
 BASE = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 sys.path.insert(0, str(BASE))
-from _db import resolve_dsn
+from _db import resolve_dsn, vec_literal
 from card_schema import SOURCE_TAG_RE
 
 # 임베딩 텍스트에서 걷어낼 것들.
@@ -129,11 +129,6 @@ UPDATE card_sections SET embedding = v.emb::vector, body_hash = v.h
 FROM (VALUES %s) AS v(emb, h, card_id, ord)
 WHERE card_sections.card_id = v.card_id AND card_sections.ord = v.ord::int
 """
-
-
-def vec_literal(v) -> str:
-    """pgvector는 '[0.1,0.2,…]' 문자열을 vector로 캐스팅해 받는다."""
-    return "[" + ",".join(f"{x:.8f}" for x in v) + "]"
 
 
 def load_model(name, device, fp16, max_seq, batch_size):

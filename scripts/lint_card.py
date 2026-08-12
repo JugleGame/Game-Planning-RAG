@@ -12,11 +12,10 @@ import sys, re, argparse, pathlib, datetime
 import tomllib   # Python 3.11+ 표준 내장. 3.10 이하면: pip install tomli 후 'import tomli as tomllib'
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from card_schema import (CARD_REQUIRED as REQUIRED, DIGEST_REQUIRED, TYPE_VOCAB,
+from card_schema import (CARD_ID_RE as ID_PAT, CARD_REQUIRED as REQUIRED,
+                         DIGEST_REQUIRED, TYPE_VOCAB,
                          KIND_SECTIONS, SECTION_KEY, SECTION_TITLES, section_title,
                          SOURCE_OPENERS, INTERP_MARKS)
-
-ID_PAT = re.compile(r"\b(?:ELEM|GAME|GENRE|ARCH)-\d{3}\b")
 METRIC = re.compile(r"\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?%|\d+(?:만|천억|억|천)\b|\d{4,}|\d{2,}(?:점|장|건|fps)")
 DATEISH = re.compile(r"^(?:19|20)\d{2}")
 
@@ -101,14 +100,20 @@ def check_numbers(body):
 # **추가 전용이고 수정 금지**이기 때문이다(README 3곳에 명시). 고칠 수 없는
 # 파일을 계속 실패시키면 저장소가 깨끗한 lint 상태에 영영 도달하지 못하고,
 # 그러면 진짜 실패도 같이 묻힌다.
-DIGEST_PROPOSAL_HEADING = "## 연결"
+# 두 언어를 다 받는다. 신호 파일은 추가 전용이라 기존 6장은 한국어로 남지만,
+# 앞으로 쓰는 다이제스트는 영어다 - 한쪽만 알면 제안 절을 못 잘라내고, 그러면
+# 고칠 수 없는 파일에 고칠 수 없는 lint 실패가 쌓인다 (위 주석의 바로 그 문제).
+DIGEST_PROPOSAL_HEADINGS = ("## 연결", "## Links")
 
 
 def facts_only(body: str) -> str:
     """다이제스트에서 관측 부분만 남긴다 (제안 절 이후를 자른다)."""
 
-    head, sep, _ = body.partition(DIGEST_PROPOSAL_HEADING)
-    return head if sep else body
+    for heading in DIGEST_PROPOSAL_HEADINGS:
+        head, sep, _ = body.partition(heading)
+        if sep:
+            return head
+    return body
 
 
 def check_refs(fm, body, index_ids):

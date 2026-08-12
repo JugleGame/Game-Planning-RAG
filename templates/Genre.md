@@ -9,10 +9,10 @@ tags = []
 updated = "2026-07-15"
 confidence = "medium"            # low / medium / high
 +++
-## 구성 요소
+## Components
 
-## 시장 포화도
+## Market Saturation
 
-## 관례와 기대치
+## Conventions and Expectations
 
-## 빈칸
+## Gaps

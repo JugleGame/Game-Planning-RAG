@@ -19,10 +19,13 @@
 | 절 분할이 깨졌는지 확인 (DB 없이) | `python scripts/check_sections.py` — 카드 전부가 표준 절로 쪼개지는지. sync_db 전에 여기서 먼저 깨진다 |
 | 카드 생성·삭제·ID 변경·다이제스트 반영 후 (M단계) | `python tools/build_index.py` → `tools/sync_db.py` → `tools/embed_cards.py` → `tools/verify_db.py` **이 순서로**. embed는 cards/card_sections를 읽으므로 반드시 sync 다음 |
 | DB 스키마가 v1(카드 단위)인 경우 | `psql "$DATABASE_URL" -f db/01_migrate_v2.sql` 1회. `verify_db.py`가 `card_sections` 없음으로 죽으면 이것 |
-| 검색기·모델·청크 단위를 건드릴 때 (필수) | 고치기 **전에** `python scripts/eval_retrieval.py`로 기준선을 찍고, 고친 뒤 다시 잰다. 골드셋은 eval/queries.json |
-| 카드를 영어로 옮길 때 | `python scripts/migrate_card_lang.py <카드들> --out draft/en` → 사람 확인 → `--apply`. 수치·ID·출처 태그가 하나라도 어긋나면 그 카드는 통과하지 못한다 |
+| 검색기·모델·청크 단위를 건드릴 때 (필수) | 고치기 **전에** `python scripts/eval_retrieval.py`로 기준선을 찍고, 고친 뒤 다시 잰다. 골드셋은 eval/retrieval.jsonl |
+| 카드를 영어로 옮길 때 | 2단계다. **① 기계 표면**(절 제목·`[source:`/`[interpretation]`)은 `migrate_card_lang.py --headings <카드들>` — 고정 치환이라 LLM을 쓰지 않는다. **2026-08-12에 165장 + templates 전부 완료.** **② 산문**은 `--out draft/en` → 사람 확인 → `--apply`. 수치·ID·출처 태그가 하나라도 어긋나면 그 카드는 통과하지 못한다 |
+| 남이(사람·에이전트가) 직접 번역한 카드를 검사만 할 때 | `migrate_card_lang.py --verify <카드들>` — git HEAD 판본과 대조한다. 산문이 아직 한국어인 중간 상태를 볼 때만 `--allow-korean-prose` |
+| 번역 게이트 자체를 고칠 때 | `python scripts/test_migrate_gate.py` 로 먼저·나중 둘 다 돌린다. 수치는 글자가 아니라 **값**으로 대조한다(500만 == 5,000,000) |
 | 임베딩이 느릴 때 | `embed_cards.py`는 `--device auto`가 기본이라 GPU가 보이면 알아서 쓴다. 안 쓰면 torch가 CPU 빌드다 — db/requirements.txt의 CUDA 설치 주석 참조. VRAM 6GB 미만은 fp16 + 배치 8로 자동 조정 |
-| 5432가 막힌 망 | 위 3개 스크립트는 `--transport auto`(기본값)로 443/HTTPS 브리지에 자동 폴백. 출력의 `[5432]`/`[443/HTTPS]`로 경로 확인. HTTPS에선 `--dry-run`이 실행 없이 예정 건수만 보고 |
+| 5432가 막힌 망 | 읽기(`search_cards.py`·`eval_retrieval.py`)와 쓰기(`sync_db.py`·`embed_cards.py`·`verify_db.py`) 모두 `--transport auto`(기본값)로 443/HTTPS 브리지에 자동 폴백. 출력의 `[5432]`/`[443/HTTPS]`로 경로 확인. 쓰기 계열의 HTTPS에선 `--dry-run`이 실행 없이 예정 건수만 보고 |
+| 두 접속 경로가 같은 결과를 주는지 확인 | `python tools/search_cards.py "<질의>" --check-transport` — 5432와 443이 **둘 다 열린 곳에서만** 의미가 있다. 한쪽만 열렸으면 거짓 통과 대신 멈춘다. 검색 SQL의 자리표시자(`%(이름)s` → `$N`)를 건드렸다면 반드시 돌릴 것 |
 | 미러링 결과 확인 | `verify_db.py`의 `unresolved_refs`가 0이 아니면 없는 ID를 참조하는 카드가 있다는 뜻 → md 원본을 고치고 재실행 |
 | 절 제목은 표준 사전의 문자열 그대로 | 변형 제목 발견 시 lint로 잡아 수정 (임의 추측 금지). 사전은 card_schema.py의 `SECTIONS` — 제목(한국어)과 `section_key`(언어 중립)를 짝으로 들고 있다. 절 제목을 바꾸려면 이 사전만 고친다 |
 

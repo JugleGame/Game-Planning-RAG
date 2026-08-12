@@ -7,39 +7,39 @@ tags = ["extraction", "risk-reward", "pvpve", "live-service", "divisive"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
-## 정의
+## Definition
 플레이어가 한 판 동안 재화나 장비를 모아도, 정해진 탈출 지점까지 살아서 나가야만
 그걸 진짜 내 것으로 가져갈 수 있는 구조입니다. 죽으면 그 판에 모은 것을 대부분
 잃습니다. 시험 문제를 다 풀어도 답안지를 제출하지 못하면 점수가 안 나오는 것과
 비슷합니다.
 
-## 성공 사례
+## Success Cases
 - Hunt: Showdown (2018, Crytek) - 1896 리브랜딩 이후 스팀 누적 약 880만 장, 매출
-  약 1억 5,790만 달러로 추산 [출처: raijin.gg 스팀 통계 집계, 2026-07 확인].
-  등록 이용자는 2024년 말 기준 약 1,000만 명 [출처: Hunt: Showdown 공식 발표,
+  약 1억 5,790만 달러로 추산 [source: raijin.gg 스팀 통계 집계, 2026-07 확인].
+  등록 이용자는 2024년 말 기준 약 1,000만 명 [source: Hunt: Showdown 공식 발표,
   2024-12 기준].
 - Mistfall Hunter (2026, Bellring Games) - 소울라이크 전투에 추출 구조를 결합해
-  2026-07-30 정식 출시 직후 스팀 글로벌 판매 3위까지 올랐다 [출처: Inven Global
+  2026-07-30 정식 출시 직후 스팀 글로벌 판매 3위까지 올랐다 [source: Inven Global
   보도, 2026-07 기준].
 
-## 실패 사례
+## Failure Cases
 - The Cycle: Frontier (2022, Yager Development) - 출시 직후 최고 동시접속
   40,690명을 찍었지만 무료화 이후 수익모델이 무너져 2023-09-27 서버를
-  종료했다 [출처: TechRadar 보도 / Wikipedia, 2023-09 기준].
+  종료했다 [source: TechRadar 보도 / Wikipedia, 2023-09 기준].
   실패 지점: 과금 유인이 약한 무료 배포 + 안티치트 팀 유지 비용을 감당하지 못함.
 - Hyenas (미출시, Creative Assembly / Sega) - 완성 단계까지 갔으나 유럽 수익성
-  악화를 이유로 2023년 출시 전 전면 취소됐다 [출처: Sega 발표 관련 보도,
+  악화를 이유로 2023년 출시 전 전면 취소됐다 [source: Sega 발표 관련 보도,
   2023 기준].
 
-## 유저 반응 요약
+## User Reaction Summary
 - 선호: 탈출에 성공하는 것 자체가 리스크를 감수한 데 대한 보상으로 느껴진다는
-  반응 - Hunt: Showdown의 장기 흥행 추세가 근거 [출처: raijin.gg, 2026-07 확인]
+  반응 - Hunt: Showdown의 장기 흥행 추세가 근거 [source: raijin.gg, 2026-07 확인]
 - 불호: "출시 직후 버그·서버 문제로 탈출 전에 죽는 게 실력이 아니라 운" -
   Mistfall Hunter는 출시 30분 내 공식 12건 알려진 이슈 목록을 공개했고, 종합
-  평가는 '복합적' 57% 긍정에 그쳤다 [출처: gamerfuzion.com 보도 / Steam,
+  평가는 '복합적' 57% 긍정에 그쳤다 [source: gamerfuzion.com 보도 / Steam,
   2026-07 기준]
 
-## 조합 궁합
+## Synergy
 - 좋음: ELEM-014 (처벌적 죽음 순환) - "죽으면 잃는다"는 긴장을 탈출 성공 여부라는
   별도의 축으로 한 번 더 쪼갠다.
 - 좋음: ELEM-004 (반복 메커닉) - 매 런마다 다른 조우를 겪고 지식만 누적된다는
@@ -53,10 +53,10 @@ confidence = "medium"
 - 빈칸 연결: GENRE-019 (서바이버라이크) - 그 카드의 빈칸 항목이 이 요소와의 결합
   부재를 지목한다 (시간 제한 생존만 있고 탈출 지점 개념이 없음).
 
-## 리스크
-- [해석] 무료화·라이브서비스 수익모델과 잘못 결합하면 The Cycle: Frontier처럼
+## Risks
+- [interpretation] 무료화·라이브서비스 수익모델과 잘못 결합하면 The Cycle: Frontier처럼
   과금 유인 부족으로 무너지기 쉽다.
-- [해석] 장르 자체가 스팀 커뮤니티에서 "포화 상태"라는 지적이 나올 만큼
+- [interpretation] 장르 자체가 스팀 커뮤니티에서 "포화 상태"라는 지적이 나올 만큼
   경쟁작이 몰려 있어(ARC Raiders 등), 신규 진입은 뚜렷한 차별점 없이는
-  묻히기 쉽다 [출처: Steam 커뮤니티 토론, 2026 확인].
+  묻히기 쉽다 [source: Steam 커뮤니티 토론, 2026 확인].
 <!-- 증거 부족: 장르 전체의 평균 유지율·이탈률 집계는 확인하지 못함 -->

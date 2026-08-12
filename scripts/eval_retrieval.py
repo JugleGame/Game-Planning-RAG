@@ -33,12 +33,10 @@ import json
 import pathlib
 import sys
 
-import psycopg2
-
 BASE = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE / "tools"))
 sys.path.insert(0, str(BASE))
-from _db import resolve_dsn
+from _db import open_cursor, resolve_dsn
 import search_cards
 
 
@@ -71,6 +69,8 @@ def main():
     ap.add_argument("--window", type=int, default=search_cards.CANDIDATE_WINDOW)
     ap.add_argument("--mode", choices=("hybrid", "vector"), default="hybrid")
     ap.add_argument("--verbose", action="store_true", help="통과한 질의의 회수 결과도 표시")
+    ap.add_argument("--transport", choices=["auto", "pg", "https"], default="auto",
+                    help="auto=5432 먼저 시도 후 실패 시 443/HTTPS 폴백 (기본값)")
     a = ap.parse_args()
 
     cases = load_cases(BASE / a.queries)
@@ -80,8 +80,8 @@ def main():
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer(a.model)
 
-    conn = psycopg2.connect(resolve_dsn(a.dsn))
-    cur = conn.cursor()
+    cur, close, used = open_cursor(resolve_dsn(a.dsn), a.transport)
+    print(f"[{used}] 질의 {len(cases)}개")
 
     hits = 0
     for case in cases:
@@ -95,8 +95,7 @@ def main():
             for r in rows:
                 print(f"        {r['card_id']}#{r['section_key']}  {r['title']}")
 
-    cur.close()
-    conn.close()
+    close()
 
     n = len(cases)
     print(f"\nrecall@{a.k} ({a.mode}, window={a.window}): {hits}/{n} = {hits / n:.1%}")

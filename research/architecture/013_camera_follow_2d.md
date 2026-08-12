@@ -7,52 +7,52 @@ tags = ["camera", "cinemachine", "pixel-perfect", "2d", "unity", "world-base"]
 updated = "2026-07-30"
 confidence = "high" # reference/unity_project_baseline.md 기준 구조의 World_Base 카메라 명시 + Cinemachine 3.1 공식 문서(2D graphics / Confiner 2D / Pixel Perfect 확장) 근거 + 안티패턴(카메라를 플레이어 자식으로 두기) 실사례
 +++ 
-## 문제
+## Problem
 
 카메라를 캐릭터의 자식으로 붙이면 가장 빨리 "따라가는 카메라"가 완성되지만, 캐릭터가 물리로 미세하게 떨릴 때마다 화면 전체가 같이 떨리고, 맵 끝에 서면 아무것도 없는 청크 밖 공간이 화면에 드러난다. 픽셀 아트라면 문제가 하나 더 있다 — 카메라 위치가 픽셀 격자에 딱 맞지 않으면 그림이 미세하게 흔들리며 뭉개진다. 쉽게 말해: 사진사를 달리는 사람 어깨에 묶어두면 사진이 다 흔들린다. 사진사를 따로 세워두고 "저 사람을 부드럽게 쫓아가되 무대 밖은 찍지 마라"고 규칙을 주는 것이 이 카드다.
 
-## 구조
+## Structure
 
-- 카메라는 World_Base 씬에 있고 항상 켜져 있다. Chunk 씬에는 카메라를 넣지 않는다. [출처: reference/unity_project_baseline.md 기준 구조 — World_Base.unity "플레이어, 카메라, UI (항상 켜짐)"]
+- 카메라는 World_Base 씬에 있고 항상 켜져 있다. Chunk 씬에는 카메라를 넣지 않는다. [source: reference/unity_project_baseline.md 기준 구조 — World_Base.unity "플레이어, 카메라, UI (항상 켜짐)"]
 - 역할 3분할 — ① Unity 카메라 + CinemachineBrain(실제로 화면을 그리는 쪽) ② CinemachineCamera(어디를 볼지 정하는 쪽, 추적 대상은 플레이어) ③ 확장 모듈(경계 제한, 픽셀 퍼펙트).
-- 기준 버전은 Cinemachine 3.x다. 2.x에서 3.x로 올릴 때는 이름과 구조가 바뀌므로 그냥 되지 않고 별도 작업이 필요하다. [출처: Unity Cinemachine 3.1 공식 매뉴얼 — Cinemachine 3은 2.X에서 올라올 때 작업이 필요함을 명시]
-- 2D는 직교(Orthographic) 투영을 쓴다. 직교로 두면 Cinemachine이 그에 맞춰 동작하고, 렌즈 설정의 시야각(FOV) 자리에 Orthographic Size가 들어온다. 즉 "얼마나 넓게 보이는가"를 정하는 값이 이것 하나다. [출처: Unity Cinemachine 3.1 공식 매뉴얼 — 2D graphics]
-- 월드 밖을 보여주지 않는 일은 Confiner 2D 확장이 맡는다. 이 확장은 카메라의 최종 위치를 사후 보정해 지정한 경계 영역 안으로 밀어넣는다. [출처: Unity Cinemachine 3.1 공식 매뉴얼 — Confiner 2D 확장]
-- 픽셀 아트라면 Pixel Perfect 확장을 함께 쓴다. 이 확장은 Pixel Perfect Camera 컴포넌트가 붙어 있는지 감지해서, 그 설정에 맞게 CinemachineCamera의 Orthographic Size를 스프라이트가 픽셀 단위로 정확히 보이는 값으로 보정한다. [출처: Unity Cinemachine 3.1 공식 매뉴얼 — Cinemachine Pixel Perfect 확장]
+- 기준 버전은 Cinemachine 3.x다. 2.x에서 3.x로 올릴 때는 이름과 구조가 바뀌므로 그냥 되지 않고 별도 작업이 필요하다. [source: Unity Cinemachine 3.1 공식 매뉴얼 — Cinemachine 3은 2.X에서 올라올 때 작업이 필요함을 명시]
+- 2D는 직교(Orthographic) 투영을 쓴다. 직교로 두면 Cinemachine이 그에 맞춰 동작하고, 렌즈 설정의 시야각(FOV) 자리에 Orthographic Size가 들어온다. 즉 "얼마나 넓게 보이는가"를 정하는 값이 이것 하나다. [source: Unity Cinemachine 3.1 공식 매뉴얼 — 2D graphics]
+- 월드 밖을 보여주지 않는 일은 Confiner 2D 확장이 맡는다. 이 확장은 카메라의 최종 위치를 사후 보정해 지정한 경계 영역 안으로 밀어넣는다. [source: Unity Cinemachine 3.1 공식 매뉴얼 — Confiner 2D 확장]
+- 픽셀 아트라면 Pixel Perfect 확장을 함께 쓴다. 이 확장은 Pixel Perfect Camera 컴포넌트가 붙어 있는지 감지해서, 그 설정에 맞게 CinemachineCamera의 Orthographic Size를 스프라이트가 픽셀 단위로 정확히 보이는 값으로 보정한다. [source: Unity Cinemachine 3.1 공식 매뉴얼 — Cinemachine Pixel Perfect 확장]
 
-## 핵심 규칙
+## Core Rules
 
-- 카메라 오브젝트는 World_Base에만 존재한다. 청크 씬에 카메라를 두면 청크를 켤 때마다 카메라가 늘어나 어느 카메라가 화면을 그리는지 알 수 없게 된다. [출처: reference/unity_project_baseline.md 청크 규칙]
+- 카메라 오브젝트는 World_Base에만 존재한다. 청크 씬에 카메라를 두면 청크를 켤 때마다 카메라가 늘어나 어느 카메라가 화면을 그리는지 알 수 없게 된다. [source: reference/unity_project_baseline.md 청크 규칙]
 - 카메라를 플레이어의 자식으로 두지 않는다. 추적은 부모-자식 관계가 아니라 추적 대상 설정으로 한다. 자식으로 두면 물리 떨림이 그대로 화면에 옮겨진다(ARCH-009).
-- 화면에 보이는 범위는 청크 활성 범위 안에 있어야 한다. 플레이어 주변 3x3 청크만 켜지므로, 카메라가 그보다 멀리 보면 아직 로딩되지 않은 빈 공간이 드러난다. [출처: reference/unity_project_baseline.md 기준 구조 — 플레이어 주변 3x3 청크만 활성]
+- 화면에 보이는 범위는 청크 활성 범위 안에 있어야 한다. 플레이어 주변 3x3 청크만 켜지므로, 카메라가 그보다 멀리 보면 아직 로딩되지 않은 빈 공간이 드러난다. [source: reference/unity_project_baseline.md 기준 구조 — 플레이어 주변 3x3 청크만 활성]
 - 카메라 위치를 코드에서 직접 대입하지 않는다. 위치를 정하는 주인은 하나여야 한다. 흔들림·확대 같은 연출도 Cinemachine 쪽 수단으로 처리한다.
 - 컷신·특수 시점이 필요하면 CinemachineCamera를 하나 더 만들어 우선순위로 전환한다. 기존 카메라의 설정값을 코드로 갈아치우는 방식은 쓰지 않는다 — 돌아올 상태를 아무도 모르게 된다.
-- 카메라 관련 사건(지역 진입 등)은 EventBus로 방송한다. 해설자는 이 방송만 본다. [출처: reference/unity_project_baseline.md 방송 규칙]
+- 카메라 관련 사건(지역 진입 등)은 EventBus로 방송한다. 해설자는 이 방송만 본다. [source: reference/unity_project_baseline.md 방송 규칙]
 
-## Unity 구현 절차
+## Unity Implementation Steps
 
 1. World_Base 씬의 Unity 카메라 투영을 Orthographic으로 두고 CinemachineBrain을 붙인다.
 2. CinemachineCamera 오브젝트를 World_Base에 만들고 추적 대상(Follow)을 플레이어로 지정한다. 카메라 오브젝트와 CinemachineCamera는 각각 별개다.
 3. 렌즈의 Orthographic Size로 보이는 범위를 정한다. 이 값이 청크 활성 범위 안에 들어오는지 확인한다.
 4. 추적 부드러움을 조정한다. 값을 0에 가깝게 두면 즉시 붙어 자식으로 둔 것과 같아지고, 너무 크면 조작감이 늦게 느껴진다.
-5. 월드 경계용 경계 영역을 만들고 Confiner 2D 확장을 CinemachineCamera에 추가한 뒤 그 경계를 지정한다. 확장 추가는 CinemachineCamera 인스펙터의 확장 추가 메뉴로 한다. [출처: Unity Cinemachine 3.1 공식 매뉴얼 — 확장 추가 방식]
+5. 월드 경계용 경계 영역을 만들고 Confiner 2D 확장을 CinemachineCamera에 추가한 뒤 그 경계를 지정한다. 확장 추가는 CinemachineCamera 인스펙터의 확장 추가 메뉴로 한다. [source: Unity Cinemachine 3.1 공식 매뉴얼 — 확장 추가 방식]
 6. 픽셀 아트인 경우: 카메라에 Pixel Perfect Camera 컴포넌트를 붙이고, CinemachineCamera에 Pixel Perfect 확장을 추가한다. 기준 해상도와 픽셀당 단위 값을 프로젝트 하나로 통일한다(ARCH-012의 데이터 자산에 기록해두면 흩어지지 않는다).
 7. 청크 경계 이동 확인 — 청크를 넘나들 때 화면에 로딩 안 된 영역이 보이지 않는지 본다(ARCH-003).
-8. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [출처: reference/unity_project_baseline.md 자체 점검 기준]
+8. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [source: reference/unity_project_baseline.md 자체 점검 기준]
 
-## 안티패턴
+## Anti-patterns
 
-- 카메라를 플레이어 자식으로 붙이기: [해석] 가장 흔한 시작점이며 가장 빨리 되돌리게 되는 방식이다. 물리 이동의 미세한 떨림, 넉백, 충돌 반동이 전부 화면 떨림으로 나타난다.
+- 카메라를 플레이어 자식으로 붙이기: [interpretation] 가장 흔한 시작점이며 가장 빨리 되돌리게 되는 방식이다. 물리 이동의 미세한 떨림, 넉백, 충돌 반동이 전부 화면 떨림으로 나타난다.
 - 카메라 위치를 스크립트에서 매 프레임 대입하기: Cinemachine이 계산한 위치와 서로 덮어써서, 화면이 두 값 사이를 진동한다.
 - 청크 씬에 카메라를 넣기: 청크가 켜지는 순간 카메라가 늘어난다. 어느 카메라가 그리는지 판별이 안 되고, 청크를 끄면 화면이 검게 된다.
 - 경계 제한 없이 출시하기: 맵 끝에서 빈 공간이 드러난다. "플레이어가 거기 안 갈 것"이라는 가정은 항상 틀린다.
-- 픽셀 아트에서 Orthographic Size를 임의의 값으로 두기: 스프라이트가 픽셀 격자와 어긋나 미세하게 뭉개지고 흔들린다. 이 값은 픽셀 퍼펙트 설정에서 계산돼야 한다. [출처: Unity Cinemachine 3.1 공식 매뉴얼 — Pixel Perfect 확장이 Orthographic Size를 보정함]
+- 픽셀 아트에서 Orthographic Size를 임의의 값으로 두기: 스프라이트가 픽셀 격자와 어긋나 미세하게 뭉개지고 흔들린다. 이 값은 픽셀 퍼펙트 설정에서 계산돼야 한다. [source: Unity Cinemachine 3.1 공식 매뉴얼 — Pixel Perfect 확장이 Orthographic Size를 보정함]
 - 카메라 확대·축소를 여러 스크립트에서 각각 건드리기: 마지막에 실행된 쪽이 이기므로 재현되지 않는 버그가 된다.
-- Cinemachine 2.x 문서를 보고 3.x 프로젝트를 만들기: 이름과 구조가 달라 그대로 따라가면 컴파일부터 막힌다. [출처: Unity Cinemachine 3.1 공식 매뉴얼 — 2.X 업그레이드에 작업이 필요함]
+- Cinemachine 2.x 문서를 보고 3.x 프로젝트를 만들기: 이름과 구조가 달라 그대로 따라가면 컴파일부터 막힌다. [source: Unity Cinemachine 3.1 공식 매뉴얼 — 2.X 업그레이드에 작업이 필요함]
 
-## 검증 방법
+## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [source: reference/unity_project_baseline.md 자체 점검 기준]
 - 카메라 단일성 검사: 플레이 중 활성 CinemachineBrain이 1개여야 한다. 청크를 여러 개 켠 상태에서도 같아야 한다.
 - 부모 관계 검사: 카메라 오브젝트의 부모가 플레이어가 아니어야 한다(씬 계층에서 확인).
 - 경계 검사: 월드 경계 바깥으로 플레이어를 밀어붙여도 화면에 경계 밖 영역이 보이지 않아야 한다.
@@ -61,7 +61,7 @@ confidence = "high" # reference/unity_project_baseline.md 기준 구조의 World
 - 픽셀 정합 검사(픽셀 아트인 경우): 카메라가 이동하는 동안 정지한 스프라이트의 픽셀이 흔들리거나 두께가 변하지 않아야 한다.
 - 씬 소속 검사: 카메라와 CinemachineCamera가 World_Base 씬에 속해야 한다(Chunk 씬 소속이면 불합격).
 
-## 조합 궁합
+## Synergy
 
 - ARCH-009 (2D 물리 이동): 직접 맞물림 — 물리로 움직이는 대상을 카메라가 쫓기 때문에, 추적을 물리 떨림에서 분리하는 것이 이 카드의 존재 이유다.
 - ARCH-003 (청크 로더): 제약 관계 — 보이는 범위가 3x3 활성 범위를 넘으면 안 된다. 카메라 범위를 늘리려면 청크 활성 규칙을 먼저 검토해야 한다.

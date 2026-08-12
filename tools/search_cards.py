@@ -49,11 +49,9 @@ import argparse
 import pathlib
 import sys
 
-import psycopg2
-
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from _db import resolve_dsn
+from _db import open_cursor, resolve_dsn, vec_literal
 from card_schema import ALL_SECTION_KEYS, COUNTER_SECTION_KEYS, TYPE_VOCAB
 
 # RRF 상수. 60 은 원 논문(Cormack et al. 2009)의 값이고, 상위 순위 간의 격차를
@@ -162,7 +160,8 @@ def query_sections(cur, vec, query, k, mode="hybrid", kinds=None,
                    section_keys=None, exclude_refs=None, window=CANDIDATE_WINDOW):
     frag, extra = build_filters(kinds, section_keys, exclude_refs)
     sql = (VECTOR_SQL if mode == "vector" else HYBRID_SQL).format(filters=frag)
-    cur.execute(sql, {"vec": vec, "query": query, "k": k,
+    # 좌표는 항상 pgvector 텍스트 표기로 넘긴다 - 5432와 443이 같은 값을 봐야 한다.
+    cur.execute(sql, {"vec": vec_literal(vec), "query": query, "k": k,
                       "window": window, "rrf_k": RRF_K, **extra})
     cols = [d[0] for d in cur.description]
     return [dict(zip(cols, r)) for r in cur.fetchall()]
@@ -172,13 +171,63 @@ def print_rows(rows, show_body=False):
     for r in rows:
         sim = r.get("cosine_sim")
         # 코사인은 트라이그램만으로 걸린 행에서 NULL 일 수 있다 (임베딩 없는 절).
-        shown = f"{sim:.4f}" if sim is not None else "  -   "
+        # HTTPS 경로는 수치형을 문자열로 돌려주기도 한다(브리지의 JSON 변환).
+        shown = f"{float(sim):.4f}" if sim is not None else "  -   "
         print(f"  {shown}  [{r['matched_by']:<7}] {r['card_id']}#{r['section_key']}"
               f"  {r['title']}  › {r['section_title']}")
         if show_body:
             for line in r["body"].splitlines():
                 print(f"        {line}")
             print()
+
+
+def check_transport(dsn, vec, query, k, mode, window):
+    """두 경로가 같은 질의에 같은 행을 주는지 확인한다 (양쪽 다 열릴 때만 가능).
+
+    자리표시자 재작성이 미묘하게 틀리면 검색 결과가 '조용히' 달라진다 - 지금처럼
+    대놓고 죽는 것보다 나쁘다. 그래서 회수 결과의 신원(절 키·순서·어느 팔에
+    걸렸는지)과 코사인 값을 직접 맞춰 본다.
+
+    수치형 표기는 경로마다 다르다(psycopg2는 Decimal, 브리지는 문자열). 표기가
+    아니라 값을 비교해야 하므로 float으로 맞추고 1e-9까지 본다.
+    """
+    def rows_via(transport):
+        cur, close, used = open_cursor(dsn, transport)
+        try:
+            return used, query_sections(cur, vec, query, k, mode, window=window)
+        finally:
+            close()
+
+    import psycopg2
+    try:
+        used_pg, pg_rows = rows_via("pg")
+    except psycopg2.OperationalError as e:
+        # auto로 폴백해서 https끼리 비교하면 '통과'가 나온다 - 그건 거짓 통과다.
+        sys.exit(f"5432에 붙을 수 없어 대조할 수 없다 (막힌 망에서는 이 점검을 돌릴 수 "
+                 f"없다): {str(e).strip().splitlines()[0][:120]}")
+    used_https, https_rows = rows_via("https")
+    print(f"[{used_pg}] {len(pg_rows)}행  vs  [{used_https}] {len(https_rows)}행")
+
+    def key(r):
+        return (r["card_id"], int(r["ord"]), r["section_key"], r["matched_by"])
+
+    diffs = []
+    if len(pg_rows) != len(https_rows):
+        diffs.append(f"행 수가 다르다: {len(pg_rows)} vs {len(https_rows)}")
+    for i, (p, h) in enumerate(zip(pg_rows, https_rows)):
+        if key(p) != key(h):
+            diffs.append(f"{i + 1}위: {key(p)} vs {key(h)}")
+        elif abs(float(p["cosine_sim"] or 0) - float(h["cosine_sim"] or 0)) > 1e-9:
+            diffs.append(f"{i + 1}위 {p['card_id']} 코사인: "
+                         f"{p['cosine_sim']} vs {h['cosine_sim']}")
+        elif p["body"] != h["body"]:
+            diffs.append(f"{i + 1}위 {p['card_id']} 본문이 다르다")
+    if diffs:
+        print("불일치:")
+        for d in diffs:
+            print(f"  - {d}")
+        sys.exit(1)
+    print(f"일치 - 두 경로가 같은 절을 같은 순서로 돌려준다 ({len(pg_rows)}행)")
 
 
 def main():
@@ -202,6 +251,10 @@ def main():
                    help="각 검색기의 후보 창 (골드셋으로 재튜닝 필요)")
     ap.add_argument("--mode", choices=("hybrid", "vector"), default="hybrid",
                     help="hybrid(기본) 또는 비교용 vector 단독")
+    ap.add_argument("--transport", choices=["auto", "pg", "https"], default="auto",
+                    help="auto=5432 먼저 시도 후 실패 시 443/HTTPS 폴백 (기본값)")
+    ap.add_argument("--check-transport", action="store_true",
+                    help="5432와 443/HTTPS가 같은 결과를 주는지 대조 (양쪽 다 열려야 함)")
     a = ap.parse_args()
     dsn = resolve_dsn(a.dsn)
 
@@ -220,16 +273,19 @@ def main():
     model = SentenceTransformer(a.model)
     vec = model.encode([a.query], normalize_embeddings=True)[0].tolist()
 
-    conn = psycopg2.connect(dsn)
-    cur = conn.cursor()
+    if a.check_transport:
+        check_transport(dsn, vec, a.query, a.k, a.mode, a.window)
+        return
+
+    cur, close, used = open_cursor(dsn, a.transport)
     rows = query_sections(cur, vec, a.query, a.k, a.mode, kinds, keys, window=a.window)
 
     if not rows:
         print("검색 가능한 임베딩 없음 (sync_db.py → embed_cards.py 먼저 실행)")
-        cur.close(); conn.close()
+        close()
         return
 
-    print(f"'{a.query}'와 가장 관련 있는 절 ({a.mode}):")
+    print(f"[{used}] '{a.query}'와 가장 관련 있는 절 ({a.mode}):")
     print_rows(rows, a.show_body)
 
     if not a.no_counter:
@@ -263,8 +319,7 @@ def main():
         else:
             print("  없음")
 
-    cur.close()
-    conn.close()
+    close()
 
 
 if __name__ == "__main__":

@@ -7,29 +7,29 @@ tags = ["bootstrap", "lifetime", "manager", "scene", "core", "unity"]
 updated = "2026-07-31"
 confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)가 Boot 씬 = 매니저 전용임을 명시 + Unity 공식 매뉴얼(DontDestroyOnLoad, 스크립트 실행 순서) 근거 + 안티패턴(매니저 중복) 실사례
 +++ 
-## 문제
+## Problem
 
 게임에는 "끝까지 살아 있어야 하는 것"과 "씬이 바뀌면 사라져야 하는 것"이 섞여 있다. 이 경계를 정하지 않으면 씬을 다시 불러올 때마다 관리자가 하나씩 더 생겨 같은 사건이 두 번 처리되고, 또는 에디터에서 청크 씬만 열고 플레이했더니 관리자가 아예 없어서 모든 게 조용히 안 돌아간다. 쉽게 말해: 학교에 교장 선생님은 한 명이어야 한다. 교실을 옮길 때마다 교장이 새로 생기면 지시가 두 번 내려오고, 교장이 없는 교실에서는 아무 결정도 못 한다. Boot 씬은 "교장을 딱 한 번 임명하는 장소"다.
 
-## 구조
+## Structure
 
-- Boot 씬에는 매니저만 둔다. 플레이어·카메라·UI는 World_Base, 월드 오브젝트는 Chunk 씬이다. [출처: reference/unity_project_baseline.md 기준 구조 — Boot.unity "시작 씬 (매니저만 존재)"]
-- 매니저 코드 위치: `Assets/Scripts/Core/` — GameManager, SaveSystem(JSON), EventBus. [출처: reference/unity_project_baseline.md 기준 구조]
+- Boot 씬에는 매니저만 둔다. 플레이어·카메라·UI는 World_Base, 월드 오브젝트는 Chunk 씬이다. [source: reference/unity_project_baseline.md 기준 구조 — Boot.unity "시작 씬 (매니저만 존재)"]
+- 매니저 코드 위치: `Assets/Scripts/Core/` — GameManager, SaveSystem(JSON), EventBus. [source: reference/unity_project_baseline.md 기준 구조]
 - 흐름은 한 방향이다 — Boot 씬 실행 → 매니저 생성·초기화 → 씬 경계를 넘어 살아남도록 표시 → World_Base 로드 → 청크 로더가 주변 청크를 Additive로 켠다(ARCH-002, ARCH-003).
-- 씬 경계 생존은 Unity의 DontDestroyOnLoad로 표시한다. 표시된 오브젝트는 씬 단독 로딩 시 파괴되지 않고 전용 보관 씬으로 옮겨진다. [출처: Unity 공식 매뉴얼 — Object.DontDestroyOnLoad]
-- 초기화 순서는 코드가 직접 정한다. 서로 다른 오브젝트의 Awake 호출 순서는 보장되지 않으므로, "EventBus가 준비된 다음 구독자가 붙는다" 같은 순서는 부트스트랩이 명시적으로 실행해야 한다. [출처: Unity 공식 매뉴얼 — 스크립트 실행 순서(Script Execution Order) 안내]
+- 씬 경계 생존은 Unity의 DontDestroyOnLoad로 표시한다. 표시된 오브젝트는 씬 단독 로딩 시 파괴되지 않고 전용 보관 씬으로 옮겨진다. [source: Unity 공식 매뉴얼 — Object.DontDestroyOnLoad]
+- 초기화 순서는 코드가 직접 정한다. 서로 다른 오브젝트의 Awake 호출 순서는 보장되지 않으므로, "EventBus가 준비된 다음 구독자가 붙는다" 같은 순서는 부트스트랩이 명시적으로 실행해야 한다. [source: Unity 공식 매뉴얼 — 스크립트 실행 순서(Script Execution Order) 안내]
 - 해설자(Commentator)는 EventBus 구독자다. 구독 시점이 부트스트랩 순서에 들어가야 초기 사건을 놓치지 않는다(ARCH-007).
 
-## 핵심 규칙
+## Core Rules
 
-- 매니저 인스턴스는 Boot 씬에서만 생성한다. World_Base나 Chunk 씬에 매니저 사본을 놓지 않는다. Chunk는 월드 오브젝트만 담는다. [출처: reference/unity_project_baseline.md 청크 규칙]
+- 매니저 인스턴스는 Boot 씬에서만 생성한다. World_Base나 Chunk 씬에 매니저 사본을 놓지 않는다. Chunk는 월드 오브젝트만 담는다. [source: reference/unity_project_baseline.md 청크 규칙]
 - 매니저는 단 하나여야 한다. 이미 있으면 나중에 생긴 쪽이 스스로 사라진다. 반대로 하면(먼저 있던 쪽을 지우면) 그 매니저를 붙잡고 있던 구독자들의 연결이 끊긴다.
 - 초기화 순서를 부트스트랩 한 곳에 적어둔다. 순서는 EventBus(방송망) → SaveSystem(불러오기) → 나머지 매니저 → 씬 로드다. 방송망이 없는데 구독자가 먼저 뜨면 구독이 조용히 실패한다.
 - 씬을 켜고 끄는 책임은 매니저 쪽에 둔다. 개별 게임플레이 스크립트가 각자 씬을 로드하면 어느 청크가 켜져 있는지 아무도 모르게 된다.
-- 씬 단독 로딩(Single)은 Boot→World_Base 전환 같은 큰 갈아치우기에만 쓴다. 청크는 반드시 Additive다. [출처: reference/unity_project_baseline.md 기준 구조 — Chunk는 Additive 로딩]
+- 씬 단독 로딩(Single)은 Boot→World_Base 전환 같은 큰 갈아치우기에만 쓴다. 청크는 반드시 Additive다. [source: reference/unity_project_baseline.md 기준 구조 — Chunk는 Additive 로딩]
 - 매니저가 살아남는다는 것은 매니저가 들고 있던 값도 살아남는다는 뜻이다. 새 플레이로 초기화해야 하는 값은 명시적으로 되돌린다(ARCH-004).
 
-## Unity 구현 절차
+## Unity Implementation Steps
 
 1. `Boot.unity` 씬을 만들고 빌드 씬 목록의 첫 항목으로 둔다. 이 씬에는 부트스트랩 오브젝트와 매니저만 놓는다.
 2. `Scripts/Core/`에 부트스트랩 역할을 하는 진입점을 만든다. 여기서 EventBus → SaveSystem → 나머지 매니저 순으로 준비시킨다.
@@ -37,27 +37,27 @@ confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baselin
 4. 해설자 구독 연결을 부트스트랩 순서에 포함시킨다. 구독은 EventBus 준비 이후, 월드 로드 이전이다(ARCH-007).
 5. 준비가 끝난 뒤 `World_Base.unity`를 로드한다. 청크 로딩은 World_Base 쪽 청크 로더에 넘긴다(ARCH-003).
 6. 에디터 편의 처리 — 개발자가 World_Base나 Chunk 씬을 직접 열고 플레이했을 때 매니저가 없으면, 콘솔에 "부트스트랩 없음"을 명확히 알리도록 한다. 조용히 동작하지 않는 상태가 가장 비싸다.
-7. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [출처: reference/unity_project_baseline.md 자체 점검 기준]
+7. 자체 점검 — 컴파일 에러 0개, 콘솔 에러 0개 확인 후 커밋. [source: reference/unity_project_baseline.md 자체 점검 기준]
 
-## 안티패턴
+## Anti-patterns
 
-- 매니저를 여러 씬에 하나씩 배치하기: [해석] 이 구조에서 가장 흔한 사고다. 씬을 Additive로 켤 때마다 매니저가 늘어나 같은 이벤트가 여러 번 처리되고, 해설자 반응이 중복으로 로그에 찍힌다.
+- 매니저를 여러 씬에 하나씩 배치하기: [interpretation] 이 구조에서 가장 흔한 사고다. 씬을 Additive로 켤 때마다 매니저가 늘어나 같은 이벤트가 여러 번 처리되고, 해설자 반응이 중복으로 로그에 찍힌다.
 - 씬 경계 생존 표시를 아무 오브젝트에나 붙이기: 살아남은 오브젝트는 다음 씬에도 그대로 남는다. 월드 오브젝트에 붙이면 청크를 끈 뒤에도 유령처럼 남아 콜라이더가 계속 작동한다.
-- Awake 호출 순서에 기대기: 서로 다른 오브젝트 간 순서는 보장되지 않는다. "잘 되는데요"는 우연히 그 순서로 로드됐다는 뜻이며, 씬 구성이 바뀌면 깨진다. [출처: Unity 공식 매뉴얼 — 스크립트 실행 순서 안내]
+- Awake 호출 순서에 기대기: 서로 다른 오브젝트 간 순서는 보장되지 않는다. "잘 되는데요"는 우연히 그 순서로 로드됐다는 뜻이며, 씬 구성이 바뀌면 깨진다. [source: Unity 공식 매뉴얼 — 스크립트 실행 순서 안내]
 - 초기화 순서를 실행 순서 설정값으로만 해결하기: 프로젝트 설정에 숨은 순서는 카드·스펙에 드러나지 않아 다음 사람이 원인을 못 찾는다. 순서는 코드에 보이게 쓴다.
 - 나중에 생긴 매니저 대신 먼저 있던 매니저를 파괴하기: 이미 그 매니저를 참조·구독한 쪽이 끊긴 참조를 들고 남는다.
 - Boot 씬에 플레이어나 테스트용 오브젝트를 슬쩍 두기: Boot는 매니저 전용이라는 규칙이 무너지는 순간, "어느 씬에 무엇이 있는가"를 다시 아무도 모르게 된다.
 
-## 검증 방법
+## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
+- 컴파일 에러 0개, 콘솔 에러 0개. [source: reference/unity_project_baseline.md 자체 점검 기준]
 - 단일성 검사: 플레이 중 매니저 종류별 인스턴스 개수가 각각 1개여야 한다(씬 계층에서 이름으로 확인 가능).
 - 생존 검사: World_Base를 다시 로드한 뒤에도 매니저가 계속 존재해야 하고, 새로 생기지 않아야 한다.
-- 중복 방송 검사: 이벤트 하나를 발생시켰을 때 `Logs/commentator.log`에 같은 이벤트ID 줄이 한 줄만 남아야 한다. 두 줄이면 매니저 또는 구독이 중복된 것이다. [출처: reference/unity_project_baseline.md 로그 규칙]
+- 중복 방송 검사: 이벤트 하나를 발생시켰을 때 `Logs/commentator.log`에 같은 이벤트ID 줄이 한 줄만 남아야 한다. 두 줄이면 매니저 또는 구독이 중복된 것이다. [source: reference/unity_project_baseline.md 로그 규칙]
 - 부트스트랩 누락 감지 검사: World_Base 씬을 단독으로 열고 플레이했을 때 "부트스트랩 없음" 경고 줄이 콘솔에 남아야 한다(조용히 실행되면 불합격).
 - 순서 검사: 초기화 로그 줄의 순서가 EventBus → SaveSystem → 나머지 → 씬 로드 순으로 나타나야 한다.
 
-## 조합 궁합
+## Synergy
 
 - ARCH-001 (이벤트 버스): 부트스트랩이 가장 먼저 준비시키는 대상. 방송망 준비 전 구독은 실패한다.
 - ARCH-002 (씬 스트리밍): 직접 맞물림 — Boot → World_Base → Chunk의 3단 구조가 이 카드의 수명 경계선과 같은 선이다.

@@ -7,24 +7,24 @@ tags = ["gamemanager", "singleton", "game-state", "core", "unity", "2d"]
 updated = "2026-07-31"
 confidence = "medium"
 +++
-## 문제
+## Problem
 "지금 일시정지 상태인가?", "게임이 끝났는가?" 같은 질문에 여러 스크립트가 각자
 `Time.timeScale`이나 자체 변수로 답하기 시작하면, 한쪽은 멈췄다고 생각하는데
 다른 쪽은 계속 움직이는 상태 불일치가 생긴다. `reference/unity_project_baseline.md`의 기준 구조는
 `Core/`에 GameManager를 EventBus·SaveSystem과 나란히 명시하지만
-[출처: reference/unity_project_baseline.md, 3절 폴더 지도], 이 프로젝트에는 아직 EventBus(ARCH-001)와
+[source: reference/unity_project_baseline.md, 3절 폴더 지도], 이 프로젝트에는 아직 EventBus(ARCH-001)와
 SaveSystem(ARCH-004) 카드만 있고 GameManager 자체를 다루는 카드가 없다.
 
-## 구조
+## Structure
 - `Core/`에 두는 전역 싱글턴 하나가 "현재 게임 상태"라는 단 하나의 값을 들고 있다.
   상태 목록은 최소 Playing / Paused / GameOver 세 가지에서 시작한다
-  [출처: Unity GameManager 패턴 정리 보도, uhiyama-lab.com, 2026-07 확인].
+  [source: Unity GameManager 패턴 정리 보도, uhiyama-lab.com, 2026-07 확인].
 - 다른 시스템은 이 상태를 직접 바꾸지 않고 GameManager에 "바꿔달라"고 요청하거나,
   ARCH-001 이벤트 버스를 통해 상태 변경 사건을 구독한다.
 - ARCH-011 Boot 부트스트랩 규칙에 따라 Boot 씬에서 딱 한 번 생성되고
   `DontDestroyOnLoad`로 씬 전환에도 살아남는다.
 
-## 핵심 규칙
+## Core Rules
 - 상태를 바꾸는 진입점은 GameManager의 공개 메서드(예: `Pause()`, `Resume()`,
   `EndGame()`) 하나로 좁힌다 — 여러 스크립트가 제각각 `Time.timeScale = 0`을
   직접 건드리면 "누가 멈췄다가 다시 풀었는지"를 추적할 수 없다.
@@ -36,7 +36,7 @@ SaveSystem(ARCH-004) 카드만 있고 GameManager 자체를 다루는 카드가 
   구체적 게임 규칙 로직까지 이 안에 몰아넣지 않는다 — 비대해지면 다시 여러
   스크립트가 각자 상태를 흉내 내는 문제로 돌아간다.
 
-## Unity 구현 절차
+## Unity Implementation Steps
 1. `Scripts/Core/GameManager.cs`를 만들고 상태를 enum(Playing, Paused, GameOver
    등, 스펙에서 필요한 만큼만)으로 정의한다.
 2. Boot 씬에서 인스턴스를 생성하고 ARCH-011 규칙대로 `DontDestroyOnLoad`를
@@ -49,7 +49,7 @@ SaveSystem(ARCH-004) 카드만 있고 GameManager 자체를 다루는 카드가 
    씬 스트리밍 규칙과 맞춰, GameManager가 어떤 씬 전환을 트리거할지 스펙에서
    먼저 정한다.
 
-## 안티패턴
+## Anti-patterns
 - 여러 스크립트가 각자 `bool isPaused` 같은 지역 플래그를 들고 있는 것 — 하나만
   갱신을 놓쳐도 전체 게임이 반쪽만 멈춘 것처럼 보인다.
 - GameManager에 UI 갱신, 사운드 재생, 점수 계산까지 전부 몰아넣어 하나의
@@ -58,7 +58,7 @@ SaveSystem(ARCH-004) 카드만 있고 GameManager 자체를 다루는 카드가 
 - 상태 전이 규칙 없이 아무 상태로나 즉시 바꾸는 것(GameOver 중에 Pause 요청을
   그대로 받아주는 등) — 상태 조합에 따라 다른 시스템이 잘못된 값을 관찰하게 된다.
 
-## 검증 방법
+## Verification
 - 상태 변경 메서드 호출 시마다 이벤트 버스로 방송되는지 로그(ARCH-010 로그
   규약)로 확인 — 상태 전이당 로그 한 줄이 있어야 한다.
 - 일시정지 상태에서 플레이어 이동·전투 등 게임플레이 입력이 실제로 멈추는지
@@ -67,7 +67,7 @@ SaveSystem(ARCH-004) 카드만 있고 GameManager 자체를 다루는 카드가 
   확인(싱글턴 가드 동작 여부).
 - 콘솔 에러 0개.
 
-## 조합 궁합
+## Synergy
 - ARCH-001 (이벤트 버스): 상태 변화를 다른 시스템에 전달하는 유일한 통로.
 - ARCH-011 (Boot 부트스트랩 & 매니저 수명): GameManager 자체가 이 규칙을 따르는
   대표 사례.

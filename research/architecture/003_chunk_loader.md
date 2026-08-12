@@ -1,62 +1,62 @@
-+++ 
++++
 card_id = "ARCH-003"
 type = "pattern"
-title = "청크 로더 (3x3 활성 규칙)"
-summary = "플레이어가 선 칸을 중심으로 주변 3x3 청크만 켜두고, 벗어난 칸은 꺼서 넓은 세계를 일정한 비용으로 유지하는 로딩 관리자"
+title = "Chunk Loader (3x3 Active Rule)"
+summary = "A loading manager that keeps only the surrounding 3x3 chunks active around the tile the player stands on and switches off the ones left behind, holding a wide world at a constant cost"
 tags = ["streaming", "chunk", "world", "performance", "open-world", "unity", "2d"]
 updated = "2026-07-29"
 confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 3x3 규칙 명시 + Unity 씬 활성화 비용 근거
-+++ 
-## 문제
++++
+## Problem
 
-세계를 청크로 쪼개도(ARCH-002) "언제 어느 청크를 켜고 끌지" 정하는 주체가 없으면 아무 소용이 없다. 전부 켜두면 쪼갠 의미가 없고, 지금 선 칸만 켜면 옆 칸으로 넘어가는 순간 아직 안 만들어진 세계가 눈앞에 보인다. 쉽게 말해: 어두운 방에서 손전등을 들고 걸을 때, 발밑만 비추면 다음 걸음이 보이지 않는다. 한 걸음 앞까지 미리 비춰야 자연스럽게 걸을 수 있다. 3x3 규칙이 그 "한 걸음 앞"이다.
+Splitting the world into chunks (ARCH-002) is useless without something deciding "when to switch which chunk on and off". Keeping them all on defeats the point of splitting; keeping only the current tile on means the moment you step sideways you are looking at a world that has not been built yet. Put simply: walking through a dark room with a flashlight, lighting only your feet leaves you blind to the next step. You have to light one step ahead to walk naturally. The 3x3 rule is that "one step ahead".
 
-## 구조
+## Structure
 
-- 위치: `Assets/Scripts/World/ChunkLoader` — 플레이어 주변 3x3 청크만 활성화한다. [출처: reference/unity_project_baseline.md 기준 구조]
-- 상태: 현재 플레이어가 속한 청크 좌표, 현재 켜져 있는 청크 좌표 집합.
-- 흐름: 플레이어 위치 → 속한 청크 좌표 계산 → 좌표가 바뀌었을 때만 → 필요한 집합(중심 기준 3x3 = 9칸) 계산 → (필요한데 없는 칸) 로딩 + (있는데 필요 없는 칸) 언로드.
-- 계산 방식: 월드 좌표를 청크 크기로 나눠 내림하면 청크 좌표가 나온다. 청크 좌표는 ARCH-002의 씬 파일명 `Chunk_x_y`와 1:1로 대응한다.
-- 로딩·언로드는 모두 비동기로 처리하고, 결과 알림은 ARCH-001 이벤트 버스로 방송한다.
+- Location: `Assets/Scripts/World/ChunkLoader` — activates only the 3x3 chunks around the player. [source: reference/unity_project_baseline.md baseline structure]
+- State: the chunk coordinate the player currently occupies, and the set of chunk coordinates currently switched on.
+- Flow: player position → compute the containing chunk coordinate → only when that coordinate changed → compute the required set (3x3 centred = nine tiles) → load (required but absent) + unload (present but not required).
+- Computation: dividing the world coordinate by the chunk size and flooring yields the chunk coordinate. Chunk coordinates map 1:1 onto ARCH-002's scene filenames `Chunk_x_y`.
+- Loading and unloading are both asynchronous, and completion notices are broadcast over the ARCH-001 event bus.
 
-## 핵심 규칙
+## Core Rules
 
-- 활성 범위는 중심 포함 3x3, 즉 9칸으로 고정한다. 범위를 늘리는 것은 구조 변경이므로 사람 승인이 필요하다. [출처: reference/unity_project_baseline.md]
-- 매 프레임 계산하지 않는다. 플레이어의 청크 좌표가 **바뀐 프레임에만** 갱신 판단을 한다.
-- 진입 사건은 반드시 방송한다. 플레이어의 청크 진입은 방송 규칙 대상 행동이다. [출처: reference/unity_project_baseline.md 방송 규칙]
-- 로더는 청크 안의 내용물을 모른다. 무엇이 들어 있든 씬 단위로만 켜고 끈다. 내용물을 아는 순간 결합이 생겨 청크를 추가할 때마다 로더를 고쳐야 한다.
-- 언로드 전에 그 청크의 변경 상태(부순 블록, 죽인 적 등)를 저장 계층에 넘긴다. 넘기지 않으면 다시 들어갔을 때 세계가 원래대로 돌아간 것처럼 보인다. 저장 규격은 ARCH-004를 따른다.
+- The active range is fixed at 3x3 including the centre, i.e. nine tiles. Widening the range is a structural change and needs human approval. [source: reference/unity_project_baseline.md]
+- Do not compute every frame. Judge whether to refresh **only on the frame where the player's chunk coordinate changed**.
+- Entry events must be broadcast. A player entering a chunk is an action covered by the broadcast rule. [source: reference/unity_project_baseline.md broadcast rules]
+- The loader knows nothing about what is inside a chunk. Whatever it holds, the loader switches it on and off only at scene granularity. The moment the loader knows the contents, coupling appears and every new chunk means editing the loader.
+- Before unloading, hand that chunk's changed state (blocks broken, enemies killed) to the save layer. Skip it and the world looks reverted the next time the player walks back in. The save format follows ARCH-004.
 
-## Unity 구현 절차
+## Unity Implementation Steps
 
-1. `Scripts/World/ChunkLoader.cs` 생성 — 청크 크기, 현재 좌표, 활성 집합 필드를 둔다.
-2. 좌표 계산 함수 작성 — 월드 위치를 받아 청크 좌표를 돌려준다. 청크 크기는 상수 한 곳에서만 정의해 타일맵과 어긋나지 않게 한다.
-3. 갱신 판단 — 플레이어 좌표를 주기적으로(매 프레임이 아니라 일정 간격 또는 이동 이벤트 기준) 확인해 청크 좌표 변화 시에만 갱신 함수를 호출한다.
-4. 차집합 처리 — 필요 집합과 현재 집합을 비교해 로딩 목록과 언로드 목록을 만든다. 둘 다 비면 아무 일도 하지 않는다.
-5. 로딩 실행 — 한 프레임에 여러 청크를 동시에 활성화하지 말고 하나씩 처리한다. 동시 활성화는 프레임 급락의 원인이다.
-6. 언로드 실행 — 상태 저장 → 씬 언로드 → 사용하지 않는 리소스 정리 순서.
-7. 진입 이벤트 방송 — 새 청크 진입 시 이벤트 버스로 알린다. 해설자(ARCH-007)가 이 방송을 듣는다.
+1. Create `Scripts/World/ChunkLoader.cs` — hold fields for chunk size, current coordinate and the active set.
+2. Write the coordinate function — take a world position, return a chunk coordinate. Define chunk size as a constant in exactly one place so it cannot drift out of step with the tilemap.
+3. Refresh decision — check the player coordinate periodically (not every frame, but on a fixed interval or off movement events) and call the refresh function only when the chunk coordinate changes.
+4. Set difference — compare the required set against the current set to build the load list and the unload list. If both are empty, do nothing.
+5. Execute loading — process chunks one at a time rather than activating several within a single frame. Simultaneous activation is a frame-drop cause.
+6. Execute unloading — in order: save state → unload scene → release unused resources.
+7. Broadcast entry events — announce over the event bus on entering a new chunk. The commentator (ARCH-007) listens for this broadcast.
 
-## 안티패턴
+## Anti-patterns
 
-- 매 프레임 전체 재계산: 프레임마다 9칸을 다시 계산하고 로딩 여부를 확인하는 방식. 대부분의 프레임에서 결과가 같으므로 순수한 낭비다.
-- 경계 진동(chunk thrashing): 플레이어가 청크 경계에 서서 왔다 갔다 할 때 같은 청크를 계속 켜고 끄는 현상. 경계에 여유 폭(히스테리시스)을 두어 막는다. 즉 켜는 기준선과 끄는 기준선을 다르게 잡는다.
-- 동기 언로드: 언로드를 동기로 처리하면 그 프레임이 멈춘다. 로딩과 마찬가지로 비동기로 한다.
-- 상태 저장 없는 언로드: 플레이어가 한 일을 저장하지 않고 청크를 끄는 것. 되돌아오면 세계가 초기화되어 "내가 한 일이 사라지는" 최악의 체감을 준다.
-- 로더가 게임플레이를 아는 것: 로더 안에 "보스 청크면 끄지 않는다" 같은 예외를 넣는 방식. 예외는 데이터(청크 설정)로 표현하고 로더는 규칙만 실행한다.
+- Full recomputation every frame: recalculating the nine tiles and rechecking load status on every frame. The result is identical on most frames, so it is pure waste.
+- Boundary oscillation (chunk thrashing): the same chunk being switched on and off repeatedly while the player stands on a chunk boundary and steps back and forth. Prevent it with a margin at the boundary (hysteresis) — that is, set the switch-on threshold and the switch-off threshold apart from each other.
+- Synchronous unloading: handling unload synchronously stalls that frame. Do it asynchronously, as with loading.
+- Unloading without saving state: switching a chunk off without persisting what the player did. Come back and the world has reset, giving the worst possible feeling — "what I did has vanished".
+- A loader that knows gameplay: putting exceptions like "do not unload if it is the boss chunk" inside the loader. Express exceptions as data (chunk settings) and let the loader execute rules only.
 
-## 검증 방법
+## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
-- 활성 개수 검사: 플레이 중 어느 시점에나 활성 청크 씬 개수가 9개 이하여야 한다. 초과하면 언로드가 누락된 것이다.
-- 진동 검사: 청크 경계 위를 왕복했을 때 로딩·언로드 로그가 반복해서 쌓이지 않아야 한다.
-- 방송 검사: 청크 진입 시 `Logs/commentator.log`에 진입 이벤트 줄이 남아야 한다. [출처: reference/unity_project_baseline.md 로그 규칙]
-- 상태 보존 검사: 청크에서 오브젝트를 변경 → 멀리 이동해 언로드 → 되돌아왔을 때 변경이 유지되어야 한다.
+- 0 compile errors, 0 console errors. [source: reference/unity_project_baseline.md self-check criteria]
+- Active-count check: at any point during play, the number of active chunk scenes must be nine or fewer. Exceeding that means an unload was missed.
+- Oscillation check: travelling back and forth across a chunk boundary must not pile up repeated load/unload log lines.
+- Broadcast check: entering a chunk must leave an entry-event line in `Logs/commentator.log`. [source: reference/unity_project_baseline.md logging rules]
+- State-persistence check: change an object in a chunk → move far enough away to unload it → the change must survive on return.
 
-## 조합 궁합
+## Synergy
 
-- ARCH-002 (씬 스트리밍): 로더가 켜고 끄는 대상 구조. 둘은 항상 함께 간다.
-- ARCH-001 (이벤트 버스): 진입·로딩 완료 알림 경로.
-- ARCH-004 (세이브 시스템): 언로드 직전 상태 저장의 수신처.
-- ELEM-011 (창발적 시스템 상호작용): 궁합 주의 — 불이 번지는 식의 규칙이 청크 경계를 넘어가야 한다면, 꺼진 청크에서는 시뮬레이션이 멈춘다. 경계를 넘는 상호작용은 별도 설계가 필요하다.
-- ELEM-012 (랜드마크 기반 탐험): 궁합 좋음 — 멀리서 보이는 랜드마크는 청크가 꺼져 있어도 보여야 하므로, 랜드마크만 World_Base 또는 저해상도 대체물로 두는 설계와 잘 맞는다.
+- ARCH-002 (scene streaming): the structure the loader switches on and off. The two always travel together.
+- ARCH-001 (event bus): the path for entry and load-completion notices.
+- ARCH-004 (save system): the recipient of the state saved just before unloading.
+- ELEM-011 (emergent systemic interaction): fit warning — if a rule like fire spreading has to cross chunk boundaries, the simulation stops in a switched-off chunk. Interactions that cross boundaries need a separate design.
+- ELEM-012 (landmark-based exploration): good fit — a landmark visible from afar must stay visible even while its chunk is off, which suits a design that keeps landmarks alone in World_Base or as low-resolution stand-ins.

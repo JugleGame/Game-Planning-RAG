@@ -7,27 +7,27 @@ tags = ["commentator", "ai", "pipeline", "logging", "core", "unity"]
 updated = "2026-08-01"
 confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md)의 방송·로그 규칙 명시 + ELEM-005 근거 카드 존재
 +++ 
-## 문제
+## Problem
 
 AI 해설자는 게임에서 벌어지는 거의 모든 일을 알아야 한다. 이것을 직접 참조로 만들면 해설자가 전투·인벤토리·대화·월드 모든 시스템에 손을 뻗은 괴물이 되고, 시스템 하나를 고칠 때마다 해설자가 깨진다. 또 AI 반응은 매번 달라서 "제대로 동작했는지" 확인할 방법이 없다. 쉽게 말해: 야구 중계자는 경기장에 내려가 선수를 붙잡지 않는다. 관중석에서 보고 말할 뿐이고, 무슨 말을 했는지는 방송 기록에 남는다. 이 카드가 그 관중석과 방송 기록이다.
 
-## 구조
+## Structure
 
-- 위치: `Assets/Scripts/Commentator/` — EventBus 구독 → 반응 생성 → 반응 로그 기록. [출처: reference/unity_project_baseline.md 기준 구조]
+- 위치: `Assets/Scripts/Commentator/` — EventBus 구독 → 반응 생성 → 반응 로그 기록. [source: reference/unity_project_baseline.md 기준 구조]
 - 3단 흐름 — ① 구독: 이벤트 버스에서 사건을 받는다 ② 판단·생성: 반응할지 정하고 반응을 만든다 ③ 기록: 로그 한 줄을 남긴다. 각 단계는 앞 단계만 알고 뒤 단계는 모른다.
-- 입력은 오직 이벤트 버스 방송이다. 해설자 시스템은 이 방송에만 의존한다. 직접 참조 금지. [출처: reference/unity_project_baseline.md 방송 규칙]
-- 출력 형식은 고정 — `Logs/commentator.log`에 `[시각] [이벤트ID] [반응요약]` 한 줄. [출처: reference/unity_project_baseline.md 로그 규칙]
-- 반응 생성이 외부 AI 호출이면 시간이 걸린다. 따라서 요청은 비동기이고, 그 사이 게임은 멈추지 않는다. [해석] 응답 지연·실패를 정상 경로로 취급해야 하며, 이는 ELEM-005가 지적하는 취약성과 같은 문제다.
+- 입력은 오직 이벤트 버스 방송이다. 해설자 시스템은 이 방송에만 의존한다. 직접 참조 금지. [source: reference/unity_project_baseline.md 방송 규칙]
+- 출력 형식은 고정 — `Logs/commentator.log`에 `[시각] [이벤트ID] [반응요약]` 한 줄. [source: reference/unity_project_baseline.md 로그 규칙]
+- 반응 생성이 외부 AI 호출이면 시간이 걸린다. 따라서 요청은 비동기이고, 그 사이 게임은 멈추지 않는다. [interpretation] 응답 지연·실패를 정상 경로로 취급해야 하며, 이는 ELEM-005가 지적하는 취약성과 같은 문제다.
 
-## 핵심 규칙
+## Core Rules
 
-- 입력 경로는 이벤트 버스 하나뿐이다. 다른 시스템의 필드를 직접 읽는 코드가 하나라도 있으면 규칙 위반이다. [출처: reference/unity_project_baseline.md]
-- 반응할 때마다 반드시 로그를 남긴다. 로그는 선택이 아니라 QA의 판정 근거다. [출처: reference/unity_project_baseline.md 로그 규칙]
-- 반응하지 않기로 한 경우에도 판단 자체는 기록에 남기는 편이 좋다. [해석] 침묵이 버그인지 의도인지 구분할 방법이 없으면 QA가 판정할 수 없다.
+- 입력 경로는 이벤트 버스 하나뿐이다. 다른 시스템의 필드를 직접 읽는 코드가 하나라도 있으면 규칙 위반이다. [source: reference/unity_project_baseline.md]
+- 반응할 때마다 반드시 로그를 남긴다. 로그는 선택이 아니라 QA의 판정 근거다. [source: reference/unity_project_baseline.md 로그 규칙]
+- 반응하지 않기로 한 경우에도 판단 자체는 기록에 남기는 편이 좋다. [interpretation] 침묵이 버그인지 의도인지 구분할 방법이 없으면 QA가 판정할 수 없다.
 - 해설자는 게임 상태를 바꾸지 않는다. 읽고 말할 뿐이다. 상태를 바꾸는 순간 게임 로직이 되고, 제거해도 게임이 도는지 확인할 수 없게 된다.
 - AI 호출 실패는 게임을 멈추지 않는다. 실패해도 게임은 계속되고, 실패 사실은 로그에 남는다.
 
-## Unity 구현 절차
+## Unity Implementation Steps
 
 1. `Scripts/Commentator/CommentatorService.cs` 생성 — OnEnable에서 이벤트 버스 구독, OnDisable에서 해지.
 2. 필터 구현 — 모든 사건에 반응하면 시끄럽고 비싸다. 반응 대상 사건 종류와 최소 간격(쿨다운) 규칙을 둔다.
@@ -37,7 +37,7 @@ AI 해설자는 게임에서 벌어지는 거의 모든 일을 알아야 한다.
 6. 실패 처리 — 호출 실패·시간 초과 시 게임 진행에 영향 없이 실패 로그만 남긴다.
 7. 제거 가능성 확인 — 해설자 오브젝트를 씬에서 빼고 게임을 돌려 에러가 없는지 점검한다.
 
-## 안티패턴
+## Anti-patterns
 
 - 직접 참조 수집: 해설자가 PlayerController나 인벤토리를 직접 붙잡는 방식. 규칙 위반이자, 청크 언로드 시 참조가 끊겨 터진다.
 - 모든 사건에 반응: 필터 없이 전부 반응하면 로그가 소음으로 가득 차고 비용도 감당이 안 된다. 무엇에 반응하지 **않을지**를 먼저 정한다.
@@ -46,16 +46,16 @@ AI 해설자는 게임에서 벌어지는 거의 모든 일을 알아야 한다.
 - 해설자가 게임에 개입: 반응하면서 보상을 주거나 적을 소환하는 식. 관찰자가 참가자가 되면 제거 검사가 무의미해진다.
 - 구독 해지 누락: 씬 전환 후에도 구독이 남아 유령 해설자가 중복 반응하는 문제.
 
-## 검증 방법
+## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
-- 로그 형식 검사: `Logs/commentator.log`의 모든 줄이 `[시각] [이벤트ID] [반응요약]` 형식이어야 한다. [출처: reference/unity_project_baseline.md 로그 규칙]
+- 컴파일 에러 0개, 콘솔 에러 0개. [source: reference/unity_project_baseline.md 자체 점검 기준]
+- 로그 형식 검사: `Logs/commentator.log`의 모든 줄이 `[시각] [이벤트ID] [반응요약]` 형식이어야 한다. [source: reference/unity_project_baseline.md 로그 규칙]
 - 사건-로그 대응 검사: 전투·획득·대화·진입을 각 1회 수행하면 대응하는 로그 줄이 남아야 한다(필터로 제외한 종류는 제외 사유가 명시되어야 한다).
 - 독립성 검사: 해설자 오브젝트를 제거해도 게임 본편이 에러 없이 동작해야 한다. 실패하면 어딘가 직접 참조 또는 게임 개입이 있다는 뜻이다.
 - 실패 내성 검사: AI 호출을 강제로 실패시켰을 때 게임이 계속 돌고 실패 로그가 남아야 한다.
 - 소음 검사: 일정 시간 플레이 시 로그 줄 수가 쿨다운 규칙과 맞는지 확인.
 
-## 조합 궁합
+## Synergy
 
 - ARCH-001 (이벤트 버스): 유일한 입력 경로. 버스 없이는 이 파이프라인이 성립하지 않는다.
 - ARCH-010 (로그 규약): 출력 형식의 소유자. 형식 변경은 저 카드에서만 한다.

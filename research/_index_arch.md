@@ -1,10 +1,10 @@
 # ⑤ 아키텍처 색인 (자동 생성 - 직접 수정 금지)
 생성: 2026-08-12 | 27장
 
-- ARCH-001 | 이벤트 버스 (EventBus / Pub-Sub) | 시스템끼리 직접 부르지 않고, 가운데 방송국(EventBus)에 사건을 방송하면 듣고 싶은 쪽만 구독해서 반응하는 느슨한 연결 구조 | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-31
-- ARCH-002 | 씬 스트리밍 (Boot / World_Base / Chunk Additive 구조) | 게임을 한 덩어리 씬으로 만들지 않고 시작·상시·조각 세 종류로 쪼갠 뒤, 필요한 조각만 덧붙여 켜고 끄는 월드 구성 방식 | #scene #streaming #additive #open-world #core #unity #2d | 07-29
-- ARCH-003 | 청크 로더 (3x3 활성 규칙) | 플레이어가 선 칸을 중심으로 주변 3x3 청크만 켜두고, 벗어난 칸은 꺼서 넓은 세계를 일정한 비용으로 유지하는 로딩 관리자 | #streaming #chunk #world #performance #open-world #unity #2d | 07-29
-- ARCH-004 | 세이브 시스템 (JSON 직렬화) | 게임 상태를 사람이 읽을 수 있는 JSON 문서로 바꿔 플랫폼별 저장 경로에 안전하게 기록하고 되살리는 구조 | #save #persistence #json #core #unity #data | 07-29
+- ARCH-001 | Event Bus (EventBus / Pub-Sub) | A loose coupling structure where systems never call each other directly: senders broadcast events to a central station (EventBus), and only the parties that want to listen subscribe and react | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-31
+- ARCH-002 | Scene Streaming (Boot / World_Base / Chunk Additive Structure) | A world composition approach that never builds the game as one monolithic scene, splitting it into startup, always-on and fragment scenes, then adding only the fragments needed and switching them on and off | #scene #streaming #additive #open-world #core #unity #2d | 07-29
+- ARCH-003 | Chunk Loader (3x3 Active Rule) | A loading manager that keeps only the surrounding 3x3 chunks active around the tile the player stands on and switches off the ones left behind, holding a wide world at a constant cost | #streaming #chunk #world #performance #open-world #unity #2d | 07-29
+- ARCH-004 | Save System (JSON Serialization) | A structure that turns game state into a human-readable JSON document, writes it safely to the per-platform save path, and restores it | #save #persistence #json #core #unity #data | 07-29
 - ARCH-005 | NPC 상태머신 (Idle / Patrol / Talk) | NPC의 행동을 여러 개의 '상태'로 나누고 한 번에 하나만 켜지게 해서, 조건에 따라 상태를 갈아타는 방식으로 행동을 만드는 구조 | #npc #fsm #state-machine #ai-behavior #unity #2d | 07-29
 - ARCH-006 | 상호작용 (IInteractable 인터페이스 + Trigger) | 말 걸기·줍기·열기처럼 서로 다른 행동을 '상호작용할 수 있다'는 하나의 약속으로 묶어, 플레이어가 대상의 정체를 몰라도 다룰 수 있게 하는 구조 | #interaction #interface #trigger #player #unity #2d | 07-29
 - ARCH-007 | 해설자 파이프라인 (구독 → 반응 생성 → 로그) | AI 해설자가 게임 사건 방송을 듣고, 반응을 만들고, 반드시 한 줄 로그를 남기는 3단 처리 흐름 | #commentator #ai #pipeline #logging #core #unity | 08-01

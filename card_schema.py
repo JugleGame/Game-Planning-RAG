@@ -35,9 +35,14 @@ CONFIDENCE_VOCAB = ["high", "medium", "medium-low", "low"]
 # 새로 쓰는 카드가 쓸 절 제목 언어. 'ko' | 'en'.
 #
 # 검사·검색은 언제나 section_key로 하므로, 이 값을 바꿔도 기존 카드는 계속 통과한다.
-# 168장을 한 번에 번역할 수는 없으니 전환 기간에는 두 언어가 섞이는데, 그 상태가
-# 정상이어야 한다. 전부 옮긴 뒤에 이 값을 'en'으로 바꾼다.
-CARD_LANG = "ko"
+# 실제 소비처는 lint/check_sections의 오류 메시지뿐이다 — 새 카드의 절 제목은
+# templates/*.md 가 정한다. 둘이 어긋나면 오류 메시지가 있지도 않은 제목을 요구하게
+# 되므로 **templates 와 항상 같은 언어**여야 한다.
+#
+# 2026-08-12: 카드 165장의 절 제목·근거 표시를 영어로 옮기고(migrate_card_lang.py
+# --headings) templates 4개도 함께 옮겨서 'en'으로 전환했다. 본문 산문은 아직
+# 한국어이며, 그 혼재 상태는 정상이다 (SECTION_KEY가 두 언어를 모두 받는다).
+CARD_LANG = "en"
 
 # section_key -> 언어별 절 제목. 이게 절 사전의 단일 소스다.
 SECTION_TITLES = {
@@ -112,6 +117,15 @@ SOURCE_OPENERS = tuple(f"[{v}" for v in MARKERS["source"].values())
 INTERP_MARKS = tuple(f"[{v}]" for v in MARKERS["interpretation"].values())
 
 SOURCE_TAG_RE = _re.compile(r"\[(?:출처|source)[^\]]*\]", _re.I)
+
+# 카드 ID 참조. lint_card / audit_links / sync_db / migrate_card_lang 이 공유한다.
+#
+# 끝에 `\b`를 쓰면 안 된다. 한글 조사는 파이썬 정규식에서 단어 문자라서 "ARCH-002의",
+# "ARCH-004를" 처럼 조사가 바로 붙으면 숫자와 조사 사이에 경계가 없어 매치가 통째로
+# 실패한다. 이 저장소에서 그렇게 **보이지 않던 링크가 124건(카드 57장)** 있었고,
+# 그만큼 card_refs 간선이 비었고 audit_links 의 간극 점검도 그 참조를 못 봤다.
+# `(?!\d)` 는 ARCH-0021 을 ARCH-002 로 잘못 읽는 것만 막는다 - 조사는 통과시킨다.
+CARD_ID_RE = _re.compile(r"\b(?:ELEM|GAME|GENRE|ARCH)-\d{3}(?!\d)")
 
 _SECTION_SPLIT = _re.compile(r"^## +(.+?)[ \t]*$", _re.M)
 

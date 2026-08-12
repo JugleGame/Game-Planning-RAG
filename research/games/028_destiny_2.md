@@ -9,43 +9,43 @@ tags = ["looter-shooter", "fps", "live-service", "random-rolls", "divisive", "aa
 updated = "2026-07-29"
 confidence = "medium"
 +++
-## 한 줄 요약 + 판매·리뷰 수치
+## Summary and Sales/Review Metrics
 출시 시점의 Destiny 2는 무기 퍼크를 고정(static roll)으로 설계해, 같은 이름의 무기를 얻으면 누가
-먹든 퍼크가 똑같았다 [출처: GameRant 'Destiny 2 Weapons Won't Have Random Perk Rolls', 2017 기준].
-2018년 9월 4일 확장팩 Forsaken과 2.0 업데이트에서 무작위 롤이 되돌아왔다 [출처: Newsweek 'Destiny 2
+먹든 퍼크가 똑같았다 [source: GameRant 'Destiny 2 Weapons Won't Have Random Perk Rolls', 2017 기준].
+2018년 9월 4일 확장팩 Forsaken과 2.0 업데이트에서 무작위 롤이 되돌아왔다 [source: Newsweek 'Destiny 2
 Stream Recap - Random Rolls, Mods & Sandbox Tweaks Detailed', 2018-08-07 기준].
 Forsaken 출시 후 플레이어 수는 약 3배로 늘었다 - 8월 28일 기준으로는 PvP 462,000명 / PvE 767,000명
-수준이었다 [출처: PC Games Insider, 2018년 기준]. SuperData 집계로는 월간 활성 플레이어의 60% 이상이
-Forsaken을 구매했다 [출처: PCGamesN, 2018-11-08 기준].
+수준이었다 [source: PC Games Insider, 2018년 기준]. SuperData 집계로는 월간 활성 플레이어의 60% 이상이
+Forsaken을 구매했다 [source: PCGamesN, 2018-11-08 기준].
 <!-- 증거 부족: 누적 판매량·최신 동시접속자 수치는 이번 조사에서 확인하지 못함 -->
 
-## 사용한 요소
+## Elements Used
 - ELEM-019 (무작위 전리품 드롭 & 루트 테이블) - 같은 무기라도 퍼크 조합이 매번 다르게 떨어져, 이미
-  가진 무기가 또 나와도 "이번 건 어떤 롤일까"를 확인하게 만드는 구조 [출처: Newsweek, 2018-08-07 기준].
+  가진 무기가 또 나와도 "이번 건 어떤 롤일까"를 확인하게 만드는 구조 [source: Newsweek, 2018-08-07 기준].
   여기에 마스터워크(10단계까지 강화, 특정 스탯 10% 상승)와 방어구의 무작위 스탯 롤이 얹혀 있다
-  [출처: Newsweek, 2018-08-07 기준].
+  [source: Newsweek, 2018-08-07 기준].
 
-## 성공/실패 원인
+## Success/Failure Drivers
 - 사실: 고정 롤로 출시한 첫 해에는 정말 갖고 싶은 무기가 몇 종 안 됐고, 그걸 하나씩 모으고 나면 더
-  파밍할 이유가 사라진다는 반응이 나왔다 [출처: Bungie.net 포럼 토론 종합, 2018 기준].
+  파밍할 이유가 사라진다는 반응이 나왔다 [source: Bungie.net 포럼 토론 종합, 2018 기준].
 - 사실: 무작위 롤 복귀 후에는 중복 드롭도 인벤토리를 열어 롤을 확인하게 되고, 좋은 롤이 나오면 파티
-  채팅에 자랑하는 식으로 반응이 바뀌었다 [출처: Kotaku 'Help, I'm Drowning In Destiny 2 Gear',
+  채팅에 자랑하는 식으로 반응이 바뀌었다 [source: Kotaku 'Help, I'm Drowning In Destiny 2 Gear',
   2018 기준].
-- [해석] 같은 아이템이 반복해서 떨어져도 "내용물이 매번 다르다"는 점이 파밍의 수명을 늘린 것으로 보인다.
+- [interpretation] 같은 아이템이 반복해서 떨어져도 "내용물이 매번 다르다"는 점이 파밍의 수명을 늘린 것으로 보인다.
   고정 롤은 수집 목록이 유한해 완주하면 끝나지만, 무작위 롤은 목표가 닫히지 않는다.
 - 사실: 플레이어 수와 월간 활성 이용자는 늘었지만, Activision은 Forsaken이 "기대만큼 성과를 내지
-  못했다(not performing as well as we'd like)"고 밝혔다 [출처: PCGamesN, 2018-11-08 기준]. 같은 시기
-  Destiny 2는 9월 PS4·Xbox One 매출 차트 1위로 Spider-Man, FIFA 19, Fortnite를 앞섰다 [출처:
+  못했다(not performing as well as we'd like)"고 밝혔다 [source: PCGamesN, 2018-11-08 기준]. 같은 시기
+  Destiny 2는 9월 PS4·Xbox One 매출 차트 1위로 Spider-Man, FIFA 19, Fortnite를 앞섰다 [source:
   PCGamesN, 2018-11-08 기준].
   실패 지점: 참여도(engagement)는 회복됐지만 이탈했던 코어 유저의 재구매로는 이어지지 않아, 지표와
   매출이 따로 놀았다.
 - 사실: 무작위성에 대한 불만은 이후로도 이어져, 특정 엑소틱·로스트 섹터의 낮은 드롭률과 원하는 롤이
   끝내 안 나오는 문제가 반복적으로 제기됐다 - 한 플레이어가 트라이얼 978판을 치르고도 목표 롤을 얻지
-  못한 사례가 커뮤니티에서 화제가 됐다 [출처: Sportskeeda 커뮤니티 반응 보도, 2026-07 확인].
+  못한 사례가 커뮤니티에서 화제가 됐다 [source: Sportskeeda 커뮤니티 반응 보도, 2026-07 확인].
   실패 지점: 상한선 없는 무작위 롤은 "시간을 존중받지 못한다"는 감정으로 바뀐다.
 
-## 우리 프로젝트 시사점
+## Implications for Our Project
 무작위 롤을 빼면 수집 목록이 유한해져 파밍 동기가 조기에 소진되고, 넣으면 목표가 닫히지 않아 유지력이
-생기지만 "영원히 못 얻을 수도 있다"는 불만이 따라온다 [해석]. 이 카드의 교훈은 둘 중 하나를 고르는 게
+생기지만 "영원히 못 얻을 수도 있다"는 불만이 따라온다 [interpretation]. 이 카드의 교훈은 둘 중 하나를 고르는 게
 아니라, 무작위 롤을 켜되 ELEM-017의 천장 개념 같은 상한선을 함께 두는 쪽에 가깝다. 또한 지표(플레이어
-수)와 매출이 함께 움직인다고 가정하면 안 된다는 것도 이 사례가 보여준다 [해석].
+수)와 매출이 함께 움직인다고 가정하면 안 된다는 것도 이 사례가 보여준다 [interpretation].

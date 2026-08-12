@@ -1,61 +1,61 @@
-+++ 
++++
 card_id = "ARCH-002"
 type = "structure"
-title = "씬 스트리밍 (Boot / World_Base / Chunk Additive 구조)"
-summary = "게임을 한 덩어리 씬으로 만들지 않고 시작·상시·조각 세 종류로 쪼갠 뒤, 필요한 조각만 덧붙여 켜고 끄는 월드 구성 방식"
+title = "Scene Streaming (Boot / World_Base / Chunk Additive Structure)"
+summary = "A world composition approach that never builds the game as one monolithic scene, splitting it into startup, always-on and fragment scenes, then adding only the fragments needed and switching them on and off"
 tags = ["scene", "streaming", "additive", "open-world", "core", "unity", "2d"]
 updated = "2026-07-29"
 confidence = "high" # 프로젝트 기준 구조(reference/unity_project_baseline.md) + Unity 공식 SceneManager 문서 근거
-+++ 
-## 문제
++++
+## Problem
 
-2D 오픈월드를 씬 하나에 전부 넣으면 게임을 켤 때 세계 전체를 메모리에 올려야 해서 로딩이 길어지고 메모리가 터진다. 반대로 씬을 완전히 갈아끼우면(Single 모드) 플레이어와 UI, 매니저까지 같이 사라져 이동할 때마다 검은 화면이 낀다. 쉽게 말해: 도서관 책을 전부 책상에 쌓아두면 책상이 무너지고, 읽을 때마다 책상을 통째로 비우면 필기구까지 사라진다. 필기구는 책상에 두고 책만 바꿔 놓는 방법이 필요하다.
+Packing an entire 2D open world into a single scene means loading the whole world into memory at startup, so loading drags and memory blows up. Swapping scenes outright instead (Single mode) destroys the player, the UI and the managers along with them, wedging a black screen into every transition. Put simply: stack every library book on your desk and the desk collapses; clear the desk each time you read and your pens disappear too. You need a way to leave the pens on the desk and swap only the books.
 
-## 구조
+## Structure
 
-- 씬 3종 역할 분담 [출처: reference/unity_project_baseline.md 기준 구조]
-- `Boot.unity` — 시작 씬. 매니저만 존재한다. 게임 시작 시 가장 먼저 열리며 World_Base를 불러온다.
-- `World_Base.unity` — 플레이어, 카메라, UI. 게임이 도는 동안 **항상 켜져 있다**. 여기가 위 비유의 "필기구"다.
-- `Chunk_x_y.unity` — 월드 조각. Additive 로딩으로 켜고 끈다. 지형, 오브젝트, NPC가 들어간다.
-- Additive 모드는 기존 씬을 지우지 않고 새 씬을 덧붙이는 로딩 방식이라, 오픈월드처럼 넓은 공간을 이어 붙여 표현하는 데 쓰인다. [출처: Unity 공식 Scripting API — SceneManagement.LoadSceneMode.Additive]
-- 로딩은 동기(LoadScene)가 아니라 비동기(LoadSceneAsync)를 쓴다. 동기 로딩은 프레임이 끊기는 원인이 된다. [출처: Unity 공식 SceneManager 문서 및 커뮤니티 정리]
+- Division of labour across three scene types [source: reference/unity_project_baseline.md baseline structure]
+- `Boot.unity` — the startup scene. Managers only. It opens first at game start and loads World_Base.
+- `World_Base.unity` — player, camera, UI. **Always on** while the game runs. This is the "pens" in the analogy above.
+- `Chunk_x_y.unity` — a world fragment. Switched on and off with Additive loading. Terrain, objects and NPCs live here.
+- Additive mode is a loading method that appends a new scene without discarding the existing one, so it is used to stitch together wide spaces like an open world. [source: Unity official Scripting API — SceneManagement.LoadSceneMode.Additive]
+- Loading uses the asynchronous form (LoadSceneAsync), not the synchronous one (LoadScene). Synchronous loading is a cause of frame hitches. [source: Unity official SceneManager documentation and community write-ups]
 
-## 핵심 규칙
+## Core Rules
 
-- 청크 규칙: 월드 오브젝트는 반드시 Chunk 씬에 넣는다. World_Base에 넣지 않는다. [출처: reference/unity_project_baseline.md]
-- World_Base에는 "게임이 도는 내내 살아 있어야 하는 것"만 둔다. 판단 기준: 청크가 꺼져도 살아 있어야 하나? 예 → World_Base, 아니오 → Chunk.
-- Chunk 씬 안의 스크립트는 다른 Chunk의 오브젝트를 직접 참조하지 않는다. 청크는 언제든 꺼질 수 있으므로 참조가 끊긴다. 청크 간 소통은 ARCH-001 이벤트 버스를 쓴다.
-- 씬 구조 자체의 변경은 사람 승인이 필요하다. [출처: reference/unity_project_baseline.md]
-- 청크 좌표 규칙은 파일명 `Chunk_x_y`가 곧 월드 좌표다. 이름과 실제 위치가 어긋나면 로더가 잘못된 조각을 켠다.
+- Chunk rule: world objects must go into a Chunk scene. They do not go into World_Base. [source: reference/unity_project_baseline.md]
+- World_Base holds only "things that must stay alive for as long as the game runs". The test: does it need to survive when a chunk is off? Yes → World_Base, no → Chunk.
+- A script inside a Chunk scene never references an object in another Chunk directly. A chunk can be switched off at any time, so the reference breaks. Chunk-to-chunk communication uses the ARCH-001 event bus.
+- Changing the scene structure itself needs human approval. [source: reference/unity_project_baseline.md]
+- The chunk coordinate rule is that the filename `Chunk_x_y` *is* the world coordinate. If the name and the actual position drift apart, the loader switches on the wrong fragment.
 
-## Unity 구현 절차
+## Unity Implementation Steps
 
-1. Boot / World_Base 씬을 만들고 Build Settings에 등록한다. 등록하지 않은 씬은 런타임에 불러올 수 없다.
-2. Boot 씬에 GameManager를 두고, 시작 시 World_Base를 Additive로 비동기 로딩한다.
-3. Chunk 씬을 격자 이름 규칙(`Chunk_0_0`, `Chunk_1_0` …)으로 만들어 역시 Build Settings에 등록한다.
-4. 로딩 완료 처리 — 활성 씬 지정(SetActiveScene)은 비동기 로딩이 **끝난 뒤에** 호출한다. 로딩 호출 직후에 부르면 아무 일도 일어나지 않는다. [출처: Unity Discussions, SceneManager 활성 씬 지정 관련 정리]
-5. 새로 생성되는 오브젝트가 어느 씬에 속하는지 확인한다. 활성 씬이 잘못 지정되면 청크 오브젝트가 World_Base에 생겨 청크 규칙이 깨진다.
-6. 청크 실제 로딩·해제 판단은 ARCH-003 청크 로더가 맡는다. 이 카드는 씬 구성까지만 책임진다.
+1. Create the Boot and World_Base scenes and register them in Build Settings. An unregistered scene cannot be loaded at runtime.
+2. Put GameManager in the Boot scene and load World_Base asynchronously in Additive mode at startup.
+3. Create Chunk scenes under the grid naming rule (`Chunk_0_0`, `Chunk_1_0`, …) and register those in Build Settings as well.
+4. Handle load completion — call the active-scene assignment (SetActiveScene) **after** the asynchronous load finishes. Called right after the load call, it does nothing. [source: Unity Discussions, write-up on assigning the active scene with SceneManager]
+5. Check which scene newly instantiated objects belong to. If the active scene is set wrong, chunk objects get created in World_Base and the chunk rule breaks.
+6. The actual decision to load and release chunks belongs to the ARCH-003 chunk loader. This card is responsible only up to scene composition.
 
-## 안티패턴
+## Anti-patterns
 
-- 단일 거대 씬: 월드를 씬 하나에 몰아넣는 방식. 초기 개발은 편하지만 세계가 커지는 순간 로딩·메모리로 되돌릴 수 없게 무너진다. 되돌리는 비용이 처음부터 쪼개는 비용보다 훨씬 크다.
-- Single 모드 씬 전환: 이동할 때마다 씬을 갈아끼우는 방식. 플레이어·UI·매니저가 함께 파괴되어 상태가 날아가고, 오픈월드의 "이어진 세계" 느낌이 사라진다.
-- World_Base 비대화: 편하다는 이유로 월드 오브젝트를 World_Base에 넣는 것. 청크 규칙 위반이며, 결국 단일 거대 씬과 같아진다.
-- 동기 로딩 남용: LoadScene(동기)으로 청크를 켜면 그 프레임이 통째로 멈춘다. 플레이어 눈에는 게임이 얼어붙은 것으로 보인다.
-- 한 프레임에 여러 청크 활성화: 씬이 활성화되는 순간 그 안의 오브젝트가 같은 프레임에 전부 깨어나므로 성능이 급락한다. [출처: Unity 커뮤니티 정리 — 씬 활성화 시점의 일괄 활성화 비용] 활성화는 나눠서 처리한다.
+- One giant scene: cramming the world into a single scene. Convenient early on, but the moment the world grows it collapses irreversibly under loading and memory. Undoing it costs far more than splitting from the start.
+- Single-mode scene transitions: swapping scenes on every move. Player, UI and managers are destroyed together, state is lost, and the "continuous world" feeling of an open world disappears.
+- World_Base bloat: putting world objects in World_Base because it is convenient. This violates the chunk rule and ends up equivalent to one giant scene.
+- Overusing synchronous loading: switching a chunk on with LoadScene (synchronous) stalls that entire frame. To the player it looks like the game froze.
+- Activating several chunks in one frame: the instant a scene activates, every object inside it wakes in that same frame, so performance collapses. [source: Unity community write-up — the bulk activation cost at scene-activation time] Spread activation out.
 
-## 검증 방법
+## Verification
 
-- 컴파일 에러 0개, 콘솔 에러 0개. [출처: reference/unity_project_baseline.md 자체 점검 기준]
-- 씬 소속 검사: 플레이 중 청크를 하나 언로드했을 때 플레이어·카메라·UI가 그대로 살아 있어야 한다. 하나라도 사라지면 World_Base에 있어야 할 것이 청크에 들어간 것이다.
-- 반대 검사: 청크를 언로드했을 때 그 안의 월드 오브젝트가 확실히 사라져야 한다. 남아 있으면 청크 규칙 위반이다.
-- 로딩 방식 검사: 청크 전환 순간 프레임이 눈에 띄게 멈추지 않아야 한다(동기 로딩 혼입 탐지).
-- Build Settings 씬 목록에 모든 Chunk 씬이 등록되어 있는지 확인.
+- 0 compile errors, 0 console errors. [source: reference/unity_project_baseline.md self-check criteria]
+- Scene-membership check: unloading one chunk during play must leave the player, camera and UI alive. If any of them vanishes, something that belongs in World_Base ended up in a chunk.
+- Inverse check: unloading a chunk must definitely remove the world objects inside it. Anything left behind violates the chunk rule.
+- Loading-method check: the frame must not visibly stall at the moment of a chunk transition (detects synchronous loading slipping in).
+- Confirm every Chunk scene is registered in the Build Settings scene list.
 
-## 조합 궁합
+## Synergy
 
-- ARCH-003 (청크 로더): 이 구조를 실제로 켜고 끄는 주체. 구조와 로더는 항상 짝이다.
-- ARCH-001 (이벤트 버스): 청크가 켜지고 꺼질 때의 알림, 청크 간 소통 모두 버스를 거친다. 직접 참조는 청크 언로드 시 반드시 끊긴다.
-- GENRE-006 (도트 그래픽 2D 오픈월드/샌드박스): 이 구조가 전제하는 장르. 넓은 세계를 이어 붙이는 목적 자체가 여기서 나온다.
-- 충돌 주의 — 씬 간 이동이 없는 소규모 스테이지형 게임에는 과한 구조다. 세계가 화면 몇 개 크기라면 단일 씬이 더 낫다.
+- ARCH-003 (chunk loader): the party that actually switches this structure on and off. Structure and loader are always a pair.
+- ARCH-001 (event bus): notices when a chunk goes on or off, and chunk-to-chunk communication, all route through the bus. A direct reference will always break on chunk unload.
+- GENRE-006 (pixel-art 2D open world / sandbox): the genre this structure presupposes. The whole purpose of stitching a wide world together comes from here.
+- Conflict warning — this is overkill for a small stage-based game with no scene-to-scene travel. If the world is a few screens across, a single scene is better.

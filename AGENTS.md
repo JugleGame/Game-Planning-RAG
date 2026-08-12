@@ -17,9 +17,12 @@
 | 여러 카드의 특정 절만 필요 (궁합, 빈칸 등) | tools/read_section.py <카드들> "<절 제목>" — 전체 열람 금지 |
 | 반례(실패·혼재 사례)·유사 카드 탐색 | `python tools/search_cards.py "<질문>"` — DB 미러 켜져 있을 때만, 본문 대신 검색 결과로 판단. 미러가 낡았으면 먼저 M단계부터 |
 | 카드 생성·삭제·ID 변경·다이제스트 반영 후 (M단계) | `python tools/build_index.py` → `tools/sync_db.py` → `tools/embed_cards.py` → `tools/verify_db.py` **이 순서로**. embed는 cards 테이블을 읽으므로 반드시 sync 다음 |
-| 5432가 막힌 망 | 위 3개 스크립트는 `--transport auto`(기본값)로 443/HTTPS 브리지에 자동 폴백. 출력의 `[5432]`/`[443/HTTPS]`로 경로 확인. HTTPS에선 `--dry-run`이 실행 없이 예정 건수만 보고 |
+| 5432가 막힌 망 | 읽기(`search_cards.py`·`eval_retrieval.py`)와 쓰기(`sync_db.py`·`embed_cards.py`·`verify_db.py`) 모두 `--transport auto`(기본값)로 443/HTTPS 브리지에 자동 폴백. 출력의 `[5432]`/`[443/HTTPS]`로 경로 확인. 쓰기 계열의 HTTPS에선 `--dry-run`이 실행 없이 예정 건수만 보고 |
+| 두 접속 경로가 같은 결과를 주는지 확인 | `python tools/search_cards.py "<질의>" --check-transport` — 5432와 443이 둘 다 열린 곳에서만 의미가 있다(한쪽만 열렸으면 거짓 통과 대신 멈춘다). 검색 SQL의 자리표시자를 건드렸다면 반드시 |
 | 미러링 결과 확인 | `verify_db.py`의 `unresolved_refs`가 0이 아니면 없는 ID를 참조하는 카드가 있다는 뜻 → md 원본을 고치고 재실행 |
-| 절 제목은 표준 사전의 문자열 그대로 | 변형 제목 발견 시 lint로 잡아 수정 (임의 추측 금지) |
+| 절 제목은 표준 사전의 문자열 그대로 | 변형 제목 발견 시 lint로 잡아 수정 (임의 추측 금지). 사전은 card_schema.py의 `SECTION_TITLES` |
+| 카드 언어 (2026-08-12~) | 절 제목과 `[source:`/`[interpretation]` 표시는 **영어**, 본문 산문은 아직 한국어다. 이 혼재는 정상이며 `SECTION_KEY`가 두 언어를 모두 받는다. **새 카드는 templates/*.md 그대로 영어 절 제목을 쓸 것** — 한국어 제목으로 되돌리지 말 것 |
+| 카드를 영어로 옮길 때 | ① 기계 표면: `python scripts/migrate_card_lang.py --headings <카드들>` (LLM 불필요, 165장 완료). ② 산문: `--out draft/en` → 사람 확인 → `--apply`. 수치·ID·출처 태그가 어긋나면 통과 못 한다. 검사만: `--verify` |
 
 ## 읽기 규율 (토큰 예산)
 1. 위 지도에 없는 파일은 열지 않는다. 단계당 프롬프트 1개만 읽는다.
