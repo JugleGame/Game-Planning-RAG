@@ -111,6 +111,14 @@ GENRE-033 CRPG, GENRE-034 핵앤슬래시 던전크롤러 ARPG)을 새로 만듦
 conflict 없이 GENRE-010/012/013/019, GAME-023에 섹션 patch 적용, 다이제스트
 status를 반영(2026-08-02)으로 갱신. 이후 pending_new_cards를 0으로 리셋함. -->
 
+<!-- 2026-08-12 nightly_executor: `_scout_queue.md`에 '[x]' 체크된 항목이 하나도
+없었음(전부 '[ ]' 미체크 또는 '[done]') - 지침에 따라 어떤 항목도 건드리지 않고
+카드 생성 단계(1~2)는 완전히 건너뜀. pending_new_cards는 이번 세션 신규 카드
+0장이라 6+0=6으로 변동 없음(임계치 10 미만 - 3c 다이제스트 반영도 건너뜀).
+last_signal_digest(2026-08-07)가 오늘(2026-08-12)로부터 5일 경과로 7일 미만이라
+신규 다이제스트도 만들지 않음. 카드 파일 변경이 없어 M단계
+(build_index/sync_db/embed_cards/verify_db)는 실행하지 않음. -->
+
 ## 사람 확인 필요
 - 2026-07-30 nightly_executor: `research/_automation_state.md` 파일이 존재하지
   않아 이번 세션이 새로 생성함. pending_new_cards의 이전 누적치(오늘 낮에 추가된
