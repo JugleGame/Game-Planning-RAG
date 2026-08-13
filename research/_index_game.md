@@ -1,5 +1,5 @@
 # Games Index (generated — do not edit)
-Generated: 2026-08-13 | 55 entries
+Generated: 2026-08-13 | 59 entries
 
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | A meta-narrative hit that starts as a card game and then betrays the genre itself | #deckbuilder #horror #meta #indie | 07-31
 - GAME-002 | Undertale (2015, Toby Fox) | The archetype of the meta-narrative RPG in which the game remembers every choice the player makes | #rpg #indie #meta #comedy #pixel | 07-15
@@ -56,3 +56,7 @@ Generated: 2026-08-13 | 55 entries
 - GAME-054 | Dominocalypse (upcoming release, Barely Cohesive Games) | An upcoming game combining domino tile-pushing and matching with a roguelike artifact build and procedural board generation | #roguelike #deckbuilder #tile-matching #domino #indie #upcoming | 08-10
 - GAME-055 | Loop Hero (2021, Four Quarters / Devolver Digital) | A seminal solo-PvE autobattler built on a repetition mechanic, leaving only tile placement on a loop path as a decision while combat proceeds fully automatically | #roguelike #auto-battle #loop-mechanic #indie #solo-pve #broad-appeal | 08-10
 - GAME-056 | Factorio (2020, Wube Software) | A seminal factory-automation builder in which production chains are designed solely through conveyor-belt and inserter logistics, without capturing creatures | #automation #factory #production-chain #logistics #conveyor-belt #no-creature-capture #indie #sandbox | 08-10
+- GAME-057 | SANABI (2023, WONDER POTION / NEOWIZ) | A story-rich action platformer that keeps a fast chain-hook traversal loop running beneath an emotional mystery about a father and daughter | #action-platformer #story-rich #grappling-hook #pixel-art #twist #indie | 08-13
+- GAME-058 | OMORI (2020, OMOCAT, LLC) | A psychological-horror RPG that makes colorful friendship and mundane routines the surface layer over a forgotten past, guilt, and isolation | #psychological-horror #friendship #memory #trauma #rpg #indie | 08-13
+- GAME-059 | Before Your Eyes (2021, GoodbyeWorld Games / Skybound Games) | A first-person memory journey in which involuntary blinking advances a dead protagonist through joy, regret, repressed memories, and acceptance | #first-person #narrative-adventure #memory #grief #blink-input #indie | 08-13
+- GAME-060 | SOMA (2015, Frictional Games) | A first-person sci-fi horror game that uses exploration, documents, pursuit, and delayed identity questions to build existential dread | #first-person #psychological-horror #identity #exploration #no-combat #indie | 08-13

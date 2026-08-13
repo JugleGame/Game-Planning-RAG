@@ -1,5 +1,5 @@
 # Elements Index (generated — do not edit)
-Generated: 2026-08-13 | 44 entries
+Generated: 2026-08-13 | 47 entries
 
 - ELEM-001 | Teaser-based reveals | Indirect elements indicate that there is a next step. | #narrative #viral-hook #fragile | 07-31
 - ELEM-002 | Campy (B grade/B-movie humor, Campy) | A sly tone that induces laughter by intentionally making it exaggerated and cheap. | #comedy #divisive #viral-hook #scriptable | 07-31
@@ -45,3 +45,6 @@ Generated: 2026-08-13 | 44 entries
 - ELEM-045 | Deity/Patron Selection Locking Summonable Roster | A structure in which the unit pool that can be summoned afterward is determined by the deity or patron chosen at the start of a run | #tower-defense #roguelite #greek-mythology #draft #emerging | 08-11
 - ELEM-046 | Combat-Participating Animal Companion Auto-Assist | A structure in which an animal companion automatically attacks and provides support during combat without separate player control | #companion #action-rpg #combat #auto-assist #single-character | 08-11
 - ELEM-047 | Asymmetric Starting-Deck Character Roster | A structure that gives each playable character in a roguelike deckbuilder a different starting deck and card pool, making each character switch feel like a different game | #deckbuilder #roguelike #character-roster #replayability #asymmetric | 08-11
+- ELEM-048 | Mundane Bonding / Horror Contrast | A pacing device that lets the player build a relationship through ordinary shared activities, then makes horror threaten or distort those familiar moments | #friendship #horror #contrast #pacing #bonding #narrative | 08-13
+- ELEM-049 | Suppressed Memory and Identity Reconstruction | A mystery structure in which the player assembles omitted memories and anomalies until the protagonist's identity and past actions become newly understandable | #memory #identity #mystery #reveal #grief #psychological-horror | 08-13
+- ELEM-050 | Core Verb as Narrative Metaphor | A design in which the action repeated throughout play also expresses the protagonist's identity, fear, attachment, or inability to let go | #core-verb #gameplay-story-integration #metaphor #input #climax #indie | 08-13

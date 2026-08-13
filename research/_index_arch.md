@@ -1,5 +1,5 @@
 # Architecture Index (generated — do not edit)
-Generated: 2026-08-13 | 30 entries
+Generated: 2026-08-13 | 31 entries
 
 - ARCH-001 | Event Bus (EventBus / Pub-Sub) | A loose coupling structure where systems never call each other directly: senders broadcast events to a central station (EventBus), and only the parties that want to listen subscribe and react | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-31
 - ARCH-002 | Scene Streaming (Boot / World_Base / Chunk Additive Structure) | A world composition approach that never builds the game as one monolithic scene, splitting it into startup, always-on and fragment scenes, then adding only the fragments needed and switching them on and off | #scene #streaming #additive #open-world #core #unity #2d | 07-29
@@ -31,3 +31,4 @@ Generated: 2026-08-13 | 30 entries
 - ARCH-029 | Component-based Composition for 3D GameObjects | A Unity-native architecture that builds a 3D actor from small, replaceable capabilities attached to a GameObject instead of concentrating every behavior in one inheritance tree or manager | #unity #3d #gameobject #component #composition #modularity | 08-13
 - ARCH-030 | Model-View-Presenter for Game UI | A three-part UI architecture that keeps game data and rules independent from Unity UI rendering by making a Presenter mediate all updates and user actions | #unity #ui #mvp #mvc #presenter #testing | 08-13
 - ARCH-031 | Entities ECS / DOTS for Large 3D Simulations | A data-oriented Unity architecture that represents many similar actors as data-only entities processed in batches by systems, with GameObject authoring converted through baking | #unity #3d #ecs #dots #entities #data-oriented #performance | 08-13
+- ARCH-032 | Narrative Beat and Flag Ledger | A single source of truth for chapters, completed story beats, recovered memories, one-time anomalies, and reveal-dependent interaction rules | #narrative #state #flags #chapters #save #verification #unity | 08-13
