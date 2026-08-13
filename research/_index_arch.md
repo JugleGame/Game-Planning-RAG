@@ -1,5 +1,5 @@
 # Architecture Index (generated — do not edit)
-Generated: 2026-08-12 | 27 entries
+Generated: 2026-08-13 | 30 entries
 
 - ARCH-001 | Event Bus (EventBus / Pub-Sub) | A loose coupling structure where systems never call each other directly: senders broadcast events to a central station (EventBus), and only the parties that want to listen subscribe and react | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-31
 - ARCH-002 | Scene Streaming (Boot / World_Base / Chunk Additive Structure) | A world composition approach that never builds the game as one monolithic scene, splitting it into startup, always-on and fragment scenes, then adding only the fragments needed and switching them on and off | #scene #streaming #additive #open-world #core #unity #2d | 07-29
@@ -28,3 +28,6 @@ Generated: 2026-08-12 | 27 entries
 - ARCH-026 | Sprite Atlas & Draw Call Batching (Sprite Atlas) | An asset bundling convention that packs scattered sprites into one large texture to reduce the number of drawing requests sent to the GPU | #sprite-atlas #draw-call #batching #performance #2d #unity #asset | 08-02
 - ARCH-027 | URP 2D Lighting (2D Renderer + Light 2D + Shadow Caster 2D) | 2D A rendering structure that assembles the brightness and atmosphere of the screen into the range of influence for each lighting object and alignment layer, rather than drawing it into a sprite. | #lighting #urp #light2d #rendering #2d #unity #atmosphere | 08-02
 - ARCH-028 | Hit/Damage Interface (IDamageable + Health Component) | A combat structure that treats enemies, players, and boxes in the same way by binding them together with one promise that 'the hitting side can take damage' without knowing the identity of the hitting side. | #combat #damage #interface #health #pattern #unity #2d | 08-02
+- ARCH-029 | Component-based Composition for 3D GameObjects | A Unity-native architecture that builds a 3D actor from small, replaceable capabilities attached to a GameObject instead of concentrating every behavior in one inheritance tree or manager | #unity #3d #gameobject #component #composition #modularity | 08-13
+- ARCH-030 | Model-View-Presenter for Game UI | A three-part UI architecture that keeps game data and rules independent from Unity UI rendering by making a Presenter mediate all updates and user actions | #unity #ui #mvp #mvc #presenter #testing | 08-13
+- ARCH-031 | Entities ECS / DOTS for Large 3D Simulations | A data-oriented Unity architecture that represents many similar actors as data-only entities processed in batches by systems, with GameObject authoring converted through baking | #unity #3d #ecs #dots #entities #data-oriented #performance | 08-13

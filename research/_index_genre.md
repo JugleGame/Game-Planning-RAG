@@ -1,5 +1,5 @@
 # Genres Index (generated — do not edit)
-Generated: 2026-08-12 | 39 entries
+Generated: 2026-08-13 | 39 entries
 
 - GENRE-001 | Meta-narrative Indie | A cluster in which the game recognizes itself as "being a game" and uses that as narrative material | #indie #story-rich #meta | 07-20
 - GENRE-002 | Loop Narrative | A cluster in which the repetition structure itself becomes the vehicle for telling the story | #time-loop #roguelike #story-rich #retention | 07-31

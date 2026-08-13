@@ -1,5 +1,5 @@
 # Signals Index (generated — do not edit)
-Generated: 2026-08-12 | 8 entries
+Generated: 2026-08-13 | 8 entries
 
 - SIGNAL-2026-07-14_steam_trend | Weekly observations (2026-07-07 to 2026-07-14) | Append-only weekly source digest; open only when needed. |  | 07-14
 - SIGNAL-2026-07-20_ai_native_signals | Weekly observations (2026-07-14 to 2026-07-20) | Append-only weekly source digest; open only when needed. |  | 07-20
