@@ -1,5 +1,5 @@
 # Games Index (generated — do not edit)
-Generated: 2026-08-13 | 59 entries
+Generated: 2026-08-17 | 59 entries
 
 - GAME-001 | Inscryption (2021, Daniel Mullins Games / Devolver Digital) | A meta-narrative hit that starts as a card game and then betrays the genre itself | #deckbuilder #horror #meta #indie | 07-31
 - GAME-002 | Undertale (2015, Toby Fox) | The archetype of the meta-narrative RPG in which the game remembers every choice the player makes | #rpg #indie #meta #comedy #pixel | 07-15
