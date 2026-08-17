@@ -1,5 +1,5 @@
 # Elements Index (generated — do not edit)
-Generated: 2026-08-13 | 47 entries
+Generated: 2026-08-17 | 49 entries
 
 - ELEM-001 | Teaser-based reveals | Indirect elements indicate that there is a next step. | #narrative #viral-hook #fragile | 07-31
 - ELEM-002 | Campy (B grade/B-movie humor, Campy) | A sly tone that induces laughter by intentionally making it exaggerated and cheap. | #comedy #divisive #viral-hook #scriptable | 07-31
@@ -48,3 +48,5 @@ Generated: 2026-08-13 | 47 entries
 - ELEM-048 | Mundane Bonding / Horror Contrast | A pacing device that lets the player build a relationship through ordinary shared activities, then makes horror threaten or distort those familiar moments | #friendship #horror #contrast #pacing #bonding #narrative | 08-13
 - ELEM-049 | Suppressed Memory and Identity Reconstruction | A mystery structure in which the player assembles omitted memories and anomalies until the protagonist's identity and past actions become newly understandable | #memory #identity #mystery #reveal #grief #psychological-horror | 08-13
 - ELEM-050 | Core Verb as Narrative Metaphor | A design in which the action repeated throughout play also expresses the protagonist's identity, fear, attachment, or inability to let go | #core-verb #gameplay-story-integration #metaphor #input #climax #indie | 08-13
+- ELEM-051 | Unkillable Pursuer Chase | A structure in which a pursuer cannot be defeated by any player attack, so the only available verbs are flee, hide, and distract, and a director decides when pressure rises and falls | #horror #chase #pursuer #no-combat #pacing #director-ai #fairness | 08-17
+- ELEM-052 | Assist and Accessibility Options | Player-facing settings that lower or remove a specific barrier — damage, speed, required precision, colour, motion, or reading time — without asking the player to abandon the intended experience | #accessibility #difficulty #assist-mode #options #retention #narrative #inclusive-design | 08-17
