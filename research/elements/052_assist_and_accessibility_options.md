@@ -33,6 +33,7 @@ Instead of one difficulty slider, the game exposes separate switches for the sep
 - ARCH-016 (Input System): remapping is an input-layer property; prompts that name a physical key rather than an action cannot satisfy the Basic remapping guideline. [interpretation]
 - ARCH-013 (2D Camera Follow): camera pressure and shake presets are where the motion toggle has to be implemented. [interpretation]
 - Genre anchor: GENRE-040 (Grief-Reconstruction Psychological Narrative), whose audience arrives for the narrative rather than the challenge.
+- Genre anchor: GENRE-041 (Precision 2D Side-scrolling Platformer) — this cluster names this element as a component. [interpretation]
 
 ## Risks
 - [interpretation] Kasavin's own conclusion applies as a warning: "the way to approach difficulty settings may need to be proprietary to the game." Copying another title's assist switches without checking which barrier this game actually creates produces options nobody uses.

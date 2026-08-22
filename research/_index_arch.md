@@ -1,5 +1,5 @@
 # Architecture Index (generated — do not edit)
-Generated: 2026-08-17 | 32 entries
+Generated: 2026-08-22 | 34 entries
 
 - ARCH-001 | Event Bus (EventBus / Pub-Sub) | A loose coupling structure where systems never call each other directly: senders broadcast events to a central station (EventBus), and only the parties that want to listen subscribe and react | #decoupling #core #commentator #2d-open-world #unity #pub-sub | 07-31
 - ARCH-002 | Scene Streaming (Boot / World_Base / Chunk Additive Structure) | A world composition approach that never builds the game as one monolithic scene, splitting it into startup, always-on and fragment scenes, then adding only the fragments needed and switching them on and off | #scene #streaming #additive #open-world #core #unity #2d | 07-29
@@ -33,3 +33,5 @@ Generated: 2026-08-17 | 32 entries
 - ARCH-031 | Entities ECS / DOTS for Large 3D Simulations | A data-oriented Unity architecture that represents many similar actors as data-only entities processed in batches by systems, with GameObject authoring converted through baking | #unity #3d #ecs #dots #entities #data-oriented #performance | 08-13
 - ARCH-032 | Narrative Beat and Flag Ledger | A single source of truth for chapters, completed story beats, recovered memories, one-time anomalies, and reveal-dependent interaction rules | #narrative #state #flags #chapters #save #verification #unity | 08-13
 - ARCH-033 | Level State Overlay | A structure that holds one authored space in several meaning-states by keeping a single base level and switching declared overlays on top of it, instead of duplicating the level per state | #level-design #scene #additive #prefab-variant #authoring #state #unity #2d | 08-17
+- ARCH-034 | Side-scroll Camera Framing (Dead Zone + Lookahead + Confiner) | A 2D camera rig that frames a side-scrolling stage with three separated controls — a dead zone that ignores small player motion, lookahead that biases the view toward travel direction, and a polygon confiner that stops the view from leaving authored space | #camera #cinemachine #2d #side-scroller #level-design #unity #framing #confiner | 08-22
+- ARCH-035 | Room Checkpoint and Deterministic Retry | A retry structure for short 2D stage segments in which one room is the unit of both checkpointing and reset, and every restart returns the room to a single authored state so repeated attempts teach the player instead of varying under them | #checkpoint #respawn #retry #determinism #2d #side-scroller #physics #unity #level-design | 08-22

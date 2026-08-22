@@ -1,5 +1,5 @@
 # Elements Index (generated — do not edit)
-Generated: 2026-08-17 | 49 entries
+Generated: 2026-08-22 | 52 entries
 
 - ELEM-001 | Teaser-based reveals | Indirect elements indicate that there is a next step. | #narrative #viral-hook #fragile | 07-31
 - ELEM-002 | Campy (B grade/B-movie humor, Campy) | A sly tone that induces laughter by intentionally making it exaggerated and cheap. | #comedy #divisive #viral-hook #scriptable | 07-31
@@ -50,3 +50,6 @@ Generated: 2026-08-17 | 49 entries
 - ELEM-050 | Core Verb as Narrative Metaphor | A design in which the action repeated throughout play also expresses the protagonist's identity, fear, attachment, or inability to let go | #core-verb #gameplay-story-integration #metaphor #input #climax #indie | 08-13
 - ELEM-051 | Unkillable Pursuer Chase | A structure in which a pursuer cannot be defeated by any player attack, so the only available verbs are flee, hide, and distract, and a director decides when pressure rises and falls | #horror #chase #pursuer #no-combat #pacing #director-ai #fairness | 08-17
 - ELEM-052 | Assist and Accessibility Options | Player-facing settings that lower or remove a specific barrier — damage, speed, required precision, colour, motion, or reading time — without asking the player to abandon the intended experience | #accessibility #difficulty #assist-mode #options #retention #narrative #inclusive-design | 08-17
+- ELEM-053 | Four-beat Stage Structure (Introduce / Develop / Twist / Conclude) | A side-scrolling stage is authored as one mechanic taken through four ordered beats — safe introduction, complication, a change-up that breaks the expected use, and a conclusion that lets the player show what was learned — after which the mechanic is dropped | #level-design #2d #side-scroller #stage-structure #pacing #teaching #kishotenketsu | 08-22
+- ELEM-054 | Wordless Onboarding Stage | A game's first side-scrolling stage is authored as the tutorial itself, arranging enemies, blocks, and gaps so the player learns the core verbs by playing, with no text panel, prompt overlay, or separate tutorial mode | #level-design #2d #side-scroller #onboarding #tutorial #teaching #first-hour | 08-22
+- ELEM-055 | Bite-sized Rooms with Instant Respawn | A side-scrolling stage is cut into short single-goal rooms and death restarts the current room immediately with no lives, no load, and no lost progress, so the cost of failure is only the seconds already spent in that room | #level-design #2d #side-scroller #checkpoint #respawn #difficulty #retry-loop #pacing | 08-22

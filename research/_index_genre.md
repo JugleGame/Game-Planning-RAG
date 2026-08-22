@@ -1,5 +1,5 @@
 # Genres Index (generated — do not edit)
-Generated: 2026-08-17 | 40 entries
+Generated: 2026-08-22 | 41 entries
 
 - GENRE-001 | Meta-narrative Indie | A cluster in which the game recognizes itself as "being a game" and uses that as narrative material | #indie #story-rich #meta | 07-20
 - GENRE-002 | Loop Narrative | A cluster in which the repetition structure itself becomes the vehicle for telling the story | #time-loop #roguelike #story-rich #retention | 07-31
@@ -41,3 +41,4 @@ Generated: 2026-08-17 | 40 entries
 - GENRE-038 | Idle / Incremental Game | A swarm that makes resources continuously accumulate in proportion to time (usually exponentially) without the player's active intervention, making short check-ins and offline accumulation the center of retention. | #idle #incremental #mobile #clicker #idle-rpg #offline-progress #ad-monetization | 08-09
 - GENRE-039 | Turn-based Tactical Roguelike | A group that uses turn-based tactical combat on a grid as its core instead of real-time operation, and tops it off with roguelike random upgrades/route drafting. | #roguelike #turn-based #tactics #grid-based #indie #permadeath | 08-09
 - GENRE-040 | Grief-Reconstruction Psychological Narrative | An emerging cross-format cluster in which players rebuild a suppressed truth about loss or identity, then turn that knowledge into acceptance rather than simple escape | #grief #psychological-horror #narrative #memory #identity #indie #emerging | 08-13
+- GENRE-041 | Precision 2D Side-scrolling Platformer | A crowded Steam cluster built on authored side-scrolling stages and execution challenge, where the median release sells far below the platform median and differentiation has to come from the stage design and movement rather than from the genre itself | #platformer #2d #side-scroller #level-design #execution #indie #saturated | 08-22
